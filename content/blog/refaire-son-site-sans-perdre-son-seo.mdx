@@ -1,0 +1,176 @@
+---
+title: "Refaire son site sans perdre son SEO : le guide complet"
+metaTitle: "Refaire son site sans perdre son SEO - Guide migration | Globe Créateur"
+metaDescription: "Comment refondre votre site internet sans perdre vos positions Google. Redirections 301, conservation du contenu, checklist de migration SEO. Guide pratique."
+keyword: "refaire son site sans perdre son SEO"
+keywords: ["refonte site SEO", "migration site référencement", "redirection 301 refonte", "changer site internet sans perdre Google"]
+publishedAt: "2026-03-15"
+updatedAt: "2026-03-15"
+author: "Axel Masson"
+category: "seo-acquisition"
+readingTime: 12
+image: "/images/blog/refaire-site-sans-perdre-seo.webp"
+imageAlt: "Schéma montrant la migration d'un site avec redirections 301"
+relatedServices: ["seo-referencement", "creation-site-web"]
+relatedArticles: ["combien-coute-site-vitrine-dijon"]
+template: "article-blog"
+---
+
+## La vraie raison pour laquelle les refontes de site font peur
+
+Vous le savez : votre site a besoin d'être refait. Le design date, les performances sont mauvaises, le contenu ne reflète plus votre activité. Mais à chaque fois que le sujet revient sur la table, quelqu'un pose la question qui refroidit tout le monde :
+
+"Et si on perd notre référencement ?"
+
+C'est une peur légitime. On a tous entendu l'histoire d'une entreprise qui a refait son site et vu son trafic chuter de 50 % du jour au lendemain. Ça arrive. Mais ce n'est pas une fatalité — c'est le résultat d'une refonte mal préparée.
+
+Avec la bonne méthodologie, on peut [moderniser un site de A à Z](/services/refonte-site-internet-dijon) sans perdre une seule position significative sur Google. Cet article explique comment, étape par étape.
+
+## Pourquoi une refonte peut détruire votre SEO
+
+Avant de voir comment éviter la catastrophe, il faut comprendre ce qui la provoque.
+
+### Les URLs changent sans redirection
+
+C'est la cause numéro un. Votre ancienne page `/nos-services/creation-web/` devient `/services/web/` sur le nouveau site. Google connaît l'ancienne URL, des liens externes pointent vers elle, elle a accumulé de l'autorité. Si elle renvoie une erreur 404, tout ce capital est perdu instantanément.
+
+### Le contenu disparaît
+
+Pendant la refonte, on en profite pour "nettoyer" le site. Des pages sont supprimées parce qu'elles semblent inutiles. Sauf que certaines de ces pages recevaient du trafic organique. Elles répondaient à des requêtes spécifiques. Les supprimer sans redirection, c'est dire à Google : "ce contenu n'existe plus".
+
+### La structure technique change
+
+Les balises title et meta description ne sont pas reprises. Le maillage interne est cassé. Le balisage Schema disparaît. Le sitemap n'est pas soumis. Le fichier robots.txt bloque accidentellement le crawl. Chacun de ces points, individuellement mineur, peut provoquer une chute quand ils s'accumulent.
+
+### Le site est mis en ligne avant d'être prêt
+
+Des pages en "coming soon", des images manquantes, des lorem ipsum oubliés, un certificat SSL pas encore configuré. Google crawle le site dans cet état et indexe un site cassé. La première impression est mauvaise, et Google n'est pas pressé de revenir.
+
+## La méthode pour une refonte SEO-safe
+
+### Étape 1 — Inventoriez tout ce que vous avez
+
+Avant de toucher à quoi que ce soit, faites l'état des lieux complet de votre site actuel.
+
+**Listez toutes les URLs indexées.** Utilisez Google Search Console (section "Pages") pour voir quelles pages Google connaît. Récupérez aussi votre sitemap.xml actuel. Chaque URL de cette liste doit être traitée dans le plan de migration.
+
+**Identifiez vos pages qui génèrent du trafic.** Dans Google Search Console > Performances > Pages, triez par clics. Les 10-20 pages qui reçoivent le plus de trafic sont vos pages critiques. Elles ne doivent en aucun cas finir en 404.
+
+**Exportez vos métadonnées SEO.** Title, meta description, mots-clés ciblés. Si vous utilisez un plugin SEO (Yoast, Rank Math), exportez les données. Elles devront être reprises dans le nouveau site.
+
+**Vérifiez vos backlinks.** Dans Search Console > Liens, regardez quelles pages reçoivent des liens externes. Ces pages ont une autorité accumulée qu'il faut impérativement transférer via des redirections.
+
+### Étape 2 — Créez votre table de redirections
+
+C'est le document le plus important de votre refonte. Un simple tableur avec trois colonnes :
+
+| Ancienne URL | Nouvelle URL | Type |
+|---|---|---|
+| `/nos-services/creation-web/` | `/services/creation-site-web/` | 301 |
+| `/equipe/` | `/a-propos/` | 301 |
+| `/blog/article-ancien/` | `/blog/article-ancien/` | Identique |
+
+**Règle d'or : chaque ancienne URL doit avoir une correspondance.** Soit la nouvelle URL est identique (pas de redirection nécessaire), soit elle change (redirection 301 obligatoire), soit la page est supprimée (redirection vers la page parent la plus pertinente).
+
+**Conservez les slugs quand c'est possible.** Si votre page s'appelait `/services/creation-contenu/` et qu'elle fonctionne bien, gardez exactement ce slug. Chaque changement d'URL, même avec une redirection 301, représente un risque — minime, mais réel. Ne changez que ce qui doit changer.
+
+**Utilisez des redirections 301, jamais 302.** Le 301 dit à Google : "cette page a déménagé définitivement, transfère toute l'autorité vers la nouvelle adresse". Le 302 dit : "c'est temporaire" — et Google ne transfère pas l'autorité.
+
+### Étape 3 — Reprenez toutes les métadonnées
+
+Chaque page de votre nouveau site doit avoir :
+
+- Un **title** optimisé (60 caractères max, mot-clé principal + nom de marque)
+- Une **meta description** incitative (155 caractères max, résumé + appel à l'action)
+- Une **URL canonique** pointant vers elle-même
+- Un **balisage Open Graph** pour les partages sociaux
+
+Si vous aviez des données structurées (Schema.org) sur l'ancien site, reprenez-les — ou profitez de la refonte pour en ajouter.
+
+### Étape 4 — Préservez votre contenu performant
+
+Les pages qui génèrent du trafic organique ne doivent pas être réécrites de zéro. Le contenu a été indexé par Google, il répond à des requêtes spécifiques. Vous pouvez l'améliorer (mettre à jour, enrichir, mieux structurer), mais ne supprimez pas le cœur du texte qui fait ranker la page.
+
+En revanche, les pages qui ne génèrent aucun trafic sont des candidates à la fusion ou à la suppression (avec redirection vers une page plus pertinente).
+
+### Étape 5 — Testez tout avant de lancer
+
+Déployez le nouveau site sur une URL de préproduction (par exemple `preview.votresite.fr`). Vérifiez :
+
+- Chaque redirection 301 fonctionne (testez manuellement les 10-20 plus importantes)
+- Chaque page a son title et sa meta description
+- Le sitemap XML inclut toutes les nouvelles URLs
+- Le robots.txt n'a pas de `Disallow` qui bloque le site
+- Les performances sont bonnes (Lighthouse > 90)
+- Le site est en HTTPS
+- Aucune page n'affiche de contenu manquant
+
+### Étape 6 — Lancez et surveillez
+
+Le jour du lancement :
+
+1. Déployez le nouveau site
+2. Vérifiez que les redirections fonctionnent sur le domaine de production
+3. Soumettez le nouveau sitemap dans Google Search Console
+4. Demandez l'indexation des 5-10 pages les plus importantes via l'outil d'inspection d'URL
+
+Pendant les 30 jours suivants :
+
+- Surveillez Google Search Console quotidiennement pour les erreurs d'exploration
+- Vérifiez que vos pages critiques sont bien indexées dans leur nouvelle version
+- Comparez le trafic organique semaine par semaine avec la période pré-refonte
+- Corrigez immédiatement toute erreur 404 qui apparaît
+
+## Les erreurs les plus fréquentes (et comment les éviter)
+
+**Erreur : oublier les pages secondaires.** On pense aux pages principales mais on oublie les mentions légales, la page de politique de confidentialité, les anciennes pages de blog. Google les connaît, et si elles renvoient du 404, ça génère des erreurs de crawl.
+
+**Erreur : ne pas gérer les images.** Si vos images étaient hébergées sous `/wp-content/uploads/` et que le nouveau site utilise `/images/`, les liens directs vers vos anciennes images casseront. Si des sites externes lient vers ces images, c'est une perte de backlinks.
+
+**Erreur : changer tous les slugs "pour faire propre".** La tentation est forte de renommer toutes les URLs pendant la refonte. Résistez. Chaque changement de slug est un risque, même avec une redirection 301. Ne changez que les slugs réellement problématiques (trop longs, contenant des caractères spéciaux, sans rapport avec le contenu).
+
+**Erreur : lancer le site un vendredi.** Si quelque chose ne va pas, vous voulez pouvoir réagir immédiatement. Lancez un mardi ou un mercredi matin, quand l'équipe est disponible pour surveiller et corriger.
+
+**Erreur : ne pas avoir de baseline.** Si vous n'avez pas exporté vos données de trafic et de positionnement avant la refonte, vous ne pourrez pas mesurer l'impact. Faites vos exports Search Console et Analytics avant de toucher au site.
+
+## Combien de temps dure la période de transition
+
+Après une refonte bien menée, voici ce qu'on observe habituellement :
+
+- **Jour 1-7** : Google découvre les nouvelles URLs et suit les redirections. Léger flottement possible.
+- **Semaine 2-3** : les nouvelles pages sont indexées. Les positions reviennent à la normale ou s'améliorent.
+- **Mois 1-2** : situation stabilisée. Si le nouveau site est meilleur (plus rapide, meilleur contenu, meilleure UX), les positions progressent.
+- **Mois 3+** : les bénéfices de la refonte deviennent visibles dans le trafic organique.
+
+Une chute temporaire de 10-20 % la première semaine est normale et ne doit pas déclencher de panique. En revanche, une chute de plus de 30 % qui persiste au-delà de deux semaines indique un problème technique à identifier rapidement.
+
+## Questions fréquentes — Refonte de site et SEO
+
+<FaqAccordion items={[
+  {
+    question: "Une redirection 301 transfère-t-elle 100 % de l'autorité SEO ?",
+    answer: "Historiquement, on estimait une perte de 10-15 % par redirection. Google a depuis confirmé que les 301 transfèrent la totalité du PageRank. Dans la pratique, on observe une transition quasi transparente quand les redirections sont bien faites."
+  },
+  {
+    question: "Puis-je changer de CMS sans perdre mon SEO ?",
+    answer: "Oui, à condition de suivre rigoureusement le plan de migration : redirections, métadonnées, contenu. Le CMS est un outil technique — Google évalue le contenu et l'expérience utilisateur, pas la technologie sous-jacente."
+  },
+  {
+    question: "Faut-il prévenir Google d'une refonte ?",
+    answer: "Il n'y a pas de bouton 'prévenir Google'. En revanche, vous devez soumettre votre nouveau sitemap dans Search Console juste après le lancement. Google découvrira les changements lors de son prochain crawl."
+  },
+  {
+    question: "Combien de redirections peut-on mettre en place ?",
+    answer: "Il n'y a pas de limite technique. Un site e-commerce peut avoir des milliers de redirections lors d'une migration. L'important est que chaque redirection pointe directement vers la bonne page (pas de chaînes de redirections) et qu'elle soit permanente (301, pas 302)."
+  },
+  {
+    question: "Que faire des pages qui n'ont pas d'équivalent sur le nouveau site ?",
+    answer: "Redirigez-les vers la page la plus pertinente du nouveau site. Par exemple, un ancien article de blog supprimé devrait rediriger vers la page du blog. Une ancienne page service devrait rediriger vers le nouveau hub services. L'objectif est qu'aucune ancienne URL ne renvoie un 404."
+  }
+]} />
+
+Besoin d'aide pour votre refonte ? Chez [Globe Créateur](/a-propos), on gère la [refonte de sites internet](/services/refonte-site-internet-dijon) avec un plan de migration SEO complet. Le [référencement local](/services/seo-local-dijon) est intégré dès la conception pour que votre nouveau site soit plus visible que l'ancien.
+
+---
+
+Vous préparez une refonte ? [Demandez un audit SEO gratuit →](/devis)
