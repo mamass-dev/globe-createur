@@ -39,9 +39,9 @@ const steps = [
 ]
 
 const stats = [
-  { value: 47, suffix: "+", label: "Projets livrés en Bourgogne" },
-  { value: 5, label: "Expertises intégrées" },
-  { value: 98, suffix: "%", label: "Clients satisfaits" },
+  { value: 110, suffix: "+", label: "Projets réalisés" },
+  { value: 30, suffix: "+", label: "PME accompagnées" },
+  { value: 97, suffix: "%", label: "Clients satisfaits" },
   { value: 1, label: "Interlocuteur unique" },
 ]
 
@@ -49,7 +49,7 @@ const faqAgence = [
   { question: "Quelle est la différence entre Globe Créateur et une agence de communication classique ?", answer: "Une agence classique a souvent des équipes séparées (un graphiste, un développeur, un rédacteur) avec un chef de projet qui coordonne. Chez Globe Créateur, c'est un studio intégré : un interlocuteur unique qui maîtrise l'ensemble de la chaîne. Moins d'intermédiaires, plus de cohérence, des coûts réduits." },
   { question: "Travaillez-vous uniquement avec des entreprises dijonnaises ?", answer: "Non. Notre studio est à Longvic, aux portes de Dijon, mais nous accompagnons des entreprises dans toute la Bourgogne-Franche-Comté : Beaune, Chalon-sur-Saône, Auxerre, Besançon. Nous nous déplaçons pour les shootings photo et les réunions, et le pilotage se fait à distance." },
   { question: "Quels types d'entreprises accompagnez-vous ?", answer: "Des PME de 2 à 50 salariés, des indépendants et des professions libérales. Nos clients types : hôtels, restaurants, commerces, artisans, cabinets (avocats, comptables, architectes), PME de services, lieux événementiels." },
-  { question: "Combien coûte un accompagnement communication ?", answer: "Nos forfaits communication démarrent à 990 €/mois HT (forfait Essentiel). Pour un projet ponctuel (site internet, shooting photo), les tarifs dépendent du scope. Dans tous les cas, le devis est gratuit, détaillé et sans engagement." },
+  { question: "Combien coûte un accompagnement communication ?", answer: "Nos forfaits communication démarrent à 890 €/mois HT (forfait Essentiel). Pour un projet ponctuel (site internet, shooting photo), les tarifs dépendent du scope. Dans tous les cas, le devis est gratuit, détaillé et sans engagement." },
   { question: "Je n'ai pas de site internet. Par où commencer ?", answer: "Par un audit gratuit. On regarde votre situation actuelle (même si c'est zéro) et on vous recommande la meilleure approche. Pour la plupart des PME, on commence par un site internet optimisé SEO + une fiche Google Business Profile. C'est la base." },
   { question: "Combien de temps pour avoir un site internet ?", answer: "Un site vitrine prend 3 à 5 semaines de la maquette à la mise en ligne. Un site plus complexe (multi-pages, blog, fonctionnalités sur-mesure) peut prendre 6 à 10 semaines. On vous donne un planning précis dès le devis." },
   { question: "Vous faites aussi l'impression (flyers, cartes de visite) ?", answer: "On crée les visuels (design, mise en page) mais on ne gère pas l'impression. En revanche, on travaille avec des imprimeurs locaux de confiance et on peut vous recommander le bon partenaire." },
@@ -152,7 +152,7 @@ export default function AgencePage() {
               inclus dans le forfait — pas besoin de payer un projet à part.
             </p>
             <p>
-              Trois formules à partir de 990 €/mois HT. Un investissement prévisible
+              Trois formules à partir de 890 €/mois HT. Un investissement prévisible
               dans une communication qui travaille pour vous chaque jour.
             </p>
 

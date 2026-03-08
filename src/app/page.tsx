@@ -12,10 +12,10 @@ import { temoignages } from "@/lib/data/temoignages"
 import { faqGenerales } from "@/lib/data/faq"
 
 const stats = [
-  { value: 47, suffix: "+", label: "Projets livrés" },
-  { value: 98, suffix: "%", label: "Clients satisfaits" },
-  { value: 12, label: "Mois d'expérience moyenne" },
-  { value: 5, label: "Expertises intégrées" },
+  { value: 110, suffix: "+", label: "Projets réalisés" },
+  { value: 30, suffix: "+", label: "PME accompagnées" },
+  { value: 97, suffix: "%", label: "Clients satisfaits" },
+  { value: 350, suffix: "+", label: "Tournages réalisés" },
 ]
 
 const steps = [
@@ -44,11 +44,11 @@ export default function HomePage() {
       {/* 1. ATTENTION — Hero */}
       <Hero
         title="Votre équipe communication externalisée à Dijon"
-        subtitle="Web, SEO, photo, vidéo, design, réseaux sociaux : un studio 360° dédié aux PME qui veulent se démarquer sans embaucher."
+        subtitle="Une équipe complète pour le prix d'un salarié : photo, vidéo, design, web et réseaux sociaux. Sans charges sociales et sans gestion interne."
         ctaLabel="Demander un devis gratuit"
         ctaHref="/devis"
-        secondaryLabel="Découvrir nos services"
-        secondaryHref="/services"
+        secondaryLabel="Découvrir nos forfaits"
+        secondaryHref="/forfait-communication-pme"
       />
 
       {/* 2. CONFIANCE — Social proof */}

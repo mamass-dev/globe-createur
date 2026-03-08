@@ -16,10 +16,10 @@ export const metadata: Metadata = buildMetadata({
 })
 
 const stats = [
-  { value: 47, suffix: "+", label: "Projets livrés" },
-  { value: 5, label: "Expertises intégrées" },
-  { value: 48, suffix: "h", label: "Délai moyen de réponse" },
-  { value: 98, suffix: "%", label: "Clients satisfaits" },
+  { value: 110, suffix: "+", label: "Projets réalisés" },
+  { value: 30, suffix: "+", label: "PME accompagnées" },
+  { value: 350, suffix: "+", label: "Tournages réalisés" },
+  { value: 97, suffix: "%", label: "Clients satisfaits" },
 ]
 
 const valeurs = [
@@ -59,10 +59,10 @@ export default function AProposPage() {
           <div className="prose max-w-none">
             <h2>Pourquoi Globe Créateur existe</h2>
             <p>
-              Avant de fonder Globe Créateur, j&apos;ai travaillé avec des dizaines de PME en Bourgogne.
-              Le même schéma revenait systématiquement : un photographe pour les photos, un freelance
-              pour le site, un autre pour les réseaux sociaux, parfois un imprimeur pour les flyers.
-              Quatre prestataires, quatre factures, zéro cohérence.
+              Globe Créateur est né d&apos;un constat simple en 2021 : les PME françaises ont du talent,
+              des produits exceptionnels, mais peinent à se faire connaître. Les agences traditionnelles
+              sont trop chères et rigides. Les freelances obligent à jongler entre 5 prestataires
+              différents. Recruter en interne coûte 60 000 €/an + charges pour une seule compétence.
             </p>
             <p>
               Le résultat ? Des photos magnifiques qui dorment sur un disque dur. Un site qui ne ressemble
@@ -70,16 +70,17 @@ export default function AProposPage() {
               Et un dirigeant qui perd du temps à coordonner tout le monde au lieu de faire son métier.
             </p>
             <p>
-              <strong>Globe Créateur est né pour résoudre ce problème.</strong> Un seul interlocuteur — Axel Masson —
-              qui coordonne toutes les compétences : développement web, référencement, photographie,
-              vidéo, design graphique et gestion des réseaux sociaux. Une vision globale, cohérente,
-              au service de résultats concrets.
+              <strong>Nous avons créé la solution.</strong> Axel Masson (responsable digital & no-code)
+              et Adrien Lecrivain (réalisateur & photographe) ont fondé Globe Créateur pour offrir
+              aux PME une équipe marketing complète en abonnement mensuel — votre service communication
+              interne, externalisé. Depuis, plus de 30 PME nous font confiance.
             </p>
 
-            <h2>Ce qu&apos;on fait concrètement</h2>
+            <h2>Un studio complet à votre service</h2>
             <p>
-              On ne se définit pas par nos outils mais par ce qu&apos;on apporte à nos clients.
-              Voici les cinq métiers qu&apos;on réunit sous un même toit :
+              Notre équipe réunit un vidéaste, un photographe, un directeur artistique,
+              un designer, un développeur web et un chef de projet. Voici les six métiers
+              qu&apos;on réunit sous un même toit :
             </p>
             <ul>
               <li>
@@ -98,26 +99,33 @@ export default function AProposPage() {
                 pas des photos de banque d&apos;images.
               </li>
               <li>
-                <strong>Design</strong> — Identité visuelle, supports imprimés,
-                visuels réseaux sociaux. Une marque cohérente sur tous les supports.
+                <strong>Branding & Design</strong> — Charte graphique, storytelling de marque,
+                templates et supports prêts à l&apos;emploi. Une identité cohérente sur tous les canaux.
               </li>
               <li>
-                <strong><Link href="/services/support-communication-pme">Pilotage</Link></strong> —
+                <strong><Link href="/services/support-communication-pme">Pilotage & réseaux sociaux</Link></strong> —
                 Planning éditorial, gestion des réseaux sociaux, reporting mensuel.
                 Votre communication tourne même quand vous êtes sur le terrain.
+              </li>
+              <li>
+                <strong><Link href="/services/automatisation-nocode-dijon">Automatisation</Link></strong> —
+                CRM, formulaires, relances automatiques, tableaux de bord de suivi.
+                Des outils no-code pour gagner du temps chaque semaine.
               </li>
             </ul>
 
             <h2>Pour qui on travaille</h2>
             <p>
-              Nos clients sont des PME de 2 à 50 salariés, des indépendants et des professions libérales.
-              Principalement en Bourgogne-Franche-Comté, mais pas seulement.
+              Nos clients sont des PME et indépendants dans toute la Bourgogne-Franche-Comté
+              et au-delà : Dijon, Beaune, Chenôve, Talant, Nuits-Saint-Georges, Besançon, Lyon.
             </p>
             <p>
-              Des <Link href="/secteurs/hotels-lieux-evenementiels">hôtels</Link> qui veulent réduire
-              leur dépendance à Booking. Des restaurants qui veulent remplir sans passer par
-              les plateformes. Des artisans qui veulent montrer leur savoir-faire. Des cabinets
-              qui veulent inspirer confiance dès le premier clic.
+              Des <Link href="/secteurs/hotels-lieux-evenementiels">hôtels</Link> et restaurants
+              qui veulent réduire leur dépendance à Booking. Des{" "}
+              <Link href="/secteurs/lieux-evenementiels">domaines viticoles et lieux événementiels</Link>.
+              Des artisans qui veulent montrer leur savoir-faire. Des cabinets
+              et professions libérales qui veulent inspirer confiance dès le premier clic.
+              Des organisateurs d&apos;événements, des espaces de coworking, des associations.
             </p>
             <p>
               Ce qui les réunit : ils n&apos;ont pas d&apos;équipe communication en interne, mais ils savent
@@ -216,7 +224,7 @@ export default function AProposPage() {
               </ol>
               <p>
                 Pour un accompagnement continu, découvrez nos{" "}
-                <Link href="/forfait-communication-pme">forfaits communication</Link> à partir de 990 €/mois.
+                <Link href="/forfait-communication-pme">forfaits communication</Link> à partir de 890 €/mois.
               </p>
             </div>
           </AnimateOnScroll>

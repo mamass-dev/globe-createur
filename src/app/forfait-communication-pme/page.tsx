@@ -16,91 +16,102 @@ import { Check, X } from "lucide-react"
 
 export const metadata: Metadata = buildMetadata({
   title: "Forfait communication PME — Équipe externalisée à Dijon | Globe Créateur",
-  description: "Forfaits communication tout-en-un pour PME à Dijon. Web, SEO, photo, vidéo, réseaux sociaux : une équipe complète externalisée à partir de 990 €/mois HT. Sans engagement long terme.",
+  description: "Forfaits communication tout-en-un pour PME à Dijon. Web, SEO, photo, vidéo, réseaux sociaux : une équipe complète externalisée à partir de 890 €/mois HT. Site internet offert selon engagement.",
   path: "/forfait-communication-pme",
 })
 
 const forfaits = [
   {
     name: "Essentiel",
-    price: "990",
+    price: "890",
+    engagement: "12 mois",
+    priceSansEngagement: "1 080",
     description: "La base solide pour exister en ligne et commencer à attirer des clients.",
     features: [
-      "Site vitrine optimisé SEO (5-8 pages)",
-      "Fiche Google Business Profile optimisée",
-      "2 publications/semaine réseaux sociaux",
-      "Gestion des avis Google",
-      "Reporting mensuel",
+      "Site internet offert (selon engagement)",
+      "Pilotage mensuel",
+      "Plan d'action simplifié",
+      "Contenus adaptés aux priorités",
+      "1 réseau social optimisé",
+      "Mise à jour légère branding",
       "Support email sous 24h",
     ],
     notIncluded: [
-      "SEO avancé",
-      "Blog",
       "Shooting photo",
-      "Vidéo",
-    ],
-  },
-  {
-    name: "Croissance",
-    price: "1 890",
-    popular: true,
-    description: "Pour accélérer votre visibilité locale et générer des demandes régulières.",
-    features: [
-      "Tout Essentiel +",
-      "SEO local avancé (pages locales, backlinks)",
-      "4 publications/semaine réseaux sociaux",
-      "1 article de blog optimisé SEO/mois",
-      "Shooting photo trimestriel sur place",
-      "Veille concurrentielle",
-      "Support prioritaire sous 4h",
-    ],
-    notIncluded: [
-      "Vidéo",
-      "Automatisation",
+      "Reporting mensuel",
+      "Automatisations",
       "Campagnes pub",
     ],
   },
   {
-    name: "Premium",
-    price: "3 490",
+    name: "Croissance",
+    price: "1 490",
+    engagement: "6 mois",
+    priceSansEngagement: "1 790",
+    popular: true,
+    description: "Pour accélérer votre visibilité locale et générer des demandes régulières.",
+    features: [
+      "Tout Essentiel +",
+      "Stratégie éditoriale 2 réseaux sociaux",
+      "Shooting photo mensuel",
+      "Contenus mensuels + plan éditorial",
+      "Mise à jour régulière du site",
+      "Harmonisation branding",
+      "Reporting mensuel",
+    ],
+    notIncluded: [
+      "Automatisations",
+      "Campagnes pub",
+      "Chef de projet dédié",
+    ],
+  },
+  {
+    name: "Performance",
+    price: "2 690",
+    engagement: "3 mois",
+    priceSansEngagement: "2 990",
     description: "La communication complète pour dominer votre marché local.",
     features: [
       "Tout Croissance +",
-      "Stratégie éditoriale complète",
-      "1 vidéo professionnelle/mois",
-      "Automatisation no-code (Make, Airtable)",
-      "Campagnes publicitaires (Google Ads, Meta)",
-      "Réunion stratégique mensuelle",
-      "Design graphique illimité",
+      "Stratégie mensuelle + trimestrielle",
+      "Production vidéo professionnelle",
+      "Gestion complète réseaux sociaux",
+      "Création de pages mensuelles",
+      "CRM & automatisations",
+      "Campagnes Meta / LinkedIn",
+      "Chef de projet dédié",
+      "Priorité totale",
     ],
     notIncluded: [],
   },
 ]
 
 const comparaison = [
-  { feature: "Site internet optimisé SEO", essentiel: true, croissance: true, premium: true },
-  { feature: "Fiche Google Business", essentiel: true, croissance: true, premium: true },
-  { feature: "Réseaux sociaux", essentiel: "2/sem", croissance: "4/sem", premium: "5/sem" },
-  { feature: "Reporting mensuel", essentiel: true, croissance: true, premium: true },
-  { feature: "SEO local avancé", essentiel: false, croissance: true, premium: true },
-  { feature: "Articles de blog SEO", essentiel: false, croissance: "1/mois", premium: "2/mois" },
-  { feature: "Shooting photo", essentiel: false, croissance: "Trimestriel", premium: "Mensuel" },
-  { feature: "Vidéo professionnelle", essentiel: false, croissance: false, premium: "1/mois" },
-  { feature: "Automatisation no-code", essentiel: false, croissance: false, premium: true },
-  { feature: "Campagnes pub", essentiel: false, croissance: false, premium: true },
-  { feature: "Réunion stratégique", essentiel: false, croissance: false, premium: "Mensuelle" },
-  { feature: "Délai de réponse", essentiel: "24h", croissance: "4h", premium: "2h" },
+  { feature: "Site internet offert", essentiel: true, croissance: true, premium: true },
+  { feature: "Pilotage mensuel", essentiel: true, croissance: true, premium: true },
+  { feature: "Plan d'action", essentiel: "Simplifié", croissance: "Stratégie éditoriale", premium: "Mensuel + trimestriel" },
+  { feature: "Réseaux sociaux", essentiel: "1 réseau", croissance: "2 réseaux", premium: "Gestion complète" },
+  { feature: "Shooting photo", essentiel: "Selon besoins", croissance: "Mensuel", premium: "Mensuel" },
+  { feature: "Contenus", essentiel: "Priorités", croissance: "Mensuels + plan édito", premium: "Vidéo pro" },
+  { feature: "Mise à jour du site", essentiel: false, croissance: true, premium: "Pages mensuelles" },
+  { feature: "Branding", essentiel: "Mise à jour légère", croissance: "Harmonisation", premium: true },
+  { feature: "Reporting mensuel", essentiel: false, croissance: true, premium: true },
+  { feature: "Automatisations / CRM", essentiel: false, croissance: false, premium: true },
+  { feature: "Campagnes pub", essentiel: false, croissance: false, premium: "Meta / LinkedIn" },
+  { feature: "Chef de projet dédié", essentiel: false, croissance: false, premium: true },
 ]
 
 const faqForfaits = [
-  { question: "Puis-je changer de forfait en cours de route ?", answer: "Oui. Vous pouvez passer d'un forfait à un autre (upgrade ou downgrade) avec un préavis d'un mois. Beaucoup de nos clients commencent par l'Essentiel et passent en Croissance après 3-6 mois quand ils voient les premiers résultats." },
-  { question: "Y a-t-il un engagement minimum ?", answer: "On recommande un engagement de 3 mois minimum pour voir les premiers résultats concrets. Après cette période initiale, le forfait est résiliable avec un préavis d'un mois. Pas d'engagement annuel imposé." },
-  { question: "Les forfaits incluent-ils la création du site internet ?", answer: "Oui. Le forfait Essentiel inclut la création d'un site vitrine de 5 à 8 pages, optimisé SEO. Pour les forfaits Croissance et Premium, le site est enrichi en continu (nouvelles pages, articles de blog, optimisations)." },
-  { question: "Que se passe-t-il si je résilie mon forfait ?", answer: "Votre site internet vous appartient. Si vous résiliez, vous conservez le site et tout le contenu produit (photos, vidéos, textes). On vous transfère les accès complets. La gestion des réseaux sociaux et le SEO s'arrêtent à la date de fin." },
-  { question: "Combien de temps avant de voir des résultats ?", answer: "Les résultats en termes d'image (site professionnel, réseaux actifs) sont immédiats. Pour le SEO local et le trafic organique, comptez 2-3 mois pour les premières améliorations et 4-6 mois pour des résultats significatifs (positions Pack Local, trafic qualifié)." },
-  { question: "Dois-je fournir les photos et les textes ?", answer: "Non, c'est inclus. On rédige tous les textes (site, réseaux sociaux, blog) et on réalise les shootings photo (à partir du forfait Croissance). Pour le forfait Essentiel, on utilise des photos existantes ou on organise un shooting initial (en option)." },
-  { question: "Comment fonctionne le reporting mensuel ?", answer: "Chaque mois, vous recevez un bilan clair : ce qu'on a fait, les résultats obtenus (trafic, positions Google, engagement réseaux, demandes de contact), et nos recommandations pour le mois suivant. Pas de jargon, des chiffres concrets." },
-  { question: "Un forfait sur-mesure est-il possible ?", answer: "Oui. Si aucun forfait standard ne correspond à vos besoins, on construit une formule sur-mesure. Par exemple : un forfait Essentiel avec un shooting photo mensuel ajouté, ou un forfait Croissance sans les réseaux sociaux. Contactez-nous pour en discuter." },
+  { question: "Les forfaits sont-ils sans engagement ?", answer: "Oui, les forfaits existent en version sans engagement (résiliables à tout moment). Mais nous recommandons un engagement (12, 6 ou 3 mois selon la formule) car il permet de bénéficier d'un tarif réduit et du site internet offert." },
+  { question: "Puis-je changer de forfait en cours de route ?", answer: "Absolument. Vous pouvez passer d'un forfait à un autre (upgrade ou downgrade) avec un préavis d'un mois. Beaucoup de nos clients commencent par l'Essentiel et passent en Croissance après quelques mois quand ils voient les premiers résultats." },
+  { question: "Le site internet est-il vraiment offert ?", answer: "Oui. La création d'un site vitrine (valeur 1 500 à 3 000 €) est offerte selon la durée d'engagement : Essentiel 12 mois, Croissance 6 mois, Performance 3 mois. Le site inclut design moderne, SEO intégré, adapté PME. Hors e-commerce." },
+  { question: "Que se passe-t-il si je n'utilise pas toutes mes prestations du mois ?", answer: "Les prestations non utilisées peuvent être reportées le mois suivant, dans la limite d'un mois. On veille à adapter le rythme pour que chaque mois soit pleinement exploité." },
+  { question: "Que se passe-t-il si je résilie ?", answer: "Votre site internet vous appartient. Si vous résiliez, vous conservez le site et tout le contenu produit (photos, vidéos, textes). On vous transfère les accès complets. La gestion des réseaux sociaux et le SEO s'arrêtent à la date de fin." },
+  { question: "Combien de temps avant de voir des résultats ?", answer: "Les résultats en termes d'image (site professionnel, réseaux actifs) sont immédiats. Pour le SEO local et le trafic organique, comptez 2-3 mois pour les premières améliorations et 4-6 mois pour des résultats significatifs." },
+  { question: "Dois-je fournir les photos et les textes ?", answer: "Non, c'est inclus. On rédige tous les textes (site, réseaux sociaux, blog) et on réalise les shootings photo (à partir du forfait Croissance). Pour le forfait Essentiel, on utilise des photos existantes ou on organise un shooting initial." },
+  { question: "Travaillez-vous uniquement à Dijon ?", answer: "Non. Nous sommes basés à Dijon mais accompagnons des clients à Beaune, Besançon, Lyon et à distance. Les shootings et réunions en personne sont possibles dans toute la Bourgogne-Franche-Comté." },
+  { question: "Comment se passent les paiements ?", answer: "Abonnements mensuels facturés en début de mois. Pour les projets ponctuels : 40 % à la commande, 60 % à la livraison. Paiement par virement bancaire." },
+  { question: "Un forfait sur-mesure est-il possible ?", answer: "Oui. Si aucun forfait standard ne correspond à vos besoins, on construit une formule sur-mesure. Contactez-nous pour en discuter." },
 ]
 
 function CellValue({ value }: { value: boolean | string }) {
@@ -121,7 +132,7 @@ export default function ForfaitPage() {
       <PageHero
         badge="Forfaits communication"
         title="Votre équipe communication, sans embaucher"
-        subtitle="Web, SEO, photo, vidéo, réseaux sociaux : tout ce dont votre PME a besoin, dans un forfait mensuel clair et sans surprise. À partir de 990 €/mois HT."
+        subtitle="Web, SEO, photo, vidéo, réseaux sociaux : tout ce dont votre PME a besoin, dans un forfait mensuel clair et sans surprise. À partir de 890 €/mois HT. Site internet offert selon engagement."
         ctaLabel="Demander un devis gratuit"
         ctaHref="/devis"
       />
@@ -146,9 +157,19 @@ export default function ForfaitPage() {
               des publications régulières, un reporting avec des vrais chiffres. Votre
               communication vit et évolue avec votre entreprise.
             </p>
+            <h3>Pourquoi c&apos;est plus rentable qu&apos;embaucher</h3>
             <p>
-              Et le site internet ? Il est <strong>inclus dans le forfait</strong>.
-              Pas besoin de payer un projet à part à 3 000 €.
+              Le coût réel d&apos;un salarié communication : <strong>45 000 à 58 000 €/an</strong> (salaire + charges),
+              pour une seule compétence. Ajoutez les congés, les arrêts, le turnover, le matériel
+              à acheter et la formation à financer.
+            </p>
+            <p>
+              Le coût Globe Créateur : <strong>10 680 à 32 280 €/an</strong>, pour une équipe complète
+              et multicompétences. Pas de charges, pas de matériel à acheter. Et le site internet
+              est <strong>offert selon la durée d&apos;engagement</strong> (valeur 1 500 à 3 000 €).
+            </p>
+            <p>
+              <strong>Économie moyenne constatée : 40 à 60 % par an.</strong>
             </p>
           </div>
         </AnimateOnScroll>
@@ -166,7 +187,7 @@ export default function ForfaitPage() {
                 Choisissez le forfait qui vous correspond
               </h2>
               <p className="mt-3 text-gray-400 max-w-xl mx-auto">
-                Trois formules claires. Pas de coût caché. Résiliable après 3 mois.
+                Trois formules claires. Site internet offert selon engagement. Également disponibles sans engagement.
               </p>
             </div>
           </AnimateOnScroll>
@@ -183,10 +204,16 @@ export default function ForfaitPage() {
                     </span>
                   )}
                   <CardTitle>{f.name}</CardTitle>
-                  <div className="mt-2 mb-2">
+                  <div className="mt-2 mb-1">
                     <span className="text-3xl font-bold text-foreground">{f.price} €</span>
                     <span className="text-gray-400 text-sm"> /mois HT</span>
                   </div>
+                  <p className="text-xs text-gray-300 mb-1">
+                    Engagement {f.engagement} — Site offert
+                  </p>
+                  <p className="text-xs text-gray-300 mb-4">
+                    Sans engagement : {f.priceSansEngagement} €/mois HT
+                  </p>
                   <p className="text-sm text-gray-400 mb-6">{f.description}</p>
                   <CardContent className="flex-1">
                     <ul className="space-y-3">
@@ -239,7 +266,7 @@ export default function ForfaitPage() {
                   <th className="text-left py-3 pr-4 font-medium text-foreground">Fonctionnalité</th>
                   <th className="text-center py-3 px-4 font-medium text-foreground">Essentiel</th>
                   <th className="text-center py-3 px-4 font-medium text-primary">Croissance</th>
-                  <th className="text-center py-3 px-4 font-medium text-foreground">Premium</th>
+                  <th className="text-center py-3 px-4 font-medium text-foreground">Performance</th>
                 </tr>
               </thead>
               <tbody>
@@ -252,10 +279,22 @@ export default function ForfaitPage() {
                   </tr>
                 ))}
                 <tr className="border-t border-gray-200">
-                  <td className="py-4 pr-4 font-semibold text-foreground">Tarif</td>
-                  <td className="py-4 px-4 text-center font-semibold text-foreground">990 €/mois</td>
-                  <td className="py-4 px-4 text-center font-semibold text-primary bg-primary/[0.02]">1 890 €/mois</td>
-                  <td className="py-4 px-4 text-center font-semibold text-foreground">3 490 €/mois</td>
+                  <td className="py-4 pr-4 font-semibold text-foreground">Tarif (avec engagement)</td>
+                  <td className="py-4 px-4 text-center font-semibold text-foreground">890 €/mois</td>
+                  <td className="py-4 px-4 text-center font-semibold text-primary bg-primary/[0.02]">1 490 €/mois</td>
+                  <td className="py-4 px-4 text-center font-semibold text-foreground">2 690 €/mois</td>
+                </tr>
+                <tr className="border-t border-gray-50">
+                  <td className="py-3 pr-4 text-sm text-gray-400">Sans engagement</td>
+                  <td className="py-3 px-4 text-center text-sm text-gray-400">1 080 €/mois</td>
+                  <td className="py-3 px-4 text-center text-sm text-gray-400 bg-primary/[0.02]">1 790 €/mois</td>
+                  <td className="py-3 px-4 text-center text-sm text-gray-400">2 990 €/mois</td>
+                </tr>
+                <tr className="border-t border-gray-50">
+                  <td className="py-3 pr-4 text-sm text-gray-400">Engagement</td>
+                  <td className="py-3 px-4 text-center text-sm text-gray-400">12 mois</td>
+                  <td className="py-3 px-4 text-center text-sm text-gray-400 bg-primary/[0.02]">6 mois</td>
+                  <td className="py-3 px-4 text-center text-sm text-gray-400">3 mois</td>
                 </tr>
               </tbody>
             </table>
@@ -299,13 +338,13 @@ export default function ForfaitPage() {
               <p>
                 À partir du forfait Croissance, un{" "}
                 <Link href="/services/creation-contenu-pme">shooting photo professionnel</Link> est
-                réalisé chaque trimestre dans vos locaux. Le forfait Premium ajoute une vidéo
+                réalisé chaque trimestre dans vos locaux. Le forfait Performance ajoute une vidéo
                 professionnelle par mois et du design graphique illimité.
               </p>
 
               <h3>L&apos;automatisation</h3>
               <p>
-                Le forfait Premium inclut la mise en place de{" "}
+                Le forfait Performance inclut la mise en place de{" "}
                 <Link href="/services/automatisation-nocode-dijon">workflows automatisés</Link> :
                 envoi de devis, suivi de prospects, publication automatique, tableaux de bord.
                 Pour vous faire gagner 5 à 10 heures par semaine.

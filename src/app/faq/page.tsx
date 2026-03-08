@@ -5,7 +5,7 @@ import { PageHero } from "@/components/sections/page-hero"
 import { FaqAccordion } from "@/components/sections/faq-accordion"
 import { CtaSection } from "@/components/sections/cta-section"
 import { FaqSchema } from "@/components/seo/schemas"
-import { faqGenerales, faqSeo, faqContenu } from "@/lib/data/faq"
+import { faqGenerales, faqSeo, faqContenu, faqAutomatisation, faqCollaboration } from "@/lib/data/faq"
 
 export const metadata: Metadata = buildMetadata({
   title: "FAQ — Questions fréquentes sur nos services | Globe Créateur Dijon",
@@ -14,7 +14,7 @@ export const metadata: Metadata = buildMetadata({
 })
 
 export default function FaqPage() {
-  const allFaq = [...faqGenerales, ...faqSeo, ...faqContenu]
+  const allFaq = [...faqGenerales, ...faqSeo, ...faqContenu, ...faqAutomatisation, ...faqCollaboration]
 
   return (
     <>
@@ -46,6 +46,20 @@ export default function FaqPage() {
         title="Questions sur le contenu"
         subtitle="Photo, vidéo, réseaux sociaux et production de contenu."
         badge="Contenu"
+      />
+
+      <FaqAccordion
+        items={faqAutomatisation}
+        title="Questions sur l'automatisation"
+        subtitle="CRM, workflows et outils no-code pour gagner du temps."
+        badge="Automatisation"
+      />
+
+      <FaqAccordion
+        items={faqCollaboration}
+        title="Collaboration & fonctionnement"
+        subtitle="Rencontres, délais, tournages et protection des données."
+        badge="Collaboration"
       />
 
       <CtaSection
