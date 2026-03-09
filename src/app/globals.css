@@ -1,140 +1,155 @@
 @import "tailwindcss";
 
 /* ═══════════════════════════════════════════════════
-   DESIGN SYSTEM — Globe Créateur
+   DESIGN SYSTEM - Globe Créateur
    Direction artistique : "Précision créative"
    ═══════════════════════════════════════════════════ */
 
 :root {
-  /* — Fondation (90% de la surface) — */
-  --gc-surface: #fafaf9;
-  --gc-white: #ffffff;
-  --gc-black: #0c0c0c;
-  --gc-gray-50: #f4f4f5;
-  --gc-gray-100: #e4e4e7;
-  --gc-gray-200: #d4d4d8;
-  --gc-gray-300: #a1a1aa;
-  --gc-gray-400: #71717a;
-  --gc-gray-500: #52525b;
-  --gc-gray-600: #3f3f46;
-  --gc-gray-700: #27272a;
+  /* - SAAS MODERN DESIGN - */
+  --background: #ffffff;
+  --foreground: #0f172a;
+  
+  --primary: #4f46e5; /* Indigo */
+  --primary-foreground: #ffffff;
+  
+  --secondary: #f8fafc;
+  --secondary-foreground: #475569;
 
-  /* — Accent (10% de la surface) — */
-  --gc-primary: #2563eb;
-  --gc-primary-dark: #1d4ed8;
-  --gc-primary-light: #eff6ff;
-  --gc-accent: #f59e0b;
-  --gc-success: #10b981;
-  --gc-error: #ef4444;
+  --accent: #8b5cf6; /* Violet */
+  --accent-foreground: #ffffff;
 
-  /* — Spacing — */
-  --section-py: 5rem;         /* py-20 mobile */
-  --section-py-lg: 7rem;     /* py-28 desktop */
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
 
-  /* — Transitions — */
-  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --duration-fast: 200ms;
-  --duration-base: 300ms;
-  --duration-slow: 500ms;
-  --duration-reveal: 600ms;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #4f46e5;
+
+  --radius: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 2rem;
+
+  /* - Gradients - */
+  --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #8b5cf6 100%);
+  --gradient-subtle: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(241,245,249,1) 100%);
 }
 
 @theme inline {
-  --color-surface: var(--gc-surface);
-  --color-background: var(--gc-surface);
-  --color-foreground: var(--gc-black);
-  --color-primary: var(--gc-primary);
-  --color-primary-dark: var(--gc-primary-dark);
-  --color-primary-light: var(--gc-primary-light);
-  --color-accent: var(--gc-accent);
-  --color-success: var(--gc-success);
-  --color-error: var(--gc-error);
-  --color-gray-50: var(--gc-gray-50);
-  --color-gray-100: var(--gc-gray-100);
-  --color-gray-200: var(--gc-gray-200);
-  --color-gray-300: var(--gc-gray-300);
-  --color-gray-400: var(--gc-gray-400);
-  --color-gray-500: var(--gc-gray-500);
-  --color-gray-600: var(--gc-gray-600);
-  --color-gray-700: var(--gc-gray-700);
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-jetbrains-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
 }
 
 /* ═══════════════════════════════════════════════════
-   BASE STYLES
+   BASE & RESET
    ═══════════════════════════════════════════════════ */
 
 html {
   scroll-behavior: smooth;
+  cursor: auto; /* Standard cursor for SaaS */
 }
 
 body {
-  background: var(--gc-surface);
-  color: var(--gc-black);
-  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-*:focus-visible {
-  outline: 2px solid var(--gc-primary);
-  outline-offset: 2px;
-}
-
-::selection {
-  background-color: var(--gc-primary);
-  color: white;
+  line-height: 1.5;
 }
 
 /* ═══════════════════════════════════════════════════
-   TYPOGRAPHY — Heading tracking serré
+   TYPOGRAPHY
    ═══════════════════════════════════════════════════ */
 
 h1, h2, h3, h4 {
+  font-weight: 700;
   letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: #0f172a;
+}
+
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ═══════════════════════════════════════════════════
-   PROSE — MDX content styles
+   SAAS COMPONENTS
+   ═══════════════════════════════════════════════════ */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.shadow-soft {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
+
+.mesh-gradient {
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.05) 0px, transparent 50%);
+}
+
+/* ═══════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════ */
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════
+   PROSE - MDX content styles
    ═══════════════════════════════════════════════════ */
 
 .prose h2 {
-  margin-top: 2.5em;
+  margin-top: 3em;
   margin-bottom: 0.75em;
-  font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
+  font-size: 1.875rem;
   color: var(--gc-black);
 }
 
 .prose h3 {
-  margin-top: 2em;
+  margin-top: 2.5em;
   margin-bottom: 0.5em;
-  font-weight: 600;
-  font-size: 1.25rem;
-  line-height: 1.4;
-  letter-spacing: -0.02em;
+  font-size: 1.5rem;
   color: var(--gc-black);
 }
 
 .prose p {
-  margin-bottom: 1.5em;
-  line-height: 1.7;
-  color: var(--gc-gray-500);
+  margin-bottom: 1.75em;
+  font-size: 1.125rem;
+  color: var(--gc-gray-600);
 }
 
 .prose ul,
 .prose ol {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.75em;
   padding-left: 1.5em;
 }
 
 .prose li {
-  margin-bottom: 0.5em;
-  line-height: 1.7;
-  color: var(--gc-gray-500);
+  margin-bottom: 0.75em;
+  color: var(--gc-gray-600);
 }
 
 .prose strong {
@@ -144,57 +159,30 @@ h1, h2, h3, h4 {
 
 .prose a {
   color: var(--gc-primary);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  transition: text-underline-offset var(--duration-fast) var(--ease-out),
-              color var(--duration-fast) var(--ease-out);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gc-primary-light);
+  transition: border-color var(--duration-fast) var(--ease-out);
 }
 
 .prose a:hover {
-  color: var(--gc-primary-dark);
-  text-underline-offset: 2px;
-}
-
-.prose blockquote {
-  border-left: 3px solid var(--gc-primary);
-  padding-left: 1.25em;
-  margin: 2em 0;
-  font-style: italic;
-  color: var(--gc-gray-500);
-}
-
-.prose hr {
-  border: none;
-  border-top: 1px solid var(--gc-gray-100);
-  margin: 3em 0;
+  border-bottom-color: var(--gc-primary);
 }
 
 /* ═══════════════════════════════════════════════════
    UTILITY CLASSES
    ═══════════════════════════════════════════════════ */
 
-/* Mono accent — badges techniques, stats */
-.font-mono-accent {
-  font-family: var(--font-mono), ui-monospace, monospace;
-  font-variant-numeric: tabular-nums;
-}
-
-/* Dot grid background for hero */
 .dot-grid {
-  background-image: radial-gradient(circle, var(--gc-gray-300) 1px, transparent 1px);
-  background-size: 24px 24px;
-  opacity: 0.3;
+  background-image: radial-gradient(var(--gc-gray-200) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.5;
 }
 
-/* Reading progress bar */
-.reading-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 2px;
-  background: var(--gc-primary);
-  z-index: 100;
-  transition: width 100ms linear;
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* ═══════════════════════════════════════════════════
@@ -204,7 +192,7 @@ h1, h2, h3, h4 {
 @keyframes fade-in-up {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -212,28 +200,6 @@ h1, h2, h3, h4 {
   }
 }
 
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
 .animate-fade-in-up {
   animation: fade-in-up var(--duration-reveal) var(--ease-out) both;
-}
-
-.animate-fade-in {
-  animation: fade-in var(--duration-base) var(--ease-out) both;
-}
-
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-}
-
-.animate-marquee:hover {
-  animation-play-state: paused;
 }

@@ -20,13 +20,13 @@ function CountUp({ target, suffix = "" }: { target: number; suffix?: string }) {
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated.current) {
           hasAnimated.current = true
-          const duration = 1200
+          const duration = 2000
           const start = performance.now()
 
           function tick(now: number) {
             const elapsed = now - start
             const progress = Math.min(elapsed / duration, 1)
-            const eased = 1 - Math.pow(1 - progress, 3)
+            const eased = 1 - Math.pow(1 - progress, 4)
             setCount(Math.round(eased * target))
             if (progress < 1) requestAnimationFrame(tick)
           }
@@ -34,7 +34,7 @@ function CountUp({ target, suffix = "" }: { target: number; suffix?: string }) {
           requestAnimationFrame(tick)
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.1 }
     )
 
     if (ref.current) observer.observe(ref.current)
@@ -42,7 +42,7 @@ function CountUp({ target, suffix = "" }: { target: number; suffix?: string }) {
   }, [target])
 
   return (
-    <span ref={ref} className="font-mono-accent text-4xl sm:text-5xl font-bold text-foreground tabular-nums">
+    <span ref={ref} className="text-5xl lg:text-7xl font-extrabold text-white tracking-tight tabular-nums">
       {count}{suffix}
     </span>
   )
@@ -56,19 +56,22 @@ export function Stats({
   title?: string
 }) {
   return (
-    <section className="py-20 lg:py-28 bg-gray-50">
-      <Container>
+    <section className="py-24 bg-indigo-600 rounded-[3rem] mx-4 lg:mx-12 overflow-hidden relative mb-24">
+      <div className="absolute inset-0 opacity-10 dot-grid pointer-events-none" />
+      <Container className="relative z-10">
         <AnimateOnScroll>
           {title && (
-            <h2 className="text-center text-[1.875rem] sm:text-4xl font-bold tracking-tight text-foreground mb-14">
+            <h2 className="text-center text-3xl lg:text-5xl font-black text-white mb-16 tracking-tight">
               {title}
             </h2>
           )}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
             {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
+              <div key={stat.label} className="space-y-2">
                 <CountUp target={stat.value} suffix={stat.suffix} />
-                <p className="mt-2 text-sm text-gray-400">{stat.label}</p>
+                <p className="text-sm font-bold uppercase tracking-widest text-indigo-100 opacity-80">
+                  {stat.label}
+                </p>
               </div>
             ))}
           </div>

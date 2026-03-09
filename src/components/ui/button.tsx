@@ -11,19 +11,19 @@ type ButtonProps = {
 
 const variants = {
   primary:
-    "bg-primary text-white shadow-sm hover:bg-primary-dark hover:-translate-y-[1px] hover:shadow-md active:translate-y-0 active:shadow-sm",
+    "bg-indigo-600 text-white shadow-lg shadow-indigo-100 hover:bg-indigo-700 hover:-translate-y-0.5 transition-all",
   secondary:
-    "bg-foreground text-surface hover:bg-gray-700 hover:-translate-y-[1px] hover:shadow-md active:translate-y-0",
+    "bg-slate-900 text-white hover:bg-slate-800 hover:-translate-y-0.5 transition-all",
   outline:
-    "border border-gray-100 text-foreground hover:border-primary hover:bg-primary-light hover:text-primary",
+    "border border-slate-200 text-slate-900 hover:bg-slate-50 hover:border-slate-300 transition-all",
   ghost:
-    "text-gray-500 hover:text-foreground hover:bg-gray-50",
+    "text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 transition-all",
 }
 
 const sizes = {
-  sm: "h-9 px-4 text-sm gap-1.5",
-  md: "h-11 px-6 text-sm gap-2",
-  lg: "h-12 px-8 text-base gap-2",
+  sm: "h-10 px-5 text-sm font-semibold rounded-xl",
+  md: "h-12 px-6 text-base font-bold rounded-2xl",
+  lg: "h-14 px-8 text-lg font-bold rounded-2xl",
 }
 
 export function Button({
@@ -35,7 +35,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:opacity-50 disabled:pointer-events-none cursor-pointer select-none",
+    "inline-flex items-center justify-center gap-2 disabled:opacity-50 disabled:pointer-events-none cursor-pointer select-none",
     variants[variant],
     sizes[size],
     className

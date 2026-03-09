@@ -2,41 +2,15 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { buildMetadata } from "@/lib/metadata"
 import { getBlogPosts, getBlogPost } from "@/lib/content"
-import { Breadcrumb } from "@/components/layout/breadcrumb"
 import { MdxContent } from "@/components/mdx/mdx-content"
 import { ReadingProgress } from "@/components/sections/reading-progress"
-import { RelatedArticles } from "@/components/sections/related-articles"
-import { CtaSection } from "@/components/sections/cta-section"
 import { ArticleSchema } from "@/components/seo/schemas"
 import { Container } from "@/components/ui/container"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { AnimateOnScroll } from "@/components/ui/animate"
 import { formatDate } from "@/lib/utils"
 import { SITE_URL } from "@/lib/constants"
-
-/* ═══════════════════════════════════════════════════
-   TEMPLATE 4 — ARTICLE SEO / BLOG
-   ═══════════════════════════════════════════════════
-
-   Structure :
-   ┌─────────────────────────────────────────────────┐
-   │ 0. Reading progress        Barre 2px fixe top   │
-   │ 1. Breadcrumb              Navigation blog       │
-   │ 2. Header article          Badge + H1 + meta     │
-   │ 3. Contenu MDX             Corps éditorial       │
-   │ 4. Box auteur              E-E-A-T signal        │
-   │ 5. CTA inline              Conversion mid-funnel │
-   │ 6. Articles liés           Rétention + maillage  │
-   │ 7. CTA final               Conversion bottom     │
-   └─────────────────────────────────────────────────┘
-
-   Objectifs :
-   - Capturer du trafic informationnel longue traîne
-   - Démontrer l'expertise (E-E-A-T)
-   - Mailler vers les pages commerciales
-   - Convertir le lecteur en lead via CTA contextuels
-   ═══════════════════════════════════════════════════ */
+import { Clock, Calendar, User } from "lucide-react"
 
 export function generateStaticParams() {
   return getBlogPosts().map((p) => ({ slug: p.slug }))
@@ -73,18 +47,9 @@ export default async function BlogPostPage({
 
   const { frontmatter: fm, content } = post
 
-  // Articles liés
-  const allPosts = getBlogPosts()
-  const relatedPosts = allPosts
-    .filter((p) => p.slug !== slug)
-    .slice(0, 3)
-
   return (
-    <>
-      {/* 0. PROGRESSION — Barre de lecture */}
+    <article className="bg-white pt-32 lg:pt-48 pb-32">
       <ReadingProgress />
-
-      {/* Schema.org */}
       <ArticleSchema
         title={fm.metaTitle}
         description={fm.metaDescription}
@@ -95,95 +60,57 @@ export default async function BlogPostPage({
         author={fm.author}
       />
 
-      {/* 1. NAVIGATION */}
-      <Breadcrumb
-        items={[
-          { name: "Blog", href: "/blog" },
-          { name: fm.title, href: `/blog/${slug}` },
-        ]}
-      />
-
-      {/* 2. HEADER — Accroche éditoriale */}
-      <Container as="article" className="pt-8 lg:pt-12 max-w-3xl">
-        <AnimateOnScroll>
-          <header className="mb-12">
-            <div className="flex items-center gap-3 mb-5">
-              <Badge variant="primary">{fm.category}</Badge>
-              <span className="text-xs text-gray-300 font-mono-accent">
-                {fm.readingTime} min de lecture
+      <Container className="max-w-4xl">
+        <header className="mb-16 space-y-8 text-center lg:text-left">
+           <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+              <span className="px-4 py-1.5 bg-indigo-50 text-indigo-600 text-xs font-black uppercase tracking-widest rounded-full">
+                 {fm.category}
               </span>
-            </div>
-            <h1 className="text-[2rem] sm:text-4xl lg:text-[2.5rem] font-bold tracking-tight text-foreground leading-[1.15]">
+              <div className="flex items-center gap-2 text-slate-400 text-sm font-medium">
+                 <Clock className="h-4 w-4" />
+                 {fm.readingTime} min read
+              </div>
+              <div className="flex items-center gap-2 text-slate-400 text-sm font-medium">
+                 <Calendar className="h-4 w-4" />
+                 {formatDate(fm.publishedAt)}
+              </div>
+           </div>
+
+           <h1 className="text-4xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight">
               {fm.title}
-            </h1>
-            <p className="mt-4 text-lg text-gray-400 leading-relaxed">
+           </h1>
+
+           <p className="text-xl text-slate-500 leading-relaxed max-w-3xl">
               {fm.metaDescription}
-            </p>
-            <div className="mt-6 flex items-center gap-3 pt-6 border-t border-gray-100">
-              <div className="h-10 w-10 rounded-full bg-gray-50 flex items-center justify-center text-sm font-semibold text-foreground">
-                {fm.author.charAt(0)}
+           </p>
+
+           <div className="flex items-center justify-center lg:justify-start gap-4 pt-4">
+              <div className="h-12 w-12 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-400">
+                 <User className="h-6 w-6" />
               </div>
-              <div>
-                <p className="text-sm font-medium text-foreground">{fm.author}</p>
-                <time dateTime={fm.publishedAt} className="text-xs text-gray-400">
-                  {formatDate(fm.publishedAt)}
-                  {fm.updatedAt !== fm.publishedAt && (
-                    <> · Mis à jour le {formatDate(fm.updatedAt)}</>
-                  )}
-                </time>
+              <div className="text-left">
+                 <p className="text-sm font-bold text-slate-900">{fm.author}</p>
+                 <p className="text-xs text-slate-400 uppercase font-black tracking-widest">Auteur</p>
               </div>
-            </div>
-          </header>
-        </AnimateOnScroll>
+           </div>
+        </header>
 
-        {/* 3. CONTENU — Corps éditorial MDX */}
-        <AnimateOnScroll>
-          <MdxContent source={content} />
-        </AnimateOnScroll>
+        <div className="prose prose-indigo prose-xl max-w-none prose-h2:text-3xl prose-h2:font-black prose-h2:text-slate-900 prose-p:text-slate-600 prose-blockquote:border-indigo-600 prose-blockquote:bg-indigo-50/50 prose-blockquote:rounded-3xl prose-img:rounded-3xl prose-img:shadow-2xl">
+           <MdxContent source={content} />
+        </div>
 
-        {/* 4. BOX AUTEUR — Signal E-E-A-T */}
-        <AnimateOnScroll>
-          <div className="mt-16 rounded-2xl border border-gray-100 bg-white p-6 flex items-start gap-4">
-            <div className="h-12 w-12 rounded-full bg-gray-50 flex items-center justify-center text-base font-semibold text-foreground shrink-0">
-              {fm.author.charAt(0)}
-            </div>
-            <div>
-              <p className="font-semibold text-foreground text-sm">
-                À propos de {fm.author}
-              </p>
-              <p className="mt-1 text-sm text-gray-400 leading-relaxed">
-                Fondateur de Globe Créateur, studio de communication 360° à Dijon.
-                Spécialiste en création web, SEO local et stratégie digitale pour PME.
-              </p>
-            </div>
-          </div>
-        </AnimateOnScroll>
-
-        {/* 5. CTA INLINE — Conversion mid-funnel */}
-        <AnimateOnScroll>
-          <div className="mt-12 mb-8 rounded-2xl bg-gray-50 p-8 text-center">
-            <p className="text-lg font-semibold text-foreground">
-              Besoin d&apos;aide sur ce sujet ?
-            </p>
-            <p className="mt-2 text-sm text-gray-400">
-              Nous accompagnons les PME de Dijon et de Bourgogne dans leur communication digitale.
-            </p>
-            <div className="mt-5">
-              <Button href="/devis">Demander un devis gratuit</Button>
-            </div>
-          </div>
-        </AnimateOnScroll>
+        <div className="mt-24 p-10 lg:p-16 bg-slate-50 rounded-[3rem] border border-slate-100 text-center space-y-10">
+           <h2 className="text-3xl lg:text-5xl font-black text-slate-900">Vous souhaitez aller plus loin ?</h2>
+           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Nous aidons les PME &agrave; impl&eacute;menter ces strat&eacute;gies pour g&eacute;n&eacute;rer une croissance durable.
+           </p>
+           <div className="flex justify-center pt-4">
+              <Button href="/contact" className="bg-indigo-600 text-white px-12 h-16 rounded-2xl text-xl font-bold shadow-xl shadow-indigo-100">
+                 Discuter de mon projet
+              </Button>
+           </div>
+        </div>
       </Container>
-
-      {/* 6. RÉTENTION — Articles liés */}
-      <RelatedArticles posts={relatedPosts} />
-
-      {/* 7. ACTION — CTA final */}
-      <CtaSection
-        title="Envie de passer à l'action ?"
-        subtitle="Discutons de votre projet. Premier échange gratuit et sans engagement."
-        variant="primary"
-      />
-    </>
+    </article>
   )
 }

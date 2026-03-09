@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 const revealVariants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
 }
 
@@ -12,7 +12,7 @@ type AnimateOnScrollProps = {
   children: React.ReactNode
   className?: string
   delay?: number
-  as?: "div" | "section" | "article"
+  as?: any
 }
 
 export function AnimateOnScroll({
@@ -21,18 +21,18 @@ export function AnimateOnScroll({
   delay = 0,
   as = "div",
 }: AnimateOnScrollProps) {
-  const Component = motion.create(as)
+  const Component = (motion as any)[as] || motion.div
 
   return (
     <Component
       variants={revealVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: true, margin: "-100px" }}
       transition={{
-        duration: 0.6,
+        duration: 0.8,
         delay,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        ease: [0.16, 1, 0.3, 1], // Expo out
       }}
       className={cn(className)}
     >
@@ -50,13 +50,13 @@ type StaggerContainerProps = {
 export function StaggerContainer({
   children,
   className,
-  staggerDelay = 0.08,
+  staggerDelay = 0.1,
 }: StaggerContainerProps) {
   return (
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: true, margin: "-100px" }}
       transition={{ staggerChildren: staggerDelay }}
       className={cn(className)}
     >
@@ -76,8 +76,8 @@ export function StaggerItem({
     <motion.div
       variants={revealVariants}
       transition={{
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        duration: 0.8,
+        ease: [0.16, 1, 0.3, 1], // Expo out
       }}
       className={cn(className)}
     >

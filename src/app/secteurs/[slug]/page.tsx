@@ -19,7 +19,7 @@ import { temoignages } from "@/lib/data/temoignages"
 import { faqGenerales } from "@/lib/data/faq"
 
 /* ═══════════════════════════════════════════════════
-   TEMPLATE 3 — PAGE VERTICALE MÉTIER
+   TEMPLATE 3 - PAGE VERTICALE MÉTIER
    ═══════════════════════════════════════════════════
 
    Structure :
@@ -103,7 +103,7 @@ export default async function SecteurPage({
         ]}
       />
 
-      {/* 2. ATTENTION — Hero secteur */}
+      {/* 2. ATTENTION - Hero secteur */}
       <PageHero
         badge={secteur?.keyword ?? fm.keyword}
         title={h1}
@@ -114,7 +114,7 @@ export default async function SecteurPage({
         secondaryHref="/services"
       />
 
-      {/* 3. PROBLÈME — Défis du secteur */}
+      {/* 3. PROBLÈME - Défis du secteur */}
       <BenefitsGrid
         title="Les défis de votre secteur"
         subtitle="Vous vous reconnaissez ? Nous avons les solutions."
@@ -123,35 +123,35 @@ export default async function SecteurPage({
         columns={2}
       />
 
-      {/* 4. SOLUTION — Contenu SEO spécialisé */}
+      {/* 4. SOLUTION - Contenu SEO spécialisé */}
       <Container as="article" className="py-20 lg:py-28 max-w-3xl">
         <AnimateOnScroll>
           <MdxContent source={page.content} />
         </AnimateOnScroll>
       </Container>
 
-      {/* 5. PREUVE — Témoignage */}
+      {/* 5. PREUVE - Témoignage */}
       <Testimonials
         items={temoignages.slice(0, 2)}
         title="Ils nous ont fait confiance"
         badge="Témoignages"
       />
 
-      {/* 6. CROSS-SELL — Services recommandés */}
+      {/* 6. CROSS-SELL - Services recommandés */}
       <RelatedServices
         services={relatedServices}
         title="Services recommandés pour votre secteur"
         badge="Solutions"
       />
 
-      {/* 7. OBJECTIONS — FAQ */}
+      {/* 7. OBJECTIONS - FAQ */}
       <FaqAccordion
         items={pageFaq}
         title="Questions fréquentes"
         badge="FAQ"
       />
 
-      {/* 8. ACTION — CTA personnalisé */}
+      {/* 8. ACTION - CTA personnalisé */}
       <CtaSection
         title="Prêt à transformer votre présence digitale ?"
         subtitle="Audit gratuit de votre communication actuelle. Sans engagement."

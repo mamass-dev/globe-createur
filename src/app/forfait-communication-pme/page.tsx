@@ -15,7 +15,7 @@ import { temoignages } from "@/lib/data/temoignages"
 import { Check, X } from "lucide-react"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Forfait communication PME — Équipe externalisée à Dijon | Globe Créateur",
+  title: "Forfait communication PME - Équipe externalisée à Dijon | Globe Créateur",
   description: "Forfaits communication tout-en-un pour PME à Dijon. Web, SEO, photo, vidéo, réseaux sociaux : une équipe complète externalisée à partir de 890 €/mois HT. Site internet offert selon engagement.",
   path: "/forfait-communication-pme",
 })
@@ -209,7 +209,7 @@ export default function ForfaitPage() {
                     <span className="text-gray-400 text-sm"> /mois HT</span>
                   </div>
                   <p className="text-xs text-gray-300 mb-1">
-                    Engagement {f.engagement} — Site offert
+                    Engagement {f.engagement} - Site offert
                   </p>
                   <p className="text-xs text-gray-300 mb-4">
                     Sans engagement : {f.priceSansEngagement} €/mois HT
@@ -330,7 +330,7 @@ export default function ForfaitPage() {
                 On gère vos{" "}
                 <Link href="/services/support-communication-pme">réseaux sociaux</Link> de A à Z :
                 création du planning éditorial, rédaction des posts, création des visuels,
-                publication et modération des commentaires. Instagram, Facebook, LinkedIn —
+                publication et modération des commentaires. Instagram, Facebook, LinkedIn -
                 selon votre audience.
               </p>
 

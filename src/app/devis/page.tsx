@@ -9,7 +9,7 @@ import { DevisForm } from "@/components/forms/devis-form"
 import { AnimateOnScroll } from "@/components/ui/animate"
 
 /* ═══════════════════════════════════════════════════
-   TEMPLATE 5 — LANDING PAGE CONVERSION
+   TEMPLATE 5 - LANDING PAGE CONVERSION
    ═══════════════════════════════════════════════════
 
    Structure :
@@ -30,7 +30,7 @@ import { AnimateOnScroll } from "@/components/ui/animate"
    ═══════════════════════════════════════════════════ */
 
 export const metadata: Metadata = buildMetadata({
-  title: "Demander un devis gratuit — Projet web & communication",
+  title: "Demander un devis gratuit - Projet web & communication",
   description: "Demandez votre devis gratuit pour un projet web, SEO ou communication. Réponse personnalisée sous 48h.",
   path: "/devis",
 })
@@ -50,10 +50,10 @@ export default function DevisPage() {
       {/* 1. NAVIGATION */}
       <Breadcrumb items={[{ name: "Devis gratuit", href: "/devis" }]} />
 
-      {/* 2. RÉASSURANCE — Trust signals */}
+      {/* 2. RÉASSURANCE - Trust signals */}
       <TrustSignals />
 
-      {/* 3. HERO — Promesse claire */}
+      {/* 3. HERO - Promesse claire */}
       <Container className="pt-12 lg:pt-16 max-w-4xl">
         <AnimateOnScroll>
           <div className="text-center">
@@ -68,18 +68,18 @@ export default function DevisPage() {
         </AnimateOnScroll>
       </Container>
 
-      {/* 4. CONVERSION — Formulaire + Sidebar raisons */}
+      {/* 4. CONVERSION - Formulaire + Sidebar raisons */}
       <Container className="py-12 lg:py-16 max-w-4xl">
         <AnimateOnScroll>
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-12">
-            {/* Formulaire — 3/5 */}
+            {/* Formulaire - 3/5 */}
             <div className="lg:col-span-3">
               <Card className="p-6 sm:p-8">
                 <DevisForm />
               </Card>
             </div>
 
-            {/* Sidebar — 2/5 */}
+            {/* Sidebar - 2/5 */}
             <div className="lg:col-span-2 space-y-8">
               {/* Raisons */}
               <div>
@@ -100,7 +100,7 @@ export default function DevisPage() {
                 </ul>
               </div>
 
-              {/* 5. PREUVE — Testimonial inline */}
+              {/* 5. PREUVE - Testimonial inline */}
               <div className="rounded-xl border border-gray-100 bg-white p-5">
                 <blockquote className="text-sm text-gray-500 leading-relaxed italic">
                   &ldquo;Globe Cr&eacute;ateur a transform&eacute; notre pr&eacute;sence en ligne.

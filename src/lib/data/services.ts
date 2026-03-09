@@ -32,7 +32,7 @@ export const services: Service[] = [
   {
     slug: "seo-local-dijon",
     title: "SEO local à Dijon",
-    metaTitle: "SEO local à Dijon — Référencement naturel | Globe Créateur",
+    metaTitle: "SEO local à Dijon - Référencement naturel | Globe Créateur",
     metaDescription: "Expert SEO local à Dijon. Optimisation Google Business, référencement naturel et stratégie de visibilité pour PME en Bourgogne-Franche-Comté.",
     keyword: "SEO local Dijon",
     keywords: ["référencement naturel Dijon", "SEO Dijon", "Google Business Dijon", "visibilité locale"],
@@ -46,7 +46,7 @@ export const services: Service[] = [
   {
     slug: "agence-web-dijon",
     title: "Agence web à Dijon",
-    metaTitle: "Agence web à Dijon — Studio 360° | Globe Créateur",
+    metaTitle: "Agence web à Dijon - Studio 360° | Globe Créateur",
     metaDescription: "Agence web à Dijon spécialisée en création de sites, SEO local et communication digitale pour PME. Équipe complète externalisée.",
     keyword: "agence web Dijon",
     keywords: ["agence digitale Dijon", "agence communication Dijon", "studio web Dijon"],
@@ -74,7 +74,7 @@ export const services: Service[] = [
   {
     slug: "creation-contenu-pme",
     title: "Création de contenu pour PME",
-    metaTitle: "Création de contenu pour PME — Photo, Vidéo, Design | Globe Créateur",
+    metaTitle: "Création de contenu pour PME - Photo, Vidéo, Design | Globe Créateur",
     metaDescription: "Création de contenu professionnel pour PME : photo, vidéo, design graphique, réseaux sociaux. Studio de production complet à Dijon.",
     keyword: "création contenu PME",
     keywords: ["photo entreprise Dijon", "vidéo PME", "design graphique Dijon", "contenu réseaux sociaux"],
@@ -88,7 +88,7 @@ export const services: Service[] = [
   {
     slug: "support-communication-pme",
     title: "Support communication PME",
-    metaTitle: "Support communication PME — Réseaux sociaux & pilotage | Globe Créateur",
+    metaTitle: "Support communication PME - Réseaux sociaux & pilotage | Globe Créateur",
     metaDescription: "Support communication externalisé pour PME. Gestion réseaux sociaux, pilotage éditorial et reporting mensuel.",
     keyword: "support communication PME",
     keywords: ["community management Dijon", "réseaux sociaux PME", "pilotage communication"],

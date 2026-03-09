@@ -51,7 +51,7 @@ export const faqGenerales: FaqItem[] = [
   },
   {
     question: "Comment se passent les échanges au quotidien ?",
-    answer: "Par email, visio ou WhatsApp — selon votre préférence. Réponse garantie sous 24h ouvrées. Chaque client dispose d'un espace projet dédié sur Notion pour le suivi des livrables.",
+    answer: "Par email, visio ou WhatsApp - selon votre préférence. Réponse garantie sous 24h ouvrées. Chaque client dispose d'un espace projet dédié sur Notion pour le suivi des livrables.",
   },
   {
     question: "Comment se passent les paiements ?",
@@ -70,11 +70,11 @@ export const faqSeo: FaqItem[] = [
   },
   {
     question: "Au bout de combien de temps voit-on les résultats du SEO ?",
-    answer: "Pour le SEO local : premiers résultats visibles en 2-3 mois (positions Pack Local, trafic Google Business). Pour le SEO naturel sur des requêtes concurrentielles : 3-6 mois. Le SEO est un investissement à moyen terme, mais les résultats sont durables — contrairement à la publicité qui s'arrête dès qu'on coupe le budget.",
+    answer: "Pour le SEO local : premiers résultats visibles en 2-3 mois (positions Pack Local, trafic Google Business). Pour le SEO naturel sur des requêtes concurrentielles : 3-6 mois. Le SEO est un investissement à moyen terme, mais les résultats sont durables - contrairement à la publicité qui s'arrête dès qu'on coupe le budget.",
   },
   {
     question: "Faut-il un blog pour améliorer son SEO ?",
-    answer: "Un blog bien fait renforce votre autorité thématique et capture du trafic longue traîne. Mais un blog mal fait (articles génériques, pas de stratégie de mots-clés) est une perte de temps. On vous aide à publier des articles ciblés, optimisés et utiles — pas du contenu pour remplir.",
+    answer: "Un blog bien fait renforce votre autorité thématique et capture du trafic longue traîne. Mais un blog mal fait (articles génériques, pas de stratégie de mots-clés) est une perte de temps. On vous aide à publier des articles ciblés, optimisés et utiles - pas du contenu pour remplir.",
   },
   {
     question: "Google Business Profile, c'est vraiment important ?",
@@ -94,7 +94,7 @@ export const faqSeo: FaqItem[] = [
   },
   {
     question: "Comment savoir si mon SEO fonctionne ?",
-    answer: "Rapport mensuel clair : trafic, positions Google, conversions, évolution des clics. Pas de jargon — des chiffres concrets et des recommandations actionnables.",
+    answer: "Rapport mensuel clair : trafic, positions Google, conversions, évolution des clics. Pas de jargon - des chiffres concrets et des recommandations actionnables.",
   },
 ]
 
@@ -113,7 +113,7 @@ export const faqContenu: FaqItem[] = [
   },
   {
     question: "Gérez-vous les réseaux sociaux ?",
-    answer: "Oui, c'est au cœur de notre offre. On gère le planning éditorial, la rédaction des posts, la création des visuels, la publication et la modération. Instagram, Facebook, LinkedIn — selon votre audience. Inclus dans tous nos forfaits.",
+    answer: "Oui, c'est au cœur de notre offre. On gère le planning éditorial, la rédaction des posts, la création des visuels, la publication et la modération. Instagram, Facebook, LinkedIn - selon votre audience. Inclus dans tous nos forfaits.",
   },
   {
     question: "Proposez-vous un abonnement de contenu mensuel ?",

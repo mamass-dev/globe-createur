@@ -15,7 +15,7 @@ export async function POST(request: Request) {
     // await resend.emails.send({
     //   from: "Globe Créateur <noreply@globecreateur.fr>",
     //   to: "contact@globecreateur.fr",
-    //   subject: `Demande de devis — ${service} — ${name}`,
+    //   subject: `Demande de devis - ${service} - ${name}`,
     //   text: `Nom: ${name}\nEmail: ${email}\nTél: ${phone || "-"}\nEntreprise: ${company || "-"}\nService: ${service}\nBudget: ${budget || "-"}\n\n${message}`,
     // })
 

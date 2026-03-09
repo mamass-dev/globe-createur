@@ -17,7 +17,7 @@ import { services } from "@/lib/data/services"
 import { temoignages } from "@/lib/data/temoignages"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Agence de communication à Dijon — Studio 360° pour PME | Globe Créateur",
+  title: "Agence de communication à Dijon - Studio 360° pour PME | Globe Créateur",
   description: "Agence de communication à Dijon spécialisée PME. Web, SEO local, photo, vidéo, design et réseaux sociaux. Un interlocuteur unique, des résultats mesurables. Studio basé à Longvic.",
   path: "/agence-communication-dijon",
 })
@@ -68,7 +68,7 @@ export default function AgencePage() {
       <PageHero
         badge="Agence communication Dijon"
         title="Votre agence de communication à Dijon, en version studio"
-        subtitle="Web, SEO, photo, vidéo, design, réseaux sociaux — un studio intégré dédié aux PME qui veulent se démarquer. Basé à Longvic, on intervient dans toute la Bourgogne."
+        subtitle="Web, SEO, photo, vidéo, design, réseaux sociaux - un studio intégré dédié aux PME qui veulent se démarquer. Basé à Longvic, on intervient dans toute la Bourgogne."
         ctaLabel="Demander un devis gratuit"
         ctaHref="/devis"
         secondaryLabel="Découvrir nos services"
@@ -89,14 +89,14 @@ export default function AgencePage() {
             <h2>Une agence de communication pensée pour les PME</h2>
             <p>
               Les grandes entreprises ont des directions communication avec 10 personnes.
-              Les PME de Dijon ont un dirigeant qui fait tout — y compris la com&apos;,
+              Les PME de Dijon ont un dirigeant qui fait tout - y compris la com&apos;,
               le soir, quand il a le temps. C&apos;est-à-dire jamais.
             </p>
             <p>
               Globe Créateur comble ce vide. On fonctionne comme votre{" "}
               <strong>équipe communication externalisée</strong> : on gère votre site,
               votre référencement, vos réseaux sociaux, vos photos et vos visuels.
-              Un seul interlocuteur — Axel Masson — qui coordonne l&apos;ensemble et
+              Un seul interlocuteur - Axel Masson - qui coordonne l&apos;ensemble et
               vous rend des comptes chaque mois.
             </p>
 
@@ -104,27 +104,27 @@ export default function AgencePage() {
             <p>Concrètement, voici les compétences qu&apos;on réunit :</p>
             <ul>
               <li>
-                <Link href="/services/creation-site-internet-dijon">Création de sites internet</Link> —
+                <Link href="/services/creation-site-internet-dijon">Création de sites internet</Link> -
                 Sites vitrines, landing pages, sites multi-pages. Sur-mesure, pas de template WordPress.
               </li>
               <li>
-                <Link href="/services/refonte-site-internet-dijon">Refonte de sites existants</Link> —
+                <Link href="/services/refonte-site-internet-dijon">Refonte de sites existants</Link> -
                 Modernisation sans perte de référencement. Migration WordPress → Next.js.
               </li>
               <li>
-                <Link href="/services/seo-local-dijon">SEO local</Link> —
+                <Link href="/services/seo-local-dijon">SEO local</Link> -
                 Google Business Profile, référencement local, Pack Local, avis clients.
               </li>
               <li>
-                <Link href="/services/creation-contenu-pme">Photo, vidéo et design</Link> —
+                <Link href="/services/creation-contenu-pme">Photo, vidéo et design</Link> -
                 Shooting sur place, production vidéo, identité visuelle, visuels réseaux sociaux.
               </li>
               <li>
-                <Link href="/services/support-communication-pme">Pilotage communication</Link> —
+                <Link href="/services/support-communication-pme">Pilotage communication</Link> -
                 Réseaux sociaux, planning éditorial, reporting mensuel.
               </li>
               <li>
-                <Link href="/services/automatisation-nocode-dijon">Automatisation no-code</Link> —
+                <Link href="/services/automatisation-nocode-dijon">Automatisation no-code</Link> -
                 Make, Airtable, Notion pour automatiser vos tâches répétitives.
               </li>
             </ul>
@@ -149,7 +149,7 @@ export default function AgencePage() {
               Plutôt qu&apos;un projet ponctuel livré et oublié, on propose des{" "}
               <Link href="/forfait-communication-pme">forfaits mensuels</Link> qui
               incluent l&apos;ensemble de votre communication. Le site internet est souvent
-              inclus dans le forfait — pas besoin de payer un projet à part.
+              inclus dans le forfait - pas besoin de payer un projet à part.
             </p>
             <p>
               Trois formules à partir de 890 €/mois HT. Un investissement prévisible
@@ -162,11 +162,11 @@ export default function AgencePage() {
               expertise particulière pour :
             </p>
             <ul>
-              <li><Link href="/secteurs/hotels-lieux-evenementiels">Hôtels et hébergements</Link> — Sites immersifs, réservation directe, SEO local hôtelier</li>
-              <li><Link href="/secteurs/lieux-evenementiels">Lieux événementiels</Link> — Valorisation visuelle, formulaire de demande, galeries photo</li>
-              <li>Restaurants et bars — Photos appétissantes, Google Business, réseaux sociaux</li>
-              <li>Commerces et artisans — Visibilité locale, fiche Google, site vitrine</li>
-              <li>Professions libérales — Crédibilité en ligne, référencement, prise de rendez-vous</li>
+              <li><Link href="/secteurs/hotels-lieux-evenementiels">Hôtels et hébergements</Link> - Sites immersifs, réservation directe, SEO local hôtelier</li>
+              <li><Link href="/secteurs/lieux-evenementiels">Lieux événementiels</Link> - Valorisation visuelle, formulaire de demande, galeries photo</li>
+              <li>Restaurants et bars - Photos appétissantes, Google Business, réseaux sociaux</li>
+              <li>Commerces et artisans - Visibilité locale, fiche Google, site vitrine</li>
+              <li>Professions libérales - Crédibilité en ligne, référencement, prise de rendez-vous</li>
             </ul>
           </div>
         </AnimateOnScroll>

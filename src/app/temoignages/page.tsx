@@ -6,7 +6,7 @@ import { CtaSection } from "@/components/sections/cta-section"
 import { temoignages } from "@/lib/data/temoignages"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Témoignages clients — Avis et retours d'expérience",
+  title: "Témoignages clients - Avis et retours d'expérience",
   description: "Découvrez les témoignages de nos clients : PME, hôtels et indépendants en Bourgogne qui nous font confiance pour leur communication.",
   path: "/temoignages",
 })

@@ -21,36 +21,44 @@ export function CtaSection({
 }: CtaSectionProps) {
   return (
     <section
-      className={`py-20 lg:py-28 ${
-        variant === "primary" ? "bg-primary" : "bg-gray-50"
+      className={`py-24 lg:py-32 relative overflow-hidden ${
+        variant === "primary" 
+          ? "bg-indigo-600 text-white shadow-2xl shadow-indigo-200" 
+          : "bg-slate-50 border-t border-slate-100"
       }`}
     >
-      <Container className="text-center">
+      <Container className="relative z-10 text-center">
         <AnimateOnScroll>
-          <h2
-            className={`text-[1.875rem] sm:text-4xl font-bold tracking-tight ${
-              variant === "primary" ? "text-white" : "text-foreground"
-            }`}
-          >
-            {title}
-          </h2>
-          {subtitle && (
-            <p
-              className={`mt-4 text-lg max-w-2xl mx-auto leading-relaxed ${
-                variant === "primary" ? "text-white/70" : "text-gray-400"
+          <div className="max-w-4xl mx-auto space-y-8">
+            <h2
+              className={`text-4xl lg:text-6xl font-black tracking-tight leading-tight ${
+                variant === "primary" ? "text-white" : "text-slate-900"
               }`}
             >
-              {subtitle}
-            </p>
-          )}
-          <div className="mt-8">
-            <Button
-              href={ctaHref}
-              variant={variant === "primary" ? "secondary" : "primary"}
-              size="lg"
-            >
-              {ctaLabel}
-            </Button>
+              {title}
+            </h2>
+            {subtitle && (
+              <p
+                className={`text-xl max-w-2xl mx-auto leading-relaxed ${
+                  variant === "primary" ? "text-indigo-100" : "text-slate-600"
+                }`}
+              >
+                {subtitle}
+              </p>
+            )}
+            <div className="pt-4 flex justify-center">
+              <Button
+                href={ctaHref}
+                variant={variant === "primary" ? "outline" : "primary"}
+                className={`px-10 h-16 rounded-2xl text-xl font-bold shadow-xl ${
+                  variant === "primary" 
+                    ? "bg-white text-indigo-600 border-none hover:bg-indigo-50 shadow-indigo-700/20" 
+                    : "bg-indigo-600 text-white shadow-indigo-200"
+                }`}
+              >
+                {ctaLabel}
+              </Button>
+            </div>
           </div>
         </AnimateOnScroll>
       </Container>

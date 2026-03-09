@@ -7,49 +7,44 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 
 export function Input({ label, error, className, id, ...props }: InputProps) {
   return (
-    <div className="space-y-1.5">
+    <div className="group space-y-2">
       {label && (
-        <label htmlFor={id} className="block text-sm font-medium text-foreground">
+        <label htmlFor={id} className="block text-xs font-black uppercase tracking-widest text-gray-400 group-focus-within:text-accent transition-colors">
           {label}
         </label>
       )}
       <input
         id={id}
         className={cn(
-          "w-full rounded-lg border border-gray-100 bg-white px-4 py-3 text-sm text-foreground placeholder:text-gray-300 transition-all duration-200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] focus:border-primary focus:ring-2 focus:ring-primary/10 focus:outline-none",
-          error && "border-error focus:border-error focus:ring-error/10",
+          "w-full border-b border-black/10 bg-transparent py-4 text-xl font-bold text-black placeholder:text-gray-200 transition-all duration-500 focus:border-accent focus:outline-none",
+          error && "border-error",
           className
         )}
         {...props}
       />
-      {error && <p className="text-sm text-error">{error}</p>}
+      {error && <p className="text-xs font-bold text-error uppercase tracking-widest mt-2">{error}</p>}
     </div>
   )
 }
 
-type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
-  label?: string
-  error?: string
-}
-
 export function Textarea({ label, error, className, id, ...props }: TextareaProps) {
   return (
-    <div className="space-y-1.5">
+    <div className="group space-y-2">
       {label && (
-        <label htmlFor={id} className="block text-sm font-medium text-foreground">
+        <label htmlFor={id} className="block text-xs font-black uppercase tracking-widest text-gray-400 group-focus-within:text-accent transition-colors">
           {label}
         </label>
       )}
       <textarea
         id={id}
         className={cn(
-          "w-full rounded-lg border border-gray-100 bg-white px-4 py-3 text-sm text-foreground placeholder:text-gray-300 transition-all duration-200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] focus:border-primary focus:ring-2 focus:ring-primary/10 focus:outline-none resize-y min-h-32",
-          error && "border-error focus:border-error focus:ring-error/10",
+          "w-full border-b border-black/10 bg-transparent py-4 text-xl font-bold text-black placeholder:text-gray-200 transition-all duration-500 focus:border-accent focus:outline-none resize-none min-h-32",
+          error && "border-error",
           className
         )}
         {...props}
       />
-      {error && <p className="text-sm text-error">{error}</p>}
+      {error && <p className="text-xs font-bold text-error uppercase tracking-widest mt-2">{error}</p>}
     </div>
   )
 }

@@ -8,7 +8,7 @@ import { FaqSchema } from "@/components/seo/schemas"
 import { faqGenerales, faqSeo, faqContenu, faqAutomatisation, faqCollaboration } from "@/lib/data/faq"
 
 export const metadata: Metadata = buildMetadata({
-  title: "FAQ — Questions fréquentes sur nos services | Globe Créateur Dijon",
+  title: "FAQ - Questions fréquentes sur nos services | Globe Créateur Dijon",
   description: "Réponses aux questions fréquentes sur la création de site internet, le SEO local, les forfaits communication, la production de contenu et nos services à Dijon.",
   path: "/faq",
 })

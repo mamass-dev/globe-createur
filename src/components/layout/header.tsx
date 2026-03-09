@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { LucideIcon } from "@/components/ui/lucide-icon"
 import { cn } from "@/lib/utils"
 import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
@@ -10,140 +10,66 @@ import { mainNav } from "@/lib/data/navigation"
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-100 bg-surface/80 backdrop-blur-xl">
-      <Container className="flex h-16 items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="text-lg font-bold tracking-tight text-foreground">
-          Globe Cr&eacute;ateur
+    <header className="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-slate-100 h-20">
+      <Container className="flex h-full items-center justify-between">
+        {/* Logo - Professional SaaS style */}
+        <Link href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight text-slate-900 shrink-0">
+          <div className="h-8 w-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white text-lg shrink-0">G</div>
+          <span className="whitespace-nowrap">Globe Créateur</span>
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-0.5">
+        {/* Desktop nav - SaaS style */}
+        <nav className="hidden lg:flex items-center gap-8">
           {mainNav.map((item) => (
-            <div
-              key={item.label}
-              className="relative"
-              onMouseEnter={() => item.children && setOpenDropdown(item.label)}
-              onMouseLeave={() => setOpenDropdown(null)}
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors"
             >
-              {item.children ? (
-                <button
-                  className="flex items-center gap-1 px-3 py-2 text-sm text-gray-500 hover:text-foreground transition-colors duration-200 rounded-lg hover:bg-gray-50 cursor-pointer"
-                  aria-expanded={openDropdown === item.label}
-                >
-                  {item.label}
-                  <ChevronDown className={cn(
-                    "h-3 w-3 transition-transform duration-200",
-                    openDropdown === item.label && "rotate-180"
-                  )} />
-                </button>
-              ) : (
-                <Link
-                  href={item.href}
-                  className="px-3 py-2 text-sm text-gray-500 hover:text-foreground transition-colors duration-200 rounded-lg hover:bg-gray-50"
-                >
-                  {item.label}
-                </Link>
-              )}
-
-              {/* Dropdown */}
-              {item.children && openDropdown === item.label && (
-                <div className="absolute left-0 top-full pt-2 animate-fade-in">
-                  <div className="rounded-xl border border-gray-100 bg-white p-1.5 shadow-xl shadow-black/[0.04] min-w-60">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        className="block rounded-lg px-3 py-2.5 text-sm text-gray-500 hover:bg-gray-50 hover:text-foreground transition-colors duration-200"
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+              {item.label}
+            </Link>
           ))}
-        </nav>
-
-        {/* Desktop CTAs */}
-        <div className="hidden lg:flex items-center gap-2.5">
-          <Button href="/contact" variant="ghost" size="sm">
+          
+          <div className="h-6 w-px bg-slate-200 mx-2" />
+          
+          <Link href="/contact" className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">
             Contact
+          </Link>
+          <Button href="/devis" className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-sm transition-all">
+            Démarrer
           </Button>
-          <Button href="/devis" size="sm">
-            Devis gratuit
-          </Button>
-        </div>
+        </nav>
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden p-2 text-foreground cursor-pointer"
+          className="lg:hidden p-2 text-slate-600 cursor-pointer"
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-label="Menu"
         >
-          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {mobileOpen ? <LucideIcon name="X" className="h-6 w-6" /> : <LucideIcon name="Menu" className="h-6 w-6" />}
         </button>
       </Container>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-gray-100 bg-white animate-fade-in">
-          <Container className="py-4 space-y-0.5">
+        <div className="lg:hidden bg-white border-t border-slate-100 animate-in slide-in-from-top duration-300">
+          <Container className="py-6 space-y-4">
             {mainNav.map((item) => (
-              <div key={item.label}>
-                {item.children ? (
-                  <>
-                    <button
-                      className="w-full flex items-center justify-between px-3 py-3 text-sm font-medium text-gray-500 rounded-lg hover:bg-gray-50 cursor-pointer"
-                      onClick={() =>
-                        setOpenDropdown(openDropdown === item.label ? null : item.label)
-                      }
-                    >
-                      {item.label}
-                      <ChevronDown
-                        className={cn(
-                          "h-4 w-4 transition-transform duration-200",
-                          openDropdown === item.label && "rotate-180"
-                        )}
-                      />
-                    </button>
-                    {openDropdown === item.label && (
-                      <div className="ml-3 space-y-0.5 animate-fade-in">
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            className="block px-3 py-2.5 text-sm text-gray-400 hover:text-foreground rounded-lg hover:bg-gray-50"
-                            onClick={() => setMobileOpen(false)}
-                          >
-                            {child.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="block px-3 py-3 text-sm font-medium text-gray-500 rounded-lg hover:bg-gray-50"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                )}
-              </div>
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block text-lg font-medium text-slate-900"
+                onClick={() => setMobileOpen(false)}
+              >
+                {item.label}
+              </Link>
             ))}
-            <div className="pt-4 mt-2 border-t border-gray-100 flex flex-col gap-2">
-              <Button href="/contact" variant="outline" size="sm" className="w-full">
-                Contact
-              </Button>
-              <Button href="/devis" size="sm" className="w-full">
-                Devis gratuit
-              </Button>
+            <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
+               <Button href="/devis" className="w-full bg-indigo-600 text-white py-3 rounded-xl font-semibold">
+                  D&eacute;marrer un projet
+               </Button>
             </div>
           </Container>
         </div>

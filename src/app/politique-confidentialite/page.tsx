@@ -36,7 +36,7 @@ export default function PolitiqueConfidentialitePage() {
 
           <h2>1. Responsable du traitement</h2>
           <ul>
-            <li><strong>Identité :</strong> Axel Masson — {SITE_NAME}</li>
+            <li><strong>Identité :</strong> Axel Masson - {SITE_NAME}</li>
             <li>
               <strong>Adresse :</strong> {CONTACT.address.street},{" "}
               {CONTACT.address.zip} {CONTACT.address.city}
@@ -123,11 +123,11 @@ export default function PolitiqueConfidentialitePage() {
           </p>
           <ul>
             <li>
-              <strong>Vercel Inc.</strong> — Hébergement du site (serveurs aux
+              <strong>Vercel Inc.</strong> - Hébergement du site (serveurs aux
               États-Unis, clauses contractuelles types UE-US)
             </li>
             <li>
-              <strong>Resend</strong> — Envoi des emails transactionnels
+              <strong>Resend</strong> - Envoi des emails transactionnels
               (notifications de formulaires)
             </li>
           </ul>
@@ -195,7 +195,7 @@ export default function PolitiqueConfidentialitePage() {
             Si vous estimez que vos droits ne sont pas respectés, vous pouvez
             introduire une réclamation auprès de la{" "}
             <strong>CNIL</strong> (Commission Nationale de l&apos;Informatique et
-            des Libertés) — <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>.
+            des Libertés) - <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a>.
           </p>
 
           <h2>9. Sécurité</h2>
