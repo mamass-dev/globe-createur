@@ -11,7 +11,6 @@ export function LocalBusinessSchema() {
         name: SITE_NAME,
         description: SITE_DESCRIPTION,
         url: SITE_URL,
-        telephone: CONTACT.phone,
         email: CONTACT.email,
         address: {
           "@type": "PostalAddress",

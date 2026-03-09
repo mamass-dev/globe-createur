@@ -5,6 +5,11 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   error?: string
 }
 
+type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
+  label?: string
+  error?: string
+}
+
 export function Input({ label, error, className, id, ...props }: InputProps) {
   return (
     <div className="group space-y-2">

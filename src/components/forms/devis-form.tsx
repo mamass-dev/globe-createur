@@ -29,7 +29,6 @@ export function DevisForm() {
         body: JSON.stringify({
           name: formData.get("name"),
           email: formData.get("email"),
-          phone: formData.get("phone"),
           company: formData.get("company"),
           service: formData.get("service"),
           budget: formData.get("budget"),
@@ -63,10 +62,7 @@ export function DevisForm() {
         <Input label="Nom complet" name="name" id="name" required placeholder="Jean Dupont" />
         <Input label="Email" name="email" id="email" type="email" required placeholder="jean@exemple.fr" />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <Input label="Téléphone" name="phone" id="phone" type="tel" placeholder="06 12 34 56 78" />
-        <Input label="Entreprise" name="company" id="company" placeholder="Nom de votre entreprise" />
-      </div>
+      <Input label="Entreprise" name="company" id="company" placeholder="Nom de votre entreprise" />
       <div className="space-y-1.5">
         <label htmlFor="service" className="block text-sm font-medium text-foreground">
           Service souhaité

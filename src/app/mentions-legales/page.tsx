@@ -41,7 +41,7 @@ export default function MentionsLegalesPage() {
               <strong>Email :</strong>{" "}
               <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
             </li>
-            <li><strong>SIRET :</strong> [À compléter]</li>
+            <li><strong>SIRET :</strong> 93897299900024</li>
           </ul>
 
           <h2>2. Hébergeur</h2>

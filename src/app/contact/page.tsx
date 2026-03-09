@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/container"
 import { ContactForm } from "@/components/forms/contact-form"
 import { CONTACT } from "@/lib/constants"
 import { AnimateOnScroll } from "@/components/ui/animate"
-import { Mail, Phone, MapPin, CheckCircle2 } from "lucide-react"
+import { Mail, MapPin, CheckCircle2 } from "lucide-react"
 
 export const metadata: Metadata = buildMetadata({
   title: "Contact - Parlons de votre projet",
@@ -38,17 +38,6 @@ export default function ContactPage() {
                        <p className="text-xs font-black uppercase tracking-widest text-slate-400 mb-1">Email</p>
                        <a href={`mailto:${CONTACT.email}`} className="text-xl font-bold text-slate-900 hover:text-indigo-600 transition-colors">
                           {CONTACT.email}
-                       </a>
-                    </div>
-                 </div>
-                 <div className="flex gap-6">
-                    <div className="h-12 w-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-indigo-600 border border-slate-100">
-                       <Phone className="h-6 w-6" />
-                    </div>
-                    <div>
-                       <p className="text-xs font-black uppercase tracking-widest text-slate-400 mb-1">T&eacute;l&eacute;phone</p>
-                       <a href={`tel:${CONTACT.phone}`} className="text-xl font-bold text-slate-900 hover:text-indigo-600 transition-colors">
-                          {CONTACT.phone.replace("+33", "0").replace(/(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/, "$1 $2 $3 $4 $5")}
                        </a>
                     </div>
                  </div>

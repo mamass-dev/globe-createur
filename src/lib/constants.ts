@@ -5,7 +5,6 @@ export const SITE_LOCALE = "fr_FR"
 
 export const CONTACT = {
   email: "contact@globecreateur.fr",
-  phone: "+33600000000",
   address: {
     street: "13 Rue du Professeur Louis Néel",
     city: "Longvic",

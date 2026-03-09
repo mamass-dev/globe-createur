@@ -84,8 +84,8 @@ export default async function ServicePage({
            <div className="relative">
               <div className="rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 aspect-video lg:aspect-square bg-slate-50 flex items-center justify-center">
                  <Image 
-                    src="/images/web.jpg" 
-                    alt={title} 
+                    src="/images/web.webp"
+                    alt={`Globe Créateur — ${title}`} 
                     width={800} 
                     height={800} 
                     className="object-cover h-full w-full opacity-90"

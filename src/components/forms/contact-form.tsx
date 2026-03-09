@@ -18,7 +18,6 @@ export function ContactForm() {
         body: JSON.stringify({
           name: formData.get("name"),
           email: formData.get("email"),
-          phone: formData.get("phone"),
           message: formData.get("message"),
         }),
         headers: { "Content-Type": "application/json" },
@@ -49,7 +48,6 @@ export function ContactForm() {
         <Input label="Nom complet" name="name" id="name" required placeholder="Jean Dupont" />
         <Input label="Email" name="email" id="email" type="email" required placeholder="jean@exemple.fr" />
       </div>
-      <Input label="Téléphone" name="phone" id="phone" type="tel" placeholder="06 12 34 56 78" />
       <Textarea
         label="Votre message"
         name="message"

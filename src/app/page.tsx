@@ -48,7 +48,7 @@ export default function HomePage() {
                     <div className="flex -space-x-3">
                        {[1,2,3,4].map(i => (
                           <div key={i} className="h-10 w-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden relative">
-                             <Image src={`/images/user-1.jpg`} alt="User" fill sizes="40px" className="object-cover" />
+                             <Image src={`/images/user-1.webp`} alt="Client accompagné par Globe Créateur" fill sizes="40px" className="object-cover" />
                           </div>
                        ))}
                     </div>
@@ -61,8 +61,8 @@ export default function HomePage() {
               <div className="relative">
                  <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-indigo-100 border border-slate-100 transform lg:rotate-2 hover:rotate-0 transition-transform duration-700 aspect-[4/3]">
                     <Image 
-                       src="/images/team.jpg" 
-                       alt="Globe Cr&eacute;ateur Team" 
+                       src="/images/team.webp" 
+                       alt="L'équipe Globe Créateur en discussion backstage lors d'un événement" 
                        fill
                        sizes="(max-width: 1024px) 100vw, 50vw"
                        className="object-cover"
@@ -120,8 +120,8 @@ export default function HomePage() {
               <div className="order-2 lg:order-1 relative">
                  <div className="rounded-3xl overflow-hidden shadow-2xl border border-slate-100 aspect-square relative">
                     <Image 
-                       src="/images/collaboration.jpg" 
-                       alt="Collaboration Design" 
+                       src="/images/collaboration.webp"
+                       alt="L'équipe Globe Créateur en shooting photo sur le terrain" 
                        fill
                        sizes="(max-width: 1024px) 100vw, 50vw"
                        className="object-cover"

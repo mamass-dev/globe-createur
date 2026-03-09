@@ -54,12 +54,11 @@ export default function PolitiqueConfidentialitePage() {
           </p>
           <ul>
             <li>
-              <strong>Formulaire de contact :</strong> nom, adresse email,
-              numéro de téléphone (optionnel), message
+              <strong>Formulaire de contact :</strong> nom, adresse email, message
             </li>
             <li>
               <strong>Formulaire de devis :</strong> nom, adresse email,
-              numéro de téléphone (optionnel), nom de l&apos;entreprise (optionnel),
+              nom de l&apos;entreprise (optionnel),
               type de service souhaité, budget estimé, description du projet
             </li>
           </ul>

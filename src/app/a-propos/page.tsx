@@ -38,7 +38,7 @@ export default function AProposPage() {
            <div className="relative">
               <div className="rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 aspect-square">
                  <Image 
-                    src="/images/team.jpg" 
+                    src="/images/team.webp" 
                     alt="L'équipe Globe Créateur" 
                     width={800} 
                     height={800} 
@@ -52,7 +52,7 @@ export default function AProposPage() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-32">
            {stats.map((s, i) => (
               <div key={i} className="p-8 bg-slate-50 rounded-3xl text-center space-y-2">
-                 <p className="text-4xl lg:text-5xl font-black text-indigo-600">{s.v || s.value}</p>
+                 <p className="text-4xl lg:text-5xl font-black text-indigo-600">{s.value}</p>
                  <p className="text-sm font-bold uppercase tracking-widest text-slate-400">{s.label}</p>
               </div>
            ))}

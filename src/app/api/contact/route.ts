@@ -3,7 +3,7 @@ import { NextResponse } from "next/server"
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { name, email, phone, message } = body
+    const { name, email, message } = body
 
     if (!name || !email || !message) {
       return NextResponse.json({ error: "Champs requis manquants" }, { status: 400 })
@@ -16,10 +16,10 @@ export async function POST(request: Request) {
     //   from: "Globe Créateur <noreply@globecreateur.fr>",
     //   to: "contact@globecreateur.fr",
     //   subject: `Nouveau message de ${name}`,
-    //   text: `Nom: ${name}\nEmail: ${email}\nTél: ${phone || "Non renseigné"}\n\n${message}`,
+    //   text: `Nom: ${name}\nEmail: ${email}\n\n${message}`,
     // })
 
-    console.log("Contact form submission:", { name, email, phone, message })
+    console.log("Contact form submission:", { name, email, message })
 
     return NextResponse.json({ success: true })
   } catch {

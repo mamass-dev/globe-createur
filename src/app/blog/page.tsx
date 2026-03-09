@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/container"
 import { AnimateOnScroll } from "@/components/ui/animate"
 import { formatDate } from "@/lib/utils"
 import { ArrowRight, Clock } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = buildMetadata({
   title: "Blog & Insights - Globe Créateur",
