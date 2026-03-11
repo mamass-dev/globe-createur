@@ -6,7 +6,8 @@ import Link from "next/link"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { LucideIcon } from "@/components/ui/lucide-icon"
-import { ArrowRight, RotateCcw, Share2, CheckCircle2 } from "lucide-react"
+import { ArrowRight, RotateCcw, Share2, CheckCircle2, Lock } from "lucide-react"
+import { LeadCaptureGate } from "@/components/tools/lead-capture-gate"
 import {
   auditQuestions,
   categoryLabels,
@@ -170,6 +171,7 @@ export function AuditQuiz() {
   const [step, setStep] = useState(0) // 0 = intro, 1-9 = questions, 10 = results
   const [answers, setAnswers] = useState<Record<number, number>>({})
   const [selectedOption, setSelectedOption] = useState<number | null>(null)
+  const [unlocked, setUnlocked] = useState(false)
 
   const totalQuestions = auditQuestions.length
 
@@ -302,96 +304,134 @@ export function AuditQuiz() {
           </div>
         </Card>
 
-        {/* Category breakdown */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
-          {(Object.keys(categoryLabels) as AuditCategory[]).map((cat) => {
-            const pct = maxScores[cat] > 0 ? Math.round((categoryScores[cat] / maxScores[cat]) * 100) : 0
-            const barColor = pct >= 70 ? "bg-green-500" : pct >= 40 ? "bg-yellow-500" : "bg-red-500"
-            return (
-              <div
-                key={cat}
-                className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 p-4"
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <LucideIcon name={categoryIcons[cat]} className="h-4 w-4 text-slate-400" />
-                  <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 truncate">
-                    {categoryLabels[cat]}
-                  </span>
+        {/* Category breakdown — teaser (blurred if locked) */}
+        <div className="relative">
+          <div className={`grid grid-cols-2 lg:grid-cols-3 gap-3 ${!unlocked ? "blur-sm select-none pointer-events-none" : ""}`}>
+            {(Object.keys(categoryLabels) as AuditCategory[]).map((cat) => {
+              const pct = maxScores[cat] > 0 ? Math.round((categoryScores[cat] / maxScores[cat]) * 100) : 0
+              const barColor = pct >= 70 ? "bg-green-500" : pct >= 40 ? "bg-yellow-500" : "bg-red-500"
+              return (
+                <div
+                  key={cat}
+                  className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 p-4"
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <LucideIcon name={categoryIcons[cat]} className="h-4 w-4 text-slate-400" />
+                    <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 truncate">
+                      {categoryLabels[cat]}
+                    </span>
+                  </div>
+                  <div className="text-2xl font-bold text-slate-900 dark:text-white">{pct}%</div>
+                  <div className="mt-2 h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                    <motion.div
+                      className={`h-full rounded-full ${barColor}`}
+                      initial={{ width: 0 }}
+                      animate={{ width: `${pct}%` }}
+                      transition={{ duration: 0.8, delay: 0.3 }}
+                    />
+                  </div>
                 </div>
-                <div className="text-2xl font-bold text-slate-900 dark:text-white">{pct}%</div>
-                <div className="mt-2 h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
-                  <motion.div
-                    className={`h-full rounded-full ${barColor}`}
-                    initial={{ width: 0 }}
-                    animate={{ width: `${pct}%` }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
-                  />
-                </div>
+              )
+            })}
+          </div>
+          {/* Overlay lock hint when locked */}
+          {!unlocked && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm border border-slate-200 dark:border-slate-700 shadow-lg">
+                <Lock className="h-4 w-4 text-indigo-500" />
+                <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">Détails verrouillés</span>
               </div>
-            )
-          })}
+            </div>
+          )}
         </div>
 
-        {/* Recommendations */}
-        {weakCategories.length > 0 && (
-          <div>
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
-              Nos recommandations pour vous
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {weakCategories.map((cat) => {
-                const rec = recommendations[cat]
-                return (
-                  <motion.div
-                    key={cat}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                  >
-                    <Card className="h-full p-6 lg:p-8">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="h-9 w-9 rounded-lg bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
-                          <LucideIcon name={categoryIcons[cat]} className="h-4 w-4" />
-                        </div>
-                        <h4 className="text-sm font-bold text-slate-900 dark:text-white">
-                          {rec.title}
-                        </h4>
-                      </div>
-                      <p className="text-sm text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">
-                        {rec.text}
-                      </p>
-                      <Link
-                        href={`/services/${rec.serviceSlug}`}
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 transition-colors"
+        {/* Lead capture gate OR full recommendations */}
+        {!unlocked ? (
+          <LeadCaptureGate
+            source="Audit Digital"
+            context={{
+              score: scorePercent,
+              categoryScores: Object.fromEntries(
+                (Object.keys(categoryLabels) as AuditCategory[]).map((cat) => [
+                  categoryLabels[cat],
+                  maxScores[cat] > 0 ? Math.round((categoryScores[cat] / maxScores[cat]) * 100) : 0,
+                ])
+              ),
+              weakCategories: weakCategories.map((cat) => categoryLabels[cat]),
+              level: level.label,
+            }}
+            teaser="Renseignez vos coordonnées pour recevoir votre analyse détaillée par catégorie, vos recommandations personnalisées et un plan d'action concret."
+            ctaLabel="Débloquer mes recommandations"
+            onUnlock={() => setUnlocked(true)}
+          />
+        ) : (
+          <>
+            {/* Recommendations */}
+            {weakCategories.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
+                  Nos recommandations pour vous
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {weakCategories.map((cat) => {
+                    const rec = recommendations[cat]
+                    return (
+                      <motion.div
+                        key={cat}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.5 }}
                       >
-                        {rec.serviceLabel}
-                        <ArrowRight className="h-3 w-3" />
-                      </Link>
-                    </Card>
-                  </motion.div>
-                )
-              })}
-            </div>
-          </div>
-        )}
+                        <Card className="h-full p-6 lg:p-8">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="h-9 w-9 rounded-lg bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
+                              <LucideIcon name={categoryIcons[cat]} className="h-4 w-4" />
+                            </div>
+                            <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                              {rec.title}
+                            </h4>
+                          </div>
+                          <p className="text-sm text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">
+                            {rec.text}
+                          </p>
+                          <Link
+                            href={`/services/${rec.serviceSlug}`}
+                            className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 transition-colors"
+                          >
+                            {rec.serviceLabel}
+                            <ArrowRight className="h-3 w-3" />
+                          </Link>
+                        </Card>
+                      </motion.div>
+                    )
+                  })}
+                </div>
+              </motion.div>
+            )}
 
-        {/* All good */}
-        {weakCategories.length === 0 && (
-          <Card className="text-center p-8">
-            <CheckCircle2 className="h-12 w-12 text-green-500 mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-              Bravo, votre maturité digitale est excellente !
-            </h3>
-            <p className="text-slate-500 dark:text-slate-400 mb-6">
-              Pour aller encore plus loin, découvrez nos forfaits d&apos;accompagnement continu.
-            </p>
-            <Button
-              href="/forfait-communication-pme"
-              className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded-full text-sm font-semibold"
-            >
-              Voir les forfaits
-            </Button>
-          </Card>
+            {/* All good */}
+            {weakCategories.length === 0 && (
+              <Card className="text-center p-8">
+                <CheckCircle2 className="h-12 w-12 text-green-500 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                  Bravo, votre maturité digitale est excellente !
+                </h3>
+                <p className="text-slate-500 dark:text-slate-400 mb-6">
+                  Pour aller encore plus loin, découvrez nos forfaits d&apos;accompagnement continu.
+                </p>
+                <Button
+                  href="/forfait-communication-pme"
+                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded-full text-sm font-semibold"
+                >
+                  Voir les forfaits
+                </Button>
+              </Card>
+            )}
+          </>
         )}
 
         {/* Actions */}

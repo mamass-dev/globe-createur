@@ -5,7 +5,8 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { LucideIcon } from "@/components/ui/lucide-icon"
-import { TrendingUp, AlertTriangle, ArrowRight } from "lucide-react"
+import { TrendingUp, AlertTriangle, ArrowRight, Lock } from "lucide-react"
+import { LeadCaptureGate } from "@/components/tools/lead-capture-gate"
 
 const sectorData: Record<string, { label: string; monthlySearches: number; conversionRate: number }> = {
   restaurants: { label: "Restaurant", monthlySearches: 2400, conversionRate: 0.03 },
@@ -26,6 +27,7 @@ export function RoiCalculator() {
   const [avgTicket, setAvgTicket] = useState(150)
   const [currentClients, setCurrentClients] = useState(20)
   const [showResults, setShowResults] = useState(false)
+  const [unlocked, setUnlocked] = useState(false)
 
   const data = sectorData[sector] ?? sectorData.autre
   const potentialClients = Math.round(data.monthlySearches * data.conversionRate)
@@ -157,7 +159,7 @@ export function RoiCalculator() {
                 transition={{ duration: 0.5 }}
                 className="space-y-6"
               >
-                {/* Key metrics */}
+                {/* Teaser metrics — always visible */}
                 <div className="grid grid-cols-2 gap-3">
                   <MetricCard
                     icon="Search"
@@ -172,135 +174,193 @@ export function RoiCalculator() {
                     sub="par mois"
                     highlight={missedClients > 0}
                   />
-                  <MetricCard
-                    icon="TrendingUp"
-                    label="CA mensuel perdu"
-                    value={fmt(monthlyLost)}
-                    sub="chaque mois"
-                    alert
-                  />
-                  <MetricCard
-                    icon="Target"
-                    label="CA annuel perdu"
-                    value={fmt(annualLost)}
-                    sub="par an"
-                    alert
-                  />
                 </div>
 
-                {/* Before / After comparison */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Before */}
-                  <Card className="p-6 bg-slate-50 dark:bg-slate-800/50">
-                    <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">
-                      Aujourd&apos;hui
-                    </p>
-                    <div className="space-y-3">
-                      <div>
-                        <p className="text-xs text-slate-400">Clients / mois</p>
-                        <p className="text-2xl font-bold text-slate-900 dark:text-white">{currentClients}</p>
-                      </div>
-                      <div>
-                        <p className="text-xs text-slate-400">CA mensuel estimé</p>
-                        <p className="text-2xl font-bold text-slate-900 dark:text-white">{fmt(currentMonthlyRevenue)}</p>
-                      </div>
+                {/* Blurred teaser for CA metrics */}
+                {!unlocked && (
+                  <div className="relative">
+                    <div className="grid grid-cols-2 gap-3 blur-sm select-none pointer-events-none">
+                      <MetricCard
+                        icon="TrendingUp"
+                        label="CA mensuel perdu"
+                        value={fmt(monthlyLost)}
+                        sub="chaque mois"
+                        alert
+                      />
+                      <MetricCard
+                        icon="Target"
+                        label="CA annuel perdu"
+                        value={fmt(annualLost)}
+                        sub="par an"
+                        alert
+                      />
                     </div>
-                  </Card>
-
-                  {/* After */}
-                  <Card className="p-6 border-indigo-200 dark:border-indigo-800 ring-1 ring-indigo-500/10 relative overflow-hidden">
-                    <div className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-[10px] font-bold uppercase">
-                      Projection
-                    </div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-indigo-500 mb-4">
-                      Avec Globe Créateur
-                    </p>
-                    <div className="space-y-3">
-                      <div>
-                        <p className="text-xs text-slate-400">Clients / mois</p>
-                        <p className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-                          {currentClients + missedClients}
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-xs text-slate-400">CA mensuel estimé</p>
-                        <p className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-                          {fmt(projectedMonthlyRevenue)}
-                        </p>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm border border-slate-200 dark:border-slate-700 shadow-lg">
+                        <Lock className="h-4 w-4 text-red-500" />
+                        <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">Résultats verrouillés</span>
                       </div>
                     </div>
-                  </Card>
-                </div>
-
-                {/* ROI bar */}
-                {projectedROI > 0 && (
-                  <Card className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <p className="text-sm font-bold text-slate-900 dark:text-white">
-                        Retour sur investissement estimé
-                      </p>
-                      <span className="text-lg font-extrabold text-green-500">
-                        +{projectedROI}%
-                      </span>
-                    </div>
-                    <div className="flex gap-2 h-6 rounded-full overflow-hidden bg-slate-100 dark:bg-slate-800">
-                      <motion.div
-                        className="bg-slate-300 dark:bg-slate-600 rounded-l-full flex items-center justify-center"
-                        initial={{ width: 0 }}
-                        animate={{ width: "15%" }}
-                        transition={{ duration: 0.6 }}
-                      >
-                        <span className="text-[9px] font-bold text-white px-1 truncate">Invest.</span>
-                      </motion.div>
-                      <motion.div
-                        className="bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-r-full flex items-center justify-center"
-                        initial={{ width: 0 }}
-                        animate={{ width: "85%" }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                      >
-                        <span className="text-[9px] font-bold text-white px-1 truncate">Revenus générés</span>
-                      </motion.div>
-                    </div>
-                    <p className="text-xs text-slate-400 mt-2">
-                      Investissement moyen : {fmt(investmentCost)} &middot; Revenus additionnels estimés : {fmt(annualLost)}/an
-                    </p>
-                  </Card>
-                )}
-
-                {/* Warning if no missed clients */}
-                {missedClients <= 0 && (
-                  <Card className="p-6 text-center">
-                    <AlertTriangle className="h-8 w-8 text-yellow-500 mx-auto mb-3" />
-                    <p className="text-sm text-slate-500 dark:text-slate-400">
-                      Votre volume actuel de clients semble déjà couvrir le potentiel de recherche de votre secteur.
-                      Un site optimisé pourrait tout de même vous aider à fidéliser et augmenter le panier moyen.
-                    </p>
-                  </Card>
-                )}
-
-                {/* CTA */}
-                <Card className="p-8 bg-indigo-600 dark:bg-indigo-500 text-white border-0 text-center">
-                  <h3 className="text-xl font-extrabold mb-2">
-                    Ces clients vous attendent
-                  </h3>
-                  <p className="text-indigo-100 text-sm mb-6">
-                    Un site optimisé et un bon SEO local peuvent transformer ces chiffres en réalité.
-                  </p>
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                    <Button
-                      href="/devis"
-                      className="bg-white text-indigo-600 hover:bg-indigo-50 px-6 py-2.5 rounded-full text-sm font-bold transition-all"
-                    >
-                      Demander un devis gratuit
-                    </Button>
-                    <Button
-                      href="/forfait-communication-pme"
-                      className="border border-white/30 text-white hover:bg-white/10 px-6 py-2.5 rounded-full text-sm font-semibold transition-all"
-                    >
-                      Voir les forfaits
-                    </Button>
                   </div>
-                </Card>
+                )}
+
+                {/* Lead capture gate */}
+                {!unlocked ? (
+                  <LeadCaptureGate
+                    source="Calculateur ROI"
+                    context={{
+                      sector: data.label,
+                      avgTicket,
+                      currentClients,
+                      missedClients,
+                      monthlyLost,
+                      annualLost,
+                      projectedROI,
+                    }}
+                    teaser={`Vous perdez potentiellement ${missedClients} clients par mois. Renseignez vos coordonnées pour voir combien cela représente en chiffre d'affaires et recevoir une analyse personnalisée.`}
+                    ctaLabel="Voir mon analyse complète"
+                    onUnlock={() => setUnlocked(true)}
+                  />
+                ) : (
+                  <>
+                    {/* Full metrics — unlocked */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="space-y-6"
+                    >
+                      <div className="grid grid-cols-2 gap-3">
+                        <MetricCard
+                          icon="TrendingUp"
+                          label="CA mensuel perdu"
+                          value={fmt(monthlyLost)}
+                          sub="chaque mois"
+                          alert
+                        />
+                        <MetricCard
+                          icon="Target"
+                          label="CA annuel perdu"
+                          value={fmt(annualLost)}
+                          sub="par an"
+                          alert
+                        />
+                      </div>
+
+                      {/* Before / After comparison */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <Card className="p-6 bg-slate-50 dark:bg-slate-800/50">
+                          <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">
+                            Aujourd&apos;hui
+                          </p>
+                          <div className="space-y-3">
+                            <div>
+                              <p className="text-xs text-slate-400">Clients / mois</p>
+                              <p className="text-2xl font-bold text-slate-900 dark:text-white">{currentClients}</p>
+                            </div>
+                            <div>
+                              <p className="text-xs text-slate-400">CA mensuel estimé</p>
+                              <p className="text-2xl font-bold text-slate-900 dark:text-white">{fmt(currentMonthlyRevenue)}</p>
+                            </div>
+                          </div>
+                        </Card>
+
+                        <Card className="p-6 border-indigo-200 dark:border-indigo-800 ring-1 ring-indigo-500/10 relative overflow-hidden">
+                          <div className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-[10px] font-bold uppercase">
+                            Projection
+                          </div>
+                          <p className="text-xs font-bold uppercase tracking-widest text-indigo-500 mb-4">
+                            Avec Globe Créateur
+                          </p>
+                          <div className="space-y-3">
+                            <div>
+                              <p className="text-xs text-slate-400">Clients / mois</p>
+                              <p className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
+                                {currentClients + missedClients}
+                              </p>
+                            </div>
+                            <div>
+                              <p className="text-xs text-slate-400">CA mensuel estimé</p>
+                              <p className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
+                                {fmt(projectedMonthlyRevenue)}
+                              </p>
+                            </div>
+                          </div>
+                        </Card>
+                      </div>
+
+                      {/* ROI bar */}
+                      {projectedROI > 0 && (
+                        <Card className="p-6">
+                          <div className="flex items-center justify-between mb-3">
+                            <p className="text-sm font-bold text-slate-900 dark:text-white">
+                              Retour sur investissement estimé
+                            </p>
+                            <span className="text-lg font-extrabold text-green-500">
+                              +{projectedROI}%
+                            </span>
+                          </div>
+                          <div className="flex gap-2 h-6 rounded-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+                            <motion.div
+                              className="bg-slate-300 dark:bg-slate-600 rounded-l-full flex items-center justify-center"
+                              initial={{ width: 0 }}
+                              animate={{ width: "15%" }}
+                              transition={{ duration: 0.6 }}
+                            >
+                              <span className="text-[9px] font-bold text-white px-1 truncate">Invest.</span>
+                            </motion.div>
+                            <motion.div
+                              className="bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-r-full flex items-center justify-center"
+                              initial={{ width: 0 }}
+                              animate={{ width: "85%" }}
+                              transition={{ duration: 0.8, delay: 0.2 }}
+                            >
+                              <span className="text-[9px] font-bold text-white px-1 truncate">Revenus générés</span>
+                            </motion.div>
+                          </div>
+                          <p className="text-xs text-slate-400 mt-2">
+                            Investissement moyen : {fmt(investmentCost)} &middot; Revenus additionnels estimés : {fmt(annualLost)}/an
+                          </p>
+                        </Card>
+                      )}
+
+                      {/* Warning if no missed clients */}
+                      {missedClients <= 0 && (
+                        <Card className="p-6 text-center">
+                          <AlertTriangle className="h-8 w-8 text-yellow-500 mx-auto mb-3" />
+                          <p className="text-sm text-slate-500 dark:text-slate-400">
+                            Votre volume actuel de clients semble déjà couvrir le potentiel de recherche de votre secteur.
+                            Un site optimisé pourrait tout de même vous aider à fidéliser et augmenter le panier moyen.
+                          </p>
+                        </Card>
+                      )}
+
+                      {/* CTA */}
+                      <Card className="p-8 bg-indigo-600 dark:bg-indigo-500 text-white border-0 text-center">
+                        <h3 className="text-xl font-extrabold mb-2">
+                          Ces clients vous attendent
+                        </h3>
+                        <p className="text-indigo-100 text-sm mb-6">
+                          Un site optimisé et un bon SEO local peuvent transformer ces chiffres en réalité.
+                        </p>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                          <Button
+                            href="/devis"
+                            className="bg-white text-indigo-600 hover:bg-indigo-50 px-6 py-2.5 rounded-full text-sm font-bold transition-all"
+                          >
+                            Demander un devis gratuit
+                          </Button>
+                          <Button
+                            href="/forfait-communication-pme"
+                            className="border border-white/30 text-white hover:bg-white/10 px-6 py-2.5 rounded-full text-sm font-semibold transition-all"
+                          >
+                            Voir les forfaits
+                          </Button>
+                        </div>
+                      </Card>
+                    </motion.div>
+                  </>
+                )}
               </motion.div>
             )}
           </AnimatePresence>
