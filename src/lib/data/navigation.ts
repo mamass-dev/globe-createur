@@ -22,6 +22,9 @@ export const mainNav: NavItem[] = [
       { label: "Restaurants", href: "/secteurs/restaurants-food", icon: "UtensilsCrossed", description: "Menu, réservation et SEO local" },
       { label: "Artisans & BTP", href: "/secteurs/artisans-btp", icon: "Hammer", description: "Portfolio et demandes de devis" },
       { label: "Professions libérales", href: "/secteurs/professions-liberales", icon: "Briefcase", description: "Crédibilité et prise de RDV" },
+      { label: "Immobilier", href: "/secteurs/immobilier", icon: "Building", description: "Mandats, acquéreurs et visibilité" },
+      { label: "Bien-être & santé", href: "/secteurs/bien-etre-sante", icon: "Heart", description: "RDV en ligne et confiance" },
+      { label: "E-commerce local", href: "/secteurs/e-commerce-local", icon: "ShoppingBag", description: "Click & collect, boutique en ligne" },
     ],
   },
   {
@@ -35,7 +38,7 @@ export const mainNav: NavItem[] = [
   },
   { label: "Projets", href: "/projets" },
   { label: "Blog", href: "/blog" },
-  { label: "Forfaits", href: "/forfait-communication-pme" },
+  { label: "Tarifs", href: "/tarifs" },
   { label: "À propos", href: "/a-propos" },
 ]
 
@@ -43,6 +46,7 @@ export const footerNav = {
   services: [
     { label: "Création de site internet", href: "/services/creation-site-internet-dijon" },
     { label: "SEO local", href: "/services/seo-local-dijon" },
+    { label: "Google Business Profile", href: "/google-business-profile-dijon" },
     { label: "Création de contenu", href: "/services/creation-contenu-pme" },
     { label: "Automatisation no-code", href: "/services/automatisation-nocode-dijon" },
   ],
