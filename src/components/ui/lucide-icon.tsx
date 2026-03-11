@@ -32,6 +32,7 @@ import {
   UtensilsCrossed,
   Hammer,
   Briefcase,
+  Bot,
 } from "lucide-react"
 
 export const icons = {
@@ -68,6 +69,7 @@ export const icons = {
   UtensilsCrossed,
   Hammer,
   Briefcase,
+  Bot,
 }
 
 export type IconName = keyof typeof icons

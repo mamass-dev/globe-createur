@@ -30,6 +30,8 @@ export const mainNav: NavItem[] = [
     children: [
       { label: "Audit digital", href: "/audit-digital", icon: "Target", description: "Votre score sur 100 en 2 minutes" },
       { label: "Calculateur ROI", href: "/calculateur-roi", icon: "TrendingUp", description: "Combien vous coûte votre invisibilité" },
+      { label: "Analyseur SEO", href: "/analyseur-seo", icon: "Search", description: "Audit SEO instantané de votre site" },
+      { label: "Agent SEO IA", href: "/agent-seo", icon: "Bot", description: "Générez du contenu SEO avec l'IA" },
     ],
   },
   { label: "Projets", href: "/projets" },
@@ -52,6 +54,8 @@ export const footerNav = {
     { label: "Témoignages", href: "/temoignages" },
     { label: "Audit digital gratuit", href: "/audit-digital" },
     { label: "Calculateur ROI", href: "/calculateur-roi" },
+    { label: "Analyseur SEO", href: "/analyseur-seo" },
+    { label: "Agent SEO IA", href: "/agent-seo" },
   ],
   informations: [
     { label: "Contact", href: "/contact" },
