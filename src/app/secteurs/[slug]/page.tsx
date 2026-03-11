@@ -98,7 +98,7 @@ export default async function SecteurPage({
       {/* 1. NAVIGATION */}
       <Breadcrumb
         items={[
-          { name: "Secteurs", href: "#" },
+          { name: "Secteurs", href: "/secteurs" },
           { name: title, href: `/secteurs/${slug}` },
         ]}
       />

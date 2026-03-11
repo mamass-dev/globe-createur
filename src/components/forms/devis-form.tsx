@@ -49,9 +49,9 @@ export function DevisForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-2xl border border-success/30 bg-success/5 p-8 text-center">
+      <div className="rounded-2xl border border-success/30 bg-success/5 dark:bg-success/10 p-8 text-center">
         <p className="text-lg font-semibold text-foreground">Demande envoyée !</p>
-        <p className="mt-2 text-gray-500">Nous préparons votre devis et revenons vers vous sous 48h.</p>
+        <p className="mt-2 text-gray-500 dark:text-slate-400">Nous préparons votre devis et revenons vers vous sous 48h.</p>
       </div>
     )
   }
@@ -71,7 +71,7 @@ export function DevisForm() {
           name="service"
           id="service"
           required
-          className="w-full rounded-lg border border-gray-100 bg-white px-4 py-3 text-sm text-foreground transition-all duration-200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] focus:border-primary focus:ring-2 focus:ring-primary/10 focus:outline-none"
+          className="w-full rounded-lg border border-gray-100 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-3 text-sm text-foreground transition-all duration-200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] focus:border-primary focus:ring-2 focus:ring-primary/10 focus:outline-none"
         >
           <option value="">Sélectionnez un service</option>
           {serviceOptions.map((opt) => (
@@ -88,7 +88,7 @@ export function DevisForm() {
         <select
           name="budget"
           id="budget"
-          className="w-full rounded-lg border border-gray-100 bg-white px-4 py-3 text-sm text-foreground transition-all duration-200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] focus:border-primary focus:ring-2 focus:ring-primary/10 focus:outline-none"
+          className="w-full rounded-lg border border-gray-100 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-3 text-sm text-foreground transition-all duration-200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] focus:border-primary focus:ring-2 focus:ring-primary/10 focus:outline-none"
         >
           <option value="">Sélectionnez une fourchette</option>
           <option value="< 1 500 €">&lt; 1 500 €</option>

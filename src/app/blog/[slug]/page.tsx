@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { notFound } from "next/navigation"
 import { buildMetadata } from "@/lib/metadata"
 import { getBlogPosts, getBlogPost } from "@/lib/content"
@@ -7,10 +8,14 @@ import { ReadingProgress } from "@/components/sections/reading-progress"
 import { ArticleSchema } from "@/components/seo/schemas"
 import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
-import { AnimateOnScroll } from "@/components/ui/animate"
 import { formatDate } from "@/lib/utils"
 import { SITE_URL } from "@/lib/constants"
-import { Clock, Calendar, User } from "lucide-react"
+import { getAuthor } from "@/lib/data/authors"
+import { AuthorCard } from "@/components/blog/author-card"
+import { TableOfContents } from "@/components/blog/table-of-contents"
+import { extractHeadings } from "@/lib/toc"
+import { RelatedArticles } from "@/components/blog/related-articles"
+import { Clock, Calendar } from "lucide-react"
 
 export function generateStaticParams() {
   return getBlogPosts().map((p) => ({ slug: p.slug }))
@@ -46,9 +51,11 @@ export default async function BlogPostPage({
   if (!post) notFound()
 
   const { frontmatter: fm, content } = post
+  const author = getAuthor(fm.author)
+  const headings = extractHeadings(content)
 
   return (
-    <article className="bg-white pt-32 lg:pt-48 pb-32">
+    <article className="bg-white dark:bg-slate-950 pt-32 lg:pt-44 pb-32">
       <ReadingProgress />
       <ArticleSchema
         title={fm.metaTitle}
@@ -60,55 +67,102 @@ export default async function BlogPostPage({
         author={fm.author}
       />
 
-      <Container className="max-w-4xl">
-        <header className="mb-16 space-y-8 text-center lg:text-left">
-           <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-              <span className="px-4 py-1.5 bg-indigo-50 text-indigo-600 text-xs font-black uppercase tracking-widest rounded-full">
-                 {fm.category}
-              </span>
-              <div className="flex items-center gap-2 text-slate-400 text-sm font-medium">
-                 <Clock className="h-4 w-4" />
-                 {fm.readingTime} min read
-              </div>
-              <div className="flex items-center gap-2 text-slate-400 text-sm font-medium">
-                 <Calendar className="h-4 w-4" />
-                 {formatDate(fm.publishedAt)}
-              </div>
-           </div>
+      <Container>
+        {/* HEADER */}
+        <header className="max-w-4xl mx-auto mb-16 space-y-6">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="px-3 py-1 bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 text-xs font-black uppercase tracking-widest rounded-full">
+              {fm.category}
+            </span>
+            <span className="flex items-center gap-1.5 text-slate-400 text-sm">
+              <Clock className="h-3.5 w-3.5" />
+              {fm.readingTime} min
+            </span>
+            <span className="flex items-center gap-1.5 text-slate-400 text-sm">
+              <Calendar className="h-3.5 w-3.5" />
+              {formatDate(fm.publishedAt)}
+            </span>
+          </div>
 
-           <h1 className="text-4xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight">
-              {fm.title}
-           </h1>
+          <h1 className="text-3xl lg:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight">
+            {fm.title}
+          </h1>
 
-           <p className="text-xl text-slate-500 leading-relaxed max-w-3xl">
-              {fm.metaDescription}
-           </p>
+          <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
+            {fm.metaDescription}
+          </p>
 
-           <div className="flex items-center justify-center lg:justify-start gap-4 pt-4">
-              <div className="h-12 w-12 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-400">
-                 <User className="h-6 w-6" />
-              </div>
-              <div className="text-left">
-                 <p className="text-sm font-bold text-slate-900">{fm.author}</p>
-                 <p className="text-xs text-slate-400 uppercase font-black tracking-widest">Auteur</p>
-              </div>
-           </div>
+          {/* Author mini */}
+          <div className="flex items-center gap-3 pt-2">
+            <Image
+              src={author.avatar}
+              alt={author.name}
+              width={40}
+              height={40}
+              className="h-10 w-10 rounded-full object-cover"
+            />
+            <div>
+              <p className="text-sm font-bold text-slate-900 dark:text-white">{author.name}</p>
+              <p className="text-xs text-slate-400">{author.role}</p>
+            </div>
+          </div>
         </header>
 
-        <div className="prose prose-indigo prose-xl max-w-none prose-h2:text-3xl prose-h2:font-black prose-h2:text-slate-900 prose-p:text-slate-600 prose-blockquote:border-indigo-600 prose-blockquote:bg-indigo-50/50 prose-blockquote:rounded-3xl prose-img:rounded-3xl prose-img:shadow-2xl">
-           <MdxContent source={content} />
-        </div>
+        {/* HERO IMAGE */}
+        {fm.image && (
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm">
+              <Image
+                src={fm.image}
+                alt={fm.imageAlt || fm.title}
+                width={1200}
+                height={630}
+                className="w-full h-auto object-cover"
+                priority
+              />
+            </div>
+          </div>
+        )}
 
-        <div className="mt-24 p-10 lg:p-16 bg-slate-50 rounded-[3rem] border border-slate-100 text-center space-y-10">
-           <h2 className="text-3xl lg:text-5xl font-black text-slate-900">Vous souhaitez aller plus loin ?</h2>
-           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Nous aidons les PME &agrave; impl&eacute;menter ces strat&eacute;gies pour g&eacute;n&eacute;rer une croissance durable.
-           </p>
-           <div className="flex justify-center pt-4">
-              <Button href="/contact" className="bg-indigo-600 text-white px-12 h-16 rounded-2xl text-xl font-bold shadow-xl shadow-indigo-100">
-                 Discuter de mon projet
+        {/* BODY: TOC sidebar + content */}
+        <div className="max-w-6xl mx-auto lg:grid lg:grid-cols-[220px_1fr] lg:gap-16">
+          {/* Sidebar TOC - sticky */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-28">
+              <TableOfContents items={headings} />
+            </div>
+          </aside>
+
+          {/* Content */}
+          <div className="max-w-3xl">
+            <div className="prose prose-indigo prose-lg dark:prose-invert max-w-none prose-h2:text-2xl prose-h2:font-extrabold prose-h2:text-slate-900 dark:prose-h2:text-white prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-xl prose-h3:font-bold prose-h3:text-slate-800 dark:prose-h3:text-slate-200 prose-p:text-slate-600 dark:prose-p:text-slate-400 prose-li:text-slate-600 dark:prose-li:text-slate-400 prose-blockquote:border-indigo-600 dark:prose-blockquote:border-indigo-400 prose-blockquote:bg-indigo-50/50 dark:prose-blockquote:bg-indigo-950/50 prose-blockquote:rounded-2xl prose-img:rounded-2xl prose-img:shadow-lg prose-table:text-sm prose-th:bg-slate-50 dark:prose-th:bg-slate-900">
+              <MdxContent source={content} />
+            </div>
+
+            {/* Author block */}
+            <div className="mt-16 pt-12 border-t border-slate-100 dark:border-slate-800">
+              <p className="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">
+                &Eacute;crit par
+              </p>
+              <AuthorCard author={author} />
+            </div>
+
+            {/* Related Articles */}
+            {fm.relatedArticles && fm.relatedArticles.length > 0 && (
+              <RelatedArticles slugs={fm.relatedArticles} />
+            )}
+
+            {/* CTA */}
+            <div className="mt-16 p-8 lg:p-12 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 text-center space-y-6">
+              <h2 className="text-2xl lg:text-4xl font-black text-slate-900 dark:text-white">Vous souhaitez aller plus loin ?</h2>
+              <p className="text-lg text-slate-600 dark:text-slate-400 max-w-xl mx-auto">
+                Nous aidons les PME &agrave; impl&eacute;menter ces strat&eacute;gies pour g&eacute;n&eacute;rer une croissance durable.
+              </p>
+              <Button href="/contact" className="bg-indigo-600 text-white px-10 h-14 rounded-2xl text-lg font-bold shadow-xl shadow-indigo-100 dark:shadow-indigo-950">
+                Discuter de mon projet
               </Button>
-           </div>
+            </div>
+          </div>
         </div>
       </Container>
     </article>

@@ -11,13 +11,13 @@ type ButtonProps = {
 
 const variants = {
   primary:
-    "bg-indigo-600 text-white shadow-lg shadow-indigo-100 hover:bg-indigo-700 hover:-translate-y-0.5 transition-all",
+    "bg-indigo-600 dark:bg-indigo-500 text-white shadow-lg shadow-indigo-100 dark:shadow-indigo-950 hover:bg-indigo-700 dark:hover:bg-indigo-600 hover:-translate-y-0.5 transition-all",
   secondary:
-    "bg-slate-900 text-white hover:bg-slate-800 hover:-translate-y-0.5 transition-all",
+    "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 hover:-translate-y-0.5 transition-all",
   outline:
-    "border border-slate-200 text-slate-900 hover:bg-slate-50 hover:border-slate-300 transition-all",
+    "border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-600 transition-all",
   ghost:
-    "text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 transition-all",
+    "text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-950 transition-all",
 }
 
 const sizes = {

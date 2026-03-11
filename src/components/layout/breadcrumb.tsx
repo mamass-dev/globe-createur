@@ -16,10 +16,10 @@ export function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
       <BreadcrumbSchema items={allItems} />
       <Container className="py-3">
         <nav aria-label="Fil d'Ariane">
-          <ol className="flex items-center gap-1 text-sm text-gray-500">
+          <ol className="flex items-center gap-1 text-sm text-gray-500 dark:text-slate-500">
             {allItems.map((item, i) => (
               <li key={item.href} className="flex items-center gap-1">
-                {i > 0 && <ChevronRight className="h-3.5 w-3.5 text-gray-400" />}
+                {i > 0 && <ChevronRight className="h-3.5 w-3.5 text-gray-400 dark:text-slate-600" />}
                 {i === allItems.length - 1 ? (
                   <span className="text-foreground font-medium" aria-current="page">
                     {item.name}

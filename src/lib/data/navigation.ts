@@ -5,20 +5,31 @@ export const mainNav: NavItem[] = [
     label: "Services",
     href: "/services",
     children: [
-      { label: "Création de site internet", href: "/services/creation-site-internet-dijon" },
-      { label: "Refonte de site internet", href: "/services/refonte-site-internet-dijon" },
-      { label: "SEO local", href: "/services/seo-local-dijon" },
-      { label: "Automatisation no-code", href: "/services/automatisation-nocode-dijon" },
-      { label: "Création de contenu", href: "/services/creation-contenu-pme" },
-      { label: "Support communication", href: "/services/support-communication-pme" },
+      { label: "Création de site internet", href: "/services/creation-site-internet-dijon", icon: "Globe", description: "Sites performants, optimisés SEO" },
+      { label: "Refonte de site internet", href: "/services/refonte-site-internet-dijon", icon: "RefreshCw", description: "Modernisez sans perdre votre SEO" },
+      { label: "SEO local", href: "/services/seo-local-dijon", icon: "Search", description: "Dominez les résultats Google" },
+      { label: "Automatisation no-code", href: "/services/automatisation-nocode-dijon", icon: "Zap", description: "Gagnez du temps avec Make & Zapier" },
+      { label: "Création de contenu", href: "/services/creation-contenu-pme", icon: "Camera", description: "Photo, vidéo et design pro" },
+      { label: "Support communication", href: "/services/support-communication-pme", icon: "Megaphone", description: "Réseaux sociaux et pilotage" },
     ],
   },
   {
     label: "Secteurs",
-    href: "#",
+    href: "/secteurs",
     children: [
-      { label: "Hôtels & hébergements", href: "/secteurs/hotels-lieux-evenementiels" },
-      { label: "Lieux événementiels", href: "/secteurs/lieux-evenementiels" },
+      { label: "Hôtels & hébergements", href: "/secteurs/hotels-lieux-evenementiels", icon: "Hotel", description: "Sites immersifs et réservation" },
+      { label: "Lieux événementiels", href: "/secteurs/lieux-evenementiels", icon: "PartyPopper", description: "Valorisez votre lieu de réception" },
+      { label: "Restaurants", href: "/secteurs/restaurants-food", icon: "UtensilsCrossed", description: "Menu, réservation et SEO local" },
+      { label: "Artisans & BTP", href: "/secteurs/artisans-btp", icon: "Hammer", description: "Portfolio et demandes de devis" },
+      { label: "Professions libérales", href: "/secteurs/professions-liberales", icon: "Briefcase", description: "Crédibilité et prise de RDV" },
+    ],
+  },
+  {
+    label: "Outils gratuits",
+    href: "/audit-digital",
+    children: [
+      { label: "Audit digital", href: "/audit-digital", icon: "Target", description: "Votre score sur 100 en 2 minutes" },
+      { label: "Calculateur ROI", href: "/calculateur-roi", icon: "TrendingUp", description: "Combien vous coûte votre invisibilité" },
     ],
   },
   { label: "Projets", href: "/projets" },
@@ -30,22 +41,23 @@ export const mainNav: NavItem[] = [
 export const footerNav = {
   services: [
     { label: "Création de site internet", href: "/services/creation-site-internet-dijon" },
-    { label: "Refonte de site internet", href: "/services/refonte-site-internet-dijon" },
     { label: "SEO local", href: "/services/seo-local-dijon" },
-    { label: "Automatisation no-code", href: "/services/automatisation-nocode-dijon" },
     { label: "Création de contenu", href: "/services/creation-contenu-pme" },
-    { label: "Support communication", href: "/services/support-communication-pme" },
+    { label: "Automatisation no-code", href: "/services/automatisation-nocode-dijon" },
   ],
-  entreprise: [
+  agence: [
     { label: "À propos", href: "/a-propos" },
     { label: "Projets", href: "/projets" },
     { label: "Blog", href: "/blog" },
-    { label: "Forfaits", href: "/forfait-communication-pme" },
-    { label: "FAQ", href: "/faq" },
     { label: "Témoignages", href: "/temoignages" },
+    { label: "Audit digital gratuit", href: "/audit-digital" },
+    { label: "Calculateur ROI", href: "/calculateur-roi" },
   ],
-  contact: [
+  informations: [
     { label: "Contact", href: "/contact" },
     { label: "Demander un devis", href: "/devis" },
+    { label: "FAQ", href: "/faq" },
+    { label: "Mentions légales", href: "/mentions-legales" },
+    { label: "Politique de confidentialité", href: "/politique-confidentialite" },
   ],
 }

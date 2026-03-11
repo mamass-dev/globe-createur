@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, SITE_LOCALE } from "@/lib/constants"
 import { Header } from "@/components/layout/header"
@@ -37,21 +37,29 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#6366f1",
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className={`${inter.variable} scroll-smooth`}>
+    <html lang="fr" className={`${inter.variable} scroll-smooth`} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme:dark)").matches)){document.documentElement.classList.add("dark")}}catch(e){}})()` }} />
       </head>
-      <body className={`${inter.className} flex min-h-dvh flex-col antialiased bg-white text-slate-900`}>
+      <body className={`${inter.className} flex min-h-dvh flex-col antialiased bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100`}>
         <LocalBusinessSchema />
         <Header />
-        <main className="flex-1 relative overflow-x-hidden">{children}</main>
+        <main className="flex-1 relative overflow-x-clip">{children}</main>
         <Footer />
       </body>
     </html>

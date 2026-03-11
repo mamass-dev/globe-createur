@@ -21,7 +21,7 @@ export function Input({ label, error, className, id, ...props }: InputProps) {
       <input
         id={id}
         className={cn(
-          "w-full border-b border-black/10 bg-transparent py-4 text-xl font-bold text-black placeholder:text-gray-200 transition-all duration-500 focus:border-accent focus:outline-none",
+          "w-full border-b border-black/10 dark:border-white/10 bg-transparent py-4 text-xl font-bold text-black dark:text-white placeholder:text-gray-200 dark:placeholder:text-gray-600 transition-all duration-500 focus:border-accent focus:outline-none",
           error && "border-error",
           className
         )}
@@ -43,7 +43,7 @@ export function Textarea({ label, error, className, id, ...props }: TextareaProp
       <textarea
         id={id}
         className={cn(
-          "w-full border-b border-black/10 bg-transparent py-4 text-xl font-bold text-black placeholder:text-gray-200 transition-all duration-500 focus:border-accent focus:outline-none resize-none min-h-32",
+          "w-full border-b border-black/10 dark:border-white/10 bg-transparent py-4 text-xl font-bold text-black dark:text-white placeholder:text-gray-200 dark:placeholder:text-gray-600 transition-all duration-500 focus:border-accent focus:outline-none resize-none min-h-32",
           error && "border-error",
           className
         )}

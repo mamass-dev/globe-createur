@@ -56,7 +56,7 @@ export function Stats({
   title?: string
 }) {
   return (
-    <section className="py-24 bg-indigo-600 rounded-[3rem] mx-4 lg:mx-12 overflow-hidden relative mb-24">
+    <section className="py-24 bg-indigo-600 dark:bg-indigo-950 rounded-[3rem] mx-4 lg:mx-12 overflow-hidden relative mb-24">
       <div className="absolute inset-0 opacity-10 dot-grid pointer-events-none" />
       <Container className="relative z-10">
         <AnimateOnScroll>

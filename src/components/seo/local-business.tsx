@@ -11,6 +11,8 @@ export function LocalBusinessSchema() {
         name: SITE_NAME,
         description: SITE_DESCRIPTION,
         url: SITE_URL,
+        logo: `${SITE_URL}/images/logo/logo-main.webp`,
+        image: `${SITE_URL}/og/default.jpg`,
         email: CONTACT.email,
         address: {
           "@type": "PostalAddress",
@@ -25,6 +27,20 @@ export function LocalBusinessSchema() {
           latitude: CONTACT.geo.lat,
           longitude: CONTACT.geo.lng,
         },
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "customer service",
+          email: CONTACT.email,
+          availableLanguage: "French",
+        },
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "09:00",
+            closes: "18:00",
+          },
+        ],
         sameAs: [CONTACT.socials.instagram, CONTACT.socials.linkedin],
         areaServed: {
           "@type": "GeoCircle",

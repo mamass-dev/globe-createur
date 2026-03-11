@@ -60,7 +60,7 @@ export default function DevisPage() {
             <h1 className="text-[2rem] sm:text-4xl font-bold tracking-tight text-foreground">
               Demander un devis gratuit
             </h1>
-            <p className="mt-4 text-lg text-gray-400 max-w-xl mx-auto leading-relaxed">
+            <p className="mt-4 text-lg text-gray-400 dark:text-slate-400 max-w-xl mx-auto leading-relaxed">
               D&eacute;crivez votre projet en 2 minutes. Nous vous envoyons un devis d&eacute;taill&eacute;
               avec des recommandations personnalis&eacute;es sous 48h.
             </p>
@@ -94,38 +94,38 @@ export default function DevisPage() {
                           <Check className="h-3 w-3 text-primary" />
                         </div>
                       </div>
-                      <span className="text-sm text-gray-500">{r}</span>
+                      <span className="text-sm text-gray-500 dark:text-slate-400">{r}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* 5. PREUVE - Testimonial inline */}
-              <div className="rounded-xl border border-gray-100 bg-white p-5">
-                <blockquote className="text-sm text-gray-500 leading-relaxed italic">
+              <div className="rounded-xl border border-gray-100 dark:border-slate-700 bg-white dark:bg-slate-800 p-5">
+                <blockquote className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed italic">
                   &ldquo;Globe Cr&eacute;ateur a transform&eacute; notre pr&eacute;sence en ligne.
                   Notre nouveau site g&eacute;n&egrave;re 3 fois plus de r&eacute;servations directes.&rdquo;
                 </blockquote>
                 <div className="mt-3 flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-full bg-gray-50 flex items-center justify-center text-xs font-semibold text-foreground">
+                  <div className="h-8 w-8 rounded-full bg-gray-50 dark:bg-slate-700 flex items-center justify-center text-xs font-semibold text-foreground">
                     M
                   </div>
                   <div>
                     <p className="text-xs font-medium text-foreground">Marie Dupont</p>
-                    <p className="text-xs text-gray-400">H&ocirc;tel Le Bourguignon</p>
+                    <p className="text-xs text-gray-400 dark:text-slate-500">H&ocirc;tel Le Bourguignon</p>
                   </div>
                 </div>
               </div>
 
               {/* 6. GARANTIES */}
               <div className="space-y-3">
-                <div className="flex items-center gap-2 text-sm text-gray-400">
+                <div className="flex items-center gap-2 text-sm text-gray-400 dark:text-slate-500">
                   <svg className="h-4 w-4 text-success shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                   </svg>
                   Vos donn&eacute;es restent confidentielles
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-400">
+                <div className="flex items-center gap-2 text-sm text-gray-400 dark:text-slate-500">
                   <svg className="h-4 w-4 text-success shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>

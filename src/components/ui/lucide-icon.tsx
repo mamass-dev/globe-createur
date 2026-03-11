@@ -1,10 +1,10 @@
-import { 
-  Globe, 
-  RefreshCw, 
-  Search, 
-  Building2, 
-  Zap, 
-  Camera, 
+import {
+  Globe,
+  RefreshCw,
+  Search,
+  Building2,
+  Zap,
+  Camera,
   Megaphone,
   ArrowRight,
   CheckCircle2,
@@ -26,7 +26,12 @@ import {
   ChevronRight,
   HelpCircle,
   Quote,
-  Check
+  Check,
+  Hotel,
+  PartyPopper,
+  UtensilsCrossed,
+  Hammer,
+  Briefcase,
 } from "lucide-react"
 
 export const icons = {
@@ -57,7 +62,12 @@ export const icons = {
   ChevronRight,
   HelpCircle,
   Quote,
-  Check
+  Check,
+  Hotel,
+  PartyPopper,
+  UtensilsCrossed,
+  Hammer,
+  Briefcase,
 }
 
 export type IconName = keyof typeof icons

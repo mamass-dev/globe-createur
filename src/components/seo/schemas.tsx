@@ -2,6 +2,32 @@ import { SITE_URL, SITE_NAME } from "@/lib/constants"
 import { JsonLd } from "./json-ld"
 import type { FaqItem } from "@/lib/types"
 
+export function AggregateRatingSchema({
+  ratingValue,
+  reviewCount,
+}: {
+  ratingValue: number
+  reviewCount: number
+}) {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": `${SITE_URL}/#organization`,
+        name: SITE_NAME,
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue,
+          bestRating: 5,
+          worstRating: 1,
+          reviewCount,
+        },
+      }}
+    />
+  )
+}
+
 export function ServiceSchema({
   name,
   description,
