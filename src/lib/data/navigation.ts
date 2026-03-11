@@ -1,4 +1,5 @@
 import type { NavItem } from "../types"
+import { isCityPublished } from "../scheduled-pages"
 
 export const mainNav: NavItem[] = [
   {
@@ -67,9 +68,15 @@ export const footerNav = {
   villes: [
     { label: "Dijon", href: "/agence-communication-dijon" },
     { label: "Beaune", href: "/agence-communication-beaune" },
+    { label: "Lyon", href: "/agence-communication-lyon" },
     { label: "Chalon-sur-Saône", href: "/agence-communication-chalon-sur-saone" },
+    { label: "Besançon", href: "/agence-communication-besancon" },
     { label: "Auxerre", href: "/agence-communication-auxerre" },
-  ],
+    { label: "Mâcon", href: "/agence-communication-macon" },
+    { label: "Clermont-Ferrand", href: "/agence-communication-clermont-ferrand" },
+    { label: "Nevers", href: "/agence-communication-nevers" },
+    { label: "Dole", href: "/agence-communication-dole" },
+  ].filter((item) => isCityPublished(item.href.replace("/", ""))),
   informations: [
     { label: "Contact", href: "/contact" },
     { label: "Devis gratuit", href: "/devis" },

@@ -1,11 +1,19 @@
 import type { MetadataRoute } from "next"
 import { SITE_URL } from "@/lib/constants"
 import { getBlogPosts, getServicePages, getSecteurPages, getProjetPages } from "@/lib/content"
+import { getPublishedCitySlugs } from "@/lib/scheduled-pages"
 
 export const revalidate = 3600
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString()
+
+  const cityPages: MetadataRoute.Sitemap = getPublishedCitySlugs().map((slug) => ({
+    url: `${SITE_URL}/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }))
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: SITE_URL, lastModified: now, changeFrequency: "weekly", priority: 1 },
@@ -13,10 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/projets`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/forfait-communication-pme`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/agence-communication-dijon`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/agence-communication-beaune`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/agence-communication-chalon-sur-saone`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/agence-communication-auxerre`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/tarifs`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/google-business-profile-dijon`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/a-propos`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
@@ -60,5 +64,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticPages, ...servicePages, ...secteurPages, ...projetPages, ...blogPages]
+  return [...staticPages, ...cityPages, ...servicePages, ...secteurPages, ...projetPages, ...blogPages]
 }
