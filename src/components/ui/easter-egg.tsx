@@ -1,67 +1,64 @@
 "use client"
 
-import { useEffect } from "react"
-
-const ASCII_ART = `
-%c
-   ██████╗ ██╗      ██████╗ ██████╗ ███████╗
-  ██╔════╝ ██║     ██╔═══██╗██╔══██╗██╔════╝
-  ██║  ███╗██║     ██║   ██║██████╔╝█████╗
-  ██║   ██║██║     ██║   ██║██╔══██╗██╔══╝
-  ╚██████╔╝███████╗╚██████╔╝██████╔╝███████╗
-   ╚═════╝ ╚══════╝ ╚═════╝ ╚═════╝ ╚══════╝
-   ██████╗██████╗ ███████╗ █████╗ ████████╗███████╗██╗   ██╗██████╗
-  ██╔════╝██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██╔════╝██║   ██║██╔══██╗
-  ██║     ██████╔╝█████╗  ███████║   ██║   █████╗  ██║   ██║██████╔╝
-  ██║     ██╔══██╗██╔══╝  ██╔══██║   ██║   ██╔══╝  ██║   ██║██╔══██╗
-  ╚██████╗██║  ██║███████╗██║  ██║   ██║   ███████╗╚██████╔╝██║  ██║
-   ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝ ╚═════╝ ╚═╝  ╚═╝
-
-`
+import { useEffect, useState, useCallback } from "react"
 
 export function EasterEgg() {
+  const [showEgg, setShowEgg] = useState(false)
+
+  const triggerKonami = useCallback(() => {
+    setShowEgg(true)
+    setTimeout(() => setShowEgg(false), 4000)
+  }, [])
+
   useEffect(() => {
+    // Console easter egg
     console.log(
-      ASCII_ART,
-      "color: #6366f1; font-weight: bold; font-size: 10px; font-family: monospace;"
+      "\n%c   ██████╗ ██╗      ██████╗ ██████╗ ███████╗\n  ██╔════╝ ██║     ██╔═══██╗██╔══██╗██╔════╝\n  ██║  ███╗██║     ██║   ██║██████╔╝█████╗  \n  ██║   ██║██║     ██║   ██║██╔══██╗██╔══╝  \n  ╚██████╔╝███████╗╚██████╔╝██████╔╝███████╗\n   ╚═════╝ ╚══════╝ ╚═════╝ ╚═════╝ ╚══════╝\n",
+      "color: #6366f1; font-weight: bold;"
     )
     console.log(
-      "%c👋 Hey ! Tu fouilles dans la console ? On aime ça.\n\n" +
-      "🚀 Ce site est construit avec Next.js, React 19, Tailwind et beaucoup de café.\n" +
-      "🔒 Toutes les routes API sont rate-limitées et sanitizées. Pas la peine d'essayer 😉\n\n" +
-      "💼 On recrute des curieux comme toi → contact@globecreateur.fr\n" +
-      "⭐ Ou laisse-nous un avis Google, ça nous ferait plaisir.\n",
-      "color: #94a3b8; font-size: 12px; line-height: 1.6;"
+      "%c👋 Hey ! Tu fouilles dans la console ? On aime ça.\n" +
+      "🚀 Next.js · React 19 · Tailwind · Beaucoup de café\n" +
+      "🔒 Routes API rate-limitées et sanitizées.\n" +
+      "💼 contact@globecreateur.fr",
+      "color: #94a3b8; font-size: 11px;"
     )
 
-    // Konami code easter egg
-    const konamiCode = [
-      "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown",
-      "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight",
-      "b", "a",
-    ]
-    let konamiIndex = 0
+    // Konami code: ↑↑↓↓←→←→BA
+    const code = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"]
+    let idx = 0
 
-    function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === konamiCode[konamiIndex]) {
-        konamiIndex++
-        if (konamiIndex === konamiCode.length) {
-          konamiIndex = 0
-          document.body.style.transition = "transform 1s ease"
-          document.body.style.transform = "rotate(360deg)"
-          setTimeout(() => {
-            document.body.style.transform = ""
-            alert("🌍 Globe Créateur approuve ce joueur ! Code Konami activé.")
-          }, 1000)
+    function onKey(e: KeyboardEvent) {
+      if (e.key === code[idx]) {
+        idx++
+        if (idx === code.length) {
+          idx = 0
+          triggerKonami()
         }
       } else {
-        konamiIndex = 0
+        idx = 0
       }
     }
 
-    window.addEventListener("keydown", handleKeyDown)
-    return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [])
+    window.addEventListener("keydown", onKey)
+    return () => window.removeEventListener("keydown", onKey)
+  }, [triggerKonami])
 
-  return null
+  if (!showEgg) return null
+
+  return (
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center pointer-events-none animate-in fade-in duration-300">
+      <div className="relative">
+        {/* Glow */}
+        <div className="absolute inset-0 bg-indigo-500/30 blur-3xl rounded-full scale-150" />
+        {/* Card */}
+        <div className="relative bg-slate-900/95 backdrop-blur-xl border border-indigo-500/50 rounded-3xl px-12 py-10 text-center shadow-2xl shadow-indigo-500/20 animate-in zoom-in-95 duration-500">
+          <p className="text-6xl mb-4">🌍</p>
+          <p className="text-2xl font-black text-white mb-2">Konami Code !</p>
+          <p className="text-indigo-400 font-mono text-sm">↑↑↓↓←→←→BA</p>
+          <p className="text-slate-400 text-xs mt-3">Globe Créateur approuve ce joueur.</p>
+        </div>
+      </div>
+    </div>
+  )
 }

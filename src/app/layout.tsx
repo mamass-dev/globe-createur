@@ -57,6 +57,18 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme:dark)").matches)){document.documentElement.classList.add("dark")}}catch(e){}})()` }} />
       </head>
+      {/*
+        ╔═══════════════════════════════════════════════╗
+        ║  Bien joué, tu lis le code source ! 🕵️       ║
+        ║                                               ║
+        ║  Tape le Konami Code sur la homepage :        ║
+        ║  ↑ ↑ ↓ ↓ ← → ← → B A                       ║
+        ║                                               ║
+        ║  Globe Créateur — globecreateur.fr             ║
+        ║  Construit avec Next.js, React 19 & Tailwind  ║
+        ║  contact@globecreateur.fr                     ║
+        ╚═══════════════════════════════════════════════╝
+      */}
       <body className={`${inter.className} flex min-h-dvh flex-col antialiased bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100`}>
         <LocalBusinessSchema />
         <WebSiteSchema />
