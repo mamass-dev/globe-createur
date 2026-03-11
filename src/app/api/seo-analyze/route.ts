@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
 import * as cheerio from "cheerio"
+import { seoAnalyzeSchema, isUrlSafe, rateLimit, getClientIp } from "@/lib/security"
 
 type Check = {
   id: string
@@ -14,14 +15,20 @@ type Check = {
 
 export async function POST(request: Request) {
   try {
-    const { url } = await request.json()
+    const ip = getClientIp(request)
+    const { success } = rateLimit(ip, { maxRequests: 10, windowMs: 3_600_000 })
+    if (!success) {
+      return NextResponse.json({ error: "Trop de requêtes. Réessayez plus tard." }, { status: 429 })
+    }
 
-    if (!url || typeof url !== "string") {
+    const body = await request.json()
+    const result = seoAnalyzeSchema.safeParse(body)
+    if (!result.success) {
       return NextResponse.json({ error: "URL requise" }, { status: 400 })
     }
 
     // Normalize URL
-    let targetUrl = url.trim()
+    let targetUrl = result.data.url
     if (!targetUrl.startsWith("http")) targetUrl = "https://" + targetUrl
 
     // Validate URL
@@ -29,6 +36,11 @@ export async function POST(request: Request) {
       new URL(targetUrl)
     } catch {
       return NextResponse.json({ error: "URL invalide" }, { status: 400 })
+    }
+
+    // SSRF protection
+    if (!isUrlSafe(targetUrl)) {
+      return NextResponse.json({ error: "URL non autorisée" }, { status: 400 })
     }
 
     // Fetch HTML

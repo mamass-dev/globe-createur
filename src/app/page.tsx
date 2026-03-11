@@ -15,6 +15,7 @@ import { TestimonialsWall } from "@/components/sections/testimonials-wall"
 import { Team } from "@/components/sections/team"
 import { AggregateRatingSchema } from "@/components/seo/schemas"
 import { getBlogPosts } from "@/lib/content"
+import { EasterEgg } from "@/components/ui/easter-egg"
 
 // Lazy load non-critical components
 const LogoMarquee = dynamic(() => import("@/components/sections/logo-marquee").then(mod => mod.LogoMarquee), {
@@ -27,6 +28,7 @@ const Stats = dynamic(() => import("@/components/sections/stats").then(mod => mo
 export default function HomePage() {
   return (
     <>
+      <EasterEgg />
       <AggregateRatingSchema ratingValue={5} reviewCount={10} />
 
       {/* 1. HERO — Centred video layout */}

@@ -1,34 +1,42 @@
 import { NextResponse } from "next/server"
 import { Resend } from "resend"
+import { devisSchema, escapeHtml, sanitizeForEmail, rateLimit, getClientIp } from "@/lib/security"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json()
-    const { name, email, company, service, budget, message } = body
-
-    if (!name || !email || !service || !message) {
-      return NextResponse.json({ error: "Champs requis manquants" }, { status: 400 })
+    const ip = getClientIp(request)
+    const { success } = rateLimit(ip, { maxRequests: 5, windowMs: 3_600_000 })
+    if (!success) {
+      return NextResponse.json({ error: "Trop de requêtes. Réessayez plus tard." }, { status: 429 })
     }
+
+    const body = await request.json()
+    const result = devisSchema.safeParse(body)
+    if (!result.success) {
+      return NextResponse.json({ error: "Données invalides", details: result.error.flatten().fieldErrors }, { status: 400 })
+    }
+
+    const { name, email, company, service, budget, message } = result.data
 
     await resend.emails.send({
       from: "Globe Créateur <noreply@globecreateur.fr>",
       to: "contact@globecreateur.fr",
       replyTo: email,
-      subject: `Demande de devis — ${service} — ${name}`,
+      subject: `Demande de devis — ${escapeHtml(service)} — ${escapeHtml(name)}`,
       html: `
         <h2>Nouvelle demande de devis</h2>
         <table style="border-collapse:collapse;width:100%;max-width:500px;">
-          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Nom</td><td style="padding:8px 12px;">${name}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Email</td><td style="padding:8px 12px;">${email}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Entreprise</td><td style="padding:8px 12px;">${company || "—"}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Service</td><td style="padding:8px 12px;">${service}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Budget</td><td style="padding:8px 12px;">${budget || "—"}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Nom</td><td style="padding:8px 12px;">${escapeHtml(name)}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Email</td><td style="padding:8px 12px;">${escapeHtml(email)}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Entreprise</td><td style="padding:8px 12px;">${escapeHtml(company || "—")}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Service</td><td style="padding:8px 12px;">${escapeHtml(service)}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Budget</td><td style="padding:8px 12px;">${escapeHtml(budget || "—")}</td></tr>
         </table>
         <hr style="margin:20px 0;border:none;border-top:1px solid #e2e8f0;" />
         <p><strong>Message :</strong></p>
-        <p>${message.replace(/\n/g, "<br />")}</p>
+        <p>${sanitizeForEmail(message)}</p>
       `,
     })
 
