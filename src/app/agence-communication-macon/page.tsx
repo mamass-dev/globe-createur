@@ -12,7 +12,7 @@ import { Stats } from "@/components/sections/stats"
 import { Testimonials } from "@/components/sections/testimonials"
 import { FaqAccordion } from "@/components/sections/faq-accordion"
 import { CtaSection } from "@/components/sections/cta-section"
-import { FaqSchema } from "@/components/seo/schemas"
+import { FaqSchema, CityLocalBusinessSchema } from "@/components/seo/schemas"
 import { Container } from "@/components/ui/container"
 import { AnimateOnScroll } from "@/components/ui/animate"
 import { ContactCard } from "@/components/sections/contact-card"
@@ -66,6 +66,12 @@ export default function AgenceMaconPage() {
 
   return (
     <>
+      <CityLocalBusinessSchema
+        city="Mâcon"
+        description="Agence de communication à Mâcon spécialisée PME. Sites web, SEO local, photo, vidéo et réseaux sociaux pour les entreprises mâconnaises. Studio basé à 1h15 de Mâcon."
+        slug="agence-communication-macon"
+        geo={{ lat: 46.307, lng: 4.834 }}
+      />
       <FaqSchema items={faqAgence} />
 
       <Breadcrumb items={[{ name: "Agence communication Mâcon", href: "/agence-communication-macon" }]} />

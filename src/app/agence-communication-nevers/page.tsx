@@ -12,7 +12,7 @@ import { Stats } from "@/components/sections/stats"
 import { Testimonials } from "@/components/sections/testimonials"
 import { FaqAccordion } from "@/components/sections/faq-accordion"
 import { CtaSection } from "@/components/sections/cta-section"
-import { FaqSchema } from "@/components/seo/schemas"
+import { FaqSchema, CityLocalBusinessSchema } from "@/components/seo/schemas"
 import { Container } from "@/components/ui/container"
 import { AnimateOnScroll } from "@/components/ui/animate"
 import { ContactCard } from "@/components/sections/contact-card"
@@ -66,6 +66,12 @@ export default function AgenceNeversPage() {
 
   return (
     <>
+      <CityLocalBusinessSchema
+        city="Nevers"
+        description="Agence de communication à Nevers spécialisée PME. Sites web, SEO local, photo, vidéo et réseaux sociaux pour les entreprises nivernaises. Studio basé à 2h de Nevers."
+        slug="agence-communication-nevers"
+        geo={{ lat: 46.990, lng: 3.159 }}
+      />
       <FaqSchema items={faqAgence} />
 
       <Breadcrumb items={[{ name: "Agence communication Nevers", href: "/agence-communication-nevers" }]} />

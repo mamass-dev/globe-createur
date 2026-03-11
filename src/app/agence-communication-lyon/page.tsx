@@ -12,7 +12,7 @@ import { Stats } from "@/components/sections/stats"
 import { Testimonials } from "@/components/sections/testimonials"
 import { FaqAccordion } from "@/components/sections/faq-accordion"
 import { CtaSection } from "@/components/sections/cta-section"
-import { FaqSchema } from "@/components/seo/schemas"
+import { FaqSchema, CityLocalBusinessSchema } from "@/components/seo/schemas"
 import { Container } from "@/components/ui/container"
 import { AnimateOnScroll } from "@/components/ui/animate"
 import { ContactCard } from "@/components/sections/contact-card"
@@ -66,6 +66,12 @@ export default function AgenceLyonPage() {
 
   return (
     <>
+      <CityLocalBusinessSchema
+        city="Lyon"
+        description="Alternative aux grosses agences lyonnaises. Sites web, SEO, photo, vidéo et réseaux sociaux pour les PME. Studio à taille humaine à 2h de Lyon, tarifs compétitifs."
+        slug="agence-communication-lyon"
+        geo={{ lat: 45.764, lng: 4.836 }}
+      />
       <FaqSchema items={faqAgence} />
 
       <Breadcrumb items={[{ name: "Agence communication Lyon", href: "/agence-communication-lyon" }]} />

@@ -140,6 +140,49 @@ export function WebSiteSchema() {
   )
 }
 
+export function CityLocalBusinessSchema({
+  city,
+  description,
+  slug,
+  geo,
+}: {
+  city: string
+  description: string
+  slug: string
+  geo: { lat: number; lng: number }
+}) {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": `${SITE_URL}/${slug}#localbusiness`,
+        name: `${SITE_NAME} — ${city}`,
+        description,
+        url: `${SITE_URL}/${slug}`,
+        logo: `${SITE_URL}/images/logo/logo-main.webp`,
+        image: `${SITE_URL}/og/default.jpg`,
+        email: "contact@globecreateur.fr",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: city,
+          addressCountry: "FR",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: geo.lat,
+          longitude: geo.lng,
+        },
+        areaServed: {
+          "@type": "City",
+          name: city,
+        },
+        priceRange: "€€",
+      }}
+    />
+  )
+}
+
 export function BreadcrumbSchema({
   items,
 }: {

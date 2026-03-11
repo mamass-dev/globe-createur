@@ -12,7 +12,7 @@ import { Stats } from "@/components/sections/stats"
 import { Testimonials } from "@/components/sections/testimonials"
 import { FaqAccordion } from "@/components/sections/faq-accordion"
 import { CtaSection } from "@/components/sections/cta-section"
-import { FaqSchema } from "@/components/seo/schemas"
+import { FaqSchema, CityLocalBusinessSchema } from "@/components/seo/schemas"
 import { Container } from "@/components/ui/container"
 import { AnimateOnScroll } from "@/components/ui/animate"
 import { ContactCard } from "@/components/sections/contact-card"
@@ -66,6 +66,12 @@ export default function AgenceClermontFerrandPage() {
 
   return (
     <>
+      <CityLocalBusinessSchema
+        city="Clermont-Ferrand"
+        description="Agence de communication pour les PME de Clermont-Ferrand. Sites web, SEO, photo, vidéo et réseaux sociaux. Studio intégré à 3h de Clermont, tarifs compétitifs."
+        slug="agence-communication-clermont-ferrand"
+        geo={{ lat: 45.783, lng: 3.082 }}
+      />
       <FaqSchema items={faqAgence} />
 
       <Breadcrumb items={[{ name: "Agence communication Clermont-Ferrand", href: "/agence-communication-clermont-ferrand" }]} />

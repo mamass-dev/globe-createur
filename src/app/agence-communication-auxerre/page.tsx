@@ -10,7 +10,7 @@ import { Stats } from "@/components/sections/stats"
 import { Testimonials } from "@/components/sections/testimonials"
 import { FaqAccordion } from "@/components/sections/faq-accordion"
 import { CtaSection } from "@/components/sections/cta-section"
-import { FaqSchema } from "@/components/seo/schemas"
+import { FaqSchema, CityLocalBusinessSchema } from "@/components/seo/schemas"
 import { Container } from "@/components/ui/container"
 import { AnimateOnScroll } from "@/components/ui/animate"
 import { ContactCard } from "@/components/sections/contact-card"
@@ -60,6 +60,12 @@ const faqAgence = [
 export default function AgenceAuxerrePage() {
   return (
     <>
+      <CityLocalBusinessSchema
+        city="Auxerre"
+        description="Agence de communication à Auxerre spécialisée PME. Sites web, SEO local, photo, vidéo et réseaux sociaux pour les entreprises auxerroises. Studio basé en Bourgogne."
+        slug="agence-communication-auxerre"
+        geo={{ lat: 47.798, lng: 3.567 }}
+      />
       <FaqSchema items={faqAgence} />
 
       <Breadcrumb items={[{ name: "Agence communication Auxerre", href: "/agence-communication-auxerre" }]} />

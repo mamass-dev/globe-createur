@@ -10,7 +10,7 @@ import { Stats } from "@/components/sections/stats"
 import { Testimonials } from "@/components/sections/testimonials"
 import { FaqAccordion } from "@/components/sections/faq-accordion"
 import { CtaSection } from "@/components/sections/cta-section"
-import { FaqSchema } from "@/components/seo/schemas"
+import { FaqSchema, CityLocalBusinessSchema } from "@/components/seo/schemas"
 import { Container } from "@/components/ui/container"
 import { AnimateOnScroll } from "@/components/ui/animate"
 import { ContactCard } from "@/components/sections/contact-card"
@@ -60,6 +60,12 @@ const faqAgence = [
 export default function AgencePage() {
   return (
     <>
+      <CityLocalBusinessSchema
+        city="Dijon"
+        description="Agence de communication à Dijon spécialisée PME. Web, SEO local, photo, vidéo, design et réseaux sociaux. Un interlocuteur unique, des résultats mesurables. Studio basé à Longvic."
+        slug="agence-communication-dijon"
+        geo={{ lat: 47.322, lng: 5.041 }}
+      />
       <FaqSchema items={faqAgence} />
 
       {/* 1. NAVIGATION */}

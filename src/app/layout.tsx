@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { LocalBusinessSchema } from "@/components/seo/local-business"
 import { WebSiteSchema } from "@/components/seo/schemas"
+import { GoogleAnalytics } from "@next/third-parties/google"
 import { Cursor } from "@/components/ui/cursor"
 import "./globals.css"
 
@@ -55,6 +56,8 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://img.youtube.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme:dark)").matches)){document.documentElement.classList.add("dark")}}catch(e){}})()` }} />
       </head>
       {/*
@@ -75,6 +78,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1 relative overflow-x-clip">{children}</main>
         <Footer />
+        <GoogleAnalytics gaId="G-664Q7SST68" />
       </body>
     </html>
   )

@@ -10,7 +10,7 @@ import { Stats } from "@/components/sections/stats"
 import { Testimonials } from "@/components/sections/testimonials"
 import { FaqAccordion } from "@/components/sections/faq-accordion"
 import { CtaSection } from "@/components/sections/cta-section"
-import { FaqSchema } from "@/components/seo/schemas"
+import { FaqSchema, CityLocalBusinessSchema } from "@/components/seo/schemas"
 import { Container } from "@/components/ui/container"
 import { AnimateOnScroll } from "@/components/ui/animate"
 import { ContactCard } from "@/components/sections/contact-card"
@@ -60,6 +60,12 @@ const faqAgence = [
 export default function AgenceChalonsurSaonePage() {
   return (
     <>
+      <CityLocalBusinessSchema
+        city="Chalon-sur-Saône"
+        description="Agence de communication à Chalon-sur-Saône spécialisée PME. Sites web, SEO local, photo, vidéo et réseaux sociaux. Studio basé en Bourgogne, à 1h de Chalon."
+        slug="agence-communication-chalon-sur-saone"
+        geo={{ lat: 46.781, lng: 4.854 }}
+      />
       <FaqSchema items={faqAgence} />
 
       <Breadcrumb items={[{ name: "Agence communication Chalon-sur-Saône", href: "/agence-communication-chalon-sur-saone" }]} />

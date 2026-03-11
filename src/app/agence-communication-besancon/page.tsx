@@ -12,7 +12,7 @@ import { Stats } from "@/components/sections/stats"
 import { Testimonials } from "@/components/sections/testimonials"
 import { FaqAccordion } from "@/components/sections/faq-accordion"
 import { CtaSection } from "@/components/sections/cta-section"
-import { FaqSchema } from "@/components/seo/schemas"
+import { FaqSchema, CityLocalBusinessSchema } from "@/components/seo/schemas"
 import { Container } from "@/components/ui/container"
 import { AnimateOnScroll } from "@/components/ui/animate"
 import { ContactCard } from "@/components/sections/contact-card"
@@ -66,6 +66,12 @@ export default function AgenceBesanconPage() {
 
   return (
     <>
+      <CityLocalBusinessSchema
+        city="Besançon"
+        description="Agence de communication à Besançon spécialisée PME. Sites web, SEO local, photo, vidéo et réseaux sociaux pour les entreprises bisontines. Studio basé à 1h30 de Besançon."
+        slug="agence-communication-besancon"
+        geo={{ lat: 47.238, lng: 6.024 }}
+      />
       <FaqSchema items={faqAgence} />
 
       <Breadcrumb items={[{ name: "Agence communication Besançon", href: "/agence-communication-besancon" }]} />

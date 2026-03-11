@@ -10,7 +10,7 @@ import { Stats } from "@/components/sections/stats"
 import { Testimonials } from "@/components/sections/testimonials"
 import { FaqAccordion } from "@/components/sections/faq-accordion"
 import { CtaSection } from "@/components/sections/cta-section"
-import { FaqSchema } from "@/components/seo/schemas"
+import { FaqSchema, CityLocalBusinessSchema } from "@/components/seo/schemas"
 import { Container } from "@/components/ui/container"
 import { AnimateOnScroll } from "@/components/ui/animate"
 import { ContactCard } from "@/components/sections/contact-card"
@@ -60,6 +60,12 @@ const faqAgence = [
 export default function AgenceBeaunePage() {
   return (
     <>
+      <CityLocalBusinessSchema
+        city="Beaune"
+        description="Agence de communication à Beaune spécialisée PME. Sites web, SEO local, photo, vidéo et réseaux sociaux pour les entreprises beaunoises. Studio basé à 40 min de Beaune."
+        slug="agence-communication-beaune"
+        geo={{ lat: 47.026, lng: 4.840 }}
+      />
       <FaqSchema items={faqAgence} />
 
       <Breadcrumb items={[{ name: "Agence communication Beaune", href: "/agence-communication-beaune" }]} />

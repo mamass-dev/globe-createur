@@ -12,7 +12,7 @@ import { Stats } from "@/components/sections/stats"
 import { Testimonials } from "@/components/sections/testimonials"
 import { FaqAccordion } from "@/components/sections/faq-accordion"
 import { CtaSection } from "@/components/sections/cta-section"
-import { FaqSchema } from "@/components/seo/schemas"
+import { FaqSchema, CityLocalBusinessSchema } from "@/components/seo/schemas"
 import { Container } from "@/components/ui/container"
 import { AnimateOnScroll } from "@/components/ui/animate"
 import { ContactCard } from "@/components/sections/contact-card"
@@ -66,6 +66,12 @@ export default function AgenceDolePage() {
 
   return (
     <>
+      <CityLocalBusinessSchema
+        city="Dole"
+        description="Agence de communication à Dole spécialisée PME. Sites web, SEO local, photo, vidéo et réseaux sociaux pour les entreprises doloises. Studio basé à 1h15 de Dole."
+        slug="agence-communication-dole"
+        geo={{ lat: 47.095, lng: 5.490 }}
+      />
       <FaqSchema items={faqAgence} />
 
       <Breadcrumb items={[{ name: "Agence communication Dole", href: "/agence-communication-dole" }]} />
