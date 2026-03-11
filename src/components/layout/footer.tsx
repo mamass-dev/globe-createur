@@ -31,7 +31,7 @@ export function Footer() {
           </div>
 
           {/* Links Grid */}
-          <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-12">
+          <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-12">
             <div className="space-y-6">
               <h3 className="text-sm font-black uppercase tracking-widest text-slate-400">Services</h3>
               <ul className="space-y-4">
@@ -48,6 +48,18 @@ export function Footer() {
               <h3 className="text-sm font-black uppercase tracking-widest text-slate-400">Agence</h3>
               <ul className="space-y-4">
                 {footerNav.agence.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-sm font-black uppercase tracking-widest text-slate-400">Zones</h3>
+              <ul className="space-y-4">
+                {footerNav.villes.map((item) => (
                   <li key={item.href}>
                     <Link href={item.href} className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                       {item.label}

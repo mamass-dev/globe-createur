@@ -55,6 +55,12 @@ export const footerNav = {
     { label: "Calculateur ROI", href: "/calculateur-roi" },
     { label: "Analyseur SEO", href: "/analyseur-seo" },
   ],
+  villes: [
+    { label: "Agence communication Dijon", href: "/agence-communication-dijon" },
+    { label: "Agence communication Beaune", href: "/agence-communication-beaune" },
+    { label: "Agence communication Chalon-sur-Saône", href: "/agence-communication-chalon-sur-saone" },
+    { label: "Agence communication Auxerre", href: "/agence-communication-auxerre" },
+  ],
   informations: [
     { label: "Contact", href: "/contact" },
     { label: "Demander un devis", href: "/devis" },
