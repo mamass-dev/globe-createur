@@ -44,32 +44,37 @@ export const mainNav: NavItem[] = [
 
 export const footerNav = {
   services: [
-    { label: "Création de site internet", href: "/services/creation-site-internet-dijon" },
+    { label: "Création de site", href: "/services/creation-site-internet-dijon" },
+    { label: "Refonte de site", href: "/services/refonte-site-internet-dijon" },
     { label: "SEO local", href: "/services/seo-local-dijon" },
-    { label: "Google Business Profile", href: "/google-business-profile-dijon" },
+    { label: "Google Business", href: "/google-business-profile-dijon" },
     { label: "Création de contenu", href: "/services/creation-contenu-pme" },
-    { label: "Automatisation no-code", href: "/services/automatisation-nocode-dijon" },
+    { label: "Automatisation", href: "/services/automatisation-nocode-dijon" },
   ],
   agence: [
     { label: "À propos", href: "/a-propos" },
     { label: "Projets", href: "/projets" },
     { label: "Blog", href: "/blog" },
     { label: "Témoignages", href: "/temoignages" },
-    { label: "Audit digital gratuit", href: "/audit-digital" },
+    { label: "Tarifs", href: "/tarifs" },
+    { label: "Forfaits", href: "/forfait-communication-pme" },
+  ],
+  outils: [
+    { label: "Audit digital", href: "/audit-digital" },
     { label: "Calculateur ROI", href: "/calculateur-roi" },
     { label: "Analyseur SEO", href: "/analyseur-seo" },
   ],
   villes: [
-    { label: "Agence communication Dijon", href: "/agence-communication-dijon" },
-    { label: "Agence communication Beaune", href: "/agence-communication-beaune" },
-    { label: "Agence communication Chalon-sur-Saône", href: "/agence-communication-chalon-sur-saone" },
-    { label: "Agence communication Auxerre", href: "/agence-communication-auxerre" },
+    { label: "Dijon", href: "/agence-communication-dijon" },
+    { label: "Beaune", href: "/agence-communication-beaune" },
+    { label: "Chalon-sur-Saône", href: "/agence-communication-chalon-sur-saone" },
+    { label: "Auxerre", href: "/agence-communication-auxerre" },
   ],
   informations: [
     { label: "Contact", href: "/contact" },
-    { label: "Demander un devis", href: "/devis" },
+    { label: "Devis gratuit", href: "/devis" },
     { label: "FAQ", href: "/faq" },
     { label: "Mentions légales", href: "/mentions-legales" },
-    { label: "Politique de confidentialité", href: "/politique-confidentialite" },
+    { label: "Confidentialité", href: "/politique-confidentialite" },
   ],
 }
