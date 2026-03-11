@@ -13,6 +13,7 @@ import { CtaSection } from "@/components/sections/cta-section"
 import { FaqSchema } from "@/components/seo/schemas"
 import { Container } from "@/components/ui/container"
 import { AnimateOnScroll } from "@/components/ui/animate"
+import { ContactCard } from "@/components/sections/contact-card"
 import { services } from "@/lib/data/services"
 import { temoignages } from "@/lib/data/temoignages"
 
@@ -166,6 +167,9 @@ export default function AgenceAuxerrePage() {
           </div>
         </AnimateOnScroll>
       </Container>
+
+      {/* CONTACT PRIVILÉGIÉ */}
+      <ContactCard city="Auxerre" />
 
       <Stats stats={stats} />
 
