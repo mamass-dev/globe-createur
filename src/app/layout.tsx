@@ -5,8 +5,10 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { LocalBusinessSchema } from "@/components/seo/local-business"
 import { WebSiteSchema } from "@/components/seo/schemas"
-import { GoogleAnalytics } from "@next/third-parties/google"
 import { Cursor } from "@/components/ui/cursor"
+import { WhatsAppButton } from "@/components/ui/whatsapp-button"
+import { CookieBanner } from "@/components/ui/cookie-banner"
+import { ExitIntentPopup } from "@/components/ui/exit-intent-popup"
 import "./globals.css"
 
 const inter = Inter({
@@ -78,7 +80,9 @@ export default function RootLayout({
         <Header />
         <main className="flex-1 relative overflow-x-clip">{children}</main>
         <Footer />
-        <GoogleAnalytics gaId="G-LEGY3EMG5L" />
+        <WhatsAppButton />
+        <CookieBanner />
+        <ExitIntentPopup />
       </body>
     </html>
   )

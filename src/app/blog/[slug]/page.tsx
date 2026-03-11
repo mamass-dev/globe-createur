@@ -15,7 +15,25 @@ import { AuthorCard } from "@/components/blog/author-card"
 import { TableOfContents } from "@/components/blog/table-of-contents"
 import { extractHeadings } from "@/lib/toc"
 import { RelatedArticles } from "@/components/blog/related-articles"
+import { Breadcrumb } from "@/components/layout/breadcrumb"
 import { Clock, Calendar } from "lucide-react"
+
+const CATEGORY_LABELS: Record<string, string> = {
+  "seo-local": "SEO Local",
+  "seo-acquisition": "SEO & Acquisition",
+  "strategie-digitale": "Stratégie Digitale",
+  "web-design-site-internet": "Web Design",
+  "web-design": "Web Design",
+  "reseaux-sociaux": "Réseaux Sociaux",
+  "automatisation": "Automatisation",
+  "marketing-digital": "Marketing Digital",
+  "google-business": "Google Business",
+  "communication-digitale": "Communication Digitale",
+}
+
+function getCategoryLabel(slug: string): string {
+  return CATEGORY_LABELS[slug] ?? slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())
+}
 
 export const revalidate = 3600
 
@@ -55,10 +73,18 @@ export default async function BlogPostPage({
   const { frontmatter: fm, content } = post
   const author = getAuthor(fm.author)
   const headings = extractHeadings(content)
+  const categoryLabel = getCategoryLabel(fm.category)
 
   return (
     <article className="bg-white dark:bg-slate-950 pt-32 lg:pt-44 pb-32">
       <ReadingProgress />
+      <Breadcrumb
+        items={[
+          { name: "Blog", href: "/blog" },
+          { name: categoryLabel, href: `/blog?categorie=${fm.category}` },
+          { name: fm.title, href: `/blog/${slug}` },
+        ]}
+      />
       <ArticleSchema
         title={fm.metaTitle}
         description={fm.metaDescription}

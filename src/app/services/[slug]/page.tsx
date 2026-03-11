@@ -9,6 +9,7 @@ import { FaqAccordion } from "@/components/sections/faq-accordion"
 import { ServiceSchema, FaqSchema } from "@/components/seo/schemas"
 import { Container } from "@/components/ui/container"
 import { faqGenerales } from "@/lib/data/faq"
+import { serviceFaqs } from "@/lib/data/service-faqs"
 import { Button } from "@/components/ui/button"
 import { LucideIcon } from "@/components/ui/lucide-icon"
 import { ServiceVisual } from "@/components/ui/service-visual"
@@ -54,7 +55,9 @@ export default async function ServicePage({
   const title = service?.title ?? fm.title ?? slug
   const h1 = fm.h1 ?? title
   const subtitle = fm.metaDescription ?? service?.metaDescription ?? service?.excerpt ?? ""
-  const pageFaq = faqGenerales.slice(0, 5)
+  const specificFaqs = serviceFaqs[slug] ?? []
+  const generalFaqs = faqGenerales.slice(0, 5)
+  const pageFaq = [...specificFaqs, ...generalFaqs]
 
   // Related services
   const related = service?.relatedServices
