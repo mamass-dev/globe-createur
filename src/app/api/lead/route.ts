@@ -1,4 +1,7 @@
 import { NextResponse } from "next/server"
+import { Resend } from "resend"
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: Request) {
   try {
@@ -9,27 +12,37 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Champs requis manquants" }, { status: 400 })
     }
 
-    // TODO: Intégrer Resend pour l'envoi d'email
-    // import { Resend } from "resend"
-    // const resend = new Resend(process.env.RESEND_API_KEY)
-    // await resend.emails.send({
-    //   from: "Globe Créateur <noreply@globecreateur.fr>",
-    //   to: "contact@globecreateur.fr",
-    //   subject: `🎯 Nouveau lead ${source} — ${name}`,
-    //   html: `
-    //     <h2>Nouveau lead depuis ${source}</h2>
-    //     <p><strong>Nom :</strong> ${name}</p>
-    //     <p><strong>Email :</strong> ${email}</p>
-    //     <p><strong>Téléphone :</strong> ${phone || "Non renseigné"}</p>
-    //     <h3>Contexte</h3>
-    //     <pre>${JSON.stringify(context, null, 2)}</pre>
-    //   `,
-    // })
+    const contextRows = context
+      ? Object.entries(context)
+          .map(([key, val]) => `<tr><td style="padding:6px 12px;font-weight:bold;color:#64748b;">${key}</td><td style="padding:6px 12px;">${typeof val === "object" ? JSON.stringify(val) : val}</td></tr>`)
+          .join("")
+      : ""
 
-    console.log("Lead submission:", { name, email, phone, source, context })
+    await resend.emails.send({
+      from: "Globe Créateur <noreply@globecreateur.fr>",
+      to: "contact@globecreateur.fr",
+      replyTo: email,
+      subject: `Nouveau lead ${source} — ${name}`,
+      html: `
+        <h2>Nouveau lead depuis ${source}</h2>
+        <table style="border-collapse:collapse;width:100%;max-width:500px;">
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Nom</td><td style="padding:8px 12px;">${name}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Email</td><td style="padding:8px 12px;">${email}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Téléphone</td><td style="padding:8px 12px;">${phone || "—"}</td></tr>
+        </table>
+        ${contextRows ? `
+        <hr style="margin:20px 0;border:none;border-top:1px solid #e2e8f0;" />
+        <h3 style="color:#6366f1;">Données du ${source}</h3>
+        <table style="border-collapse:collapse;width:100%;max-width:500px;">
+          ${contextRows}
+        </table>
+        ` : ""}
+      `,
+    })
 
     return NextResponse.json({ success: true })
-  } catch {
+  } catch (error) {
+    console.error("Lead form error:", error)
     return NextResponse.json({ error: "Erreur serveur" }, { status: 500 })
   }
 }
