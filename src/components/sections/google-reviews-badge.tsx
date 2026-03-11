@@ -59,13 +59,13 @@ export function GoogleReviewsBadge({ reviews }: { reviews: Temoignage[] }) {
       {/* Separator */}
       <div className="h-8 w-px bg-slate-200 dark:bg-slate-700 hidden sm:block" />
 
-      {/* Rotating review excerpt */}
+      {/* Rotating review excerpt — fixed height to prevent layout shift */}
       {review && (
-        <div className="hidden sm:block max-w-xs overflow-hidden">
-          <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed transition-opacity duration-500">
+        <div key={current} className="hidden sm:block w-56 overflow-hidden animate-fade-in">
+          <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed h-[2.5rem]">
             &laquo; {review.content} &raquo;
           </p>
-          <p className="text-[11px] font-bold text-slate-900 dark:text-white mt-0.5">
+          <p className="text-[11px] font-bold text-slate-900 dark:text-white mt-0.5 truncate">
             {review.name}{review.company ? `, ${review.company}` : ""}
           </p>
         </div>

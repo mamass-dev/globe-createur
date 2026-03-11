@@ -15,8 +15,9 @@ import { AuthorCard } from "@/components/blog/author-card"
 import { TableOfContents } from "@/components/blog/table-of-contents"
 import { extractHeadings } from "@/lib/toc"
 import { RelatedArticles } from "@/components/blog/related-articles"
-import { Breadcrumb } from "@/components/layout/breadcrumb"
-import { Clock, Calendar } from "lucide-react"
+import { BreadcrumbSchema } from "@/components/seo/schemas"
+import Link from "next/link"
+import { Clock, Calendar, Home, ChevronRight } from "lucide-react"
 
 const CATEGORY_LABELS: Record<string, string> = {
   "seo-local": "SEO Local",
@@ -78,11 +79,11 @@ export default async function BlogPostPage({
   return (
     <article className="bg-white dark:bg-slate-950 pt-32 lg:pt-44 pb-32">
       <ReadingProgress />
-      <Breadcrumb
+      <BreadcrumbSchema
         items={[
+          { name: "Accueil", href: "/" },
           { name: "Blog", href: "/blog" },
           { name: categoryLabel, href: `/blog?categorie=${fm.category}` },
-          { name: fm.title, href: `/blog/${slug}` },
         ]}
       />
       <ArticleSchema
@@ -98,14 +99,32 @@ export default async function BlogPostPage({
       <Container>
         {/* HEADER */}
         <header className="max-w-4xl mx-auto mb-16 space-y-6">
+          {/* Fil d'Ariane design */}
+          <nav aria-label="Fil d'Ariane" className="flex items-center gap-2 text-sm">
+            <Link href="/" className="flex items-center gap-1 text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+              <Home className="h-3.5 w-3.5" />
+              <span className="sr-only">Accueil</span>
+            </Link>
+            <ChevronRight className="h-3 w-3 text-slate-300 dark:text-slate-600" />
+            <Link href="/blog" className="text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors font-medium">
+              Blog
+            </Link>
+            <ChevronRight className="h-3 w-3 text-slate-300 dark:text-slate-600" />
+            <Link
+              href={`/blog?categorie=${fm.category}`}
+              className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-900/50 hover:bg-indigo-100 dark:hover:bg-indigo-900/50 transition-colors"
+            >
+              {categoryLabel}
+            </Link>
+          </nav>
+
+          {/* Meta infos */}
           <div className="flex flex-wrap items-center gap-3">
-            <span className="px-3 py-1 bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 text-xs font-black uppercase tracking-widest rounded-full">
-              {fm.category}
-            </span>
             <span className="flex items-center gap-1.5 text-slate-400 text-sm">
               <Clock className="h-3.5 w-3.5" />
-              {fm.readingTime} min
+              {fm.readingTime} min de lecture
             </span>
+            <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600" />
             <span className="flex items-center gap-1.5 text-slate-400 text-sm">
               <Calendar className="h-3.5 w-3.5" />
               {formatDate(fm.publishedAt)}
@@ -127,7 +146,7 @@ export default async function BlogPostPage({
               alt={author.name}
               width={40}
               height={40}
-              className="h-10 w-10 rounded-full object-cover"
+              className="h-10 w-10 rounded-full object-cover ring-2 ring-slate-100 dark:ring-slate-800"
             />
             <div>
               <p className="text-sm font-bold text-slate-900 dark:text-white">{author.name}</p>

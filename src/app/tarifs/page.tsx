@@ -202,7 +202,7 @@ export default function TarifsPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-8">
                 <h3 className="text-lg font-extrabold text-slate-900 dark:text-white mb-4">Embaucher un chargé de com&apos;</h3>
-                <p className="text-3xl font-black text-slate-400 mb-4">45 000 – 58 000 €<span className="text-sm font-medium">/an</span></p>
+                <p className="text-2xl lg:text-3xl font-black text-slate-400 mb-4 whitespace-nowrap">45 000 – 58 000 €<span className="text-sm font-medium">/an</span></p>
                 <ul className="space-y-2 text-sm text-slate-500">
                   <li>1 seule compétence</li>
                   <li>Charges sociales, congés, formation</li>

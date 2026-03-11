@@ -104,6 +104,13 @@ export const leadSchema = z.object({
   context: z.record(z.string(), z.unknown()).optional(),
 })
 
+export const leadMagnetSchema = z.object({
+  email: z.string().email("Email invalide").max(255).trim(),
+  source: z.string().max(100).trim().optional().default("lead-magnet"),
+  offer: z.string().max(200).trim().optional().default(""),
+  page: z.string().max(500).trim().optional().default(""),
+})
+
 export const seoAnalyzeSchema = z.object({
   url: z.string().min(4).max(2000).trim(),
 })

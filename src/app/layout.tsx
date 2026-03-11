@@ -8,7 +8,7 @@ import { WebSiteSchema } from "@/components/seo/schemas"
 import { Cursor } from "@/components/ui/cursor"
 import { WhatsAppButton } from "@/components/ui/whatsapp-button"
 import { CookieBanner } from "@/components/ui/cookie-banner"
-import { ExitIntentPopup } from "@/components/ui/exit-intent-popup"
+import { LeadMagnet } from "@/components/ui/lead-magnet"
 import "./globals.css"
 
 const inter = Inter({
@@ -82,7 +82,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppButton />
         <CookieBanner />
-        <ExitIntentPopup />
+        <LeadMagnet />
       </body>
     </html>
   )
