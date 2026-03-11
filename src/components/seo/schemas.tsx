@@ -120,6 +120,26 @@ export function ArticleSchema({
   )
 }
 
+export function WebSiteSchema() {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        name: SITE_NAME,
+        url: SITE_URL,
+        publisher: {
+          "@type": "Organization",
+          "@id": `${SITE_URL}/#organization`,
+          name: SITE_NAME,
+        },
+        inLanguage: "fr-FR",
+      }}
+    />
+  )
+}
+
 export function BreadcrumbSchema({
   items,
 }: {

@@ -12,6 +12,26 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      // .com → .fr (canonical domain)
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "globecreateur.com" }],
+        destination: "https://globecreateur.fr/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.globecreateur.com" }],
+        destination: "https://globecreateur.fr/:path*",
+        permanent: true,
+      },
+      // www → non-www
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.globecreateur.fr" }],
+        destination: "https://globecreateur.fr/:path*",
+        permanent: true,
+      },
       // Fusion site-web-pme → création-site-internet-dijon
       { source: "/services/site-web-pme", destination: "/services/creation-site-internet-dijon", permanent: true },
       { source: "/services/site-web-pme/", destination: "/services/creation-site-internet-dijon", permanent: true },
