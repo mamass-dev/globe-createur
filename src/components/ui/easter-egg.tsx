@@ -57,6 +57,7 @@ export function EasterEgg() {
           <p className="text-2xl font-black text-white mb-2">Konami Code !</p>
           <p className="text-indigo-400 font-mono text-sm">↑↑↓↓BA</p>
           <p className="text-slate-400 text-xs mt-3">Globe Créateur approuve ce joueur.</p>
+          <a href="mailto:contact@globecreateur.fr" className="inline-block mt-4 text-sm font-semibold text-indigo-400 hover:text-indigo-300 transition-colors pointer-events-auto">contact@globecreateur.fr</a>
         </div>
       </div>
     </div>
