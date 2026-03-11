@@ -78,7 +78,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1 relative overflow-x-clip">{children}</main>
         <Footer />
-        <GoogleAnalytics gaId="G-664Q7SST68" />
+        <GoogleAnalytics gaId="G-LEGY3EMG5L" />
       </body>
     </html>
   )
