@@ -25,7 +25,7 @@ export function EasterEgg() {
     )
 
     // Konami code: ↑↑↓↓←→←→BA
-    const code = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"]
+    const code = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown","b","a"]
     let idx = 0
 
     function onKey(e: KeyboardEvent) {
@@ -55,7 +55,7 @@ export function EasterEgg() {
         <div className="relative bg-slate-900/95 backdrop-blur-xl border border-indigo-500/50 rounded-3xl px-12 py-10 text-center shadow-2xl shadow-indigo-500/20 animate-in zoom-in-95 duration-500">
           <p className="text-6xl mb-4">🌍</p>
           <p className="text-2xl font-black text-white mb-2">Konami Code !</p>
-          <p className="text-indigo-400 font-mono text-sm">↑↑↓↓←→←→BA</p>
+          <p className="text-indigo-400 font-mono text-sm">↑↑↓↓BA</p>
           <p className="text-slate-400 text-xs mt-3">Globe Créateur approuve ce joueur.</p>
         </div>
       </div>
