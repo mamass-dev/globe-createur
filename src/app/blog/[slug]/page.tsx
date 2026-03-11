@@ -17,6 +17,8 @@ import { extractHeadings } from "@/lib/toc"
 import { RelatedArticles } from "@/components/blog/related-articles"
 import { Clock, Calendar } from "lucide-react"
 
+export const revalidate = 3600
+
 export function generateStaticParams() {
   return getBlogPosts().map((p) => ({ slug: p.slug }))
 }

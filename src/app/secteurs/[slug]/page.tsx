@@ -41,6 +41,8 @@ import { faqGenerales } from "@/lib/data/faq"
    - Capter la longue traîne SEO sectorielle
    ═══════════════════════════════════════════════════ */
 
+export const revalidate = 3600
+
 export function generateStaticParams() {
   return getSecteurPages().map((p) => ({ slug: p.slug }))
 }

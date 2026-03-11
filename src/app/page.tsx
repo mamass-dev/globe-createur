@@ -25,6 +25,8 @@ const Stats = dynamic(() => import("@/components/sections/stats").then(mod => mo
   ssr: true,
 })
 
+export const revalidate = 3600
+
 export default function HomePage() {
   return (
     <>

@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next"
 import { SITE_URL } from "@/lib/constants"
 import { getBlogPosts, getServicePages, getSecteurPages, getProjetPages } from "@/lib/content"
 
+export const revalidate = 3600
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString()
 

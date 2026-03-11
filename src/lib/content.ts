@@ -10,7 +10,22 @@ type ContentItem<T> = {
   content: string
 }
 
-function readMdxDir<T>(subdir: string): ContentItem<T>[] {
+/**
+ * Check if a content item is published.
+ * - If `draft: true` → hidden
+ * - If `scheduledAt` is set and in the future → hidden
+ * - Otherwise → published
+ */
+function isPublished(frontmatter: Record<string, unknown>): boolean {
+  if (frontmatter.draft === true) return false
+  const scheduled = frontmatter.scheduledAt as string | undefined
+  if (scheduled) {
+    return new Date(scheduled) <= new Date()
+  }
+  return true
+}
+
+function readMdxDir<T>(subdir: string, { includeScheduled = false } = {}): ContentItem<T>[] {
   const dir = path.join(CONTENT_DIR, subdir)
   if (!fs.existsSync(dir)) return []
 
@@ -26,6 +41,7 @@ function readMdxDir<T>(subdir: string): ContentItem<T>[] {
         content,
       }
     })
+    .filter((item) => includeScheduled || isPublished(item.frontmatter as Record<string, unknown>))
 }
 
 function readMdxFile<T>(subdir: string, slug: string): ContentItem<T> | null {

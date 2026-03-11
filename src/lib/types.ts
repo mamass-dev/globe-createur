@@ -59,6 +59,10 @@ export type BlogFrontmatter = {
   imageAlt: string
   relatedServices: string[]
   relatedArticles: string[]
+  /** If set, article is hidden until this date (ISO format: "2026-03-15") */
+  scheduledAt?: string
+  /** If true, article is hidden from the site */
+  draft?: boolean
 }
 
 export type NavItem = {

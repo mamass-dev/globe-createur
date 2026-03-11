@@ -8,6 +8,9 @@ import { formatDate } from "@/lib/utils"
 import { ArrowRight, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+// Re-generate every hour to publish scheduled articles
+export const revalidate = 3600
+
 export const metadata: Metadata = buildMetadata({
   title: "Blog & Insights - Globe Créateur",
   description: "Conseils, stratégies et actualités sur le digital, le SEO et le design pour booster votre présence en ligne.",
