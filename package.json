@@ -11,6 +11,8 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
     "@next/third-parties": "^16.1.6",
+    "@vercel/analytics": "^2.0.0",
+    "@vercel/speed-insights": "^2.0.0",
     "cheerio": "^1.2.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.35.1",

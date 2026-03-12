@@ -5,36 +5,9 @@ import { useEffect, useState, useCallback } from "react"
 export function WhatsAppButton() {
   const [visible, setVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
-  const [cookieBannerVisible, setCookieBannerVisible] = useState(false)
-
-  // Check if cookie banner is visible
-  useEffect(() => {
-    const consent = localStorage.getItem("cookie-consent")
-    setCookieBannerVisible(!consent)
-
-    // Listen for cookie consent changes
-    const handleStorage = () => {
-      const updated = localStorage.getItem("cookie-consent")
-      setCookieBannerVisible(!updated)
-    }
-    window.addEventListener("storage", handleStorage)
-
-    // Also observe DOM changes (banner removed after choice)
-    const observer = new MutationObserver(() => {
-      const updated = localStorage.getItem("cookie-consent")
-      setCookieBannerVisible(!updated)
-    })
-    observer.observe(document.body, { childList: true, subtree: true })
-
-    return () => {
-      window.removeEventListener("storage", handleStorage)
-      observer.disconnect()
-    }
-  }, [])
 
   const handleScroll = useCallback(() => {
     const currentY = window.scrollY
-    // Hide only after scrolling down past 300px (more generous threshold)
     if (currentY > lastScrollY && currentY > 300) {
       setVisible(false)
     } else {
@@ -58,9 +31,7 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Nous contacter sur WhatsApp"
-      className={`fixed right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 ${
-        cookieBannerVisible ? "bottom-24" : "bottom-6"
-      } ${
+      className={`fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 ${
         visible
           ? "translate-y-0 opacity-100"
           : "translate-y-20 opacity-0 pointer-events-none"

@@ -6,8 +6,9 @@ import { Footer } from "@/components/layout/footer"
 import { LocalBusinessSchema } from "@/components/seo/local-business"
 import { WebSiteSchema } from "@/components/seo/schemas"
 import { Cursor } from "@/components/ui/cursor"
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { WhatsAppButton } from "@/components/ui/whatsapp-button"
-import { CookieBanner } from "@/components/ui/cookie-banner"
 import { LeadMagnet } from "@/components/ui/lead-magnet"
 import "./globals.css"
 
@@ -59,7 +60,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://img.youtube.com" />
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme:dark)").matches)){document.documentElement.classList.add("dark")}}catch(e){}})()` }} />
       </head>
       {/*
@@ -81,8 +81,9 @@ export default function RootLayout({
         <main className="flex-1 relative overflow-x-clip">{children}</main>
         <Footer />
         <WhatsAppButton />
-        <CookieBanner />
         <LeadMagnet />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
