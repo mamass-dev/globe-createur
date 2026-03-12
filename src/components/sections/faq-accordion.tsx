@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronDown, HelpCircle } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Container } from "@/components/ui/container"
 import { SectionHeader } from "@/components/ui/section-header"
