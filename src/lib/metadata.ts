@@ -10,6 +10,8 @@ type PageMeta = {
   publishedTime?: string
   modifiedTime?: string
   noIndex?: boolean
+  keywords?: string[]
+  author?: string
 }
 
 export function buildMetadata(page: PageMeta): Metadata {
@@ -20,6 +22,9 @@ export function buildMetadata(page: PageMeta): Metadata {
     title: page.title,
     description: page.description,
     alternates: { canonical: url },
+    ...(page.keywords && page.keywords.length > 0 && {
+      keywords: page.keywords,
+    }),
     openGraph: {
       title: page.title,
       description: page.description,
@@ -31,6 +36,9 @@ export function buildMetadata(page: PageMeta): Metadata {
       ...(page.publishedTime && {
         publishedTime: page.publishedTime,
         modifiedTime: page.modifiedTime ?? page.publishedTime,
+      }),
+      ...(page.type === "article" && page.author && {
+        authors: [page.author],
       }),
     },
     twitter: {

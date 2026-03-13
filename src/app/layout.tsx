@@ -4,7 +4,7 @@ import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, SITE_LOCALE } from "@/lib/consta
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { LocalBusinessSchema } from "@/components/seo/local-business"
-import { WebSiteSchema } from "@/components/seo/schemas"
+import { WebSiteSchema, OrganizationSchema } from "@/components/seo/schemas"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { WhatsAppButton } from "@/components/ui/whatsapp-button"
@@ -76,6 +76,7 @@ export default function RootLayout({
       <body className={`${inter.className} flex min-h-dvh flex-col antialiased bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100`}>
         <LocalBusinessSchema />
         <WebSiteSchema />
+        <OrganizationSchema />
         <Header />
         <main className="flex-1 relative overflow-x-clip">{children}</main>
         <Footer />

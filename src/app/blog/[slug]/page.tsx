@@ -59,6 +59,8 @@ export async function generateMetadata({
     publishedTime: post.frontmatter.publishedAt,
     modifiedTime: post.frontmatter.updatedAt,
     image: post.frontmatter.image ? `${SITE_URL}${post.frontmatter.image}` : undefined,
+    keywords: post.frontmatter.keywords,
+    author: post.frontmatter.author,
   })
 }
 
@@ -94,6 +96,7 @@ export default async function BlogPostPage({
         publishedAt={fm.publishedAt}
         updatedAt={fm.updatedAt}
         author={fm.author}
+        keywords={fm.keywords}
       />
 
       <Container>
