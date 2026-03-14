@@ -249,6 +249,8 @@ export function EstimateurForm() {
   const [form, setForm] = useState<FormState>(initialState)
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
+  const [hp, setHp] = useState("")
+  const [renderTime] = useState(() => Date.now())
 
   const isSiteProject =
     form.projectType === "site-vitrine" ||
@@ -288,6 +290,7 @@ export function EstimateurForm() {
   }
 
   const handleSubmit = async () => {
+    if (hp) return
     setSubmitting(true)
     try {
       const estimate = computeEstimate(form)
@@ -300,6 +303,8 @@ export function EstimateurForm() {
           phone: form.phone,
           message: `[Estimateur] Projet : ${form.projectType} | Budget estimé : ${fmt(estimate.min)} – ${fmt(estimate.max)}${estimate.monthly ? "/mois" : ""} | ${form.message}`,
           source: "estimateur",
+          _hp: hp,
+          _t: renderTime,
         }),
       })
     } catch {
@@ -760,6 +765,7 @@ export function EstimateurForm() {
             personnalisée sous 24h.
           </p>
 
+          <input type="text" value={hp} onChange={(e) => setHp(e.target.value)} autoComplete="off" tabIndex={-1} aria-hidden="true" className="absolute opacity-0 h-0 w-0 pointer-events-none" />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="sm:col-span-2 sm:col-span-1">
               <label

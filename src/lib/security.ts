@@ -79,6 +79,21 @@ export function isUrlSafe(url: string): boolean {
   return true
 }
 
+// ─── ANTI-SPAM (honeypot + time check) ───
+
+/**
+ * Rejects bots that fill invisible fields or submit too fast.
+ * Returns null if legit, or an error string if spam.
+ */
+export function checkSpam(body: Record<string, unknown>): string | null {
+  // Honeypot: hidden field that should stay empty
+  if (body._hp) return "spam"
+  // Time check: reject if submitted in under 2 seconds
+  const t = typeof body._t === "number" ? body._t : 0
+  if (t > 0 && Date.now() - t < 2_000) return "spam"
+  return null
+}
+
 // ─── VALIDATION SCHEMAS ───
 
 export const contactSchema = z.object({

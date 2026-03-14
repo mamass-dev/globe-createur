@@ -23,17 +23,20 @@ export function LeadCaptureGate({
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
+  const [hp, setHp] = useState("")
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const [renderTime] = useState(() => Date.now())
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (hp) return
     setStatus("loading")
 
     try {
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, phone, source, context }),
+        body: JSON.stringify({ name, email, phone, source, context, _hp: hp, _t: renderTime }),
       })
 
       if (res.ok) {
@@ -97,6 +100,7 @@ export function LeadCaptureGate({
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="max-w-sm mx-auto space-y-4">
+          <input type="text" value={hp} onChange={(e) => setHp(e.target.value)} autoComplete="off" tabIndex={-1} aria-hidden="true" className="absolute opacity-0 h-0 w-0 pointer-events-none" />
           <div className="relative">
             <User className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
             <input

@@ -17,12 +17,14 @@ const serviceOptions = [
 
 export function DevisForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const [renderTime] = useState(() => Date.now())
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setStatus("loading")
 
     const formData = new FormData(e.currentTarget)
+    if (formData.get("_hp")) return
     try {
       const res = await fetch("/api/devis", {
         method: "POST",
@@ -33,6 +35,8 @@ export function DevisForm() {
           service: formData.get("service"),
           budget: formData.get("budget"),
           message: formData.get("message"),
+          _hp: formData.get("_hp"),
+          _t: renderTime,
         }),
         headers: { "Content-Type": "application/json" },
       })
@@ -58,6 +62,7 @@ export function DevisForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      <input type="text" name="_hp" autoComplete="off" tabIndex={-1} aria-hidden="true" className="absolute opacity-0 h-0 w-0 pointer-events-none" />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <Input label="Nom complet" name="name" id="name" required placeholder="Jean Dupont" />
         <Input label="Email" name="email" id="email" type="email" required placeholder="jean@exemple.fr" />

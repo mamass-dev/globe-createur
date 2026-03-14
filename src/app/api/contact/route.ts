@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import { Resend } from "resend"
-import { contactSchema, escapeHtml, sanitizeForEmail, rateLimit, getClientIp } from "@/lib/security"
+import { contactSchema, escapeHtml, sanitizeForEmail, rateLimit, getClientIp, checkSpam } from "@/lib/security"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -13,6 +13,9 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json()
+    if (checkSpam(body)) {
+      return NextResponse.json({ success: true }) // silent reject
+    }
     const result = contactSchema.safeParse(body)
     if (!result.success) {
       return NextResponse.json({ error: "Données invalides", details: result.error.flatten().fieldErrors }, { status: 400 })

@@ -75,6 +75,8 @@ export function LeadMagnet() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
   const [email, setEmail] = useState("")
+  const [hp, setHp] = useState("")
+  const [renderTime] = useState(() => Date.now())
   const [offer, setOffer] = useState<Offer>(DEFAULT_OFFER)
 
   // Set contextual offer based on current page
@@ -115,7 +117,7 @@ export function LeadMagnet() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    if (!email || loading) return
+    if (!email || loading || hp) return
     setLoading(true)
     setError("")
 
@@ -128,6 +130,8 @@ export function LeadMagnet() {
           source: "lead-magnet",
           offer: offer.title,
           page: window.location.pathname,
+          _hp: hp,
+          _t: renderTime,
         }),
       })
 
@@ -197,6 +201,7 @@ export function LeadMagnet() {
 
               {/* Form */}
               <form onSubmit={handleSubmit} className="space-y-2.5">
+                <input type="text" value={hp} onChange={(e) => setHp(e.target.value)} autoComplete="off" tabIndex={-1} aria-hidden="true" className="absolute opacity-0 h-0 w-0 pointer-events-none" />
                 <input
                   type="email"
                   value={email}
