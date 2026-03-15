@@ -192,7 +192,7 @@ export default async function BlogPostPage({
             {/* Author block */}
             <div className="mt-16 pt-12 border-t border-slate-100 dark:border-slate-800">
               <p className="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">
-                &Eacute;crit par
+                Écrit par
               </p>
               <AuthorCard author={author} />
             </div>
@@ -206,7 +206,7 @@ export default async function BlogPostPage({
             <div className="mt-16 p-8 lg:p-12 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 text-center space-y-6">
               <h2 className="text-2xl lg:text-4xl font-black text-slate-900 dark:text-white">Vous souhaitez aller plus loin ?</h2>
               <p className="text-lg text-slate-600 dark:text-slate-400 max-w-xl mx-auto">
-                Nous aidons les PME &agrave; impl&eacute;menter ces strat&eacute;gies pour g&eacute;n&eacute;rer une croissance durable.
+                Nous aidons les PME à implémenter ces stratégies pour générer une croissance durable.
               </p>
               <Button href="/contact" className="bg-indigo-600 text-white px-10 h-14 rounded-2xl text-lg font-bold shadow-xl shadow-indigo-100 dark:shadow-indigo-950">
                 Discuter de mon projet

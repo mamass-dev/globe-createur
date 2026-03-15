@@ -121,6 +121,7 @@ Globe Créateur accompagne spécifiquement ces secteurs :
 - **Audit Digital** (${SITE_URL}/audit-digital) : Quiz interactif pour évaluer sa présence en ligne, avec rapport personnalisé
 - **Calculateur ROI** (${SITE_URL}/calculateur-roi) : Estimation du retour sur investissement d'un site web professionnel
 - **Analyseur SEO** (${SITE_URL}/analyseur-seo) : Analyse technique SEO de n'importe quelle URL
+- **Générateur de mentions légales** (${SITE_URL}/generateur-mentions-legales) : Génération gratuite de mentions légales conformes RGPD et LCEN
 
 ---
 

@@ -1,4 +1,5 @@
 import { MDXRemote } from "next-mdx-remote/rsc"
+import remarkGfm from "remark-gfm"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { MdxFaqAccordion } from "./mdx-faq"
@@ -43,7 +44,7 @@ const components = {
 export function MdxContent({ source }: { source: string }) {
   return (
     <div className="prose max-w-none">
-      <MDXRemote source={source} components={components} />
+      <MDXRemote source={source} components={components} options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} />
     </div>
   )
 }

@@ -36,6 +36,7 @@ ${services.map((s) => `- [${s.title}](${SITE_URL}/services/${s.slug}): ${s.excer
 - [Audit Digital](${SITE_URL}/audit-digital): Évaluez votre présence en ligne en 5 minutes
 - [Calculateur ROI](${SITE_URL}/calculateur-roi): Estimez le retour sur investissement d'un site web
 - [Analyseur SEO](${SITE_URL}/analyseur-seo): Analysez le SEO de n'importe quelle page web
+- [Générateur de mentions légales](${SITE_URL}/generateur-mentions-legales): Générez gratuitement des mentions légales conformes RGPD
 
 ## Secteurs d'activité
 

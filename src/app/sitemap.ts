@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next"
 import { SITE_URL } from "@/lib/constants"
 import { getBlogPosts, getServicePages, getSecteurPages, getProjetPages } from "@/lib/content"
 import { getPublishedCitySlugs } from "@/lib/scheduled-pages"
+import { freelances } from "@/lib/data/freelances"
 
 export const revalidate = 3600
 
@@ -31,6 +32,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/audit-digital`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/calculateur-roi`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/analyseur-seo`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/generateur-mentions-legales`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/generateur-signature-email`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/annuaire-freelances`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${SITE_URL}/annuaire-freelances/inscription`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${SITE_URL}/secteurs`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/mentions-legales`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE_URL}/politique-confidentialite`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
@@ -64,5 +69,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticPages, ...cityPages, ...servicePages, ...secteurPages, ...projetPages, ...blogPages]
+  const freelancePages: MetadataRoute.Sitemap = freelances.map((f) => ({
+    url: `${SITE_URL}/annuaire-freelances/${f.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }))
+
+  return [...staticPages, ...cityPages, ...servicePages, ...secteurPages, ...projetPages, ...blogPages, ...freelancePages]
 }
