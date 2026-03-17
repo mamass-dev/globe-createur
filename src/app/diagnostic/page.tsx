@@ -51,9 +51,13 @@ const questions: Question[] = [
     subtext: "Pour qu'on parle la meme langue.",
     answers: [
       { label: "Artisan / BTP", value: "artisan", icon: "🔨" },
-      { label: "Restaurant / Hotel", value: "horeca", icon: "🍽️" },
+      { label: "Restaurant / Hotellerie", value: "horeca", icon: "🍽️" },
       { label: "Commerce / E-commerce", value: "commerce", icon: "🛍️" },
-      { label: "Services / Liberal", value: "services", icon: "💼" },
+      { label: "Profession liberale", value: "liberal", icon: "⚖️" },
+      { label: "Bien-etre / Sante", value: "sante", icon: "🧘" },
+      { label: "Immobilier", value: "immobilier", icon: "🏠" },
+      { label: "Evenementiel", value: "evenementiel", icon: "🎉" },
+      { label: "Autre PME / Services", value: "services", icon: "💼" },
     ],
   },
 ]
@@ -123,11 +127,120 @@ type Profile = {
   forfait: string
 }
 
+/* Cas clients par secteur */
+type CaseStudy = { name: string; before: string; after: string; metric: string }
+
+const CASE_STUDIES: Record<string, CaseStudy> = {
+  artisan: {
+    name: "Artisan plombier a Dijon",
+    before: "0 demande en ligne, 100% bouche a oreille",
+    after: "12 demandes de devis/mois via le site en 3 mois",
+    metric: "+12 leads/mois",
+  },
+  horeca: {
+    name: "Restaurant gastronomique a Beaune",
+    before: "Site de 2019, 200 visites/mois, 0 reservation en ligne",
+    after: "1 200 visites/mois, 35 reservations/mois",
+    metric: "x6 en trafic",
+  },
+  commerce: {
+    name: "Boutique deco a Chalon-sur-Saone",
+    before: "Zero visibilite en ligne, clients uniquement en magasin",
+    after: "Click & collect lance, +40% de CA en 4 mois",
+    metric: "+40% de CA",
+  },
+  liberal: {
+    name: "Cabinet comptable a Dijon",
+    before: "Page 3 de Google, 2 demandes/mois",
+    after: "Top 3 local, 18 demandes/mois",
+    metric: "x9 en leads",
+  },
+  sante: {
+    name: "Osteopathe a Beaune",
+    before: "Agenda rempli uniquement par bouche a oreille, 0 avis Google",
+    after: "42 avis Google, planning complet 3 semaines a l'avance",
+    metric: "Planning complet",
+  },
+  immobilier: {
+    name: "Agence immobiliere a Dijon",
+    before: "Dependance totale aux portails (SeLoger, LeBonCoin)",
+    after: "35% des mandats viennent du site direct",
+    metric: "35% de mandats directs",
+  },
+  evenementiel: {
+    name: "Salle de reception en Cote-d'Or",
+    before: "Site sans photos pro, 3 demandes/mois",
+    after: "Shooting pro + SEO, 22 demandes/mois",
+    metric: "x7 en demandes",
+  },
+  services: {
+    name: "PME de services a Dijon",
+    before: "Communication inexistante, 100% bouche a oreille",
+    after: "Site + SEO + reseaux : pipeline de prospects regulier",
+    metric: "+200% de demandes",
+  },
+}
+
+/* Actions specifiques par secteur */
+const SECTOR_ACTIONS: Record<string, string[]> = {
+  artisan: [
+    "Site vitrine avec formulaire de demande de devis",
+    "SEO local sur vos metiers + zone d'intervention",
+    "Fiche Google Business avec photos de chantiers",
+  ],
+  horeca: [
+    "Site avec menu en ligne, photos pro et reservation",
+    "SEO local + fiche Google avec avis clients",
+    "Instagram professionnel avec contenu regulier",
+  ],
+  commerce: [
+    "Site e-commerce ou vitrine avec catalogue produits",
+    "SEO local + Google Shopping si pertinent",
+    "Reseaux sociaux avec mise en avant des produits",
+  ],
+  liberal: [
+    "Site sobre et professionnel inspire confiance",
+    "SEO local sur votre specialite + ville",
+    "Gestion des avis Google et reputation en ligne",
+  ],
+  sante: [
+    "Site avec prise de rendez-vous en ligne",
+    "SEO local sur votre discipline + zone",
+    "Fiche Google optimisee avec avis patients",
+  ],
+  immobilier: [
+    "Site avec annonces dynamiques et pages de quartier",
+    "SEO local par ville, quartier et type de bien",
+    "Contenu regulier : guides acheteurs, tendances marche",
+  ],
+  evenementiel: [
+    "Site immersif avec galeries photo/video des evenements",
+    "SEO saisonnier et campagnes ciblees",
+    "Instagram et Pinterest pour la mise en valeur visuelle",
+  ],
+  services: [
+    "Site multi-pages detaillant chaque service",
+    "SEO local sur vos expertises + zone geographique",
+    "Strategie de contenu pour demontrer votre expertise",
+  ],
+}
+
+function getCaseStudy(sector: string): CaseStudy {
+  return CASE_STUDIES[sector] || CASE_STUDIES.services
+}
+
+function getSectorActions(sector: string): string[] {
+  return SECTOR_ACTIONS[sector] || SECTOR_ACTIONS.services
+}
+
 function getProfile(answers: Record<string, string>): Profile {
   const noSite = answers.site === "none"
   const deadSite = answers.site === "dead" || answers.site === "old"
   const noClients = answers.problem === "clients" || answers.problem === "conversion"
   const noTime = answers.problem === "time"
+  const sector = answers.sector || "services"
+  const caseStudy = getCaseStudy(sector)
+  const sectorActions = getSectorActions(sector)
 
   if (noSite) {
     return {
@@ -137,18 +250,9 @@ function getProfile(answers: Record<string, string>): Profile {
         "Les prospects qui cherchent votre metier dans votre ville ne vous trouvent pas",
         "Vous dependez entierement du bouche a oreille - le jour ou il s'arrete, vous aussi",
       ],
-      actions: [
-        "Site vitrine optimise SEO local - pour exister sur Google",
-        "Fiche Google Business Profile - pour apparaitre sur Maps",
-        "Contenus mensuels - pour que Google vous garde en haut",
-      ],
-      lost: "5 a 15 demandes de devis par mois",
-      caseStudy: {
-        name: "Artisan plombier a Dijon",
-        before: "0 demande en ligne, 100% bouche a oreille",
-        after: "12 demandes/mois via le site en 3 mois",
-        metric: "+12 leads/mois",
-      },
+      actions: sectorActions,
+      lost: "5 a 15 demandes par mois",
+      caseStudy,
       forfait: "essentiel",
     }
   }
@@ -162,17 +266,12 @@ function getProfile(answers: Record<string, string>): Profile {
         "Sans equipe dediee, votre communication stagne et vos concurrents avancent",
       ],
       actions: [
-        "Refonte complete - design moderne, performance <1 seconde",
-        "Communication complete geree - on s'occupe de tout, chaque mois",
-        "Reporting mensuel - vous savez ce qui se passe sans y passer du temps",
+        "Refonte complete avec un design moderne et performant",
+        ...sectorActions.slice(1),
+        "Pilotage complet - on gere tout, vous recevez un reporting",
       ],
-      lost: "10 a 15 heures par semaine de votre temps + 40 a 60% du trafic potentiel",
-      caseStudy: {
-        name: "Gerant de 3 boutiques a Chalon",
-        before: "0 publication, site abandonne, zero temps dispo",
-        after: "Communication complete geree, +40% de trafic en boutique",
-        metric: "+40% de trafic",
-      },
+      lost: "10 a 15 heures par semaine + la majorite de votre trafic potentiel",
+      caseStudy,
       forfait: "performance",
     }
   }
@@ -187,16 +286,10 @@ function getProfile(answers: Record<string, string>): Profile {
       ],
       actions: [
         "Refonte complete - design moderne, performance <1 seconde",
-        "SEO local - pour remonter dans les resultats Google",
-        "Strategie de contenu - pour transformer les visiteurs en clients",
+        ...sectorActions.slice(1),
       ],
       lost: "40 a 60% de votre trafic potentiel",
-      caseStudy: {
-        name: "Restaurant gastronomique a Beaune",
-        before: "Site de 2019, 200 visites/mois, 0 reservation en ligne",
-        after: "1 200 visites/mois, 35 reservations/mois",
-        metric: "x6 en trafic",
-      },
+      caseStudy,
       forfait: "croissance",
     }
   }
@@ -209,18 +302,9 @@ function getProfile(answers: Record<string, string>): Profile {
         "Vos concurrents investissent dans du contenu et vous passent devant chaque mois",
         "Sans strategie d'acquisition, vous subissez au lieu de piloter",
       ],
-      actions: [
-        "Audit SEO complet - comprendre pourquoi vous n'etes pas visible",
-        "Strategie de contenu locale - articles, fiches, pages de zone",
-        "Gestion des avis Google - pour convertir la confiance en clients",
-      ],
+      actions: sectorActions,
       lost: "entre 3 000 et 15 000 euros de CA par mois",
-      caseStudy: {
-        name: "Cabinet comptable a Dijon",
-        before: "Page 3 de Google, 2 demandes/mois",
-        after: "Top 3 local, 18 demandes/mois",
-        metric: "x9 en leads",
-      },
+      caseStudy,
       forfait: "croissance",
     }
   }
@@ -234,17 +318,12 @@ function getProfile(answers: Record<string, string>): Profile {
         "Sans regularite, Google et les reseaux sociaux vous oublient",
       ],
       actions: [
-        "Un interlocuteur unique qui gere tout - site, SEO, reseaux, contenu",
+        "Un interlocuteur unique qui gere tout pour vous",
+        ...sectorActions.slice(1),
         "Reporting mensuel - vous savez ce qui se passe sans y passer du temps",
-        "Pilotage strategique - on decide ensemble, on execute pour vous",
       ],
       lost: "10 a 15 heures par semaine de votre temps",
-      caseStudy: {
-        name: "Gerant de 3 boutiques a Chalon",
-        before: "0 publication, site abandonne, zero temps dispo",
-        after: "Communication complete geree, +40% de trafic en boutique",
-        metric: "+40% de trafic",
-      },
+      caseStudy,
       forfait: "performance",
     }
   }
@@ -256,18 +335,9 @@ function getProfile(answers: Record<string, string>): Profile {
       "Vos concurrents communiquent mieux, pas parce qu'ils sont meilleurs",
       "Chaque mois sans strategie digitale, c'est du terrain cede",
     ],
-    actions: [
-      "Diagnostic complet de votre presence en ligne",
-      "Plan d'action personnalise avec des priorites claires",
-      "Accompagnement adapte a votre rythme et vos objectifs",
-    ],
+    actions: sectorActions,
     lost: "un avantage concurrentiel qui se creuse chaque jour",
-    caseStudy: {
-      name: "PME de services a Dijon",
-      before: "Communication inexistante, 100% bouche a oreille",
-      after: "Site + SEO + reseaux : pipeline de prospects regulier",
-      metric: "+200% de demandes",
-    },
+    caseStudy,
     forfait: "essentiel",
   }
 }
