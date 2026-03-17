@@ -31,7 +31,7 @@ export default function MentionsLegalesPage() {
           <h2>1. Éditeur du site</h2>
           <ul>
             <li><strong>Raison sociale :</strong> {SITE_NAME}</li>
-            <li><strong>Forme juridique :</strong> Entreprise individuelle</li>
+            <li><strong>Forme juridique :</strong> SAS</li>
             <li><strong>Responsable de la publication :</strong> Axel Masson</li>
             <li>
               <strong>Adresse :</strong> {CONTACT.address.street},{" "}

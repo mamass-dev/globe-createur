@@ -240,7 +240,7 @@ export default function TarifsPage() {
                     : "bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-indigo-200 dark:hover:border-indigo-700 hover:shadow-lg"
                 }`}>
                   {f.popular && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-400 text-amber-950 text-xs font-black uppercase tracking-wider px-4 py-1 rounded-full">
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white text-indigo-700 shadow-md text-xs font-black uppercase tracking-wider px-4 py-1 rounded-full">
                       Le plus choisi
                     </span>
                   )}

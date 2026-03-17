@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { Container } from "@/components/ui/container"
-import { ArrowRight, ArrowLeft, Check, X, TrendingUp, Users, Globe, Search } from "lucide-react"
+import { ArrowRight, ArrowLeft, Check, X } from "lucide-react"
 
 /* ─── DIAGNOSTIC DATA ─── */
 
@@ -15,7 +15,7 @@ const questions: Question[] = [
   {
     id: "site",
     question: "Vous avez un site internet ?",
-    subtext: "Soyez honnête, c'est entre nous.",
+    subtext: "Soyez honnete, c'est entre nous.",
     answers: [
       { label: "Non, rien du tout", value: "none", icon: "🚫" },
       { label: "Oui, mais il date", value: "old", icon: "🕸️" },
@@ -58,12 +58,69 @@ const questions: Question[] = [
   },
 ]
 
+/* ─── FORFAITS ─── */
+
+type Forfait = {
+  name: string
+  tagline: string
+  why: string
+  features: string[]
+  href: string
+}
+
+const FORFAITS: Record<string, Forfait> = {
+  essentiel: {
+    name: "Essentiel",
+    tagline: "Poser les fondations",
+    why: "Vous partez de zero ou presque. Il faut d'abord exister en ligne avant de vouloir performer.",
+    features: [
+      "Site internet offert",
+      "Pilotage mensuel personnalise",
+      "1 reseau social optimise",
+      "Contenus adaptes a vos priorites",
+      "Support email sous 24h",
+    ],
+    href: "/devis",
+  },
+  croissance: {
+    name: "Croissance",
+    tagline: "Accelerer la visibilite",
+    why: "Vous avez les bases mais pas les resultats. Il faut passer a la vitesse superieure avec du contenu regulier et du SEO sérieux.",
+    features: [
+      "Tout Essentiel +",
+      "2 reseaux sociaux geres",
+      "Shooting photo mensuel",
+      "Plan editorial & contenus mensuels",
+      "SEO local avance",
+      "Reporting mensuel detaille",
+    ],
+    href: "/devis",
+  },
+  performance: {
+    name: "Performance",
+    tagline: "Dominer le marche",
+    why: "Vous avez besoin d'une machine de guerre. Communication complete, automatisee, avec un chef de projet dedie qui pilote tout.",
+    features: [
+      "Tout Croissance +",
+      "Video pro mensuelle",
+      "Gestion complete des reseaux",
+      "CRM & automatisations",
+      "Campagnes Meta / LinkedIn",
+      "Chef de projet dedie",
+    ],
+    href: "/devis",
+  },
+}
+
+/* ─── PROFILES ─── */
+
 type Profile = {
   title: string
   problems: string[]
   actions: string[]
   lost: string
   caseStudy: { name: string; before: string; after: string; metric: string }
+  forfait: string
 }
 
 function getProfile(answers: Record<string, string>): Profile {
@@ -92,6 +149,31 @@ function getProfile(answers: Record<string, string>): Profile {
         after: "12 demandes/mois via le site en 3 mois",
         metric: "+12 leads/mois",
       },
+      forfait: "essentiel",
+    }
+  }
+
+  if (deadSite && noTime) {
+    return {
+      title: "Votre site vous coute de l'argent. Et vous n'avez pas le temps.",
+      problems: [
+        "Un site lent ou date fait fuir 53% des visiteurs en moins de 3 secondes",
+        "Vous savez qu'il faut agir mais chaque heure sur la com' est une heure perdue sur votre metier",
+        "Sans equipe dediee, votre communication stagne et vos concurrents avancent",
+      ],
+      actions: [
+        "Refonte complete - design moderne, performance <1 seconde",
+        "Communication complete geree - on s'occupe de tout, chaque mois",
+        "Reporting mensuel - vous savez ce qui se passe sans y passer du temps",
+      ],
+      lost: "10 a 15 heures par semaine de votre temps + 40 a 60% du trafic potentiel",
+      caseStudy: {
+        name: "Gerant de 3 boutiques a Chalon",
+        before: "0 publication, site abandonne, zero temps dispo",
+        after: "Communication complete geree, +40% de trafic en boutique",
+        metric: "+40% de trafic",
+      },
+      forfait: "performance",
     }
   }
 
@@ -115,6 +197,7 @@ function getProfile(answers: Record<string, string>): Profile {
         after: "1 200 visites/mois, 35 reservations/mois",
         metric: "x6 en trafic",
       },
+      forfait: "croissance",
     }
   }
 
@@ -138,6 +221,7 @@ function getProfile(answers: Record<string, string>): Profile {
         after: "Top 3 local, 18 demandes/mois",
         metric: "x9 en leads",
       },
+      forfait: "croissance",
     }
   }
 
@@ -161,10 +245,10 @@ function getProfile(answers: Record<string, string>): Profile {
         after: "Communication complete geree, +40% de trafic en boutique",
         metric: "+40% de trafic",
       },
+      forfait: "performance",
     }
   }
 
-  // Default
   return {
     title: "Vous avez du potentiel. Il faut le debloquer.",
     problems: [
@@ -184,10 +268,11 @@ function getProfile(answers: Record<string, string>): Profile {
       after: "Site + SEO + reseaux : pipeline de prospects regulier",
       metric: "+200% de demandes",
     },
+    forfait: "essentiel",
   }
 }
 
-/* ─── COMPONENTS ─── */
+/* ─── ANIMATION ─── */
 
 const fadeSlide = {
   initial: { opacity: 0, y: 30 } as const,
@@ -211,9 +296,9 @@ function ProgressBar({ current, total }: { current: number; total: number }) {
   )
 }
 
-/* ─── MAIN PAGE ─── */
+/* ─── PAGE ─── */
 
-export default function TarifsPage() {
+export default function DiagnosticPage() {
   const [step, setStep] = useState<"intro" | "quiz" | "result">("intro")
   const [questionIdx, setQuestionIdx] = useState(0)
   const [answers, setAnswers] = useState<Record<string, string>>({})
@@ -242,6 +327,7 @@ export default function TarifsPage() {
   }
 
   const profile = getProfile(answers)
+  const reco = FORFAITS[profile.forfait]
 
   return (
     <div className="min-h-dvh bg-white">
@@ -253,7 +339,7 @@ export default function TarifsPage() {
               <Container className="max-w-4xl">
                 <div className="space-y-8">
                   <p className="text-sm font-mono tracking-widest uppercase text-slate-400">
-                    Globe Createur — diagnostic
+                    Globe Createur - diagnostic
                   </p>
 
                   <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black text-slate-900 tracking-tight leading-[0.95]">
@@ -368,13 +454,12 @@ export default function TarifsPage() {
         {/* ─── RESULT ─── */}
         {step === "result" && (
           <motion.div key="result" {...fadeSlide}>
-            {/* Diagnostic header */}
+            {/* Header */}
             <section className="pt-32 pb-20 lg:pt-40 lg:pb-24">
               <Container className="max-w-4xl">
                 <p className="text-sm font-mono tracking-widest uppercase text-slate-400 mb-8">
                   Votre diagnostic
                 </p>
-
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1]">
                   {profile.title}
                 </h1>
@@ -397,7 +482,6 @@ export default function TarifsPage() {
                         <p className="text-lg text-slate-700 leading-relaxed">{p}</p>
                       </div>
                     ))}
-
                     <div className="mt-8 p-6 bg-red-50 rounded-2xl">
                       <p className="text-sm font-mono uppercase tracking-wider text-red-400 mb-2">
                         Estimation de perte mensuelle
@@ -448,22 +532,16 @@ export default function TarifsPage() {
                       <p className="font-black text-slate-900 text-xl">
                         {profile.caseStudy.name}
                       </p>
-
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                           <p className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Avant</p>
-                          <p className="text-sm text-slate-600 leading-relaxed">
-                            {profile.caseStudy.before}
-                          </p>
+                          <p className="text-sm text-slate-600 leading-relaxed">{profile.caseStudy.before}</p>
                         </div>
                         <div>
                           <p className="text-xs font-mono uppercase tracking-wider text-green-600 mb-2">Apres</p>
-                          <p className="text-sm text-slate-600 leading-relaxed">
-                            {profile.caseStudy.after}
-                          </p>
+                          <p className="text-sm text-slate-600 leading-relaxed">{profile.caseStudy.after}</p>
                         </div>
                       </div>
-
                       <div className="pt-4 border-t border-slate-200">
                         <p className="text-3xl sm:text-4xl font-black text-slate-900 font-mono">
                           {profile.caseStudy.metric}
@@ -475,7 +553,64 @@ export default function TarifsPage() {
               </Container>
             </section>
 
-            {/* CTA */}
+            {/* Recommended forfait */}
+            <section className="py-16 border-t border-slate-100">
+              <Container className="max-w-4xl">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                  <div className="lg:col-span-4">
+                    <p className="text-xs font-mono uppercase tracking-widest text-indigo-600 font-bold">
+                      Notre recommandation
+                    </p>
+                  </div>
+                  <div className="lg:col-span-8">
+                    <div className="rounded-2xl border-2 border-indigo-600 overflow-hidden">
+                      <div className="bg-indigo-600 px-8 py-5 flex items-center justify-between">
+                        <div>
+                          <p className="text-white font-black text-2xl">{reco.name}</p>
+                          <p className="text-indigo-200 text-sm font-medium">{reco.tagline}</p>
+                        </div>
+                        <span className="bg-white/20 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                          Recommande pour vous
+                        </span>
+                      </div>
+
+                      <div className="bg-white p-8 space-y-6">
+                        <p className="text-slate-600 leading-relaxed">
+                          {reco.why}
+                        </p>
+
+                        <ul className="space-y-3">
+                          {reco.features.map((feat) => (
+                            <li key={feat} className="flex items-start gap-3 text-sm text-slate-700">
+                              <Check className="h-4 w-4 text-indigo-600 shrink-0 mt-0.5" />
+                              {feat}
+                            </li>
+                          ))}
+                        </ul>
+
+                        <div className="pt-4 flex flex-wrap items-center gap-4">
+                          <Link
+                            href={reco.href}
+                            className="inline-flex items-center justify-center gap-2 h-12 px-8 bg-indigo-600 text-white font-bold rounded-2xl hover:bg-indigo-700 hover:-translate-y-0.5 transition-all shadow-lg shadow-indigo-100"
+                          >
+                            Demander un devis {reco.name}
+                            <ArrowRight className="h-4 w-4" />
+                          </Link>
+                          <Link
+                            href="/forfait-communication-pme"
+                            className="text-sm text-slate-400 hover:text-slate-600 transition-colors"
+                          >
+                            Comparer tous les forfaits →
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Container>
+            </section>
+
+            {/* CTA final */}
             <section className="py-20 border-t border-slate-100">
               <Container className="max-w-4xl">
                 <div className="space-y-8">
