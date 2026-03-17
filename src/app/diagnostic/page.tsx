@@ -4,7 +4,9 @@ import { useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { Container } from "@/components/ui/container"
-import { ArrowRight, ArrowLeft, Check, X } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { ArrowRight, ArrowLeft, Check, X, Sparkles } from "lucide-react"
 
 /* ─── DIAGNOSTIC DATA ─── */
 
@@ -69,7 +71,6 @@ type Forfait = {
   tagline: string
   why: string
   features: string[]
-  href: string
 }
 
 const FORFAITS: Record<string, Forfait> = {
@@ -84,12 +85,11 @@ const FORFAITS: Record<string, Forfait> = {
       "Contenus adaptes a vos priorites",
       "Support email sous 24h",
     ],
-    href: "/devis",
   },
   croissance: {
     name: "Croissance",
     tagline: "Accelerer la visibilite",
-    why: "Vous avez les bases mais pas les resultats. Il faut passer a la vitesse superieure avec du contenu regulier et du SEO sérieux.",
+    why: "Vous avez les bases mais pas les resultats. Il faut passer a la vitesse superieure avec du contenu regulier et du SEO serieux.",
     features: [
       "Tout Essentiel +",
       "2 reseaux sociaux geres",
@@ -98,7 +98,6 @@ const FORFAITS: Record<string, Forfait> = {
       "SEO local avance",
       "Reporting mensuel detaille",
     ],
-    href: "/devis",
   },
   performance: {
     name: "Performance",
@@ -112,125 +111,44 @@ const FORFAITS: Record<string, Forfait> = {
       "Campagnes Meta / LinkedIn",
       "Chef de projet dedie",
     ],
-    href: "/devis",
   },
 }
 
-/* ─── PROFILES ─── */
+/* ─── CASE STUDIES & SECTOR ACTIONS ─── */
+
+type CaseStudy = { name: string; before: string; after: string; metric: string }
+
+const CASE_STUDIES: Record<string, CaseStudy> = {
+  artisan: { name: "Artisan plombier a Dijon", before: "0 demande en ligne, 100% bouche a oreille", after: "12 demandes de devis/mois via le site en 3 mois", metric: "+12 leads/mois" },
+  horeca: { name: "Restaurant gastronomique a Beaune", before: "Site de 2019, 200 visites/mois, 0 reservation en ligne", after: "1 200 visites/mois, 35 reservations/mois", metric: "x6 en trafic" },
+  commerce: { name: "Boutique deco a Chalon-sur-Saone", before: "Zero visibilite en ligne, clients uniquement en magasin", after: "Click & collect lance, +40% de CA en 4 mois", metric: "+40% de CA" },
+  liberal: { name: "Cabinet comptable a Dijon", before: "Page 3 de Google, 2 demandes/mois", after: "Top 3 local, 18 demandes/mois", metric: "x9 en leads" },
+  sante: { name: "Osteopathe a Beaune", before: "Agenda rempli uniquement par bouche a oreille, 0 avis Google", after: "42 avis Google, planning complet 3 semaines a l'avance", metric: "Planning complet" },
+  immobilier: { name: "Agence immobiliere a Dijon", before: "Dependance totale aux portails (SeLoger, LeBonCoin)", after: "35% des mandats viennent du site direct", metric: "35% de mandats directs" },
+  evenementiel: { name: "Salle de reception en Cote-d'Or", before: "Site sans photos pro, 3 demandes/mois", after: "Shooting pro + SEO, 22 demandes/mois", metric: "x7 en demandes" },
+  services: { name: "PME de services a Dijon", before: "Communication inexistante, 100% bouche a oreille", after: "Site + SEO + reseaux : pipeline de prospects regulier", metric: "+200% de demandes" },
+}
+
+const SECTOR_ACTIONS: Record<string, string[]> = {
+  artisan: ["Site vitrine avec formulaire de demande de devis", "SEO local sur vos metiers + zone d'intervention", "Fiche Google Business avec photos de chantiers"],
+  horeca: ["Site avec menu en ligne, photos pro et reservation", "SEO local + fiche Google avec avis clients", "Instagram professionnel avec contenu regulier"],
+  commerce: ["Site e-commerce ou vitrine avec catalogue produits", "SEO local + Google Shopping si pertinent", "Reseaux sociaux avec mise en avant des produits"],
+  liberal: ["Site sobre et professionnel qui inspire confiance", "SEO local sur votre specialite + ville", "Gestion des avis Google et reputation en ligne"],
+  sante: ["Site avec prise de rendez-vous en ligne", "SEO local sur votre discipline + zone", "Fiche Google optimisee avec avis patients"],
+  immobilier: ["Site avec annonces dynamiques et pages de quartier", "SEO local par ville, quartier et type de bien", "Contenu regulier : guides acheteurs, tendances marche"],
+  evenementiel: ["Site immersif avec galeries photo/video des evenements", "SEO saisonnier et campagnes ciblees", "Instagram et Pinterest pour la mise en valeur visuelle"],
+  services: ["Site multi-pages detaillant chaque service", "SEO local sur vos expertises + zone geographique", "Strategie de contenu pour demontrer votre expertise"],
+}
+
+/* ─── PROFILE BUILDER ─── */
 
 type Profile = {
   title: string
   problems: string[]
   actions: string[]
   lost: string
-  caseStudy: { name: string; before: string; after: string; metric: string }
+  caseStudy: CaseStudy
   forfait: string
-}
-
-/* Cas clients par secteur */
-type CaseStudy = { name: string; before: string; after: string; metric: string }
-
-const CASE_STUDIES: Record<string, CaseStudy> = {
-  artisan: {
-    name: "Artisan plombier a Dijon",
-    before: "0 demande en ligne, 100% bouche a oreille",
-    after: "12 demandes de devis/mois via le site en 3 mois",
-    metric: "+12 leads/mois",
-  },
-  horeca: {
-    name: "Restaurant gastronomique a Beaune",
-    before: "Site de 2019, 200 visites/mois, 0 reservation en ligne",
-    after: "1 200 visites/mois, 35 reservations/mois",
-    metric: "x6 en trafic",
-  },
-  commerce: {
-    name: "Boutique deco a Chalon-sur-Saone",
-    before: "Zero visibilite en ligne, clients uniquement en magasin",
-    after: "Click & collect lance, +40% de CA en 4 mois",
-    metric: "+40% de CA",
-  },
-  liberal: {
-    name: "Cabinet comptable a Dijon",
-    before: "Page 3 de Google, 2 demandes/mois",
-    after: "Top 3 local, 18 demandes/mois",
-    metric: "x9 en leads",
-  },
-  sante: {
-    name: "Osteopathe a Beaune",
-    before: "Agenda rempli uniquement par bouche a oreille, 0 avis Google",
-    after: "42 avis Google, planning complet 3 semaines a l'avance",
-    metric: "Planning complet",
-  },
-  immobilier: {
-    name: "Agence immobiliere a Dijon",
-    before: "Dependance totale aux portails (SeLoger, LeBonCoin)",
-    after: "35% des mandats viennent du site direct",
-    metric: "35% de mandats directs",
-  },
-  evenementiel: {
-    name: "Salle de reception en Cote-d'Or",
-    before: "Site sans photos pro, 3 demandes/mois",
-    after: "Shooting pro + SEO, 22 demandes/mois",
-    metric: "x7 en demandes",
-  },
-  services: {
-    name: "PME de services a Dijon",
-    before: "Communication inexistante, 100% bouche a oreille",
-    after: "Site + SEO + reseaux : pipeline de prospects regulier",
-    metric: "+200% de demandes",
-  },
-}
-
-/* Actions specifiques par secteur */
-const SECTOR_ACTIONS: Record<string, string[]> = {
-  artisan: [
-    "Site vitrine avec formulaire de demande de devis",
-    "SEO local sur vos metiers + zone d'intervention",
-    "Fiche Google Business avec photos de chantiers",
-  ],
-  horeca: [
-    "Site avec menu en ligne, photos pro et reservation",
-    "SEO local + fiche Google avec avis clients",
-    "Instagram professionnel avec contenu regulier",
-  ],
-  commerce: [
-    "Site e-commerce ou vitrine avec catalogue produits",
-    "SEO local + Google Shopping si pertinent",
-    "Reseaux sociaux avec mise en avant des produits",
-  ],
-  liberal: [
-    "Site sobre et professionnel inspire confiance",
-    "SEO local sur votre specialite + ville",
-    "Gestion des avis Google et reputation en ligne",
-  ],
-  sante: [
-    "Site avec prise de rendez-vous en ligne",
-    "SEO local sur votre discipline + zone",
-    "Fiche Google optimisee avec avis patients",
-  ],
-  immobilier: [
-    "Site avec annonces dynamiques et pages de quartier",
-    "SEO local par ville, quartier et type de bien",
-    "Contenu regulier : guides acheteurs, tendances marche",
-  ],
-  evenementiel: [
-    "Site immersif avec galeries photo/video des evenements",
-    "SEO saisonnier et campagnes ciblees",
-    "Instagram et Pinterest pour la mise en valeur visuelle",
-  ],
-  services: [
-    "Site multi-pages detaillant chaque service",
-    "SEO local sur vos expertises + zone geographique",
-    "Strategie de contenu pour demontrer votre expertise",
-  ],
-}
-
-function getCaseStudy(sector: string): CaseStudy {
-  return CASE_STUDIES[sector] || CASE_STUDIES.services
-}
-
-function getSectorActions(sector: string): string[] {
-  return SECTOR_ACTIONS[sector] || SECTOR_ACTIONS.services
 }
 
 function getProfile(answers: Record<string, string>): Profile {
@@ -239,8 +157,8 @@ function getProfile(answers: Record<string, string>): Profile {
   const noClients = answers.problem === "clients" || answers.problem === "conversion"
   const noTime = answers.problem === "time"
   const sector = answers.sector || "services"
-  const caseStudy = getCaseStudy(sector)
-  const sectorActions = getSectorActions(sector)
+  const caseStudy = CASE_STUDIES[sector] || CASE_STUDIES.services
+  const sectorActions = SECTOR_ACTIONS[sector] || SECTOR_ACTIONS.services
 
   if (noSite) {
     return {
@@ -265,11 +183,7 @@ function getProfile(answers: Record<string, string>): Profile {
         "Vous savez qu'il faut agir mais chaque heure sur la com' est une heure perdue sur votre metier",
         "Sans equipe dediee, votre communication stagne et vos concurrents avancent",
       ],
-      actions: [
-        "Refonte complete avec un design moderne et performant",
-        ...sectorActions.slice(1),
-        "Pilotage complet - on gere tout, vous recevez un reporting",
-      ],
+      actions: ["Refonte complete avec un design moderne et performant", ...sectorActions.slice(1), "Pilotage complet - on gere tout, vous recevez un reporting"],
       lost: "10 a 15 heures par semaine + la majorite de votre trafic potentiel",
       caseStudy,
       forfait: "performance",
@@ -284,10 +198,7 @@ function getProfile(answers: Record<string, string>): Profile {
         "Google penalise les sites non-responsive et mal optimises",
         "Vos concurrents avec un site moderne captent vos prospects",
       ],
-      actions: [
-        "Refonte complete - design moderne, performance <1 seconde",
-        ...sectorActions.slice(1),
-      ],
+      actions: ["Refonte complete - design moderne, performance <1 seconde", ...sectorActions.slice(1)],
       lost: "40 a 60% de votre trafic potentiel",
       caseStudy,
       forfait: "croissance",
@@ -317,11 +228,7 @@ function getProfile(answers: Record<string, string>): Profile {
         "Publier quand on y pense, c'est pire que ne rien publier - c'est incoherent",
         "Sans regularite, Google et les reseaux sociaux vous oublient",
       ],
-      actions: [
-        "Un interlocuteur unique qui gere tout pour vous",
-        ...sectorActions.slice(1),
-        "Reporting mensuel - vous savez ce qui se passe sans y passer du temps",
-      ],
+      actions: ["Un interlocuteur unique qui gere tout pour vous", ...sectorActions.slice(1), "Reporting mensuel - vous savez ce qui se passe sans y passer du temps"],
       lost: "10 a 15 heures par semaine de votre temps",
       caseStudy,
       forfait: "performance",
@@ -348,22 +255,7 @@ const fadeSlide = {
   initial: { opacity: 0, y: 30 } as const,
   animate: { opacity: 1, y: 0 } as const,
   exit: { opacity: 0, y: -30 } as const,
-  transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } as const,
-}
-
-function ProgressBar({ current, total }: { current: number; total: number }) {
-  return (
-    <div className="flex gap-2 mb-12">
-      {Array.from({ length: total }).map((_, i) => (
-        <div
-          key={i}
-          className={`h-1 flex-1 rounded-full transition-all duration-500 ${
-            i <= current ? "bg-slate-900" : "bg-slate-200"
-          }`}
-        />
-      ))}
-    </div>
-  )
+  transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } as const,
 }
 
 /* ─── PAGE ─── */
@@ -383,11 +275,8 @@ export default function DiagnosticPage() {
   }
 
   function goBack() {
-    if (questionIdx > 0) {
-      setQuestionIdx((i) => i - 1)
-    } else {
-      setStep("intro")
-    }
+    if (questionIdx > 0) setQuestionIdx((i) => i - 1)
+    else setStep("intro")
   }
 
   function restart() {
@@ -400,65 +289,50 @@ export default function DiagnosticPage() {
   const reco = FORFAITS[profile.forfait]
 
   return (
-    <div className="min-h-dvh bg-white">
+    <>
       <AnimatePresence mode="wait">
         {/* ─── INTRO ─── */}
         {step === "intro" && (
           <motion.div key="intro" {...fadeSlide}>
-            <section className="min-h-dvh flex items-center">
-              <Container className="max-w-4xl">
-                <div className="space-y-8">
-                  <p className="text-sm font-mono tracking-widest uppercase text-slate-400">
-                    Globe Createur - diagnostic
-                  </p>
+            <section className="relative py-16 lg:py-24 min-h-[85dvh] flex items-center">
+              <div className="dot-grid absolute inset-0 pointer-events-none" aria-hidden="true" />
+              <Container className="relative">
+                <Badge variant="primary" className="mb-6">
+                  <Sparkles className="h-3 w-3 mr-1.5" />
+                  Diagnostic gratuit - 2 minutes
+                </Badge>
 
-                  <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black text-slate-900 tracking-tight leading-[0.95]">
-                    On ne va pas
-                    <br />
-                    vous vendre
-                    <br />
-                    <span className="text-slate-300">un forfait.</span>
-                  </h1>
+                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.08] max-w-4xl">
+                  On ne va pas vous vendre{" "}
+                  <span className="text-gradient">un forfait.</span>
+                </h1>
 
-                  <div className="max-w-lg space-y-6 pt-4">
-                    <p className="text-lg sm:text-xl text-slate-500 leading-relaxed">
-                      D&apos;abord, on veut comprendre votre situation.
-                      4 questions. 2 minutes. Zero bullshit.
-                    </p>
-                    <p className="text-lg sm:text-xl text-slate-500 leading-relaxed">
-                      A la fin, vous saurez exactement ce que vous perdez
-                      chaque mois — et ce qu&apos;on ferait pour vous.
-                    </p>
-                  </div>
+                <p className="mt-6 text-lg lg:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
+                  D&apos;abord, on veut comprendre votre situation.
+                  4 questions. Zero bullshit. A la fin, vous saurez exactement
+                  ce que vous perdez chaque mois — et ce qu&apos;on ferait pour vous.
+                </p>
 
-                  <div className="pt-8 flex flex-wrap items-center gap-6">
-                    <button
-                      onClick={() => setStep("quiz")}
-                      className="group inline-flex items-center gap-4 text-lg font-black uppercase tracking-widest cursor-pointer"
-                    >
-                      <span className="h-16 w-16 rounded-full bg-slate-900 text-white flex items-center justify-center group-hover:bg-indigo-600 transition-colors duration-300">
-                        <ArrowRight className="h-6 w-6" />
-                      </span>
-                      <span className="group-hover:text-indigo-600 transition-colors duration-300">
-                        Commencer
-                      </span>
-                    </button>
+                <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                  <Button onClick={() => setStep("quiz")} size="lg">
+                    Commencer le diagnostic
+                    <ArrowRight className="h-5 w-5" />
+                  </Button>
+                  <Button href="/devis" variant="outline" size="lg">
+                    Je sais deja ce que je veux
+                  </Button>
+                </div>
 
-                    <Link
-                      href="/devis"
-                      className="text-sm text-slate-400 hover:text-slate-600 transition-colors"
-                    >
-                      Je sais deja ce que je veux →
-                    </Link>
-                  </div>
-
-                  <div className="pt-16 flex items-center gap-8 text-xs text-slate-300 font-mono uppercase tracking-wider">
-                    <span>Gratuit</span>
-                    <span className="h-px w-4 bg-slate-200" />
-                    <span>Sans engagement</span>
-                    <span className="h-px w-4 bg-slate-200" />
-                    <span>2 minutes</span>
-                  </div>
+                <div className="mt-16 flex items-center gap-6 text-sm text-slate-400 dark:text-slate-500">
+                  <span className="flex items-center gap-2">
+                    <Check className="h-4 w-4 text-green-500" /> Gratuit
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <Check className="h-4 w-4 text-green-500" /> Sans engagement
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <Check className="h-4 w-4 text-green-500" /> Resultat immediat
+                  </span>
                 </div>
               </Container>
             </section>
@@ -468,43 +342,62 @@ export default function DiagnosticPage() {
         {/* ─── QUIZ ─── */}
         {step === "quiz" && (
           <motion.div key={`quiz-${questionIdx}`} {...fadeSlide}>
-            <section className="min-h-dvh flex items-center">
-              <Container className="max-w-3xl">
-                <ProgressBar current={questionIdx} total={questions.length} />
+            <section className="relative py-16 lg:py-24 min-h-[85dvh] flex items-center">
+              <div className="dot-grid absolute inset-0 pointer-events-none" aria-hidden="true" />
+              <Container className="relative max-w-3xl">
+                {/* Progress */}
+                <div className="flex gap-2 mb-12">
+                  {questions.map((_, i) => (
+                    <div
+                      key={i}
+                      className={`h-1.5 flex-1 rounded-full transition-all duration-500 ${
+                        i <= questionIdx
+                          ? "bg-indigo-600 dark:bg-indigo-500"
+                          : "bg-slate-200 dark:bg-slate-700"
+                      }`}
+                    />
+                  ))}
+                </div>
 
                 <button
                   onClick={goBack}
-                  className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-slate-600 transition-colors mb-12 cursor-pointer"
+                  className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors mb-10 cursor-pointer"
                 >
                   <ArrowLeft className="h-4 w-4" />
                   Retour
                 </button>
 
-                <div className="space-y-4">
-                  <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1]">
-                    {questions[questionIdx].question}
-                  </h2>
-                  <p className="text-lg text-slate-400 italic">
-                    {questions[questionIdx].subtext}
-                  </p>
-                </div>
+                <Badge variant="mono" className="mb-4">
+                  Question {questionIdx + 1} / {questions.length}
+                </Badge>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-12">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.1]">
+                  {questions[questionIdx].question}
+                </h2>
+                <p className="mt-4 text-lg text-slate-500 dark:text-slate-400 italic">
+                  {questions[questionIdx].subtext}
+                </p>
+
+                <div className={`grid gap-4 mt-10 ${
+                  questions[questionIdx].answers.length > 4
+                    ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+                    : "grid-cols-1 sm:grid-cols-2"
+                }`}>
                   {questions[questionIdx].answers.map((answer) => {
                     const isSelected = answers[questions[questionIdx].id] === answer.value
                     return (
                       <button
                         key={answer.value}
                         onClick={() => handleAnswer(questions[questionIdx].id, answer.value)}
-                        className={`group text-left p-6 rounded-2xl border-2 transition-all duration-200 cursor-pointer ${
+                        className={`group text-left p-6 rounded-2xl border transition-all duration-200 cursor-pointer ${
                           isSelected
-                            ? "border-slate-900 bg-slate-900 text-white"
-                            : "border-slate-200 hover:border-slate-900 bg-white"
+                            ? "border-indigo-600 dark:border-indigo-500 bg-indigo-600 dark:bg-indigo-600 text-white shadow-lg shadow-indigo-200 dark:shadow-indigo-950"
+                            : "border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-indigo-300 dark:hover:border-indigo-600 hover:shadow-lg hover:shadow-indigo-100/50 dark:hover:shadow-indigo-950/50"
                         }`}
                       >
                         <span className="text-2xl mb-3 block">{answer.icon}</span>
-                        <span className={`text-lg font-bold ${
-                          isSelected ? "text-white" : "text-slate-900"
+                        <span className={`text-base font-bold ${
+                          isSelected ? "text-white" : "text-slate-900 dark:text-white"
                         }`}>
                           {answer.label}
                         </span>
@@ -512,10 +405,6 @@ export default function DiagnosticPage() {
                     )
                   })}
                 </div>
-
-                <p className="text-xs text-slate-300 font-mono mt-12 uppercase tracking-wider">
-                  Question {questionIdx + 1} sur {questions.length}
-                </p>
               </Container>
             </section>
           </motion.div>
@@ -525,38 +414,40 @@ export default function DiagnosticPage() {
         {step === "result" && (
           <motion.div key="result" {...fadeSlide}>
             {/* Header */}
-            <section className="pt-32 pb-20 lg:pt-40 lg:pb-24">
-              <Container className="max-w-4xl">
-                <p className="text-sm font-mono tracking-widest uppercase text-slate-400 mb-8">
+            <section className="relative py-16 lg:py-24">
+              <div className="dot-grid absolute inset-0 pointer-events-none" aria-hidden="true" />
+              <Container className="relative max-w-4xl">
+                <Badge variant="primary" className="mb-6">
+                  <Sparkles className="h-3 w-3 mr-1.5" />
                   Votre diagnostic
-                </p>
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1]">
+                </Badge>
+                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.1]">
                   {profile.title}
                 </h1>
               </Container>
             </section>
 
             {/* Problems */}
-            <section className="py-16 border-t border-slate-100">
+            <section className="py-16 lg:py-20 bg-slate-50 dark:bg-slate-900">
               <Container className="max-w-4xl">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
                   <div className="lg:col-span-4">
-                    <p className="text-xs font-mono uppercase tracking-widest text-red-500 font-bold">
+                    <Badge className="bg-red-50 dark:bg-red-950/50 text-red-600 dark:text-red-400 border-red-100 dark:border-red-900">
                       Ce qui vous coute
-                    </p>
+                    </Badge>
                   </div>
-                  <div className="lg:col-span-8 space-y-6">
+                  <div className="lg:col-span-8 space-y-5">
                     {profile.problems.map((p) => (
                       <div key={p} className="flex items-start gap-4">
                         <X className="h-5 w-5 text-red-400 shrink-0 mt-1" />
-                        <p className="text-lg text-slate-700 leading-relaxed">{p}</p>
+                        <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">{p}</p>
                       </div>
                     ))}
-                    <div className="mt-8 p-6 bg-red-50 rounded-2xl">
-                      <p className="text-sm font-mono uppercase tracking-wider text-red-400 mb-2">
+                    <div className="mt-6 rounded-2xl border border-red-200 dark:border-red-900 bg-white dark:bg-slate-800 p-6">
+                      <p className="text-xs font-black uppercase tracking-widest text-red-500 mb-2">
                         Estimation de perte mensuelle
                       </p>
-                      <p className="text-2xl sm:text-3xl font-black text-red-600">
+                      <p className="text-2xl sm:text-3xl font-extrabold text-red-600 dark:text-red-400">
                         {profile.lost}
                       </p>
                     </div>
@@ -566,21 +457,21 @@ export default function DiagnosticPage() {
             </section>
 
             {/* Actions */}
-            <section className="py-16 border-t border-slate-100">
+            <section className="py-16 lg:py-20">
               <Container className="max-w-4xl">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
                   <div className="lg:col-span-4">
-                    <p className="text-xs font-mono uppercase tracking-widest text-green-600 font-bold">
+                    <Badge className="bg-green-50 dark:bg-green-950/50 text-green-600 dark:text-green-400 border-green-100 dark:border-green-900">
                       Ce qu&apos;on ferait
-                    </p>
+                    </Badge>
                   </div>
-                  <div className="lg:col-span-8 space-y-6">
+                  <div className="lg:col-span-8 space-y-5">
                     {profile.actions.map((a, i) => (
                       <div key={a} className="flex items-start gap-4">
-                        <span className="h-8 w-8 rounded-full bg-slate-900 text-white flex items-center justify-center text-sm font-mono font-bold shrink-0">
+                        <span className="h-8 w-8 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-sm font-bold shrink-0">
                           {i + 1}
                         </span>
-                        <p className="text-lg text-slate-700 leading-relaxed pt-1">{a}</p>
+                        <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed pt-1">{a}</p>
                       </div>
                     ))}
                   </div>
@@ -589,31 +480,29 @@ export default function DiagnosticPage() {
             </section>
 
             {/* Case study */}
-            <section className="py-16 border-t border-slate-100">
+            <section className="py-16 lg:py-20 bg-slate-50 dark:bg-slate-900">
               <Container className="max-w-4xl">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
                   <div className="lg:col-span-4">
-                    <p className="text-xs font-mono uppercase tracking-widest text-slate-400 font-bold">
-                      Cas similaire
-                    </p>
+                    <Badge variant="mono">Cas similaire</Badge>
                   </div>
                   <div className="lg:col-span-8">
-                    <div className="bg-slate-50 rounded-2xl p-8 space-y-6">
-                      <p className="font-black text-slate-900 text-xl">
+                    <div className="rounded-[2rem] border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-8 space-y-6">
+                      <p className="font-extrabold text-slate-900 dark:text-white text-xl">
                         {profile.caseStudy.name}
                       </p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                          <p className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Avant</p>
-                          <p className="text-sm text-slate-600 leading-relaxed">{profile.caseStudy.before}</p>
+                          <p className="text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Avant</p>
+                          <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{profile.caseStudy.before}</p>
                         </div>
                         <div>
-                          <p className="text-xs font-mono uppercase tracking-wider text-green-600 mb-2">Apres</p>
-                          <p className="text-sm text-slate-600 leading-relaxed">{profile.caseStudy.after}</p>
+                          <p className="text-xs font-black uppercase tracking-widest text-green-600 dark:text-green-400 mb-2">Apres</p>
+                          <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{profile.caseStudy.after}</p>
                         </div>
                       </div>
-                      <div className="pt-4 border-t border-slate-200">
-                        <p className="text-3xl sm:text-4xl font-black text-slate-900 font-mono">
+                      <div className="pt-4 border-t border-slate-100 dark:border-slate-700">
+                        <p className="text-3xl sm:text-4xl font-extrabold text-gradient">
                           {profile.caseStudy.metric}
                         </p>
                       </div>
@@ -624,51 +513,46 @@ export default function DiagnosticPage() {
             </section>
 
             {/* Recommended forfait */}
-            <section className="py-16 border-t border-slate-100">
+            <section className="py-16 lg:py-20">
               <Container className="max-w-4xl">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
                   <div className="lg:col-span-4">
-                    <p className="text-xs font-mono uppercase tracking-widest text-indigo-600 font-bold">
-                      Notre recommandation
-                    </p>
+                    <Badge variant="primary">Notre recommandation</Badge>
                   </div>
                   <div className="lg:col-span-8">
-                    <div className="rounded-2xl border-2 border-indigo-600 overflow-hidden">
-                      <div className="bg-indigo-600 px-8 py-5 flex items-center justify-between">
+                    <div className="rounded-[2rem] border-2 border-indigo-200 dark:border-indigo-700 overflow-hidden shadow-xl shadow-indigo-100/50 dark:shadow-indigo-950/50">
+                      <div className="bg-indigo-600 dark:bg-indigo-700 px-8 py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div>
-                          <p className="text-white font-black text-2xl">{reco.name}</p>
+                          <p className="text-white font-extrabold text-2xl tracking-tight">{reco.name}</p>
                           <p className="text-indigo-200 text-sm font-medium">{reco.tagline}</p>
                         </div>
-                        <span className="bg-white/20 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                        <span className="inline-flex items-center bg-white/20 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shrink-0">
                           Recommande pour vous
                         </span>
                       </div>
 
-                      <div className="bg-white p-8 space-y-6">
-                        <p className="text-slate-600 leading-relaxed">
+                      <div className="bg-white dark:bg-slate-800 p-8 space-y-6">
+                        <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                           {reco.why}
                         </p>
 
                         <ul className="space-y-3">
                           {reco.features.map((feat) => (
-                            <li key={feat} className="flex items-start gap-3 text-sm text-slate-700">
-                              <Check className="h-4 w-4 text-indigo-600 shrink-0 mt-0.5" />
+                            <li key={feat} className="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                              <Check className="h-4 w-4 text-indigo-600 dark:text-indigo-400 shrink-0 mt-0.5" />
                               {feat}
                             </li>
                           ))}
                         </ul>
 
-                        <div className="pt-4 flex flex-wrap items-center gap-4">
-                          <Link
-                            href={reco.href}
-                            className="inline-flex items-center justify-center gap-2 h-12 px-8 bg-indigo-600 text-white font-bold rounded-2xl hover:bg-indigo-700 hover:-translate-y-0.5 transition-all shadow-lg shadow-indigo-100"
-                          >
+                        <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                          <Button href="/devis" size="lg">
                             Demander un devis {reco.name}
                             <ArrowRight className="h-4 w-4" />
-                          </Link>
+                          </Button>
                           <Link
                             href="/forfait-communication-pme"
-                            className="text-sm text-slate-400 hover:text-slate-600 transition-colors"
+                            className="text-sm text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                           >
                             Comparer tous les forfaits →
                           </Link>
@@ -681,50 +565,38 @@ export default function DiagnosticPage() {
             </section>
 
             {/* CTA final */}
-            <section className="py-20 border-t border-slate-100">
-              <Container className="max-w-4xl">
-                <div className="space-y-8">
-                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.05]">
-                    On en parle ?
-                    <br />
-                    <span className="text-slate-300">20 min. Gratuit. Sans bullshit.</span>
-                  </h2>
-
-                  <div className="flex flex-wrap items-center gap-6">
-                    <Link
-                      href="/devis"
-                      className="group inline-flex items-center gap-4 text-lg font-black uppercase tracking-widest"
-                    >
-                      <span className="h-16 w-16 rounded-full bg-slate-900 text-white flex items-center justify-center group-hover:bg-indigo-600 transition-colors duration-300">
-                        <ArrowRight className="h-6 w-6" />
-                      </span>
-                      <span className="group-hover:text-indigo-600 transition-colors duration-300">
-                        Prendre rendez-vous
-                      </span>
-                    </Link>
-
-                    <Link
-                      href="/contact"
-                      className="text-sm text-slate-400 hover:text-slate-600 transition-colors"
-                    >
-                      ou envoyez-nous un message →
-                    </Link>
-                  </div>
-
-                  <div className="pt-12">
-                    <button
-                      onClick={restart}
-                      className="text-xs font-mono text-slate-300 hover:text-slate-500 transition-colors uppercase tracking-wider cursor-pointer"
-                    >
-                      ← Refaire le diagnostic
-                    </button>
-                  </div>
+            <section className="py-20 lg:py-28 bg-indigo-600 dark:bg-indigo-950 rounded-[3rem] mx-4 lg:mx-12 overflow-hidden relative mb-12">
+              <div className="absolute inset-0 opacity-10 dot-grid pointer-events-none" />
+              <Container className="relative z-10 max-w-3xl text-center">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.1]">
+                  On en parle ?
+                </h2>
+                <p className="mt-4 text-lg text-indigo-100 max-w-xl mx-auto">
+                  20 minutes pour echanger sur votre projet. Gratuit, sans engagement.
+                </p>
+                <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                  <Button href="/devis" size="lg" className="bg-white text-indigo-700 hover:bg-indigo-50 shadow-xl shadow-indigo-900/30 hover:-translate-y-0.5 transition-all">
+                    Prendre rendez-vous
+                    <ArrowRight className="h-5 w-5" />
+                  </Button>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 h-14 px-8 text-lg font-bold rounded-2xl text-white border border-white/30 hover:bg-white/10 transition-all"
+                  >
+                    Nous contacter
+                  </Link>
                 </div>
+                <button
+                  onClick={restart}
+                  className="mt-8 text-sm text-indigo-200 hover:text-white transition-colors cursor-pointer"
+                >
+                  ← Refaire le diagnostic
+                </button>
               </Container>
             </section>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </>
   )
 }
