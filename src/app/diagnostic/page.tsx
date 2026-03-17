@@ -546,17 +546,15 @@ export default function DiagnosticPage() {
                           ))}
                         </ul>
 
-                        <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                          <Button href="/devis" size="lg">
+                        <div className="pt-4 flex items-center gap-4 flex-wrap">
+                          <Button href="/devis">
                             Demander un devis {reco.name}
                             <ArrowRight className="h-4 w-4" />
                           </Button>
-                          <Link
-                            href="/forfait-communication-pme"
-                            className="text-sm text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                          >
-                            Comparer tous les forfaits →
-                          </Link>
+                          <Button href="/forfait-communication-pme" variant="ghost">
+                            Comparer les forfaits
+                            <ArrowRight className="h-4 w-4" />
+                          </Button>
                         </div>
                       </div>
                     </div>
