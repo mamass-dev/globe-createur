@@ -12,18 +12,6 @@ export function EasterEgg() {
 
   useEffect(() => {
     // Console easter egg
-    console.log(
-      "\n%c   ██████╗ ██╗      ██████╗ ██████╗ ███████╗\n  ██╔════╝ ██║     ██╔═══██╗██╔══██╗██╔════╝\n  ██║  ███╗██║     ██║   ██║██████╔╝█████╗  \n  ██║   ██║██║     ██║   ██║██╔══██╗██╔══╝  \n  ╚██████╔╝███████╗╚██████╔╝██████╔╝███████╗\n   ╚═════╝ ╚══════╝ ╚═════╝ ╚═════╝ ╚══════╝\n",
-      "color: #6366f1; font-weight: bold;"
-    )
-    console.log(
-      "%c👋 Hey ! Tu fouilles dans la console ? On aime ça.\n" +
-      "🚀 Next.js · React 19 · Tailwind · Beaucoup de café\n" +
-      "🔒 Routes API rate-limitées et sanitizées.\n" +
-      "💼 contact@globecreateur.fr",
-      "color: #94a3b8; font-size: 11px;"
-    )
-
     // Konami code: ↑↑↓↓←→←→BA
     const code = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown","b","a"]
     let idx = 0
