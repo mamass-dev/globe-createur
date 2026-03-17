@@ -159,7 +159,7 @@ export function RoiCalculator() {
                 transition={{ duration: 0.5 }}
                 className="space-y-6"
               >
-                {/* Teaser metrics — always visible */}
+                {/* Teaser metrics - always visible */}
                 <div className="grid grid-cols-2 gap-3">
                   <MetricCard
                     icon="Search"
@@ -223,7 +223,7 @@ export function RoiCalculator() {
                   />
                 ) : (
                   <>
-                    {/* Full metrics — unlocked */}
+                    {/* Full metrics - unlocked */}
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}

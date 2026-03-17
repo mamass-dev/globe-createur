@@ -185,7 +185,7 @@ export default async function BlogPostPage({
 
           {/* Content */}
           <div className="max-w-3xl">
-            <div className="prose prose-indigo prose-lg dark:prose-invert max-w-none prose-h2:text-2xl prose-h2:font-extrabold prose-h2:text-slate-900 dark:prose-h2:text-white prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-xl prose-h3:font-bold prose-h3:text-slate-800 dark:prose-h3:text-slate-200 prose-p:text-slate-600 dark:prose-p:text-slate-400 prose-li:text-slate-600 dark:prose-li:text-slate-400 prose-blockquote:border-indigo-600 dark:prose-blockquote:border-indigo-400 prose-blockquote:bg-indigo-50/50 dark:prose-blockquote:bg-indigo-950/50 prose-blockquote:rounded-2xl prose-img:rounded-2xl prose-img:shadow-lg prose-table:text-sm prose-th:bg-slate-50 dark:prose-th:bg-slate-900">
+            <div className="prose prose-indigo prose-lg dark:prose-invert max-w-none prose-h2:text-2xl prose-h2:font-extrabold prose-h2:text-slate-900 dark:prose-h2:text-white prose-h2:mt-12 prose-h2:mb-4 prose-h3:text-xl prose-h3:font-bold prose-h3:text-slate-800 dark:prose-h3:text-slate-200 prose-p:text-slate-600 dark:prose-p:text-slate-400 prose-li:text-slate-600 dark:prose-li:text-slate-400 prose-blockquote:border-indigo-600 dark:prose-blockquote:border-indigo-400 prose-blockquote:bg-indigo-50/50 dark:prose-blockquote:bg-indigo-950/50 prose-blockquote:rounded-2xl prose-img:rounded-2xl prose-img:shadow-lg ">
               <MdxContent source={content} />
             </div>
 

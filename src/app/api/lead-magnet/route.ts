@@ -27,13 +27,13 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: "Globe Créateur <noreply@globecreateur.fr>",
       to: "contact@globecreateur.fr",
-      subject: `Nouveau lead magnet — ${escapeHtml(offer || "Checklist SEO")}`,
+      subject: `Nouveau lead magnet - ${escapeHtml(offer || "Checklist SEO")}`,
       html: `
         <h2 style="color:#6366f1;">Nouveau lead magnet</h2>
         <table style="border-collapse:collapse;width:100%;max-width:500px;">
           <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Email</td><td style="padding:8px 12px;">${escapeHtml(email)}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Offre</td><td style="padding:8px 12px;">${escapeHtml(offer || "—")}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Page</td><td style="padding:8px 12px;">${escapeHtml(page || "—")}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Offre</td><td style="padding:8px 12px;">${escapeHtml(offer || "-")}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Page</td><td style="padding:8px 12px;">${escapeHtml(page || "-")}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Source</td><td style="padding:8px 12px;">${escapeHtml(source || "lead-magnet")}</td></tr>
         </table>
       `,
@@ -43,7 +43,7 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: "Axel de Globe Créateur <noreply@globecreateur.fr>",
       to: email,
-      subject: `Votre ressource gratuite — ${escapeHtml(offer || "Checklist SEO")}`,
+      subject: `Votre ressource gratuite - ${escapeHtml(offer || "Checklist SEO")}`,
       html: `
         <div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;padding:32px 24px;">
           <img src="https://globecreateur.fr/images/logo/logo-main.webp" alt="Globe Créateur" style="height:32px;margin-bottom:24px;" />

@@ -308,7 +308,7 @@ export function EstimateurForm() {
         }),
       })
     } catch {
-      // silently continue — we show success regardless
+      // silently continue - we show success regardless
     }
     setSubmitting(false)
     setSubmitted(true)
@@ -343,7 +343,7 @@ export function EstimateurForm() {
 
         {/* Mobile label */}
         <p className="sm:hidden text-xs font-medium text-indigo-600 dark:text-indigo-400 mb-2">
-          Étape {step} sur 4 — {stepLabels[step - 1]}
+          Étape {step} sur 4 - {stepLabels[step - 1]}
         </p>
 
         {/* Bar */}
@@ -360,7 +360,7 @@ export function EstimateurForm() {
   }
 
   /* ────────────────────────────────────────────────────────────────────────
-     Step 1 — Type de projet
+     Step 1 - Type de projet
      ──────────────────────────────────────────────────────────────────────── */
 
   function Step1() {
@@ -422,7 +422,7 @@ export function EstimateurForm() {
   }
 
   /* ────────────────────────────────────────────────────────────────────────
-     Step 2 — Détails
+     Step 2 - Détails
      ──────────────────────────────────────────────────────────────────────── */
 
   function Step2Site() {
@@ -632,7 +632,7 @@ export function EstimateurForm() {
   }
 
   /* ────────────────────────────────────────────────────────────────────────
-     Step 3 — Budget & Délais
+     Step 3 - Budget & Délais
      ──────────────────────────────────────────────────────────────────────── */
 
   function Step3() {
@@ -707,7 +707,7 @@ export function EstimateurForm() {
   }
 
   /* ────────────────────────────────────────────────────────────────────────
-     Step 4 — Résultat & Contact
+     Step 4 - Résultat & Contact
      ──────────────────────────────────────────────────────────────────────── */
 
   function Step4() {

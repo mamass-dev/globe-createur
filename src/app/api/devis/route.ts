@@ -27,15 +27,15 @@ export async function POST(request: Request) {
       from: "Globe Créateur <noreply@globecreateur.fr>",
       to: "contact@globecreateur.fr",
       replyTo: email,
-      subject: `Demande de devis — ${escapeHtml(service)} — ${escapeHtml(name)}`,
+      subject: `Demande de devis - ${escapeHtml(service)} - ${escapeHtml(name)}`,
       html: `
         <h2>Nouvelle demande de devis</h2>
         <table style="border-collapse:collapse;width:100%;max-width:500px;">
           <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Nom</td><td style="padding:8px 12px;">${escapeHtml(name)}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Email</td><td style="padding:8px 12px;">${escapeHtml(email)}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Entreprise</td><td style="padding:8px 12px;">${escapeHtml(company || "—")}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Entreprise</td><td style="padding:8px 12px;">${escapeHtml(company || "-")}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Service</td><td style="padding:8px 12px;">${escapeHtml(service)}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Budget</td><td style="padding:8px 12px;">${escapeHtml(budget || "—")}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Budget</td><td style="padding:8px 12px;">${escapeHtml(budget || "-")}</td></tr>
         </table>
         <hr style="margin:20px 0;border:none;border-top:1px solid #e2e8f0;" />
         <p><strong>Message :</strong></p>

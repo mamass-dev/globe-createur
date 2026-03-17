@@ -16,16 +16,13 @@ import { Check, X } from "lucide-react"
 
 export const metadata: Metadata = buildMetadata({
   title: "Forfait communication PME - Équipe externalisée à Dijon | Globe Créateur",
-  description: "Forfaits communication tout-en-un pour PME à Dijon. Web, SEO, photo, vidéo, réseaux sociaux : une équipe complète externalisée à partir de 890 €/mois HT. Site internet offert selon engagement.",
+  description: "Forfaits communication tout-en-un pour PME à Dijon. Web, SEO, photo, vidéo, réseaux sociaux : une équipe complète externalisée. Site internet offert selon engagement. Devis gratuit.",
   path: "/forfait-communication-pme",
 })
 
 const forfaits = [
   {
     name: "Essentiel",
-    price: "890",
-    engagement: "12 mois",
-    priceSansEngagement: "1 080",
     description: "La base solide pour exister en ligne et commencer à attirer des clients.",
     features: [
       "Site internet offert (selon engagement)",
@@ -45,9 +42,6 @@ const forfaits = [
   },
   {
     name: "Croissance",
-    price: "1 490",
-    engagement: "6 mois",
-    priceSansEngagement: "1 790",
     popular: true,
     description: "Pour accélérer votre visibilité locale et générer des demandes régulières.",
     features: [
@@ -67,9 +61,6 @@ const forfaits = [
   },
   {
     name: "Performance",
-    price: "2 690",
-    engagement: "3 mois",
-    priceSansEngagement: "2 990",
     description: "La communication complète pour dominer votre marché local.",
     features: [
       "Tout Croissance +",
@@ -102,15 +93,14 @@ const comparaison = [
 ]
 
 const faqForfaits = [
-  { question: "Les forfaits sont-ils sans engagement ?", answer: "Oui, les forfaits existent en version sans engagement (résiliables à tout moment). Mais nous recommandons un engagement (12, 6 ou 3 mois selon la formule) car il permet de bénéficier d'un tarif réduit et du site internet offert." },
+  { question: "Les forfaits sont-ils sans engagement ?", answer: "Oui, les forfaits existent en version sans engagement (résiliables à tout moment). Mais nous recommandons un engagement car il permet de bénéficier d'un tarif réduit et du site internet offert." },
   { question: "Puis-je changer de forfait en cours de route ?", answer: "Absolument. Vous pouvez passer d'un forfait à un autre (upgrade ou downgrade) avec un préavis d'un mois. Beaucoup de nos clients commencent par l'Essentiel et passent en Croissance après quelques mois quand ils voient les premiers résultats." },
-  { question: "Le site internet est-il vraiment offert ?", answer: "Oui. La création d'un site vitrine (valeur 1 500 à 3 000 €) est offerte selon la durée d'engagement : Essentiel 12 mois, Croissance 6 mois, Performance 3 mois. Le site inclut design moderne, SEO intégré, adapté PME. Hors e-commerce." },
+  { question: "Le site internet est-il vraiment offert ?", answer: "Oui. La création d'un site vitrine professionnel est offerte selon la durée d'engagement. Le site inclut design moderne, SEO intégré, adapté PME. Hors e-commerce." },
   { question: "Que se passe-t-il si je n'utilise pas toutes mes prestations du mois ?", answer: "Les prestations non utilisées peuvent être reportées le mois suivant, dans la limite d'un mois. On veille à adapter le rythme pour que chaque mois soit pleinement exploité." },
   { question: "Que se passe-t-il si je résilie ?", answer: "Votre site internet vous appartient. Si vous résiliez, vous conservez le site et tout le contenu produit (photos, vidéos, textes). On vous transfère les accès complets. La gestion des réseaux sociaux et le SEO s'arrêtent à la date de fin." },
   { question: "Combien de temps avant de voir des résultats ?", answer: "Les résultats en termes d'image (site professionnel, réseaux actifs) sont immédiats. Pour le SEO local et le trafic organique, comptez 2-3 mois pour les premières améliorations et 4-6 mois pour des résultats significatifs." },
   { question: "Dois-je fournir les photos et les textes ?", answer: "Non, c'est inclus. On rédige tous les textes (site, réseaux sociaux, blog) et on réalise les shootings photo (à partir du forfait Croissance). Pour le forfait Essentiel, on utilise des photos existantes ou on organise un shooting initial." },
   { question: "Travaillez-vous uniquement à Dijon ?", answer: "Non. Nous sommes basés à Dijon mais accompagnons des clients à Beaune, Besançon, Lyon et à distance. Les shootings et réunions en personne sont possibles dans toute la Bourgogne-Franche-Comté." },
-  { question: "Comment se passent les paiements ?", answer: "Abonnements mensuels facturés en début de mois. Pour les projets ponctuels : 40 % à la commande, 60 % à la livraison. Paiement par virement bancaire." },
   { question: "Un forfait sur-mesure est-il possible ?", answer: "Oui. Si aucun forfait standard ne correspond à vos besoins, on construit une formule sur-mesure. Contactez-nous pour en discuter." },
 ]
 
@@ -132,7 +122,7 @@ export default function ForfaitPage() {
       <PageHero
         badge="Forfaits communication"
         title="Votre équipe communication, sans embaucher"
-        subtitle="Web, SEO, photo, vidéo, réseaux sociaux : tout ce dont votre PME a besoin, dans un forfait mensuel clair et sans surprise. À partir de 890 €/mois HT. Site internet offert selon engagement."
+        subtitle="Web, SEO, photo, vidéo, réseaux sociaux : tout ce dont votre PME a besoin, dans un forfait mensuel clair et sans surprise. Site internet offert selon engagement."
         ctaLabel="Demander un devis gratuit"
         ctaHref="/devis"
       />
@@ -157,19 +147,16 @@ export default function ForfaitPage() {
               des publications régulières, un reporting avec des vrais chiffres. Votre
               communication vit et évolue avec votre entreprise.
             </p>
-            <h3>Pourquoi c&apos;est plus rentable qu&apos;embaucher</h3>
+            <h3>Plus rentable qu&apos;embaucher</h3>
             <p>
-              Le coût réel d&apos;un salarié communication : <strong>45 000 à 58 000 €/an</strong> (salaire + charges),
+              Le coût réel d&apos;un salarié communication : <strong>45 000 à 58 000 euros par an</strong> (salaire + charges),
               pour une seule compétence. Ajoutez les congés, les arrêts, le turnover, le matériel
               à acheter et la formation à financer.
             </p>
             <p>
-              Le coût Globe Créateur : <strong>10 680 à 32 280 €/an</strong>, pour une équipe complète
-              et multicompétences. Pas de charges, pas de matériel à acheter. Et le site internet
-              est <strong>offert selon la durée d&apos;engagement</strong> (valeur 1 500 à 3 000 €).
-            </p>
-            <p>
-              <strong>Économie moyenne constatée : 40 à 60 % par an.</strong>
+              Avec Globe Créateur, vous accédez à une <strong>équipe complète et multicompétences</strong> pour
+              une fraction de ce coût. Pas de charges, pas de matériel à acheter. Et le site internet
+              est <strong>offert selon la durée d&apos;engagement</strong>.
             </p>
           </div>
         </AnimateOnScroll>
@@ -187,7 +174,7 @@ export default function ForfaitPage() {
                 Choisissez le forfait qui vous correspond
               </h2>
               <p className="mt-3 text-gray-400 max-w-xl mx-auto">
-                Trois formules claires. Site internet offert selon engagement. Également disponibles sans engagement.
+                Trois formules claires. Site internet offert selon engagement. Demandez un devis pour connaître le tarif adapté à votre situation.
               </p>
             </div>
           </AnimateOnScroll>
@@ -204,17 +191,7 @@ export default function ForfaitPage() {
                     </span>
                   )}
                   <CardTitle>{f.name}</CardTitle>
-                  <div className="mt-2 mb-1">
-                    <span className="text-3xl font-bold text-foreground">{f.price} €</span>
-                    <span className="text-gray-400 text-sm"> /mois HT</span>
-                  </div>
-                  <p className="text-xs text-gray-300 mb-1">
-                    Engagement {f.engagement} - Site offert
-                  </p>
-                  <p className="text-xs text-gray-300 mb-4">
-                    Sans engagement : {f.priceSansEngagement} €/mois HT
-                  </p>
-                  <p className="text-sm text-gray-400 mb-6">{f.description}</p>
+                  <p className="text-sm text-gray-400 mt-2 mb-6">{f.description}</p>
                   <CardContent className="flex-1">
                     <ul className="space-y-3">
                       {f.features.map((feat) => (
@@ -241,7 +218,7 @@ export default function ForfaitPage() {
                       variant={f.popular ? "primary" : "outline"}
                       className="w-full"
                     >
-                      Choisir {f.name}
+                      Demander un devis {f.name}
                     </Button>
                   </div>
                 </Card>
@@ -278,26 +255,13 @@ export default function ForfaitPage() {
                     <td className="py-3 px-4 text-center"><CellValue value={row.premium} /></td>
                   </tr>
                 ))}
-                <tr className="border-t border-gray-200">
-                  <td className="py-4 pr-4 font-semibold text-foreground">Tarif (avec engagement)</td>
-                  <td className="py-4 px-4 text-center font-semibold text-foreground">890 €/mois</td>
-                  <td className="py-4 px-4 text-center font-semibold text-primary bg-primary/[0.02]">1 490 €/mois</td>
-                  <td className="py-4 px-4 text-center font-semibold text-foreground">2 690 €/mois</td>
-                </tr>
-                <tr className="border-t border-gray-50">
-                  <td className="py-3 pr-4 text-sm text-gray-400">Sans engagement</td>
-                  <td className="py-3 px-4 text-center text-sm text-gray-400">1 080 €/mois</td>
-                  <td className="py-3 px-4 text-center text-sm text-gray-400 bg-primary/[0.02]">1 790 €/mois</td>
-                  <td className="py-3 px-4 text-center text-sm text-gray-400">2 990 €/mois</td>
-                </tr>
-                <tr className="border-t border-gray-50">
-                  <td className="py-3 pr-4 text-sm text-gray-400">Engagement</td>
-                  <td className="py-3 px-4 text-center text-sm text-gray-400">12 mois</td>
-                  <td className="py-3 px-4 text-center text-sm text-gray-400 bg-primary/[0.02]">6 mois</td>
-                  <td className="py-3 px-4 text-center text-sm text-gray-400">3 mois</td>
-                </tr>
               </tbody>
             </table>
+          </div>
+          <div className="text-center mt-8">
+            <Button href="/devis" variant="primary">
+              Obtenir un devis personnalisé
+            </Button>
           </div>
         </AnimateOnScroll>
       </Container>

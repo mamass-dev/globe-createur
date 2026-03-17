@@ -49,7 +49,7 @@ const stats = [
 const faqAgence = [
   { question: "Êtes-vous basés à Auxerre ?", answer: "Notre studio est à Longvic, aux portes de Dijon, à environ 1h30 d'Auxerre. On se déplace dans l'Yonne pour les shootings et les réunions importantes. Le pilotage courant (stratégie, reporting, ajustements) se fait par visio et email, ce qui fonctionne très bien." },
   { question: "Pourquoi choisir une agence dijonnaise plutôt qu'une agence locale ?", answer: "Auxerre compte très peu d'agences de communication complètes. La plupart des prestataires locaux sont des freelances spécialisés dans un seul domaine. Globe Créateur réunit toutes les compétences (web, SEO, photo, vidéo, design, réseaux) avec un seul interlocuteur, pour une communication cohérente." },
-  { question: "Combien coûte un site internet pour une entreprise à Auxerre ?", answer: "Un site vitrine professionnel démarre à partir de 2 500 € HT. Pour un site plus complet, comptez 4 000 à 8 000 € HT. Le devis est gratuit et détaillé. Nos forfaits mensuels (à partir de 890 €/mois) peuvent inclure le site." },
+  { question: "Combien coûte un site internet pour une entreprise à Auxerre ?", answer: "Le tarif dépend de la complexité du projet. Le devis est gratuit, détaillé et sans engagement. Nos forfaits mensuels peuvent inclure la création du site." },
   { question: "Quel intérêt d'investir dans le SEO local à Auxerre ?", answer: "La concurrence en ligne sur Auxerre est très faible. Peu d'entreprises locales font du SEO. C'est une opportunité : avec un site optimisé et un bon référencement local, vous pouvez dominer les résultats Google sur vos mots-clés en quelques mois, là où à Paris ça prendrait des années." },
   { question: "Vous gérez aussi les réseaux sociaux ?", answer: "Oui. Stratégie éditoriale, création de contenus, publication et reporting. On adapte le calendrier aux événements locaux et à la saisonnalité de votre activité." },
   { question: "Je n'ai pas de site internet. Par où commencer ?", answer: "Par un audit gratuit. On analyse votre situation et on recommande la meilleure approche. Un site optimisé SEO + une fiche Google Business Profile est généralement la base pour toute PME auxerroise." },
@@ -155,7 +155,7 @@ export default function AgenceAuxerrePage() {
               est souvent inclus.
             </p>
             <p>
-              Trois formules à partir de 890 €/mois HT. Un investissement
+              Trois formules adaptées à votre budget et vos objectifs. Un investissement
               prévisible dans une communication professionnelle et continue.
             </p>
 

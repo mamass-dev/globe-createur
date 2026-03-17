@@ -9,7 +9,7 @@ export type Temoignage = {
   featured?: boolean
 }
 
-// — Avis Google (vrais avis de la fiche Google Business)
+// - Avis Google (vrais avis de la fiche Google Business)
 export const googleReviews: Temoignage[] = [
   {
     name: "Axel Rose",
@@ -106,7 +106,7 @@ export const googleReviews: Temoignage[] = [
   },
 ]
 
-// — Témoignages internes (récoltés directement auprès des clients)
+// - Témoignages internes (récoltés directement auprès des clients)
 export const internalReviews: Temoignage[] = [
   {
     name: "Aurélie Marchand",
@@ -177,5 +177,5 @@ export const internalReviews: Temoignage[] = [
   },
 ]
 
-// — Tous les avis combinés (pour le badge hero + la section témoignages)
+// - Tous les avis combinés (pour le badge hero + la section témoignages)
 export const temoignages: Temoignage[] = [...googleReviews, ...internalReviews]

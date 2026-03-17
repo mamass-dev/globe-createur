@@ -44,7 +44,7 @@ const PAGE_OFFERS: Record<string, Offer> = {
   "/tarifs": {
     tag: "Offre spéciale",
     title: "Audit digital offert",
-    description: "Prenez RDV et recevez un audit complet de votre présence en ligne — sans engagement.",
+    description: "Prenez RDV et recevez un audit complet de votre présence en ligne - sans engagement.",
     cta: "Réserver mon audit",
   },
 }

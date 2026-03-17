@@ -304,7 +304,7 @@ export function AuditQuiz() {
           </div>
         </Card>
 
-        {/* Category breakdown — teaser (blurred if locked) */}
+        {/* Category breakdown - teaser (blurred if locked) */}
         <div className="relative">
           <div className={`grid grid-cols-2 lg:grid-cols-3 gap-3 ${!unlocked ? "blur-sm select-none pointer-events-none" : ""}`}>
             {(Object.keys(categoryLabels) as AuditCategory[]).map((cat) => {

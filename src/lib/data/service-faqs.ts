@@ -57,7 +57,7 @@ export const serviceFaqs: Record<string, FaqItem[]> = {
     {
       question: "Combien coûte une refonte de site ?",
       answer:
-        "À partir de 1 200 € pour un site vitrine simple. Le tarif dépend du nombre de pages, des fonctionnalités et du contenu à migrer. Demandez un devis gratuit pour un chiffrage précis.",
+        "Le tarif dépend du nombre de pages, des fonctionnalités et du contenu à migrer. Demandez un devis gratuit pour un chiffrage précis et sans engagement.",
     },
   ],
 
@@ -91,7 +91,7 @@ export const serviceFaqs: Record<string, FaqItem[]> = {
     {
       question: "Combien coûte une séance photo professionnelle ?",
       answer:
-        "À partir de 350 € pour une demi-journée (portraits, locaux, produits). Les tarifs varient selon la durée et le nombre de clichés retouchés.",
+        "Le tarif varie selon la durée et le nombre de clichés retouchés. Contactez-nous pour un devis adapté à votre projet.",
     },
     {
       question: "Gérez-vous aussi les réseaux sociaux ?",

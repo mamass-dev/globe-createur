@@ -276,7 +276,7 @@ export function CityLocalBusinessSchema({
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "@id": `${SITE_URL}/${slug}#localbusiness`,
-        name: `${SITE_NAME} — ${city}`,
+        name: `${SITE_NAME} - ${city}`,
         description,
         url: `${SITE_URL}/${slug}`,
         logo: `${SITE_URL}/images/logo/logo-main.webp`,

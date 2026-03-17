@@ -50,10 +50,10 @@ const stats = [
 
 const faqAgence = [
   { question: "Pourquoi choisir une agence à 3h de Clermont-Ferrand ?", answer: "Parce que la distance ne change rien à la qualité des livrables. Les réunions courantes se font en visio, et on se déplace à Clermont pour les shootings et les lancements de projet. Notre avantage : des tarifs plus compétitifs qu'une agence du centre de Clermont, et un studio intégré qui réunit toutes les compétences." },
-  { question: "Comment gérez-vous les projets à distance ?", answer: "Visio pour les points réguliers, outils collaboratifs (Notion, Figma) pour le suivi, déplacements à Clermont pour les temps forts (shooting, réunion de lancement, audit terrain). 80% du travail de communication se fait devant un écran — la proximité physique n'est nécessaire que pour le terrain." },
-  { question: "Combien coûte un site internet pour une PME à Clermont ?", answer: "Un site vitrine professionnel démarre à 2 500 € HT. Un site avec fonctionnalités avancées (boutique, réservation, espace client) se situe entre 4 000 et 8 000 € HT. Le devis est gratuit et sans engagement. Nos forfaits mensuels (à partir de 890 €/mois) peuvent inclure la création du site." },
+  { question: "Comment gérez-vous les projets à distance ?", answer: "Visio pour les points réguliers, outils collaboratifs (Notion, Figma) pour le suivi, déplacements à Clermont pour les temps forts (shooting, réunion de lancement, audit terrain). 80% du travail de communication se fait devant un écran - la proximité physique n'est nécessaire que pour le terrain." },
+  { question: "Combien coûte un site internet pour une PME à Clermont ?", answer: "Le tarif dépend de la complexité du projet. Le devis est gratuit, détaillé et sans engagement. Nos forfaits mensuels peuvent inclure la création du site." },
   { question: "Travaillez-vous avec des entreprises industrielles ?", answer: "Oui, c'est un de nos axes forts. Clermont-Ferrand a un tissu industriel dense au-delà de Michelin : sous-traitance auto, caoutchouc, agroalimentaire. On sait vulgariser un savoir-faire technique et le mettre en valeur sur le web et LinkedIn." },
-  { question: "Vous gérez les réseaux sociaux ?", answer: "Oui, intégralement. Stratégie, création de contenus (photos, vidéos, visuels), publication, community management et reporting mensuel. LinkedIn B2B, Instagram marque employeur, Facebook local — on adapte les canaux à votre cible." },
+  { question: "Vous gérez les réseaux sociaux ?", answer: "Oui, intégralement. Stratégie, création de contenus (photos, vidéos, visuels), publication, community management et reporting mensuel. LinkedIn B2B, Instagram marque employeur, Facebook local - on adapte les canaux à votre cible." },
   { question: "Pouvez-vous m'aider à recruter ?", answer: "La marque employeur est un enjeu central à Clermont-Ferrand où les talents sont courtisés. On travaille sur votre présence en ligne (site carrière, vidéos métiers, réseaux sociaux) pour rendre votre entreprise attractive auprès des candidats." },
   { question: "Combien de temps pour créer un site ?", answer: "Un site vitrine se livre en 3 à 5 semaines. Un site plus complexe (catalogue, blog, e-commerce) nécessite 6 à 10 semaines. Le planning est défini dès le départ pour que vous ayez une visibilité totale." },
   { question: "Faites-vous de la photo et vidéo à Clermont-Ferrand ?", answer: "Oui, on se déplace à Clermont et dans le Puy-de-Dôme pour les shootings. Photo industrielle, photo culinaire, reportage d'entreprise, vidéo corporate, drone sur la chaîne des Puys. On intervient aussi sur vos événements professionnels." },
@@ -166,7 +166,7 @@ export default function AgenceClermontFerrandPage() {
               surprise.
             </p>
             <p>
-              Trois formules à partir de 890 €/mois HT. Le site web est souvent
+              Trois formules adaptées à votre budget et vos objectifs. Le site web est souvent
               inclus dans le forfait. On s&apos;adapte à vos enjeux : visibilité
               locale, recrutement, développement commercial B2B, tourisme.
             </p>

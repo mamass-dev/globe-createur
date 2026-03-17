@@ -52,8 +52,7 @@ ${services.map((s) => `- [${s.title}](${SITE_URL}/services/${s.slug}): ${s.excer
 - 97% de taux de satisfaction client
 - 350+ shootings photo/vidéo réalisés
 - Note moyenne : 5/5 sur Google (10 avis)
-- Tarifs sites internet : 900 € à 6 000 € HT
-- Forfaits communication : à partir de 890 €/mois HT
+- Forfaits sur devis - trois formules : Essentiel, Croissance, Performance
 
 ## Contenu détaillé
 

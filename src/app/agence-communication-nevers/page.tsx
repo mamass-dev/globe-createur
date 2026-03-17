@@ -51,7 +51,7 @@ const stats = [
 const faqAgence = [
   { question: "Êtes-vous basés à Nevers ?", answer: "Non, notre studio est à Longvic près de Dijon, à environ 2h de Nevers. On se déplace dans la Nièvre pour les réunions de démarrage, les shootings et les audits. Le pilotage courant (réseaux sociaux, SEO, mises à jour) se fait à distance par visio et email." },
   { question: "Pourquoi choisir une agence dijonnaise plutôt qu'une agence locale ?", answer: "Nevers compte peu d'agences de communication intégrées. Les PME nivernaises font souvent appel à des freelances isolés ou à des agences parisiennes chères. Notre modèle de studio intégré (site + SEO + photo + vidéo + réseaux) offre une solution complète à un tarif compétitif." },
-  { question: "Combien coûte un site internet pour une PME à Nevers ?", answer: "Un site vitrine professionnel démarre à 2 500 € HT. Un site avec fonctionnalités avancées (réservation, boutique, espace client) se situe entre 4 000 et 8 000 € HT. Le devis est gratuit. Nos forfaits mensuels (à partir de 890 €/mois) peuvent inclure la création du site." },
+  { question: "Combien coûte un site internet pour une PME à Nevers ?", answer: "Le tarif dépend de la complexité du projet. Le devis est gratuit, détaillé et sans engagement. Nos forfaits mensuels peuvent inclure la création du site." },
   { question: "Connaissez-vous le marché nivernais ?", answer: "On travaille avec des entreprises de toute la Bourgogne. On connaît les enjeux de la Nièvre : tourisme vert autour de la Loire, événements Magny-Cours, appellations viticoles (Pouilly-Fumé, Coteaux du Giennois), commerce de centre-ville à redynamiser." },
   { question: "Vous gérez les réseaux sociaux ?", answer: "Oui, de A à Z. Stratégie éditoriale, création de contenus (photos, vidéos, visuels), publication, modération et reporting. On adapte les formats et le calendrier à votre activité et à la saisonnalité nivernaise." },
   { question: "Pouvez-vous m'aider à attirer les touristes dans la Nièvre ?", answer: "C'est un de nos axes forts. SEO local, Google Business Profile, site immersif, contenus photo et vidéo qui mettent en valeur votre lieu ou votre activité. On travaille la visibilité sur les requêtes touristiques « Nièvre », « Loire à vélo », « Magny-Cours »." },
@@ -105,7 +105,7 @@ export default function AgenceNeversPage() {
             </p>
             <p>
               Globe Créateur accompagne les PME nivernaises avec une communication
-              digitale complète. On ne se contente pas de créer un joli site — on
+              digitale complète. On ne se contente pas de créer un joli site - on
               construit une présence en ligne qui génère du trafic et des clients.
               On fonctionne comme votre{" "}
               <strong>équipe communication externalisée</strong>.
@@ -164,8 +164,8 @@ export default function AgenceNeversPage() {
               visuels. Un investissement fixe et prévisible.
             </p>
             <p>
-              Trois formules à partir de 890 €/mois HT. Le site web est souvent
-              inclus dans le forfait. On adapte le périmètre à votre budget et
+              Trois formules adaptées à votre budget et vos objectifs. Le site web est souvent
+              inclus dans le forfait. On adapte le périmètre à vos ambitions et
               à vos priorités.
             </p>
 

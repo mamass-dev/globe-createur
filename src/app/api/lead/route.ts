@@ -37,13 +37,13 @@ export async function POST(request: Request) {
       from: "Globe Créateur <noreply@globecreateur.fr>",
       to: "contact@globecreateur.fr",
       replyTo: email,
-      subject: `Nouveau lead ${escapeHtml(source || "site")} — ${escapeHtml(name)}`,
+      subject: `Nouveau lead ${escapeHtml(source || "site")} - ${escapeHtml(name)}`,
       html: `
         <h2>Nouveau lead depuis ${escapeHtml(source || "site")}</h2>
         <table style="border-collapse:collapse;width:100%;max-width:500px;">
           <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Nom</td><td style="padding:8px 12px;">${escapeHtml(name)}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Email</td><td style="padding:8px 12px;">${escapeHtml(email)}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Téléphone</td><td style="padding:8px 12px;">${escapeHtml(phone || "—")}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#64748b;">Téléphone</td><td style="padding:8px 12px;">${escapeHtml(phone || "-")}</td></tr>
         </table>
         ${contextRows ? `
         <hr style="margin:20px 0;border:none;border-top:1px solid #e2e8f0;" />

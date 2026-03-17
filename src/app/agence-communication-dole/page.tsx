@@ -51,7 +51,7 @@ const stats = [
 const faqAgence = [
   { question: "Êtes-vous installés à Dole ?", answer: "Notre studio est basé à Longvic, aux portes de Dijon, à environ 1h15 de Dole par l'A39. On se déplace dans le Jura pour les réunions de lancement, les shootings et les audits sur place. Le pilotage courant se fait en visio et par email." },
   { question: "Pourquoi choisir votre agence plutôt qu'un prestataire local ?", answer: "Dole dispose de peu d'agences intégrées offrant site + SEO + photo + vidéo + réseaux sous un même toit. Notre modèle de studio vous évite de coordonner plusieurs freelances. Un seul contrat, une stratégie cohérente, et des tarifs compétitifs." },
-  { question: "Combien coûte un site internet pour une entreprise à Dole ?", answer: "Un site vitrine professionnel démarre à 2 500 € HT. Pour un site avec boutique en ligne ou fonctionnalités spécifiques, comptez 4 000 à 8 000 € HT. Devis gratuit et détaillé. Nos forfaits mensuels (à partir de 890 €/mois) peuvent inclure la création du site." },
+  { question: "Combien coûte un site internet pour une entreprise à Dole ?", answer: "Le tarif dépend de la complexité du projet. Le devis est gratuit, détaillé et sans engagement. Nos forfaits mensuels peuvent inclure la création du site." },
   { question: "Travaillez-vous avec des commerces de centre-ville ?", answer: "Oui, c'est un de nos cas d'usage les plus fréquents. Fiche Google Business Profile optimisée, site vitrine simple et efficace, présence Instagram ou Facebook régulière. On aide les commerces dolois à capter les clients qui cherchent sur Google." },
   { question: "Vous gérez les réseaux sociaux ?", answer: "Oui, intégralement. Stratégie éditoriale, création de contenus visuels, publication, modération des commentaires et reporting mensuel. On adapte le ton et le rythme à votre activité et à la vie locale doloise." },
   { question: "Pouvez-vous mettre en valeur le patrimoine de Dole dans notre communication ?", answer: "Absolument. Que vous soyez un hôtel, un restaurant ou un commerce du centre historique, on intègre le patrimoine dolois (vieille ville, canal, maison Pasteur) dans vos visuels et vos contenus. C'est un atout différenciant face aux grandes villes voisines." },
@@ -108,7 +108,7 @@ export default function AgenceDolePage() {
               communication sur-mesure. On connaît le bassin dolois, ses
               événements, sa saisonnalité et ses enjeux. On fonctionne comme
               votre{" "}
-              <strong>service communication externalisé</strong> — disponible,
+              <strong>service communication externalisé</strong> - disponible,
               réactif et orienté résultats.
             </p>
 
@@ -167,9 +167,9 @@ export default function AgenceDolePage() {
               mauvaise surprise.
             </p>
             <p>
-              Trois formules à partir de 890 €/mois HT. Le site web est
+              Trois formules adaptées à votre budget et vos objectifs. Le site web est
               généralement inclus dans le forfait. On ajuste le périmètre
-              selon vos objectifs et votre budget.
+              selon vos ambitions.
             </p>
 
             <h2>Les secteurs qu&apos;on accompagne à Dole</h2>

@@ -51,7 +51,7 @@ const stats = [
 const faqAgence = [
   { question: "Êtes-vous basés à Mâcon ?", answer: "Notre studio est à Longvic, près de Dijon, à environ 1h15 de Mâcon. On se déplace régulièrement en Saône-et-Loire pour les shootings, réunions et audits terrain. Le suivi courant se fait par visio et email." },
   { question: "Travaillez-vous avec des domaines viticoles du Mâconnais ?", answer: "Oui, on accompagne plusieurs domaines en Bourgogne. On connaît les appellations du Mâconnais (Pouilly-Fuissé, Saint-Véran, Viré-Clessé) et les codes visuels du secteur viticole. Sites immersifs, photo produit, SEO local et réseaux sociaux." },
-  { question: "Combien coûte un site internet pour une PME à Mâcon ?", answer: "Un site vitrine professionnel démarre à partir de 2 500 € HT. Pour un site avec boutique en ligne ou fonctionnalités avancées, comptez 4 000 à 8 000 € HT. Le devis est gratuit et sans engagement. Nos forfaits mensuels (à partir de 890 €/mois) peuvent inclure le site." },
+  { question: "Combien coûte un site internet pour une PME à Mâcon ?", answer: "Le tarif dépend de la complexité du projet. Le devis est gratuit, détaillé et sans engagement. Nos forfaits mensuels peuvent inclure la création du site." },
   { question: "Pourquoi choisir une agence bourguignonne plutôt qu'une agence lyonnaise ?", answer: "Lyon est à 70 km de Mâcon, mais les agences lyonnaises facturent des tarifs métropolitains et ne connaissent pas forcément le tissu économique mâconnais. Nous, on travaille avec des PME de Bourgogne au quotidien. On connaît vos enjeux et on pratique des tarifs adaptés." },
   { question: "Vous gérez les réseaux sociaux ?", answer: "Oui, de la stratégie à la publication. On crée les contenus (photos, vidéos, visuels), on gère le calendrier éditorial et on adapte le ton à votre cible. Reporting mensuel inclus pour suivre les performances." },
   { question: "Je suis commerçant en centre-ville de Mâcon, que pouvez-vous faire pour moi ?", answer: "On commence par optimiser votre fiche Google Business Profile pour que vous apparaissiez dans les recherches locales. Ensuite, un site vitrine optimisé SEO et une présence réseaux sociaux régulière. C'est le trio gagnant pour un commerce de centre-ville." },
@@ -101,7 +101,7 @@ export default function AgenceMaconPage() {
               Bourgogne et du Beaujolais. Entre vignobles du Mâconnais, tourisme
               fluvial sur la Saône et dynamisme commercial en centre-ville, les
               entreprises locales ont besoin d&apos;une communication qui reflète
-              cette identité — pas d&apos;un template parisien plaqué.
+              cette identité - pas d&apos;un template parisien plaqué.
             </p>
             <p>
               Globe Créateur accompagne les PME mâconnaises avec une approche
@@ -165,9 +165,9 @@ export default function AgenceMaconPage() {
               prévisible chaque mois.
             </p>
             <p>
-              Trois formules à partir de 890 €/mois HT. Le site internet est
-              souvent inclus dans le forfait. On s&apos;adapte à votre budget
-              et à vos priorités.
+              Trois formules adaptées à votre budget et vos objectifs. Le site internet est
+              souvent inclus dans le forfait. On s&apos;adapte à vos priorités
+              et à vos ambitions.
             </p>
 
             <h2>Les secteurs qu&apos;on accompagne à Mâcon</h2>

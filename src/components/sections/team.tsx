@@ -33,7 +33,7 @@ export function Team() {
             Deux passionnés, <br />une vision commune.
           </h3>
           <p className="text-lg text-slate-600 dark:text-slate-400">
-            Basés à Dijon, on met notre énergie au service de vos ambitions. Pas de jargon, pas d'intermédiaire — juste nous, engagés à vos côtés.
+            Basés à Dijon, on met notre énergie au service de vos ambitions. Pas de jargon, pas d'intermédiaire - juste nous, engagés à vos côtés.
           </p>
         </div>
 
@@ -93,7 +93,7 @@ export function Team() {
           </div>
 
           <div className="relative">
-            {/* Centre — Logo */}
+            {/* Centre - Logo */}
             <div className="relative z-10 mx-auto w-28 h-28 lg:w-36 lg:h-36 rounded-full bg-slate-50 dark:bg-slate-900 border-2 border-indigo-100 dark:border-indigo-800 shadow-xl flex items-center justify-center">
               <Image src="/images/logo/logo-main.webp" alt="Globe Créateur" width={120} height={120} className="h-14 lg:h-18 w-auto dark:hidden" />
               <Image src="/images/logo/logo-alt.webp" alt="Globe Créateur" width={120} height={120} className="h-14 lg:h-18 w-auto hidden dark:block" />
@@ -103,7 +103,7 @@ export function Team() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] lg:w-[380px] lg:h-[380px] rounded-full border border-dashed border-indigo-200 dark:border-indigo-800/50 pointer-events-none" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] lg:w-[560px] lg:h-[560px] rounded-full border border-dashed border-slate-100 dark:border-slate-800/50 pointer-events-none hidden md:block" />
 
-            {/* Expert nodes — grid layout */}
+            {/* Expert nodes - grid layout */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
               {[
                 { icon: "🌐", title: "Développement Web", desc: "Sites performants & sur-mesure" },

@@ -68,7 +68,7 @@ export default function RootLayout({
         ║  Tape le Konami Code sur la homepage :        ║
         ║  ↑ ↑ ↓ ↓ B A                                 ║
         ║                                               ║
-        ║  Globe Créateur — globecreateur.fr             ║
+        ║  Globe Créateur - globecreateur.fr             ║
         ║  Construit avec Next.js, React 19 & Tailwind  ║
         ║  contact@globecreateur.fr                     ║
         ╚═══════════════════════════════════════════════╝

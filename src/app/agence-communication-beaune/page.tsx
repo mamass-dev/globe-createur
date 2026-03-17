@@ -49,7 +49,7 @@ const stats = [
 const faqAgence = [
   { question: "Êtes-vous basés à Beaune ?", answer: "Notre studio est à Longvic, aux portes de Dijon, à environ 40 minutes de Beaune. On se déplace régulièrement à Beaune pour les shootings photo, les réunions et les audits. Le pilotage courant se fait par visio et email." },
   { question: "Travaillez-vous avec des domaines viticoles ?", answer: "Oui, c'est même une de nos spécialités. On accompagne des domaines et maisons de vin avec des sites immersifs, de la photo de produit, du SEO local et de la gestion de réseaux sociaux. On connaît les codes du secteur viticole bourguignon." },
-  { question: "Combien coûte un site internet pour une entreprise à Beaune ?", answer: "Un site vitrine professionnel démarre à partir de 2 500 € HT. Pour un site plus complet avec réservation en ligne ou boutique, comptez 4 000 à 8 000 € HT. Le devis est gratuit et détaillé. Nos forfaits mensuels (à partir de 890 €/mois) peuvent inclure le site." },
+  { question: "Combien coûte un site internet pour une entreprise à Beaune ?", answer: "Le tarif dépend de la complexité du projet. Le devis est gratuit, détaillé et sans engagement. Nos forfaits mensuels peuvent inclure la création du site." },
   { question: "Pourquoi ne pas prendre une agence parisienne moins chère ?", answer: "Une agence à Paris ne viendra pas shooter vos vignes un matin de septembre. Elle ne connaîtra pas la saisonnalité touristique de Beaune, ni les attentes des visiteurs des Hospices. Notre ancrage local est un avantage concurrentiel réel pour votre communication." },
   { question: "Vous gérez aussi les réseaux sociaux ?", answer: "Oui. On prend en charge la stratégie éditoriale, la création de contenus (photos, vidéos, visuels), la publication et le reporting. On adapte le ton et le calendrier à votre secteur et à la saisonnalité beaunoise (vendanges, Hospices, saison touristique)." },
   { question: "Je n'ai pas de site internet. Par où commencer ?", answer: "Par un audit gratuit. On regarde votre situation actuelle et on vous recommande la meilleure approche. Pour la plupart des PME beaunoises, on commence par un site internet optimisé SEO + une fiche Google Business Profile bien travaillée." },
@@ -155,7 +155,7 @@ export default function AgenceBeaunePage() {
               souvent inclus dans le forfait.
             </p>
             <p>
-              Trois formules à partir de 890 €/mois HT. Un investissement
+              Trois formules adaptées à votre budget et vos objectifs. Un investissement
               prévisible dans une communication qui travaille pour vous chaque jour,
               même en dehors de la saison touristique.
             </p>

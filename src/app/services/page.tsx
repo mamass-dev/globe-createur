@@ -32,7 +32,7 @@ export default function ServicesPage() {
           </p>
         </div>
 
-        {/* Services — alternating layout */}
+        {/* Services - alternating layout */}
         <div className="space-y-8">
           {services.map((service, i) => (
             <Link

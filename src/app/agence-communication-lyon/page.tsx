@@ -51,7 +51,7 @@ const stats = [
 const faqAgence = [
   { question: "Pourquoi choisir une agence à 2h de Lyon plutôt qu'une agence lyonnaise ?", answer: "Parce qu'à Lyon, les PME sont souvent le « petit client » d'une grosse agence. Chez nous, vous êtes un client stratégique. On vous offre un interlocuteur dédié, des tarifs 30 à 40% inférieurs et la même qualité de livrables. La distance n'est plus un frein avec les outils actuels." },
   { question: "Comment se passent les réunions et les shootings ?", answer: "Les points réguliers se font en visio (Google Meet ou Zoom). Pour les shootings photo/vidéo et les réunions de lancement, on se déplace à Lyon. On intègre ces déplacements dans nos forfaits, pas de surcoût." },
-  { question: "Combien coûte un site internet avec votre agence ?", answer: "Un site vitrine professionnel démarre à 2 500 € HT — soit 30 à 40% de moins qu'une agence du centre de Lyon. Pour un site avec fonctionnalités avancées (e-commerce, réservation, espace client), comptez 4 000 à 8 000 € HT. Nos forfaits mensuels (à partir de 890 €/mois) peuvent inclure le site." },
+  { question: "Combien coûte un site internet avec votre agence ?", answer: "Le tarif dépend de la complexité du projet. Le devis est gratuit, détaillé et sans engagement. Nos forfaits mensuels peuvent inclure la création du site." },
   { question: "Vous connaissez le marché lyonnais ?", answer: "On travaille avec des clients dont les concurrents sont à Lyon. On connaît le niveau d'exigence du marché lyonnais, les standards visuels et le positionnement des agences locales. Notre avantage : on offre la même qualité sans les coûts de structure d'une agence Presqu'île." },
   { question: "Vous gérez les réseaux sociaux ?", answer: "Oui, c'est un de nos piliers. Stratégie, création de contenus (photos, vidéos, visuels), publication, community management et reporting. On travaille Instagram, LinkedIn, Facebook et TikTok selon votre cible." },
   { question: "J'ai déjà un site mais il ne génère rien. Que faire ?", answer: "C'est le cas de figure le plus courant. On commence par un audit SEO et UX gratuit pour identifier les blocages. Souvent, c'est un problème de référencement, de vitesse ou de structure. Une refonte ciblée avec un vrai travail SEO change la donne en quelques mois." },
@@ -99,7 +99,7 @@ export default function AgenceLyonPage() {
             <p>
               Lyon est la 2e ville de France et un marché hyper-concurrentiel.
               Des dizaines d&apos;agences de communication se battent pour les
-              grands comptes — et les PME se retrouvent souvent avec le stagiaire
+              grands comptes - et les PME se retrouvent souvent avec le stagiaire
               ou le chargé de compte le moins expérimenté. Résultat : des
               prestations chères, des délais longs et un manque d&apos;attention.
             </p>
@@ -142,10 +142,10 @@ export default function AgenceLyonPage() {
 
             <h2>Lyon vs agence à taille humaine : le vrai comparatif</h2>
             <p>
-              Une agence de communication à Lyon facture en moyenne 15 000 à
-              30 000 € pour un site internet PME, avec des délais de 3 à 6
-              mois. Pour ce prix, vous aurez peut-être un beau site — mais
-              pas forcément un site qui génère des clients.
+              Les grandes agences lyonnaises facturent souvent des montants
+              conséquents pour un site internet PME, avec des délais de 3 à 6
+              mois. Pour autant, un beau site ne garantit pas
+              un site qui génère des clients.
             </p>
             <p>
               Notre approche est différente. On livre un site en 3 à 5 semaines,
@@ -163,10 +163,9 @@ export default function AgenceLyonPage() {
               visuels. Prévisible, scalable, sans engagement longue durée.
             </p>
             <p>
-              Trois formules à partir de 890 €/mois HT. À Lyon, une agence
-              comparable facturerait facilement 2 000 à 4 000 €/mois pour le
-              même périmètre. On fait le même travail avec moins de charges
-              de structure.
+              Trois formules adaptées à votre budget et vos objectifs. À Lyon, une agence
+              comparable facturerait bien plus pour le même périmètre. On fait
+              le même travail avec moins de charges de structure.
             </p>
 
             <h2>Les secteurs qu&apos;on accompagne à Lyon</h2>

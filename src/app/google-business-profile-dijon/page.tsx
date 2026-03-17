@@ -38,7 +38,7 @@ const faqGBP = [
   { question: "C'est quoi Google Business Profile ?", answer: "C'est la fiche gratuite de votre entreprise sur Google. Elle apparaît dans Google Maps et dans les résultats de recherche locale (le \"Pack Local\" avec les 3 résultats et la carte). C'est souvent le premier point de contact entre vous et vos clients." },
   { question: "Ma fiche Google est déjà créée, pourquoi l'optimiser ?", answer: "90 % des fiches sont mal remplies : mauvaise catégorie, description vide, pas de photos, pas de posts, avis sans réponse. Une fiche optimisée peut multiplier par 3 à 5 vos appels et demandes d'itinéraire." },
   { question: "Combien de temps pour apparaître dans le Pack Local ?", answer: "Ça dépend de la concurrence sur votre secteur et votre ville. En général, les premiers résultats sont visibles en 2 à 4 semaines après optimisation. Pour des secteurs très concurrencés (restaurants, plombiers), ça peut prendre 1 à 3 mois." },
-  { question: "Combien coûte l'optimisation d'une fiche Google ?", answer: "L'optimisation ponctuelle d'une fiche coûte entre 350 et 650 € HT selon la complexité. Le pilotage mensuel est inclus dans nos forfaits communication. Un devis gratuit est disponible sur demande." },
+  { question: "Combien coûte l'optimisation d'une fiche Google ?", answer: "Le tarif dépend de la complexité de votre fiche et de vos objectifs. Le pilotage mensuel est inclus dans nos forfaits communication. Un devis gratuit est disponible sur demande." },
   { question: "Pouvez-vous gérer les faux avis ou avis négatifs ?", answer: "Oui. On vous aide à signaler les faux avis à Google et on rédige des réponses professionnelles aux avis négatifs. Une bonne gestion des avis négatifs peut même renforcer la confiance des prospects." },
   { question: "Est-ce que ça remplace le SEO de mon site ?", answer: "Non, c'est complémentaire. Le SEO de votre site vous positionne dans les résultats organiques. Google Business Profile vous positionne dans le Pack Local et Google Maps. L'idéal est de travailler les deux." },
   { question: "Je n'ai pas de locaux physiques ouverts au public, c'est utile ?", answer: "Oui. Google Business Profile propose un mode \"zone de chalandise\" pour les entreprises qui se déplacent chez leurs clients (artisans, plombiers, consultants). Vous apparaissez dans les recherches locales sans afficher d'adresse." },
@@ -113,7 +113,7 @@ export default function GoogleBusinessProfilePage() {
             <p>
               On met en place un système simple (QR code, SMS automatique, email
               post-prestation) qui génère des avis réguliers sans effort de votre
-              part. Et on répond à chaque avis — positif comme négatif — de
+              part. Et on répond à chaque avis - positif comme négatif - de
               manière professionnelle.
             </p>
 

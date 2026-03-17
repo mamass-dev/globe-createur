@@ -39,7 +39,7 @@ const faqItems = [
   {
     question: "Quel investissement pour obtenir ces résultats ?",
     answer:
-      "Un site professionnel avec SEO local démarre à partir de 1 500 € HT en one-shot, ou est inclus dans nos forfaits communication à partir de 890 €/mois. Le retour sur investissement est généralement visible dès les 3 premiers mois.",
+      "Le tarif s'adapte à votre projet et vos objectifs. Demandez un devis gratuit pour connaître le coût exact. Le retour sur investissement est généralement visible dès les 3 premiers mois.",
   },
 ]
 

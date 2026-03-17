@@ -33,10 +33,10 @@ export default function HomePage() {
       <EasterEgg />
       <AggregateRatingSchema ratingValue={5} reviewCount={10} />
 
-      {/* 1. HERO — Centred video layout */}
+      {/* 1. HERO - Centred video layout */}
       <section className="relative pt-32 pb-12 lg:pt-44 lg:pb-20 mesh-gradient dark:bg-slate-950 overflow-hidden">
         <Container>
-          {/* Text — centred */}
+          {/* Text - centred */}
           <div className="max-w-4xl mx-auto text-center space-y-6 mb-12 lg:mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950 border border-indigo-100 dark:border-indigo-800 text-indigo-600 dark:text-indigo-400 text-sm font-semibold">
               <span className="flex h-2 w-2 rounded-full bg-indigo-600 dark:bg-indigo-400 animate-pulse" />
@@ -62,7 +62,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Video — central, full width with perspective */}
+          {/* Video - central, full width with perspective */}
           <div className="relative max-w-5xl mx-auto">
             <div className="relative" style={{ perspective: "1200px" }}>
               <div className="transform-gpu" style={{ transform: "rotateX(2deg)" }}>
@@ -184,7 +184,7 @@ export default function HomePage() {
       {/* 6. TESTIMONIALS WALL */}
       <TestimonialsWall reviews={temoignages} />
 
-      {/* 7. FREE TOOLS — Lead magnets */}
+      {/* 7. FREE TOOLS - Lead magnets */}
       <section className="py-24 bg-slate-50 dark:bg-slate-900">
         <Container>
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -282,7 +282,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 8. BLOG — Latest articles */}
+      {/* 8. BLOG - Latest articles */}
       <section className="py-24 dark:bg-slate-950">
         <Container>
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-12">

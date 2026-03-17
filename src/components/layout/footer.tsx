@@ -37,7 +37,7 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Links Grid — 5 columns */}
+        {/* Links Grid - 5 columns */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10 mb-14">
           <div>
             <h3 className="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">Services</h3>

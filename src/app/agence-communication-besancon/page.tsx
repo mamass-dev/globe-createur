@@ -51,7 +51,7 @@ const stats = [
 const faqAgence = [
   { question: "Êtes-vous implantés à Besançon ?", answer: "Notre studio est basé à Longvic, près de Dijon, à environ 1h30 de Besançon par l'A36. On se déplace en Franche-Comté pour les réunions de lancement, les shootings et les audits terrain. Le suivi courant se fait en visio et par email." },
   { question: "Travaillez-vous avec des entreprises industrielles ?", answer: "Oui, on accompagne des PME industrielles et techniques. On sait vulgariser un savoir-faire complexe (microtechniques, usinage, horlogerie) pour le rendre accessible en ligne, que ce soit sur un site vitrine ou sur LinkedIn." },
-  { question: "Combien coûte un site internet pour une entreprise à Besançon ?", answer: "Un site vitrine professionnel démarre à 2 500 € HT. Pour un site avec catalogue produit, espace client ou fonctionnalités métier, comptez 4 000 à 8 000 € HT. Le devis est gratuit. Nos forfaits mensuels (à partir de 890 €/mois) peuvent inclure la création du site." },
+  { question: "Combien coûte un site internet pour une entreprise à Besançon ?", answer: "Le tarif dépend de la complexité du projet. Le devis est gratuit, détaillé et sans engagement. Nos forfaits mensuels peuvent inclure la création du site." },
   { question: "Pourquoi ne pas prendre une agence bisontine ?", answer: "On ne remplace pas une agence locale, on offre une alternative différente : un studio intégré qui réunit toutes les compétences (site, SEO, photo, vidéo, réseaux) sous un même toit. Moins de coordination, plus de cohérence, et des tarifs souvent plus compétitifs qu'une agence de centre-ville." },
   { question: "Vous gérez les réseaux sociaux de PME industrielles ?", answer: "Oui, et c'est même un de nos points forts. LinkedIn pour le B2B industriel, Instagram pour la marque employeur, Facebook pour le local. On crée les contenus, on publie, on analyse les performances." },
   { question: "Pouvez-vous m'aider à recruter via la communication ?", answer: "Absolument. La marque employeur est un enjeu majeur à Besançon où les talents sont disputés. On travaille sur votre image en ligne (site carrière, vidéos métiers, réseaux sociaux) pour attirer des candidats qualifiés." },
@@ -106,7 +106,7 @@ export default function AgenceBesanconPage() {
             <p>
               Globe Créateur accompagne les PME bisontines avec une approche
               concrète et mesurable. On ne vend pas du &quot;branding
-              émotionnel&quot; — on construit des outils de communication qui
+              émotionnel&quot; - on construit des outils de communication qui
               génèrent du trafic, des leads et des candidatures. On fonctionne
               comme votre{" "}
               <strong>service communication externalisé</strong>.
@@ -166,7 +166,7 @@ export default function AgenceBesanconPage() {
               sans surprise.
             </p>
             <p>
-              Trois formules à partir de 890 €/mois HT. Le site internet peut
+              Trois formules adaptées à votre budget et vos objectifs. Le site internet peut
               être inclus dans le forfait. On s&apos;adapte à vos enjeux :
               visibilité locale, recrutement, développement commercial B2B.
             </p>

@@ -7,7 +7,7 @@ export const faqGenerales: FaqItem[] = [
   },
   {
     question: "Combien coûte la création d'un site internet à Dijon ?",
-    answer: "Un site vitrine simple (3-5 pages) coûte entre 900 et 1 500 € HT. Un site stratégique (5-10 pages) entre 1 800 et 3 000 € HT. Un site sur mesure (conception UX/UI complète) entre 3 500 et 6 000 € HT. Mais la plupart de nos clients choisissent un forfait communication (à partir de 890 €/mois) dans lequel le site internet est offert selon engagement.",
+    answer: "Le tarif dépend de la complexité de votre projet. Chaque devis est gratuit, détaillé et sans engagement. La plupart de nos clients choisissent un forfait communication dans lequel le site internet est offert selon engagement.",
   },
   {
     question: "Combien de temps faut-il pour créer un site internet ?",
@@ -39,7 +39,7 @@ export const faqGenerales: FaqItem[] = [
   },
   {
     question: "Quel est le tarif de vos forfaits communication ?",
-    answer: "Trois formules avec engagement (site offert) : Essentiel (890 €/mois HT, 12 mois), Croissance (1 490 €/mois, 6 mois), Performance (2 690 €/mois, 3 mois). Également disponibles sans engagement à un tarif légèrement supérieur. Économie moyenne de 40-60 % par an vs un salarié communication.",
+    answer: "Trois formules adaptées à vos ambitions et votre budget. Le site internet est offert selon engagement. Demandez un devis pour connaître le tarif adapté. Économie moyenne de 40-60 % par an vs un salarié communication.",
   },
   {
     question: "Je n'ai aucune présence en ligne. Par où commencer ?",
@@ -105,7 +105,7 @@ export const faqContenu: FaqItem[] = [
   },
   {
     question: "Combien coûte un shooting photo professionnel ?",
-    answer: "Une journée de shooting à Dijon coûte en moyenne 650 à 950 € HT (photo + vidéo). Le tarif dépend du nombre de photos, du lieu et de la complexité. Dans nos forfaits Croissance et Performance, les shootings photo sont inclus.",
+    answer: "Le tarif dépend du nombre de photos, du lieu et de la complexité. Dans nos forfaits Croissance et Performance, les shootings photo sont inclus. Contactez-nous pour un devis adapté.",
   },
   {
     question: "Faites-vous de la vidéo et des reels ?",
@@ -136,7 +136,7 @@ export const faqAutomatisation: FaqItem[] = [
   },
   {
     question: "Combien coûte une automatisation complète ?",
-    answer: "À partir de 600 € HT pour une automatisation simple. Les projets plus complexes (CRM complet, tableaux de bord, intégrations multiples) se situent entre 1 500 et 2 000 € HT. Inclus dans le forfait Performance.",
+    answer: "Le tarif dépend de la complexité du projet (automatisation simple, CRM complet, tableaux de bord, intégrations multiples). Inclus dans le forfait Performance. Demandez un devis pour un chiffrage précis.",
   },
   {
     question: "Peut-on relier un CRM à notre site ?",

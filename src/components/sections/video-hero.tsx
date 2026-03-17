@@ -14,12 +14,12 @@ export function VideoHero({ videoId, poster }: VideoHeroProps) {
   return (
     <div className="relative group">
       <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-indigo-100 dark:shadow-indigo-950/50 border border-slate-100 dark:border-slate-800 aspect-video bg-slate-900">
-        {/* Thumbnail — lazy loaded, no iframe until click */}
+        {/* Thumbnail - lazy loaded, no iframe until click */}
         {!active && (
           <>
             <Image
               src={poster ?? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
-              alt="Globe Créateur — Showreel"
+              alt="Globe Créateur - Showreel"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -46,11 +46,11 @@ export function VideoHero({ videoId, poster }: VideoHeroProps) {
           </>
         )}
 
-        {/* Full player — loaded only on click */}
+        {/* Full player - loaded only on click */}
         {active && (
           <iframe
             src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
-            title="Globe Créateur — Présentation"
+            title="Globe Créateur - Présentation"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="absolute inset-0 w-full h-full"

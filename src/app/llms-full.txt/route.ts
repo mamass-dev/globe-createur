@@ -13,7 +13,7 @@ function formatFaqs(items: FaqItem[]): string {
 export function GET() {
   const posts = getBlogPosts()
 
-  const content = `# ${SITE_NAME} — Documentation complète
+  const content = `# ${SITE_NAME} - Documentation complète
 
 > ${SITE_DESCRIPTION}
 
@@ -21,7 +21,7 @@ export function GET() {
 
 Globe Créateur est un studio de communication 360° basé à ${CONTACT.address.city} (Dijon), en Bourgogne-Franche-Comté, France. Fondé par Axel Masson (Directeur Créatif) et Adrien Lecrivain, le studio réunit une équipe complète : photographe, vidéaste, designer, développeur web et chef de projet.
 
-**Mission** : Accompagner les PME, indépendants et lieux à vivre dans leur croissance digitale avec une approche 360° — un seul interlocuteur pour le web, le SEO, le contenu, les réseaux sociaux et l'automatisation.
+**Mission** : Accompagner les PME, indépendants et lieux à vivre dans leur croissance digitale avec une approche 360° - un seul interlocuteur pour le web, le SEO, le contenu, les réseaux sociaux et l'automatisation.
 
 **Coordonnées** :
 - Adresse : ${CONTACT.address.street}, ${CONTACT.address.zip} ${CONTACT.address.city}
@@ -56,23 +56,20 @@ ${s.metaDescription}
 ## Tarification
 
 ### Sites internet (projets ponctuels)
-- **Site vitrine simple** (3-5 pages) : 900 – 1 500 € HT, livré en 3-5 semaines
-- **Site stratégique** (5-10 pages) : 1 800 – 3 000 € HT, livré en 4-6 semaines
-- **Site sur mesure** (UX/UI complète) : 3 500 – 6 000 € HT, livré en 6-10 semaines
+Tarifs sur devis - adaptés à chaque projet selon la complexité et les fonctionnalités.
 
 ### Forfaits communication mensuels (site offert avec engagement)
-- **Essentiel** : 890 €/mois HT (engagement 12 mois)
-- **Croissance** : 1 490 €/mois HT (engagement 6 mois)
-- **Performance** : 2 690 €/mois HT (engagement 3 mois)
+- **Essentiel** : engagement 12 mois
+- **Croissance** : engagement 6 mois
+- **Performance** : engagement 3 mois
+Tarifs sur devis - adaptés à chaque projet.
 
 ### Autres prestations
-- Shooting photo/vidéo : 650 – 950 € HT / journée
-- Automatisation no-code : à partir de 600 € HT
-- Refonte de site : à partir de 1 200 € HT
+Shooting photo/vidéo, automatisation no-code, refonte de site : tarifs sur devis.
 
 ---
 
-## FAQ — Questions fréquentes
+## FAQ - Questions fréquentes
 
 ### Questions générales
 ${formatFaqs(faqGenerales)}

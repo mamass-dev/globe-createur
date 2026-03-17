@@ -9,13 +9,13 @@ const scheduledCities: Record<string, string> = {
   "agence-communication-beaune": "2025-01-01",
   "agence-communication-chalon-sur-saone": "2025-01-01",
   "agence-communication-auxerre": "2025-01-01",
-  // Scheduled — week of March 18
+  // Scheduled - week of March 18
   "agence-communication-besancon": "2026-03-18",
   "agence-communication-dole": "2026-03-20",
-  // Scheduled — week of March 25
+  // Scheduled - week of March 25
   "agence-communication-macon": "2026-03-25",
   "agence-communication-nevers": "2026-03-27",
-  // Scheduled — week of April 1
+  // Scheduled - week of April 1
   "agence-communication-lyon": "2026-04-01",
   "agence-communication-clermont-ferrand": "2026-04-03",
 }

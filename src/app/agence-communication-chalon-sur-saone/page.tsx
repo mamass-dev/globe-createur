@@ -49,7 +49,7 @@ const stats = [
 const faqAgence = [
   { question: "Êtes-vous basés à Chalon-sur-Saône ?", answer: "Notre studio est à Longvic, aux portes de Dijon, à environ 1 heure de Chalon-sur-Saône. On se déplace régulièrement dans le Grand Chalon pour les shootings, les réunions et les audits. Le pilotage courant se fait par visio et email." },
   { question: "Pourquoi choisir Globe Créateur plutôt qu'une agence chalonnaise ?", answer: "Chalon-sur-Saône compte peu d'agences de communication intégrées. La plupart sont des freelances spécialisés dans un seul domaine. Globe Créateur réunit toutes les compétences (web, SEO, photo, vidéo, design, réseaux) sous un même toit, avec un seul interlocuteur." },
-  { question: "Combien coûte un site internet pour une entreprise à Chalon ?", answer: "Un site vitrine professionnel démarre à partir de 2 500 € HT. Pour un site plus complet, comptez 4 000 à 8 000 € HT. Le devis est gratuit et détaillé. Nos forfaits mensuels (à partir de 890 €/mois) peuvent inclure le site." },
+  { question: "Combien coûte un site internet pour une entreprise à Chalon ?", answer: "Le tarif dépend de la complexité du projet. Le devis est gratuit, détaillé et sans engagement. Nos forfaits mensuels peuvent inclure la création du site." },
   { question: "Vous travaillez avec quels types d'entreprises ?", answer: "Des PME de 2 à 50 salariés, des indépendants et des professions libérales. À Chalon-sur-Saône, on accompagne des commerces du centre-ville, des entreprises de la zone industrielle, des prestataires de services, des restaurants et des professionnels de santé." },
   { question: "Vous gérez aussi les réseaux sociaux ?", answer: "Oui. On prend en charge la stratégie éditoriale, la création de contenus, la publication et le reporting. On adapte le calendrier à votre activité et aux événements locaux chalonnais." },
   { question: "Je n'ai pas de site internet. Par où commencer ?", answer: "Par un audit gratuit. On analyse votre situation et on recommande la meilleure approche. Pour la plupart des PME chalonnaises, on commence par un site optimisé SEO + une fiche Google Business Profile." },
@@ -156,7 +156,7 @@ export default function AgenceChalonsurSaonePage() {
               est souvent inclus dans le forfait.
             </p>
             <p>
-              Trois formules à partir de 890 €/mois HT. Un investissement
+              Trois formules adaptées à votre budget et vos objectifs. Un investissement
               prévisible dans une communication professionnelle et continue.
             </p>
 
