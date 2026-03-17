@@ -1,10 +1,13 @@
-"use client"
-
 import Link from "next/link"
 import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
+import { PageHero } from "@/components/sections/page-hero"
+import { Breadcrumb } from "@/components/layout/breadcrumb"
+import { FaqAccordion } from "@/components/sections/faq-accordion"
+import { CtaSection } from "@/components/sections/cta-section"
+import { ContactCard } from "@/components/sections/contact-card"
+import { FaqSchema, BreadcrumbSchema } from "@/components/seo/schemas"
 import { AnimateOnScroll, StaggerContainer, StaggerItem } from "@/components/ui/animate"
-import { AnimatedCounter } from "@/components/ui/animated-counter"
 import {
   Check,
   X,
@@ -20,9 +23,6 @@ import {
   Star,
   Users,
   TrendingUp,
-  Sparkles,
-  Phone,
-  ChevronRight,
 } from "lucide-react"
 
 const projets = [
@@ -30,148 +30,109 @@ const projets = [
     type: "Site vitrine",
     icon: Globe,
     delai: "3-5 semaines",
-    description: "Votre vitrine digitale, conçue pour convertir vos visiteurs en clients.",
-    includes: ["Design sur-mesure (pas de template)", "100% responsive mobile", "SEO intégré dès le départ", "Formulaire de contact intelligent", "Hébergement 1 an offert", "Formation à la prise en main"],
+    description: "Votre vitrine digitale, concue pour convertir vos visiteurs en clients.",
+    includes: ["Design sur-mesure", "100% responsive mobile", "SEO integre", "Formulaire de contact", "Hebergement 1 an offert", "Formation a la prise en main"],
   },
   {
     type: "Site multi-pages",
     icon: FileText,
     delai: "5-8 semaines",
-    description: "Pour les entreprises qui veulent démontrer leur expertise en détail.",
-    includes: ["Tout du site vitrine +", "Blog intégré & optimisé SEO", "Pages services détaillées", "Maillage interne stratégique", "Intégrations sur-mesure", "Stratégie de contenu initiale"],
+    description: "Pour les entreprises qui veulent demontrer leur expertise en detail.",
+    includes: ["Tout du site vitrine +", "Blog integre & optimise SEO", "Pages services detaillees", "Maillage interne strategique", "Integrations sur-mesure"],
   },
   {
     type: "Refonte de site",
     icon: RefreshCw,
     delai: "4-8 semaines",
     description: "Modernisez votre site sans perdre une seule position Google.",
-    includes: ["Audit SEO complet de l'existant", "Migration zéro perte de trafic", "Nouveau design moderne", "Performance optimisée (<1s)", "Redirections 301 automatiques", "Suivi post-migration 30 jours"],
+    includes: ["Audit SEO de l'existant", "Migration zero perte de trafic", "Nouveau design moderne", "Performance optimisee", "Redirections 301"],
   },
   {
     type: "Landing page",
     icon: Search,
     delai: "1-2 semaines",
-    description: "Une page unique, pensée pour transformer chaque visiteur en lead.",
-    includes: ["Design orienté conversion", "A/B testing ready", "Formulaire ultra-optimisé", "Tracking & analytics intégrés", "Mobile-first", "Taux de conversion garanti"],
+    description: "Une page unique, pensee pour transformer chaque visiteur en lead.",
+    includes: ["Design oriente conversion", "A/B testing ready", "Formulaire optimise", "Tracking & analytics", "Mobile-first"],
   },
 ]
 
 const forfaits = [
   {
     name: "Essentiel",
-    icon: "🌱",
     tagline: "Poser les fondations",
-    description: "Idéal pour les PME qui démarrent leur présence en ligne ou veulent structurer l'existant.",
+    description: "Ideal pour les PME qui demarrent leur presence en ligne.",
     features: [
       "Site internet offert",
-      "Pilotage mensuel personnalisé",
-      "1 réseau social optimisé",
-      "Contenus adaptés à vos priorités",
+      "Pilotage mensuel",
+      "1 reseau social optimise",
+      "Contenus adaptes",
       "Support email sous 24h",
     ],
-    notIncluded: ["Shooting photo", "Reporting avancé"],
-    cta: "Démarrer avec Essentiel",
+    notIncluded: ["Shooting photo", "Reporting avance"],
   },
   {
     name: "Croissance",
-    icon: "🚀",
-    tagline: "Accélérer la visibilité",
+    tagline: "Accelerer la visibilite",
     popular: true,
-    description: "Pour les PME qui veulent générer des demandes régulières et dominer leur zone.",
+    description: "Pour generer des demandes regulieres et dominer votre zone.",
     features: [
       "Tout Essentiel +",
-      "2 réseaux sociaux gérés",
+      "2 reseaux sociaux geres",
       "Shooting photo mensuel",
-      "Plan éditorial & contenus mensuels",
-      "SEO local avancé",
-      "Reporting mensuel détaillé",
+      "Plan editorial & contenus",
+      "SEO local avance",
+      "Reporting mensuel",
     ],
     notIncluded: [],
-    cta: "Passer en Croissance",
   },
   {
     name: "Performance",
-    icon: "⚡",
-    tagline: "Dominer le marché",
-    description: "La communication complète pour les PME ambitieuses qui veulent tout, maintenant.",
+    tagline: "Dominer le marche",
+    description: "La communication complete pour les PME ambitieuses.",
     features: [
       "Tout Croissance +",
-      "Vidéo pro mensuelle",
-      "Gestion complète des réseaux",
+      "Video pro mensuelle",
+      "Gestion complete reseaux",
       "CRM & automatisations",
       "Campagnes Meta / LinkedIn",
-      "Chef de projet dédié",
-      "Priorité totale",
+      "Chef de projet dedie",
     ],
     notIncluded: [],
-    cta: "Choisir Performance",
   },
 ]
 
-const objections = [
-  {
-    question: "\"Je n'ai pas le budget pour ça\"",
-    answer: "Un salarié communication coûte 45 000 à 58 000 euros par an. Nos forfaits représentent une fraction de ce montant, pour 6 compétences au lieu d'une seule. Et le site est offert.",
-  },
-  {
-    question: "\"Je vais y réfléchir\"",
-    answer: "Pendant que vous réfléchissez, vos concurrents publient du contenu, collectent des avis Google et grimpent dans les résultats. Chaque mois sans communication, c'est du chiffre d'affaires en moins.",
-  },
-  {
-    question: "\"J'ai déjà un site\"",
-    answer: "Avoir un site et avoir un site qui génère des clients, ce n'est pas la même chose. Si votre site ne vous apporte pas de demandes chaque mois, il ne fait pas son travail.",
-  },
-  {
-    question: "\"Je peux le faire moi-même\"",
-    answer: "Vous pouvez. Mais est-ce le meilleur usage de votre temps ? Un dirigeant qui passe 10h/semaine sur sa communication, c'est 10h de moins sur son coeur de métier.",
-  },
+const faqTarifs = [
+  { question: "Comment connaitre le prix exact de mon projet ?", answer: "Chaque projet est unique. Demandez un devis gratuit : on echange sur vos besoins et on vous envoie un chiffrage detaille sous 24h. Pas de surprise, pas de cout cache." },
+  { question: "Pourquoi ne pas afficher de prix fixes ?", answer: "Parce qu'un site vitrine pour un artisan et un site multi-pages pour un hotel n'ont rien a voir. Afficher un prix unique serait soit trop cher pour les projets simples, soit insuffisant pour les projets ambitieux. On prefere vous proposer le juste prix." },
+  { question: "Faut-il payer en une fois ?", answer: "Non. Pour les projets ponctuels : 40 % a la commande, 60 % a la livraison. Pour les forfaits : paiement mensuel. On s'adapte." },
+  { question: "Le site internet est-il vraiment offert dans les forfaits ?", answer: "Oui. La creation d'un site vitrine est offerte selon la duree d'engagement. Le site vous appartient, meme si vous resiliez." },
+  { question: "Puis-je changer de forfait en cours de route ?", answer: "Absolument. Upgrade ou downgrade avec un preavis d'un mois. Beaucoup de nos clients commencent par l'Essentiel et passent en Croissance apres quelques mois." },
+  { question: "Que se passe-t-il si je resilie ?", answer: "Votre site internet vous appartient. Si vous resiliez, vous conservez le site et tout le contenu produit. On vous transfere les acces complets." },
 ]
 
 export default function TarifsPage() {
   return (
     <>
-      {/* HERO - Impact immédiat */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900" />
-        <div className="absolute inset-0 opacity-20 dot-grid pointer-events-none" />
+      <FaqSchema items={faqTarifs} />
+      <BreadcrumbSchema items={[
+        { name: "Accueil", href: "/" },
+        { name: "Nos offres", href: "/tarifs" },
+      ]} />
 
-        <Container className="relative z-10">
-          <AnimateOnScroll>
-            <div className="max-w-4xl mx-auto text-center space-y-8">
-              <div className="inline-flex items-center gap-2 bg-indigo-500/20 border border-indigo-400/30 rounded-full px-4 py-1.5 text-sm font-medium text-indigo-300">
-                <Sparkles className="h-4 w-4" />
-                Site internet offert selon engagement
-              </div>
+      <Breadcrumb items={[{ name: "Nos offres", href: "/tarifs" }]} />
 
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-white tracking-tight leading-[1.1]">
-                Arrêtez d&apos;être
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">
-                  invisible en ligne
-                </span>
-              </h1>
-
-              <p className="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-                Votre communication digitale clé en main : site web, SEO, réseaux sociaux, photo, vidéo.
-                Un seul interlocuteur. Des résultats mesurables.
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <Button href="/devis" variant="primary" size="lg">
-                  Demander un devis gratuit
-                  <ArrowRight className="h-5 w-5" />
-                </Button>
-                <Link href="#forfaits" className="inline-flex items-center justify-center gap-2 h-14 px-8 text-lg font-bold rounded-2xl text-slate-300 border border-white/20 hover:bg-white/10 hover:text-white transition-all">
-                  Voir les formules
-                  <ChevronRight className="h-5 w-5" />
-                </Link>
-              </div>
-            </div>
-          </AnimateOnScroll>
-        </Container>
-      </section>
+      <PageHero
+        badge="Nos offres"
+        title="Des solutions adaptees a votre entreprise"
+        subtitle="Chaque PME est differente. On construit une offre sur-mesure, adaptee a vos objectifs et votre budget. Devis gratuit sous 24h."
+        ctaLabel="Demander un devis gratuit"
+        ctaHref="/devis"
+        secondaryLabel="Faire le diagnostic gratuit"
+        secondaryHref="/diagnostic"
+      />
 
       {/* TRUST BAR */}
-      <section className="py-6 border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-950">
+      <section className="py-6 border-b border-slate-100 dark:border-slate-800">
         <Container>
           <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-12">
             {[
@@ -189,109 +150,51 @@ export default function TarifsPage() {
         </Container>
       </section>
 
-      {/* PROBLÈME / SOLUTION */}
-      <section className="py-20 lg:py-28">
-        <Container className="max-w-4xl">
+      {/* DIAGNOSTIC CTA */}
+      <section className="py-16 lg:py-20">
+        <Container>
           <AnimateOnScroll>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-              <div className="space-y-6">
-                <p className="text-sm font-black uppercase tracking-[0.2em] text-red-500">Le problème</p>
+            <div className="max-w-4xl mx-auto rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-8 sm:p-12 flex flex-col lg:flex-row items-center gap-8">
+              <div className="flex-1 space-y-4">
+                <p className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">Nouveau</p>
                 <h2 className="text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-white">
-                  90% des PME perdent des clients chaque jour
+                  Vous ne savez pas par ou commencer ?
                 </h2>
-                <ul className="space-y-4">
-                  {[
-                    "Votre site date de 2018 et ne génère aucune demande",
-                    "Vos concurrents vous devancent sur Google",
-                    "Vous postez sur les réseaux quand vous y pensez (jamais)",
-                    "Vous n'avez personne pour gérer votre communication",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-slate-600 dark:text-slate-400">
-                      <X className="h-5 w-5 text-red-400 shrink-0 mt-0.5" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Faites notre diagnostic gratuit en 2 minutes. On analyse votre situation et on vous dit exactement ce qu&apos;on ferait pour vous.
+                </p>
               </div>
-
-              <div className="space-y-6">
-                <p className="text-sm font-black uppercase tracking-[0.2em] text-green-600">La solution</p>
-                <h2 className="text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-white">
-                  Une équipe complète, sans embaucher
-                </h2>
-                <ul className="space-y-4">
-                  {[
-                    "Un site moderne qui convertit vos visiteurs en clients",
-                    "Le SEO local pour être premier sur votre zone",
-                    "Des contenus pro publiés chaque semaine",
-                    "Un interlocuteur unique qui pilote tout",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-slate-600 dark:text-slate-400">
-                      <Check className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </AnimateOnScroll>
-        </Container>
-      </section>
-
-      {/* STATS */}
-      <section className="py-24 bg-indigo-600 dark:bg-indigo-950 rounded-[3rem] mx-4 lg:mx-12 overflow-hidden relative">
-        <div className="absolute inset-0 opacity-10 dot-grid pointer-events-none" />
-        <Container className="relative z-10">
-          <AnimateOnScroll>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
-              {[
-                { value: 50, suffix: "+", label: "Sites livrés" },
-                { value: 97, suffix: "%", label: "Clients satisfaits" },
-                { value: 350, suffix: "+", label: "Shootings réalisés" },
-                { value: 5, suffix: "/5", label: "Note Google" },
-              ].map((stat) => (
-                <div key={stat.label} className="space-y-2">
-                  <AnimatedCounter
-                    value={stat.value}
-                    suffix={stat.suffix}
-                    className="text-5xl lg:text-7xl font-extrabold text-white tracking-tight tabular-nums"
-                  />
-                  <p className="text-sm font-bold uppercase tracking-widest text-indigo-100 opacity-80">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
+              <Button href="/diagnostic" variant="primary" size="lg">
+                Lancer le diagnostic
+                <ArrowRight className="h-5 w-5" />
+              </Button>
             </div>
           </AnimateOnScroll>
         </Container>
       </section>
 
       {/* PROJETS PONCTUELS */}
-      <section className="py-20 lg:py-28">
+      <section className="py-16 lg:py-24">
         <Container>
           <AnimateOnScroll>
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
               <p className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">Projets ponctuels</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">
-                Un besoin précis ? On le résout.
-              </h2>
-              <p className="text-lg text-slate-500 dark:text-slate-400">
-                Site internet, refonte, landing page - chaque projet est livré clé en main avec un accompagnement de A à Z.
-              </p>
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Sites internet & projets web</h2>
+              <p className="text-lg text-slate-600 dark:text-slate-400">Un projet defini, un livrable, un accompagnement de A a Z.</p>
             </div>
           </AnimateOnScroll>
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {projets.map((projet) => (
               <StaggerItem key={projet.type}>
-                <div className="group h-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-8 hover:border-indigo-300 dark:hover:border-indigo-600 hover:shadow-xl hover:shadow-indigo-100/50 dark:hover:shadow-indigo-950/50 transition-all duration-300 flex flex-col">
+                <div className="h-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-8 hover:border-indigo-200 dark:hover:border-indigo-700 hover:shadow-lg transition-all flex flex-col">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="h-12 w-12 rounded-2xl bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
-                      <projet.icon className="h-6 w-6 text-indigo-600 dark:text-indigo-400 group-hover:text-white transition-colors duration-300" />
+                    <div className="h-10 w-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center">
+                      <projet.icon className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
                     </div>
                     <div>
                       <h3 className="text-lg font-extrabold text-slate-900 dark:text-white">{projet.type}</h3>
-                      <p className="text-xs text-slate-400">Livré en {projet.delai}</p>
+                      <p className="text-xs text-slate-400">Delai indicatif : {projet.delai}</p>
                     </div>
                   </div>
                   <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">{projet.description}</p>
@@ -303,9 +206,9 @@ export default function TarifsPage() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-6 pt-5 border-t border-slate-100 dark:border-slate-700">
-                    <Button href="/devis" variant="outline" className="w-full group-hover:bg-indigo-600 group-hover:text-white group-hover:border-indigo-600 transition-all duration-300">
-                      Demander un devis gratuit
+                  <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-700">
+                    <Button href="/devis" variant="outline" className="w-full">
+                      Demander un devis
                     </Button>
                   </div>
                 </div>
@@ -316,47 +219,39 @@ export default function TarifsPage() {
       </section>
 
       {/* FORFAITS MENSUELS */}
-      <section id="forfaits" className="py-20 lg:py-28 bg-slate-50 dark:bg-slate-900 scroll-mt-20">
+      <section className="py-16 lg:py-24 bg-slate-50 dark:bg-slate-900">
         <Container>
           <AnimateOnScroll>
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
               <p className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">Forfaits mensuels</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">
-                Votre équipe communication, sans les charges
-              </h2>
-              <p className="text-lg text-slate-500 dark:text-slate-400">
-                Trois formules. Un site offert. Des résultats chaque mois.
-                <br />
-                <strong className="text-indigo-600 dark:text-indigo-400">40 à 60% moins cher qu&apos;un salarié.</strong>
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Votre equipe communication externalisee</h2>
+              <p className="text-lg text-slate-600 dark:text-slate-400">
+                Web, SEO, photo, video, reseaux sociaux : tout inclus. Site internet offert selon engagement.
               </p>
             </div>
           </AnimateOnScroll>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {forfaits.map((f) => (
               <StaggerItem key={f.name}>
-                <div className={`relative flex flex-col h-full rounded-2xl p-8 transition-all duration-300 ${
+                <div className={`relative flex flex-col h-full rounded-2xl p-8 transition-all ${
                   f.popular
-                    ? "bg-gradient-to-b from-indigo-600 to-indigo-700 dark:from-indigo-600 dark:to-indigo-800 text-white shadow-2xl shadow-indigo-200 dark:shadow-indigo-950 scale-[1.02] lg:scale-105 z-10"
+                    ? "bg-indigo-600 dark:bg-indigo-700 text-white shadow-xl shadow-indigo-200 dark:shadow-indigo-950 ring-2 ring-indigo-600 dark:ring-indigo-500"
                     : "bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-indigo-200 dark:hover:border-indigo-700 hover:shadow-lg"
                 }`}>
                   {f.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-400 text-amber-950 text-xs font-black uppercase tracking-wider px-4 py-1.5 rounded-full shadow-lg">
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-400 text-amber-950 text-xs font-black uppercase tracking-wider px-4 py-1 rounded-full">
                       Le plus choisi
-                    </div>
+                    </span>
                   )}
 
-                  <div className="text-center mb-6">
-                    <span className="text-3xl mb-2 block">{f.icon}</span>
-                    <h3 className={`text-xl font-extrabold ${f.popular ? "text-white" : "text-slate-900 dark:text-white"}`}>
-                      {f.name}
-                    </h3>
-                    <p className={`text-sm font-medium mt-1 ${f.popular ? "text-indigo-200" : "text-indigo-600 dark:text-indigo-400"}`}>
-                      {f.tagline}
-                    </p>
-                  </div>
-
-                  <p className={`text-sm mb-6 text-center ${f.popular ? "text-indigo-100" : "text-slate-500 dark:text-slate-400"}`}>
+                  <h3 className={`text-xl font-extrabold ${f.popular ? "text-white" : "text-slate-900 dark:text-white"}`}>
+                    {f.name}
+                  </h3>
+                  <p className={`text-sm font-medium mt-1 mb-2 ${f.popular ? "text-indigo-200" : "text-indigo-600 dark:text-indigo-400"}`}>
+                    {f.tagline}
+                  </p>
+                  <p className={`text-sm mb-6 ${f.popular ? "text-indigo-100" : "text-slate-500 dark:text-slate-400"}`}>
                     {f.description}
                   </p>
 
@@ -379,31 +274,24 @@ export default function TarifsPage() {
                     <Button
                       href="/devis"
                       variant={f.popular ? "secondary" : "outline"}
-                      className={`w-full ${f.popular ? "bg-white text-indigo-700 hover:bg-indigo-50 shadow-lg" : ""}`}
-                      size="lg"
+                      className={`w-full ${f.popular ? "bg-white text-indigo-700 hover:bg-indigo-50" : ""}`}
                     >
-                      {f.cta}
+                      Demander un devis
                       <ArrowRight className="h-4 w-4" />
                     </Button>
                   </div>
-
-                  {f.popular && (
-                    <p className="text-center text-xs text-indigo-200 mt-3">
-                      Site internet offert - sans engagement possible
-                    </p>
-                  )}
                 </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
 
           <AnimateOnScroll>
-            <div className="text-center mt-12">
+            <div className="text-center mt-10">
               <Link
                 href="/forfait-communication-pme"
                 className="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors"
               >
-                Comparer les forfaits en détail
+                Comparer les forfaits en detail
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -411,91 +299,26 @@ export default function TarifsPage() {
         </Container>
       </section>
 
-      {/* PROCESS */}
-      <section className="py-20 lg:py-28">
-        <Container>
-          <AnimateOnScroll>
-            <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-              <p className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">Comment ça marche</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">
-                De l&apos;appel au résultat en 4 étapes
-              </h2>
-            </div>
-          </AnimateOnScroll>
-
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            {[
-              { step: "01", title: "Appel découverte", desc: "20 minutes pour comprendre votre activité, vos objectifs et vos contraintes. Gratuit, sans engagement.", icon: Phone },
-              { step: "02", title: "Devis sur-mesure", desc: "Sous 24h, vous recevez une proposition claire et détaillée. Pas de jargon, pas de surprise.", icon: FileText },
-              { step: "03", title: "Production", desc: "On lance le projet. Validations à chaque étape, vous gardez le contrôle. Livraison dans les délais.", icon: Zap },
-              { step: "04", title: "Résultats", desc: "Votre communication tourne. Reporting mensuel, optimisations continues, résultats mesurables.", icon: TrendingUp },
-            ].map((item) => (
-              <StaggerItem key={item.step}>
-                <div className="text-center space-y-4">
-                  <div className="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 mb-2">
-                    <item.icon className="h-7 w-7" />
-                  </div>
-                  <div className="text-xs font-black text-indigo-600 dark:text-indigo-400 tracking-widest">{item.step}</div>
-                  <h3 className="text-lg font-extrabold text-slate-900 dark:text-white">{item.title}</h3>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{item.desc}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </Container>
-      </section>
-
-      {/* OBJECTIONS */}
-      <section className="py-20 lg:py-28 bg-slate-50 dark:bg-slate-900">
-        <Container className="max-w-4xl">
-          <AnimateOnScroll>
-            <div className="text-center mb-16 space-y-4">
-              <p className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">On répond à vos doutes</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">
-                Vous hésitez encore ?
-              </h2>
-            </div>
-          </AnimateOnScroll>
-
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {objections.map((obj) => (
-              <StaggerItem key={obj.question}>
-                <div className="h-full rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-8 hover:shadow-lg transition-shadow">
-                  <p className="text-lg font-extrabold text-slate-900 dark:text-white mb-3 italic">
-                    {obj.question}
-                  </p>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    {obj.answer}
-                  </p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </Container>
-      </section>
-
       {/* GARANTIES */}
-      <section className="py-20 lg:py-28">
+      <section className="py-16 lg:py-24">
         <Container className="max-w-4xl">
           <AnimateOnScroll>
             <div className="text-center mb-16 space-y-4">
               <p className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">Nos engagements</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">
-                Zéro risque de votre côté
-              </h2>
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Zero risque de votre cote</h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { icon: Shield, title: "Devis gratuit", desc: "On échange, on chiffre, sans engagement. Vous décidez en toute liberté." },
-                { icon: Clock, title: "Réponse sous 24h", desc: "Pas d'attente interminable. Votre projet mérite de l'attention." },
-                { icon: Star, title: "Satisfaction garantie", desc: "Validations à chaque étape. On ne facture que ce qui vous convient." },
-                { icon: Users, title: "Vous êtes propriétaire", desc: "Le site, les photos, les textes - tout vous appartient. Toujours." },
-                { icon: TrendingUp, title: "Résultats mesurables", desc: "Reporting mensuel avec les vrais chiffres. Pas de blabla." },
-                { icon: MessageSquare, title: "Interlocuteur unique", desc: "Un seul contact qui connaît votre dossier sur le bout des doigts." },
+                { icon: Shield, title: "Devis gratuit", desc: "On echange, on chiffre, sans engagement. Vous decidez en toute liberte." },
+                { icon: Clock, title: "Reponse sous 24h", desc: "Pas d'attente interminable. Votre projet merite de l'attention." },
+                { icon: Star, title: "Satisfaction garantie", desc: "Validations a chaque etape. On ne facture que ce qui vous convient." },
+                { icon: Users, title: "Vous etes proprietaire", desc: "Le site, les photos, les textes - tout vous appartient. Toujours." },
+                { icon: TrendingUp, title: "Resultats mesurables", desc: "Reporting mensuel avec les vrais chiffres." },
+                { icon: MessageSquare, title: "Interlocuteur unique", desc: "Un seul contact qui connait votre dossier sur le bout des doigts." },
               ].map((item) => (
-                <div key={item.title} className="text-center space-y-3 p-6">
-                  <div className="inline-flex items-center justify-center h-12 w-12 rounded-2xl bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400">
+                <div key={item.title} className="text-center space-y-3 p-6 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                  <div className="inline-flex items-center justify-center h-12 w-12 rounded-2xl bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400">
                     <item.icon className="h-6 w-6" />
                   </div>
                   <h3 className="font-extrabold text-slate-900 dark:text-white">{item.title}</h3>
@@ -507,35 +330,22 @@ export default function TarifsPage() {
         </Container>
       </section>
 
-      {/* CTA FINAL */}
-      <section className="py-24 lg:py-32 bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-700 rounded-[3rem] mx-4 lg:mx-12 overflow-hidden relative mb-12">
-        <div className="absolute inset-0 opacity-10 dot-grid pointer-events-none" />
-        <Container className="relative z-10">
-          <AnimateOnScroll>
-            <div className="max-w-3xl mx-auto text-center space-y-8">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-                Prêt à passer devant vos concurrents ?
-              </h2>
-              <p className="text-lg text-indigo-100 max-w-xl mx-auto">
-                Un appel de 20 minutes suffit pour comprendre vos besoins.
-                On vous envoie un devis sous 24h. Gratuit, sans engagement.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <Button href="/devis" size="lg" className="bg-white text-indigo-700 hover:bg-indigo-50 shadow-xl shadow-indigo-900/30 hover:-translate-y-1 transition-all">
-                  Demander un devis gratuit
-                  <ArrowRight className="h-5 w-5" />
-                </Button>
-                <Link href="/contact" className="inline-flex items-center justify-center gap-2 h-14 px-8 text-lg font-bold rounded-2xl text-white border border-white/30 hover:bg-white/10 transition-all">
-                  Nous contacter
-                </Link>
-              </div>
-              <p className="text-sm text-indigo-200">
-                Rejoignez les 50+ entreprises qui nous font confiance
-              </p>
-            </div>
-          </AnimateOnScroll>
-        </Container>
-      </section>
+      <ContactCard />
+
+      <FaqAccordion
+        items={faqTarifs}
+        title="Questions frequentes"
+        subtitle="Tout ce que vous devez savoir sur nos offres."
+        badge="FAQ"
+      />
+
+      <CtaSection
+        title="Parlons de votre projet"
+        subtitle="On vous repond sous 24h avec un devis detaille, sans engagement."
+        variant="primary"
+        ctaLabel="Demander un devis gratuit"
+        ctaHref="/devis"
+      />
     </>
   )
 }
