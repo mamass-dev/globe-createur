@@ -72,7 +72,7 @@ export default function AuditDigitalPage() {
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.08] max-w-3xl mx-auto">
             Quel est votre{" "}
-            <span className="text-gradient">score digital</span> ?
+            <span className="text-gradient">score digital</span>&nbsp;?
           </h1>
           <p className="mt-5 text-lg lg:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
             9 questions, 2 minutes, un diagnostic complet de votre présence en ligne.
