@@ -196,11 +196,11 @@ export default function HomePage() {
               Testez avant de <span className="text-gradient">vous lancer.</span>
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-400">
-              Trois outils gratuits pour évaluer votre situation et mesurer le potentiel de votre présence digitale.
+              Quatre outils gratuits pour évaluer votre situation et mesurer le potentiel de votre présence digitale.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {/* Audit Digital */}
             <Link
               href="/audit-digital"
@@ -274,6 +274,32 @@ export default function HomePage() {
                 </p>
                 <div className="flex items-center gap-2 text-green-600 dark:text-green-400 font-bold text-sm">
                   Analyser mon site
+                  <LucideIcon name="ArrowRight" className="h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
+                </div>
+              </div>
+            </Link>
+
+            {/* Signature Email */}
+            <Link
+              href="/generateur-signature-email"
+              className="group relative p-8 lg:p-10 bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-violet-50 dark:bg-violet-950/50 rounded-full -translate-y-1/2 translate-x-1/2 opacity-60" />
+              <div className="relative">
+                <div className="h-14 w-14 rounded-2xl bg-violet-50 dark:bg-violet-950 text-violet-600 dark:text-violet-400 flex items-center justify-center mb-6 group-hover:bg-violet-600 group-hover:text-white transition-colors">
+                  <LucideIcon name="Mail" className="h-7 w-7" />
+                </div>
+                <div className="inline-block px-2 py-0.5 rounded-full bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-400 text-[11px] font-bold uppercase tracking-wider mb-3">
+                  5 templates pro
+                </div>
+                <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-3 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+                  Signature Email
+                </h3>
+                <p className="text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
+                  Créez une signature email professionnelle avec preview multi-client et tracking UTM intégré.
+                </p>
+                <div className="flex items-center gap-2 text-violet-600 dark:text-violet-400 font-bold text-sm">
+                  Créer ma signature
                   <LucideIcon name="ArrowRight" className="h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
                 </div>
               </div>
