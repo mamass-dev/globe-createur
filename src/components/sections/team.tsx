@@ -9,7 +9,7 @@ const team = [
     role: "Co-fondateur · Stratégie & Web",
     photo: "/images/team/axel-masson.webp",
     bio: "Passionné de digital et d'entrepreneuriat, Axel conçoit les stratégies web et pilote chaque projet de A à Z. Son objectif : transformer chaque euro investi en résultat concret.",
-    linkedin: "https://www.linkedin.com/in/axel-masson",
+    linkedin: "https://www.linkedin.com/in/axelmasson/",
   },
   {
     name: "Adrien Lecrivain",

@@ -71,7 +71,7 @@ export function ContactCard({ city }: { city?: string }) {
                       WhatsApp
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/axel-masson"
+                      href="https://www.linkedin.com/in/axelmasson/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-xl transition-colors"
