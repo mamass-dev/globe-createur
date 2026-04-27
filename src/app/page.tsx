@@ -5,7 +5,9 @@ import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
 import { Hero } from "@/components/sections/hero"
 import { ServiceGrid } from "@/components/sections/service-grid"
+import { CityCrosslinks } from "@/components/sections/city-crosslinks"
 import { services } from "@/lib/data/services"
+import { secteurs } from "@/lib/data/secteurs"
 import { logos } from "@/lib/data/logos"
 import { LucideIcon } from "@/components/ui/lucide-icon"
 import { VideoHero } from "@/components/sections/video-hero"
@@ -308,8 +310,52 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 8. BLOG - Latest articles */}
+      {/* 7b. SECTORS - Vertical specializations */}
       <section className="py-24 dark:bg-slate-950">
+        <Container>
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 dark:bg-amber-950 border border-amber-100 dark:border-amber-800 text-amber-700 dark:text-amber-400 text-xs font-black uppercase tracking-widest">
+              Secteurs accompagnés
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white">
+              Nous parlons votre <span className="text-gradient">métier.</span>
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-slate-400">
+              Des sites et des stratégies pensés pour les spécificités de votre secteur d&apos;activité.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {secteurs.map((s) => (
+              <Link
+                key={s.slug}
+                href={`/secteurs/${s.slug}`}
+                className="group flex items-center gap-3 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 transition-all hover:border-indigo-300 dark:hover:border-indigo-600 hover:shadow-md hover:-translate-y-0.5"
+              >
+                <div className="h-10 w-10 rounded-xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                  <LucideIcon name={s.icon} className="h-5 w-5" />
+                </div>
+                <span className="font-semibold text-slate-900 dark:text-white text-sm group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                  {s.title.replace(/^Sites? (internet|e-commerce) pour /i, "").replace(/^le bien-être et la santé/i, "Bien-être & santé")}
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/secteurs"
+              className="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 transition-colors"
+            >
+              Voir tous les secteurs
+              <LucideIcon name="ArrowRight" className="h-4 w-4" />
+            </Link>
+          </div>
+        </Container>
+      </section>
+
+      {/* 8. BLOG - Latest articles */}
+      <section className="py-24 bg-slate-50 dark:bg-slate-900">
         <Container>
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-12">
             <div className="space-y-3">
@@ -364,6 +410,12 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+
+      {/* 8b. CITY CROSSLINKS - Local SEO */}
+      <CityCrosslinks
+        title="Notre périmètre d'intervention"
+        subtitle="Studio basé à Dijon, on intervient partout en Bourgogne-Franche-Comté et en Auvergne-Rhône-Alpes."
+      />
 
       {/* 9. CTA - SaaS Conversion */}
       <section className="py-32 bg-white dark:bg-slate-950">

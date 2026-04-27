@@ -2,6 +2,7 @@ export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://globecreate
 export const SITE_NAME = "Globe Créateur"
 export const SITE_DESCRIPTION = "Studio de communication 360° à Dijon. Équipe complète externalisée pour PME : photo, vidéo, web, design, réseaux sociaux."
 export const SITE_LOCALE = "fr_FR"
+export const INDEXNOW_KEY = "c7096e2c33e6a5740bbc3204ba1633f5"
 
 export const CONTACT = {
   email: "contact@globecreateur.fr",

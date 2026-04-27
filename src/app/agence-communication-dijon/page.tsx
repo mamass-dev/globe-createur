@@ -13,6 +13,8 @@ import { CtaSection } from "@/components/sections/cta-section"
 import { FaqSchema, CityLocalBusinessSchema } from "@/components/seo/schemas"
 import { Container } from "@/components/ui/container"
 import { AnimateOnScroll } from "@/components/ui/animate"
+import { CityCrosslinks } from "@/components/sections/city-crosslinks"
+import { RelatedBlogPosts } from "@/components/sections/related-blog-posts"
 import { ContactCard } from "@/components/sections/contact-card"
 import { services } from "@/lib/data/services"
 import { temoignages } from "@/lib/data/temoignages"
@@ -217,6 +219,8 @@ export default function AgencePage() {
       />
 
       {/* 10. CTA */}
+      <CityCrosslinks currentSlug="agence-communication-dijon" />
+      <RelatedBlogPosts title="Conseils communication & SEO local" subtitle="Nos derniers articles pour développer votre visibilité." />
       <CtaSection
         title="Prêt à professionnaliser votre communication ?"
         subtitle="Audit gratuit de votre présence en ligne. Sans engagement, sous 48h."

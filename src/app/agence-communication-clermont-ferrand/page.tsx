@@ -15,6 +15,8 @@ import { CtaSection } from "@/components/sections/cta-section"
 import { FaqSchema, CityLocalBusinessSchema } from "@/components/seo/schemas"
 import { Container } from "@/components/ui/container"
 import { AnimateOnScroll } from "@/components/ui/animate"
+import { CityCrosslinks } from "@/components/sections/city-crosslinks"
+import { RelatedBlogPosts } from "@/components/sections/related-blog-posts"
 import { ContactCard } from "@/components/sections/contact-card"
 import { services } from "@/lib/data/services"
 import { temoignages } from "@/lib/data/temoignages"
@@ -218,6 +220,10 @@ export default function AgenceClermontFerrandPage() {
         subtitle="Tout ce que vous devez savoir avant de nous contacter."
         badge="FAQ"
       />
+
+      <CityCrosslinks currentSlug="agence-communication-clermont-ferrand" />
+
+      <RelatedBlogPosts title="Conseils communication & SEO local" subtitle="Nos derniers articles pour développer votre visibilité." />
 
       <CtaSection
         title="Prêt à booster votre communication à Clermont-Ferrand ?"

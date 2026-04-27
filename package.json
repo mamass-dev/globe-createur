@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "submit-urls": "node scripts/submit-indexnow.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.0",
