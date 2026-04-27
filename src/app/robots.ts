@@ -7,43 +7,43 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/"],
+        disallow: ["/api/", "/wp-content/", "/wp-json/", "/wp-admin/", "/wp-includes/", "/elementor-*"],
       },
       // AI crawlers - explicitly allowed for GEO
       {
         userAgent: "GPTBot",
         allow: "/",
-        disallow: ["/api/"],
+        disallow: ["/api/", "/wp-content/", "/wp-json/", "/wp-admin/", "/wp-includes/", "/elementor-*"],
       },
       {
         userAgent: "ChatGPT-User",
         allow: "/",
-        disallow: ["/api/"],
+        disallow: ["/api/", "/wp-content/", "/wp-json/", "/wp-admin/", "/wp-includes/", "/elementor-*"],
       },
       {
         userAgent: "Google-Extended",
         allow: "/",
-        disallow: ["/api/"],
+        disallow: ["/api/", "/wp-content/", "/wp-json/", "/wp-admin/", "/wp-includes/", "/elementor-*"],
       },
       {
         userAgent: "Claude-Web",
         allow: "/",
-        disallow: ["/api/"],
+        disallow: ["/api/", "/wp-content/", "/wp-json/", "/wp-admin/", "/wp-includes/", "/elementor-*"],
       },
       {
         userAgent: "PerplexityBot",
         allow: "/",
-        disallow: ["/api/"],
+        disallow: ["/api/", "/wp-content/", "/wp-json/", "/wp-admin/", "/wp-includes/", "/elementor-*"],
       },
       {
         userAgent: "Applebot-Extended",
         allow: "/",
-        disallow: ["/api/"],
+        disallow: ["/api/", "/wp-content/", "/wp-json/", "/wp-admin/", "/wp-includes/", "/elementor-*"],
       },
       {
         userAgent: "cohere-ai",
         allow: "/",
-        disallow: ["/api/"],
+        disallow: ["/api/", "/wp-content/", "/wp-json/", "/wp-admin/", "/wp-includes/", "/elementor-*"],
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,

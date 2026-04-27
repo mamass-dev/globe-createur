@@ -83,6 +83,8 @@ const nextConfig: NextConfig = {
       { source: "/leet-design-dune-application-mobile-moderne-et-intuitive/", destination: "/projets/leet-app", permanent: true },
       { source: "/helite-airbag-shooting-photo-pour-une-nouvelle-collection", destination: "/projets/helite-airbag", permanent: true },
       { source: "/helite-airbag-shooting-photo-pour-une-nouvelle-collection/", destination: "/projets/helite-airbag", permanent: true },
+      { source: "/projets/helite-airbag-shooting-photo-pour-une-nouvelle-collection", destination: "/projets/helite-airbag", permanent: true },
+      { source: "/projets/helite-airbag-shooting-photo-pour-une-nouvelle-collection/", destination: "/projets/helite-airbag", permanent: true },
       { source: "/motorfest-dijon-photographie-officielle-de-levenement-automobile", destination: "/projets/motorfest-dijon", permanent: true },
       { source: "/motorfest-dijon-photographie-officielle-de-levenement-automobile/", destination: "/projets/motorfest-dijon", permanent: true },
       // Ancien article blog WordPress
@@ -93,6 +95,20 @@ const nextConfig: NextConfig = {
       { source: "/faqs/", destination: "/faq", permanent: true },
       { source: "/accueil-2", destination: "/", permanent: true },
       { source: "/accueil-2/", destination: "/", permanent: true },
+      { source: "/accueil2", destination: "/", permanent: true },
+      { source: "/accueil2/", destination: "/", permanent: true },
+      { source: "/forfaits", destination: "/tarifs", permanent: true },
+      { source: "/forfaits/", destination: "/tarifs", permanent: true },
+      // Annuaire freelances retiré
+      { source: "/annuaire-freelances", destination: "/services", permanent: true },
+      { source: "/annuaire-freelances/", destination: "/services", permanent: true },
+      { source: "/annuaire-freelances/:path*", destination: "/services", permanent: true },
+      // Anciennes catégories WordPress
+      { source: "/category/:path*", destination: "/blog", permanent: true },
+      // Anciens audits client WordPress
+      { source: "/audits/audit-client", destination: "/audit-digital", permanent: true },
+      { source: "/audits/audit-client/", destination: "/audit-digital", permanent: true },
+      { source: "/audits/:path*", destination: "/audit-digital", permanent: true },
       // MetForm wildcard
       { source: "/metform-form/:path*", destination: "/contact", permanent: true },
       // Feed RSS
