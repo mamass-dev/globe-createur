@@ -16,7 +16,7 @@ import { temoignages, googleReviews } from "@/lib/data/temoignages"
 import { TestimonialsWall } from "@/components/sections/testimonials-wall"
 import { Team } from "@/components/sections/team"
 import { AggregateRatingSchema } from "@/components/seo/schemas"
-import { getBlogPosts } from "@/lib/content"
+import { getBlogPosts, getProjetPages } from "@/lib/content"
 import { EasterEgg } from "@/components/ui/easter-egg"
 
 // Lazy load non-critical components
@@ -350,6 +350,67 @@ export default function HomePage() {
               Voir tous les secteurs
               <LucideIcon name="ArrowRight" className="h-4 w-4" />
             </Link>
+          </div>
+        </Container>
+      </section>
+
+      {/* 7c. PROJECTS - Featured case studies */}
+      <section className="py-24 dark:bg-slate-950">
+        <Container>
+          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-12">
+            <div className="space-y-3 max-w-2xl">
+              <h2 className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">Réalisations</h2>
+              <h3 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Nos derniers projets pour PME</h3>
+              <p className="text-slate-600 dark:text-slate-400">
+                Des sites internet, du SEO local, des contenus visuels livrés pour des PME en Bourgogne et au-delà.
+              </p>
+            </div>
+            <Link
+              href="/projets"
+              className="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 transition-colors shrink-0"
+            >
+              Voir tous nos projets
+              <LucideIcon name="ArrowRight" className="h-4 w-4" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {getProjetPages()
+              .slice(0, 3)
+              .map((projet) => {
+                const fm = projet.frontmatter as Record<string, string>
+                return (
+                  <Link key={projet.slug} href={`/projets/${projet.slug}`} className="group">
+                    {fm.image && (
+                      <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5 bg-slate-100 dark:bg-slate-800">
+                        <Image
+                          src={fm.image}
+                          alt={fm.imageAlt || fm.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
+                    <div className="space-y-2">
+                      {fm.category && (
+                        <p className="text-xs font-bold uppercase tracking-widest text-indigo-500">
+                          {fm.category}
+                        </p>
+                      )}
+                      <h4 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors leading-snug">
+                        {fm.title}
+                      </h4>
+                      {fm.excerpt && (
+                        <p className="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">
+                          {fm.excerpt}
+                        </p>
+                      )}
+                    </div>
+                  </Link>
+                )
+              })}
           </div>
         </Container>
       </section>

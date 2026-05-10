@@ -1,13 +1,17 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
-import Link from "next/link"
 import { buildMetadata } from "@/lib/metadata"
 import { getProjetPages, getProjetPage } from "@/lib/content"
 import { MdxContent } from "@/components/mdx/mdx-content"
 import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
 import { AnimateOnScroll } from "@/components/ui/animate"
-import { CheckCircle2, TrendingUp, Users, Target } from "lucide-react"
+import { Breadcrumb } from "@/components/layout/breadcrumb"
+import { JsonLd } from "@/components/seo/json-ld"
+import { ProjectsCrosslinks } from "@/components/sections/projects-crosslinks"
+import { RelatedBlogPosts } from "@/components/sections/related-blog-posts"
+import { SITE_URL, SITE_NAME } from "@/lib/constants"
+import { TrendingUp, Users, Target } from "lucide-react"
 
 export function generateStaticParams() {
   return getProjetPages().map((p) => ({ slug: p.slug }))
@@ -27,6 +31,11 @@ export async function generateMetadata({
     title: fm.metaTitle ?? fm.title,
     description: fm.metaDescription ?? fm.excerpt ?? "",
     path: `/projets/${slug}`,
+    image: fm.image,
+    type: "article",
+    publishedTime: fm.publishedAt,
+    modifiedTime: fm.updatedAt ?? fm.publishedAt,
+    author: fm.author ?? "Axel Masson",
   })
 }
 
@@ -40,9 +49,51 @@ export default async function ProjetPage({
   if (!page) notFound()
 
   const fm = page.frontmatter as Record<string, string>
+  const projectUrl = `/projets/${slug}`
+  const breadcrumbItems = [
+    { name: "Projets", href: "/projets" },
+    { name: fm.title, href: projectUrl },
+  ]
 
   return (
-    <section className="bg-white pt-32 lg:pt-48 pb-32">
+    <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          name: fm.title,
+          headline: fm.metaTitle ?? fm.title,
+          description: fm.metaDescription ?? fm.excerpt ?? "",
+          url: `${SITE_URL}${projectUrl}`,
+          ...(fm.image && {
+            image: {
+              "@type": "ImageObject",
+              url: fm.image.startsWith("http") ? fm.image : `${SITE_URL}${fm.image}`,
+              width: 1200,
+              height: 630,
+            },
+          }),
+          ...(fm.publishedAt && { datePublished: fm.publishedAt }),
+          dateModified: fm.updatedAt ?? fm.publishedAt ?? new Date().toISOString().split("T")[0],
+          author: {
+            "@type": "Person",
+            name: fm.author ?? "Axel Masson",
+            url: "https://www.linkedin.com/in/axelmasson",
+          },
+          creator: {
+            "@type": "Organization",
+            "@id": `${SITE_URL}/#organization`,
+            name: SITE_NAME,
+          },
+          ...(fm.client && { about: fm.client }),
+          ...(fm.category && { genre: fm.category }),
+          inLanguage: "fr-FR",
+        }}
+      />
+
+      <Breadcrumb items={breadcrumbItems} />
+
+    <section className="bg-white pt-12 lg:pt-20 pb-32">
       <Container>
         {/* HERO */}
         <header className="mb-20 space-y-10">
@@ -142,5 +193,13 @@ export default async function ProjetPage({
         </div>
       </Container>
     </section>
+
+    <ProjectsCrosslinks currentSlug={slug} />
+
+    <RelatedBlogPosts
+      title="Conseils pour réussir votre projet"
+      subtitle="Nos articles sur la communication, le SEO et le digital pour PME."
+    />
+    </>
   )
 }
