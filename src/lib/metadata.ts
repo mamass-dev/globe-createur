@@ -19,7 +19,7 @@ export function buildMetadata(page: PageMeta): Metadata {
   const image = page.image ?? `${SITE_URL}/og/default.jpg`
 
   return {
-    title: page.title,
+    title: { absolute: page.title },
     description: page.description,
     alternates: { canonical: url },
     ...(page.keywords && page.keywords.length > 0 && {
