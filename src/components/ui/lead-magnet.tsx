@@ -1,7 +1,11 @@
 "use client"
 
 import { useEffect, useState, useCallback } from "react"
+import { usePathname } from "next/navigation"
 import { X, ArrowRight, CheckCircle, Gift } from "lucide-react"
+
+// Pages où la pop-up lead magnet ne doit jamais apparaître
+const EXCLUDED_PATHS = ["/cl-racing"]
 
 /**
  * Contextual lead magnet slide-in.
@@ -69,6 +73,9 @@ function getOffer(pathname: string): Offer {
 }
 
 export function LeadMagnet() {
+  const pathname = usePathname()
+  const excluded = EXCLUDED_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`))
+
   const [show, setShow] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [dismissed, setDismissed] = useState(false)
@@ -148,6 +155,7 @@ export function LeadMagnet() {
     }
   }
 
+  if (excluded) return null
   if (dismissed && !show) return null
   if (!show) return null
 
