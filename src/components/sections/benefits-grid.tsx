@@ -24,7 +24,7 @@ export function BenefitsGrid({
   columns?: 2 | 3
 }) {
   return (
-    <section className="py-20 lg:py-28 bg-gray-50">
+    <section className="py-20 lg:py-28 bg-[#0f0f0f]">
       <Container>
         {title && <SectionHeader title={title} subtitle={subtitle} badge={badge} />}
 

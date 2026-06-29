@@ -1,6 +1,6 @@
 import Link from "next/link"
-import Image from "next/image"
 import { Container } from "@/components/ui/container"
+import { Wordmark } from "@/components/ui/wordmark"
 import { SITE_NAME, CONTACT } from "@/lib/constants"
 import { footerNav } from "@/lib/data/navigation"
 
@@ -8,14 +8,13 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-16 pb-12">
+    <footer className="bg-[#0a0a0a] border-t border-[#1c1c1c] pt-16 pb-12">
       <Container>
         {/* Top: Brand + Contact */}
-        <div className="flex flex-col sm:flex-row items-start justify-between gap-8 mb-14 pb-14 border-b border-slate-200 dark:border-slate-800">
+        <div className="flex flex-col sm:flex-row items-start justify-between gap-8 mb-14 pb-14 border-b border-[#1c1c1c]">
           <div className="space-y-4">
-            <Link href="/">
-              <Image src="/images/logo/logo-main.webp" alt="Globe Créateur" width={200} height={200} className="h-16 w-auto dark:hidden" />
-              <Image src="/images/logo/logo-alt.webp" alt="Globe Créateur" width={200} height={200} className="h-16 w-auto hidden dark:block" />
+            <Link href="/" aria-label="Globe — Creative House">
+              <Wordmark size="lg" />
             </Link>
             <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed max-w-sm">
               Studio de communication 360&deg; &agrave; Dijon. Web, SEO, photo, vid&eacute;o et design pour les PME.

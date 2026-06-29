@@ -22,7 +22,7 @@ export function ProcessSteps({
   steps: Step[]
 }) {
   return (
-    <section className="py-20 lg:py-28 bg-gray-50">
+    <section className="py-20 lg:py-28 bg-[#0f0f0f]">
       <Container>
         <SectionHeader title={title} subtitle={subtitle} badge={badge} />
 
@@ -31,7 +31,7 @@ export function ProcessSteps({
             <StaggerItem key={step.number} className="relative">
               {/* Connecting line (desktop only) */}
               {i < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-6 left-[calc(50%+24px)] right-[calc(-50%+24px)] h-px bg-gray-200" aria-hidden="true" />
+                <div className="hidden lg:block absolute top-6 left-[calc(50%+24px)] right-[calc(-50%+24px)] h-px bg-[#2a2a2a]" aria-hidden="true" />
               )}
 
               <div className="text-center relative">

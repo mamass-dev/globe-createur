@@ -11,19 +11,19 @@ type ButtonProps = {
 
 const variants = {
   primary:
-    "bg-indigo-600 dark:bg-indigo-500 text-white shadow-lg shadow-indigo-100 dark:shadow-indigo-950 hover:bg-indigo-700 dark:hover:bg-indigo-600 hover:-translate-y-0.5 transition-all",
+    "bg-signal text-white hover:bg-[#d62e20] transition-colors",
   secondary:
-    "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 hover:-translate-y-0.5 transition-all",
+    "bg-ivory text-noir hover:bg-white transition-colors",
   outline:
-    "border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-600 transition-all",
+    "border border-[#2a2a2a] text-ivory hover:border-signal hover:text-signal transition-colors",
   ghost:
-    "text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-950 transition-all",
+    "text-aluminium hover:text-signal transition-colors",
 }
 
 const sizes = {
-  sm: "h-10 px-5 text-sm font-semibold rounded-xl",
-  md: "h-12 px-6 text-base font-bold rounded-2xl",
-  lg: "h-14 px-8 text-lg font-bold rounded-2xl",
+  sm: "h-10 px-5 text-xs font-bold uppercase tracking-widest rounded-none",
+  md: "h-12 px-7 text-sm font-bold uppercase tracking-widest rounded-none",
+  lg: "h-14 px-9 text-sm font-bold uppercase tracking-widest rounded-none",
 }
 
 export function Button({

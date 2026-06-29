@@ -19,7 +19,7 @@ export function RelatedServices({
   if (services.length === 0) return null
 
   return (
-    <section className="py-20 lg:py-28 bg-gray-50">
+    <section className="py-20 lg:py-28 bg-[#0f0f0f]">
       <Container>
         <SectionHeader title={title} badge={badge} />
 
@@ -28,7 +28,7 @@ export function RelatedServices({
             <StaggerItem key={s.slug}>
               <Link
                 href={`/services/${s.slug}`}
-                className="group flex items-center justify-between rounded-xl border border-gray-100 bg-white p-5 transition-all duration-300 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/[0.04] hover:-translate-y-0.5"
+                className="group flex items-center justify-between rounded-sm border border-[#1c1c1c] bg-[#141414] p-5 transition-colors duration-300 hover:border-signal"
               >
                 <div>
                   <h3 className="font-semibold text-foreground tracking-tight group-hover:text-primary transition-colors duration-200">

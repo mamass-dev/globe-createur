@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next"
-import { Inter } from "next/font/google"
+import localFont from "next/font/local"
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, SITE_LOCALE } from "@/lib/constants"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
@@ -11,10 +11,22 @@ import { WhatsAppButton } from "@/components/ui/whatsapp-button"
 import { LeadMagnet } from "@/components/ui/lead-magnet"
 import "./globals.css"
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+const monument = localFont({
+  variable: "--font-monument",
   display: "swap",
+  src: [
+    { path: "../../public/fonts/MonumentGrotesk-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../../public/fonts/MonumentGrotesk-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../../public/fonts/MonumentGrotesk-Bold.woff2", weight: "700", style: "normal" },
+  ],
+})
+
+const monumentMono = localFont({
+  variable: "--font-monument-mono",
+  display: "swap",
+  src: [
+    { path: "../../public/fonts/MonumentGrotesk-Mono.woff2", weight: "400", style: "normal" },
+  ],
 })
 
 export const metadata: Metadata = {
@@ -45,7 +57,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#6366f1",
+  themeColor: "#0a0a0a",
 }
 
 export default function RootLayout({
@@ -54,12 +66,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className={`${inter.variable} scroll-smooth`} suppressHydrationWarning>
+    <html lang="fr" className={`dark ${monument.variable} ${monumentMono.variable} scroll-smooth`} suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://img.youtube.com" />
-        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme:dark)").matches)){document.documentElement.classList.add("dark")}}catch(e){}})()` }} />
       </head>
       {/*
         ╔═══════════════════════════════════════════════╗
@@ -73,7 +82,7 @@ export default function RootLayout({
         ║  contact@globecreateur.fr                     ║
         ╚═══════════════════════════════════════════════╝
       */}
-      <body className={`${inter.className} flex min-h-dvh flex-col antialiased bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100`}>
+      <body className={`${monument.className} flex min-h-dvh flex-col antialiased bg-[#0a0a0a] text-[#f5f2ec]`}>
         <LocalBusinessSchema />
         <WebSiteSchema />
         <OrganizationSchema />

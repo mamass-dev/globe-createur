@@ -28,7 +28,7 @@ export function ServiceGrid({
   badge?: string
 }) {
   return (
-    <section className="py-32 lg:py-48 bg-gray-50">
+    <section className="py-32 lg:py-48 bg-[#0f0f0f]">
       <Container>
         {title && (
           <div className="mb-24 lg:mb-32">
@@ -45,15 +45,15 @@ export function ServiceGrid({
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
-                <div className="relative pt-8 border-t border-black/10 group-hover:border-accent transition-colors duration-500">
+                <div className="relative pt-8 border-t border-[#2a2a2a] group-hover:border-signal transition-colors duration-500">
                   <div className="mb-10 group-hover:translate-x-4 transition-transform duration-700">{getIcon(service.icon)}</div>
-                  <h3 className="text-3xl font-black tracking-tight text-black group-hover:text-accent transition-colors duration-500 uppercase">
+                  <h3 className="text-3xl font-bold tracking-tight text-ivory group-hover:text-signal transition-colors duration-500 uppercase">
                     {service.title}
                   </h3>
-                  <p className="mt-6 text-lg text-gray-500 leading-tight max-w-sm group-hover:text-black transition-colors duration-500">
+                  <p className="mt-6 text-lg text-aluminium leading-tight max-w-sm group-hover:text-ivory transition-colors duration-500">
                     {service.excerpt}
                   </p>
-                  <div className="mt-10 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white border border-black/5 text-black group-hover:bg-accent group-hover:text-white transition-all duration-500 -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
+                  <div className="mt-10 inline-flex h-12 w-12 items-center justify-center rounded-none bg-[#1c1c1c] border border-[#2a2a2a] text-ivory group-hover:bg-signal group-hover:text-white group-hover:border-signal transition-all duration-500 -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
                     <LucideIcon name="ArrowRight" className="h-5 w-5" />
                   </div>
                 </div>

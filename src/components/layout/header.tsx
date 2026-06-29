@@ -2,11 +2,10 @@
 
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { LucideIcon } from "@/components/ui/lucide-icon"
 import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/ui/theme-toggle"
+import { Wordmark } from "@/components/ui/wordmark"
 import { mainNav } from "@/lib/data/navigation"
 import type { NavItem } from "@/lib/types"
 import { ChevronDown, ArrowRight } from "lucide-react"
@@ -188,26 +187,11 @@ export function Header() {
   }, [])
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white/70 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 h-20">
+    <header className="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-[#1c1c1c] h-20">
       <Container className="flex h-full items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="shrink-0">
-          <Image
-            src="/images/logo/logo-main.webp"
-            alt="Globe Créateur"
-            width={160}
-            height={160}
-            className="h-16 w-auto dark:hidden"
-            priority
-          />
-          <Image
-            src="/images/logo/logo-alt.webp"
-            alt="Globe Créateur"
-            width={160}
-            height={160}
-            className="h-16 w-auto hidden dark:block"
-            priority
-          />
+        <Link href="/" className="shrink-0" aria-label="Globe — Creative House">
+          <Wordmark size="md" />
         </Link>
 
         {/* Desktop nav */}
@@ -232,18 +216,17 @@ export function Header() {
             )
           )}
 
-          <div className="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-2" />
+          <div className="h-6 w-px bg-[#2a2a2a] mx-2" />
 
           <Link
             href="/contact"
-            className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+            className="text-sm font-medium text-[#c7c4ba] hover:text-signal transition-colors"
           >
             Contact
           </Link>
-          <ThemeToggle />
           <Button
             href="/devis"
-            className="bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-sm transition-all"
+            className="bg-signal hover:bg-[#d62e20] text-white px-5 py-2.5 rounded-none text-xs font-bold uppercase tracking-widest transition-colors"
           >
             Démarrer
           </Button>
@@ -251,9 +234,8 @@ export function Header() {
 
         {/* Mobile toggle */}
         <div className="flex items-center gap-2 lg:hidden">
-          <ThemeToggle />
           <button
-            className="p-2 text-slate-600 dark:text-slate-300 cursor-pointer"
+            className="p-2 text-[#f5f2ec] cursor-pointer"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Menu"
           >
@@ -298,7 +280,7 @@ export function Header() {
             <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-3">
               <Button
                 href="/devis"
-                className="w-full bg-indigo-600 dark:bg-indigo-500 text-white py-3 rounded-xl font-semibold"
+                className="w-full bg-signal hover:bg-[#d62e20] text-white py-3.5 rounded-none text-sm font-bold uppercase tracking-widest"
               >
                 Démarrer un projet
               </Button>

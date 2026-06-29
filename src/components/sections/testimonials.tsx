@@ -33,7 +33,7 @@ export function Testimonials({
   badge?: string
 }) {
   return (
-    <section className="py-24 lg:py-32 bg-white">
+    <section className="py-24 lg:py-32 bg-[#0a0a0a]">
       <Container>
         {title && <SectionHeader title={title} subtitle={subtitle} badge={badge} />}
 
@@ -46,17 +46,17 @@ export function Testimonials({
                 <div className="relative z-10 flex flex-col h-full space-y-8">
                    <StarRating rating={t.rating} />
                    
-                   <blockquote className="text-lg text-slate-600 leading-relaxed flex-1 italic">
+                   <blockquote className="text-lg text-[#c7c4ba] leading-relaxed flex-1 italic">
                      &ldquo;{t.content}&rdquo;
                    </blockquote>
-                   
-                   <div className="flex items-center gap-4 pt-6 border-t border-slate-50">
-                     <div className="h-12 w-12 rounded-2xl bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold overflow-hidden">
+
+                   <div className="flex items-center gap-4 pt-6 border-t border-[#1c1c1c]">
+                     <div className="h-12 w-12 rounded-none bg-signal/15 flex items-center justify-center text-signal font-bold overflow-hidden">
                         {/* If we have images for all users we'd use them, otherwise first letter */}
                         {t.name.charAt(0)}
                      </div>
                      <div>
-                       <p className="font-bold text-slate-900 leading-tight">{t.name}</p>
+                       <p className="font-bold text-ivory leading-tight">{t.name}</p>
                        <p className="text-sm text-slate-400 font-medium">{t.role}, {t.company}</p>
                      </div>
                    </div>

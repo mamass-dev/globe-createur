@@ -163,7 +163,7 @@ export default function ForfaitPage() {
       </Container>
 
       {/* 4. GRILLE FORFAITS */}
-      <section className="bg-gray-50 py-16 lg:py-24">
+      <section className="bg-[#0f0f0f] py-16 lg:py-24">
         <Container>
           <AnimateOnScroll>
             <div className="text-center mb-12">
@@ -267,7 +267,7 @@ export default function ForfaitPage() {
       </Container>
 
       {/* 6. CONTENU SEO */}
-      <section className="bg-gray-50 py-16 lg:py-24">
+      <section className="bg-[#0f0f0f] py-16 lg:py-24">
         <Container className="max-w-3xl">
           <AnimateOnScroll>
             <div className="prose max-w-none">

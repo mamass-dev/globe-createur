@@ -3,49 +3,115 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* ═══════════════════════════════════════════════════
-   DESIGN SYSTEM - Globe Créateur
-   Direction artistique : "Précision créative"
+   DESIGN SYSTEM — GLOBE Creative House
+   Direction artistique : "Brut. Direct. Signal."
+   Dark-first — Noir / Ivoire / Rouge Signal / Aluminium
+
+   STRATÉGIE : les échelles Tailwind `slate` et `gray`
+   sont remappées vers la palette neutre GC, et `indigo`
+   vers le rouge signal. Le thème sombre est forcé en
+   permanence (cf. layout.tsx), donc toutes les variantes
+   `dark:*` du code historique rendent désormais les bonnes
+   teintes GC sans réécriture massive.
    ═══════════════════════════════════════════════════ */
 
-:root {
-  /* - SAAS MODERN DESIGN - */
-  --background: #ffffff;
-  --foreground: #0f172a;
-  
-  --primary: #4f46e5; /* Indigo */
-  --primary-foreground: #ffffff;
-  
-  --secondary: #f8fafc;
-  --secondary-foreground: #475569;
+@theme {
+  /* ─── Fontes (Monument Grotesk, cf. layout.tsx next/font/local) ─── */
+  --font-sans: var(--font-monument), "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-monument), system-ui, sans-serif;
+  --font-mono: var(--font-monument-mono), ui-monospace, monospace;
+  --font-mono-accent: var(--font-monument-mono), ui-monospace, monospace;
 
-  --accent: #8b5cf6; /* Violet */
-  --accent-foreground: #ffffff;
+  /* ─── Palette de marque ─── */
+  --color-noir: #0a0a0a;
+  --color-ivory: #f5f2ec;
+  --color-signal: #e63a2b;
+  --color-aluminium: #a7a9ac;
 
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
+  /* ─── Tokens sémantiques ─── */
+  --color-background: #0a0a0a;
+  --color-foreground: #f5f2ec;
+  --color-primary: #e63a2b;
+  --color-primary-light: rgba(230, 58, 43, 0.12);
+  --color-primary-dark: #d62e20;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #141414;
+  --color-secondary-foreground: #f5f2ec;
+  --color-accent: #e63a2b;
+  --color-accent-foreground: #ffffff;
+  --color-muted: #141414;
+  --color-muted-foreground: #a7a9ac;
+  --color-border: #2a2a2a;
+  --color-input: #2a2a2a;
+  --color-ring: #e63a2b;
 
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #4f46e5;
+  /* ─── Remap échelle NEUTRE : slate → GC ─── */
+  --color-slate-50:  #faf9f5;
+  --color-slate-100: #f5f2ec;
+  --color-slate-200: #e4e1d8;
+  --color-slate-300: #c7c4ba;
+  --color-slate-400: #a7a9ac;
+  --color-slate-500: #87898c;
+  --color-slate-600: #5e6063;
+  --color-slate-700: #2a2a2a;
+  --color-slate-800: #1c1c1c;
+  --color-slate-900: #141414;
+  --color-slate-950: #0a0a0a;
 
-  --radius: 0.75rem;
-  --radius-lg: 1.25rem;
-  --radius-xl: 2rem;
+  /* ─── Remap échelle NEUTRE : gray → GC (identique) ─── */
+  --color-gray-50:  #faf9f5;
+  --color-gray-100: #f5f2ec;
+  --color-gray-200: #e4e1d8;
+  --color-gray-300: #c7c4ba;
+  --color-gray-400: #a7a9ac;
+  --color-gray-500: #87898c;
+  --color-gray-600: #5e6063;
+  --color-gray-700: #2a2a2a;
+  --color-gray-800: #1c1c1c;
+  --color-gray-900: #141414;
+  --color-gray-950: #0a0a0a;
 
-  /* - Gradients - */
-  --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #8b5cf6 100%);
-  --gradient-subtle: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(241,245,249,1) 100%);
+  /* ─── Remap échelle ACCENT : indigo → rouge signal ─── */
+  --color-indigo-50:  #feecea;
+  --color-indigo-100: #fcd4cf;
+  --color-indigo-200: #f8a89e;
+  --color-indigo-300: #f47c6d;
+  --color-indigo-400: #ee5340;
+  --color-indigo-500: #e63a2b;
+  --color-indigo-600: #e63a2b;
+  --color-indigo-700: #d62e20;
+  --color-indigo-800: #b5251a;
+  --color-indigo-900: #6b1610;
+  --color-indigo-950: #2e0a07;
+
+  /* ─── Remap violet → rouge (déclinaisons accent secondaires) ─── */
+  --color-violet-400: #ee5340;
+  --color-violet-500: #e63a2b;
+  --color-violet-600: #e63a2b;
+  --color-purple-500: #e63a2b;
+  --color-purple-600: #e63a2b;
+
+  /* ─── Rayons : look équarri / brut ─── */
+  --radius-sm: 1px;
+  --radius-md: 2px;
+  --radius-lg: 3px;
+  --radius-xl: 4px;
+  --radius-2xl: 6px;
+  --radius-3xl: 8px;
+
+  /* ─── Easing / durées ─── */
+  --duration-fast: 150ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-accent: var(--accent);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --radius-lg: var(--radius-lg);
-  --radius-xl: var(--radius-xl);
+:root {
+  --gc-black: #f5f2ec;
+  --gc-gray-600: #c7c4ba;
+  --gc-primary: #e63a2b;
+  --gc-primary-light: rgba(230, 58, 43, 0.5);
+  --duration-fast: 150ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --gradient-primary: linear-gradient(135deg, #e63a2b 0%, #ee5340 100%);
 }
 
 /* ═══════════════════════════════════════════════════
@@ -54,34 +120,20 @@
 
 html {
   scroll-behavior: smooth;
-  cursor: auto;
-}
-
-.dark {
-  --background: #0f172a;
-  --foreground: #f1f5f9;
-  --primary: #818cf8;
-  --primary-foreground: #ffffff;
-  --secondary: #1e293b;
-  --secondary-foreground: #cbd5e1;
-  --accent: #a78bfa;
-  --accent-foreground: #ffffff;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --border: #334155;
-  --input: #334155;
-  --ring: #818cf8;
-  --gradient-primary: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
   color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #0a0a0a;
+  color: #f5f2ec;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
-  line-height: 1.5;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.55;
+}
+
+::selection {
+  background: #e63a2b;
+  color: #ffffff;
 }
 
 /* ═══════════════════════════════════════════════════
@@ -89,14 +141,31 @@ body {
    ═══════════════════════════════════════════════════ */
 
 h1, h2, h3, h4 {
+  font-family: var(--font-display);
   font-weight: 700;
   letter-spacing: -0.02em;
-  line-height: 1.2;
-  color: #0f172a;
+  line-height: 1.05;
+  color: #f5f2ec;
+  text-wrap: balance;
 }
 
-.dark h1, .dark h2, .dark h3, .dark h4 {
-  color: #f1f5f9;
+/* Titres "impact" majuscules très serrés (esprit GLOBE) */
+.text-impact {
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+  font-weight: 700;
+}
+
+/* Texte contour (hero) */
+.text-stroke {
+  -webkit-text-stroke: 1.5px #f5f2ec;
+  color: transparent;
+}
+@media (min-width: 1024px) {
+  .text-stroke {
+    -webkit-text-stroke: 2px #f5f2ec;
+  }
 }
 
 .text-gradient {
@@ -107,21 +176,27 @@ h1, h2, h3, h4 {
 }
 
 /* ═══════════════════════════════════════════════════
-   SAAS COMPONENTS
+   ÉLÉMENTS GRAPHIQUES GC
    ═══════════════════════════════════════════════════ */
 
-.mesh-gradient {
-  background-color: #ffffff;
-  background-image:
-    radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.05) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.05) 0px, transparent 50%);
+/* La signature : barre rouge */
+.gc-bar {
+  display: inline-block;
+  width: 2.5rem;
+  height: 3px;
+  background: #e63a2b;
 }
 
-.dark .mesh-gradient {
-  background-color: #0f172a;
+.mesh-gradient {
+  background-color: #0a0a0a;
   background-image:
-    radial-gradient(at 0% 0%, rgba(129, 140, 248, 0.1) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(167, 139, 250, 0.1) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(230, 58, 43, 0.10) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(230, 58, 43, 0.06) 0px, transparent 50%);
+}
+
+.dot-grid {
+  background-image: radial-gradient(rgba(167, 169, 172, 0.12) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
 /* ═══════════════════════════════════════════════════
@@ -133,22 +208,22 @@ h1, h2, h3, h4 {
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
 }
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
+.animate-float { animation: float 6s ease-in-out infinite; }
 
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+.animate-marquee { animation: marquee 30s linear infinite; }
 
-.animate-marquee {
-  animation: marquee 30s linear infinite;
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
+.animate-fade-in { animation: fade-in 0.5s ease-in-out; }
 
 /* ═══════════════════════════════════════════════════
-   PROSE - MDX content styles
+   PROSE — contenu MDX
    ═══════════════════════════════════════════════════ */
 
 .prose h2 {
@@ -183,7 +258,7 @@ h1, h2, h3, h4 {
 }
 
 .prose strong {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--gc-black);
 }
 
@@ -199,25 +274,10 @@ h1, h2, h3, h4 {
 }
 
 /* ═══════════════════════════════════════════════════
-   UTILITY CLASSES
+   SCROLLBAR
    ═══════════════════════════════════════════════════ */
 
-.dot-grid {
-  background-image: radial-gradient(var(--gc-gray-200) 1px, transparent 1px);
-  background-size: 40px 40px;
-  opacity: 0.5;
-}
-
-/* ═══════════════════════════════════════════════════
-   ANIMATIONS
-   ═══════════════════════════════════════════════════ */
-
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.5s ease-in-out;
-}
-
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; }
+::-webkit-scrollbar-thumb:hover { background: #e63a2b; }

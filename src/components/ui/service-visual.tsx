@@ -1,5 +1,15 @@
 import { LucideIcon } from "./lucide-icon"
 
+/* Déclinaisons mono-palette GC — rouge signal / noir, variation de dégradé
+   par service pour garder du rythme sans sortir de la charte. */
+const sharedAccents = {
+  glow: "bg-[#e63a2b]/20",
+  accent: "bg-[#e63a2b]/25",
+  accentMuted: "bg-[#e63a2b]/10",
+  ring: "border-[#e63a2b]/25",
+  dot: "bg-[#f47c6d]",
+}
+
 const colorSchemes: Record<string, {
   gradient: string
   glow: string
@@ -8,62 +18,13 @@ const colorSchemes: Record<string, {
   ring: string
   dot: string
 }> = {
-  Globe: {
-    gradient: "from-indigo-500 via-indigo-600 to-violet-700",
-    glow: "bg-indigo-500/20",
-    accent: "bg-indigo-400/20",
-    accentMuted: "bg-indigo-300/10",
-    ring: "border-indigo-400/20",
-    dot: "bg-indigo-300",
-  },
-  RefreshCw: {
-    gradient: "from-teal-500 via-emerald-600 to-cyan-700",
-    glow: "bg-teal-500/20",
-    accent: "bg-teal-400/20",
-    accentMuted: "bg-teal-300/10",
-    ring: "border-teal-400/20",
-    dot: "bg-teal-300",
-  },
-  Search: {
-    gradient: "from-amber-500 via-orange-500 to-yellow-600",
-    glow: "bg-amber-500/20",
-    accent: "bg-amber-400/20",
-    accentMuted: "bg-amber-300/10",
-    ring: "border-amber-400/20",
-    dot: "bg-amber-300",
-  },
-  Building2: {
-    gradient: "from-violet-500 via-purple-600 to-fuchsia-700",
-    glow: "bg-violet-500/20",
-    accent: "bg-violet-400/20",
-    accentMuted: "bg-violet-300/10",
-    ring: "border-violet-400/20",
-    dot: "bg-violet-300",
-  },
-  Zap: {
-    gradient: "from-rose-500 via-red-500 to-pink-600",
-    glow: "bg-rose-500/20",
-    accent: "bg-rose-400/20",
-    accentMuted: "bg-rose-300/10",
-    ring: "border-rose-400/20",
-    dot: "bg-rose-300",
-  },
-  Camera: {
-    gradient: "from-pink-500 via-rose-500 to-fuchsia-600",
-    glow: "bg-pink-500/20",
-    accent: "bg-pink-400/20",
-    accentMuted: "bg-pink-300/10",
-    ring: "border-pink-400/20",
-    dot: "bg-pink-300",
-  },
-  Megaphone: {
-    gradient: "from-emerald-500 via-green-600 to-teal-700",
-    glow: "bg-emerald-500/20",
-    accent: "bg-emerald-400/20",
-    accentMuted: "bg-emerald-300/10",
-    ring: "border-emerald-400/20",
-    dot: "bg-emerald-300",
-  },
+  Globe: { gradient: "from-[#e63a2b] via-[#b5251a] to-[#0a0a0a]", ...sharedAccents },
+  RefreshCw: { gradient: "from-[#1c1c1c] via-[#6b1610] to-[#e63a2b]", ...sharedAccents },
+  Search: { gradient: "from-[#ee5340] via-[#e63a2b] to-[#8e1d15]", ...sharedAccents },
+  Building2: { gradient: "from-[#e63a2b] via-[#6b1610] to-[#0a0a0a]", ...sharedAccents },
+  Zap: { gradient: "from-[#ee5340] via-[#d62e20] to-[#3d0c09]", ...sharedAccents },
+  Camera: { gradient: "from-[#b5251a] via-[#e63a2b] to-[#0a0a0a]", ...sharedAccents },
+  Megaphone: { gradient: "from-[#0a0a0a] via-[#8e1d15] to-[#e63a2b]", ...sharedAccents },
 }
 
 const defaultScheme = colorSchemes.Globe

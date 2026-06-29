@@ -28,8 +28,8 @@ export default function ProjetsPage() {
         </div>
 
         {projets.length === 0 ? (
-          <div className="py-20 text-center bg-slate-50 rounded-3xl border border-dashed border-slate-200">
-             <p className="text-xl font-bold text-slate-400">De nouveaux projets arrivent bient&ocirc;t.</p>
+          <div className="py-20 text-center bg-[#141414] rounded-sm border border-dashed border-[#2a2a2a]">
+             <p className="text-xl font-bold text-aluminium">De nouveaux projets arrivent bient&ocirc;t.</p>
           </div>
         ) : (
           <PortfolioGrid projets={projets} />
