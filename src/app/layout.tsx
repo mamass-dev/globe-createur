@@ -9,6 +9,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { WhatsAppButton } from "@/components/ui/whatsapp-button"
 import { LeadMagnet } from "@/components/ui/lead-magnet"
+import { GrainOverlay } from "@/components/ui/grain"
 import "./globals.css"
 
 const monument = localFont({
@@ -89,6 +90,7 @@ export default function RootLayout({
         <LocalBusinessSchema />
         <WebSiteSchema />
         <OrganizationSchema />
+        <GrainOverlay />
         <Header />
         <main className="flex-1 relative overflow-x-clip">{children}</main>
         <Footer />

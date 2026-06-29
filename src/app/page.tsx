@@ -3,7 +3,8 @@ import Link from "next/link"
 import dynamic from "next/dynamic"
 import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
-import { Hero } from "@/components/sections/hero"
+import { Kicker } from "@/components/ui/kicker"
+import { Marquee } from "@/components/ui/marquee"
 import { ServiceGrid } from "@/components/sections/service-grid"
 import { CityCrosslinks } from "@/components/sections/city-crosslinks"
 import { services } from "@/lib/data/services"
@@ -15,6 +16,7 @@ import { GoogleReviewsBadge } from "@/components/sections/google-reviews-badge"
 import { temoignages, googleReviews } from "@/lib/data/temoignages"
 import { TestimonialsWall } from "@/components/sections/testimonials-wall"
 import { Team } from "@/components/sections/team"
+import { AnimateOnScroll } from "@/components/ui/animate"
 import { AggregateRatingSchema } from "@/components/seo/schemas"
 import { getBlogPosts, getProjetPages } from "@/lib/content"
 import { EasterEgg } from "@/components/ui/easter-egg"
@@ -29,474 +31,341 @@ const Stats = dynamic(() => import("@/components/sections/stats").then(mod => mo
 
 export const revalidate = 3600
 
+const TOOLS = [
+  { href: "/audit-digital", icon: "Target", tag: "2 min · 9 questions", title: "Audit Digital", desc: "Votre score sur 100 et les actions prioritaires pour votre PME.", cta: "Tester mon score" },
+  { href: "/calculateur-roi", icon: "TrendingUp", tag: "Résultats instantanés", title: "Calculateur ROI", desc: "Le chiffre d'affaires perdu chaque mois faute de visibilité Google.", cta: "Calculer mon manque à gagner" },
+  { href: "/analyseur-seo", icon: "Search", tag: "Analyse instantanée", title: "Analyseur SEO", desc: "Un audit SEO complet de votre URL : balises, technique, performance.", cta: "Analyser mon site" },
+  { href: "/generateur-signature-email", icon: "Mail", tag: "5 templates pro", title: "Signature Email", desc: "Une signature pro avec preview multi-client et tracking UTM.", cta: "Créer ma signature" },
+]
+
 export default function HomePage() {
+  const projets = getProjetPages().slice(0, 3)
+  const posts = getBlogPosts().slice(0, 3)
+
   return (
     <>
       <EasterEgg />
       <AggregateRatingSchema ratingValue={5} reviewCount={10} />
 
-      {/* 1. HERO - Centred video layout */}
-      <section className="relative pt-32 pb-12 lg:pt-44 lg:pb-20 mesh-gradient dark:bg-slate-950 overflow-hidden">
-        <Container>
-          {/* Text - centred */}
-          <div className="max-w-4xl mx-auto text-center space-y-6 mb-12 lg:mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950 border border-indigo-100 dark:border-indigo-800 text-indigo-600 dark:text-indigo-400 text-sm font-semibold">
-              <span className="flex h-2 w-2 rounded-full bg-indigo-600 dark:bg-indigo-400 animate-pulse" />
-              Studio Digital 2026
-            </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.08]">
-              Propulsez votre <br className="hidden sm:block" />
-              <span className="text-gradient">croissance digitale.</span>
-            </h1>
-            <p className="text-lg lg:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
-              Stratégies digitales haute performance, sites web qui convertissent et automatisations qui vous font gagner du temps.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
-              <Button href="/devis" className="bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white px-8 h-14 rounded-xl text-lg font-bold shadow-lg shadow-indigo-200 dark:shadow-indigo-950">
-                Démarrer un projet
-              </Button>
-              <Button href="/projets" className="bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 px-8 h-14 rounded-xl text-lg font-bold">
-                Voir nos réalisations
-              </Button>
-            </div>
-            <div className="flex justify-center pt-2">
-              <GoogleReviewsBadge reviews={googleReviews} />
-            </div>
+      {/* ═══ 1. HERO ═══ */}
+      <section className="relative overflow-hidden bg-[#0a0a0a] pt-32 pb-12 lg:pt-44 lg:pb-16">
+        <div className="mesh-gradient absolute inset-0 pointer-events-none" aria-hidden="true" />
+        <Container className="relative">
+          <div className="max-w-5xl">
+            <AnimateOnScroll>
+              <Kicker number="01">Studio créatif — Dijon · est. 2025</Kicker>
+            </AnimateOnScroll>
+            <AnimateOnScroll delay={0.08}>
+              <h1 className="text-impact mt-8 text-[3.25rem] leading-[0.9] sm:text-7xl lg:text-[8rem] text-ivory">
+                Propulsez votre
+                <br />
+                <span className="text-signal">croissance digitale.</span>
+              </h1>
+            </AnimateOnScroll>
           </div>
 
-          {/* Video - central, full width with perspective */}
-          <div className="relative max-w-5xl mx-auto">
-            <div className="relative" style={{ perspective: "1200px" }}>
-              <div className="transform-gpu" style={{ transform: "rotateX(2deg)" }}>
-                <VideoHero videoId="56KVxVaWeEw" poster="/images/video-cover.webp" />
+          <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+            <AnimateOnScroll delay={0.16} className="lg:col-span-7">
+              <p className="text-lg lg:text-xl text-aluminium leading-relaxed max-w-xl">
+                Stratégies digitales haute performance, sites web qui convertissent et automatisations qui vous font gagner du temps.
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <Button href="/devis" size="lg">Démarrer un projet</Button>
+                <Button href="/projets" variant="outline" size="lg">Voir nos réalisations</Button>
               </div>
-            </div>
-            {/* Glow effects */}
-            <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-indigo-600/15 dark:bg-indigo-400/10 blur-3xl rounded-full pointer-events-none" />
-            <div className="absolute -top-8 -left-16 h-32 w-32 bg-indigo-600/10 dark:bg-indigo-400/10 blur-3xl rounded-full pointer-events-none" />
-            <div className="absolute -top-8 -right-16 h-32 w-32 bg-violet-600/10 dark:bg-violet-400/10 blur-3xl rounded-full pointer-events-none" />
+            </AnimateOnScroll>
+            <AnimateOnScroll delay={0.24} className="lg:col-span-5 lg:justify-self-end">
+              <GoogleReviewsBadge reviews={googleReviews} />
+            </AnimateOnScroll>
           </div>
+
+          {/* Video */}
+          <AnimateOnScroll delay={0.2} className="relative mt-16 lg:mt-24">
+            <div className="absolute -inset-x-10 -bottom-10 h-40 bg-signal/10 blur-3xl pointer-events-none" />
+            <div className="relative border border-[#1c1c1c] bg-[#0f0f0f] p-2">
+              <VideoHero videoId="56KVxVaWeEw" poster="/images/video-cover.webp" />
+            </div>
+          </AnimateOnScroll>
         </Container>
       </section>
 
-      {/* 2. LOGO MARQUEE */}
+      {/* ═══ MARQUEE mots-clés ═══ */}
+      <div className="border-y border-[#1c1c1c] bg-[#0a0a0a] py-6">
+        <Marquee
+          items={["DESIGN", "PHOTO", "VIDÉO", "WEB", "BRANDING", "SEO", "STRATÉGIE", "CONTENU"]}
+          speed={32}
+          className="text-impact text-3xl lg:text-5xl text-ivory"
+        />
+      </div>
+
+      {/* ═══ LOGOS ═══ */}
       <LogoMarquee logos={logos} title="Ils nous font confiance" />
 
-      {/* 3. CORE SERVICES - SaaS Grid */}
-      <section className="py-24 bg-slate-50 dark:bg-slate-900">
-        <Container>
-           <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-              <h2 className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">Expertises</h2>
-              <h3 className="text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white">Des solutions conçues <br /> pour la performance.</h3>
-              <p className="text-lg text-slate-600 dark:text-slate-400">
-                 Une approche holistique du digital pour couvrir tous vos besoins de croissance.
-              </p>
-           </div>
+      {/* ═══ 2. EXPERTISES ═══ */}
+      <ServiceGrid
+        services={services}
+        title="Des solutions conçues pour la performance"
+        subtitle="Une approche holistique du digital pour couvrir tous vos besoins de croissance."
+        badge="02 — Expertises"
+      />
 
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {services.map((service) => (
-                 <Link key={service.slug} href={`/services/${service.slug}`} className="group p-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
-                    <div className="h-12 w-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                       <LucideIcon name="CheckCircle2" className="h-6 w-6" />
+      {/* ═══ 3. MÉTHODOLOGIE ═══ */}
+      <section className="py-24 lg:py-32 bg-[#0a0a0a]">
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <AnimateOnScroll className="order-2 lg:order-1 relative">
+              <div className="relative aspect-square overflow-hidden border border-[#1c1c1c]">
+                <Image
+                  src="/images/collaboration.webp"
+                  alt="L'équipe Globe Créateur en shooting photo sur le terrain"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  loading="lazy"
+                />
+              </div>
+              <div className="absolute -bottom-px -right-px bg-signal p-6 max-w-xs">
+                <p className="font-display font-bold uppercase text-white text-sm tracking-wide">Optimisation ROI</p>
+                <p className="mt-2 text-xs text-white/80 leading-relaxed">Chaque action analysée pour garantir un retour sur investissement maximal.</p>
+              </div>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll delay={0.1} className="order-1 lg:order-2">
+              <Kicker number="03">Méthodologie</Kicker>
+              <h2 className="text-impact mt-6 text-4xl lg:text-6xl text-ivory">
+                Plus qu'une agence,<br />un partenaire.
+              </h2>
+              <div className="mt-10 space-y-px">
+                {[
+                  { t: "Transparence totale", d: "Des rapports clairs et un suivi direct de vos indicateurs de performance." },
+                  { t: "Expertise multi-canal", d: "Web, SEO, contenu et no-code réunis pour une vision 360°." },
+                  { t: "Accompagnement de proximité", d: "Basés à Dijon, nous sommes à vos côtés sur le terrain." },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-5 border-t border-[#1c1c1c] py-6">
+                    <span className="font-mono-accent text-signal text-sm shrink-0 pt-1">0{i + 1}</span>
+                    <div>
+                      <h3 className="font-display font-bold text-ivory uppercase tracking-wide">{item.t}</h3>
+                      <p className="text-aluminium text-sm mt-2 leading-relaxed">{item.d}</p>
                     </div>
-                    <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                       {service.title}
-                    </h4>
-                    <p className="text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
-                       {service.excerpt}
-                    </p>
-                    <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-bold text-sm">
-                       En savoir plus <LucideIcon name="ArrowRight" className="h-4 w-4" />
-                    </div>
-                 </Link>
-              ))}
-           </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-10">
+                <Button href="/a-propos" variant="secondary" size="md">Découvrir notre manifeste</Button>
+              </div>
+            </AnimateOnScroll>
+          </div>
         </Container>
       </section>
 
-      {/* 4. IMAGE + CONTENT - SaaS Layout */}
-      <section className="py-24 dark:bg-slate-950">
-        <Container>
-           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-              <div className="order-2 lg:order-1 relative">
-                 <div className="rounded-3xl overflow-hidden shadow-2xl border border-slate-100 dark:border-slate-800 aspect-square relative">
-                    <Image
-                       src="/images/collaboration.webp"
-                       alt="L'équipe Globe Créateur en shooting photo sur le terrain"
-                       fill
-                       sizes="(max-width: 1024px) 100vw, 50vw"
-                       className="object-cover"
-                       loading="lazy"
-                    />
-                 </div>
-                 <div className="absolute -bottom-8 -right-8 p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 max-w-xs animate-float">
-                    <div className="flex items-center gap-4 mb-3">
-                       <div className="h-10 w-10 rounded-full bg-indigo-100 dark:bg-indigo-950 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
-                          <LucideIcon name="CheckCircle2" className="h-6 w-6" />
-                       </div>
-                       <p className="font-bold text-slate-900 dark:text-white text-sm">Optimisation ROI</p>
-                    </div>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">Nous analysons chaque action pour garantir un retour sur investissement maximal.</p>
-                 </div>
-              </div>
-
-              <div className="order-1 lg:order-2 space-y-8">
-                 <h2 className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">Méthodologie</h2>
-                 <h3 className="text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight">
-                    Plus qu'une agence, <br /> un partenaire de confiance.
-                 </h3>
-                 <div className="space-y-6">
-                    {[
-                       { t: "Transparence Totale", d: "Des rapports clairs et un suivi direct de vos indicateurs de performance." },
-                       { t: "Expertise Multi-Canal", d: "Web, SEO, Contenu et No-code réunis pour une vision 360°." },
-                       { t: "Accompagnement de Proximité", d: "Basés à Dijon, nous sommes à vos côtés sur le terrain." }
-                    ].map((item, i) => (
-                       <div key={i} className="flex gap-4">
-                          <LucideIcon name="CheckCircle2" className="h-6 w-6 text-indigo-600 dark:text-indigo-400 shrink-0" />
-                          <div>
-                             <h4 className="font-bold text-slate-900 dark:text-white">{item.t}</h4>
-                             <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">{item.d}</p>
-                          </div>
-                       </div>
-                    ))}
-                 </div>
-                 <div className="pt-4">
-                    <Button href="/a-propos" className="bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-100 text-white dark:text-slate-900 px-8 h-12 rounded-xl font-bold transition-all">
-                       Découvrir notre manifeste
-                    </Button>
-                 </div>
-              </div>
-           </div>
-        </Container>
-      </section>
-
-      {/* 5. TEAM */}
+      {/* ═══ 4. TEAM ═══ */}
       <Team />
 
-      {/* 6. STATS - SaaS Impact */}
+      {/* ═══ STATS ═══ */}
       <Stats
         stats={[
           { value: 110, suffix: "+", label: "Projets Réalisés" },
           { value: 30, suffix: "+", label: "PME Accompagnées" },
           { value: 97, suffix: "%", label: "Clients Satisfaits" },
-          { value: 350, suffix: "+", label: "Shooting Photos" }
+          { value: 350, suffix: "+", label: "Shooting Photos" },
         ]}
       />
 
-      {/* 6. TESTIMONIALS WALL */}
+      {/* ═══ TÉMOIGNAGES ═══ */}
       <TestimonialsWall reviews={temoignages} />
 
-      {/* 7. FREE TOOLS - Lead magnets */}
-      <section className="py-24 bg-slate-50 dark:bg-slate-900">
+      {/* ═══ 5. OUTILS GRATUITS ═══ */}
+      <section className="py-24 lg:py-32 bg-[#0f0f0f]">
         <Container>
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 dark:bg-green-950 border border-green-100 dark:border-green-800 text-green-600 dark:text-green-400 text-sm font-semibold">
-              <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-              Outils gratuits
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white">
-              Testez avant de <span className="text-gradient">vous lancer.</span>
+          <AnimateOnScroll className="max-w-3xl mb-16 lg:mb-20">
+            <Kicker number="05">Outils gratuits</Kicker>
+            <h2 className="text-impact mt-6 text-4xl lg:text-6xl text-ivory">
+              Testez avant de vous lancer.
             </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-400">
+            <p className="mt-5 text-lg text-aluminium">
               Quatre outils gratuits pour évaluer votre situation et mesurer le potentiel de votre présence digitale.
             </p>
-          </div>
+          </AnimateOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {/* Audit Digital */}
-            <Link
-              href="/audit-digital"
-              className="group relative p-8 lg:p-10 bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-50 dark:bg-indigo-950/50 rounded-full -translate-y-1/2 translate-x-1/2 opacity-60" />
-              <div className="relative">
-                <div className="h-14 w-14 rounded-2xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                  <LucideIcon name="Target" className="h-7 w-7" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#1c1c1c] border border-[#1c1c1c]">
+            {TOOLS.map((tool) => (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="group relative bg-[#0a0a0a] p-8 lg:p-10 transition-colors duration-300 hover:bg-[#141414]"
+              >
+                <div className="flex items-center justify-center h-14 w-14 rounded-none bg-signal/15 text-signal mb-8 group-hover:bg-signal group-hover:text-white transition-colors">
+                  <LucideIcon name={tool.icon} className="h-6 w-6" />
                 </div>
-                <div className="inline-block px-2 py-0.5 rounded-full bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-400 text-[11px] font-bold uppercase tracking-wider mb-3">
-                  2 min &middot; 9 questions
-                </div>
-                <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                  Audit Digital Gratuit
+                <span className="font-mono-accent text-[11px] uppercase tracking-[0.2em] text-aluminium">{tool.tag}</span>
+                <h3 className="mt-3 text-xl font-display font-bold text-ivory uppercase tracking-tight group-hover:text-signal transition-colors">
+                  {tool.title}
                 </h3>
-                <p className="text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
-                  Obtenez votre score sur 100 et découvrez vos forces, faiblesses et les actions prioritaires pour votre PME.
-                </p>
-                <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-bold text-sm">
-                  Tester mon score
+                <p className="mt-3 text-sm text-aluminium leading-relaxed">{tool.desc}</p>
+                <div className="mt-6 flex items-center gap-2 text-signal font-bold text-xs uppercase tracking-widest">
+                  {tool.cta}
                   <LucideIcon name="ArrowRight" className="h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
                 </div>
-              </div>
-            </Link>
-
-            {/* Calculateur ROI */}
-            <Link
-              href="/calculateur-roi"
-              className="group relative p-8 lg:p-10 bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-red-50 dark:bg-red-950/50 rounded-full -translate-y-1/2 translate-x-1/2 opacity-60" />
-              <div className="relative">
-                <div className="h-14 w-14 rounded-2xl bg-red-50 dark:bg-red-950 text-red-500 dark:text-red-400 flex items-center justify-center mb-6 group-hover:bg-red-500 group-hover:text-white transition-colors">
-                  <LucideIcon name="TrendingUp" className="h-7 w-7" />
-                </div>
-                <div className="inline-block px-2 py-0.5 rounded-full bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-400 text-[11px] font-bold uppercase tracking-wider mb-3">
-                  Résultats instantanés
-                </div>
-                <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-3 group-hover:text-red-500 dark:group-hover:text-red-400 transition-colors">
-                  Calculateur ROI
-                </h3>
-                <p className="text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
-                  Estimez le chiffre d&apos;affaires que vous perdez chaque mois en n&apos;étant pas visible sur Google.
-                </p>
-                <div className="flex items-center gap-2 text-red-500 dark:text-red-400 font-bold text-sm">
-                  Calculer mon manque à gagner
-                  <LucideIcon name="ArrowRight" className="h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
-                </div>
-              </div>
-            </Link>
-
-            {/* Analyseur SEO */}
-            <Link
-              href="/analyseur-seo"
-              className="group relative p-8 lg:p-10 bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-green-50 dark:bg-green-950/50 rounded-full -translate-y-1/2 translate-x-1/2 opacity-60" />
-              <div className="relative">
-                <div className="h-14 w-14 rounded-2xl bg-green-50 dark:bg-green-950 text-green-600 dark:text-green-400 flex items-center justify-center mb-6 group-hover:bg-green-600 group-hover:text-white transition-colors">
-                  <LucideIcon name="Search" className="h-7 w-7" />
-                </div>
-                <div className="inline-block px-2 py-0.5 rounded-full bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-400 text-[11px] font-bold uppercase tracking-wider mb-3">
-                  Analyse instantanée
-                </div>
-                <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-3 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
-                  Analyseur SEO
-                </h3>
-                <p className="text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
-                  Entrez votre URL et obtenez un audit SEO complet : balises, technique, réseaux sociaux et performance.
-                </p>
-                <div className="flex items-center gap-2 text-green-600 dark:text-green-400 font-bold text-sm">
-                  Analyser mon site
-                  <LucideIcon name="ArrowRight" className="h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
-                </div>
-              </div>
-            </Link>
-
-            {/* Signature Email */}
-            <Link
-              href="/generateur-signature-email"
-              className="group relative p-8 lg:p-10 bg-white dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-violet-50 dark:bg-violet-950/50 rounded-full -translate-y-1/2 translate-x-1/2 opacity-60" />
-              <div className="relative">
-                <div className="h-14 w-14 rounded-2xl bg-violet-50 dark:bg-violet-950 text-violet-600 dark:text-violet-400 flex items-center justify-center mb-6 group-hover:bg-violet-600 group-hover:text-white transition-colors">
-                  <LucideIcon name="Mail" className="h-7 w-7" />
-                </div>
-                <div className="inline-block px-2 py-0.5 rounded-full bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-400 text-[11px] font-bold uppercase tracking-wider mb-3">
-                  5 templates pro
-                </div>
-                <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-3 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
-                  Signature Email
-                </h3>
-                <p className="text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
-                  Créez une signature email professionnelle avec preview multi-client et tracking UTM intégré.
-                </p>
-                <div className="flex items-center gap-2 text-violet-600 dark:text-violet-400 font-bold text-sm">
-                  Créer ma signature
-                  <LucideIcon name="ArrowRight" className="h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
-                </div>
-              </div>
-            </Link>
+              </Link>
+            ))}
           </div>
         </Container>
       </section>
 
-      {/* 7b. SECTORS - Vertical specializations */}
-      <section className="py-24 dark:bg-slate-950">
+      {/* ═══ 6. SECTEURS ═══ */}
+      <section className="py-24 lg:py-32 bg-[#0a0a0a]">
         <Container>
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 dark:bg-amber-950 border border-amber-100 dark:border-amber-800 text-amber-700 dark:text-amber-400 text-xs font-black uppercase tracking-widest">
-              Secteurs accompagnés
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white">
-              Nous parlons votre <span className="text-gradient">métier.</span>
-            </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-400">
+          <AnimateOnScroll className="max-w-3xl mb-16">
+            <Kicker number="06">Secteurs accompagnés</Kicker>
+            <h2 className="text-impact mt-6 text-4xl lg:text-6xl text-ivory">Nous parlons votre métier.</h2>
+            <p className="mt-5 text-lg text-aluminium">
               Des sites et des stratégies pensés pour les spécificités de votre secteur d&apos;activité.
             </p>
-          </div>
+          </AnimateOnScroll>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#1c1c1c] border border-[#1c1c1c]">
             {secteurs.map((s) => (
               <Link
                 key={s.slug}
                 href={`/secteurs/${s.slug}`}
-                className="group flex items-center gap-3 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 transition-all hover:border-indigo-300 dark:hover:border-indigo-600 hover:shadow-md hover:-translate-y-0.5"
+                className="group flex items-center gap-3 bg-[#0a0a0a] p-5 transition-colors hover:bg-[#141414]"
               >
-                <div className="h-10 w-10 rounded-xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                <div className="h-10 w-10 rounded-none bg-signal/15 text-signal flex items-center justify-center shrink-0 group-hover:bg-signal group-hover:text-white transition-colors">
                   <LucideIcon name={s.icon} className="h-5 w-5" />
                 </div>
-                <span className="font-semibold text-slate-900 dark:text-white text-sm group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                <span className="font-semibold text-ivory text-sm group-hover:text-signal transition-colors">
                   {s.title.replace(/^Sites? (internet|e-commerce) pour /i, "").replace(/^le bien-être et la santé/i, "Bien-être & santé")}
                 </span>
               </Link>
             ))}
           </div>
 
-          <div className="text-center mt-10">
-            <Link
-              href="/secteurs"
-              className="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 transition-colors"
-            >
-              Voir tous les secteurs
-              <LucideIcon name="ArrowRight" className="h-4 w-4" />
+          <div className="mt-10">
+            <Link href="/secteurs" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-signal hover:gap-4 transition-all">
+              Voir tous les secteurs <LucideIcon name="ArrowRight" className="h-4 w-4" />
             </Link>
           </div>
         </Container>
       </section>
 
-      {/* 7c. PROJECTS - Featured case studies */}
-      <section className="py-24 dark:bg-slate-950">
+      {/* ═══ 7. RÉALISATIONS ═══ */}
+      <section className="py-24 lg:py-32 bg-[#0f0f0f]">
         <Container>
-          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-12">
-            <div className="space-y-3 max-w-2xl">
-              <h2 className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">Réalisations</h2>
-              <h3 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Nos derniers projets pour PME</h3>
-              <p className="text-slate-600 dark:text-slate-400">
-                Des sites internet, du SEO local, des contenus visuels livrés pour des PME en Bourgogne et au-delà.
-              </p>
-            </div>
-            <Link
-              href="/projets"
-              className="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 transition-colors shrink-0"
-            >
-              Voir tous nos projets
-              <LucideIcon name="ArrowRight" className="h-4 w-4" />
+          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-14">
+            <AnimateOnScroll className="max-w-2xl">
+              <Kicker number="07">Réalisations</Kicker>
+              <h2 className="text-impact mt-6 text-4xl lg:text-6xl text-ivory">Nos derniers projets</h2>
+            </AnimateOnScroll>
+            <Link href="/projets" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-signal hover:gap-4 transition-all shrink-0">
+              Tous nos projets <LucideIcon name="ArrowRight" className="h-4 w-4" />
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {getProjetPages()
-              .slice(0, 3)
-              .map((projet) => {
-                const fm = projet.frontmatter as Record<string, string>
-                return (
-                  <Link key={projet.slug} href={`/projets/${projet.slug}`} className="group">
+            {projets.map((projet) => {
+              const fm = projet.frontmatter as Record<string, string>
+              return (
+                <AnimateOnScroll key={projet.slug}>
+                  <Link href={`/projets/${projet.slug}`} className="group block">
                     {fm.image && (
-                      <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5 bg-slate-100 dark:bg-slate-800">
+                      <div className="relative aspect-[4/3] overflow-hidden border border-[#1c1c1c] mb-5 bg-[#141414]">
                         <Image
                           src={fm.image}
                           alt={fm.imageAlt || fm.title}
                           fill
                           sizes="(max-width: 768px) 100vw, 33vw"
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                           loading="lazy"
                         />
                       </div>
                     )}
-                    <div className="space-y-2">
-                      {fm.category && (
-                        <p className="text-xs font-bold uppercase tracking-widest text-indigo-500">
-                          {fm.category}
-                        </p>
-                      )}
-                      <h4 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors leading-snug">
-                        {fm.title}
-                      </h4>
-                      {fm.excerpt && (
-                        <p className="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">
-                          {fm.excerpt}
-                        </p>
-                      )}
-                    </div>
+                    {fm.category && (
+                      <span className="font-mono-accent text-[11px] uppercase tracking-[0.2em] text-signal">{fm.category}</span>
+                    )}
+                    <h3 className="mt-2 text-xl font-display font-bold text-ivory group-hover:text-signal transition-colors leading-snug">
+                      {fm.title}
+                    </h3>
+                    {fm.excerpt && <p className="mt-2 text-sm text-aluminium line-clamp-2">{fm.excerpt}</p>}
                   </Link>
-                )
-              })}
+                </AnimateOnScroll>
+              )
+            })}
           </div>
         </Container>
       </section>
 
-      {/* 8. BLOG - Latest articles */}
-      <section className="py-24 bg-slate-50 dark:bg-slate-900">
+      {/* ═══ 8. BLOG ═══ */}
+      <section className="py-24 lg:py-32 bg-[#0a0a0a]">
         <Container>
-          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-12">
-            <div className="space-y-3">
-              <h2 className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">Blog</h2>
-              <h3 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Derniers articles</h3>
-            </div>
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 transition-colors shrink-0"
-            >
-              Voir tous les articles
-              <LucideIcon name="ArrowRight" className="h-4 w-4" />
+          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-14">
+            <AnimateOnScroll>
+              <Kicker number="08">Journal</Kicker>
+              <h2 className="text-impact mt-6 text-4xl lg:text-6xl text-ivory">Derniers articles</h2>
+            </AnimateOnScroll>
+            <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-signal hover:gap-4 transition-all shrink-0">
+              Tous les articles <LucideIcon name="ArrowRight" className="h-4 w-4" />
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {getBlogPosts()
-              .slice(0, 3)
-              .map((post) => (
-                <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="group"
-                >
-                  <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-5">
+            {posts.map((post) => (
+              <AnimateOnScroll key={post.slug}>
+                <Link href={`/blog/${post.slug}`} className="group block">
+                  <div className="relative aspect-[16/9] overflow-hidden border border-[#1c1c1c] mb-5">
                     <Image
                       src={post.frontmatter.image}
                       alt={post.frontmatter.imageAlt || post.frontmatter.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                       loading="lazy"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <p className="text-xs font-bold uppercase tracking-widest text-indigo-500">
-                      {new Date(post.frontmatter.publishedAt).toLocaleDateString("fr-FR", {
-                        day: "numeric",
-                        month: "long",
-                        year: "numeric",
-                      })}
-                    </p>
-                    <h4 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors leading-snug">
-                      {post.frontmatter.title}
-                    </h4>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">
-                      {post.frontmatter.metaDescription}
-                    </p>
-                  </div>
+                  <span className="font-mono-accent text-[11px] uppercase tracking-[0.2em] text-signal">
+                    {new Date(post.frontmatter.publishedAt).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}
+                  </span>
+                  <h3 className="mt-2 text-xl font-display font-bold text-ivory group-hover:text-signal transition-colors leading-snug">
+                    {post.frontmatter.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-aluminium line-clamp-2">{post.frontmatter.metaDescription}</p>
                 </Link>
-              ))}
+              </AnimateOnScroll>
+            ))}
           </div>
         </Container>
       </section>
 
-      {/* 8b. CITY CROSSLINKS - Local SEO */}
+      {/* ═══ ZONES ═══ */}
       <CityCrosslinks
         title="Notre périmètre d'intervention"
         subtitle="Studio basé à Dijon, on intervient partout en Bourgogne-Franche-Comté et en Auvergne-Rhône-Alpes."
       />
 
-      {/* 9. CTA - SaaS Conversion */}
-      <section className="py-32 bg-white dark:bg-slate-950">
-        <Container className="text-center">
-           <div className="max-w-4xl mx-auto space-y-10">
-              <h2 className="text-4xl lg:text-7xl font-extrabold text-slate-900 dark:text-white leading-tight">
-                 Prêt à transformer votre <br /> <span className="text-indigo-600 dark:text-indigo-400 italic">vision</span> en réalité ?
+      {/* ═══ 9. CTA ═══ */}
+      <section className="relative overflow-hidden bg-signal py-28 lg:py-40">
+        <Container className="relative">
+          <div className="max-w-4xl">
+            <AnimateOnScroll>
+              <span className="font-mono-accent text-xs font-bold uppercase tracking-[0.25em] text-white/70">— Parlons-en</span>
+              <h2 className="text-impact mt-6 text-5xl lg:text-8xl text-white">
+                Prêt à transformer votre vision en réalité ?
               </h2>
-              <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-                 Discutons de vos objectifs lors d'un premier échange gratuit de 20 minutes.
+              <p className="mt-8 text-xl text-white/80 max-w-2xl">
+                Discutons de vos objectifs lors d&apos;un premier échange gratuit de 20 minutes.
               </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-6">
-                 <Button href="/devis" className="bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white px-12 h-16 rounded-2xl text-xl font-bold shadow-2xl shadow-indigo-100 dark:shadow-indigo-950 transition-all">
-                    Démarrer maintenant
-                 </Button>
-                 <Button href="/contact" className="bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 px-12 h-16 rounded-2xl text-xl font-bold">
-                    Nous contacter
-                 </Button>
+              <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                <Button href="/devis" size="lg" className="bg-noir text-ivory hover:bg-[#1c1c1c] transition-colors">
+                  Démarrer maintenant
+                </Button>
+                <Button href="/contact" size="lg" className="border border-white/40 text-white hover:bg-white hover:text-signal transition-colors">
+                  Nous contacter
+                </Button>
               </div>
-           </div>
+            </AnimateOnScroll>
+          </div>
+          <div className="absolute -right-[5%] top-1/2 -translate-y-1/2 text-[20vw] font-display font-bold text-white/10 leading-none pointer-events-none select-none uppercase tracking-tighter">
+            Globe
+          </div>
         </Container>
       </section>
     </>

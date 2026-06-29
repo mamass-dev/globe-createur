@@ -2,7 +2,7 @@
 
 import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+import { Kicker } from "@/components/ui/kicker"
 import { AnimateOnScroll } from "@/components/ui/animate"
 
 type PageHeroProps = {
@@ -29,25 +29,26 @@ export function PageHero({
   const isCenter = align === "center"
 
   return (
-    <section className="relative py-16 lg:py-24">
+    <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 bg-[#0a0a0a] overflow-hidden">
       <div className="dot-grid absolute inset-0 pointer-events-none" aria-hidden="true" />
+      <div className="mesh-gradient absolute inset-0 pointer-events-none opacity-60" aria-hidden="true" />
 
       <Container className={`relative ${isCenter ? "text-center" : ""}`}>
         <AnimateOnScroll>
           {badge && (
-            <Badge variant="mono" className="mb-4">
-              {badge}
-            </Badge>
+            <div className={`mb-6 ${isCenter ? "flex justify-center" : ""}`}>
+              <Kicker>{badge}</Kicker>
+            </div>
           )}
           <h1
-            className={`text-[2rem] sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-[1.1] ${
-              isCenter ? "max-w-4xl mx-auto" : "max-w-2xl"
+            className={`text-impact text-4xl sm:text-6xl lg:text-7xl text-ivory ${
+              isCenter ? "max-w-4xl mx-auto" : "max-w-3xl"
             }`}
           >
             {title}
           </h1>
           <p
-            className={`mt-5 text-lg text-gray-400 leading-relaxed ${
+            className={`mt-6 text-lg lg:text-xl text-aluminium leading-relaxed ${
               isCenter ? "max-w-2xl mx-auto" : "max-w-xl"
             }`}
           >
