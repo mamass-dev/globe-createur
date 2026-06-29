@@ -16,8 +16,11 @@ const monument = localFont({
   display: "swap",
   src: [
     { path: "../../public/fonts/MonumentGrotesk-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../../public/fonts/MonumentGrotesk-Italic.woff2", weight: "400", style: "italic" },
     { path: "../../public/fonts/MonumentGrotesk-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../../public/fonts/MonumentGrotesk-MediumItalic.woff2", weight: "500", style: "italic" },
     { path: "../../public/fonts/MonumentGrotesk-Bold.woff2", weight: "700", style: "normal" },
+    { path: "../../public/fonts/MonumentGrotesk-BoldItalic.woff2", weight: "700", style: "italic" },
   ],
 })
 
