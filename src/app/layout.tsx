@@ -10,6 +10,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { WhatsAppButton } from "@/components/ui/whatsapp-button"
 import { LeadMagnet } from "@/components/ui/lead-magnet"
 import { GrainOverlay } from "@/components/ui/grain"
+import { HideOnCard } from "@/components/layout/hide-on-card"
 import "./globals.css"
 
 const monument = localFont({
@@ -91,11 +92,15 @@ export default function RootLayout({
         <WebSiteSchema />
         <OrganizationSchema />
         <GrainOverlay />
-        <Header />
+        <HideOnCard>
+          <Header />
+        </HideOnCard>
         <main className="flex-1 relative overflow-x-clip">{children}</main>
-        <Footer />
-        <WhatsAppButton />
-        <LeadMagnet />
+        <HideOnCard>
+          <Footer />
+          <WhatsAppButton />
+          <LeadMagnet />
+        </HideOnCard>
         <Analytics />
         <SpeedInsights />
       </body>
