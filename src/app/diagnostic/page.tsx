@@ -18,48 +18,48 @@ const questions: Question[] = [
   {
     id: "site",
     question: "Vous avez un site internet ?",
-    subtext: "Soyez honnete, c'est entre nous.",
+    subtext: "Soyez honnête, c'est entre nous.",
     answers: [
       { label: "Non, rien du tout", value: "none", icon: "🚫" },
       { label: "Oui, mais il date", value: "old", icon: "🕸️" },
       { label: "Oui, il est correct", value: "ok", icon: "👍" },
-      { label: "Oui, mais il ne ramene rien", value: "dead", icon: "💀" },
+      { label: "Oui, mais il ne ramène rien", value: "dead", icon: "💀" },
     ],
   },
   {
     id: "clients",
-    question: "D'ou viennent vos clients aujourd'hui ?",
-    subtext: "La vraie reponse, pas celle que vous aimeriez donner.",
+    question: "D'où viennent vos clients aujourd'hui ?",
+    subtext: "La vraie réponse, pas celle que vous aimeriez donner.",
     answers: [
-      { label: "Bouche a oreille", value: "word", icon: "🗣️" },
+      { label: "Bouche à oreille", value: "word", icon: "🗣️" },
       { label: "Google / SEO", value: "seo", icon: "🔍" },
-      { label: "Reseaux sociaux", value: "social", icon: "📱" },
+      { label: "Réseaux sociaux", value: "social", icon: "📱" },
       { label: "Je ne sais pas", value: "unknown", icon: "🤷" },
     ],
   },
   {
     id: "problem",
-    question: "C'est quoi votre vrai probleme ?",
-    subtext: "Celui qui vous empeche de dormir.",
+    question: "C'est quoi votre vrai problème ?",
+    subtext: "Celui qui vous empêche de dormir.",
     answers: [
       { label: "Pas assez de clients", value: "clients", icon: "📉" },
       { label: "Pas le temps pour la com'", value: "time", icon: "⏰" },
-      { label: "Je ne sais pas par ou commencer", value: "lost", icon: "🧭" },
+      { label: "Je ne sais pas par où commencer", value: "lost", icon: "🧭" },
       { label: "Mon site ne convertit pas", value: "conversion", icon: "🔄" },
     ],
   },
   {
     id: "sector",
     question: "Vous faites quoi ?",
-    subtext: "Pour qu'on parle la meme langue.",
+    subtext: "Pour qu'on parle la même langue.",
     answers: [
       { label: "Artisan / BTP", value: "artisan", icon: "🔨" },
-      { label: "Restaurant / Hotellerie", value: "horeca", icon: "🍽️" },
+      { label: "Restaurant / Hôtellerie", value: "horeca", icon: "🍽️" },
       { label: "Commerce / E-commerce", value: "commerce", icon: "🛍️" },
-      { label: "Profession liberale", value: "liberal", icon: "⚖️" },
-      { label: "Bien-etre / Sante", value: "sante", icon: "🧘" },
+      { label: "Profession libérale", value: "liberal", icon: "⚖️" },
+      { label: "Bien-être / Santé", value: "sante", icon: "🧘" },
       { label: "Immobilier", value: "immobilier", icon: "🏠" },
-      { label: "Evenementiel", value: "evenementiel", icon: "🎉" },
+      { label: "Événementiel", value: "evenementiel", icon: "🎉" },
       { label: "Autre PME / Services", value: "services", icon: "💼" },
     ],
   },
@@ -78,39 +78,39 @@ const FORFAITS: Record<string, Forfait> = {
   essentiel: {
     name: "Essentiel",
     tagline: "Poser les fondations",
-    why: "Vous partez de zero ou presque. Il faut d'abord exister en ligne avant de vouloir performer.",
+    why: "Vous partez de zéro ou presque. Il faut d'abord exister en ligne avant de vouloir performer.",
     features: [
       "Site internet offert",
-      "Pilotage mensuel personnalise",
-      "1 reseau social optimise",
-      "Contenus adaptes a vos priorites",
+      "Pilotage mensuel personnalisé",
+      "1 réseau social optimisé",
+      "Contenus adaptés à vos priorités",
       "Support email sous 24h",
     ],
   },
   croissance: {
     name: "Croissance",
-    tagline: "Accelerer la visibilite",
-    why: "Vous avez les bases mais pas les resultats. Il faut passer a la vitesse superieure avec du contenu regulier et du SEO serieux.",
+    tagline: "Accélérer la visibilité",
+    why: "Vous avez les bases mais pas les résultats. Il faut passer à la vitesse supérieure avec du contenu régulier et du SEO sérieux.",
     features: [
       "Tout Essentiel +",
-      "2 reseaux sociaux geres",
+      "2 réseaux sociaux gérés",
       "Shooting photo mensuel",
-      "Plan editorial & contenus mensuels",
-      "SEO local avance",
-      "Reporting mensuel detaille",
+      "Plan éditorial & contenus mensuels",
+      "SEO local avancé",
+      "Reporting mensuel détaillé",
     ],
   },
   performance: {
     name: "Performance",
-    tagline: "Dominer le marche",
-    why: "Vous avez besoin d'une machine de guerre. Communication complete, automatisee, avec un chef de projet dedie qui pilote tout.",
+    tagline: "Dominer le marché",
+    why: "Vous avez besoin d'une machine de guerre. Communication complète, automatisée, avec un chef de projet dédié qui pilote tout.",
     features: [
       "Tout Croissance +",
-      "Video pro mensuelle",
-      "Gestion complete des reseaux",
+      "Vidéo pro mensuelle",
+      "Gestion complète des réseaux",
       "CRM & automatisations",
       "Campagnes Meta / LinkedIn",
-      "Chef de projet dedie",
+      "Chef de projet dédié",
     ],
   },
 }
@@ -120,25 +120,25 @@ const FORFAITS: Record<string, Forfait> = {
 type CaseStudy = { name: string; before: string; after: string; metric: string }
 
 const CASE_STUDIES: Record<string, CaseStudy> = {
-  artisan: { name: "Artisan plombier a Dijon", before: "0 demande en ligne, 100% bouche a oreille", after: "12 demandes de devis/mois via le site en 3 mois", metric: "+12 leads/mois" },
-  horeca: { name: "Restaurant gastronomique a Beaune", before: "Site de 2019, 200 visites/mois, 0 reservation en ligne", after: "1 200 visites/mois, 35 reservations/mois", metric: "x6 en trafic" },
-  commerce: { name: "Boutique deco a Chalon-sur-Saone", before: "Zero visibilite en ligne, clients uniquement en magasin", after: "Click & collect lance, +40% de CA en 4 mois", metric: "+40% de CA" },
-  liberal: { name: "Cabinet comptable a Dijon", before: "Page 3 de Google, 2 demandes/mois", after: "Top 3 local, 18 demandes/mois", metric: "x9 en leads" },
-  sante: { name: "Osteopathe a Beaune", before: "Agenda rempli uniquement par bouche a oreille, 0 avis Google", after: "42 avis Google, planning complet 3 semaines a l'avance", metric: "Planning complet" },
-  immobilier: { name: "Agence immobiliere a Dijon", before: "Dependance totale aux portails (SeLoger, LeBonCoin)", after: "35% des mandats viennent du site direct", metric: "35% de mandats directs" },
-  evenementiel: { name: "Salle de reception en Cote-d'Or", before: "Site sans photos pro, 3 demandes/mois", after: "Shooting pro + SEO, 22 demandes/mois", metric: "x7 en demandes" },
-  services: { name: "PME de services a Dijon", before: "Communication inexistante, 100% bouche a oreille", after: "Site + SEO + reseaux : pipeline de prospects regulier", metric: "+200% de demandes" },
+  artisan: { name: "Artisan plombier à Dijon", before: "0 demande en ligne, 100% bouche à oreille", after: "12 demandes de devis/mois via le site en 3 mois", metric: "+12 leads/mois" },
+  horeca: { name: "Restaurant gastronomique à Beaune", before: "Site de 2019, 200 visites/mois, 0 réservation en ligne", after: "1 200 visites/mois, 35 réservations/mois", metric: "x6 en trafic" },
+  commerce: { name: "Boutique déco à Chalon-sur-Saône", before: "Zéro visibilité en ligne, clients uniquement en magasin", after: "Click & collect lancé, +40% de CA en 4 mois", metric: "+40% de CA" },
+  liberal: { name: "Cabinet comptable à Dijon", before: "Page 3 de Google, 2 demandes/mois", after: "Top 3 local, 18 demandes/mois", metric: "x9 en leads" },
+  sante: { name: "Ostéopathe à Beaune", before: "Agenda rempli uniquement par bouche à oreille, 0 avis Google", after: "42 avis Google, planning complet 3 semaines à l'avance", metric: "Planning complet" },
+  immobilier: { name: "Agence immobilière à Dijon", before: "Dépendance totale aux portails (SeLoger, LeBonCoin)", after: "35% des mandats viennent du site direct", metric: "35% de mandats directs" },
+  evenementiel: { name: "Salle de réception en Côte-d'Or", before: "Site sans photos pro, 3 demandes/mois", after: "Shooting pro + SEO, 22 demandes/mois", metric: "x7 en demandes" },
+  services: { name: "PME de services à Dijon", before: "Communication inexistante, 100% bouche à oreille", after: "Site + SEO + réseaux : pipeline de prospects régulier", metric: "+200% de demandes" },
 }
 
 const SECTOR_ACTIONS: Record<string, string[]> = {
-  artisan: ["Site vitrine avec formulaire de demande de devis", "SEO local sur vos metiers + zone d'intervention", "Fiche Google Business avec photos de chantiers"],
-  horeca: ["Site avec menu en ligne, photos pro et reservation", "SEO local + fiche Google avec avis clients", "Instagram professionnel avec contenu regulier"],
-  commerce: ["Site e-commerce ou vitrine avec catalogue produits", "SEO local + Google Shopping si pertinent", "Reseaux sociaux avec mise en avant des produits"],
-  liberal: ["Site sobre et professionnel qui inspire confiance", "SEO local sur votre specialite + ville", "Gestion des avis Google et reputation en ligne"],
-  sante: ["Site avec prise de rendez-vous en ligne", "SEO local sur votre discipline + zone", "Fiche Google optimisee avec avis patients"],
-  immobilier: ["Site avec annonces dynamiques et pages de quartier", "SEO local par ville, quartier et type de bien", "Contenu regulier : guides acheteurs, tendances marche"],
-  evenementiel: ["Site immersif avec galeries photo/video des evenements", "SEO saisonnier et campagnes ciblees", "Instagram et Pinterest pour la mise en valeur visuelle"],
-  services: ["Site multi-pages detaillant chaque service", "SEO local sur vos expertises + zone geographique", "Strategie de contenu pour demontrer votre expertise"],
+  artisan: ["Site vitrine avec formulaire de demande de devis", "SEO local sur vos métiers + zone d'intervention", "Fiche Google Business avec photos de chantiers"],
+  horeca: ["Site avec menu en ligne, photos pro et réservation", "SEO local + fiche Google avec avis clients", "Instagram professionnel avec contenu régulier"],
+  commerce: ["Site e-commerce ou vitrine avec catalogue produits", "SEO local + Google Shopping si pertinent", "Réseaux sociaux avec mise en avant des produits"],
+  liberal: ["Site sobre et professionnel qui inspire confiance", "SEO local sur votre spécialité + ville", "Gestion des avis Google et réputation en ligne"],
+  sante: ["Site avec prise de rendez-vous en ligne", "SEO local sur votre discipline + zone", "Fiche Google optimisée avec avis patients"],
+  immobilier: ["Site avec annonces dynamiques et pages de quartier", "SEO local par ville, quartier et type de bien", "Contenu régulier : guides acheteurs, tendances marché"],
+  evenementiel: ["Site immersif avec galeries photo/vidéo des événements", "SEO saisonnier et campagnes ciblées", "Instagram et Pinterest pour la mise en valeur visuelle"],
+  services: ["Site multi-pages détaillant chaque service", "SEO local sur vos expertises + zone géographique", "Stratégie de contenu pour démontrer votre expertise"],
 }
 
 /* ─── PROFILE BUILDER ─── */
@@ -163,14 +163,14 @@ function getProfile(answers: Record<string, string>): Profile {
 
   if (noSite) {
     return {
-      title: "Vous etes invisible. Completement.",
+      title: "Vous êtes invisible. Complètement.",
       problems: [
         "Vos concurrents captent 100% du trafic Google que vous pourriez avoir",
-        "Les prospects qui cherchent votre metier dans votre ville ne vous trouvent pas",
-        "Vous dependez entierement du bouche a oreille - le jour ou il s'arrete, vous aussi",
+        "Les prospects qui cherchent votre métier dans votre ville ne vous trouvent pas",
+        "Vous dépendez entièrement du bouche à oreille - le jour où il s'arrête, vous aussi",
       ],
       actions: sectorActions,
-      lost: "5 a 15 demandes par mois",
+      lost: "5 à 15 demandes par mois",
       caseStudy,
       forfait: "essentiel",
     }
@@ -178,14 +178,14 @@ function getProfile(answers: Record<string, string>): Profile {
 
   if (deadSite && noTime) {
     return {
-      title: "Votre site vous coute de l'argent. Et vous n'avez pas le temps.",
+      title: "Votre site vous coûte de l'argent. Et vous n'avez pas le temps.",
       problems: [
-        "Un site lent ou date fait fuir 53% des visiteurs en moins de 3 secondes",
-        "Vous savez qu'il faut agir mais chaque heure sur la com' est une heure perdue sur votre metier",
-        "Sans equipe dediee, votre communication stagne et vos concurrents avancent",
+        "Un site lent ou daté fait fuir 53% des visiteurs en moins de 3 secondes",
+        "Vous savez qu'il faut agir mais chaque heure sur la com' est une heure perdue sur votre métier",
+        "Sans équipe dédiée, votre communication stagne et vos concurrents avancent",
       ],
-      actions: ["Refonte complete avec un design moderne et performant", ...sectorActions.slice(1), "Pilotage complet - on gere tout, vous recevez un reporting"],
-      lost: "10 a 15 heures par semaine + la majorite de votre trafic potentiel",
+      actions: ["Refonte complète avec un design moderne et performant", ...sectorActions.slice(1), "Pilotage complet - on gère tout, vous recevez un reporting"],
+      lost: "10 à 15 heures par semaine + la majorité de votre trafic potentiel",
       caseStudy,
       forfait: "performance",
     }
@@ -195,12 +195,12 @@ function getProfile(answers: Record<string, string>): Profile {
     return {
       title: "Votre site travaille contre vous.",
       problems: [
-        "Un site lent ou date fait fuir 53% des visiteurs en moins de 3 secondes",
-        "Google penalise les sites non-responsive et mal optimises",
+        "Un site lent ou daté fait fuir 53% des visiteurs en moins de 3 secondes",
+        "Google pénalise les sites non-responsive et mal optimisés",
         "Vos concurrents avec un site moderne captent vos prospects",
       ],
-      actions: ["Refonte complete - design moderne, performance <1 seconde", ...sectorActions.slice(1)],
-      lost: "40 a 60% de votre trafic potentiel",
+      actions: ["Refonte complète - design moderne, performance <1 seconde", ...sectorActions.slice(1)],
+      lost: "40 à 60% de votre trafic potentiel",
       caseStudy,
       forfait: "croissance",
     }
@@ -212,7 +212,7 @@ function getProfile(answers: Record<string, string>): Profile {
       problems: [
         "Avoir un site ne suffit pas - sans SEO, c'est une brochure dans un tiroir",
         "Vos concurrents investissent dans du contenu et vous passent devant chaque mois",
-        "Sans strategie d'acquisition, vous subissez au lieu de piloter",
+        "Sans stratégie d'acquisition, vous subissez au lieu de piloter",
       ],
       actions: sectorActions,
       lost: "entre 3 000 et 15 000 euros de CA par mois",
@@ -225,23 +225,23 @@ function getProfile(answers: Record<string, string>): Profile {
     return {
       title: "Vous le savez. Mais vous n'avez pas le temps.",
       problems: [
-        "Chaque heure que vous passez sur votre com', c'est une heure en moins sur votre metier",
-        "Publier quand on y pense, c'est pire que ne rien publier - c'est incoherent",
-        "Sans regularite, Google et les reseaux sociaux vous oublient",
+        "Chaque heure que vous passez sur votre com', c'est une heure en moins sur votre métier",
+        "Publier quand on y pense, c'est pire que ne rien publier - c'est incohérent",
+        "Sans régularité, Google et les réseaux sociaux vous oublient",
       ],
-      actions: ["Un interlocuteur unique qui gere tout pour vous", ...sectorActions.slice(1), "Reporting mensuel - vous savez ce qui se passe sans y passer du temps"],
-      lost: "10 a 15 heures par semaine de votre temps",
+      actions: ["Un interlocuteur unique qui gère tout pour vous", ...sectorActions.slice(1), "Reporting mensuel - vous savez ce qui se passe sans y passer du temps"],
+      lost: "10 à 15 heures par semaine de votre temps",
       caseStudy,
       forfait: "performance",
     }
   }
 
   return {
-    title: "Vous avez du potentiel. Il faut le debloquer.",
+    title: "Vous avez du potentiel. Il faut le débloquer.",
     problems: [
-      "Votre presence digitale ne reflete pas la qualite de votre travail",
+      "Votre présence digitale ne reflète pas la qualité de votre travail",
       "Vos concurrents communiquent mieux, pas parce qu'ils sont meilleurs",
-      "Chaque mois sans strategie digitale, c'est du terrain cede",
+      "Chaque mois sans stratégie digitale, c'est du terrain cédé",
     ],
     actions: sectorActions,
     lost: "un avantage concurrentiel qui se creuse chaque jour",
@@ -310,7 +310,7 @@ export default function DiagnosticPage() {
 
                 <p className="mt-6 text-lg lg:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
                   D&apos;abord, on veut comprendre votre situation.
-                  4 questions. Zero bullshit. A la fin, vous saurez exactement
+                  4 questions. Zéro bullshit. À la fin, vous saurez exactement
                   ce que vous perdez chaque mois — et ce qu&apos;on ferait pour vous.
                 </p>
 
@@ -320,7 +320,7 @@ export default function DiagnosticPage() {
                     <ArrowRight className="h-5 w-5" />
                   </Button>
                   <Button href="/devis" variant="outline" size="lg">
-                    Je sais deja ce que je veux
+                    Je sais déjà ce que je veux
                   </Button>
                 </div>
 
@@ -332,7 +332,7 @@ export default function DiagnosticPage() {
                     <Check className="h-4 w-4 text-green-500" /> Sans engagement
                   </span>
                   <span className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-green-500" /> Resultat immediat
+                    <Check className="h-4 w-4 text-green-500" /> Résultat immédiat
                   </span>
                 </div>
               </Container>
@@ -434,7 +434,7 @@ export default function DiagnosticPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
                   <div className="lg:col-span-4">
                     <Badge className="bg-red-50 dark:bg-red-950/50 text-red-600 dark:text-red-400 border-red-100 dark:border-red-900">
-                      Ce qui vous coute
+                      Ce qui vous coûte
                     </Badge>
                   </div>
                   <div className="lg:col-span-8 space-y-5">
@@ -498,7 +498,7 @@ export default function DiagnosticPage() {
                           <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{profile.caseStudy.before}</p>
                         </div>
                         <div>
-                          <p className="text-xs font-black uppercase tracking-widest text-green-600 dark:text-green-400 mb-2">Apres</p>
+                          <p className="text-xs font-black uppercase tracking-widest text-green-600 dark:text-green-400 mb-2">Après</p>
                           <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{profile.caseStudy.after}</p>
                         </div>
                       </div>
@@ -528,7 +528,7 @@ export default function DiagnosticPage() {
                           <p className="text-indigo-200 text-sm font-medium">{reco.tagline}</p>
                         </div>
                         <span className="inline-flex items-center bg-white/20 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shrink-0">
-                          Recommande pour vous
+                          Recommandé pour vous
                         </span>
                       </div>
 
@@ -575,7 +575,7 @@ export default function DiagnosticPage() {
                       <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-2xl overflow-hidden ring-4 ring-white dark:ring-slate-800 shadow-xl">
                         <Image
                           src="/images/team/axel-masson.webp"
-                          alt="Axel Masson - Globe Createur"
+                          alt="Axel Masson - Globe Créateur"
                           fill
                           sizes="192px"
                           className="object-cover object-top"
@@ -592,13 +592,13 @@ export default function DiagnosticPage() {
                           Axel Masson
                         </h3>
                         <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 mt-1">
-                          Co-fondateur - Strategie & Web
+                          Co-fondateur - Stratégie & Web
                         </p>
                       </div>
 
                       <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm md:text-base max-w-lg">
-                        J&apos;ai lu votre diagnostic. 20 minutes d&apos;echange suffisent pour
-                        valider ces recommandations ensemble et voir comment on peut vous aider concretement.
+                        J&apos;ai lu votre diagnostic. 20 minutes d&apos;échange suffisent pour
+                        valider ces recommandations ensemble et voir comment on peut vous aider concrètement.
                         Sans engagement, sans bullshit.
                       </p>
 

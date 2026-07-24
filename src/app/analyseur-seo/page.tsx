@@ -9,11 +9,11 @@ import { SeoAnalyzer } from "@/components/tools/seo-analyzer"
 import { Search, Shield, Zap, BarChart3 } from "lucide-react"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Analyseur SEO gratuit — 13 critères vérifiés en 5 secondes | Globe Créateur",
+  title: "Analyse SEO gratuite en ligne — Score sur 100 en 5 secondes | Globe Créateur",
   description:
-    "Outil d'analyse SEO 100 % gratuit : score sur 100, audit de 13+ critères (title, meta, H1, HTTPS, données structurées, OG), recommandations actionnables. Sans inscription, résultat instantané.",
+    "Analysez le SEO de votre site gratuitement : score sur 100, 13 critères vérifiés (title, meta, H1, HTTPS, données structurées), recommandations concrètes. Sans inscription, sans email, résultat immédiat.",
   path: "/analyseur-seo",
-  keywords: ["analyseur SEO", "analyseur SEO gratuit", "audit SEO en ligne", "test SEO en ligne", "score SEO", "analyse SEO gratuite", "outil SEO gratuit", "diagnostic SEO", "vérifier SEO site"],
+  keywords: ["analyse SEO", "analyse SEO gratuite", "analyse SEO en ligne", "analyseur SEO", "analyseur SEO gratuit", "audit SEO en ligne", "test SEO en ligne", "score SEO", "outil SEO gratuit", "diagnostic SEO", "vérifier SEO site"],
 })
 
 const faqItems = [

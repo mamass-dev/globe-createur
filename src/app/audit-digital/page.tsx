@@ -9,9 +9,9 @@ import { AuditQuiz } from "@/components/tools/audit-quiz"
 import { Target, Clock, BarChart3, Sparkles } from "lucide-react"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Audit digital gratuit pour PME - Testez votre présence en ligne | Globe Créateur",
+  title: "Audit digital PME gratuit — Votre score en 2 minutes | Globe Créateur",
   description:
-    "Évaluez gratuitement votre maturité digitale en 2 minutes. Score sur 100, analyse par catégorie et recommandations personnalisées pour votre PME.",
+    "Où en est vraiment votre PME sur le digital ? Répondez à quelques questions et obtenez votre score sur 100, une analyse par catégorie (site, SEO, réseaux, avis) et des recommandations concrètes. Gratuit, sans inscription.",
   path: "/audit-digital",
 })
 

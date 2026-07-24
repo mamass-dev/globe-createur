@@ -8,7 +8,7 @@ import { Mail, MapPin, CheckCircle2 } from "lucide-react"
 
 export const metadata: Metadata = buildMetadata({
   title: "Contact - Parlons de votre projet",
-  description: "D&eacute;marrez votre transformation digitale avec Globe Cr&eacute;ateur. R&eacute;ponse sous 24h.",
+  description: "Démarrez votre transformation digitale avec Globe Créateur. Réponse sous 24 h.",
   path: "/contact",
 })
 
@@ -22,10 +22,10 @@ export default function ContactPage() {
               <div className="space-y-6">
                  <h1 className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">Contactez-nous</h1>
                  <h2 className="text-4xl lg:text-7xl font-extrabold text-slate-900 dark:text-white leading-tight">
-                    Commen&ccedil;ons &agrave; construire <br /> <span className="text-gradient">votre succès.</span>
+                    Commençons à construire <br /> <span className="text-gradient">votre succès.</span>
                  </h2>
                  <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-lg">
-                    Vous avez un projet en t&ecirc;te ou vous souhaitez simplement en savoir plus sur nos services ? Parlons-en.
+                    Vous avez un projet en tête ou vous souhaitez simplement en savoir plus sur nos services ? Parlons-en.
                  </p>
               </div>
 
@@ -58,10 +58,10 @@ export default function ContactPage() {
               <div className="p-8 bg-indigo-50 dark:bg-indigo-950/50 rounded-3xl space-y-4">
                  <div className="flex items-center gap-3">
                     <CheckCircle2 className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
-                    <p className="font-bold text-indigo-900 dark:text-indigo-300 text-sm">R&eacute;ponse sous 24h</p>
+                    <p className="font-bold text-indigo-900 dark:text-indigo-300 text-sm">Réponse sous 24 h</p>
                  </div>
                  <p className="text-sm text-indigo-700/70 dark:text-indigo-400/70 leading-relaxed">
-                    Nous &eacute;valuons chaque demande avec soin et vous recontactons rapidement pour planifier un premier &eacute;change.
+                    Nous évaluons chaque demande avec soin et vous recontactons rapidement pour planifier un premier échange.
                  </p>
               </div>
            </div>

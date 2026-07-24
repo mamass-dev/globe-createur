@@ -30,29 +30,29 @@ const projets = [
     type: "Site vitrine",
     icon: Globe,
     delai: "3-5 semaines",
-    description: "Votre vitrine digitale, concue pour convertir vos visiteurs en clients.",
-    includes: ["Design sur-mesure", "100% responsive mobile", "SEO integre", "Formulaire de contact", "Hebergement 1 an offert", "Formation a la prise en main"],
+    description: "Votre vitrine digitale, conçue pour convertir vos visiteurs en clients.",
+    includes: ["Design sur-mesure", "100% responsive mobile", "SEO intégré", "Formulaire de contact", "Hébergement 1 an offert", "Formation à la prise en main"],
   },
   {
     type: "Site multi-pages",
     icon: FileText,
     delai: "5-8 semaines",
-    description: "Pour les entreprises qui veulent demontrer leur expertise en detail.",
-    includes: ["Tout du site vitrine +", "Blog integre & optimise SEO", "Pages services detaillees", "Maillage interne strategique", "Integrations sur-mesure"],
+    description: "Pour les entreprises qui veulent démontrer leur expertise en détail.",
+    includes: ["Tout du site vitrine +", "Blog intégré & optimisé SEO", "Pages services détaillées", "Maillage interne stratégique", "Intégrations sur-mesure"],
   },
   {
     type: "Refonte de site",
     icon: RefreshCw,
     delai: "4-8 semaines",
     description: "Modernisez votre site sans perdre une seule position Google.",
-    includes: ["Audit SEO de l'existant", "Migration zero perte de trafic", "Nouveau design moderne", "Performance optimisee", "Redirections 301"],
+    includes: ["Audit SEO de l'existant", "Migration zéro perte de trafic", "Nouveau design moderne", "Performance optimisée", "Redirections 301"],
   },
   {
     type: "Landing page",
     icon: Search,
     delai: "1-2 semaines",
-    description: "Une page unique, pensee pour transformer chaque visiteur en lead.",
-    includes: ["Design oriente conversion", "A/B testing ready", "Formulaire optimise", "Tracking & analytics", "Mobile-first"],
+    description: "Une page unique, pensée pour transformer chaque visiteur en lead.",
+    includes: ["Design orienté conversion", "A/B testing ready", "Formulaire optimisé", "Tracking & analytics", "Mobile-first"],
   },
 ]
 
@@ -60,54 +60,54 @@ const forfaits = [
   {
     name: "Essentiel",
     tagline: "Poser les fondations",
-    description: "Ideal pour les PME qui demarrent leur presence en ligne.",
+    description: "Idéal pour les PME qui démarrent leur présence en ligne.",
     features: [
       "Site internet offert",
       "Pilotage mensuel",
-      "1 reseau social optimise",
-      "Contenus adaptes",
+      "1 réseau social optimisé",
+      "Contenus adaptés",
       "Support email sous 24h",
     ],
-    notIncluded: ["Shooting photo", "Reporting avance"],
+    notIncluded: ["Shooting photo", "Reporting avancé"],
   },
   {
     name: "Croissance",
-    tagline: "Accelerer la visibilite",
+    tagline: "Accélérer la visibilité",
     popular: true,
-    description: "Pour generer des demandes regulieres et dominer votre zone.",
+    description: "Pour générer des demandes régulières et dominer votre zone.",
     features: [
       "Tout Essentiel +",
-      "2 reseaux sociaux geres",
+      "2 réseaux sociaux gérés",
       "Shooting photo mensuel",
-      "Plan editorial & contenus",
-      "SEO local avance",
+      "Plan éditorial & contenus",
+      "SEO local avancé",
       "Reporting mensuel",
     ],
     notIncluded: [],
   },
   {
     name: "Performance",
-    tagline: "Dominer le marche",
-    description: "La communication complete pour les PME ambitieuses.",
+    tagline: "Dominer le marché",
+    description: "La communication complète pour les PME ambitieuses.",
     features: [
       "Tout Croissance +",
-      "Video pro mensuelle",
-      "Gestion complete reseaux",
+      "Vidéo pro mensuelle",
+      "Gestion complète réseaux",
       "CRM & automatisations",
       "Campagnes Meta / LinkedIn",
-      "Chef de projet dedie",
+      "Chef de projet dédié",
     ],
     notIncluded: [],
   },
 ]
 
 const faqTarifs = [
-  { question: "Comment connaitre le prix exact de mon projet ?", answer: "Chaque projet est unique. Demandez un devis gratuit : on echange sur vos besoins et on vous envoie un chiffrage detaille sous 24h. Pas de surprise, pas de cout cache." },
-  { question: "Pourquoi ne pas afficher de prix fixes ?", answer: "Parce qu'un site vitrine pour un artisan et un site multi-pages pour un hotel n'ont rien a voir. Afficher un prix unique serait soit trop cher pour les projets simples, soit insuffisant pour les projets ambitieux. On prefere vous proposer le juste prix." },
-  { question: "Faut-il payer en une fois ?", answer: "Non. Pour les projets ponctuels : 40 % a la commande, 60 % a la livraison. Pour les forfaits : paiement mensuel. On s'adapte." },
-  { question: "Le site internet est-il vraiment offert dans les forfaits ?", answer: "Oui. La creation d'un site vitrine est offerte selon la duree d'engagement. Le site vous appartient, meme si vous resiliez." },
-  { question: "Puis-je changer de forfait en cours de route ?", answer: "Absolument. Upgrade ou downgrade avec un preavis d'un mois. Beaucoup de nos clients commencent par l'Essentiel et passent en Croissance apres quelques mois." },
-  { question: "Que se passe-t-il si je resilie ?", answer: "Votre site internet vous appartient. Si vous resiliez, vous conservez le site et tout le contenu produit. On vous transfere les acces complets." },
+  { question: "Comment connaître le prix exact de mon projet ?", answer: "Chaque projet est unique. Demandez un devis gratuit : on échange sur vos besoins et on vous envoie un chiffrage détaillé sous 24h. Pas de surprise, pas de coût caché." },
+  { question: "Pourquoi ne pas afficher de prix fixes ?", answer: "Parce qu'un site vitrine pour un artisan et un site multi-pages pour un hôtel n'ont rien à voir. Afficher un prix unique serait soit trop cher pour les projets simples, soit insuffisant pour les projets ambitieux. On préfère vous proposer le juste prix." },
+  { question: "Faut-il payer en une fois ?", answer: "Non. Pour les projets ponctuels : 40 % à la commande, 60 % à la livraison. Pour les forfaits : paiement mensuel. On s'adapte." },
+  { question: "Le site internet est-il vraiment offert dans les forfaits ?", answer: "Oui. La création d'un site vitrine est offerte selon la durée d'engagement. Le site vous appartient, même si vous résiliez." },
+  { question: "Puis-je changer de forfait en cours de route ?", answer: "Absolument. Upgrade ou downgrade avec un préavis d'un mois. Beaucoup de nos clients commencent par l'Essentiel et passent en Croissance après quelques mois." },
+  { question: "Que se passe-t-il si je résilie ?", answer: "Votre site internet vous appartient. Si vous résiliez, vous conservez le site et tout le contenu produit. On vous transfère les accès complets." },
 ]
 
 export default function TarifsPage() {
@@ -123,8 +123,8 @@ export default function TarifsPage() {
 
       <PageHero
         badge="Nos offres"
-        title="Des solutions adaptees a votre entreprise"
-        subtitle="Chaque PME est differente. On construit une offre sur-mesure, adaptee a vos objectifs et votre budget. Devis gratuit sous 24h."
+        title="Des solutions adaptées à votre entreprise"
+        subtitle="Chaque PME est différente. On construit une offre sur-mesure, adaptée à vos objectifs et votre budget. Devis gratuit sous 24h."
         ctaLabel="Demander un devis gratuit"
         ctaHref="/devis"
         secondaryLabel="Faire le diagnostic gratuit"
@@ -158,7 +158,7 @@ export default function TarifsPage() {
               <div className="flex-1 space-y-4">
                 <p className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">Nouveau</p>
                 <h2 className="text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-white">
-                  Vous ne savez pas par ou commencer ?
+                  Vous ne savez pas par où commencer ?
                 </h2>
                 <p className="text-slate-600 dark:text-slate-400">
                   Faites notre diagnostic gratuit en 2 minutes. On analyse votre situation et on vous dit exactement ce qu&apos;on ferait pour vous.
@@ -180,7 +180,7 @@ export default function TarifsPage() {
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
               <p className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">Projets ponctuels</p>
               <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Sites internet & projets web</h2>
-              <p className="text-lg text-slate-600 dark:text-slate-400">Un projet defini, un livrable, un accompagnement de A a Z.</p>
+              <p className="text-lg text-slate-600 dark:text-slate-400">Un projet défini, un livrable, un accompagnement de A à Z.</p>
             </div>
           </AnimateOnScroll>
 
@@ -194,7 +194,7 @@ export default function TarifsPage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-extrabold text-slate-900 dark:text-white">{projet.type}</h3>
-                      <p className="text-xs text-slate-400">Delai indicatif : {projet.delai}</p>
+                      <p className="text-xs text-slate-400">Délai indicatif : {projet.delai}</p>
                     </div>
                   </div>
                   <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">{projet.description}</p>
@@ -224,9 +224,9 @@ export default function TarifsPage() {
           <AnimateOnScroll>
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
               <p className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">Forfaits mensuels</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Votre equipe communication externalisee</h2>
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Votre équipe communication externalisée</h2>
               <p className="text-lg text-slate-600 dark:text-slate-400">
-                Web, SEO, photo, video, reseaux sociaux : tout inclus. Site internet offert selon engagement.
+                Web, SEO, photo, vidéo, réseaux sociaux : tout inclus. Site internet offert selon engagement.
               </p>
             </div>
           </AnimateOnScroll>
@@ -291,7 +291,7 @@ export default function TarifsPage() {
                 href="/forfait-communication-pme"
                 className="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors"
               >
-                Comparer les forfaits en detail
+                Comparer les forfaits en détail
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -305,17 +305,17 @@ export default function TarifsPage() {
           <AnimateOnScroll>
             <div className="text-center mb-16 space-y-4">
               <p className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">Nos engagements</p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Zero risque de votre cote</h2>
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Zéro risque de votre côté</h2>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { icon: Shield, title: "Devis gratuit", desc: "On echange, on chiffre, sans engagement. Vous decidez en toute liberte." },
-                { icon: Clock, title: "Reponse sous 24h", desc: "Pas d'attente interminable. Votre projet merite de l'attention." },
-                { icon: Star, title: "Satisfaction garantie", desc: "Validations a chaque etape. On ne facture que ce qui vous convient." },
-                { icon: Users, title: "Vous etes proprietaire", desc: "Le site, les photos, les textes - tout vous appartient. Toujours." },
-                { icon: TrendingUp, title: "Resultats mesurables", desc: "Reporting mensuel avec les vrais chiffres." },
-                { icon: MessageSquare, title: "Interlocuteur unique", desc: "Un seul contact qui connait votre dossier sur le bout des doigts." },
+                { icon: Shield, title: "Devis gratuit", desc: "On échange, on chiffre, sans engagement. Vous décidez en toute liberté." },
+                { icon: Clock, title: "Réponse sous 24h", desc: "Pas d'attente interminable. Votre projet mérite de l'attention." },
+                { icon: Star, title: "Satisfaction garantie", desc: "Validations à chaque étape. On ne facture que ce qui vous convient." },
+                { icon: Users, title: "Vous êtes propriétaire", desc: "Le site, les photos, les textes - tout vous appartient. Toujours." },
+                { icon: TrendingUp, title: "Résultats mesurables", desc: "Reporting mensuel avec les vrais chiffres." },
+                { icon: MessageSquare, title: "Interlocuteur unique", desc: "Un seul contact qui connaît votre dossier sur le bout des doigts." },
               ].map((item) => (
                 <div key={item.title} className="text-center space-y-3 p-6 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
                   <div className="inline-flex items-center justify-center h-12 w-12 rounded-2xl bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400">
@@ -334,14 +334,14 @@ export default function TarifsPage() {
 
       <FaqAccordion
         items={faqTarifs}
-        title="Questions frequentes"
+        title="Questions fréquentes"
         subtitle="Tout ce que vous devez savoir sur nos offres."
         badge="FAQ"
       />
 
       <CtaSection
         title="Parlons de votre projet"
-        subtitle="On vous repond sous 24h avec un devis detaille, sans engagement."
+        subtitle="On vous répond sous 24h avec un devis détaillé, sans engagement."
         variant="primary"
         ctaLabel="Demander un devis gratuit"
         ctaHref="/devis"
