@@ -63,7 +63,9 @@ export const footerNav = {
   ],
   outils: [
     { label: "Audit digital", href: "/audit-digital" },
+    { label: "Diagnostic communication", href: "/diagnostic" },
     { label: "Calculateur ROI", href: "/calculateur-roi" },
+    { label: "Estimateur de projet", href: "/estimateur" },
     { label: "Analyseur SEO", href: "/analyseur-seo" },
     { label: "Signature email", href: "/generateur-signature-email" },
   ],

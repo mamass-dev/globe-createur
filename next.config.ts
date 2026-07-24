@@ -65,6 +65,8 @@ const nextConfig: NextConfig = {
       { source: "/creation-contenu-pme/", destination: "/services/creation-contenu-pme", permanent: true },
       { source: "/services/service-creation-de-contenu/video-reels", destination: "/services/creation-contenu-pme", permanent: true },
       { source: "/services/service-creation-de-contenu/video-reels/", destination: "/services/creation-contenu-pme", permanent: true },
+      { source: "/services/creation-contenu-pme/video-reels", destination: "/services/creation-contenu-pme", permanent: true },
+      { source: "/services/creation-contenu-pme/video-reels/", destination: "/services/creation-contenu-pme", permanent: true },
       { source: "/video-reels", destination: "/services/creation-contenu-pme", permanent: true },
       { source: "/video-reels/", destination: "/services/creation-contenu-pme", permanent: true },
       { source: "/portfolio-video", destination: "/projets", permanent: true },
