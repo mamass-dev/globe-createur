@@ -159,6 +159,37 @@ export default function AgenceBesanconPage() {
               la donne rapidement.
             </p>
 
+            <h2>À Besançon, le B2B ne se cherche pas comme le B2C</h2>
+            <p>
+              Le tissu économique bisontin a une particularité : une part
+              importante d&apos;entreprises industrielles et de sous-traitants —
+              microtechniques, horlogerie, dispositifs médicaux — dont les
+              clients ne sont pas des particuliers mais des donneurs
+              d&apos;ordres. Or un acheteur industriel ne tape pas
+              &quot;sous-traitant Besançon&quot; : il cherche une expertise
+              (&quot;usinage de précision petites séries&quot;, &quot;décolletage
+              médical&quot;) et regarde ensuite où se trouve le prestataire.
+            </p>
+            <p>
+              Pour ces entreprises, la stratégie gagnante n&apos;est pas le SEO
+              local classique : c&apos;est un site qui démontre l&apos;expertise
+              — pages techniques détaillées, parc machines, certifications,
+              références sectorielles — complété par une présence LinkedIn
+              active, le canal où les donneurs d&apos;ordres s&apos;informent
+              réellement. Le référencement se joue sur des requêtes métier
+              nationales, pas sur la carte Google.
+            </p>
+            <p>
+              À l&apos;inverse, les commerces, restaurants et services aux
+              particuliers de Besançon — portés par une population étudiante
+              importante et un centre-ville actif — relèvent du SEO local pur :
+              Pack Local, avis clients, Instagram. Notre premier travail, c&apos;est
+              donc de déterminer de quel jeu vous relevez, car les deux
+              stratégies n&apos;ont presque rien en commun. Beaucoup
+              d&apos;entreprises bisontines investissent aujourd&apos;hui dans la
+              mauvaise.
+            </p>
+
             <h2>Forfaits communication pour les PME de Besançon</h2>
             <p>
               Un site internet seul ne suffit pas. Nos{" "}

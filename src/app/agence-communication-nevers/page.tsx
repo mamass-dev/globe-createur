@@ -159,6 +159,34 @@ export default function AgenceNeversPage() {
               les résultats locaux.
             </p>
 
+            <h2>Comment vos clients vous cherchent dans la Nièvre</h2>
+            <p>
+              La Nièvre est l&apos;un des départements les moins densément peuplés
+              de France, et ça change tout pour votre stratégie digitale. Vos
+              clients ne cherchent pas seulement &quot;à Nevers&quot; : ils tapent
+              aussi Cosne-Cours-sur-Loire, Decize, La Charité-sur-Loire, ou
+              directement &quot;dans la Nièvre&quot;. Une entreprise nivernaise
+              qui limite sa visibilité à sa seule commune passe à côté de la
+              majorité de son marché réel.
+            </p>
+            <p>
+              Concrètement, ça veut dire deux choses. D&apos;abord, votre fiche
+              Google doit être configurée en <strong>zone de chalandise</strong> et
+              non en simple adresse, pour couvrir tout votre périmètre
+              d&apos;intervention. Ensuite, votre site doit assumer une visibilité
+              départementale : parler de la Nièvre, pas seulement de votre rue.
+            </p>
+            <p>
+              L&apos;autre particularité du marché nivernais, c&apos;est la
+              faiblesse de la concurrence en ligne : beaucoup d&apos;entreprises
+              locales ont un site datant de plusieurs années, jamais retravaillé
+              pour le référencement. Là où il faut 12 à 18 mois pour émerger dans
+              une métropole, un site bien construit et une fiche Google active
+              peuvent prendre les premières positions locales en quelques mois
+              dans la Nièvre. C&apos;est une fenêtre d&apos;opportunité — elle se
+              refermera à mesure que le territoire se digitalise.
+            </p>
+
             <h2>Forfaits communication pour les PME de Nevers</h2>
             <p>
               Créer un site puis le laisser dormir, ça ne marche pas. Nos{" "}

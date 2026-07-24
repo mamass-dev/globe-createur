@@ -149,6 +149,36 @@ export default function AgenceAuxerrePage() {
               Chaque requête est un client potentiel qui vous cherche.
             </p>
 
+            <h2>L&apos;Yonne, un marché sous double influence</h2>
+            <p>
+              Travailler sa visibilité dans l&apos;Yonne, c&apos;est jouer sur
+              deux tableaux. Il y a d&apos;un côté la clientèle locale — les
+              habitants d&apos;Auxerre, Sens, Joigny, Avallon qui cherchent un
+              artisan, un commerce, un prestataire de proximité. Et de
+              l&apos;autre, une clientèle francilienne massive : à 1h30 de Paris
+              par l&apos;A6, le département capte chaque week-end des visiteurs
+              qui réservent une chambre d&apos;hôtes, une table, une visite de
+              cave à Chablis — et qui font leur choix sur Google des jours avant
+              de partir.
+            </p>
+            <p>
+              Selon votre activité, la stratégie n&apos;est donc pas la même. Un
+              plombier d&apos;Auxerre vise le Pack Local et les requêtes
+              &quot;métier + ville&quot; du département. Un domaine, un hôtel ou
+              un restaurant doit en plus être visible sur les recherches que font
+              les Parisiens — &quot;week-end Chablis&quot;, &quot;restaurant près
+              d&apos;Auxerre&quot; — où la concurrence inclut les plateformes de
+              réservation. Deux jeux, deux règles, et un site qui doit être pensé
+              pour les deux dès sa construction.
+            </p>
+            <p>
+              La bonne nouvelle : le tissu concurrentiel des agences locales
+              investit peu le contenu et le SEO éditorial dans l&apos;Yonne. Les
+              entreprises qui publient du contenu ancré localement — pages
+              métier par ville, actualités du territoire — prennent des positions
+              durables avec relativement peu d&apos;efforts.
+            </p>
+
             <h2>Forfaits communication pour les PME de l&apos;Yonne</h2>
             <p>
               Plutôt qu&apos;un projet ponctuel livré et oublié, on propose des{" "}
