@@ -1,9 +1,7 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import Image from "next/image"
 import { buildMetadata } from "@/lib/metadata"
 import { Container } from "@/components/ui/container"
-import { AnimateOnScroll } from "@/components/ui/animate"
 import { CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -32,7 +30,7 @@ export default function AProposPage() {
                  Propulser le potentiel <br /> <span className="text-gradient">de chaque PME.</span>
               </h2>
               <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl">
-                 Globe Cr&eacute;ateur est n&eacute; d'une conviction simple : chaque entreprise m&eacute;rite une pr&eacute;sence digitale d'excellence pour exprimer son plein potentiel.
+                 Globe Cr&eacute;ateur est n&eacute; d&apos;une conviction simple : chaque entreprise m&eacute;rite une pr&eacute;sence digitale d&apos;excellence pour exprimer son plein potentiel.
               </p>
            </div>
            <div className="relative">
@@ -66,10 +64,10 @@ export default function AProposPage() {
            </div>
            <div className="lg:col-span-7 space-y-8 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
               <p>
-                 Le paysage digital &eacute;volue &agrave; une vitesse fulgurante. Pour une PME, rester comp&eacute;titive demande plus qu'un simple site web ; cela demande une vision, une strat&eacute;gie coh&eacute;rente et une ex&eacute;cution technique irr&eacute;prochable.
+                 Le paysage digital &eacute;volue &agrave; une vitesse fulgurante. Pour une PME, rester comp&eacute;titive demande plus qu&apos;un simple site web ; cela demande une vision, une strat&eacute;gie coh&eacute;rente et une ex&eacute;cution technique irr&eacute;prochable.
               </p>
               <p>
-                 Nous avons fond&eacute; Globe Cr&eacute;ateur pour offrir aux entreprises un partenaire digital unique, capable de g&eacute;rer l'int&eacute;gralit&eacute; de leur communication, de la capture visuelle &agrave; l'automatisation de leurs processus de vente.
+                 Nous avons fond&eacute; Globe Cr&eacute;ateur pour offrir aux entreprises un partenaire digital unique, capable de g&eacute;rer l&apos;int&eacute;gralit&eacute; de leur communication, de la capture visuelle &agrave; l&apos;automatisation de leurs processus de vente.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
                  {[
@@ -89,9 +87,9 @@ export default function AProposPage() {
 
         {/* CTA */}
         <div className="text-center p-12 lg:p-24 bg-slate-50 dark:bg-slate-900 rounded-[4rem] space-y-8">
-           <h2 className="text-3xl lg:text-5xl font-black text-slate-900 dark:text-white">Pr&ecirc;t &agrave; rejoindre l'aventure ?</h2>
+           <h2 className="text-3xl lg:text-5xl font-black text-slate-900 dark:text-white">Pr&ecirc;t &agrave; rejoindre l&apos;aventure ?</h2>
            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Nous sommes toujours &agrave; la recherche de nouveaux d&eacute;fis. Parlons du v&ocirc;tre d&egrave;s aujourd'hui.
+              Nous sommes toujours &agrave; la recherche de nouveaux d&eacute;fis. Parlons du v&ocirc;tre d&egrave;s aujourd&apos;hui.
            </p>
            <div className="flex justify-center pt-4">
               <Button href="/contact" className="bg-indigo-600 dark:bg-indigo-500 hover:bg-indigo-700 dark:hover:bg-indigo-600 text-white px-12 h-16 rounded-2xl text-xl font-bold shadow-xl shadow-indigo-100 dark:shadow-indigo-950 transition-all">

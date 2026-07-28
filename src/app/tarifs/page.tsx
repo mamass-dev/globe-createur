@@ -16,7 +16,6 @@ import {
   RefreshCw,
   Search,
   FileText,
-  Zap,
   MessageSquare,
   Shield,
   Clock,

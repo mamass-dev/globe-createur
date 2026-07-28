@@ -3,9 +3,8 @@
 import Link from "next/link"
 import { LucideIcon } from "@/components/ui/lucide-icon"
 import { Container } from "@/components/ui/container"
-import { Card } from "@/components/ui/card"
 import { SectionHeader } from "@/components/ui/section-header"
-import { StaggerContainer, StaggerItem } from "@/components/ui/animate"
+import { StaggerItem } from "@/components/ui/animate"
 import type { Service } from "@/lib/types"
 
 function getIcon(name: string) {

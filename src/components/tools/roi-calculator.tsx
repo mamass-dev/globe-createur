@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { LucideIcon } from "@/components/ui/lucide-icon"
-import { TrendingUp, AlertTriangle, ArrowRight, Lock } from "lucide-react"
+import { AlertTriangle, Lock } from "lucide-react"
 import { LeadCaptureGate } from "@/components/tools/lead-capture-gate"
 
 const sectorData: Record<string, { label: string; monthlySearches: number; conversionRate: number }> = {

@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { Container } from "@/components/ui/container"
-import { Button } from "@/components/ui/button"
 import { AnimateOnScroll } from "@/components/ui/animate"
 
 type HeroProps = {

@@ -12,7 +12,7 @@ type AnimateOnScrollProps = {
   children: React.ReactNode
   className?: string
   delay?: number
-  as?: any
+  as?: "div" | "section" | "article" | "span" | "ul" | "li"
 }
 
 export function AnimateOnScroll({
@@ -21,7 +21,7 @@ export function AnimateOnScroll({
   delay = 0,
   as = "div",
 }: AnimateOnScrollProps) {
-  const Component = (motion as any)[as] || motion.div
+  const Component = motion[as] || motion.div
 
   return (
     <Component

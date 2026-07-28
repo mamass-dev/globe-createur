@@ -28,7 +28,7 @@ function escapeXml(str) {
   return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;")
 }
 
-function generateSVG({ title, gradient, icon }) {
+function generateSVG({ title, gradient }) {
   const lines = title.split("\n")
   const titleY = 320
   const lineHeight = 64

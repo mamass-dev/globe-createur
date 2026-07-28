@@ -6,7 +6,6 @@ import { Card } from "@/components/ui/card"
 import { SectionHeader } from "@/components/ui/section-header"
 import { AnimateOnScroll } from "@/components/ui/animate"
 import type { Temoignage } from "@/lib/data/temoignages"
-import Image from "next/image"
 
 function StarRating({ rating }: { rating: number }) {
   return (

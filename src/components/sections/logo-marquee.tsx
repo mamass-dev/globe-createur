@@ -1,5 +1,4 @@
 import Image from "next/image"
-import { Container } from "@/components/ui/container"
 
 type LogoMarqueeProps = {
   title?: string

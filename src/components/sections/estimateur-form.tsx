@@ -55,6 +55,8 @@ type FormState = {
   message: string
 }
 
+type SetForm = React.Dispatch<React.SetStateAction<FormState>>
+
 const initialState: FormState = {
   projectType: null,
   pageCount: null,
@@ -241,6 +243,595 @@ const fadeVariants = {
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
+   Progress bar
+   ──────────────────────────────────────────────────────────────────────────── */
+
+function ProgressBar({ step }: { step: number }) {
+  return (
+    <div className="mb-10">
+      {/* Step labels (desktop) */}
+      <div className="hidden sm:flex justify-between mb-3">
+        {stepLabels.map((label, i) => (
+          <span
+            key={label}
+            className={`text-xs font-medium transition-colors ${
+              i + 1 <= step
+                ? "text-indigo-600 dark:text-indigo-400"
+                : "text-slate-400 dark:text-slate-600"
+            }`}
+          >
+            {label}
+          </span>
+        ))}
+      </div>
+
+      {/* Mobile label */}
+      <p className="sm:hidden text-xs font-medium text-indigo-600 dark:text-indigo-400 mb-2">
+        Étape {step} sur 4 - {stepLabels[step - 1]}
+      </p>
+
+      {/* Bar */}
+      <div className="h-2 w-full rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+        <motion.div
+          className="h-full rounded-full bg-indigo-600 dark:bg-indigo-500"
+          initial={false}
+          animate={{ width: `${(step / 4) * 100}%` }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+        />
+      </div>
+    </div>
+  )
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   Step 1 - Type de projet
+   ──────────────────────────────────────────────────────────────────────────── */
+
+function Step1({ form, setForm }: { form: FormState; setForm: SetForm }) {
+  return (
+    <div>
+      <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+        Quel est votre projet ?
+      </h2>
+      <p className="text-slate-500 dark:text-slate-400 mb-6">
+        Sélectionnez le type de projet qui correspond le mieux à votre besoin.
+      </p>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {projectTypes.map(({ id, label, icon: Icon }) => {
+          const active = form.projectType === id
+          return (
+            <button
+              key={id}
+              type="button"
+              onClick={() => setForm((p) => ({ ...p, projectType: id }))}
+              className={`group relative flex flex-col items-center gap-3 rounded-2xl border-2 p-6 text-center transition-all cursor-pointer ${
+                active
+                  ? "border-indigo-600 bg-indigo-50 dark:bg-indigo-950/40 dark:border-indigo-500 shadow-lg shadow-indigo-100 dark:shadow-indigo-950/20"
+                  : "border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/60 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-md"
+              }`}
+            >
+              <div
+                className={`flex h-12 w-12 items-center justify-center rounded-xl transition-colors ${
+                  active
+                    ? "bg-indigo-600 text-white"
+                    : "bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900 group-hover:text-indigo-600 dark:group-hover:text-indigo-400"
+                }`}
+              >
+                <Icon className="h-6 w-6" />
+              </div>
+              <span
+                className={`font-semibold transition-colors ${
+                  active
+                    ? "text-indigo-600 dark:text-indigo-400"
+                    : "text-slate-700 dark:text-slate-200"
+                }`}
+              >
+                {label}
+              </span>
+              {active && (
+                <motion.div
+                  layoutId="check"
+                  className="absolute top-3 right-3"
+                >
+                  <CheckCircle2 className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
+                </motion.div>
+              )}
+            </button>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   Step 2 - Détails
+   ──────────────────────────────────────────────────────────────────────────── */
+
+function Step2Site({
+  form,
+  setForm,
+  toggleFeature,
+}: {
+  form: FormState
+  setForm: SetForm
+  toggleFeature: (id: string) => void
+}) {
+  return (
+    <div className="space-y-8">
+      {/* Page count */}
+      <div>
+        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
+          Combien de pages ?
+        </h3>
+        <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+          Estimation du nombre de pages de votre site.
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {pageOptions.map(({ id, label }) => {
+            const active = form.pageCount === id
+            return (
+              <button
+                key={id}
+                type="button"
+                onClick={() => setForm((p) => ({ ...p, pageCount: id }))}
+                className={`rounded-xl border-2 px-4 py-3 text-sm font-semibold transition-all cursor-pointer ${
+                  active
+                    ? "border-indigo-600 bg-indigo-50 text-indigo-600 dark:bg-indigo-950/40 dark:border-indigo-500 dark:text-indigo-400"
+                    : "border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/60 hover:border-indigo-300 dark:hover:border-indigo-700"
+                }`}
+              >
+                {label}
+              </button>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* Features */}
+      <div>
+        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
+          Fonctionnalités souhaitées
+        </h3>
+        <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+          Sélectionnez toutes celles qui vous intéressent (optionnel).
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {featureOptions.map(({ id, label, icon: Icon }) => {
+            const active = form.features.includes(id)
+            return (
+              <button
+                key={id}
+                type="button"
+                onClick={() => toggleFeature(id)}
+                className={`flex items-center gap-3 rounded-xl border-2 px-4 py-3 text-left text-sm font-medium transition-all cursor-pointer ${
+                  active
+                    ? "border-indigo-600 bg-indigo-50 text-indigo-600 dark:bg-indigo-950/40 dark:border-indigo-500 dark:text-indigo-400"
+                    : "border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/60 hover:border-indigo-300 dark:hover:border-indigo-700"
+                }`}
+              >
+                <Icon className="h-4 w-4 shrink-0" />
+                {label}
+                {active && (
+                  <CheckCircle2 className="ml-auto h-4 w-4 text-indigo-600 dark:text-indigo-400 shrink-0" />
+                )}
+              </button>
+            )
+          })}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function Step2Seo({ form, setForm }: { form: FormState; setForm: SetForm }) {
+  return (
+    <div className="space-y-8">
+      <div>
+        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
+          Votre site existe déjà ?
+        </h3>
+        <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+          Cela influence le travail de référencement à prévoir.
+        </p>
+        <div className="grid grid-cols-2 gap-3">
+          {[
+            { id: "oui", label: "Oui" },
+            { id: "non", label: "Non" },
+          ].map(({ id, label }) => {
+            const active = form.siteExists === id
+            return (
+              <button
+                key={id}
+                type="button"
+                onClick={() => setForm((p) => ({ ...p, siteExists: id }))}
+                className={`rounded-xl border-2 px-4 py-3 text-sm font-semibold transition-all cursor-pointer ${
+                  active
+                    ? "border-indigo-600 bg-indigo-50 text-indigo-600 dark:bg-indigo-950/40 dark:border-indigo-500 dark:text-indigo-400"
+                    : "border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/60 hover:border-indigo-300 dark:hover:border-indigo-700"
+                }`}
+              >
+                {label}
+              </button>
+            )
+          })}
+        </div>
+      </div>
+
+      <div>
+        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
+          Zone géographique visée
+        </h3>
+        <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+          Plus la zone est large, plus le travail SEO est important.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          {geoOptions.map(({ id, label }) => {
+            const active = form.geoZone === id
+            return (
+              <button
+                key={id}
+                type="button"
+                onClick={() => setForm((p) => ({ ...p, geoZone: id }))}
+                className={`rounded-xl border-2 px-4 py-3 text-sm font-semibold transition-all cursor-pointer ${
+                  active
+                    ? "border-indigo-600 bg-indigo-50 text-indigo-600 dark:bg-indigo-950/40 dark:border-indigo-500 dark:text-indigo-400"
+                    : "border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/60 hover:border-indigo-300 dark:hover:border-indigo-700"
+                }`}
+              >
+                {label}
+              </button>
+            )
+          })}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function Step2Contenu({
+  form,
+  toggleContentType,
+}: {
+  form: FormState
+  toggleContentType: (id: string) => void
+}) {
+  return (
+    <div>
+      <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
+        Type de contenu souhaité
+      </h3>
+      <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+        Sélectionnez un ou plusieurs types de contenu.
+      </p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {contentTypeOptions.map(({ id, label }) => {
+          const active = form.contentTypes.includes(id)
+          return (
+            <button
+              key={id}
+              type="button"
+              onClick={() => toggleContentType(id)}
+              className={`flex items-center justify-between rounded-xl border-2 px-4 py-3 text-sm font-semibold transition-all cursor-pointer ${
+                active
+                  ? "border-indigo-600 bg-indigo-50 text-indigo-600 dark:bg-indigo-950/40 dark:border-indigo-500 dark:text-indigo-400"
+                  : "border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/60 hover:border-indigo-300 dark:hover:border-indigo-700"
+              }`}
+            >
+              {label}
+              {active && (
+                <CheckCircle2 className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+              )}
+            </button>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+function Step2Autre({ form, setForm }: { form: FormState; setForm: SetForm }) {
+  return (
+    <div>
+      <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
+        Décrivez votre projet
+      </h3>
+      <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+        Nous pourrons affiner l&apos;estimation après échange.
+      </p>
+      <textarea
+        value={form.message}
+        onChange={(e) => setForm((p) => ({ ...p, message: e.target.value }))}
+        rows={4}
+        placeholder="Décrivez brièvement votre projet..."
+        className="w-full rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/60 px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-indigo-600 dark:focus:border-indigo-500 focus:outline-none transition-colors resize-none"
+      />
+    </div>
+  )
+}
+
+function Step2({
+  form,
+  setForm,
+  isSiteProject,
+  toggleFeature,
+  toggleContentType,
+}: {
+  form: FormState
+  setForm: SetForm
+  isSiteProject: boolean
+  toggleFeature: (id: string) => void
+  toggleContentType: (id: string) => void
+}) {
+  return (
+    <div>
+      <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+        Détails du projet
+      </h2>
+      <p className="text-slate-500 dark:text-slate-400 mb-6">
+        Précisez vos besoins pour affiner l&apos;estimation.
+      </p>
+
+      {isSiteProject && <Step2Site form={form} setForm={setForm} toggleFeature={toggleFeature} />}
+      {form.projectType === "seo" && <Step2Seo form={form} setForm={setForm} />}
+      {form.projectType === "contenu" && <Step2Contenu form={form} toggleContentType={toggleContentType} />}
+      {form.projectType === "autre" && <Step2Autre form={form} setForm={setForm} />}
+    </div>
+  )
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   Step 3 - Budget & Délais
+   ──────────────────────────────────────────────────────────────────────────── */
+
+function Step3({ form, setForm }: { form: FormState; setForm: SetForm }) {
+  return (
+    <div className="space-y-8">
+      <div>
+        <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+          Budget & Délais
+        </h2>
+        <p className="text-slate-500 dark:text-slate-400 mb-6">
+          Aidez-nous à calibrer notre proposition.
+        </p>
+      </div>
+
+      <div>
+        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
+          Budget estimé
+        </h3>
+        <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+          Quel budget envisagez-vous pour ce projet ?
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {budgetOptions.map(({ id, label }) => {
+            const active = form.budget === id
+            return (
+              <button
+                key={id}
+                type="button"
+                onClick={() => setForm((p) => ({ ...p, budget: id }))}
+                className={`rounded-xl border-2 px-4 py-3 text-sm font-semibold transition-all cursor-pointer ${
+                  active
+                    ? "border-indigo-600 bg-indigo-50 text-indigo-600 dark:bg-indigo-950/40 dark:border-indigo-500 dark:text-indigo-400"
+                    : "border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/60 hover:border-indigo-300 dark:hover:border-indigo-700"
+                }`}
+              >
+                {label}
+              </button>
+            )
+          })}
+        </div>
+      </div>
+
+      <div>
+        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
+          Délai souhaité
+        </h3>
+        <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+          Quand aimeriez-vous que le projet soit livré ?
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {timelineOptions.map(({ id, label }) => {
+            const active = form.timeline === id
+            return (
+              <button
+                key={id}
+                type="button"
+                onClick={() => setForm((p) => ({ ...p, timeline: id }))}
+                className={`rounded-xl border-2 px-4 py-3 text-sm font-semibold transition-all cursor-pointer ${
+                  active
+                    ? "border-indigo-600 bg-indigo-50 text-indigo-600 dark:bg-indigo-950/40 dark:border-indigo-500 dark:text-indigo-400"
+                    : "border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/60 hover:border-indigo-300 dark:hover:border-indigo-700"
+                }`}
+              >
+                {label}
+              </button>
+            )
+          })}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   Step 4 - Résultat & Contact
+   ──────────────────────────────────────────────────────────────────────────── */
+
+function Step4({
+  form,
+  setForm,
+  submitted,
+  submitting,
+  hp,
+  setHp,
+  estimate,
+  handleSubmit,
+}: {
+  form: FormState
+  setForm: SetForm
+  submitted: boolean
+  submitting: boolean
+  hp: string
+  setHp: React.Dispatch<React.SetStateAction<string>>
+  estimate: { min: number; max: number; monthly: boolean }
+  handleSubmit: () => void
+}) {
+  if (submitted) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="text-center py-12"
+      >
+        <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30">
+          <CheckCircle2 className="h-8 w-8 text-green-600 dark:text-green-400" />
+        </div>
+        <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
+          Demande envoyée !
+        </h2>
+        <p className="text-slate-500 dark:text-slate-400 max-w-md mx-auto">
+          Merci {form.name ? form.name.split(" ")[0] : ""} ! Nous reviendrons
+          vers vous dans les 24h avec un devis détaillé et personnalisé.
+        </p>
+      </motion.div>
+    )
+  }
+
+  return (
+    <div className="space-y-8">
+      {/* Estimate display */}
+      <div className="rounded-2xl border-2 border-indigo-200 dark:border-indigo-800 bg-gradient-to-br from-indigo-50 to-white dark:from-indigo-950/40 dark:to-slate-900 p-6 sm:p-8 text-center">
+        <div className="inline-flex items-center gap-2 rounded-full bg-indigo-100 dark:bg-indigo-900/50 px-4 py-1.5 text-xs font-semibold text-indigo-600 dark:text-indigo-400 mb-4">
+          <Sparkles className="h-3.5 w-3.5" />
+          Estimation personnalisée
+        </div>
+        <p className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
+          {fmt(estimate.min)} – {fmt(estimate.max)}
+          {estimate.monthly && (
+            <span className="text-lg font-semibold text-slate-500 dark:text-slate-400">
+              {" "}
+              / mois
+            </span>
+          )}
+        </p>
+        <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+          Cette estimation est indicative. Le prix final dépend des
+          spécificités de votre projet.
+        </p>
+      </div>
+
+      {/* Contact form */}
+      <div>
+        <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-1">
+          Recevez un devis détaillé
+        </h2>
+        <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
+          Laissez-nous vos coordonnées et nous vous enverrons une proposition
+          personnalisée sous 24h.
+        </p>
+
+        <input type="text" value={hp} onChange={(e) => setHp(e.target.value)} autoComplete="off" tabIndex={-1} aria-hidden="true" className="absolute opacity-0 h-0 w-0 pointer-events-none" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="sm:col-span-2 sm:col-span-1">
+            <label
+              htmlFor="est-name"
+              className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5"
+            >
+              Nom complet *
+            </label>
+            <input
+              id="est-name"
+              type="text"
+              required
+              value={form.name}
+              onChange={(e) =>
+                setForm((p) => ({ ...p, name: e.target.value }))
+              }
+              placeholder="Jean Dupont"
+              className="w-full rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/60 px-4 py-2.5 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-indigo-600 dark:focus:border-indigo-500 focus:outline-none transition-colors"
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="est-email"
+              className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5"
+            >
+              Email *
+            </label>
+            <input
+              id="est-email"
+              type="email"
+              required
+              value={form.email}
+              onChange={(e) =>
+                setForm((p) => ({ ...p, email: e.target.value }))
+              }
+              placeholder="jean@exemple.fr"
+              className="w-full rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/60 px-4 py-2.5 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-indigo-600 dark:focus:border-indigo-500 focus:outline-none transition-colors"
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="est-phone"
+              className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5"
+            >
+              Téléphone
+            </label>
+            <input
+              id="est-phone"
+              type="tel"
+              value={form.phone}
+              onChange={(e) =>
+                setForm((p) => ({ ...p, phone: e.target.value }))
+              }
+              placeholder="06 12 34 56 78"
+              className="w-full rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/60 px-4 py-2.5 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-indigo-600 dark:focus:border-indigo-500 focus:outline-none transition-colors"
+            />
+          </div>
+          <div className="sm:col-span-2">
+            <label
+              htmlFor="est-message"
+              className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5"
+            >
+              Message (optionnel)
+            </label>
+            <textarea
+              id="est-message"
+              rows={3}
+              value={form.message}
+              onChange={(e) =>
+                setForm((p) => ({ ...p, message: e.target.value }))
+              }
+              placeholder="Précisions sur votre projet..."
+              className="w-full rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/60 px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-indigo-600 dark:focus:border-indigo-500 focus:outline-none transition-colors resize-none"
+            />
+          </div>
+        </div>
+      </div>
+
+      <Button
+        onClick={handleSubmit}
+        disabled={!form.name || !form.email || submitting}
+        className="w-full sm:w-auto"
+        size="lg"
+      >
+        {submitting ? (
+          "Envoi en cours..."
+        ) : (
+          <>
+            <Send className="h-4 w-4" />
+            Recevoir mon devis gratuit
+          </>
+        )}
+      </Button>
+    </div>
+  )
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
    Component
    ──────────────────────────────────────────────────────────────────────────── */
 
@@ -319,558 +910,13 @@ export function EstimateurForm() {
   const estimate = computeEstimate(form)
 
   /* ────────────────────────────────────────────────────────────────────────
-     Progress bar
-     ──────────────────────────────────────────────────────────────────────── */
-
-  function ProgressBar() {
-    return (
-      <div className="mb-10">
-        {/* Step labels (desktop) */}
-        <div className="hidden sm:flex justify-between mb-3">
-          {stepLabels.map((label, i) => (
-            <span
-              key={label}
-              className={`text-xs font-medium transition-colors ${
-                i + 1 <= step
-                  ? "text-indigo-600 dark:text-indigo-400"
-                  : "text-slate-400 dark:text-slate-600"
-              }`}
-            >
-              {label}
-            </span>
-          ))}
-        </div>
-
-        {/* Mobile label */}
-        <p className="sm:hidden text-xs font-medium text-indigo-600 dark:text-indigo-400 mb-2">
-          Étape {step} sur 4 - {stepLabels[step - 1]}
-        </p>
-
-        {/* Bar */}
-        <div className="h-2 w-full rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
-          <motion.div
-            className="h-full rounded-full bg-indigo-600 dark:bg-indigo-500"
-            initial={false}
-            animate={{ width: `${(step / 4) * 100}%` }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-          />
-        </div>
-      </div>
-    )
-  }
-
-  /* ────────────────────────────────────────────────────────────────────────
-     Step 1 - Type de projet
-     ──────────────────────────────────────────────────────────────────────── */
-
-  function Step1() {
-    return (
-      <div>
-        <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-          Quel est votre projet ?
-        </h2>
-        <p className="text-slate-500 dark:text-slate-400 mb-6">
-          Sélectionnez le type de projet qui correspond le mieux à votre besoin.
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {projectTypes.map(({ id, label, icon: Icon }) => {
-            const active = form.projectType === id
-            return (
-              <button
-                key={id}
-                type="button"
-                onClick={() => setForm((p) => ({ ...p, projectType: id }))}
-                className={`group relative flex flex-col items-center gap-3 rounded-2xl border-2 p-6 text-center transition-all cursor-pointer ${
-                  active
-                    ? "border-indigo-600 bg-indigo-50 dark:bg-indigo-950/40 dark:border-indigo-500 shadow-lg shadow-indigo-100 dark:shadow-indigo-950/20"
-                    : "border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/60 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-md"
-                }`}
-              >
-                <div
-                  className={`flex h-12 w-12 items-center justify-center rounded-xl transition-colors ${
-                    active
-                      ? "bg-indigo-600 text-white"
-                      : "bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900 group-hover:text-indigo-600 dark:group-hover:text-indigo-400"
-                  }`}
-                >
-                  <Icon className="h-6 w-6" />
-                </div>
-                <span
-                  className={`font-semibold transition-colors ${
-                    active
-                      ? "text-indigo-600 dark:text-indigo-400"
-                      : "text-slate-700 dark:text-slate-200"
-                  }`}
-                >
-                  {label}
-                </span>
-                {active && (
-                  <motion.div
-                    layoutId="check"
-                    className="absolute top-3 right-3"
-                  >
-                    <CheckCircle2 className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
-                  </motion.div>
-                )}
-              </button>
-            )
-          })}
-        </div>
-      </div>
-    )
-  }
-
-  /* ────────────────────────────────────────────────────────────────────────
-     Step 2 - Détails
-     ──────────────────────────────────────────────────────────────────────── */
-
-  function Step2Site() {
-    return (
-      <div className="space-y-8">
-        {/* Page count */}
-        <div>
-          <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
-            Combien de pages ?
-          </h3>
-          <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-            Estimation du nombre de pages de votre site.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {pageOptions.map(({ id, label }) => {
-              const active = form.pageCount === id
-              return (
-                <button
-                  key={id}
-                  type="button"
-                  onClick={() => setForm((p) => ({ ...p, pageCount: id }))}
-                  className={`rounded-xl border-2 px-4 py-3 text-sm font-semibold transition-all cursor-pointer ${
-                    active
-                      ? "border-indigo-600 bg-indigo-50 text-indigo-600 dark:bg-indigo-950/40 dark:border-indigo-500 dark:text-indigo-400"
-                      : "border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/60 hover:border-indigo-300 dark:hover:border-indigo-700"
-                  }`}
-                >
-                  {label}
-                </button>
-              )
-            })}
-          </div>
-        </div>
-
-        {/* Features */}
-        <div>
-          <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
-            Fonctionnalités souhaitées
-          </h3>
-          <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-            Sélectionnez toutes celles qui vous intéressent (optionnel).
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {featureOptions.map(({ id, label, icon: Icon }) => {
-              const active = form.features.includes(id)
-              return (
-                <button
-                  key={id}
-                  type="button"
-                  onClick={() => toggleFeature(id)}
-                  className={`flex items-center gap-3 rounded-xl border-2 px-4 py-3 text-left text-sm font-medium transition-all cursor-pointer ${
-                    active
-                      ? "border-indigo-600 bg-indigo-50 text-indigo-600 dark:bg-indigo-950/40 dark:border-indigo-500 dark:text-indigo-400"
-                      : "border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/60 hover:border-indigo-300 dark:hover:border-indigo-700"
-                  }`}
-                >
-                  <Icon className="h-4 w-4 shrink-0" />
-                  {label}
-                  {active && (
-                    <CheckCircle2 className="ml-auto h-4 w-4 text-indigo-600 dark:text-indigo-400 shrink-0" />
-                  )}
-                </button>
-              )
-            })}
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  function Step2Seo() {
-    return (
-      <div className="space-y-8">
-        <div>
-          <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
-            Votre site existe déjà ?
-          </h3>
-          <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-            Cela influence le travail de référencement à prévoir.
-          </p>
-          <div className="grid grid-cols-2 gap-3">
-            {[
-              { id: "oui", label: "Oui" },
-              { id: "non", label: "Non" },
-            ].map(({ id, label }) => {
-              const active = form.siteExists === id
-              return (
-                <button
-                  key={id}
-                  type="button"
-                  onClick={() => setForm((p) => ({ ...p, siteExists: id }))}
-                  className={`rounded-xl border-2 px-4 py-3 text-sm font-semibold transition-all cursor-pointer ${
-                    active
-                      ? "border-indigo-600 bg-indigo-50 text-indigo-600 dark:bg-indigo-950/40 dark:border-indigo-500 dark:text-indigo-400"
-                      : "border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/60 hover:border-indigo-300 dark:hover:border-indigo-700"
-                  }`}
-                >
-                  {label}
-                </button>
-              )
-            })}
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
-            Zone géographique visée
-          </h3>
-          <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-            Plus la zone est large, plus le travail SEO est important.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {geoOptions.map(({ id, label }) => {
-              const active = form.geoZone === id
-              return (
-                <button
-                  key={id}
-                  type="button"
-                  onClick={() => setForm((p) => ({ ...p, geoZone: id }))}
-                  className={`rounded-xl border-2 px-4 py-3 text-sm font-semibold transition-all cursor-pointer ${
-                    active
-                      ? "border-indigo-600 bg-indigo-50 text-indigo-600 dark:bg-indigo-950/40 dark:border-indigo-500 dark:text-indigo-400"
-                      : "border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/60 hover:border-indigo-300 dark:hover:border-indigo-700"
-                  }`}
-                >
-                  {label}
-                </button>
-              )
-            })}
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  function Step2Contenu() {
-    return (
-      <div>
-        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
-          Type de contenu souhaité
-        </h3>
-        <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-          Sélectionnez un ou plusieurs types de contenu.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {contentTypeOptions.map(({ id, label }) => {
-            const active = form.contentTypes.includes(id)
-            return (
-              <button
-                key={id}
-                type="button"
-                onClick={() => toggleContentType(id)}
-                className={`flex items-center justify-between rounded-xl border-2 px-4 py-3 text-sm font-semibold transition-all cursor-pointer ${
-                  active
-                    ? "border-indigo-600 bg-indigo-50 text-indigo-600 dark:bg-indigo-950/40 dark:border-indigo-500 dark:text-indigo-400"
-                    : "border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/60 hover:border-indigo-300 dark:hover:border-indigo-700"
-                }`}
-              >
-                {label}
-                {active && (
-                  <CheckCircle2 className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
-                )}
-              </button>
-            )
-          })}
-        </div>
-      </div>
-    )
-  }
-
-  function Step2Autre() {
-    return (
-      <div>
-        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
-          Décrivez votre projet
-        </h3>
-        <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-          Nous pourrons affiner l&apos;estimation après échange.
-        </p>
-        <textarea
-          value={form.message}
-          onChange={(e) => setForm((p) => ({ ...p, message: e.target.value }))}
-          rows={4}
-          placeholder="Décrivez brièvement votre projet..."
-          className="w-full rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/60 px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-indigo-600 dark:focus:border-indigo-500 focus:outline-none transition-colors resize-none"
-        />
-      </div>
-    )
-  }
-
-  function Step2() {
-    return (
-      <div>
-        <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-          Détails du projet
-        </h2>
-        <p className="text-slate-500 dark:text-slate-400 mb-6">
-          Précisez vos besoins pour affiner l&apos;estimation.
-        </p>
-
-        {isSiteProject && <Step2Site />}
-        {form.projectType === "seo" && <Step2Seo />}
-        {form.projectType === "contenu" && <Step2Contenu />}
-        {form.projectType === "autre" && <Step2Autre />}
-      </div>
-    )
-  }
-
-  /* ────────────────────────────────────────────────────────────────────────
-     Step 3 - Budget & Délais
-     ──────────────────────────────────────────────────────────────────────── */
-
-  function Step3() {
-    return (
-      <div className="space-y-8">
-        <div>
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-            Budget & Délais
-          </h2>
-          <p className="text-slate-500 dark:text-slate-400 mb-6">
-            Aidez-nous à calibrer notre proposition.
-          </p>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
-            Budget estimé
-          </h3>
-          <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-            Quel budget envisagez-vous pour ce projet ?
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {budgetOptions.map(({ id, label }) => {
-              const active = form.budget === id
-              return (
-                <button
-                  key={id}
-                  type="button"
-                  onClick={() => setForm((p) => ({ ...p, budget: id }))}
-                  className={`rounded-xl border-2 px-4 py-3 text-sm font-semibold transition-all cursor-pointer ${
-                    active
-                      ? "border-indigo-600 bg-indigo-50 text-indigo-600 dark:bg-indigo-950/40 dark:border-indigo-500 dark:text-indigo-400"
-                      : "border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/60 hover:border-indigo-300 dark:hover:border-indigo-700"
-                  }`}
-                >
-                  {label}
-                </button>
-              )
-            })}
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1">
-            Délai souhaité
-          </h3>
-          <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-            Quand aimeriez-vous que le projet soit livré ?
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {timelineOptions.map(({ id, label }) => {
-              const active = form.timeline === id
-              return (
-                <button
-                  key={id}
-                  type="button"
-                  onClick={() => setForm((p) => ({ ...p, timeline: id }))}
-                  className={`rounded-xl border-2 px-4 py-3 text-sm font-semibold transition-all cursor-pointer ${
-                    active
-                      ? "border-indigo-600 bg-indigo-50 text-indigo-600 dark:bg-indigo-950/40 dark:border-indigo-500 dark:text-indigo-400"
-                      : "border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/60 hover:border-indigo-300 dark:hover:border-indigo-700"
-                  }`}
-                >
-                  {label}
-                </button>
-              )
-            })}
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  /* ────────────────────────────────────────────────────────────────────────
-     Step 4 - Résultat & Contact
-     ──────────────────────────────────────────────────────────────────────── */
-
-  function Step4() {
-    if (submitted) {
-      return (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="text-center py-12"
-        >
-          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30">
-            <CheckCircle2 className="h-8 w-8 text-green-600 dark:text-green-400" />
-          </div>
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
-            Demande envoyée !
-          </h2>
-          <p className="text-slate-500 dark:text-slate-400 max-w-md mx-auto">
-            Merci {form.name ? form.name.split(" ")[0] : ""} ! Nous reviendrons
-            vers vous dans les 24h avec un devis détaillé et personnalisé.
-          </p>
-        </motion.div>
-      )
-    }
-
-    return (
-      <div className="space-y-8">
-        {/* Estimate display */}
-        <div className="rounded-2xl border-2 border-indigo-200 dark:border-indigo-800 bg-gradient-to-br from-indigo-50 to-white dark:from-indigo-950/40 dark:to-slate-900 p-6 sm:p-8 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-indigo-100 dark:bg-indigo-900/50 px-4 py-1.5 text-xs font-semibold text-indigo-600 dark:text-indigo-400 mb-4">
-            <Sparkles className="h-3.5 w-3.5" />
-            Estimation personnalisée
-          </div>
-          <p className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
-            {fmt(estimate.min)} – {fmt(estimate.max)}
-            {estimate.monthly && (
-              <span className="text-lg font-semibold text-slate-500 dark:text-slate-400">
-                {" "}
-                / mois
-              </span>
-            )}
-          </p>
-          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-            Cette estimation est indicative. Le prix final dépend des
-            spécificités de votre projet.
-          </p>
-        </div>
-
-        {/* Contact form */}
-        <div>
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-1">
-            Recevez un devis détaillé
-          </h2>
-          <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
-            Laissez-nous vos coordonnées et nous vous enverrons une proposition
-            personnalisée sous 24h.
-          </p>
-
-          <input type="text" value={hp} onChange={(e) => setHp(e.target.value)} autoComplete="off" tabIndex={-1} aria-hidden="true" className="absolute opacity-0 h-0 w-0 pointer-events-none" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="sm:col-span-2 sm:col-span-1">
-              <label
-                htmlFor="est-name"
-                className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5"
-              >
-                Nom complet *
-              </label>
-              <input
-                id="est-name"
-                type="text"
-                required
-                value={form.name}
-                onChange={(e) =>
-                  setForm((p) => ({ ...p, name: e.target.value }))
-                }
-                placeholder="Jean Dupont"
-                className="w-full rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/60 px-4 py-2.5 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-indigo-600 dark:focus:border-indigo-500 focus:outline-none transition-colors"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="est-email"
-                className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5"
-              >
-                Email *
-              </label>
-              <input
-                id="est-email"
-                type="email"
-                required
-                value={form.email}
-                onChange={(e) =>
-                  setForm((p) => ({ ...p, email: e.target.value }))
-                }
-                placeholder="jean@exemple.fr"
-                className="w-full rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/60 px-4 py-2.5 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-indigo-600 dark:focus:border-indigo-500 focus:outline-none transition-colors"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="est-phone"
-                className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5"
-              >
-                Téléphone
-              </label>
-              <input
-                id="est-phone"
-                type="tel"
-                value={form.phone}
-                onChange={(e) =>
-                  setForm((p) => ({ ...p, phone: e.target.value }))
-                }
-                placeholder="06 12 34 56 78"
-                className="w-full rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/60 px-4 py-2.5 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-indigo-600 dark:focus:border-indigo-500 focus:outline-none transition-colors"
-              />
-            </div>
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="est-message"
-                className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5"
-              >
-                Message (optionnel)
-              </label>
-              <textarea
-                id="est-message"
-                rows={3}
-                value={form.message}
-                onChange={(e) =>
-                  setForm((p) => ({ ...p, message: e.target.value }))
-                }
-                placeholder="Précisions sur votre projet..."
-                className="w-full rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/60 px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-indigo-600 dark:focus:border-indigo-500 focus:outline-none transition-colors resize-none"
-              />
-            </div>
-          </div>
-        </div>
-
-        <Button
-          onClick={handleSubmit}
-          disabled={!form.name || !form.email || submitting}
-          className="w-full sm:w-auto"
-          size="lg"
-        >
-          {submitting ? (
-            "Envoi en cours..."
-          ) : (
-            <>
-              <Send className="h-4 w-4" />
-              Recevoir mon devis gratuit
-            </>
-          )}
-        </Button>
-      </div>
-    )
-  }
-
-  /* ────────────────────────────────────────────────────────────────────────
      Main render
      ──────────────────────────────────────────────────────────────────────── */
 
   return (
     <div className="mx-auto max-w-3xl">
       <div className="rounded-3xl border border-slate-200 dark:border-slate-700/60 bg-white dark:bg-slate-900/80 p-6 sm:p-10 shadow-xl shadow-slate-200/50 dark:shadow-slate-950/30">
-        <ProgressBar />
+        <ProgressBar step={step} />
 
         <AnimatePresence mode="wait">
           <motion.div
@@ -881,10 +927,29 @@ export function EstimateurForm() {
             exit="exit"
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
-            {step === 1 && <Step1 />}
-            {step === 2 && <Step2 />}
-            {step === 3 && <Step3 />}
-            {step === 4 && <Step4 />}
+            {step === 1 && <Step1 form={form} setForm={setForm} />}
+            {step === 2 && (
+              <Step2
+                form={form}
+                setForm={setForm}
+                isSiteProject={isSiteProject}
+                toggleFeature={toggleFeature}
+                toggleContentType={toggleContentType}
+              />
+            )}
+            {step === 3 && <Step3 form={form} setForm={setForm} />}
+            {step === 4 && (
+              <Step4
+                form={form}
+                setForm={setForm}
+                submitted={submitted}
+                submitting={submitting}
+                hp={hp}
+                setHp={setHp}
+                estimate={estimate}
+                handleSubmit={handleSubmit}
+              />
+            )}
           </motion.div>
         </AnimatePresence>
 

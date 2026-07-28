@@ -1,5 +1,4 @@
 import sharp from "sharp"
-import { writeFileSync } from "fs"
 import { join } from "path"
 
 const OUTPUT_DIR = join(import.meta.dirname, "../public/images/blog")

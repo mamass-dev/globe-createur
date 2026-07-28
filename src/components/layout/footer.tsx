@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Container } from "@/components/ui/container"
 import { Wordmark } from "@/components/ui/wordmark"
-import { SITE_NAME, CONTACT } from "@/lib/constants"
+import { CONTACT } from "@/lib/constants"
 import { footerNav } from "@/lib/data/navigation"
 
 export function Footer() {

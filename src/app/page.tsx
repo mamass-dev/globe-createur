@@ -133,7 +133,7 @@ export default function HomePage() {
             <AnimateOnScroll delay={0.1} className="order-1 lg:order-2">
               <Kicker number="03">Méthodologie</Kicker>
               <h2 className="text-impact mt-6 text-4xl lg:text-6xl text-ivory">
-                Plus qu'une agence,<br />un partenaire.
+                Plus qu&apos;une agence,<br />un partenaire.
               </h2>
               <div className="mt-10 space-y-px">
                 {[

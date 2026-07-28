@@ -69,7 +69,7 @@ export function CLRReservationForm() {
           ✓
         </div>
         <h2 className="text-3xl md:text-5xl font-black tracking-tighter mt-6 text-slate-900 dark:text-white">
-          C'est noté !
+          C&apos;est noté !
         </h2>
         <p className="text-slate-600 dark:text-slate-300 mt-4 max-w-md mx-auto leading-relaxed">
           On vous rappelle <strong>sous 24h</strong> au numéro indiqué pour caler les derniers
@@ -234,7 +234,7 @@ export function CLRReservationForm() {
             className="mt-1 h-4 w-4 accent-indigo-600 rounded"
           />
           <span className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-            J'accepte d'être recontacté par Globe Créateur et autorise l'usage ponctuel de mes
+            J&apos;accepte d&apos;être recontacté par Globe Créateur et autorise l&apos;usage ponctuel de mes
             images par Globe Créateur × CL RACING à des fins de communication. Voir les{" "}
             <a
               href="/mentions-legales"

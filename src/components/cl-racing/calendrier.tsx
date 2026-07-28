@@ -25,7 +25,7 @@ export function CLRCalendrier() {
             </h2>
             <p className="text-slate-600 dark:text-slate-300 text-base md:text-lg mt-5 leading-relaxed">
               Premier roulage de la saison sur le circuit de Vaison-la-Romaine, en partenariat
-              avec CL RACING. Réservez votre prise de vue sur l'une (ou les deux) des journées.
+              avec CL RACING. Réservez votre prise de vue sur l&apos;une (ou les deux) des journées.
             </p>
           </div>
           <a

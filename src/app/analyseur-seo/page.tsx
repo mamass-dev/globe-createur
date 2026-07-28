@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { buildMetadata } from "@/lib/metadata"
 import { Breadcrumb } from "@/components/layout/breadcrumb"
 import { FaqAccordion } from "@/components/sections/faq-accordion"
@@ -186,7 +187,7 @@ export default function AnalyseurSeoPage() {
               <strong>backlinks</strong>, ni la <strong>qualité de votre contenu</strong> face
               à la concurrence, ni les problèmes de crawl à l&apos;échelle du site. C&apos;est
               la différence entre prendre sa température et passer un bilan complet. Pour
-              aller plus loin, notre <a href="/services/seo-local-dijon">accompagnement SEO local</a>{" "}
+              aller plus loin, notre <Link href="/services/seo-local-dijon">accompagnement SEO local</Link>{" "}
               inclut un audit complet de votre site, et notre{" "}
               <a href="/audit-digital">audit digital gratuit</a> évalue l&apos;ensemble de
               votre présence en ligne en 2 minutes.

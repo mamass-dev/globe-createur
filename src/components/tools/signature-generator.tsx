@@ -7,7 +7,7 @@ import {
   Linkedin, Instagram, Facebook, Twitter, Youtube,
   Palette, Upload, Copy, Check, Monitor, Smartphone,
   Moon, Sun, Eye, ChevronDown, Sparkles, Image as ImageIcon,
-  Link2, Shield, Type, Star, AlertCircle, CheckCircle2,
+  Link2, Shield, Type, AlertCircle,
 } from "lucide-react"
 
 /* ─── Types ─── */
@@ -542,6 +542,7 @@ export function SignatureGenerator() {
                     <label className="block text-xs text-slate-500 dark:text-slate-400 mb-1.5">Logo</label>
                     <label className="flex flex-col items-center justify-center gap-2 p-4 rounded-xl border-2 border-dashed border-slate-200 dark:border-slate-700 hover:border-indigo-400 dark:hover:border-indigo-600 transition-colors cursor-pointer min-h-[80px]">
                       {form.logoUrl ? (
+                        // eslint-disable-next-line @next/next/no-img-element -- data URL uploadée par l'utilisateur (FileReader), dimensions inconnues, next/image inutile ici
                         <img src={form.logoUrl} alt="Logo" className="h-10 w-auto object-contain" />
                       ) : (
                         <>
@@ -556,6 +557,7 @@ export function SignatureGenerator() {
                     <label className="block text-xs text-slate-500 dark:text-slate-400 mb-1.5">Photo</label>
                     <label className="flex flex-col items-center justify-center gap-2 p-4 rounded-xl border-2 border-dashed border-slate-200 dark:border-slate-700 hover:border-indigo-400 dark:hover:border-indigo-600 transition-colors cursor-pointer min-h-[80px]">
                       {form.photoUrl ? (
+                        // eslint-disable-next-line @next/next/no-img-element -- data URL uploadée par l'utilisateur (FileReader), dimensions inconnues, next/image inutile ici
                         <img src={form.photoUrl} alt="Photo" className="h-10 w-10 rounded-full object-cover" />
                       ) : (
                         <>

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next"
 import localFont from "next/font/local"
-import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, SITE_LOCALE } from "@/lib/constants"
+import { SITE_NAME, SITE_URL, SITE_LOCALE } from "@/lib/constants"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { LocalBusinessSchema } from "@/components/seo/local-business"

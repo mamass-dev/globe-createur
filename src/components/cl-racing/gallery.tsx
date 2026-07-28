@@ -18,7 +18,7 @@ export function CLRGallery() {
             </h2>
             <p className="text-slate-600 dark:text-slate-300 text-base md:text-lg mt-5 leading-relaxed">
               Quelques exemples de prises de vue récentes — action en virage, panning, détails et
-              ambiance paddock. Chaque pilote reçoit l'intégralité des photos réussies de ses
+              ambiance paddock. Chaque pilote reçoit l&apos;intégralité des photos réussies de ses
               sessions.
             </p>
           </div>

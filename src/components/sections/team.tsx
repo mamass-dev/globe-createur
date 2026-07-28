@@ -27,13 +27,13 @@ export function Team() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
           <h2 className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">
-            L'équipe
+            L&apos;équipe
           </h2>
           <h3 className="text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white">
             Deux passionnés, <br />une vision commune.
           </h3>
           <p className="text-lg text-slate-600 dark:text-slate-400">
-            Basés à Dijon, on met notre énergie au service de vos ambitions. Pas de jargon, pas d'intermédiaire - juste nous, engagés à vos côtés.
+            Basés à Dijon, on met notre énergie au service de vos ambitions. Pas de jargon, pas d&apos;intermédiaire - juste nous, engagés à vos côtés.
           </p>
         </div>
 
@@ -85,7 +85,7 @@ export function Team() {
         <div className="mt-28 max-w-4xl mx-auto">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">
-              Notre réseau d'experts
+              Notre réseau d&apos;experts
             </h2>
             <h3 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">
               Une équipe pluridisciplinaire <br />à votre service.
