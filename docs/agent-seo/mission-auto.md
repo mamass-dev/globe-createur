@@ -22,7 +22,13 @@
 ```bash
 cd ~/globe-createur && git checkout main && git pull
 ```
-Lire `docs/agent-seo/contexte.md` + `docs/agent-seo/roadmap.md` (créer si absent).
+Lire `docs/agent-seo/contexte.md` + **`docs/agent-seo/strategie.md` (la doctrine —
+tout le travail sert ses 5 axes et ses KPI)** + `docs/agent-seo/roadmap.md`.
+
+⚠️ La production (`seo-article` mais aussi les pages des mercredis/rotations) suit
+la **File de production** de la roadmap dans l'ordre — pages villes comprises
+(refontes Axe 2 et créations couronne Axe 3 via `/modeles-pseo` + `/programmatique-pseo`),
+pas uniquement des articles de blog.
 
 ## Rotation `seo-quotidien` (selon le jour)
 
