@@ -14,7 +14,7 @@
 ## File de production (priorisée — l'agent prend dans l'ordre)
 | Priorité | Sujet | Type | Axe | Statut |
 |---|---|---|---|---|
-| 1 | Refonte page Dijon (double intention com + création site) | page | 1 | à faire |
+| 1 | Refonte page Dijon (double intention com + création site) | page | 1 | en validation |
 | 2 | Enrichissement page Nevers | page | 2 | à faire |
 | 3 | Création page Longvic | page pSEO | 3 | à faire |
 | 4 | Article « Combien coûte un site internet pour une PME en 2026 » | article | 4 | à faire |
@@ -28,3 +28,4 @@
 ## Publiés récemment
 | Date | Contenu | Mot-clé | Branche |
 |---|---|---|---|
+| 28/07/2026 | Refonte page Dijon (double intention) — en attente validation Axel | agence communication dijon / création site internet dijon | `seo/auto-20260728-refonte-dijon` |
