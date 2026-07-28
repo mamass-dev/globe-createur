@@ -143,6 +143,37 @@ export default function AgenceNeversPage() {
               </li>
             </ul>
 
+            <h2>Création et refonte de site internet à Nevers</h2>
+            <p>
+              C&apos;est la demande n°1 des entreprises nivernaises qui nous
+              contactent : un site vitrine moderne, ou la refonte d&apos;un site
+              vieillissant qui ne génère plus rien. On crée des sites sur mesure
+              — pas de template acheté 50 € — pensés dès le départ pour le
+              référencement local : structure optimisée pour les recherches
+              &quot;Nevers&quot; et &quot;Nièvre&quot;, vitesse de chargement
+              irréprochable, version mobile prioritaire.
+            </p>
+            <p>
+              Pour une refonte, on applique une méthode stricte de{" "}
+              <Link href="/blog/refaire-son-site-sans-perdre-son-seo">
+                migration sans perte de référencement
+              </Link>{" "}
+              : audit de l&apos;existant, redirections 301, conservation des
+              contenus qui rankent. Votre nouveau site repart avec l&apos;acquis
+              Google de l&apos;ancien, pas de zéro.
+            </p>
+
+            <h2>Branding, logo et identité visuelle à Nevers</h2>
+            <p>
+              Un site n&apos;est convaincant que si l&apos;image qu&apos;il porte
+              l&apos;est aussi. On conçoit des identités visuelles complètes pour
+              les entreprises nivernaises : logo, charte graphique, supports
+              print et digitaux, déclinaisons réseaux sociaux. Avec un principe :
+              votre image doit être à la hauteur de votre savoir-faire, et
+              cohérente partout où vos clients vous croisent — site, fiche
+              Google, réseaux, véhicules, devanture.
+            </p>
+
             <h2>Le marché nivernais : une vraie carte à jouer en digital</h2>
             <p>
               La Nièvre connaît un renouveau touristique porté par la Loire à

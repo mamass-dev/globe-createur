@@ -149,6 +149,36 @@ export default function AgenceBeaunePage() {
               travaillé, vous pouvez prendre des positions rapidement.
             </p>
 
+            <h2>À Beaune, votre client est souvent de passage — votre site doit le savoir</h2>
+            <p>
+              La particularité du marché beaunois, c&apos;est que la clientèle la
+              plus rentable n&apos;habite pas Beaune. Œnotouristes, visiteurs des
+              Hospices, congressistes, couples en week-end : ils choisissent leur
+              hôtel, leur table et leur dégustation <strong>avant d&apos;arriver</strong>,
+              depuis Paris, Lyon, Bruxelles ou New York. La bataille ne se joue
+              donc pas seulement sur « restaurant Beaune » — elle se joue en
+              plusieurs langues, contre les plateformes de réservation, et des
+              semaines en amont du séjour.
+            </p>
+            <p>
+              Pour un domaine, un hôtel ou un restaurant beaunois, ça change les
+              priorités : des photos professionnelles qui donnent envie (c&apos;est
+              elles qui vendent, pas le texte), une fiche Google irréprochable
+              avec des avis récents, un site rapide en mobile — car le visiteur
+              qui compare trois adresses depuis son téléphone ne reviendra pas
+              sur un site qui rame. Et pour capter la réservation en direct
+              plutôt que de reverser une commission aux plateformes, il faut que
+              votre site inspire au moins autant confiance qu&apos;elles.
+            </p>
+            <p>
+              Les commerces et artisans qui vivent de la clientèle locale, eux,
+              relèvent du SEO local classique — Pack Local, avis, visibilité de
+              quartier — avec un atout : à Beaune, la concurrence en ligne reste
+              faible hors tourisme. Les deux stratégies n&apos;ont pas grand-chose
+              en commun, et c&apos;est la première chose qu&apos;on détermine avec
+              vous.
+            </p>
+
             <h2>Forfaits communication pour les PME de Beaune</h2>
             <p>
               Plutôt qu&apos;un projet ponctuel livré et oublié, on propose des{" "}
