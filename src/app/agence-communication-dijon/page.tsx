@@ -20,8 +20,8 @@ import { services } from "@/lib/data/services"
 import { temoignages } from "@/lib/data/temoignages"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Agence de communication à Dijon - Studio 360° pour PME | Globe Créateur",
-  description: "Agence de communication à Dijon spécialisée PME. Web, SEO local, photo, vidéo, design et réseaux sociaux. Un interlocuteur unique, des résultats mesurables. Studio basé à Longvic.",
+  title: "Agence de communication & création de site internet à Dijon | Globe Créateur",
+  description: "Agence de communication à Dijon : création de site internet, SEO local, photo, vidéo, design, réseaux sociaux. Studio basé à Longvic, un interlocuteur unique pour toute votre communication.",
   path: "/agence-communication-dijon",
 })
 
@@ -57,6 +57,9 @@ const faqAgence = [
   { question: "Combien de temps pour avoir un site internet ?", answer: "Un site vitrine prend 3 à 5 semaines de la maquette à la mise en ligne. Un site plus complexe (multi-pages, blog, fonctionnalités sur-mesure) peut prendre 6 à 10 semaines. On vous donne un planning précis dès le devis." },
   { question: "Vous faites aussi l'impression (flyers, cartes de visite) ?", answer: "On crée les visuels (design, mise en page) mais on ne gère pas l'impression. En revanche, on travaille avec des imprimeurs locaux de confiance et on peut vous recommander le bon partenaire." },
   { question: "Comment savoir si j'ai besoin d'une agence ou d'un freelance ?", answer: "Si vous avez besoin d'une seule compétence (juste un logo, juste des photos), un freelance peut suffire. Si vous avez besoin d'une communication cohérente et continue (site + SEO + réseaux + contenu), un studio intégré comme Globe Créateur est plus efficace et souvent moins cher que 4 freelances." },
+  { question: "Vous faites uniquement des sites internet ou aussi le reste de la communication ?", answer: "Les deux. Beaucoup de clients démarrent par la création de site internet, puis nous confient le SEO local, les réseaux sociaux ou les visuels une fois le site en ligne. D'autres viennent d'abord pour la com' et ajoutent le site ensuite. Le forfait mensuel s'adapte aux deux entrées." },
+  { question: "Combien coûte un site internet pour une PME à Dijon ?", answer: "Un site vitrine sur-mesure démarre autour de quelques centaines d'euros par mois en forfait, ou en projet ponctuel selon la complexité. Le devis précis dépend du nombre de pages, des fonctionnalités (prise de rendez-vous, e-commerce) et du travail de contenu. Demandez un devis gratuit, on vous chiffre ça sous 48h." },
+  { question: "Vous intervenez dans quels quartiers de Dijon ?", answer: "Tous. Notre studio est à Longvic, aux portes de Dijon, et on travaille avec des PME du centre-ville, de Toison d'Or, de Fontaine d'Ouche, des Grésilles et de tous les autres quartiers - en présentiel pour les shootings et réunions, à distance pour le suivi." },
 ]
 
 export default function AgencePage() {
@@ -64,7 +67,7 @@ export default function AgencePage() {
     <>
       <CityLocalBusinessSchema
         city="Dijon"
-        description="Agence de communication à Dijon spécialisée PME. Web, SEO local, photo, vidéo, design et réseaux sociaux. Un interlocuteur unique, des résultats mesurables. Studio basé à Longvic."
+        description="Agence de communication et de création de site internet à Dijon. Web, SEO local, photo, vidéo, design et réseaux sociaux. Un interlocuteur unique, des résultats mesurables. Studio basé à Longvic."
         slug="agence-communication-dijon"
         geo={{ lat: 47.322, lng: 5.041 }}
       />
@@ -75,9 +78,9 @@ export default function AgencePage() {
 
       {/* 2. HERO */}
       <PageHero
-        badge="Agence communication Dijon"
-        title="Votre agence de communication à Dijon, en version studio"
-        subtitle="Web, SEO, photo, vidéo, design, réseaux sociaux - un studio intégré dédié aux PME qui veulent se démarquer. Basé à Longvic, on intervient dans toute la Bourgogne."
+        badge="Agence communication & création de site Dijon"
+        title="Votre agence de communication et de création de site internet à Dijon"
+        subtitle="Web, SEO, photo, vidéo, design, réseaux sociaux - un studio intégré dédié aux PME qui veulent un site qui rapporte et une communication qui suit. Basé à Longvic, on intervient dans toute la Bourgogne."
         ctaLabel="Demander un devis gratuit"
         ctaHref="/devis"
         secondaryLabel="Découvrir nos services"
@@ -177,6 +180,47 @@ export default function AgencePage() {
               <li>Commerces et artisans - Visibilité locale, fiche Google, site vitrine</li>
               <li>Professions libérales - Crédibilité en ligne, référencement, prise de rendez-vous</li>
             </ul>
+
+            <h2>Création de site internet à Dijon : notre cœur de métier</h2>
+            <p>
+              Une agence de communication qui ne sait pas coder son propre site, ça
+              devrait vous alerter. Chez nous, la <Link href="/services/creation-site-internet-dijon">création de site internet à Dijon</Link>{" "}
+              n&apos;est pas sous-traitée à un template WordPress : on développe en
+              Next.js, sur-mesure, pensé SEO dès la première ligne de code.
+            </p>
+            <p>
+              Deux cas de figure reviennent tout le temps chez les PME dijonnaises :
+            </p>
+            <ul>
+              <li>
+                <strong>Vous n&apos;avez pas de site.</strong> On part d&apos;une page
+                blanche : audit de vos concurrents dijonnais, structure pensée pour
+                Google dès le départ, mise en ligne en 3 à 5 semaines.
+              </li>
+              <li>
+                <strong>Votre site actuel ne convertit pas ou est trop lent.</strong>{" "}
+                On fait une <Link href="/services/refonte-site-internet-dijon">refonte sans perte de référencement</Link> -
+                on garde ce qui marche (positions Google acquises), on corrige ce qui
+                bloque (vitesse, mobile, formulaire de contact qui ne part jamais).
+              </li>
+            </ul>
+            {/* AXEL: chiffre ou exemple concret à insérer ici - ex. temps de chargement moyen gagné sur une refonte dijonnaise récente, ou nombre de sites Next.js livrés à des PME dijonnaises */}
+
+            <h2>Dijon, quartier par quartier : notre terrain de jeu</h2>
+            <p>
+              On ne fait pas du copier-coller de PME en PME. Le centre-ville historique,
+              Toison d&apos;Or, Fontaine d&apos;Ouche, les Grésilles, Montchapet ou le secteur
+              Clemenceau n&apos;ont pas la même clientèle ni les mêmes codes commerciaux -
+              et ça change la façon d&apos;écrire une page d&apos;accueil ou de cadrer une
+              fiche Google Business.
+            </p>
+            <ul>
+              <li><strong>Centre-ville / Darcy-Clemenceau</strong> - commerces, restaurants, professions libérales : la visibilité sur Google Maps et les avis clients pèsent lourd.</li>
+              <li><strong>Toison d&apos;Or</strong> - zone commerciale et bureaux : cible B2B et PME de services, sites orientés génération de leads.</li>
+              <li><strong>Fontaine d&apos;Ouche, Grésilles, Montchapet</strong> - quartiers résidentiels en mutation : bon terrain pour les artisans et commerces de proximité qui veulent enfin exister en ligne.</li>
+              <li><strong>Longvic, notre siège</strong> - on y est, tout simplement. C&apos;est notre quartier avant d&apos;être un mot-clé.</li>
+            </ul>
+            {/* AXEL: cas client anonymisé par quartier à insérer ici (ex. un commerce du centre-ville, une PME de la zone Toison d'Or) - chiffre de résultat si possible (positions Google, appels générés) */}
           </div>
         </AnimateOnScroll>
       </Container>
