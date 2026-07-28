@@ -21,9 +21,15 @@
 ## Préambule commun (chaque run)
 ```bash
 cd ~/globe-createur && git checkout main && git pull
+cd ~/vault && git pull && cd ~/globe-createur
 ```
-Lire `docs/agent-seo/contexte.md` + **`docs/agent-seo/strategie.md` (la doctrine —
-tout le travail sert ses 5 axes et ses KPI)** + `docs/agent-seo/roadmap.md`.
+Lire `docs/agent-seo/contexte.md` + **`~/vault/seo-globecreateur/strategie.md`
+(la doctrine — tout le travail sert ses 5 axes et ses KPI)** +
+`~/vault/seo-globecreateur/roadmap.md`.
+⚠️ PILOTAGE OBSIDIAN : stratégie, roadmap et briefs vivent dans LE VAULT
+(`~/vault/seo-globecreateur/`) — Axel les édite dans Obsidian. Toute mise à jour
+de roadmap/briefs se fait LÀ, suivie de `cd ~/vault && git add -A && git commit
+&& git push`. Les briefs : `~/vault/seo-globecreateur/briefs/<slug>.md`.
 
 ⚠️ La production (`seo-article` mais aussi les pages des mercredis/rotations) suit
 la **File de production** de la roadmap dans l'ordre — pages villes comprises
@@ -33,7 +39,7 @@ pas uniquement des articles de blog.
 ## Rotation `seo-quotidien` (selon le jour)
 
 ### Lundi — Vue d'ensemble & roadmap
-Suivre `/mots-cles-overview`. Mettre à jour `docs/agent-seo/roadmap.md` :
+Suivre `/mots-cles-overview`. Mettre à jour `~/vault/seo-globecreateur/roadmap.md` (+ commit/push du vault) :
 les 3 chantiers de la semaine + la file d'articles priorisée (nourrie par les
 trous détectés et `/mots-cles-decisionnels` une fois par mois).
 Branche + rapport Telegram (le lundi ne modifie que la roadmap → merge facile).
@@ -55,7 +61,7 @@ et les idées LinkedIn dans le vault (`/linkedin-journal`).
 
 ## `seo-article` (mardi et jeudi) — production éditoriale
 
-1. Prendre le 1er sujet de la file dans `docs/agent-seo/roadmap.md`
+1. Prendre le 1er sujet de la file dans `~/vault/seo-globecreateur/roadmap.md`
 2. Suivre `/brief-contenu` puis `/workflow-article` À LA LETTRE (MDX complet,
    frontmatter conforme, maillage entrant ajouté, blocs AXEL pour l'expérience)
 3. NE PAS lancer `npm run build` (trop lourd pour le VPS) — vérifier à la place :

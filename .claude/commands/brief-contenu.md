@@ -15,4 +15,4 @@ Le brief contient :
 5. **Maillage prévu** : 2-3 articles existants qui feront un lien entrant, les liens sortants (services + articles) — slugs réels du repo
 6. **Specs** : longueur cible, image (idée de visuel + alt), catégorie, relatedServices/relatedArticles
 
-Sauvegarde le brief dans `docs/agent-seo/briefs/<slug>.md`. Il alimente ensuite `/workflow-article`.
+Sauvegarde le brief dans `/Users/mamass/linkedin-vault/seo-globecreateur/briefs/<slug>.md`. Il alimente ensuite `/workflow-article`.

@@ -1,11 +1,11 @@
 ---
 description: Produire un article complet de A à Z (brief → rédaction → MDX → maillage → prêt à publier)
-argument-hint: <mot-clé ou slug d'un brief existant dans docs/agent-seo/briefs/>
+argument-hint: <mot-clé ou slug d'un brief existant dans /Users/mamass/linkedin-vault/seo-globecreateur/briefs/>
 ---
 
 Lis `docs/agent-seo/contexte.md` et `/ton-de-voix` (la voix d'Axel est non négociable). Cible : $ARGUMENTS
 
-1. **Brief** : charge `docs/agent-seo/briefs/<slug>.md` s'il existe, sinon exécute `/brief-contenu` d'abord
+1. **Brief** : charge `/Users/mamass/linkedin-vault/seo-globecreateur/briefs/<slug>.md` s'il existe, sinon exécute `/brief-contenu` d'abord
 2. **Rédaction** — les règles :
    - Chaque H2 ouvre par la réponse directe en 2-3 phrases (bloc citable AEO), puis développe
    - E-E-A-T obligatoire : au moins 2 éléments d'expérience réelle (chiffres agence, cas anonymisé, test effectué) — si tu ne les as pas, mets un bloc `<!-- AXEL: insérer ton exemple ici -->` plutôt que d'inventer
