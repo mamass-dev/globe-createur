@@ -10,6 +10,22 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  async headers() {
+    return [
+      // Les assets JS/CSS/fonts polluent le rapport « Explorée, non indexée »
+      // de Search Console et font échouer les validations. noindex les bascule
+      // en exclusion volontaire sans gêner le rendu des pages par Googlebot.
+      {
+        source: "/_next/static/:path*",
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+      },
+      {
+        source: "/favicon.ico",
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+      },
+    ]
+  },
+
   async redirects() {
     return [
       // .com → .fr (canonical domain)
