@@ -22,8 +22,8 @@ import { services } from "@/lib/data/services"
 import { temoignages } from "@/lib/data/temoignages"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Agence de communication à Nevers — Web, SEO & contenu pour PME | Globe Créateur",
-  description: "Agence de communication et agence web pour les PME de Nevers et de la Nièvre : création de site internet, SEO local, photo, vidéo, réseaux sociaux. Audit offert et devis gratuit sous 24 h.",
+  title: "Agence de communication Nevers — Audit offert, création site & SEO | Globe Créateur",
+  description: "Agence digitale à Nevers : site web, SEO local, réseaux sociaux, photo & vidéo pour PME. Audit gratuit. Devis sans engagement 24h.",
   path: "/agence-communication-nevers",
   keywords: ["agence communication Nevers", "agence web Nevers", "création site internet Nevers", "agence SEO Nevers", "agence de communication Nevers", "agence digitale Nevers", "webmarketing Nevers", "référencement Nevers", "agence Nièvre"],
 })

@@ -20,8 +20,8 @@ import { services } from "@/lib/data/services"
 import { temoignages } from "@/lib/data/temoignages"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Agence de communication à Chalon-sur-Saône - Studio Digital PME | Globe Créateur",
-  description: "Agence de communication à Chalon-sur-Saône spécialisée PME. Sites web, SEO local, photo, vidéo et réseaux sociaux. Studio basé en Bourgogne, à 1h de Chalon.",
+  title: "Agence de communication Chalon-sur-Saône — Audit offert, site web & SEO | Globe Créateur",
+  description: "Agence digitale à Chalon-sur-Saône : site web, SEO local, réseaux sociaux, photo & vidéo pour PME. Audit gratuit. Devis sans engagement 24h.",
   path: "/agence-communication-chalon-sur-saone",
 })
 

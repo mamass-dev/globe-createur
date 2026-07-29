@@ -20,8 +20,8 @@ import { services } from "@/lib/data/services"
 import { temoignages } from "@/lib/data/temoignages"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Agence de communication à Auxerre - Studio Digital PME | Globe Créateur",
-  description: "Agence de communication à Auxerre spécialisée PME. Sites web, SEO local, photo, vidéo et réseaux sociaux pour les entreprises auxerroises. Studio basé en Bourgogne.",
+  title: "Agence de communication Auxerre — Audit offert, site web & SEO | Globe Créateur",
+  description: "Agence digitale à Auxerre : site web, SEO local, réseaux sociaux, photo & vidéo pour PME icaunaises. Audit gratuit. Devis sans engagement 24h.",
   path: "/agence-communication-auxerre",
 })
 

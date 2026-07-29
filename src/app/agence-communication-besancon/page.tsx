@@ -22,8 +22,8 @@ import { services } from "@/lib/data/services"
 import { temoignages } from "@/lib/data/temoignages"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Agence de communication à Besançon - Studio Digital PME | Globe Créateur",
-  description: "Agence de communication à Besançon spécialisée PME. Sites web, SEO local, photo, vidéo et réseaux sociaux pour les entreprises bisontines. Studio basé à 1h30 de Besançon.",
+  title: "Agence de communication Besançon — Audit gratuit, site web & SEO | Globe Créateur",
+  description: "Agence de communication à Besançon : site web, SEO local, réseaux sociaux, photo & vidéo pour PME. Spécialiste industrie & B2B. Audit offert 24h.",
   path: "/agence-communication-besancon",
 })
 
