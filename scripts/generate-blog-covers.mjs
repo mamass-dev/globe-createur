@@ -19,6 +19,16 @@ const covers = [
     title: "Comment choisir son\nagence web à Dijon\nen 2026",
     gradient: { start: "#0ea5e9", end: "#6366f1" }, // sky → indigo
   },
+  {
+    filename: "agence-seo-pme-que-doit-elle-livrer.webp",
+    title: "Agence SEO pour PME :\nce qu'elle doit vous\nlivrer chaque mois",
+    gradient: { start: "#10b981", end: "#0ea5e9" }, // emerald → sky
+  },
+  {
+    filename: "freelance-seo-ou-agence-dijon.webp",
+    title: "Freelance SEO ou\nagence à Dijon :\ncomment choisir",
+    gradient: { start: "#6366f1", end: "#ec4899" }, // indigo → pink
+  },
 ]
 
 function generateSVG({ title, gradient }) {

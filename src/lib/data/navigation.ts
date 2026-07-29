@@ -62,6 +62,7 @@ export const footerNav = {
     { label: "Forfaits", href: "/forfait-communication-pme" },
   ],
   outils: [
+    { label: "Tous les outils", href: "/outils" },
     { label: "Audit digital", href: "/audit-digital" },
     { label: "Diagnostic communication", href: "/diagnostic" },
     { label: "Calculateur ROI", href: "/calculateur-roi" },

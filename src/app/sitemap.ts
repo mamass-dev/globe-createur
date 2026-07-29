@@ -37,6 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/devis`, lastModified: LAST_SITE_UPDATE, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/faq`, lastModified: LAST_SITE_UPDATE, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE_URL}/temoignages`, lastModified: LAST_SITE_UPDATE, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${SITE_URL}/outils`, lastModified: "2026-07-29", changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/audit-digital`, lastModified: LAST_SITE_UPDATE, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/calculateur-roi`, lastModified: LAST_SITE_UPDATE, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/analyseur-seo`, lastModified: LAST_SITE_UPDATE, changeFrequency: "monthly", priority: 0.9 },
