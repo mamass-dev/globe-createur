@@ -14,6 +14,8 @@ type PageHeroProps = {
   secondaryLabel?: string
   secondaryHref?: string
   align?: "center" | "left"
+  /** Micro-arguments de réassurance affichés sous les CTA (landing pages). */
+  reassurance?: string[]
 }
 
 export function PageHero({
@@ -25,6 +27,7 @@ export function PageHero({
   secondaryLabel,
   secondaryHref,
   align = "left",
+  reassurance,
 }: PageHeroProps) {
   const isCenter = align === "center"
 
@@ -71,6 +74,22 @@ export function PageHero({
                 </Button>
               )}
             </div>
+          )}
+          {reassurance && reassurance.length > 0 && (
+            <ul
+              className={`mt-5 flex flex-wrap gap-x-5 gap-y-1.5 text-sm text-aluminium ${
+                isCenter ? "justify-center" : ""
+              }`}
+            >
+              {reassurance.map((item) => (
+                <li key={item} className="flex items-center gap-1.5">
+                  <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 shrink-0 text-ivory" aria-hidden="true">
+                    <path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
           )}
         </AnimateOnScroll>
       </Container>

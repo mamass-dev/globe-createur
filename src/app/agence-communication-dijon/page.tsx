@@ -16,6 +16,7 @@ import { AnimateOnScroll } from "@/components/ui/animate"
 import { CityCrosslinks } from "@/components/sections/city-crosslinks"
 import { RelatedBlogPosts } from "@/components/sections/related-blog-posts"
 import { ContactCard } from "@/components/sections/contact-card"
+import { StickyCta } from "@/components/sections/sticky-cta"
 import { services } from "@/lib/data/services"
 import { temoignages } from "@/lib/data/temoignages"
 
@@ -81,10 +82,11 @@ export default function AgencePage() {
         badge="Agence communication & création de site Dijon"
         title="Votre agence de communication et de création de site internet à Dijon"
         subtitle="Web, SEO, photo, vidéo, design, réseaux sociaux - un studio intégré dédié aux PME qui veulent un site qui rapporte et une communication qui suit. Basé à Longvic, on intervient dans toute la Bourgogne."
-        ctaLabel="Demander un devis gratuit"
+        ctaLabel="Recevoir mon devis sous 24 h"
         ctaHref="/devis"
-        secondaryLabel="Découvrir nos services"
-        secondaryHref="/services"
+        secondaryLabel="Voir nos réalisations"
+        secondaryHref="/projets"
+        reassurance={["Audit offert", "Devis gratuit sous 24 h", "Sans engagement 24 mois", "Studio à Longvic"]}
       />
 
       {/* 3. AVANTAGES */}
@@ -272,6 +274,7 @@ export default function AgencePage() {
         ctaLabel="Demander un audit gratuit"
         ctaHref="/devis"
       />
+      <StickyCta city="Dijon" />
     </>
   )
 }

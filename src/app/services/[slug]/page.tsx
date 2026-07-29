@@ -14,6 +14,8 @@ import { Button } from "@/components/ui/button"
 import { LucideIcon } from "@/components/ui/lucide-icon"
 import { ServiceVisual } from "@/components/ui/service-visual"
 import { CheckCircle2, ArrowRight } from "lucide-react"
+import { ContactCard } from "@/components/sections/contact-card"
+import { StickyCta } from "@/components/sections/sticky-cta"
 
 export function generateStaticParams() {
   return getServicePages().map((p) => ({ slug: p.slug }))
@@ -86,12 +88,20 @@ export default async function ServicePage({
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button href="/devis" className="bg-indigo-600 dark:bg-indigo-500 hover:bg-indigo-700 dark:hover:bg-indigo-600 text-white px-8 h-14 rounded-2xl font-bold shadow-lg shadow-indigo-200 dark:shadow-indigo-950">
-                  Démarrer un projet
+                  Recevoir mon devis sous 24 h
                 </Button>
-                <Button href="/contact" className="bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 px-8 h-14 rounded-2xl font-bold">
-                  Nous contacter
+                <Button href="/projets" className="bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 px-8 h-14 rounded-2xl font-bold">
+                  Voir nos réalisations
                 </Button>
               </div>
+              <ul className="flex flex-wrap gap-x-5 gap-y-1.5 text-sm text-slate-500 dark:text-slate-400">
+                {["Audit offert", "Devis gratuit sous 24 h", "Sans engagement 24 mois"].map((item) => (
+                  <li key={item} className="flex items-center gap-1.5">
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-indigo-600 dark:text-indigo-400" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
             <div className="relative">
               <ServiceVisual
@@ -171,6 +181,9 @@ export default async function ServicePage({
         </section>
       )}
 
+      {/* CONTACT PRIVILÉGIÉ */}
+      <ContactCard />
+
       {/* FAQ */}
       <section className="py-24 dark:bg-slate-950">
         <Container>
@@ -204,6 +217,8 @@ export default async function ServicePage({
           </div>
         </Container>
       </section>
+
+      <StickyCta />
     </article>
   )
 }
