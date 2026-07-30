@@ -25,7 +25,7 @@ export const metadata: Metadata = buildMetadata({
   title: "Agence de communication à Nevers — Web, SEO & contenu pour PME | Globe Créateur",
   description: "Agence de communication et agence web pour les PME de Nevers et de la Nièvre : création de site internet, SEO local, photo, vidéo, réseaux sociaux. Audit offert et devis gratuit sous 24 h.",
   path: "/agence-communication-nevers",
-  keywords: ["agence communication Nevers", "agence web Nevers", "création site internet Nevers", "agence SEO Nevers", "agence de communication Nevers", "agence digitale Nevers", "webmarketing Nevers", "référencement Nevers", "agence Nièvre"],
+  keywords: ["agence communication Nevers", "agence web Nevers", "création site internet Nevers", "agence SEO Nevers", "agence de communication Nevers", "agence digitale Nevers", "webmarketing Nevers", "référencement Nevers", "agence Nièvre", "agence branding Nevers", "agence de pub Nevers"],
 })
 
 const avantages = [
@@ -60,6 +60,8 @@ const faqAgence = [
   { question: "Pouvez-vous m'aider à attirer les touristes dans la Nièvre ?", answer: "C'est un de nos axes forts. SEO local, Google Business Profile, site immersif, contenus photo et vidéo qui mettent en valeur votre lieu ou votre activité. On travaille la visibilité sur les requêtes touristiques « Nièvre », « Loire à vélo », « Magny-Cours »." },
   { question: "En combien de temps un site est-il prêt ?", answer: "Comptez 3 à 5 semaines pour un site vitrine. Un site plus complexe (multi-pages, blog, réservation) demande 6 à 10 semaines. Le planning est défini dès le devis validé." },
   { question: "Faites-vous des photos et vidéos dans la Nièvre ?", answer: "Oui, on se déplace dans toute la Nièvre. Photo de paysage, reportage d'activité, portraits d'équipe, vidéo drone sur la Loire, vidéo courte pour les réseaux sociaux. On intervient aussi sur vos événements (courses Magny-Cours, marchés, foires)." },
+  { question: "Êtes-vous une agence de branding à Nevers ?", answer: "Oui. Création de logo, charte graphique, identité visuelle complète : on construit une image cohérente pour les entreprises nivernaises, du site internet jusqu'aux supports imprimés." },
+  { question: "Faites-vous de la publicité (agence de pub) pour les entreprises de Nevers ?", answer: "Oui, en complément du site et du SEO : campagnes Google Ads et Meta Ads ciblées sur la Nièvre, supports imprimés (flyers, kakémonos), visuels pour vos événements locaux (Magny-Cours, marchés, foires)." },
 ]
 
 export const revalidate = 3600
@@ -163,16 +165,26 @@ export default function AgenceNeversPage() {
               Google de l&apos;ancien, pas de zéro.
             </p>
 
-            <h2>Branding, logo et identité visuelle à Nevers</h2>
+            <h2>Agence de branding et de pub à Nevers</h2>
             <p>
               Un site n&apos;est convaincant que si l&apos;image qu&apos;il porte
-              l&apos;est aussi. On conçoit des identités visuelles complètes pour
-              les entreprises nivernaises : logo, charte graphique, supports
-              print et digitaux, déclinaisons réseaux sociaux. Avec un principe :
-              votre image doit être à la hauteur de votre savoir-faire, et
-              cohérente partout où vos clients vous croisent — site, fiche
-              Google, réseaux, véhicules, devanture.
+              l&apos;est aussi. En tant qu&apos;<strong>agence de branding à Nevers</strong>,
+              on conçoit des identités visuelles complètes pour les entreprises
+              nivernaises : logo, charte graphique, supports print et digitaux,
+              déclinaisons réseaux sociaux. Avec un principe : votre image doit
+              être à la hauteur de votre savoir-faire, et cohérente partout où
+              vos clients vous croisent — site, fiche Google, réseaux, véhicules,
+              devanture.
             </p>
+            <p>
+              Le branding ne s&apos;arrête pas au logo. Comme{" "}
+              <strong>agence de pub à Nevers</strong>, on décline aussi votre
+              identité en supports concrets : flyers, kakémonos, encarts presse
+              locale, campagnes Google Ads et Meta Ads ciblées sur la Nièvre.
+              L&apos;objectif reste le même : que votre marque soit reconnaissable
+              et cohérente, du panneau publicitaire jusqu&apos;à la page Google.
+            </p>
+            {/* AXEL: exemple concret d'un refresh de branding ou d'une campagne de pub livrée à un client nivernais (avant/après, résultat chiffré) */}
 
             <h2>Le marché nivernais : une vraie carte à jouer en digital</h2>
             <p>
