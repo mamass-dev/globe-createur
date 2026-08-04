@@ -72,6 +72,7 @@ export const footerNav = {
   ],
   villes: [
     { label: "Dijon", href: "/agence-communication-dijon" },
+    { label: "Longvic", href: "/agence-communication-longvic" },
     { label: "Beaune", href: "/agence-communication-beaune" },
     { label: "Lyon", href: "/agence-communication-lyon" },
     { label: "Chalon-sur-Saône", href: "/agence-communication-chalon-sur-saone" },

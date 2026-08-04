@@ -6,6 +6,7 @@ export type CityLink = {
 
 export const cities: CityLink[] = [
   { slug: "agence-communication-dijon", label: "Dijon", region: "Côte-d'Or" },
+  { slug: "agence-communication-longvic", label: "Longvic", region: "Côte-d'Or" },
   { slug: "agence-communication-beaune", label: "Beaune", region: "Côte-d'Or" },
   { slug: "agence-communication-chalon-sur-saone", label: "Chalon-sur-Saône", region: "Saône-et-Loire" },
   { slug: "agence-communication-macon", label: "Mâcon", region: "Saône-et-Loire" },
