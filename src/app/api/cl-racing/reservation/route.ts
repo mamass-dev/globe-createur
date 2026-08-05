@@ -3,9 +3,8 @@ import { Resend } from "resend"
 import { escapeHtml, rateLimit, getClientIp, checkSpam } from "@/lib/security"
 import { clRacingReservationSchema, ROULAGES, FORMULE_CHOICES } from "@/lib/cl-racing"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function POST(request: Request) {
+  const resend = new Resend(process.env.RESEND_API_KEY)
   try {
     const ip = getClientIp(request)
     const { success } = rateLimit(ip, { maxRequests: 5, windowMs: 3_600_000 })
