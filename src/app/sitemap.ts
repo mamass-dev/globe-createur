@@ -44,6 +44,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/generateur-signature-email`, lastModified: LAST_SITE_UPDATE, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/diagnostic`, lastModified: LAST_SITE_UPDATE, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/estimateur`, lastModified: LAST_SITE_UPDATE, changeFrequency: "monthly", priority: 0.7 },
+    // Offre IA : page pilier hors MDX (route statique) + outil dédié
+    { url: `${SITE_URL}/services/diagnostic-ia-pme`, lastModified: "2026-08-06", changeFrequency: "monthly", priority: 0.9 },
+    { url: `${SITE_URL}/calculateur-roi-ia`, lastModified: "2026-08-06", changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE_URL}/secteurs`, lastModified: LAST_SITE_UPDATE, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/mentions-legales`, lastModified: LAST_SITE_UPDATE, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE_URL}/politique-confidentialite`, lastModified: LAST_SITE_UPDATE, changeFrequency: "yearly", priority: 0.3 },
