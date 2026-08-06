@@ -29,6 +29,42 @@ const covers = [
     title: "Freelance SEO ou\nagence à Dijon :\ncomment choisir",
     gradient: { start: "#6366f1", end: "#ec4899" }, // indigo → pink
   },
+  // ─── Cluster IA (DA Creative House : noir / rouge signal) ───
+  {
+    filename: "plan-osez-ia-explique-dirigeants-pme.webp",
+    title: "Le plan Osez l'IA\nexpliqué aux\ndirigeants de PME",
+    gradient: { start: "#0a0a0a", end: "#e63a2b" },
+  },
+  {
+    filename: "eligibilite-diag-data-ia-criteres.webp",
+    title: "Diag Data IA :\nvotre entreprise\nest-elle éligible ?",
+    gradient: { start: "#141414", end: "#b3261a" },
+  },
+  {
+    filename: "calculer-roi-projet-ia-pme.webp",
+    title: "Calculer le ROI\nd'un projet IA\nen PME",
+    gradient: { start: "#1c1c1c", end: "#e63a2b" },
+  },
+  {
+    filename: "cartographier-processus-avant-automatiser.webp",
+    title: "Cartographier ses\nprocessus avant\nd'automatiser",
+    gradient: { start: "#0a0a0a", end: "#8c2318" },
+  },
+  {
+    filename: "cas-usage-ia-pme-par-secteur.webp",
+    title: "Cas d'usage IA :\nce que ça change\nmétier par métier",
+    gradient: { start: "#e63a2b", end: "#0a0a0a" },
+  },
+  {
+    filename: "erreurs-projet-ia-pme.webp",
+    title: "Les erreurs qui font\néchouer un projet\nIA en PME",
+    gradient: { start: "#2a2a2a", end: "#d62e20" },
+  },
+  {
+    filename: "ia-donnees-personnelles-rgpd-dirigeant.webp",
+    title: "IA et données\npersonnelles : ce qu'un\ndirigeant doit vérifier",
+    gradient: { start: "#141414", end: "#e63a2b" },
+  },
 ]
 
 function generateSVG({ title, gradient }) {

@@ -2,6 +2,7 @@ import { MDXRemote } from "next-mdx-remote/rsc"
 import remarkGfm from "remark-gfm"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { CtaIa } from "@/components/sections/cta-ia"
 import { MdxFaqAccordion } from "./mdx-faq"
 
 function slugify(text: string) {
@@ -59,6 +60,7 @@ const components = {
     )
   },
   Button,
+  CtaIa,
 }
 
 export function MdxContent({ source }: { source: string }) {
