@@ -8,7 +8,7 @@ export const revalidate = 3600
 // Date fixe de la dernière mise à jour significative du site (rebrand + refonte éditoriale).
 // À incrémenter manuellement lors d'un changement de contenu réel : un lastModified qui
 // bouge à chaque build apprend à Google à ignorer le sitemap.
-const LAST_SITE_UPDATE = "2026-07-24"
+const LAST_SITE_UPDATE = "2026-08-06"
 
 function pickDate(fm: Record<string, unknown>, fallback: string = LAST_SITE_UPDATE): string {
   const updated = fm.updatedAt as string | undefined
