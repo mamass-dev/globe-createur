@@ -35,7 +35,7 @@ export async function POST(request: Request) {
       ? `${formuleMeta.label} (${formuleMeta.price}€${formuleMeta.oldPrice ? ` au lieu de ${formuleMeta.oldPrice}€` : ""})`
       : data.formule
 
-    await resend.emails.send({
+    const { error: sendError } = await resend.emails.send({
       from: "Globe Créateur × CL RACING <noreply@globecreateur.fr>",
       to: "contact@globecreateur.fr",
       replyTo: data.email,
@@ -50,6 +50,11 @@ export async function POST(request: Request) {
         formuleLabel,
       }),
     })
+
+    if (sendError) {
+      console.error("[cl-racing/reservation] Resend error:", sendError)
+      return NextResponse.json({ error: "L'envoi a échoué. Réessayez ou écrivez-nous à contact@globecreateur.fr." }, { status: 502 })
+    }
 
     return NextResponse.json({ success: true })
   } catch (error) {

@@ -32,7 +32,7 @@ export async function POST(request: Request) {
           .join("")
       : ""
 
-    await resend.emails.send({
+    const { error: sendError } = await resend.emails.send({
       from: "Globe Créateur <noreply@globecreateur.fr>",
       to: "contact@globecreateur.fr",
       replyTo: email,
@@ -53,6 +53,11 @@ export async function POST(request: Request) {
         ` : ""}
       `,
     })
+
+    if (sendError) {
+      console.error("Lead form Resend error:", sendError)
+      return NextResponse.json({ error: "L'envoi a échoué. Réessayez ou écrivez-nous à contact@globecreateur.fr." }, { status: 502 })
+    }
 
     return NextResponse.json({ success: true })
   } catch (error) {

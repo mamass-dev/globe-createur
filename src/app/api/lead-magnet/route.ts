@@ -23,7 +23,7 @@ export async function POST(request: Request) {
     const { email, source, offer, page } = result.data
 
     // 1. Notify you about the new lead
-    await resend.emails.send({
+    const { error: notifyError } = await resend.emails.send({
       from: "Globe Créateur <noreply@globecreateur.fr>",
       to: "contact@globecreateur.fr",
       subject: `Nouveau lead magnet - ${escapeHtml(offer || "Checklist SEO")}`,
@@ -38,8 +38,13 @@ export async function POST(request: Request) {
       `,
     })
 
+    if (notifyError) {
+      console.error("Lead magnet Resend error (notification):", notifyError)
+      return NextResponse.json({ error: "L'envoi a échoué. Réessayez ou écrivez-nous à contact@globecreateur.fr." }, { status: 502 })
+    }
+
     // 2. Send confirmation email to the lead
-    await resend.emails.send({
+    const { error: confirmError } = await resend.emails.send({
       from: "Axel de Globe Créateur <noreply@globecreateur.fr>",
       to: email,
       subject: `Votre ressource gratuite - ${escapeHtml(offer || "Checklist SEO")}`,
@@ -69,6 +74,11 @@ export async function POST(request: Request) {
         </div>
       `,
     })
+
+    if (confirmError) {
+      // La notification interne est partie : le lead est capté, on ne bloque pas le visiteur.
+      console.error("Lead magnet Resend error (confirmation):", confirmError)
+    }
 
     return NextResponse.json({ success: true })
   } catch (error) {

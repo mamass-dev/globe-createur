@@ -36,6 +36,7 @@ import {
   Building,
   Heart,
   ShoppingBag,
+  ScanSearch,
 } from "lucide-react"
 
 export const icons = {
@@ -76,6 +77,7 @@ export const icons = {
   Building,
   Heart,
   ShoppingBag,
+  ScanSearch,
 }
 
 export type IconName = keyof typeof icons
