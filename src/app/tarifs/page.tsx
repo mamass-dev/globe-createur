@@ -214,6 +214,16 @@ export default function TarifsPage() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+
+          <AnimateOnScroll>
+            <p className="mt-10 text-center text-sm text-slate-500 dark:text-slate-400">
+              Vous cherchez plutôt le{" "}
+              <Link href="/services/diagnostic-ia-pme#tarifs" className="font-bold text-indigo-600 dark:text-indigo-400 hover:underline">
+                diagnostic & accompagnement IA
+              </Link>
+              &nbsp;? Il a sa page et sa grille dédiées — deux offres distinctes selon votre éligibilité aux dispositifs publics.
+            </p>
+          </AnimateOnScroll>
         </Container>
       </section>
 
