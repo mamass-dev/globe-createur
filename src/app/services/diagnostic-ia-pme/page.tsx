@@ -51,9 +51,15 @@ export const metadata: Metadata = buildMetadata({
 })
 
 /* ─── Tarif : chiffre si renseigné, sinon placeholder visible — jamais de chiffre de repli ─── */
-function Tarif({ value }: { value: number | null }) {
+function Tarif({ value, prefix }: { value: number | null; prefix?: string }) {
   const formatted = formatTarifGC(value)
-  if (formatted) return <span className="text-3xl font-bold text-ivory">{formatted}</span>
+  if (formatted)
+    return (
+      <span className="text-3xl font-bold text-ivory">
+        {prefix && <span className="text-base font-medium text-aluminium mr-2">{prefix}</span>}
+        {formatted} <span className="text-base font-medium text-aluminium">HT</span>
+      </span>
+    )
   return (
     <span className="font-mono-accent text-sm font-bold uppercase tracking-widest text-signal">
       [À VÉRIFIER : tarif à confirmer avant publication]
@@ -430,7 +436,7 @@ export default function DiagnosticIaPmePage() {
                   nous vous communiquons le montant et le taux en vigueur lors du premier échange.
                 </p>
                 <div className="mt-6 pt-6 border-t border-[#2a2a2a]">
-                  <Tarif value={tarifsGlobeCreateur.accompagnementEuros} />
+                  <Tarif value={tarifsGlobeCreateur.accompagnementEuros} prefix="à partir de" />
                 </div>
               </Card>
             </AnimateOnScroll>

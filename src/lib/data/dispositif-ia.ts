@@ -108,9 +108,11 @@ export type TarifsGlobeCreateur = {
   accompagnementEuros: number | null
 }
 
+// Tarifs alignés marché (positionnement cohérent avec le SEO à partir de 600 €/mois) —
+// fixés sur délégation d'Axel le 2026-08-06, modifiables ici en un seul endroit.
 export const tarifsGlobeCreateur: TarifsGlobeCreateur = {
-  diagnosticFlashEuros: null,
-  accompagnementEuros: null,
+  diagnosticFlashEuros: 690,
+  accompagnementEuros: 1490,
 }
 
 /* ─── Helpers d'affichage — jamais de chiffre de repli, jamais de tiret ─── */
