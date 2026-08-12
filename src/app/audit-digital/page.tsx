@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { buildMetadata } from "@/lib/metadata"
 import { Breadcrumb } from "@/components/layout/breadcrumb"
 import { FaqAccordion } from "@/components/sections/faq-accordion"
@@ -6,6 +7,7 @@ import { CtaSection } from "@/components/sections/cta-section"
 import { FaqSchema } from "@/components/seo/schemas"
 import { Container } from "@/components/ui/container"
 import { AuditQuiz } from "@/components/tools/audit-quiz"
+import { AnimateOnScroll } from "@/components/ui/animate"
 import { Target, Clock, BarChart3, Sparkles } from "lucide-react"
 
 export const metadata: Metadata = buildMetadata({
@@ -108,22 +110,22 @@ export default function AuditDigitalPage() {
           <div className="prose max-w-none">
             <h2>Pourquoi un audit digital pour votre PME ?</h2>
             <p>
-              La plupart des dirigeants savent que leur présence en ligne n'est pas optimale,
-              mais ils ne savent pas par où commencer. L'audit digital Globe Créateur évalue
-              <strong>6 piliers</strong> en 9 questions : site internet, référencement local,
-              réseaux sociaux, contenu visuel, Google Business Profile et automatisation.
-              Chaque réponse est pondérée selon son impact réel sur votre acquisition client.
+              La plupart des dirigeants savent que leur présence en ligne n&apos;est pas optimale,
+              mais ils ne savent pas par o&ugrave; commencer. L&apos;audit digital Globe Cr&eacute;ateur &eacute;value
+              <strong>6 piliers</strong> en 9 questions : site internet, r&eacute;f&eacute;rencement local,
+              r&eacute;seaux sociaux, contenu visuel, Google Business Profile et automatisation.
+              Chaque r&eacute;ponse est pond&eacute;r&eacute;e selon son impact r&eacute;el sur votre acquisition client.
             </p>
             <p>
-              Besoin d'un accompagnement SEO complet ? Notre <Link href="/services/seo-local-dijon">agence SEO à Dijon</Link>
-              prend en charge l'audit technique, la stratégie de contenu local et le suivi de positions mensuel.
+              Besoin d&apos;un accompagnement SEO complet ? Notre <Link href="/services/seo-local-dijon">agence SEO &agrave; Dijon</Link>
+              prend en charge l&apos;audit technique, la strat&eacute;gie de contenu local et le suivi de positions mensuel.
             </p>
             <h2>Ce que vous obtenez</h2>
             <ul>
-              <li><strong>Score global sur 100</strong> — Votre maturité digitale en un coup d'œil.</li>
-              <li><strong>Analyse par catégorie</strong> — Site, SEO, réseaux, avis, Google Business, automatisation.</li>
-              <li><strong>Recommandations prioritaires</strong> — Les 3 actions qui auront le plus d'impact immédiat.</li>
-              <li><strong>Benchmark rapide</strong> — Comment vous situez-vous face à vos concurrents locaux ?</li>
+              <li><strong>Score global sur 100</strong> &mdash; Votre maturit&eacute; digitale en un coup d&apos;&oelig;il.</li>
+              <li><strong>Analyse par cat&eacute;gorie</strong> &mdash; Site, SEO, r&eacute;seaux, avis, Google Business, automatisation.</li>
+              <li><strong>Recommandations prioritaires</strong> &mdash; Les 3 actions qui auront le plus d&apos;impact imm&eacute;diat.</li>
+              <li><strong>Benchmark rapide</strong> &mdash; Comment vous situez-vous face &agrave; vos concurrents locaux ?</li>
             </ul>
           </div>
         </AnimateOnScroll>
