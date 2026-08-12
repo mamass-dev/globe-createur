@@ -9,9 +9,9 @@ import { AuditQuiz } from "@/components/tools/audit-quiz"
 import { Target, Clock, BarChart3, Sparkles } from "lucide-react"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Audit digital PME gratuit — Votre score en 2 minutes | Globe Créateur",
+  title: "Audit digital PME gratuit — Score complet en 2 minutes | Globe Créateur",
   description:
-    "Où en est vraiment votre PME sur le digital ? Répondez à quelques questions et obtenez votre score sur 100, une analyse par catégorie (site, SEO, réseaux, avis) et des recommandations concrètes. Gratuit, sans inscription.",
+    "Audit digital gratuit pour PME : 9 critères, score sur 100, analyse par catégorie (site, SEO, réseaux, avis, Google Business, automatisation). Recommandations concrètes et plan d'action. Sans inscription, résultat immédiat.",
   path: "/audit-digital",
 })
 
@@ -100,6 +100,33 @@ export default function AuditDigitalPage() {
       {/* Quiz */}
       <Container className="py-12 lg:py-20">
         <AuditQuiz />
+      </Container>
+
+      {/* Editorial content for SEO */}
+      <Container as="article" className="py-16 lg:py-24 max-w-3xl">
+        <AnimateOnScroll>
+          <div className="prose max-w-none">
+            <h2>Pourquoi un audit digital pour votre PME ?</h2>
+            <p>
+              La plupart des dirigeants savent que leur présence en ligne n'est pas optimale,
+              mais ils ne savent pas par où commencer. L'audit digital Globe Créateur évalue
+              <strong>6 piliers</strong> en 9 questions : site internet, référencement local,
+              réseaux sociaux, contenu visuel, Google Business Profile et automatisation.
+              Chaque réponse est pondérée selon son impact réel sur votre acquisition client.
+            </p>
+            <p>
+              Besoin d'un accompagnement SEO complet ? Notre <Link href="/services/seo-local-dijon">agence SEO à Dijon</Link>
+              prend en charge l'audit technique, la stratégie de contenu local et le suivi de positions mensuel.
+            </p>
+            <h2>Ce que vous obtenez</h2>
+            <ul>
+              <li><strong>Score global sur 100</strong> — Votre maturité digitale en un coup d'œil.</li>
+              <li><strong>Analyse par catégorie</strong> — Site, SEO, réseaux, avis, Google Business, automatisation.</li>
+              <li><strong>Recommandations prioritaires</strong> — Les 3 actions qui auront le plus d'impact immédiat.</li>
+              <li><strong>Benchmark rapide</strong> — Comment vous situez-vous face à vos concurrents locaux ?</li>
+            </ul>
+          </div>
+        </AnimateOnScroll>
       </Container>
 
       <FaqAccordion

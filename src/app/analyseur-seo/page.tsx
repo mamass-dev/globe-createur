@@ -11,11 +11,11 @@ import { AnimateOnScroll } from "@/components/ui/animate"
 import { Search, Shield, Zap, BarChart3 } from "lucide-react"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Analyse SEO gratuite en ligne — Score sur 100 en 5 secondes | Globe Créateur",
+  title: "Analyse SEO gratuite — Score sur 100 en 5 secondes | Globe Créateur",
   description:
-    "Analysez le SEO de votre site gratuitement : score sur 100, 13 critères vérifiés (title, meta, H1, HTTPS, données structurées), recommandations concrètes. Sans inscription, sans email, résultat immédiat.",
+    "Audit SEO gratuit en ligne : score sur 100, 13+ critères vérifiés (title, meta, H1, HTTPS, données structurées), recommandations concrètes. Sans inscription, sans email, résultat immédiat. Testez votre site maintenant.",
   path: "/analyseur-seo",
-  keywords: ["analyse SEO", "analyse SEO gratuite", "analyse SEO en ligne", "analyseur SEO", "analyseur SEO gratuit", "audit SEO en ligne", "test SEO en ligne", "score SEO", "outil SEO gratuit", "diagnostic SEO", "vérifier SEO site"],
+  keywords: ["analyse SEO", "analyse SEO gratuite", "analyse SEO en ligne", "analyseur SEO", "analyseur SEO gratuit", "audit SEO gratuit", "audit SEO en ligne", "test SEO en ligne", "test SEO site", "score SEO", "outil SEO gratuit", "diagnostic SEO", "vérifier SEO site", "analyser SEO site"],
 })
 
 const faqItems = [

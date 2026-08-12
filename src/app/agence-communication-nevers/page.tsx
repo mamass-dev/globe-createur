@@ -141,6 +141,10 @@ export default function AgenceNeversPage() {
                 <Link href="/services/automatisation-nocode-dijon">Automatisation no-code</Link> -
                 Make, Airtable, Notion pour simplifier vos processus internes.
               </li>
+              <li>
+                <Link href="/services/seo-local-dijon">SEO local Nevers</Link> -
+                Positionnement sur les requêtes "Nevers" et "Nièvre", Google Business Profile, avis clients.
+              </li>
             </ul>
 
             <h2>Création et refonte de site internet à Nevers</h2>
