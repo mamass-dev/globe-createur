@@ -370,7 +370,10 @@ export default function VectorisationLogoPage() {
                     ChatGPT, Midjourney, Looka, Canva ou Ideogram génèrent une <em>image</em> : jolie à
                     l&apos;écran, mais en pixels, souvent en basse définition, avec un fond qui n&apos;est
                     pas vraiment transparent et des lettres qui ne sont pas de vraies polices. Pour
-                    l&apos;imprimeur, c&apos;est un brouillon. Nous en faisons un logo.
+                    l&apos;imprimeur, c&apos;est un brouillon. Nous en faisons un logo.{" "}
+                    <Link href="/blog/logo-ia-refuse-par-imprimeur" className="font-bold text-ivory hover:text-signal transition-colors">
+                      Lire : pourquoi votre logo IA est refusé par l&apos;imprimeur
+                    </Link>
                   </p>
                 </div>
               </div>

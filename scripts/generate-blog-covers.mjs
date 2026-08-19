@@ -29,6 +29,11 @@ const covers = [
     title: "Freelance SEO ou\nagence à Dijon :\ncomment choisir",
     gradient: { start: "#6366f1", end: "#ec4899" }, // indigo → pink
   },
+  {
+    filename: "logo-ia-refuse-par-imprimeur.webp",
+    title: "Pourquoi votre logo IA\nest refusé par\nl'imprimeur",
+    gradient: { start: "#0a0a0a", end: "#e63a2b" },
+  },
   // ─── Cluster IA (DA Creative House : noir / rouge signal) ───
   {
     filename: "plan-osez-ia-explique-dirigeants-pme.webp",
