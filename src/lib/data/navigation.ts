@@ -12,6 +12,7 @@ export const mainNav: NavItem[] = [
       { label: "Automatisation no-code", href: "/services/automatisation-nocode-dijon", icon: "Zap", description: "Gagnez du temps avec Make & Zapier" },
       { label: "Création de contenu", href: "/services/creation-contenu-pme", icon: "Camera", description: "Photo, vidéo et design pro" },
       { label: "Support communication", href: "/services/support-communication-pme", icon: "Megaphone", description: "Réseaux sociaux et pilotage" },
+      { label: "Vectorisation de logo", href: "/services/vectorisation-logo", icon: "PenTool", description: "Logo net pour l'impression sous 24 h" },
     ],
   },
   {
@@ -52,6 +53,7 @@ export const footerNav = {
     { label: "Google Business", href: "/google-business-profile-dijon" },
     { label: "Création de contenu", href: "/services/creation-contenu-pme" },
     { label: "Automatisation", href: "/services/automatisation-nocode-dijon" },
+    { label: "Vectorisation de logo", href: "/services/vectorisation-logo" },
   ],
   agence: [
     { label: "À propos", href: "/a-propos" },

@@ -37,6 +37,7 @@ import {
   Heart,
   ShoppingBag,
   ScanSearch,
+  PenTool,
 } from "lucide-react"
 
 export const icons = {
@@ -78,6 +79,7 @@ export const icons = {
   Heart,
   ShoppingBag,
   ScanSearch,
+  PenTool,
 }
 
 export type IconName = keyof typeof icons
