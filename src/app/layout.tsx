@@ -7,6 +7,7 @@ import { LocalBusinessSchema } from "@/components/seo/local-business"
 import { WebSiteSchema, OrganizationSchema } from "@/components/seo/schemas"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Rybbit } from "@/components/seo/rybbit"
 import { WhatsAppButton } from "@/components/ui/whatsapp-button"
 import { LeadMagnet } from "@/components/ui/lead-magnet"
 import { GrainOverlay } from "@/components/ui/grain"
@@ -103,6 +104,7 @@ export default function RootLayout({
         </HideOnCard>
         <Analytics />
         <SpeedInsights />
+        <Rybbit />
       </body>
     </html>
   )
