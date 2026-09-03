@@ -19,6 +19,7 @@ import {
   ExternalLink,
 } from "lucide-react"
 import { LeadCaptureGate } from "@/components/tools/lead-capture-gate"
+import { track } from "@/lib/analytics"
 
 type Check = {
   id: string
@@ -180,6 +181,7 @@ export function SeoAnalyzer() {
 
       setResult(data)
       setStatus("done")
+      track("tool_result", { tool: "analyseur-seo", score: data.score })
     } catch {
       setError("Impossible de contacter le serveur. Réessayez.")
       setStatus("error")
@@ -404,12 +406,14 @@ export function SeoAnalyzer() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Button
                     href="/devis"
+                    track={{ event: "cta_click", props: { cta: "devis", location: "analyseur-seo-resultat" } }}
                     className="bg-white text-indigo-600 hover:bg-indigo-50 px-6 py-2.5 rounded-full text-sm font-bold transition-all"
                   >
                     Demander un audit complet
                   </Button>
                   <Button
                     href="/services/seo-local-dijon"
+                    track={{ event: "cta_click", props: { cta: "seo-local-dijon", location: "analyseur-seo-resultat" } }}
                     className="border border-white/30 text-white hover:bg-white/10 px-6 py-2.5 rounded-full text-sm font-semibold transition-all"
                   >
                     Notre service SEO

@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { track } from "@/lib/analytics"
 import {
   Globe,
   ShoppingCart,
@@ -898,8 +899,10 @@ export function EstimateurForm() {
           _t: renderTime,
         }),
       })
+      track("lead_submit", { form: "estimateur", projet: form.projectType ?? "" })
     } catch {
       // silently continue - we show success regardless
+      track("lead_error", { form: "estimateur" })
     }
     setSubmitting(false)
     setSubmitted(true)

@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
+import { trackAttrs } from "@/lib/analytics"
 import { LucideIcon } from "@/components/ui/lucide-icon"
 import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
@@ -221,11 +222,13 @@ export function Header() {
           <Link
             href="/contact"
             className="text-sm font-medium text-[#c7c4ba] hover:text-signal transition-colors"
+            {...trackAttrs("cta_click", { cta: "contact", location: "header" })}
           >
             Contact
           </Link>
           <Button
             href="/devis"
+            track={{ event: "cta_click", props: { cta: "devis", location: "header" } }}
             className="bg-signal hover:bg-[#d62e20] text-white px-5 py-2.5 rounded-none text-xs font-bold uppercase tracking-widest transition-colors"
           >
             Démarrer
@@ -280,6 +283,7 @@ export function Header() {
             <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-3">
               <Button
                 href="/devis"
+                track={{ event: "cta_click", props: { cta: "devis", location: "header-mobile" } }}
                 className="w-full bg-signal hover:bg-[#d62e20] text-white py-3.5 rounded-none text-sm font-bold uppercase tracking-widest"
               >
                 Démarrer un projet

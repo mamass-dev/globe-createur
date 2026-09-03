@@ -70,7 +70,7 @@ export default function HomePage() {
                 Stratégies digitales haute performance, sites web qui convertissent et automatisations qui vous font gagner du temps.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Button href="/devis" size="lg">Démarrer un projet</Button>
+                <Button href="/devis" size="lg" track={{ event: "cta_click", props: { cta: "devis", location: "home-hero" } }}>Démarrer un projet</Button>
                 <Button href="/projets" variant="outline" size="lg">Voir nos réalisations</Button>
               </div>
             </AnimateOnScroll>
@@ -354,10 +354,10 @@ export default function HomePage() {
                 Discutons de vos objectifs lors d&apos;un premier échange gratuit de 20 minutes.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <Button href="/devis" size="lg" className="bg-noir text-ivory hover:bg-[#1c1c1c] transition-colors">
+                <Button href="/devis" size="lg" track={{ event: "cta_click", props: { cta: "devis", location: "home-final" } }} className="bg-noir text-ivory hover:bg-[#1c1c1c] transition-colors">
                   Démarrer maintenant
                 </Button>
-                <Button href="/contact" size="lg" className="border border-white/40 text-white hover:bg-white hover:text-signal transition-colors">
+                <Button href="/contact" size="lg" track={{ event: "cta_click", props: { cta: "contact", location: "home-final" } }} className="border border-white/40 text-white hover:bg-white hover:text-signal transition-colors">
                   Nous contacter
                 </Button>
               </div>

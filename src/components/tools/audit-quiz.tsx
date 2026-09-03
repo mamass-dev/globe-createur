@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { track } from "@/lib/analytics"
 import Link from "next/link"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -187,6 +188,7 @@ export function AuditQuiz() {
         setStep(step + 1)
       } else {
         setStep(totalQuestions + 1)
+        track("tool_result", { tool: "audit-digital" })
       }
     }, 400)
   }

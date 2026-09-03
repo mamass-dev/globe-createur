@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import { track } from "@/lib/analytics"
 import { Lock, Mail, Phone, User, CheckCircle2, ArrowRight } from "lucide-react"
 
 type LeadCaptureGateProps = {
@@ -41,12 +42,15 @@ export function LeadCaptureGate({
 
       if (res.ok) {
         setStatus("success")
+        track("lead_submit", { form: "gate", source, phone: Boolean(phone) })
         setTimeout(onUnlock, 1200)
       } else {
         setStatus("error")
+        track("lead_error", { form: "gate", source })
       }
     } catch {
       setStatus("error")
+      track("lead_error", { form: "gate", source })
     }
   }
 

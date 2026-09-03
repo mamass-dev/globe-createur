@@ -2,6 +2,7 @@
 
 import { useState, useRef, useCallback, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { track } from "@/lib/analytics"
 import {
   User, Mail, Phone, Globe, Building2, MapPin, Briefcase,
   Linkedin, Instagram, Facebook, Twitter, Youtube,
@@ -340,6 +341,7 @@ export function SignatureGenerator() {
   const signatureHtml = generateSignatureHtml(form, true)
 
   const handleCopy = async () => {
+    track("signature_copied")
     try {
       // Copy as rich HTML (for paste into email clients)
       const blob = new Blob([signatureHtml], { type: "text/html" })

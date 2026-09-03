@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { trackAttrs } from "@/lib/analytics"
 import { motion, AnimatePresence } from "framer-motion"
 import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
@@ -616,6 +617,7 @@ export default function DiagnosticPage() {
                           href={`https://wa.me/33678978705?text=${encodeURIComponent("Bonjour Axel, je viens de faire le diagnostic sur votre site et j'aimerais en discuter.")}`}
                           target="_blank"
                           rel="noopener noreferrer"
+                          {...trackAttrs("whatsapp_click", { location: "diagnostic" })}
                           className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold text-white rounded-xl transition-colors shadow-lg shadow-green-600/25 hover:opacity-90"
                           style={{ backgroundColor: "#25D366" }}
                         >

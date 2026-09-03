@@ -1,10 +1,13 @@
 import Link from "next/link"
 import { cn } from "@/lib/utils"
+import { trackAttrs } from "@/lib/analytics"
 
 type ButtonProps = {
   variant?: "primary" | "secondary" | "outline" | "ghost"
   size?: "sm" | "md" | "lg"
   href?: string
+  /** Événement Rybbit émis au clic (ex. { event: "cta_click", props: { cta: "devis", location: "header" } }) */
+  track?: { event: string; props?: Record<string, string> }
   className?: string
   children: React.ReactNode
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
@@ -30,10 +33,12 @@ export function Button({
   variant = "primary",
   size = "md",
   href,
+  track,
   className,
   children,
   ...props
 }: ButtonProps) {
+  const dataAttrs = track ? trackAttrs(track.event, track.props) : {}
   const classes = cn(
     "inline-flex items-center justify-center gap-2 disabled:opacity-50 disabled:pointer-events-none cursor-pointer select-none",
     variants[variant],
@@ -43,14 +48,14 @@ export function Button({
 
   if (href) {
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} {...dataAttrs}>
         {children}
       </Link>
     )
   }
 
   return (
-    <button className={classes} {...props}>
+    <button className={classes} {...dataAttrs} {...props}>
       {children}
     </button>
   )

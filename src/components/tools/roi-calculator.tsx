@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { track } from "@/lib/analytics"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { LucideIcon } from "@/components/ui/lucide-icon"
@@ -41,6 +42,7 @@ export function RoiCalculator() {
 
   const handleCalculate = () => {
     setShowResults(true)
+    track("tool_result", { tool: "calculateur-roi", sector })
     setTimeout(() => {
       document.getElementById("roi-results")?.scrollIntoView({ behavior: "smooth", block: "start" })
     }, 100)

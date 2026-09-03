@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input, Textarea } from "@/components/ui/input"
+import { track } from "@/lib/analytics"
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
@@ -30,11 +31,14 @@ export function ContactForm() {
 
       if (res.ok) {
         setStatus("success")
+        track("lead_submit", { form: "contact" })
       } else {
         setStatus("error")
+        track("lead_error", { form: "contact" })
       }
     } catch {
       setStatus("error")
+      track("lead_error", { form: "contact" })
     }
   }
 

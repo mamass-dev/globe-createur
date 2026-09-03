@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { track } from "@vercel/analytics"
+import { track } from "@/lib/analytics"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ArrowLeft, RotateCcw, CheckCircle2, Building2, ExternalLink } from "lucide-react"
 import {
@@ -207,12 +207,14 @@ function ContactCapture({ answers, verdict }: { answers: Answers; verdict: Verdi
 
       if (res.ok) {
         setStatus("success")
-        track("simulateur_ia_lead", { parcours: verdict.parcours })
+        track("lead_submit", { form: "gate", source: "Simulateur éligibilité IA", parcours: verdict.parcours })
       } else {
         setStatus("error")
+        track("lead_error", { form: "gate", source: "Simulateur éligibilité IA" })
       }
     } catch {
       setStatus("error")
+      track("lead_error", { form: "gate", source: "Simulateur éligibilité IA" })
     }
   }
 
@@ -328,13 +330,13 @@ export function EligibilitySimulator() {
   const total = questions.length
 
   const handleSelect = (questionId: Question["id"], value: AnswerValue) => {
-    if (step === 1) track("simulateur_ia_demarre")
     const next = { ...answers, [questionId]: value }
     setAnswers(next)
     if (step < total) {
       setStep(step + 1)
     } else {
       setStep(total + 1)
+      track("tool_result", { tool: "simulateur-eligibilite-ia" })
       track("simulateur_ia_complete", { parcours: evaluate(next).parcours })
     }
   }

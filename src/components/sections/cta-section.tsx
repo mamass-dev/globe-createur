@@ -33,7 +33,7 @@ export function CtaSection({
               <h2 className="text-impact mt-6 text-4xl sm:text-5xl lg:text-7xl text-white">{title}</h2>
               {subtitle && <p className="mt-6 text-lg lg:text-xl text-white/80 max-w-xl leading-relaxed">{subtitle}</p>}
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <Button href={ctaHref} size="lg" className="group bg-noir text-ivory hover:bg-[#1c1c1c] transition-colors">
+                <Button href={ctaHref} size="lg" track={{ event: "cta_click", props: { cta: ctaHref, location: "cta-section" } }} className="group bg-noir text-ivory hover:bg-[#1c1c1c] transition-colors">
                   {ctaLabel}
                   <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
@@ -61,7 +61,7 @@ export function CtaSection({
               <p className="mt-6 text-lg lg:text-xl max-w-xl mx-auto leading-relaxed text-aluminium">{subtitle}</p>
             )}
             <div className="mt-10 flex justify-center">
-              <Button href={ctaHref} size="lg" className="group">
+              <Button href={ctaHref} size="lg" track={{ event: "cta_click", props: { cta: ctaHref, location: "cta-section" } }} className="group">
                 {ctaLabel}
                 <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>

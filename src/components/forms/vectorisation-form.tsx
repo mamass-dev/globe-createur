@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef, useState } from "react"
+import { track } from "@/lib/analytics"
 import { Upload, FileImage, X, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input, Textarea } from "@/components/ui/input"
@@ -73,14 +74,17 @@ export function VectorisationForm({ defaultOffre = "simple" }: { defaultOffre?: 
       const res = await fetch("/api/vectorisation", { method: "POST", body: formData })
       if (res.ok) {
         setStatus("success")
+        track("lead_submit", { form: "vectorisation", offre: String(formData.get("offre") ?? "") })
       } else {
         const data = await res.json().catch(() => ({}))
         setErrorMsg(data?.error ?? "Une erreur est survenue. Réessayez.")
         setStatus("error")
+        track("lead_error", { form: "vectorisation" })
       }
     } catch {
       setErrorMsg("Une erreur est survenue. Réessayez ou écrivez-nous à contact@globecreateur.fr.")
       setStatus("error")
+      track("lead_error", { form: "vectorisation" })
     }
   }
 

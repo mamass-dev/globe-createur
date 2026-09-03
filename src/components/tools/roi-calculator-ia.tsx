@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { track } from "@vercel/analytics"
+import { track } from "@/lib/analytics"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Info } from "lucide-react"
 
@@ -71,7 +71,7 @@ export function RoiCalculatorIa() {
 
   const onFirstInteraction = () => {
     if (!tracked) {
-      track("calculateur_roi_ia_utilise")
+      track("tool_result", { tool: "calculateur-roi-ia" })
       setTracked(true)
     }
   }

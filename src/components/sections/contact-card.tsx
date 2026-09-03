@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import { trackAttrs } from "@/lib/analytics"
 import { Container } from "@/components/ui/container"
 import { AnimateOnScroll } from "@/components/ui/animate"
 
@@ -50,6 +51,7 @@ export function ContactCard({ city }: { city?: string }) {
                 <div className="flex flex-col items-center md:items-start gap-3 pt-2">
                   <Link
                     href="/devis"
+                    {...trackAttrs("cta_click", { cta: "devis", location: "contact-card" })}
                     className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl transition-colors shadow-lg shadow-indigo-600/25 whitespace-nowrap w-full sm:w-auto justify-center sm:justify-start"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -62,6 +64,7 @@ export function ContactCard({ city }: { city?: string }) {
                       href="https://wa.me/33678978705?text=Bonjour%20Axel%2C%20je%20visite%20votre%20site%20et%20j%27aimerais%20discuter%20de%20mon%20projet."
                       target="_blank"
                       rel="noopener noreferrer"
+                      {...trackAttrs("whatsapp_click", { location: "contact-card" })}
                       className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold text-white rounded-xl transition-colors shadow-lg shadow-green-600/25 hover:opacity-90"
                       style={{ backgroundColor: "#25D366" }}
                     >

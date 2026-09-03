@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input, Textarea } from "@/components/ui/input"
+import { track } from "@/lib/analytics"
 
 const serviceOptions = [
   "Création de site internet",
@@ -43,11 +44,14 @@ export function DevisForm() {
 
       if (res.ok) {
         setStatus("success")
+        track("lead_submit", { form: "devis", service: String(formData.get("service") ?? ""), budget: String(formData.get("budget") ?? "") })
       } else {
         setStatus("error")
+        track("lead_error", { form: "devis" })
       }
     } catch {
       setStatus("error")
+      track("lead_error", { form: "devis" })
     }
   }
 

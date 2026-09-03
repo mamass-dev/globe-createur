@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react"
 import { usePathname } from "next/navigation"
+import { track } from "@/lib/analytics"
 import { X, ArrowRight, CheckCircle, Gift } from "lucide-react"
 
 // Pages où la pop-up lead magnet ne doit jamais apparaître
@@ -148,8 +149,10 @@ export function LeadMagnet() {
       }
 
       setSubmitted(true)
+      track("lead_submit", { form: "lead-magnet", offer: offer.title })
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erreur lors de l'envoi")
+      track("lead_error", { form: "lead-magnet" })
     } finally {
       setLoading(false)
     }
