@@ -102,13 +102,16 @@ export const contactSchema = z.object({
   message: z.string().min(10, "Message trop court").max(5000, "Message trop long").trim(),
 })
 
+// Formulaire de devis court (2026-09-07) : nom, email, téléphone, une phrase. Le reste est optionnel
+// (les pages d'offres à prix fixe pré-remplissent `service`).
 export const devisSchema = z.object({
   name: z.string().min(2).max(100).trim(),
   email: z.string().email().max(255).trim(),
+  phone: z.string().max(30).trim().optional().default(""),
   company: z.string().max(100).trim().optional().default(""),
-  service: z.string().min(1, "Service requis").max(100).trim(),
+  service: z.string().max(100).trim().optional().default(""),
   budget: z.string().max(50).trim().optional().default(""),
-  message: z.string().min(10).max(5000).trim(),
+  message: z.string().min(5, "Dites-nous en une phrase de quoi il s'agit").max(5000).trim(),
 })
 
 export const leadSchema = z.object({

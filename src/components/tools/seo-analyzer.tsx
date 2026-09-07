@@ -20,6 +20,7 @@ import {
 } from "lucide-react"
 import { LeadCaptureGate } from "@/components/tools/lead-capture-gate"
 import { track } from "@/lib/analytics"
+import { WhatsAppLink } from "@/components/ui/whatsapp-link"
 
 type Check = {
   id: string
@@ -360,6 +361,10 @@ export function SeoAnalyzer() {
                 failCount,
                 warnCount,
                 title: result.meta.title,
+                // Les 3 problèmes prioritaires (échecs d'abord) : repris dans la relance J+1 envoyée au lead
+                topIssues: [...result.checks.filter((c) => c.status === "fail"), ...result.checks.filter((c) => c.status === "warning")]
+                  .slice(0, 3)
+                  .map((c) => `${c.label} : ${c.tip}`),
               }}
               teaser={`Votre site obtient ${result.score}/100. Renseignez vos coordonnées pour voir le détail de chaque critère avec les recommandations personnalisées.`}
               ctaLabel="Voir le rapport détaillé"
@@ -398,27 +403,29 @@ export function SeoAnalyzer() {
               {/* CTA */}
               <Card className="p-8 bg-indigo-600 dark:bg-indigo-500 text-white border-0 text-center">
                 <h3 className="text-xl font-extrabold mb-2">
-                  Besoin d&apos;aide pour améliorer votre SEO ?
+                  Vous voulez savoir quoi corriger en premier, et pourquoi ?
                 </h3>
                 <p className="text-indigo-100 text-sm mb-6">
-                  Nos experts analysent votre site en profondeur et mettent en place un plan d&apos;action concret.
+                  Ce rapport est automatique. L&apos;audit SEO flash est fait par un consultant : vidéo commentée
+                  de 15 à 20 min + PDF des 10 corrections prioritaires, sous 48 h, à distance, 249 € HT.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Button
-                    href="/devis"
-                    track={{ event: "cta_click", props: { cta: "devis", location: "analyseur-seo-resultat" } }}
+                    href="/services/audit-seo-flash"
+                    track={{ event: "cta_click", props: { cta: "audit-seo-flash", location: "analyseur-seo-resultat" } }}
                     className="bg-white text-indigo-600 hover:bg-indigo-50 px-6 py-2.5 rounded-full text-sm font-bold transition-all"
                   >
-                    Demander un audit complet
+                    Commander l&apos;audit flash
                   </Button>
-                  <Button
-                    href="/services/seo-local-dijon"
-                    track={{ event: "cta_click", props: { cta: "seo-local-dijon", location: "analyseur-seo-resultat" } }}
-                    className="border border-white/30 text-white hover:bg-white/10 px-6 py-2.5 rounded-full text-sm font-semibold transition-all"
-                  >
-                    Notre service SEO
-                  </Button>
+                  <WhatsAppLink
+                    location="analyseur-seo-resultat"
+                    message={`Bonjour Axel, je viens d'analyser ${result.url} (score ${result.score}/100) et j'aimerais en discuter.`}
+                    label="Poser une question"
+                  />
                 </div>
+                <p className="mt-4 text-xs text-indigo-100/80">
+                  Vous recevrez demain par email vos 3 corrections prioritaires. Rien d&apos;autre, promis.
+                </p>
               </Card>
             </motion.div>
           )}

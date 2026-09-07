@@ -13,7 +13,7 @@ export async function POST(request: Request) {
 
     const body = await request.json()
     if (checkSpam(body)) {
-      return NextResponse.json({ success: true })
+      return NextResponse.json({ success: true, filtered: true })
     }
     const result = leadMagnetSchema.safeParse(body)
     if (!result.success) {

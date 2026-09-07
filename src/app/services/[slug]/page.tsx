@@ -10,6 +10,7 @@ import { ServiceSchema, FaqSchema } from "@/components/seo/schemas"
 import { Container } from "@/components/ui/container"
 import { faqGenerales } from "@/lib/data/faq"
 import { serviceFaqs } from "@/lib/data/service-faqs"
+import { serviceEnBref } from "@/lib/data/service-en-bref"
 import { Button } from "@/components/ui/button"
 import { LucideIcon } from "@/components/ui/lucide-icon"
 import { ServiceVisual } from "@/components/ui/service-visual"
@@ -60,6 +61,7 @@ export default async function ServicePage({
   const specificFaqs = serviceFaqs[slug] ?? []
   const generalFaqs = faqGenerales.slice(0, 5)
   const pageFaq = [...specificFaqs, ...generalFaqs]
+  const enBref = serviceEnBref[slug]
 
   // Related services
   const related = service?.relatedServices
@@ -114,6 +116,33 @@ export default async function ServicePage({
           </div>
         </Container>
       </section>
+
+      {/* EN BREF — réponse directe (GEO) */}
+      {enBref && (
+        <section className="py-16 lg:py-20 border-y border-slate-100 dark:border-slate-800" aria-labelledby="en-bref">
+          <Container>
+            <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-16 items-start">
+              <div>
+                <h2 id="en-bref" className="text-sm font-black uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">En bref</h2>
+                <p className="mt-4 text-lg lg:text-xl text-slate-700 dark:text-slate-300 leading-relaxed">{enBref.reponse}</p>
+              </div>
+              <dl className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
+                {[
+                  { label: "Prix", value: enBref.prix },
+                  { label: "Délai", value: enBref.delai },
+                  { label: "Pour qui", value: enBref.pourQui },
+                  { label: "Zone", value: enBref.zone },
+                ].map((item) => (
+                  <div key={item.label} className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 p-5">
+                    <dt className="text-xs font-black uppercase tracking-widest text-slate-400 dark:text-slate-500">{item.label}</dt>
+                    <dd className="mt-1.5 text-sm font-semibold text-slate-800 dark:text-slate-200 leading-relaxed">{item.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* BENEFITS */}
       <section className="py-20 bg-slate-50 dark:bg-slate-900">

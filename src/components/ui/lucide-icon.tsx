@@ -38,9 +38,17 @@ import {
   ShoppingBag,
   ScanSearch,
   PenTool,
+  Rocket,
+  Euro,
+  MapPinned,
+  ShieldCheck,
 } from "lucide-react"
 
 export const icons = {
+  Rocket,
+  Euro,
+  MapPinned,
+  ShieldCheck,
   Globe,
   RefreshCw,
   Search,

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { OffresFixesSection } from "@/components/sections/offres-fixes-section"
 import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
 import { PageHero } from "@/components/sections/page-hero"
@@ -102,7 +103,7 @@ const forfaits = [
 
 const faqTarifs = [
   { question: "Comment connaître le prix exact de mon projet ?", answer: "Chaque projet est unique. Demandez un devis gratuit : on échange sur vos besoins et on vous envoie un chiffrage détaillé sous 24h. Pas de surprise, pas de coût caché." },
-  { question: "Pourquoi ne pas afficher de prix fixes ?", answer: "Parce qu'un site vitrine pour un artisan et un site multi-pages pour un hôtel n'ont rien à voir. Afficher un prix unique serait soit trop cher pour les projets simples, soit insuffisant pour les projets ambitieux. On préfère vous proposer le juste prix." },
+  { question: "Pourquoi ne pas afficher de prix fixes ?", answer: "Pour les projets sur mesure, parce qu'un site vitrine pour un artisan et un site multi-pages pour un hôtel n'ont rien à voir : un prix unique serait soit trop cher, soit insuffisant. En revanche, les besoins courts et bien délimités ont leur prix fixe affiché : vectorisation de logo, audit SEO flash, fiche Google Business optimisée, landing page en 5 jours." },
   { question: "Faut-il payer en une fois ?", answer: "Non. Pour les projets ponctuels : 40 % à la commande, 60 % à la livraison. Pour les forfaits : paiement mensuel. On s'adapte." },
   { question: "Le site internet est-il vraiment offert dans les forfaits ?", answer: "Oui. La création d'un site vitrine est offerte selon la durée d'engagement. Le site vous appartient, même si vous résiliez." },
   { question: "Puis-je changer de forfait en cours de route ?", answer: "Absolument. Upgrade ou downgrade avec un préavis d'un mois. Beaucoup de nos clients commencent par l'Essentiel et passent en Croissance après quelques mois." },
@@ -226,6 +227,9 @@ export default function TarifsPage() {
           </AnimateOnScroll>
         </Container>
       </section>
+
+      {/* OFFRES À PRIX FIXE */}
+      <OffresFixesSection variant="light" />
 
       {/* FORFAITS MENSUELS */}
       <section className="py-16 lg:py-24 bg-slate-50 dark:bg-slate-900">

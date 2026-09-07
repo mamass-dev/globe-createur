@@ -206,8 +206,9 @@ function ContactCapture({ answers, verdict }: { answers: Answers; verdict: Verdi
       })
 
       if (res.ok) {
+        const data = await res.json().catch(() => ({}))
         setStatus("success")
-        track("lead_submit", { form: "gate", source: "Simulateur éligibilité IA", parcours: verdict.parcours })
+        track(data?.filtered ? "lead_filtered" : "lead_submit", { form: "gate", source: "Simulateur éligibilité IA", parcours: verdict.parcours })
       } else {
         setStatus("error")
         track("lead_error", { form: "gate", source: "Simulateur éligibilité IA" })

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { WhatsAppLink } from "@/components/ui/whatsapp-link"
 import { buildMetadata } from "@/lib/metadata"
 import { Container } from "@/components/ui/container"
 import { ContactForm } from "@/components/forms/contact-form"
@@ -71,6 +72,10 @@ export default function ContactPage() {
               <AnimateOnScroll delay={0.2}>
                  <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-10">Envoyez-nous un message</h3>
                  <ContactForm />
+                 <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
+                   <span>Plus rapide :</span>
+                   <WhatsAppLink location="contact" message="Bonjour Axel, je vous écris depuis la page contact." />
+                 </div>
               </AnimateOnScroll>
            </div>
         </div>

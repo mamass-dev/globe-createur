@@ -143,13 +143,13 @@ export function LeadMagnet() {
         }),
       })
 
+      const data = await res.json().catch(() => ({}))
       if (!res.ok) {
-        const data = await res.json().catch(() => ({}))
         throw new Error(data.error || "Erreur lors de l'envoi")
       }
 
       setSubmitted(true)
-      track("lead_submit", { form: "lead-magnet", offer: offer.title })
+      track(data?.filtered ? "lead_filtered" : "lead_submit", { form: "lead-magnet", offer: offer.title })
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erreur lors de l'envoi")
       track("lead_error", { form: "lead-magnet" })

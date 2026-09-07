@@ -30,8 +30,9 @@ export function ContactForm() {
       })
 
       if (res.ok) {
+        const data = await res.json().catch(() => ({}))
         setStatus("success")
-        track("lead_submit", { form: "contact" })
+        track(data?.filtered ? "lead_filtered" : "lead_submit", { form: "contact" })
       } else {
         setStatus("error")
         track("lead_error", { form: "contact" })

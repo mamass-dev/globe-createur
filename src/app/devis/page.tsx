@@ -7,6 +7,8 @@ import { Container } from "@/components/ui/container"
 import { Card } from "@/components/ui/card"
 import { DevisForm } from "@/components/forms/devis-form"
 import { AnimateOnScroll } from "@/components/ui/animate"
+import { googleReviews } from "@/lib/data/temoignages"
+import { WhatsAppLink } from "@/components/ui/whatsapp-link"
 
 /* ═══════════════════════════════════════════════════
    TEMPLATE 5 - LANDING PAGE CONVERSION
@@ -35,9 +37,11 @@ export const metadata: Metadata = buildMetadata({
   path: "/devis",
 })
 
+const review = googleReviews.find((r) => r.featured && r.company) ?? googleReviews[0]
+
 const reasons = [
   "Devis détaillé et transparent",
-  "Réponse personnalisée sous 48h",
+  "Réponse personnalisée sous 24 h ouvrées",
   "Sans engagement de votre part",
   "Audit gratuit de votre situation",
   "Recommandations concrètes incluses",
@@ -61,8 +65,8 @@ export default function DevisPage() {
               Demander un devis gratuit
             </h1>
             <p className="mt-4 text-lg text-gray-400 dark:text-slate-400 max-w-xl mx-auto leading-relaxed">
-              D&eacute;crivez votre projet en 2 minutes. Nous vous envoyons un devis d&eacute;taill&eacute;
-              avec des recommandations personnalis&eacute;es sous 48h.
+Une phrase suffit pour d&eacute;marrer. On vous rappelle ou on vous &eacute;crit sous 24 h ouvr&eacute;es
+              avec des premi&egrave;res recommandations, puis un devis d&eacute;taill&eacute;.
             </p>
           </div>
         </AnimateOnScroll>
@@ -77,6 +81,10 @@ export default function DevisPage() {
               <Card className="p-6 sm:p-8">
                 <DevisForm />
               </Card>
+              <div className="mt-4 flex flex-col sm:flex-row sm:items-center gap-3 text-sm text-gray-500 dark:text-slate-400">
+                <span>Vous pr&eacute;f&eacute;rez &eacute;crire directement ?</span>
+                <WhatsAppLink location="devis" message="Bonjour Axel, j'ai un projet et j'aimerais en discuter." />
+              </div>
             </div>
 
             {/* Sidebar - 2/5 */}
@@ -103,16 +111,15 @@ export default function DevisPage() {
               {/* 5. PREUVE - Testimonial inline */}
               <div className="rounded-xl border border-gray-100 dark:border-slate-700 bg-white dark:bg-slate-800 p-5">
                 <blockquote className="text-sm text-gray-500 dark:text-slate-400 leading-relaxed italic">
-                  &ldquo;Globe Cr&eacute;ateur a transform&eacute; notre pr&eacute;sence en ligne.
-                  Notre nouveau site g&eacute;n&egrave;re 3 fois plus de r&eacute;servations directes.&rdquo;
+                  &ldquo;{review.content}&rdquo;
                 </blockquote>
                 <div className="mt-3 flex items-center gap-2">
                   <div className="h-8 w-8 rounded-full bg-gray-50 dark:bg-slate-700 flex items-center justify-center text-xs font-semibold text-foreground">
-                    M
+                    {review.name.charAt(0)}
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-foreground">Marie Dupont</p>
-                    <p className="text-xs text-gray-400 dark:text-slate-500">H&ocirc;tel Le Bourguignon</p>
+                    <p className="text-xs font-medium text-foreground">{review.name}</p>
+                    <p className="text-xs text-gray-400 dark:text-slate-500">Avis Google{review.date ? ` · ${review.date}` : ""}</p>
                   </div>
                 </div>
               </div>

@@ -886,7 +886,7 @@ export function EstimateurForm() {
     setSubmitting(true)
     try {
       const estimate = computeEstimate(form)
-      await fetch("/api/contact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -899,7 +899,8 @@ export function EstimateurForm() {
           _t: renderTime,
         }),
       })
-      track("lead_submit", { form: "estimateur", projet: form.projectType ?? "" })
+      const data = await res.json().catch(() => ({}))
+      track(data?.filtered ? "lead_filtered" : "lead_submit", { form: "estimateur", projet: form.projectType ?? "" })
     } catch {
       // silently continue - we show success regardless
       track("lead_error", { form: "estimateur" })

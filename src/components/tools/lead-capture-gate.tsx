@@ -41,8 +41,9 @@ export function LeadCaptureGate({
       })
 
       if (res.ok) {
+        const data = await res.json().catch(() => ({}))
         setStatus("success")
-        track("lead_submit", { form: "gate", source, phone: Boolean(phone) })
+        track(data?.filtered ? "lead_filtered" : "lead_submit", { form: "gate", source, phone: Boolean(phone) })
         setTimeout(onUnlock, 1200)
       } else {
         setStatus("error")

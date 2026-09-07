@@ -3,6 +3,7 @@ import Link from "next/link"
 import dynamic from "next/dynamic"
 import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
+import { OffresFixesSection } from "@/components/sections/offres-fixes-section"
 import { Kicker } from "@/components/ui/kicker"
 import { Marquee } from "@/components/ui/marquee"
 import { ServiceGrid } from "@/components/sections/service-grid"
@@ -108,6 +109,9 @@ export default function HomePage() {
         subtitle="Une approche holistique du digital pour couvrir tous vos besoins de croissance."
         badge="02 — Expertises"
       />
+
+      {/* ═══ OFFRES À PRIX FIXE ═══ */}
+      <OffresFixesSection />
 
       {/* ═══ 3. MÉTHODOLOGIE ═══ */}
       <section className="py-24 lg:py-32 bg-[#0a0a0a]">

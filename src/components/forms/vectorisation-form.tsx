@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useState } from "react"
-import { track } from "@/lib/analytics"
+import { track, trackAttrs } from "@/lib/analytics"
 import { Upload, FileImage, X, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input, Textarea } from "@/components/ui/input"
@@ -23,6 +23,8 @@ function formatSize(bytes: number) {
 
 export function VectorisationForm({ defaultOffre = "simple" }: { defaultOffre?: string }) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const [paymentUrl, setPaymentUrl] = useState<string | null>(null)
+  const [paidOffre, setPaidOffre] = useState("")
   const [errorMsg, setErrorMsg] = useState<string | null>(null)
   const [files, setFiles] = useState<File[]>([])
   const [offre, setOffre] = useState(defaultOffre)
@@ -73,8 +75,11 @@ export function VectorisationForm({ defaultOffre = "simple" }: { defaultOffre?: 
     try {
       const res = await fetch("/api/vectorisation", { method: "POST", body: formData })
       if (res.ok) {
+        const data = await res.json().catch(() => ({}))
+        setPaymentUrl(typeof data?.paymentUrl === "string" ? data.paymentUrl : null)
+        setPaidOffre(String(formData.get("offre") ?? ""))
         setStatus("success")
-        track("lead_submit", { form: "vectorisation", offre: String(formData.get("offre") ?? "") })
+        track(data?.filtered ? "lead_filtered" : "lead_submit", { form: "vectorisation", offre: String(formData.get("offre") ?? "") })
       } else {
         const data = await res.json().catch(() => ({}))
         setErrorMsg(data?.error ?? "Une erreur est survenue. Réessayez.")
@@ -93,11 +98,33 @@ export function VectorisationForm({ defaultOffre = "simple" }: { defaultOffre?: 
       <div className="rounded-sm border border-signal/40 bg-[#141414] p-8 lg:p-10">
         <CheckCircle2 className="h-8 w-8 text-signal" aria-hidden="true" />
         <p className="mt-4 text-2xl font-bold text-ivory">Logo bien reçu.</p>
-        <ol className="mt-4 space-y-2 text-sm text-aluminium leading-relaxed list-decimal pl-5">
-          <li>Un designer vérifie votre fichier et vous confirme le forfait par email (ou vous dit honnêtement si ce n&apos;est pas le bon).</li>
-          <li>Vous recevez un lien de paiement sécurisé.</li>
-          <li>Vos fichiers vectoriels sont livrés sous {VECTO_DELAI_HEURES} h ouvrées après paiement.</li>
-        </ol>
+        {paymentUrl ? (
+          <>
+            <p className="mt-4 text-sm text-aluminium leading-relaxed">
+              Pour lancer le travail tout de suite, réglez dès maintenant. Un designer vérifie votre fichier dans la
+              foulée : si le forfait ne convient pas, on vous le dit et on vous rembourse intégralement.
+            </p>
+            <a
+              href={paymentUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              {...trackAttrs("cta_click", { cta: "stripe-vecto", location: `vectorisation-${paidOffre}` })}
+              className="mt-5 inline-flex h-12 items-center justify-center gap-2 bg-signal px-7 text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#d62e20]"
+            >
+              Payer maintenant (paiement sécurisé Stripe)
+            </a>
+            <p className="mt-4 text-xs text-aluminium">
+              Vous préférez attendre notre vérification ? Le lien de paiement est aussi dans l&apos;email de confirmation ;
+              livraison sous {VECTO_DELAI_HEURES} h ouvrées après paiement.
+            </p>
+          </>
+        ) : (
+          <ol className="mt-4 space-y-2 text-sm text-aluminium leading-relaxed list-decimal pl-5">
+            <li>Un designer vérifie votre fichier et vous confirme le forfait par email (ou vous dit honnêtement si ce n&apos;est pas le bon).</li>
+            <li>Vous recevez un lien de paiement sécurisé.</li>
+            <li>Vos fichiers vectoriels sont livrés sous {VECTO_DELAI_HEURES} h ouvrées après paiement.</li>
+          </ol>
+        )}
         <p className="mt-4 text-xs text-aluminium">
           Un accusé de réception vient de partir sur votre adresse email. Pas reçu ? Vérifiez vos spams ou écrivez à contact@globecreateur.fr.
         </p>

@@ -2,6 +2,59 @@ import { NextResponse } from "next/server"
 import { Resend } from "resend"
 import { leadSchema, escapeHtml, rateLimit, getClientIp, checkSpam } from "@/lib/security"
 
+const FOLLOW_UP_DELAY = "in 1 day"
+
+/**
+ * Email J+1 envoyé au lead d'un outil (analyseur, ROI, audit digital…).
+ * Analyseur SEO : reprend les 3 corrections prioritaires calculées côté client (`context.topIssues`)
+ * et propose l'audit flash. Autres outils : simple proposition d'échange.
+ */
+async function scheduleFollowUp({
+  name,
+  email,
+  source,
+  context,
+}: {
+  name: string
+  email: string
+  source: string
+  context?: Record<string, unknown>
+}) {
+  const resend = new Resend(process.env.RESEND_API_KEY)
+  const firstName = escapeHtml(name.split(" ")[0] || name)
+  const issues = Array.isArray(context?.topIssues)
+    ? (context!.topIssues as unknown[]).filter((i): i is string => typeof i === "string").slice(0, 3)
+    : []
+  const url = typeof context?.url === "string" ? escapeHtml(context.url) : ""
+  const score = typeof context?.score === "number" ? context.score : null
+  const isAnalyzer = source === "Analyseur SEO" && issues.length > 0
+
+  const subject = isAnalyzer
+    ? `Vos 3 corrections prioritaires${url ? ` pour ${url}` : ""}`
+    : `Suite à votre passage sur ${escapeHtml(source)}`
+
+  const intro = isAnalyzer
+    ? `<p>Bonjour ${firstName},</p>
+       <p>Hier vous avez analysé ${url ? `<a href="${url}">${url}</a>` : "votre site"} avec notre outil${score !== null ? ` (score ${score}/100)` : ""}. Voici, tirées de ce rapport, les trois corrections qui pèsent le plus :</p>
+       <ol>${issues.map((i) => `<li style="margin-bottom:8px;">${escapeHtml(i)}</li>`).join("")}</ol>
+       <p>Ce rapport reste automatique : il vérifie 13 critères techniques, pas votre marché ni vos concurrents. Si vous voulez savoir <em>quoi corriger en premier et pourquoi</em>, l'audit SEO flash est fait par un consultant, livré sous 48 h en vidéo commentée + PDF des 10 priorités, pour 249 € HT, à distance.</p>
+       <p><a href="https://globecreateur.fr/services/audit-seo-flash" style="display:inline-block;padding:10px 18px;background:#e63a2b;color:#fff;text-decoration:none;font-weight:bold;">Voir l'audit SEO flash</a></p>`
+    : `<p>Bonjour ${firstName},</p>
+       <p>Hier vous avez utilisé notre outil « ${escapeHtml(source)} ». Si vous voulez en discuter dix minutes, il suffit de répondre à cet email ou de m'écrire sur WhatsApp : <a href="https://wa.me/33678978705">wa.me/33678978705</a>.</p>
+       <p>Et si votre besoin est court et bien délimité, nos offres à prix fixe sont ici : <a href="https://globecreateur.fr/tarifs">globecreateur.fr/tarifs</a>.</p>`
+
+  await resend.emails.send({
+    from: "Axel de Globe Créateur <noreply@globecreateur.fr>",
+    to: email,
+    replyTo: "contact@globecreateur.fr",
+    subject,
+    scheduledAt: FOLLOW_UP_DELAY,
+    html: `${intro}
+      <p>Pas d'autre email après celui-ci : vous avez les infos, vous décidez.</p>
+      <p>Axel Masson<br />Globe Créateur, Dijon · <a href="https://globecreateur.fr">globecreateur.fr</a></p>`,
+  })
+}
+
 export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY)
   try {
@@ -13,7 +66,7 @@ export async function POST(request: Request) {
 
     const body = await request.json()
     if (checkSpam(body)) {
-      return NextResponse.json({ success: true })
+      return NextResponse.json({ success: true, filtered: true })
     }
     const result = leadSchema.safeParse(body)
     if (!result.success) {
@@ -58,6 +111,9 @@ export async function POST(request: Request) {
       console.error("Lead form Resend error:", sendError)
       return NextResponse.json({ error: "L'envoi a échoué. Réessayez ou écrivez-nous à contact@globecreateur.fr." }, { status: 502 })
     }
+
+    // Relance J+1 au lead (programmée côté Resend, non bloquante). Une seule, sans séquence.
+    scheduleFollowUp({ name, email, source, context }).catch((e) => console.error("Lead follow-up error:", e))
 
     return NextResponse.json({ success: true })
   } catch (error) {

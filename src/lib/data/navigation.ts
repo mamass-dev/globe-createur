@@ -54,6 +54,9 @@ export const footerNav = {
     { label: "Création de contenu", href: "/services/creation-contenu-pme" },
     { label: "Automatisation", href: "/services/automatisation-nocode-dijon" },
     { label: "Vectorisation de logo", href: "/services/vectorisation-logo" },
+    { label: "Audit SEO flash", href: "/services/audit-seo-flash" },
+    { label: "Fiche Google Business", href: "/services/fiche-google-business-optimisee" },
+    { label: "Landing page en 5 jours", href: "/services/landing-page-5-jours" },
   ],
   agence: [
     { label: "À propos", href: "/a-propos" },

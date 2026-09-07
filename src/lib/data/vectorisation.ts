@@ -86,6 +86,21 @@ export const VECTO_LIVRABLES = [
   { ext: "PNG HD", desc: "Pour les usages du quotidien : fond transparent, haute définition, prêt pour Word, Canva ou vos réseaux." },
 ]
 
+/**
+ * Liens de paiement Stripe (Payment Links créés dans le dashboard Stripe, aucune clé secrète côté site).
+ * Variables Vercel à renseigner : NEXT_PUBLIC_STRIPE_LINK_VECTO_SIMPLE et NEXT_PUBLIC_STRIPE_LINK_VECTO_COMPLET.
+ * Tant qu'elles sont absentes, le parcours reste « lien envoyé à la main après vérification ».
+ */
+export function getVectoPaymentLink(offreId: VectoOffre["id"]): string | null {
+  const links: Record<VectoOffre["id"], string | undefined> = {
+    simple: process.env.NEXT_PUBLIC_STRIPE_LINK_VECTO_SIMPLE,
+    complet: process.env.NEXT_PUBLIC_STRIPE_LINK_VECTO_COMPLET,
+    reprise: undefined,
+  }
+  const url = links[offreId]?.trim()
+  return url && /^https:\/\/(buy\.stripe\.com|checkout\.stripe\.com)\//.test(url) ? url : null
+}
+
 export function formatPrixVecto(offre: VectoOffre): string {
   if (offre.prixHT === null) return offre.prefix ?? "sur devis"
   return `${offre.prixHT.toLocaleString("fr-FR")} € HT`

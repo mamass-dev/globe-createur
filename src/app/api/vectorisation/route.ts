@@ -8,6 +8,7 @@ import {
   VECTO_OFFRES,
   VECTO_DELAI_HEURES,
   formatPrixVecto,
+  getVectoPaymentLink,
 } from "@/lib/data/vectorisation"
 
 const vectorisationSchema = z.object({
@@ -34,9 +35,10 @@ export async function POST(request: Request) {
     const form = await request.formData()
 
     // Honeypot + délai minimal de remplissage (mêmes règles que checkSpam, version multipart)
-    if (form.get("_hp")) return NextResponse.json({ success: true })
+    // Réponse 200 avec `filtered: true` : le bot croit avoir réussi, le client ne compte pas de lead.
+    if (form.get("_hp")) return NextResponse.json({ success: true, filtered: true })
     const t = Number(form.get("_t") ?? 0)
-    if (t > 0 && Date.now() - t < 2_000) return NextResponse.json({ success: true })
+    if (t > 0 && Date.now() - t < 2_000) return NextResponse.json({ success: true, filtered: true })
 
     const parsed = vectorisationSchema.safeParse({
       name: form.get("name"),
@@ -87,6 +89,7 @@ export async function POST(request: Request) {
     const { name, email, company, offre, usage, message } = parsed.data
     const offreData = VECTO_OFFRES.find((o) => o.id === offre)!
     const offreLabel = `${offreData.nom} — ${formatPrixVecto(offreData)}`
+    const paymentUrl = getVectoPaymentLink(offre)
 
     const { error: sendError } = await resend.emails.send({
       from: "Globe Créateur <noreply@globecreateur.fr>",
@@ -129,19 +132,23 @@ export async function POST(request: Request) {
         html: `
           <p>Bonjour ${escapeHtml(name)},</p>
           <p>Nous avons bien reçu votre logo (${attachments.length} fichier${attachments.length > 1 ? "s" : ""}) et votre demande : <strong>${escapeHtml(offreLabel)}</strong>.</p>
-          <p>Voici la suite :</p>
+          ${paymentUrl
+            ? `<p>Pour lancer le travail tout de suite, vous pouvez régler dès maintenant (paiement sécurisé Stripe) : <a href="${paymentUrl}" style="display:inline-block;padding:10px 18px;background:#e63a2b;color:#fff;text-decoration:none;font-weight:bold;">Payer ${escapeHtml(formatPrixVecto(offreData))}</a></p>
+               <p>Un designer vérifie votre fichier dans la foulée : si le forfait choisi ne convient pas, on vous le dit et on vous rembourse intégralement.</p>
+               <p>Vos fichiers vectoriels (AI, EPS, SVG, PDF, PNG HD) sont livrés sous ${VECTO_DELAI_HEURES} h ouvrées après paiement.</p>`
+            : `<p>Voici la suite :</p>
           <ol>
             <li>Un designer vérifie votre fichier et vous confirme par email que le forfait choisi convient (si ce n'est pas le cas, on vous le dit avant toute facturation).</li>
             <li>Vous recevez un lien de paiement sécurisé.</li>
             <li>Vos fichiers vectoriels (AI, EPS, SVG, PDF, PNG HD) vous sont livrés sous ${VECTO_DELAI_HEURES} h ouvrées après paiement.</li>
-          </ol>
+          </ol>`}
           <p>Une question entre-temps ? Répondez simplement à cet email.</p>
           <p>— L'équipe Globe Créateur<br /><a href="https://globecreateur.fr/services/vectorisation-logo">globecreateur.fr/services/vectorisation-logo</a></p>
         `,
       })
       .catch((e) => console.error("Vectorisation ack email error:", e))
 
-    return NextResponse.json({ success: true })
+    return NextResponse.json({ success: true, paymentUrl })
   } catch (error) {
     console.error("Vectorisation form error:", error)
     return NextResponse.json({ error: "Erreur serveur" }, { status: 500 })
