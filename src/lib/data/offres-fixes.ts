@@ -153,7 +153,7 @@ export const OFFRES_FIXES: OffreFixe[] = [
     icon: "MapPin",
     formService: "Fiche Google Business optimisée (349 € HT)",
     ctaLabel: "Commander l'optimisation",
-    relatedServices: ["seo-local-dijon"],
+    relatedServices: ["seo-local-dijon", "creation-site-internet-dijon", "creation-contenu-pme"],
     related: ["audit-seo-flash", "landing-page-5-jours", "vectorisation-logo"],
   },
   {
