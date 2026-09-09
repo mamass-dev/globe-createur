@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server"
+import { NextResponse, after } from "next/server"
 import { Resend } from "resend"
 import { z } from "zod"
 import { escapeHtml, sanitizeForEmail, rateLimit, getClientIp } from "@/lib/security"
@@ -122,8 +122,8 @@ export async function POST(request: Request) {
       )
     }
 
-    // Accusé de réception client — non bloquant
-    resend.emails
+    // Accusé de réception client — après la réponse (after), sans bloquer ni être gelé par Vercel
+    after(() => resend.emails
       .send({
         from: "Globe Créateur <noreply@globecreateur.fr>",
         to: email,
@@ -146,7 +146,7 @@ export async function POST(request: Request) {
           <p>— L'équipe Globe Créateur<br /><a href="https://globecreateur.fr/services/vectorisation-logo">globecreateur.fr/services/vectorisation-logo</a></p>
         `,
       })
-      .catch((e) => console.error("Vectorisation ack email error:", e))
+      .catch((e) => console.error("Vectorisation ack email error:", e)))
 
     return NextResponse.json({ success: true, paymentUrl })
   } catch (error) {

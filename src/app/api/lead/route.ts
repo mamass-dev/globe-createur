@@ -1,8 +1,9 @@
-import { NextResponse } from "next/server"
+import { NextResponse, after } from "next/server"
 import { Resend } from "resend"
 import { leadSchema, escapeHtml, rateLimit, getClientIp, checkSpam } from "@/lib/security"
 
-const FOLLOW_UP_DELAY = "in 1 day"
+/** Relance envoyée 24 h après le lead (Resend accepte une date ISO jusqu'à 30 jours) */
+const followUpDate = () => new Date(Date.now() + 24 * 3600 * 1000).toISOString()
 
 /**
  * Email J+1 envoyé au lead d'un outil (analyseur, ROI, audit digital…).
@@ -48,7 +49,7 @@ async function scheduleFollowUp({
     to: email,
     replyTo: "contact@globecreateur.fr",
     subject,
-    scheduledAt: FOLLOW_UP_DELAY,
+    scheduledAt: followUpDate(),
     html: `${intro}
       <p>Pas d'autre email après celui-ci : vous avez les infos, vous décidez.</p>
       <p>Axel Masson<br />Globe Créateur, Dijon · <a href="https://globecreateur.fr">globecreateur.fr</a></p>`,
@@ -112,8 +113,9 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "L'envoi a échoué. Réessayez ou écrivez-nous à contact@globecreateur.fr." }, { status: 502 })
     }
 
-    // Relance J+1 au lead (programmée côté Resend, non bloquante). Une seule, sans séquence.
-    scheduleFollowUp({ name, email, source, context }).catch((e) => console.error("Lead follow-up error:", e))
+    // Relance J+1 au lead (programmée côté Resend). `after()` : exécutée après l'envoi de la réponse,
+    // sans être gelée par Vercel (un simple appel non attendu serait interrompu).
+    after(() => scheduleFollowUp({ name, email, source, context }).catch((e) => console.error("Lead follow-up error:", e)))
 
     return NextResponse.json({ success: true })
   } catch (error) {
