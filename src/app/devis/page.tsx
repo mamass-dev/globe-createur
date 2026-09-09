@@ -33,7 +33,7 @@ import { WhatsAppLink } from "@/components/ui/whatsapp-link"
 
 export const metadata: Metadata = buildMetadata({
   title: "Demander un devis gratuit - Projet web & communication",
-  description: "Demandez votre devis gratuit pour un projet web, SEO ou communication. Réponse personnalisée sous 48h.",
+  description: "Demandez votre devis gratuit pour un projet web, SEO ou communication. Réponse personnalisée sous 24 h ouvrées.",
   path: "/devis",
 })
 

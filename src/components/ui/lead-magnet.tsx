@@ -6,7 +6,16 @@ import { track } from "@/lib/analytics"
 import { X, ArrowRight, CheckCircle, Gift } from "lucide-react"
 
 // Pages où la pop-up lead magnet ne doit jamais apparaître
-const EXCLUDED_PATHS = ["/cl-racing"]
+// Pas de pop-up sur les pages où le visiteur est déjà en train de commander ou d'écrire
+const EXCLUDED_PATHS = [
+  "/cl-racing",
+  "/devis",
+  "/contact",
+  "/services/vectorisation-logo",
+  "/services/audit-seo-flash",
+  "/services/fiche-google-business-optimisee",
+  "/services/landing-page-5-jours",
+]
 
 /**
  * Contextual lead magnet slide-in.

@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/container"
 import { AnimateOnScroll } from "@/components/ui/animate"
 
 const signals = [
-  { icon: Clock, label: "Réponse sous 48h" },
+  { icon: Clock, label: "Réponse sous 24 h ouvrées" },
   { icon: Shield, label: "Devis gratuit, sans engagement" },
   { icon: Star, label: "98% de clients satisfaits" },
   { icon: Headphones, label: "Interlocuteur unique" },
