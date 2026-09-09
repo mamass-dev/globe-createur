@@ -26,7 +26,12 @@ export function ProcessSteps({
       <Container>
         <SectionHeader title={title} subtitle={subtitle} badge={badge} />
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+        {/* Nombre de colonnes = nombre d'étapes (3 ou 4) : sinon la grille de 4 laisse une colonne vide à droite */}
+        <StaggerContainer
+          className={`grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-6 mx-auto ${
+            steps.length === 3 ? "lg:grid-cols-3 max-w-4xl" : "lg:grid-cols-4"
+          }`}
+        >
           {steps.map((step, i) => (
             <StaggerItem key={step.number} className="relative">
               {/* Connecting line (desktop only) */}
