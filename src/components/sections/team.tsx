@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { LucideIcon } from "@/components/ui/lucide-icon"
 import { Container } from "@/components/ui/container"
 
 const team = [
@@ -95,7 +96,7 @@ export function Team() {
           <div className="relative">
             {/* Centre - Logo */}
             <div className="relative z-10 mx-auto w-28 h-28 lg:w-36 lg:h-36 rounded-full bg-[#0f0f0f] border border-[#2a2a2a] shadow-xl flex items-center justify-center">
-              <Image src="/images/logo/globe-mark-512.png" alt="Globe Créateur" width={96} height={96} className="h-16 w-16 lg:h-20 lg:w-20" priority={false} />
+              <Image src="/images/logo/globe-mark-transparent.png" alt="Globe Créateur" width={96} height={96} className="h-16 w-16 lg:h-20 lg:w-20" priority={false} />
             </div>
 
             {/* Connecting lines (decorative) */}
@@ -105,20 +106,20 @@ export function Team() {
             {/* Expert nodes - grid layout */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
               {[
-                { icon: "🌐", title: "Développement Web", desc: "Sites performants & sur-mesure" },
-                { icon: "📸", title: "Photo & Vidéo", desc: "Contenu visuel professionnel" },
-                { icon: "📈", title: "SEO & Référencement", desc: "Visibilité locale & nationale" },
-                { icon: "🎨", title: "Design & Branding", desc: "Identité visuelle forte" },
-                { icon: "⚡", title: "Automatisation", desc: "Workflows no-code sur-mesure" },
-                { icon: "📱", title: "Réseaux Sociaux", desc: "Community management" },
-                { icon: "📊", title: "Stratégie Digitale", desc: "Plans d'action mesurables" },
-                { icon: "✍️", title: "Rédaction Web", desc: "Contenus qui convertissent" },
+                { icon: "Globe", title: "Développement Web", desc: "Sites performants & sur-mesure" },
+                { icon: "Camera", title: "Photo & Vidéo", desc: "Contenu visuel professionnel" },
+                { icon: "Search", title: "SEO & Référencement", desc: "Visibilité locale & nationale" },
+                { icon: "PenTool", title: "Design & Branding", desc: "Identité visuelle forte" },
+                { icon: "Zap", title: "Automatisation", desc: "Workflows no-code sur-mesure" },
+                { icon: "Megaphone", title: "Réseaux Sociaux", desc: "Community management" },
+                { icon: "TrendingUp", title: "Stratégie Digitale", desc: "Plans d'action mesurables" },
+                { icon: "Mail", title: "Rédaction Web", desc: "Contenus qui convertissent" },
               ].map((expert, i) => (
                 <div
                   key={i}
                   className="relative z-10 group p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm hover:border-indigo-200 dark:hover:border-indigo-700 hover:shadow-lg transition-all duration-300 text-center"
                 >
-                  <span className="text-2xl block mb-3 group-hover:scale-110 transition-transform duration-300">{expert.icon}</span>
+                  <span className="mb-3 inline-flex h-10 w-10 items-center justify-center text-signal group-hover:scale-110 transition-transform duration-300"><LucideIcon name={expert.icon} className="h-6 w-6" /></span>
                   <p className="text-sm font-bold text-slate-900 dark:text-white mb-1">{expert.title}</p>
                   <p className="text-xs text-slate-400 dark:text-slate-500">{expert.desc}</p>
                 </div>
