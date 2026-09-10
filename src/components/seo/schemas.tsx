@@ -40,7 +40,7 @@ export function OrganizationSchema() {
         url: SITE_URL,
         logo: {
           "@type": "ImageObject",
-          url: `${SITE_URL}/images/logo/logo-main.webp`,
+          url: `${SITE_URL}/images/logo/globe-wordmark.png`,
           width: 512,
           height: 512,
         },
@@ -200,7 +200,7 @@ export function ArticleSchema({
           name: SITE_NAME,
           logo: {
             "@type": "ImageObject",
-            url: `${SITE_URL}/images/logo/logo-main.webp`,
+            url: `${SITE_URL}/images/logo/globe-wordmark.png`,
           },
         },
         isPartOf: {
@@ -279,7 +279,7 @@ export function CityLocalBusinessSchema({
         name: `${SITE_NAME} - ${city}`,
         description,
         url: `${SITE_URL}/${slug}`,
-        logo: `${SITE_URL}/images/logo/logo-main.webp`,
+        logo: `${SITE_URL}/images/logo/globe-wordmark.png`,
         image: `${SITE_URL}/og/default.jpg`,
         email: "contact@globecreateur.fr",
         address: {

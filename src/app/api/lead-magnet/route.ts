@@ -50,7 +50,7 @@ export async function POST(request: Request) {
       subject: `Votre ressource gratuite - ${escapeHtml(offer || "Checklist SEO")}`,
       html: `
         <div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;padding:32px 24px;">
-          <img src="https://globecreateur.fr/images/logo/logo-main.webp" alt="Globe Créateur" style="height:32px;margin-bottom:24px;" />
+          <img src="https://globecreateur.fr/images/logo/globe-wordmark-transparent.png" alt="Globe Créateur" style="height:40px;margin-bottom:24px;" />
           <h1 style="font-size:24px;color:#0f172a;">Merci pour votre intérêt !</h1>
           <p style="color:#475569;line-height:1.6;">
             Vous avez demandé : <strong>${escapeHtml(offer || "Checklist SEO pour PME")}</strong>

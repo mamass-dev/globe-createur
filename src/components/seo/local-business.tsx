@@ -11,7 +11,7 @@ export function LocalBusinessSchema() {
         name: SITE_NAME,
         description: SITE_DESCRIPTION,
         url: SITE_URL,
-        logo: `${SITE_URL}/images/logo/logo-main.webp`,
+        logo: `${SITE_URL}/images/logo/globe-wordmark.png`,
         image: `${SITE_URL}/og/default.jpg`,
         email: CONTACT.email,
         address: {
