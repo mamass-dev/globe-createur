@@ -31,6 +31,8 @@ function cleanup() {
   }
 }
 
+/** `key` = `${route}:${ip}` : chaque formulaire a son propre compteur (un visiteur qui utilise
+ *  l'analyseur puis le devis ne doit pas être bloqué sur la vectorisation). */
 export function rateLimit(
   ip: string,
   { maxRequests = 5, windowMs = 3_600_000 }: { maxRequests?: number; windowMs?: number } = {}

@@ -16,7 +16,7 @@ type Check = {
 export async function POST(request: Request) {
   try {
     const ip = getClientIp(request)
-    const { success } = rateLimit(ip, { maxRequests: 10, windowMs: 3_600_000 })
+    const { success } = rateLimit(`seo-analyze:${ip}`, { maxRequests: 10, windowMs: 3_600_000 })
     if (!success) {
       return NextResponse.json({ error: "Trop de requêtes. Réessayez plus tard." }, { status: 429 })
     }

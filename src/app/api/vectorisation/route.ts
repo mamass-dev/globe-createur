@@ -27,7 +27,7 @@ export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY)
   try {
     const ip = getClientIp(request)
-    const { success } = rateLimit(ip, { maxRequests: 5, windowMs: 3_600_000 })
+    const { success } = rateLimit(`vectorisation:${ip}`, { maxRequests: 5, windowMs: 3_600_000 })
     if (!success) {
       return NextResponse.json({ error: "Trop de requêtes. Réessayez plus tard." }, { status: 429 })
     }
