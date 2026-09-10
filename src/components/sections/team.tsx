@@ -96,7 +96,7 @@ export function Team() {
           <div className="relative">
             {/* Centre - Logo */}
             <div className="relative z-10 mx-auto w-28 h-28 lg:w-36 lg:h-36 rounded-full bg-[#0f0f0f] border border-[#2a2a2a] shadow-xl flex items-center justify-center">
-              <Wordmark size="sm" className="items-center text-center" />
+              <Wordmark size="md" tagline="" className="items-center text-center" />
             </div>
 
             {/* Connecting lines (decorative) */}
