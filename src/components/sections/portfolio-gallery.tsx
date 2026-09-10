@@ -77,32 +77,42 @@ export function PortfolioGallery({
             ))}
           </div>
         )}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [&>*]:mb-4">
-          {photos.map((p, i) => (
-            <a
-              key={p.src}
-              href={p.src}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative block break-inside-avoid overflow-hidden border border-[#1c1c1c] bg-[#141414]"
-              aria-label={`${p.alt} (ouvrir en grand)`}
-            >
-              <Image
-                src={p.src}
-                alt={p.alt}
-                width={p.width}
-                height={p.height}
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                loading={i < 6 ? "eager" : "lazy"}
-                className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-              />
-              <span className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-black/80 to-transparent px-4 pb-3 pt-10 text-xs text-ivory opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                {p.alt}
-                {p.client && <span className="text-aluminium"> · {p.client}</span>}
-                {p.drone && <span className="text-signal font-bold"> · Drone</span>}
-              </span>
-            </a>
-          ))}
+        {/* Grille régulière : 1 / 2 / 3 colonnes sur une trame de 6, tuiles 4:3. La dernière rangée
+            s'étire (colonnes + ratio ajustés) pour ne jamais laisser de case vide. */}
+        <div className="grid grid-cols-6 gap-4">
+          {photos.map((p, i) => {
+            const n = photos.length
+            const rem3 = n % 3
+            const rem2 = n % 2
+            const lg = rem3 === 1 && i === n - 1 ? "lg:col-span-6 lg:aspect-[4/1]" : rem3 === 2 && i >= n - 2 ? "lg:col-span-3 lg:aspect-[2/1]" : "lg:col-span-2 lg:aspect-[4/3]"
+            const sm = rem2 === 1 && i === n - 1 ? "sm:col-span-6 sm:aspect-[8/3]" : "sm:col-span-3 sm:aspect-[4/3]"
+            const portrait = p.height > p.width
+            return (
+              <a
+                key={p.src}
+                href={p.src}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group relative block col-span-6 aspect-[4/3] overflow-hidden border border-[#1c1c1c] bg-[#141414] ${sm} ${lg}`}
+                aria-label={`${p.alt} (ouvrir en grand)`}
+              >
+                <Image
+                  src={p.src}
+                  alt={p.alt}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  loading={i < 6 ? "eager" : "lazy"}
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  style={{ objectPosition: portrait ? "center 35%" : "center" }}
+                />
+                <span className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-black/80 to-transparent px-4 pb-3 pt-10 text-xs text-ivory opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                  {p.alt}
+                  {p.client && <span className="text-aluminium"> · {p.client}</span>}
+                  {p.drone && <span className="text-signal font-bold"> · Drone</span>}
+                </span>
+              </a>
+            )
+          })}
         </div>
       </Container>
     </section>
