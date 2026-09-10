@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import { Wordmark } from "@/components/ui/wordmark"
 import { Container } from "@/components/ui/container"
 
 const team = [
@@ -96,7 +95,7 @@ export function Team() {
           <div className="relative">
             {/* Centre - Logo */}
             <div className="relative z-10 mx-auto w-28 h-28 lg:w-36 lg:h-36 rounded-full bg-[#0f0f0f] border border-[#2a2a2a] shadow-xl flex items-center justify-center">
-              <Wordmark size="md" tagline="" className="items-center text-center" />
+              <Image src="/images/logo/globe-mark-512.png" alt="Globe Créateur" width={96} height={96} className="h-16 w-16 lg:h-20 lg:w-20" priority={false} />
             </div>
 
             {/* Connecting lines (decorative) */}
