@@ -10,6 +10,7 @@ export const cities: CityLink[] = [
   { slug: "agence-communication-chalon-sur-saone", label: "Chalon-sur-Saône", region: "Saône-et-Loire" },
   { slug: "agence-communication-macon", label: "Mâcon", region: "Saône-et-Loire" },
   { slug: "agence-communication-auxerre", label: "Auxerre", region: "Yonne" },
+  { slug: "agence-communication-avallon", label: "Avallon", region: "Yonne" },
   { slug: "agence-communication-besancon", label: "Besançon", region: "Doubs" },
   { slug: "agence-communication-dole", label: "Dole", region: "Jura" },
   { slug: "agence-communication-nevers", label: "Nevers", region: "Nièvre" },

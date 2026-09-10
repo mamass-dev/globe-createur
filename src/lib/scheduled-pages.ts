@@ -18,6 +18,8 @@ const scheduledCities: Record<string, string> = {
   // Scheduled - week of April 1
   "agence-communication-lyon": "2026-04-01",
   "agence-communication-clermont-ferrand": "2026-04-03",
+  // Yonne sud — opportunité identifiée par Axel (aucune agence sur place)
+  "agence-communication-avallon": "2026-09-10",
 }
 
 export function isCityPublished(slug: string): boolean {

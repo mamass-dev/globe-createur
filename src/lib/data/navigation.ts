@@ -82,6 +82,7 @@ export const footerNav = {
     { label: "Chalon-sur-Saône", href: "/agence-communication-chalon-sur-saone" },
     { label: "Besançon", href: "/agence-communication-besancon" },
     { label: "Auxerre", href: "/agence-communication-auxerre" },
+    { label: "Avallon", href: "/agence-communication-avallon" },
     { label: "Mâcon", href: "/agence-communication-macon" },
     { label: "Clermont-Ferrand", href: "/agence-communication-clermont-ferrand" },
     { label: "Nevers", href: "/agence-communication-nevers" },
