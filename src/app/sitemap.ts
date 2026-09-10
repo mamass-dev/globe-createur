@@ -8,7 +8,7 @@ export const revalidate = 3600
 // Date fixe de la dernière mise à jour significative du site (rebrand + refonte éditoriale).
 // À incrémenter manuellement lors d'un changement de contenu réel : un lastModified qui
 // bouge à chaque build apprend à Google à ignorer le sitemap.
-const LAST_SITE_UPDATE = "2026-09-07"
+const LAST_SITE_UPDATE = "2026-09-10"
 
 function pickDate(fm: Record<string, unknown>, fallback: string = LAST_SITE_UPDATE): string {
   const updated = fm.updatedAt as string | undefined
@@ -52,6 +52,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/services/audit-seo-flash`, lastModified: "2026-09-07", changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/services/fiche-google-business-optimisee`, lastModified: "2026-09-07", changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/services/landing-page-5-jours`, lastModified: "2026-09-07", changeFrequency: "monthly", priority: 0.9 },
+    // Photo & vidéo (routes statiques, données dans media-services.ts)
+    { url: `${SITE_URL}/services/photographe-entreprise-dijon`, lastModified: "2026-09-10", changeFrequency: "monthly", priority: 0.9 },
+    { url: `${SITE_URL}/services/video-entreprise-dijon`, lastModified: "2026-09-10", changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/secteurs`, lastModified: LAST_SITE_UPDATE, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/mentions-legales`, lastModified: LAST_SITE_UPDATE, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE_URL}/politique-confidentialite`, lastModified: LAST_SITE_UPDATE, changeFrequency: "yearly", priority: 0.3 },

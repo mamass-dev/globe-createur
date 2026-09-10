@@ -4,6 +4,7 @@ import dynamic from "next/dynamic"
 import { Container } from "@/components/ui/container"
 import { Button } from "@/components/ui/button"
 import { OffresFixesSection } from "@/components/sections/offres-fixes-section"
+import { PortfolioGallery } from "@/components/sections/portfolio-gallery"
 import { Kicker } from "@/components/ui/kicker"
 import { Marquee } from "@/components/ui/marquee"
 import { ServiceGrid } from "@/components/sections/service-grid"
@@ -97,6 +98,19 @@ export default function HomePage() {
           speed={32}
           className="text-impact text-3xl lg:text-5xl text-ivory"
         />
+      </div>
+
+      {/* ═══ PHOTO & VIDÉO ═══ */}
+      <PortfolioGallery
+        badge="Photo & vidéo"
+        title="Ce qu'on filme et photographie"
+        subtitle="Reportages, événements, lieux, portraits, drone : de vraies images de vraies entreprises. Un studio photo et vidéo intégré, pas une banque d'images."
+        limit={6}
+        showFilters={false}
+      />
+      <div className="bg-[#0a0a0a] pb-20 -mt-8 text-center">
+        <Button href="/services/photographe-entreprise-dijon" variant="outline" size="md" track={{ event: "cta_click", props: { cta: "photo", location: "home-portfolio" } }}>Voir le portfolio photo</Button>
+        <Button href="/services/video-entreprise-dijon" variant="ghost" size="md" className="ml-3" track={{ event: "cta_click", props: { cta: "video", location: "home-portfolio" } }}>Vidéo & drone</Button>
       </div>
 
       {/* ═══ LOGOS ═══ */}

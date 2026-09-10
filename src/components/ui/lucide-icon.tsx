@@ -42,9 +42,17 @@ import {
   Euro,
   MapPinned,
   ShieldCheck,
+  Video,
+  Aperture,
+  Clapperboard,
+  Plane,
 } from "lucide-react"
 
 export const icons = {
+  Video,
+  Aperture,
+  Clapperboard,
+  Plane,
   Rocket,
   Euro,
   MapPinned,

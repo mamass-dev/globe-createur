@@ -7,6 +7,8 @@ export const mainNav: NavItem[] = [
     href: "/services",
     children: [
       { label: "Création de site internet", href: "/services/creation-site-internet-dijon", icon: "Globe", description: "Sites performants, optimisés SEO" },
+      { label: "Photo d'entreprise", href: "/services/photographe-entreprise-dijon", icon: "Camera", description: "Reportages, portraits, culinaire, drone" },
+      { label: "Vidéo d'entreprise", href: "/services/video-entreprise-dijon", icon: "Video", description: "Films, reels, captation, drone" },
       { label: "Refonte de site internet", href: "/services/refonte-site-internet-dijon", icon: "RefreshCw", description: "Modernisez sans perdre votre SEO" },
       { label: "SEO local", href: "/services/seo-local-dijon", icon: "Search", description: "Dominez les résultats Google" },
       { label: "Automatisation no-code", href: "/services/automatisation-nocode-dijon", icon: "Zap", description: "Gagnez du temps avec Make & Zapier" },
@@ -48,6 +50,8 @@ export const mainNav: NavItem[] = [
 export const footerNav = {
   services: [
     { label: "Création de site", href: "/services/creation-site-internet-dijon" },
+    { label: "Photo d'entreprise", href: "/services/photographe-entreprise-dijon" },
+    { label: "Vidéo d'entreprise", href: "/services/video-entreprise-dijon" },
     { label: "Refonte de site", href: "/services/refonte-site-internet-dijon" },
     { label: "SEO local", href: "/services/seo-local-dijon" },
     { label: "Google Business", href: "/google-business-profile-dijon" },
