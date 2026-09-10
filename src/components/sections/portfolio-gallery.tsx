@@ -9,6 +9,19 @@ import { track } from "@/lib/analytics"
 
 type FilterId = (typeof PORTFOLIO_UNIVERS)[number]["id"]
 
+function roundRobin(list: PortfolioPhoto[], n: number): PortfolioPhoto[] {
+  const buckets = new Map<string, PortfolioPhoto[]>()
+  for (const p of list) buckets.set(p.univers, [...(buckets.get(p.univers) ?? []), p])
+  const out: PortfolioPhoto[] = []
+  while (out.length < n && [...buckets.values()].some((b) => b.length)) {
+    for (const b of buckets.values()) {
+      const next = b.shift()
+      if (next && out.length < n) out.push(next)
+    }
+  }
+  return out
+}
+
 function matches(p: PortfolioPhoto, f: FilterId) {
   if (f === "tous") return true
   if (f === "drone") return p.drone
@@ -35,7 +48,9 @@ export function PortfolioGallery({
   showFilters?: boolean
 }) {
   const [filter, setFilter] = useState<FilterId>(initial)
-  const photos = PORTFOLIO_PHOTOS.filter((p) => matches(p, filter)).slice(0, limit ?? PORTFOLIO_PHOTOS.length)
+  const filtered = PORTFOLIO_PHOTOS.filter((p) => matches(p, filter))
+  // Extrait (home) : on alterne les univers pour montrer la variété, au lieu des N premières du tableau
+  const photos = limit && filter === "tous" ? roundRobin(filtered, limit) : filtered.slice(0, limit ?? filtered.length)
 
   return (
     <section className="py-20 lg:py-28 bg-[#0a0a0a]">
