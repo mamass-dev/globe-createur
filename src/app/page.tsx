@@ -107,6 +107,7 @@ export default function HomePage() {
         subtitle="Reportages, événements, lieux, portraits, drone : de vraies images de vraies entreprises. Un studio photo et vidéo intégré, pas une banque d'images."
         limit={6}
         showFilters={false}
+        eagerCount={0}
       />
       <div className="bg-[#0a0a0a] pb-20 -mt-8 text-center">
         <Button href="/services/photographe-entreprise-dijon" variant="outline" size="md" track={{ event: "cta_click", props: { cta: "photo", location: "home-portfolio" } }}>Voir le portfolio photo</Button>

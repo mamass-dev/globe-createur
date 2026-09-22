@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { JsonLd } from "@/components/seo/json-ld"
 import Link from "next/link"
 import { buildMetadata } from "@/lib/metadata"
 import { Breadcrumb } from "@/components/layout/breadcrumb"
@@ -11,9 +12,9 @@ import { AnimateOnScroll } from "@/components/ui/animate"
 import { Search, Shield, Zap, BarChart3 } from "lucide-react"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Analyse SEO gratuite en ligne — Score sur 100 en 5 secondes | Globe Créateur",
+  title: "Analyse SEO gratuite en ligne : testez votre site, score sur 100 en 5 s",
   description:
-    "Analysez le SEO de votre site gratuitement : score sur 100, 13 critères vérifiés (title, meta, H1, HTTPS, données structurées), recommandations concrètes. Sans inscription, sans email, résultat immédiat.",
+    "Test SEO gratuit et sans inscription : entrez votre URL, obtenez un score sur 100 et le détail de 13 critères (title, meta, H1, HTTPS, données structurées, Open Graph) avec les corrections à faire. Résultat en 5 secondes.",
   path: "/analyseur-seo",
   keywords: ["analyse SEO", "analyse SEO gratuite", "analyse SEO en ligne", "analyseur SEO", "analyseur SEO gratuit", "audit SEO en ligne", "test SEO en ligne", "score SEO", "outil SEO gratuit", "diagnostic SEO", "vérifier SEO site"],
 })
@@ -50,6 +51,16 @@ const faqItems = [
       "Après chaque modification importante de votre site (refonte, nouvelle page, changement de titles), puis un contrôle trimestriel. Un score peut se dégrader sans que vous le sachiez : une mise à jour de thème ou de plugin peut casser une balise ou introduire un noindex.",
   },
   {
+    question: "Comment tester le SEO de mon site sans m'inscrire ?",
+    answer:
+      "Collez l'adresse de votre page dans le champ ci-dessus et cliquez sur Analyser. Le score et le détail des critères s'affichent en quelques secondes, sans compte, sans email et sans installation. Le rapport détaillé, avec les recommandations pour chaque point, s'ouvre en laissant un nom et une adresse email.",
+  },
+  {
+    question: "Quelle est la différence entre une analyse SEO d'une page et un audit de tout le site ?",
+    answer:
+      "L'analyse d'une page vérifie ses fondations techniques (balises, indexation, données structurées). L'audit de site regarde l'ensemble : quelles pages sont indexées, sur quelles requêtes vous apparaissez, ce que font vos concurrents, la vitesse, le maillage. Le premier prend cinq secondes, le second quelques heures de travail humain. Notre audit SEO flash livre cette seconde analyse sous 48 h, en vidéo, pour 249 € HT.",
+  },
+  {
     question: "Un bon score SEO garantit-il d'être premier sur Google ?",
     answer:
       "Non. Le score mesure vos fondations techniques on-page. Le classement dépend aussi de la qualité de votre contenu, de votre notoriété (backlinks, avis) et de la concurrence sur vos mots-clés. Un bon score est nécessaire, pas suffisant : c'est le billet d'entrée dans la course.",
@@ -66,6 +77,24 @@ export default function AnalyseurSeoPage() {
   return (
     <>
       <FaqSchema items={faqItems} />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "@id": "https://globecreateur.fr/analyseur-seo#app",
+          name: "Analyseur SEO gratuit Globe Créateur",
+          url: "https://globecreateur.fr/analyseur-seo",
+          applicationCategory: "SEO tool",
+          operatingSystem: "Web",
+          browserRequirements: "Navigateur web",
+          inLanguage: "fr-FR",
+          isAccessibleForFree: true,
+          offers: { "@type": "Offer", price: 0, priceCurrency: "EUR" },
+          description: "Analyse SEO gratuite en ligne : score sur 100 et 13 critères on-page vérifiés en 5 secondes, sans inscription.",
+          provider: { "@type": "Organization", "@id": "https://globecreateur.fr/#organization", name: "Globe Créateur" },
+          featureList: ["Balise title", "Meta description", "H1 et structure des titres", "Attributs alt", "HTTPS", "URL canonique", "Attribut lang", "Meta viewport", "Indexation (meta robots)", "Données structurées JSON-LD", "Open Graph", "Twitter Card", "Performance mobile (PageSpeed)"],
+        }}
+      />
 
       <Breadcrumb
         items={[{ name: "Analyseur SEO", href: "/analyseur-seo" }]}
@@ -178,6 +207,74 @@ export default function AnalyseurSeoPage() {
               (données structurées, Open Graph). Les premières se corrigent en minutes
               et peuvent avoir un effet spectaculaire ; les dernières affinent des
               fondations déjà saines.
+            </p>
+
+            <h2>Analyse SEO gratuite ou audit SEO professionnel : quelle différence ?</h2>
+            <p>
+              Les deux ne servent pas au même moment. L&apos;analyse gratuite répond en cinq secondes à
+              une question simple : « ma page est-elle correctement construite pour Google ? ».
+              L&apos;audit professionnel répond à une autre : « pourquoi mes concurrents sont-ils
+              devant, et que dois-je faire, dans quel ordre ? ».
+            </p>
+            <table>
+              <thead>
+                <tr><th></th><th>Analyse SEO gratuite (cet outil)</th><th>Audit SEO flash (consultant)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Délai</td><td>5 secondes</td><td>48 h ouvrées</td></tr>
+                <tr><td>Périmètre</td><td>Une page, 13 critères on-page</td><td>Tout le site : technique, contenu, autorité, concurrence locale</td></tr>
+                <tr><td>Positions Google réelles</td><td>Non</td><td>Oui, via la Search Console</td></tr>
+                <tr><td>Livrable</td><td>Score et recommandations à l&apos;écran</td><td>Vidéo commentée de 15-20 min + PDF des 10 priorités</td></tr>
+                <tr><td>Prix</td><td>Gratuit, sans inscription</td><td><Link href="/services/audit-seo-flash">249 € HT</Link></td></tr>
+              </tbody>
+            </table>
+            <p>
+              Le bon usage : commencez par l&apos;outil gratuit, corrigez ce qu&apos;il signale, puis
+              seulement si vos positions ne bougent pas au bout de quelques semaines, passez à
+              l&apos;audit humain. Beaucoup de sites n&apos;ont jamais besoin de la deuxième étape.
+            </p>
+
+            <h2>Comment faire une analyse SEO complète de son site, gratuitement</h2>
+            <p>
+              Cet outil vérifie une page à la fois. Pour analyser l&apos;ensemble de votre site
+              sans dépenser un euro, combinez-le avec trois sources gratuites, dans cet ordre :
+            </p>
+            <ol>
+              <li><strong>Analysez ici vos 3 pages les plus importantes</strong> : la page d&apos;accueil, votre page service principale et votre page contact. Ce sont elles que Google évalue en premier et que vos prospects voient le plus.</li>
+              <li><strong>Ouvrez la Google Search Console</strong> (gratuite). L&apos;onglet « Pages » vous dit lesquelles sont indexées ou non, et l&apos;onglet « Performances » sur quelles requêtes vous apparaissez, à quelle position. C&apos;est la seule source qui donne vos vraies positions.</li>
+              <li><strong>Vérifiez votre fiche Google Business</strong> : pour une entreprise locale, elle pèse souvent plus que le site dans le bloc Maps. Notre guide pour <Link href="/blog/creer-fiche-google-business-profile-guide">créer et optimiser une fiche Google Business</Link> détaille chaque champ.</li>
+              <li><strong>Testez la vitesse mobile</strong> avec PageSpeed Insights, en particulier le LCP (le temps d&apos;affichage du plus gros élément). Au-delà de 2,5 secondes, Google le considère lent.</li>
+            </ol>
+            <p>
+              Une heure suffit pour ce tour complet. Notez les erreurs par page dans un tableau,
+              corrigez d&apos;abord ce qui bloque l&apos;indexation, puis ce qui touche à la visibilité
+              (title, meta description), et relancez l&apos;analyse pour vérifier.
+            </p>
+
+            <h2>Les erreurs qu&apos;on rencontre le plus souvent dans les analyses</h2>
+            <p>
+              À force de passer des sites de PME dans cet outil et dans nos audits, les mêmes
+              défauts reviennent. Ils ne sont pas spectaculaires, mais cumulés ils expliquent
+              beaucoup de pages 2 et 3 :
+            </p>
+            <ul>
+              <li><strong>Un title identique sur toutes les pages</strong>, souvent le nom de l&apos;entreprise seul. Chaque page doit annoncer son sujet et sa ville en moins de 60 caractères.</li>
+              <li><strong>Une meta description absente</strong> : Google en invente une, rarement à votre avantage.</li>
+              <li><strong>Plusieurs H1 sur la même page</strong>, générés par un thème ou un constructeur de pages qui met le logo et le slogan en H1.</li>
+              <li><strong>Des images sans attribut alt</strong>, ou avec un nom de fichier du type IMG_4521. Google Images est une source de trafic gratuite que presque personne n&apos;exploite localement.</li>
+              <li><strong>Une balise noindex oubliée</strong> après une refonte ou une mise en ligne depuis un environnement de test. La page est parfaite, et invisible.</li>
+              <li><strong>Aucune donnée structurée</strong> alors que la page a une FAQ, des avis ou une adresse : autant de résultats enrichis laissés aux concurrents.</li>
+            </ul>
+
+            <h2>Comment fonctionne cet analyseur SEO</h2>
+            <p>
+              L&apos;outil charge votre page depuis nos serveurs, comme le ferait un robot
+              d&apos;indexation, et lit son code HTML : balises, attributs, données structurées.
+              Il n&apos;installe rien, ne demande aucun accès à votre site et ne stocke pas le
+              contenu de la page. Le score est calculé à la volée en pondérant chaque critère
+              selon son impact ; quand la limite d&apos;utilisation de l&apos;API Google le permet,
+              deux scores PageSpeed mobile s&apos;ajoutent à l&apos;analyse. Vous pouvez tester
+              autant de pages que vous voulez, y compris celles de vos concurrents.
             </p>
 
             <h2>Les limites d&apos;une analyse SEO automatique</h2>

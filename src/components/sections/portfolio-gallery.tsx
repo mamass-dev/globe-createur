@@ -39,6 +39,7 @@ export function PortfolioGallery({
   initial = "tous",
   limit,
   showFilters = true,
+  eagerCount = 3,
 }: {
   title?: string
   subtitle?: string
@@ -46,6 +47,8 @@ export function PortfolioGallery({
   initial?: FilterId
   limit?: number
   showFilters?: boolean
+  /** Nombre d'images chargées immédiatement (0 sur la home : la galerie est sous la ligne de flottaison) */
+  eagerCount?: number
 }) {
   const [filter, setFilter] = useState<FilterId>(initial)
   const filtered = PORTFOLIO_PHOTOS.filter((p) => matches(p, filter))
@@ -101,7 +104,7 @@ export function PortfolioGallery({
                   alt={p.alt}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  loading={i < 6 ? "eager" : "lazy"}
+                  loading={i < eagerCount ? "eager" : "lazy"}
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                   style={{ objectPosition: portrait ? "center 35%" : "center" }}
                 />

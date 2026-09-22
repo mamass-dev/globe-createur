@@ -15,16 +15,14 @@ import { GrainOverlay } from "@/components/ui/grain"
 import { HideOnCard } from "@/components/layout/hide-on-card"
 import "./globals.css"
 
+// Italiques retirées du préchargement (7 usages sur le site, ~180 Ko sur mobile) : le navigateur synthétise l'italique.
 const monument = localFont({
   variable: "--font-monument",
   display: "swap",
   src: [
     { path: "../../public/fonts/MonumentGrotesk-Regular.woff2", weight: "400", style: "normal" },
-    { path: "../../public/fonts/MonumentGrotesk-Italic.woff2", weight: "400", style: "italic" },
     { path: "../../public/fonts/MonumentGrotesk-Medium.woff2", weight: "500", style: "normal" },
-    { path: "../../public/fonts/MonumentGrotesk-MediumItalic.woff2", weight: "500", style: "italic" },
     { path: "../../public/fonts/MonumentGrotesk-Bold.woff2", weight: "700", style: "normal" },
-    { path: "../../public/fonts/MonumentGrotesk-BoldItalic.woff2", weight: "700", style: "italic" },
   ],
 })
 
