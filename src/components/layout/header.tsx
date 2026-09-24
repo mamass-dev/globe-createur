@@ -231,7 +231,7 @@ export function Header() {
             track={{ event: "cta_click", props: { cta: "devis", location: "header" } }}
             className="bg-signal hover:bg-[#d62e20] text-white px-5 py-2.5 rounded-none text-xs font-bold uppercase tracking-widest transition-colors"
           >
-            Démarrer
+            Prendre rendez-vous
           </Button>
         </nav>
 
@@ -286,7 +286,7 @@ export function Header() {
                 track={{ event: "cta_click", props: { cta: "devis", location: "header-mobile" } }}
                 className="w-full bg-signal hover:bg-[#d62e20] text-white py-3.5 rounded-none text-sm font-bold uppercase tracking-widest"
               >
-                Démarrer un projet
+                Prendre rendez-vous
               </Button>
             </div>
           </Container>

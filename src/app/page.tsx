@@ -15,8 +15,11 @@ import { AnimateOnScroll } from "@/components/ui/animate"
 import { AggregateRatingSchema } from "@/components/seo/schemas"
 import { getProjetPages } from "@/lib/content"
 import { EasterEgg } from "@/components/ui/easter-egg"
-import { WhatsAppLink } from "@/components/ui/whatsapp-link"
 import { HomeStickyBar } from "@/components/sections/home-sticky-bar"
+import { FaqAccordion } from "@/components/sections/faq-accordion"
+import { FaqSchema } from "@/components/seo/schemas"
+import { faqGenerales } from "@/lib/data/faq"
+import { Check } from "lucide-react"
 import dynamic from "next/dynamic"
 
 const LogoMarquee = dynamic(() => import("@/components/sections/logo-marquee").then((mod) => mod.LogoMarquee), { ssr: true })
@@ -61,6 +64,29 @@ const TOOLS = [
   { href: "/generateur-signature-email", icon: "Mail", tag: "5 modèles", title: "Signature email", desc: "Une signature pro compatible Gmail et Outlook.", cta: "Créer ma signature" },
 ]
 
+/** Chiffres vérifiables uniquement (avis Google réels, structure, délais publiés). */
+const CHIFFRES = [
+  { value: "5,0", sub: "/ 5", label: "sur 10 avis Google" },
+  { value: "2", sub: "", label: "associés, un studio à Dijon" },
+  { value: "3 à 5", sub: " sem.", label: "pour un site vitrine en ligne" },
+  { value: "24 h", sub: "", label: "pour une réponse à votre demande" },
+]
+
+const METHODE = [
+  { n: "01", title: "On regarde", desc: "Votre site, votre fiche Google, vos concurrents, vos images. Un audit gratuit en 20 minutes, et un avis franc sur ce qui bloque." },
+  { n: "02", title: "On construit", desc: "Site, photos, vidéo, référencement : ce qu'il faut, dans le bon ordre, avec un prix et un délai annoncés avant de commencer." },
+  { n: "03", title: "On fait vivre", desc: "Contenus, mises à jour, suivi des positions et des demandes. Un rapport clair chaque mois, sans jargon." },
+]
+
+const FAQ_HOME_QUESTIONS = [
+  "Combien coûte la création d'un site internet à Dijon ?",
+  "Combien de temps faut-il pour créer un site internet ?",
+  "Pourquoi choisir Globe Créateur plutôt qu'un freelance ?",
+  "Travaillez-vous uniquement avec des entreprises dijonnaises ?",
+  "Je n'ai aucune présence en ligne. Par où commencer ?",
+  "Les fichiers livrés m'appartiennent-ils ?",
+]
+
 const TEAM = [
   { name: "Axel Masson", role: "Co-fondateur · Stratégie & web", photo: "/images/team/axel-masson.webp" },
   { name: "Adrien Lecrivain", role: "Co-fondateur · Photo & vidéo", photo: "/images/team/adrien-lecrivain.webp" },
@@ -68,42 +94,42 @@ const TEAM = [
 
 export default function HomePage() {
   const projets = getProjetPages().slice(0, 3)
+  const faqHome = FAQ_HOME_QUESTIONS.map((q) => faqGenerales.find((f) => f.question === q)).filter((f): f is NonNullable<typeof f> => Boolean(f))
 
   return (
     <>
       <EasterEgg />
       <AggregateRatingSchema ratingValue={5} reviewCount={10} />
+      <FaqSchema items={faqHome} />
       <HomeStickyBar />
 
       {/* ═══ 1. HERO ═══ */}
-      <section className="relative overflow-hidden bg-[#0a0a0a] pt-28 pb-12 lg:pt-40 lg:pb-16">
+      <section className="relative overflow-hidden bg-[#0a0a0a] pt-28 pb-16 lg:pt-40 lg:pb-24">
         <div className="mesh-gradient absolute inset-0 pointer-events-none" aria-hidden="true" />
+        <div className="dot-grid absolute inset-0 pointer-events-none opacity-40" aria-hidden="true" />
         <Container className="relative">
-          <div className="max-w-5xl">
+          <div className="mx-auto max-w-4xl text-center">
             <AnimateOnScroll>
-              <h1 className="text-impact text-[3rem] leading-[0.92] sm:text-6xl lg:text-[6.5rem] text-ivory">
-                Des images et un site
+              <Kicker className="justify-center">Agence de communication · Dijon</Kicker>
+              <h1 className="text-impact mt-8 text-[3rem] leading-[0.92] sm:text-6xl lg:text-[6.5rem] text-ivory">
+                Être vu.
                 <br />
-                qui vous <span className="text-signal">ramènent des clients.</span>
+                <span className="text-signal">Être choisi.</span>
               </h1>
             </AnimateOnScroll>
-          </div>
-
-          <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
-            <AnimateOnScroll delay={0.12} className="lg:col-span-7">
-              <p className="text-lg lg:text-xl text-aluminium leading-relaxed max-w-xl">
-                Agence de communication à Dijon : création de sites, SEO local, photo et vidéo pour les PME de
-                Bourgogne-Franche-Comté. Un seul interlocuteur, des délais tenus, des prix annoncés.
+            <AnimateOnScroll delay={0.12}>
+              <p className="mx-auto mt-8 max-w-2xl text-lg lg:text-xl text-aluminium leading-relaxed">
+                Site internet, photo, vidéo et référencement local pour les PME de Bourgogne-Franche-Comté.
+                Un seul interlocuteur, des délais tenus, des prix annoncés.
               </p>
-              <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
+              <div className="mt-10 flex flex-col items-center gap-4">
                 <Button href="/devis" size="lg" track={{ event: "cta_click", props: { cta: "devis", location: "home-hero" } }}>
-                  Parlons de votre projet
+                  Prendre rendez-vous
                 </Button>
-                <WhatsAppLink location="home-hero" label="Écrire sur WhatsApp" />
+                <p className="text-xs uppercase tracking-widest text-[#8a8a8a]">20 minutes, gratuit, sans engagement</p>
               </div>
-              <p className="mt-4 text-xs uppercase tracking-widest text-[#8a8a8a]">Réponse sous 24 h ouvrées · Sans engagement</p>
             </AnimateOnScroll>
-            <AnimateOnScroll delay={0.2} className="lg:col-span-5 lg:justify-self-end">
+            <AnimateOnScroll delay={0.2} className="mt-10 flex justify-center">
               <GoogleReviewsBadge reviews={googleReviews} />
             </AnimateOnScroll>
           </div>
@@ -121,12 +147,67 @@ export default function HomePage() {
       {/* ═══ LOGOS (bandeau défilant, comme avant) ═══ */}
       <LogoMarquee logos={logos} title="Ils nous font confiance" />
 
+      {/* ═══ CHIFFRES ═══ */}
+      <section className="bg-signal py-14 lg:py-20">
+        <Container>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+            {CHIFFRES.map((c) => (
+              <div key={c.label} className="text-center">
+                <p className="text-impact text-5xl lg:text-7xl text-white">
+                  {c.value}<span className="text-2xl lg:text-3xl text-white/70">{c.sub}</span>
+                </p>
+                <p className="mt-3 text-sm text-white/85">{c.label}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ═══ CONSTAT → RÉPONSE ═══ */}
+      <section className="py-20 lg:py-28 bg-[#0a0a0a]">
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-24 items-center">
+            <AnimateOnScroll>
+              <Kicker number="01">Le constat</Kicker>
+              <h2 className="text-impact mt-6 text-4xl lg:text-6xl text-ivory">Vos clients vous ont déjà jugé avant de vous appeler.</h2>
+              <p className="mt-6 text-lg text-aluminium leading-relaxed">
+                Ils vous ont cherché sur Google, regardé votre fiche, parcouru votre site, jugé vos photos. En trente secondes, ils ont décidé si vous étiez :
+              </p>
+              <ul className="mt-6 space-y-3">
+                {["Visible, là où ils cherchent", "Crédible, dès la première image", "Facile à contacter, sans effort"].map((t) => (
+                  <li key={t} className="flex items-center gap-3 text-ivory font-semibold">
+                    <span className="flex h-6 w-6 items-center justify-center bg-signal text-white"><Check className="h-3.5 w-3.5" /></span>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 text-lg text-aluminium leading-relaxed">Si un seul des trois manque, ils appellent le concurrent d&apos;à côté.</p>
+            </AnimateOnScroll>
+            <AnimateOnScroll delay={0.1}>
+              <div className="border border-[#1c1c1c] bg-[#0f0f0f] p-8 lg:p-12">
+                <Kicker number="02">Notre réponse</Kicker>
+                <h3 className="text-impact mt-6 text-3xl lg:text-4xl text-ivory">Le site, les images et le référencement ne valent que réunis.</h3>
+                <p className="mt-6 text-aluminium leading-relaxed">
+                  Un beau site que personne ne trouve, une fiche Google avec des photos de banque d&apos;images, une vidéo sans page où atterrir : pris séparément, ces efforts ne rapportent presque rien.
+                </p>
+                <p className="mt-4 text-aluminium leading-relaxed">
+                  Globe Créateur les conçoit ensemble, avec les mêmes personnes, pour que chaque euro investi serve les deux autres. C&apos;est ce qu&apos;on appelle une communication qui ramène des clients.
+                </p>
+                <div className="mt-8">
+                  <Button href="/devis" variant="secondary" size="md" track={{ event: "cta_click", props: { cta: "devis", location: "home-reponse" } }}>Prendre rendez-vous</Button>
+                </div>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </Container>
+      </section>
+
       {/* ═══ 2. PREUVES : PROJETS ═══ */}
       <section className="py-20 lg:py-28 bg-[#0f0f0f] border-y border-[#1c1c1c]">
         <Container>
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-12">
             <AnimateOnScroll className="max-w-2xl">
-              <Kicker number="01">Réalisations</Kicker>
+              <Kicker number="03">Réalisations</Kicker>
               <h2 className="text-impact mt-6 text-4xl lg:text-6xl text-ivory">Ce qu&apos;on a fait pour eux</h2>
             </AnimateOnScroll>
             <Link href="/projets" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-signal hover:gap-4 transition-all shrink-0">
@@ -159,7 +240,7 @@ export default function HomePage() {
       <section className="py-20 lg:py-28 bg-[#0a0a0a]">
         <Container>
           <AnimateOnScroll className="max-w-3xl mb-12">
-            <Kicker number="02">Ce qu&apos;on fait</Kicker>
+            <Kicker number="04">Ce qu&apos;on fait</Kicker>
             <h2 className="text-impact mt-6 text-4xl lg:text-6xl text-ivory">Trois leviers, un seul interlocuteur.</h2>
             <p className="mt-5 text-lg text-aluminium">
               Le site, les images et le référencement travaillent ensemble. C&apos;est ce qui manque à la plupart des PME : pas un prestataire de plus, une communication cohérente.
@@ -183,6 +264,32 @@ export default function HomePage() {
             <Link href="/services" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-aluminium hover:text-signal transition-colors">
               Tous nos services, dont refonte, automatisation et pilotage communication <LucideIcon name="ArrowRight" className="h-4 w-4" />
             </Link>
+          </div>
+        </Container>
+      </section>
+
+      {/* ═══ MÉTHODE ═══ */}
+      <section className="py-20 lg:py-28 bg-[#0f0f0f] border-y border-[#1c1c1c]">
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <AnimateOnScroll className="lg:col-span-4">
+              <Kicker number="05">La méthode</Kicker>
+              <h2 className="text-impact mt-6 text-4xl lg:text-6xl text-ivory">Trois étapes, dans cet ordre.</h2>
+              <p className="mt-5 text-lg text-aluminium leading-relaxed">Chaque étape prépare la suivante. On ne vend pas un site à qui a d&apos;abord besoin d&apos;une fiche Google.</p>
+            </AnimateOnScroll>
+            <div className="lg:col-span-8 space-y-4">
+              {METHODE.map((m, i) => (
+                <AnimateOnScroll key={m.n} delay={0.08 * i}>
+                  <div className="grid grid-cols-[auto_1fr] gap-6 border border-[#1c1c1c] bg-[#0a0a0a] p-6 lg:p-8">
+                    <span className="font-mono-accent text-sm text-signal pt-1">{m.n}</span>
+                    <div>
+                      <h3 className="text-2xl font-display font-bold uppercase tracking-tight text-ivory">{m.title}</h3>
+                      <p className="mt-3 text-aluminium leading-relaxed">{m.desc}</p>
+                    </div>
+                  </div>
+                </AnimateOnScroll>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
@@ -212,7 +319,7 @@ export default function HomePage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <AnimateOnScroll className="lg:col-span-5">
-              <Kicker number="03">L&apos;équipe</Kicker>
+              <Kicker number="06">L&apos;équipe</Kicker>
               <h2 className="text-impact mt-6 text-4xl lg:text-6xl text-ivory">Vous parlez à ceux qui font le travail.</h2>
               <p className="mt-5 text-lg text-aluminium leading-relaxed">
                 Deux associés, un studio à Longvic aux portes de Dijon. Pas de commercial, pas de sous-traitance : la personne qui vous répond est celle qui conçoit votre site ou tient l&apos;appareil photo.
@@ -242,7 +349,7 @@ export default function HomePage() {
       <section className="py-20 lg:py-28 bg-[#0f0f0f]">
         <Container>
           <AnimateOnScroll className="max-w-3xl mb-12">
-            <Kicker number="04">Outils gratuits</Kicker>
+            <Kicker number="07">Outils gratuits</Kicker>
             <h2 className="text-impact mt-6 text-4xl lg:text-6xl text-ivory">Pas encore prêt ? Testez d&apos;abord.</h2>
           </AnimateOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#1c1c1c] border border-[#1c1c1c]">
@@ -263,6 +370,9 @@ export default function HomePage() {
         </Container>
       </section>
 
+      {/* ═══ FAQ ═══ */}
+      <FaqAccordion items={faqHome} badge="Vos questions" title="Ce qu'on nous demande le plus souvent" subtitle="Prix, délais, propriété des fichiers, zone d'intervention : les réponses avant même le premier échange." />
+
       {/* ═══ 9. CTA FINAL ═══ */}
       <section className="relative overflow-hidden bg-signal py-24 lg:py-36">
         <Container className="relative">
@@ -273,11 +383,10 @@ export default function HomePage() {
               <p className="mt-8 text-xl text-white/85 max-w-2xl">
                 Un premier échange de 20 minutes, gratuit et sans engagement. On vous dit ce qui a du sens pour votre budget, même si ce n&apos;est pas avec nous.
               </p>
-              <div className="mt-10 flex flex-col sm:flex-row gap-4">
+              <div className="mt-10">
                 <Button href="/devis" size="lg" track={{ event: "cta_click", props: { cta: "devis", location: "home-final" } }} className="bg-noir text-ivory hover:bg-[#1c1c1c] transition-colors">
-                  Parlons de votre projet
+                  Prendre rendez-vous
                 </Button>
-                <WhatsAppLink location="home-final" label="Écrire sur WhatsApp" className="h-14 px-9 rounded-none text-sm uppercase tracking-widest" />
               </div>
             </AnimateOnScroll>
           </div>
