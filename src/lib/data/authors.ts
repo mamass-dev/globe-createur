@@ -27,6 +27,6 @@ export function getAuthor(name: string): Author {
     name,
     role: "Contributeur",
     bio: "",
-    avatar: "/images/team/axel-masson.webp",
+    avatar: "/images/logo/globe-mark-512.png",
   }
 }
