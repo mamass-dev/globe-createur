@@ -15,7 +15,7 @@ const authors: Record<string, Author> = {
     name: "Axel Masson",
     role: "Fondateur & Directeur Créatif",
     bio: "Passionné de stratégie digitale et de design, Axel accompagne les PME dans leur croissance en ligne depuis plus de 5 ans.",
-    avatar: "/images/logo/globe-mark-512.png",
+    avatar: "/images/team/axel-masson.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/axelmasson",
     },
@@ -27,6 +27,6 @@ export function getAuthor(name: string): Author {
     name,
     role: "Contributeur",
     bio: "",
-    avatar: "/images/logo/globe-mark-512.png",
+    avatar: "/images/team/axel-masson.webp",
   }
 }
