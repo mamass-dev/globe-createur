@@ -7,7 +7,6 @@ import { Phone, MessageSquare, Mail, Linkedin, Instagram, Globe, UserPlus, Share
 import { Wordmark } from "@/components/ui/wordmark"
 import type { BusinessCard } from "@/lib/cards"
 import { CardIntro } from "./card-intro"
-import { TiltCard } from "./tilt-card"
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -102,9 +101,8 @@ export function BusinessCardView({ card, qrSvg }: { card: BusinessCard; qrSvg?: 
           <Wordmark size="sm" />
         </motion.div>
 
-        {/* Carte recto/verso inclinable */}
+        {/* Carte recto/verso */}
         <motion.div custom={1} variants={fade} initial="hidden" animate={state} className="mt-8" style={{ perspective: 1200 }}>
-          <TiltCard>
             <motion.div
               className="relative"
               style={{ transformStyle: "preserve-3d" }}
@@ -142,7 +140,6 @@ export function BusinessCardView({ card, qrSvg }: { card: BusinessCard; qrSvg?: 
                 </div>
               )}
             </motion.div>
-          </TiltCard>
         </motion.div>
 
         {/* CTA principal — vCard, avec halo pulsé */}
