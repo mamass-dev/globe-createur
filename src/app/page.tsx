@@ -112,15 +112,15 @@ export default function HomePage() {
             <AnimateOnScroll>
               <Kicker className="justify-center">Agence de communication · Dijon</Kicker>
               <h1 className="text-impact mt-8 text-[3rem] leading-[0.92] sm:text-6xl lg:text-[6.5rem] text-ivory">
-                On vous remarque.
+                Existez en ligne.
                 <br />
-                <span className="text-signal">On vous appelle.</span>
+                <span className="text-signal">Pour de vrai.</span>
               </h1>
             </AnimateOnScroll>
             <AnimateOnScroll delay={0.12}>
               <p className="mx-auto mt-8 max-w-2xl text-lg lg:text-xl text-aluminium leading-relaxed">
-                Un site trouvé sur Google, des images qui donnent confiance, une fiche qui décroche le téléphone.
-                Pour les PME de Dijon et de Bourgogne-Franche-Comté, avec un seul interlocuteur.
+                Vos vrais lieux, vos vraies équipes, un site que vos clients trouvent. Pas de banque d&apos;images, pas de
+                promesses en l&apos;air : de la communication qui ramène des appels aux PME de Dijon et de Bourgogne-Franche-Comté.
               </p>
               <div className="mt-10 flex flex-col items-center gap-4">
                 <Button href="/devis" size="lg" track={{ event: "cta_click", props: { cta: "devis", location: "home-hero" } }}>
