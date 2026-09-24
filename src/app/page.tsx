@@ -113,7 +113,7 @@ export default function HomePage() {
             {logos
               .filter((l) => HERO_LOGOS.includes(l.src.split("/").pop()!.replace(".webp", "")))
               .map((l) => (
-                <Image key={l.name} src={l.src} alt={l.name} width={120} height={40} className="h-7 w-auto invert opacity-60" />
+                <Image key={l.name} src={l.src} alt={l.name} width={160} height={56} className="h-9 sm:h-11 w-auto max-w-[140px] object-contain brightness-0 invert opacity-70" />
               ))}
           </AnimateOnScroll>
 
