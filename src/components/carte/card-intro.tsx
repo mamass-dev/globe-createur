@@ -21,11 +21,13 @@ export function CardIntro({ slug, onDone }: { slug: string; onDone: () => void }
       /* stockage indisponible : on joue l'intro */
     }
     if (reduced || played) {
-      setShow(false)
-      onDone()
-      return
+      const id = requestAnimationFrame(() => {
+        setShow(false)
+        onDone()
+      })
+      return () => cancelAnimationFrame(id)
     }
-    setShow(true)
+    const start = requestAnimationFrame(() => setShow(true))
     try {
       sessionStorage.setItem(`carte-intro-${slug}`, "1")
     } catch {
@@ -43,6 +45,7 @@ export function CardIntro({ slug, onDone }: { slug: string; onDone: () => void }
       onDone()
     }, 1900)
     return () => {
+      cancelAnimationFrame(start)
       window.clearTimeout(haptic)
       window.clearTimeout(end)
     }
