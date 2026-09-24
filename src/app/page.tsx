@@ -17,6 +17,9 @@ import { getProjetPages } from "@/lib/content"
 import { EasterEgg } from "@/components/ui/easter-egg"
 import { WhatsAppLink } from "@/components/ui/whatsapp-link"
 import { HomeStickyBar } from "@/components/sections/home-sticky-bar"
+import dynamic from "next/dynamic"
+
+const LogoMarquee = dynamic(() => import("@/components/sections/logo-marquee").then((mod) => mod.LogoMarquee), { ssr: true })
 
 export const revalidate = 3600
 
@@ -50,8 +53,6 @@ const PILIERS = [
     cta: "SEO local",
   },
 ]
-
-const HERO_LOGOS = ["helite", "leet", "ligue-tennis-bfc", "uimm", "zumub", "plombieres-les-dijon"]
 
 const TOOLS = [
   { href: "/analyseur-seo", icon: "Search", tag: "5 secondes", title: "Analyseur SEO", desc: "Score sur 100 et 13 critères vérifiés sur votre page.", cta: "Analyser mon site" },
@@ -107,16 +108,6 @@ export default function HomePage() {
             </AnimateOnScroll>
           </div>
 
-          {/* Logos clients */}
-          <AnimateOnScroll delay={0.25} className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-4">
-            <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#8a8a8a]">Ils nous font confiance</span>
-            {logos
-              .filter((l) => HERO_LOGOS.includes(l.src.split("/").pop()!.replace(".webp", "")))
-              .map((l) => (
-                <Image key={l.name} src={l.src} alt={l.name} width={160} height={56} className="h-9 sm:h-11 w-auto max-w-[140px] object-contain brightness-0 invert opacity-70" />
-              ))}
-          </AnimateOnScroll>
-
           {/* Vidéo */}
           <AnimateOnScroll delay={0.2} className="relative mt-14 lg:mt-20">
             <div className="absolute -inset-x-10 -bottom-10 h-40 bg-signal/10 blur-3xl pointer-events-none" />
@@ -126,6 +117,9 @@ export default function HomePage() {
           </AnimateOnScroll>
         </Container>
       </section>
+
+      {/* ═══ LOGOS (bandeau défilant, comme avant) ═══ */}
+      <LogoMarquee logos={logos} title="Ils nous font confiance" />
 
       {/* ═══ 2. PREUVES : PROJETS ═══ */}
       <section className="py-20 lg:py-28 bg-[#0f0f0f] border-y border-[#1c1c1c]">
