@@ -68,7 +68,7 @@ const TOOLS = [
 const CHIFFRES = [
   { value: "5,0", sub: "/ 5", label: "sur 10 avis Google" },
   { value: "2", sub: "", label: "associés, un studio à Dijon" },
-  { value: "3 à 5", sub: " sem.", label: "pour un site vitrine en ligne" },
+  { value: "3-5", sub: " sem.", label: "pour un site vitrine en ligne" },
   { value: "24 h", sub: "", label: "pour une réponse à votre demande" },
 ]
 
@@ -153,7 +153,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
             {CHIFFRES.map((c) => (
               <div key={c.label} className="text-center">
-                <p className="text-impact text-5xl lg:text-7xl text-white">
+                <p className="text-impact text-5xl lg:text-7xl text-white normal-case">
                   {c.value}<span className="text-2xl lg:text-3xl text-white/70">{c.sub}</span>
                 </p>
                 <p className="mt-3 text-sm text-white/85">{c.label}</p>
