@@ -132,6 +132,14 @@ const nextConfig: NextConfig = {
         source: "/favicon.ico",
         headers: [{ key: "X-Robots-Tag", value: "noindex" }],
       },
+      // Images des signatures email (photo, logo) : hébergées mais hors index, cache long
+      {
+        source: "/signature/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, noimageindex" },
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
       {
         source: "/(.*)",
         headers: [
