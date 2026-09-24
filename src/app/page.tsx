@@ -55,10 +55,7 @@ export default function HomePage() {
         <Container className="relative">
           <div className="max-w-5xl">
             <AnimateOnScroll>
-              <Kicker number="01">Studio créatif — Dijon · est. 2025</Kicker>
-            </AnimateOnScroll>
-            <AnimateOnScroll delay={0.08}>
-              <h1 className="text-impact mt-8 text-[3.25rem] leading-[0.9] sm:text-7xl lg:text-[8rem] text-ivory">
+              <h1 className="text-impact text-[3.25rem] leading-[0.9] sm:text-7xl lg:text-[8rem] text-ivory">
                 Propulsez votre
                 <br />
                 <span className="text-signal">croissance digitale.</span>
