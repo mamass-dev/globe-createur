@@ -1,10 +1,13 @@
 "use client"
 
 import { useEffect, useState, useCallback } from "react"
+import { usePathname } from "next/navigation"
 import { trackAttrs } from "@/lib/analytics"
 
 export function WhatsAppButton() {
   const [visible, setVisible] = useState(true)
+  const pathname = usePathname()
+  const homeMobileHidden = pathname === "/" ? "hidden lg:flex" : "flex"
   const [lastScrollY, setLastScrollY] = useState(0)
 
   const handleScroll = useCallback(() => {
@@ -33,7 +36,7 @@ export function WhatsAppButton() {
       rel="noopener noreferrer"
       aria-label="Nous contacter sur WhatsApp"
       {...trackAttrs("whatsapp_click", { location: "bouton-flottant" })}
-      className={`fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 ${
+      className={`fixed bottom-6 right-6 z-40 ${homeMobileHidden} h-14 w-14 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 ${
         visible
           ? "translate-y-0 opacity-100"
           : "translate-y-20 opacity-0 pointer-events-none"

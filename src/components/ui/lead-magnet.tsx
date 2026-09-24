@@ -8,6 +8,7 @@ import { X, ArrowRight, CheckCircle, Gift } from "lucide-react"
 // Pages où la pop-up lead magnet ne doit jamais apparaître
 // Pas de pop-up sur les pages où le visiteur est déjà en train de commander ou d'écrire
 const EXCLUDED_PATHS = [
+  "/",
   "/cl-racing",
   "/devis",
   "/contact",
@@ -84,7 +85,7 @@ function getOffer(pathname: string): Offer {
 
 export function LeadMagnet() {
   const pathname = usePathname()
-  const excluded = EXCLUDED_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`))
+  const excluded = EXCLUDED_PATHS.some((p) => pathname === p || (p !== "/" && pathname.startsWith(`${p}/`)))
 
   const [show, setShow] = useState(false)
   const [submitted, setSubmitted] = useState(false)
