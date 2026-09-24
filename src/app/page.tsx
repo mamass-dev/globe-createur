@@ -64,9 +64,9 @@ const TOOLS = [
   { href: "/generateur-signature-email", icon: "Mail", tag: "5 modèles", title: "Signature email", desc: "Une signature pro compatible Gmail et Outlook.", cta: "Créer ma signature" },
 ]
 
-/** Chiffres vérifiables uniquement (avis Google réels, structure, délais publiés). */
+/** Chiffres vérifiables uniquement : photos = exports du Lightroom (24 dossiers clients, 3 651 JPG au 2026-09-10). */
 const CHIFFRES = [
-  { value: "5,0", sub: "/ 5", label: "sur 10 avis Google" },
+  { value: "3 600", sub: "+", label: "photos livrées à nos clients" },
   { value: "2", sub: "", label: "associés, un studio à Dijon" },
   { value: "3-5", sub: " sem.", label: "pour un site vitrine en ligne" },
   { value: "24 h", sub: "", label: "pour une réponse à votre demande" },
