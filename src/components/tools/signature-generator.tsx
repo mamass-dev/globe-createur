@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useRef, useCallback, useEffect } from "react"
+import { SITE_URL } from "@/lib/constants"
 import { motion, AnimatePresence } from "framer-motion"
 import { track } from "@/lib/analytics"
 import {
@@ -31,9 +32,15 @@ type FormData = {
   template: TemplateKey
   logoUrl: string
   photoUrl: string
+  /** URL d'une image hébergée (recommandé : Gmail n'affiche pas les images intégrées) */
+  logoHostedUrl: string
+  photoHostedUrl: string
   ctaBanner: string
   ctaUrl: string
 }
+
+/** Gmail refuse une signature au-delà de 10 000 caractères */
+const GMAIL_LIMIT = 10_000
 
 /* ─── Default state ─── */
 const defaultForm: FormData = {
@@ -51,6 +58,8 @@ const defaultForm: FormData = {
   template: "moderne",
   logoUrl: "",
   photoUrl: "",
+  logoHostedUrl: "",
+  photoHostedUrl: "",
   ctaBanner: "",
   ctaUrl: "",
 }
@@ -156,20 +165,19 @@ function extractColors(imageUrl: string): Promise<string[]> {
 }
 
 /* ─── Social icon SVG for email (inline, no external deps) ─── */
-function socialIconSvg(key: SocialKey, color: string): string {
-  const paths: Record<SocialKey, string> = {
-    linkedin: "M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.28 8h4.44v12H.28zM7.5 8h4.26v1.64h.06C12.38 8.64 13.9 7.8 15.86 7.8c4.24 0 5.02 2.79 5.02 6.42V20.8h-4.44v-5.83c0-1.39-.03-3.18-1.94-3.18-1.94 0-2.24 1.51-2.24 3.08v5.93H7.5V8z",
-    instagram: "M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5A3.75 3.75 0 0020 16.25v-8.5A3.75 3.75 0 0016.25 4h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.25-3.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z",
-    facebook: "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z",
-    twitter: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z",
-    youtube: "M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 00.5 6.19 31.6 31.6 0 000 12a31.6 31.6 0 00.5 5.81 3.02 3.02 0 002.12 2.14c1.87.55 9.38.55 9.38.55s7.5 0 9.38-.55a3.02 3.02 0 002.12-2.14A31.6 31.6 0 0024 12a31.6 31.6 0 00-.5-5.81zM9.75 15.02V8.98L15.5 12l-5.75 3.02z",
-    tiktok: "M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.87a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.01-.3z",
-  }
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="${color}"><path d="${paths[key]}"/></svg>`
+function socialIconImg(key: SocialKey, color: string, label: string): string {
+  const c = color.replace("#", "")
+  return `<img src="${SITE_URL}/api/signature-icon/${key}.png?c=${c}" width="18" height="18" alt="${label}" style="display:inline-block;border:0;vertical-align:middle" />`
 }
 
 /* ─── Generate signature HTML ─── */
-function generateSignatureHtml(data: FormData, withUtm: boolean): string {
+function generateSignatureHtml(raw: FormData, withUtm: boolean): string {
+  // Image hébergée prioritaire sur le fichier importé (data-URI ignoré par Gmail, et 50-200 Ko)
+  const data: FormData = {
+    ...raw,
+    photoUrl: raw.photoHostedUrl.trim() || raw.photoUrl,
+    logoUrl: raw.logoHostedUrl.trim() || raw.logoUrl,
+  }
   const c1 = data.couleurPrimaire
   const c2 = data.couleurSecondaire
   const fullName = `${data.prenom} ${data.nom}`.trim() || "Votre Nom"
@@ -181,7 +189,7 @@ function generateSignatureHtml(data: FormData, withUtm: boolean): string {
     ? `<tr><td style="padding-top:10px">${activeSocials
         .map((s) => {
           const url = withUtm ? addUtm(data.socials[s.key], s.key) : data.socials[s.key]
-          return `<a href="${url}" target="_blank" style="text-decoration:none;margin-right:8px">${socialIconSvg(s.key, c1)}</a>`
+          return `<a href="${url}" target="_blank" style="text-decoration:none;margin-right:8px">${socialIconImg(s.key, c1, s.label)}</a>`
         })
         .join("")}</td></tr>`
     : ""
@@ -328,13 +336,25 @@ export function SignatureGenerator() {
   const handleImageUpload = (key: "logoUrl" | "photoUrl") => (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (!file) return
-    const reader = new FileReader()
-    reader.onload = () => {
-      if (typeof reader.result === "string") {
-        updateForm(key, reader.result)
-      }
+    // Redimensionne et compresse côté navigateur : un fichier brut de plusieurs Mo devenait
+    // 100-500 Ko de base64 dans la signature (limite Gmail : 10 000 caractères).
+    const img = new window.Image()
+    const objectUrl = URL.createObjectURL(file)
+    img.onload = () => {
+      const maxW = key === "photoUrl" ? 160 : 240
+      const maxH = key === "photoUrl" ? 160 : 72
+      const ratio = Math.min(maxW / img.width, maxH / img.height, 1)
+      const canvas = document.createElement("canvas")
+      canvas.width = Math.round(img.width * ratio)
+      canvas.height = Math.round(img.height * ratio)
+      const ctx = canvas.getContext("2d")
+      if (!ctx) return
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+      const keepAlpha = key === "logoUrl" && file.type === "image/png"
+      updateForm(key, keepAlpha ? canvas.toDataURL("image/png") : canvas.toDataURL("image/jpeg", 0.82))
+      URL.revokeObjectURL(objectUrl)
     }
-    reader.readAsDataURL(file)
+    img.src = objectUrl
   }
 
   const score = calculateScore(form)
@@ -571,6 +591,28 @@ export function SignatureGenerator() {
                     </label>
                   </div>
                 </div>
+                <p className="mt-3 text-[11px] leading-relaxed text-slate-400 dark:text-slate-500">
+                  Gmail n&apos;affiche pas les images importées dans une signature. Pour qu&apos;elles s&apos;affichent
+                  partout, indiquez l&apos;adresse d&apos;une image déjà en ligne (votre site, LinkedIn, un Drive public) :
+                </p>
+                <div className="mt-2 grid grid-cols-2 gap-4">
+                  <input
+                    type="url"
+                    value={form.logoHostedUrl}
+                    onChange={(e) => updateForm("logoHostedUrl", e.target.value)}
+                    placeholder="https://…/logo.png"
+                    aria-label="URL du logo hébergé"
+                    className="w-full px-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all"
+                  />
+                  <input
+                    type="url"
+                    value={form.photoHostedUrl}
+                    onChange={(e) => updateForm("photoHostedUrl", e.target.value)}
+                    placeholder="https://…/photo.jpg"
+                    aria-label="URL de la photo hébergée"
+                    className="w-full px-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all"
+                  />
+                </div>
               </div>
             </motion.div>
           )}
@@ -691,6 +733,18 @@ export function SignatureGenerator() {
 
         {/* Export */}
         <div className="space-y-3">
+          {(() => {
+            const n = signatureHtml.length
+            const over = n > GMAIL_LIMIT
+            const hasDataUri = signatureHtml.includes("data:image")
+            return (
+              <p className={`text-xs leading-relaxed ${over ? "text-red-500 font-semibold" : "text-slate-400"}`}>
+                {n.toLocaleString("fr-FR")} caractères · limite Gmail {GMAIL_LIMIT.toLocaleString("fr-FR")}
+                {over && " — trop long pour Gmail."}
+                {hasDataUri && " Gmail n'affiche pas les images importées : renseignez l'URL d'une image hébergée (site, LinkedIn, Drive public) dans l'onglet Design."}
+              </p>
+            )
+          })()}
           <button
             onClick={handleCopy}
             className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white font-bold text-sm shadow-lg shadow-indigo-500/20 transition-all cursor-pointer"

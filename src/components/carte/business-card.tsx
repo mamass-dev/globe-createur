@@ -1,11 +1,13 @@
 "use client"
 
 import Image from "next/image"
-import { useState } from "react"
+import { useCallback, useState } from "react"
 import { motion } from "framer-motion"
-import { Phone, MessageSquare, Mail, Linkedin, Instagram, Globe, UserPlus, Share2, Check } from "lucide-react"
+import { Phone, MessageSquare, Mail, Linkedin, Instagram, Globe, UserPlus, Share2, Check, QrCode, RotateCcw } from "lucide-react"
 import { Wordmark } from "@/components/ui/wordmark"
 import type { BusinessCard } from "@/lib/cards"
+import { CardIntro } from "./card-intro"
+import { TiltCard } from "./tilt-card"
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -22,8 +24,15 @@ type Action = {
   external?: boolean
 }
 
-export function BusinessCardView({ card }: { card: BusinessCard }) {
+/**
+ * Carte de visite NFC. `qrSvg` : QR code de l'URL de la carte, rendu côté serveur,
+ * affiché au dos (flip) pour qu'un interlocuteur sans NFC puisse scanner.
+ */
+export function BusinessCardView({ card, qrSvg }: { card: BusinessCard; qrSvg?: string }) {
+  const [intro, setIntro] = useState(true)
+  const [flipped, setFlipped] = useState(false)
   const [shared, setShared] = useState(false)
+  const onIntroDone = useCallback(() => setIntro(false), [])
 
   const actions: Action[] = []
   if (card.phoneE164) {
@@ -62,97 +71,137 @@ export function BusinessCardView({ card }: { card: BusinessCard }) {
   }
 
   const fade = {
-    hidden: { opacity: 0, y: 16 },
-    show: (i: number) => ({ opacity: 1, y: 0, transition: { delay: 0.05 * i, duration: 0.5, ease: "easeOut" as const } }),
+    hidden: { opacity: 0, y: 18 },
+    show: (i: number) => ({ opacity: 1, y: 0, transition: { delay: 0.08 * i, duration: 0.55, ease: [0.16, 1, 0.3, 1] as const } }),
   }
+  const state = intro ? "hidden" : "show"
 
   return (
-    <div className="relative min-h-dvh bg-noir text-ivory">
-      {/* Halo rouge diffus en fond */}
+    <div
+      className="relative min-h-dvh overflow-hidden bg-noir text-ivory"
+      onPointerMove={(e) => {
+        const el = e.currentTarget
+        el.style.setProperty("--gx", `${((e.clientX / window.innerWidth) * 100).toFixed(1)}%`)
+        el.style.setProperty("--gy", `${((e.clientY / window.innerHeight) * 100).toFixed(1)}%`)
+      }}
+      style={{ ["--gx" as string]: "50%", ["--gy" as string]: "15%" }}
+    >
+      <CardIntro slug={card.slug} onDone={onIntroDone} />
+
+      {/* Halo rouge qui suit le doigt + trame de points */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-[45vh] bg-[radial-gradient(120%_80%_at_50%_0%,rgba(230,58,43,0.18),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 transition-[background-position] duration-300"
+        style={{ background: "radial-gradient(60% 40% at var(--gx) var(--gy), rgba(230,58,43,0.22), transparent 70%)" }}
       />
+      <div aria-hidden="true" className="dot-grid pointer-events-none absolute inset-0 opacity-40" />
 
       <div className="relative mx-auto flex min-h-dvh w-full max-w-md flex-col px-6 pb-12 pt-10">
         {/* Marque */}
-        <motion.div custom={0} variants={fade} initial="hidden" animate="show" className="flex justify-center">
+        <motion.div custom={0} variants={fade} initial="hidden" animate={state} className="flex justify-center">
           <Wordmark size="sm" />
         </motion.div>
 
-        {/* Photo */}
-        <motion.div custom={1} variants={fade} initial="hidden" animate="show" className="mt-8 flex justify-center">
-          <div className="relative aspect-square w-40 overflow-hidden rounded-full border border-border shadow-2xl">
-            <Image
-              src={card.photo}
-              alt={card.fullName}
-              fill
-              sizes="160px"
-              priority
-              className="object-cover object-top"
+        {/* Carte recto/verso inclinable */}
+        <motion.div custom={1} variants={fade} initial="hidden" animate={state} className="mt-8" style={{ perspective: 1200 }}>
+          <TiltCard>
+            <motion.div
+              className="relative"
+              style={{ transformStyle: "preserve-3d" }}
+              animate={{ rotateY: flipped ? 180 : 0 }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {/* Recto : photo + identité */}
+              <div className="border border-[#1c1c1c] bg-[#0f0f0f] px-6 py-8 text-center [backface-visibility:hidden]">
+                <div className="relative mx-auto aspect-square w-40 overflow-hidden rounded-full border border-[#2a2a2a] shadow-2xl">
+                  <Image src={card.photo} alt={card.fullName} fill sizes="160px" priority className="object-cover object-top" />
+                </div>
+                <h1 className="mt-6 font-display text-3xl font-bold uppercase tracking-tight text-ivory">{card.fullName}</h1>
+                <div className="mt-3 flex items-center justify-center gap-2">
+                  <motion.span
+                    className="h-[3px] w-6 origin-left bg-signal"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: intro ? 0 : 1 }}
+                    transition={{ delay: 0.35, duration: 0.5, ease: "easeOut" }}
+                  />
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-signal">{card.role}</p>
+                </div>
+                <p className="mx-auto mt-4 max-w-xs text-sm leading-relaxed text-aluminium">{card.tagline}</p>
+              </div>
+
+              {/* Verso : QR code */}
+              {qrSvg && (
+                <div
+                  className="absolute inset-0 flex flex-col items-center justify-center border border-[#1c1c1c] bg-[#0f0f0f] px-6 py-8 text-center [backface-visibility:hidden]"
+                  style={{ transform: "rotateY(180deg)" }}
+                  aria-hidden={!flipped}
+                >
+                  <div className="w-44 [&>svg]:h-auto [&>svg]:w-full" dangerouslySetInnerHTML={{ __html: qrSvg }} />
+                  <p className="mt-5 text-[11px] font-bold uppercase tracking-widest text-signal">Scannez-moi</p>
+                  <p className="mt-2 max-w-xs text-sm text-aluminium">Pour ouvrir cette carte sur votre téléphone et enregistrer le contact.</p>
+                </div>
+              )}
+            </motion.div>
+          </TiltCard>
+        </motion.div>
+
+        {/* CTA principal — vCard, avec halo pulsé */}
+        <motion.div custom={2} variants={fade} initial="hidden" animate={state} className="relative mt-6">
+          {!intro && (
+            <motion.span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 border border-signal"
+              initial={{ opacity: 0.7, scale: 1 }}
+              animate={{ opacity: [0.7, 0, 0.7], scale: [1, 1.06, 1] }}
+              transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
             />
-          </div>
+          )}
+          <a
+            href={`/carte/${card.slug}/vcard`}
+            className="relative flex h-14 w-full items-center justify-center gap-2 bg-signal px-9 text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#d62e20]"
+          >
+            <UserPlus className="h-5 w-5" />
+            Ajouter à mes contacts
+          </a>
         </motion.div>
-
-        {/* Identité */}
-        <motion.div custom={2} variants={fade} initial="hidden" animate="show" className="mt-6 text-center">
-          <h1 className="font-display text-3xl font-bold uppercase tracking-tight text-ivory">{card.fullName}</h1>
-          <div className="mt-3 flex items-center justify-center gap-2">
-            <span className="h-[3px] w-6 bg-signal" />
-            <p className="text-[11px] font-bold uppercase tracking-widest text-signal">{card.role}</p>
-          </div>
-          <p className="mx-auto mt-4 max-w-xs text-sm leading-relaxed text-aluminium">{card.tagline}</p>
-        </motion.div>
-
-        {/* CTA principal — vCard */}
-        <motion.a
-          custom={3}
-          variants={fade}
-          initial="hidden"
-          animate="show"
-          href={`/carte/${card.slug}/vcard`}
-          className="mt-8 flex h-14 w-full items-center justify-center gap-2 bg-signal px-9 text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#d62e20]"
-        >
-          <UserPlus className="h-5 w-5" />
-          Ajouter à mes contacts
-        </motion.a>
 
         {/* Grille d'actions */}
-        <motion.div
-          custom={4}
-          variants={fade}
-          initial="hidden"
-          animate="show"
-          className="mt-4 grid grid-cols-3 gap-3"
-        >
+        <motion.div custom={3} variants={fade} initial="hidden" animate={state} className="mt-4 grid grid-cols-3 gap-3">
           {actions.map(({ label, href, Icon, external }) => (
             <a
               key={label}
               href={href}
               {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-              className="group flex flex-col items-center justify-center gap-2 border border-border bg-secondary px-2 py-4 text-center transition-colors hover:border-signal"
+              className="group flex flex-col items-center justify-center gap-2 border border-[#1c1c1c] bg-[#0f0f0f] px-2 py-4 text-center transition-colors hover:border-signal active:border-signal"
             >
               <Icon className="h-5 w-5 text-aluminium transition-colors group-hover:text-signal" />
-              <span className="text-[11px] font-semibold uppercase tracking-wide text-aluminium transition-colors group-hover:text-ivory">
-                {label}
-              </span>
+              <span className="text-[11px] font-semibold uppercase tracking-wide text-aluminium transition-colors group-hover:text-ivory">{label}</span>
             </a>
           ))}
         </motion.div>
 
-        {/* Partager */}
-        <motion.button
-          custom={5}
-          variants={fade}
-          initial="hidden"
-          animate="show"
-          type="button"
-          onClick={handleShare}
-          className="mt-4 flex h-12 w-full items-center justify-center gap-2 border border-border px-7 text-sm font-bold uppercase tracking-widest text-ivory transition-colors hover:border-signal hover:text-signal"
-        >
-          {shared ? <Check className="h-4 w-4" /> : <Share2 className="h-4 w-4" />}
-          {shared ? "Lien copié" : "Partager cette carte"}
-        </motion.button>
+        {/* Partager + QR */}
+        <motion.div custom={4} variants={fade} initial="hidden" animate={state} className="mt-4 grid grid-cols-2 gap-3">
+          <button
+            type="button"
+            onClick={handleShare}
+            className="flex h-12 items-center justify-center gap-2 border border-[#2a2a2a] px-4 text-xs font-bold uppercase tracking-widest text-ivory transition-colors hover:border-signal hover:text-signal"
+          >
+            {shared ? <Check className="h-4 w-4" /> : <Share2 className="h-4 w-4" />}
+            {shared ? "Lien copié" : "Partager"}
+          </button>
+          {qrSvg && (
+            <button
+              type="button"
+              onClick={() => setFlipped((f) => !f)}
+              aria-pressed={flipped}
+              className="flex h-12 items-center justify-center gap-2 border border-[#2a2a2a] px-4 text-xs font-bold uppercase tracking-widest text-ivory transition-colors hover:border-signal hover:text-signal"
+            >
+              {flipped ? <RotateCcw className="h-4 w-4" /> : <QrCode className="h-4 w-4" />}
+              {flipped ? "Retourner" : "Mon QR code"}
+            </button>
+          )}
+        </motion.div>
 
         {/* Pied */}
         <div className="mt-auto pt-10 text-center">
@@ -160,7 +209,7 @@ export function BusinessCardView({ card }: { card: BusinessCard }) {
             href={card.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[11px] uppercase tracking-widest text-slate-600 transition-colors hover:text-aluminium"
+            className="text-[11px] uppercase tracking-widest text-[#5e6063] transition-colors hover:text-aluminium"
           >
             © {card.org} · globecreateur.fr
           </a>

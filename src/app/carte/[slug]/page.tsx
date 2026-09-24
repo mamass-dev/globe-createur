@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { BusinessCardView } from "@/components/carte/business-card"
 import { getCard, allCardSlugs } from "@/lib/cards"
+import { SITE_URL } from "@/lib/constants"
+import QRCode from "qrcode"
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -37,5 +39,13 @@ export default async function CartePage({ params }: Props) {
   const card = getCard(slug)
   if (!card) notFound()
 
-  return <BusinessCardView card={card} />
+  // QR code de la carte (dos de la carte) : ivoire sur fond transparent, généré au build
+  const qrSvg = await QRCode.toString(`${SITE_URL}/carte/${card.slug}`, {
+    type: "svg",
+    margin: 1,
+    errorCorrectionLevel: "M",
+    color: { dark: "#f5f2ec", light: "#00000000" },
+  })
+
+  return <BusinessCardView card={card} qrSvg={qrSvg} />
 }
