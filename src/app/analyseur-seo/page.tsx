@@ -253,7 +253,8 @@ export default function AnalyseurSeoPage() {
 
             <h2>Les erreurs qu&apos;on rencontre le plus souvent dans les analyses</h2>
             <p>
-              À force de passer des sites de PME dans cet outil et dans nos audits, les mêmes
+              On a passé 501 sites d&apos;entreprises de Dijon dans cet outil : score moyen 76/100, huit sites sur dix avec des images sans description, un sur cinq sans titre principal. Le détail est dans notre{" "}
+              <Link href="/blog/barometre-seo-sites-dijon-2026">baromètre SEO des sites de Dijon</Link>. Les mêmes
               défauts reviennent. Ils ne sont pas spectaculaires, mais cumulés ils expliquent
               beaucoup de pages 2 et 3 :
             </p>

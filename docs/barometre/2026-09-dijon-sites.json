@@ -1,0 +1,3728 @@
+[
+{
+"name": "Pharmacie des Bourroches",
+"url": "https://www.pharmaciedesbourroches.fr/",
+"host": "pharmaciedesbourroches.fr",
+"cat": "pharmacy"
+},
+{
+"name": "Pharmacie des Valendons",
+"url": "https://pharmacie-valendons-dijon.pharm-upp.fr/",
+"host": "pharmacie-valendons-dijon.pharm-upp.fr",
+"cat": "pharmacy"
+},
+{
+"name": "Pharmacie du 1er mai",
+"url": "https://pharmaciedu1ermai-dijon.pharm-upp.fr/",
+"host": "pharmaciedu1ermai-dijon.pharm-upp.fr",
+"cat": "pharmacy"
+},
+{
+"name": "Marco Polo",
+"url": "https://www.marcopolodijon.com/",
+"host": "marcopolodijon.com",
+"cat": "restaurant"
+},
+{
+"name": "Pharmacie Mansart",
+"url": "https://mypharmactiv.fr/pharmacie/pharmacie-mansart",
+"host": "mypharmactiv.fr",
+"cat": "pharmacy"
+},
+{
+"name": "U Express",
+"url": "https://www.magasins-u.com/magasin/uexpress-dijon",
+"host": "magasins-u.com",
+"cat": "convenience"
+},
+{
+"name": "Pharmacie Saint-Pierre",
+"url": "https://pharmacies.giphar.fr/bourgogne-franche-comte/cote-dor/dijon/pharmacie-saint-pierre-dijon-612",
+"host": "pharmacies.giphar.fr",
+"cat": "pharmacy"
+},
+{
+"name": "La Comédie",
+"url": "https://www.lacomedie-dijon.com/",
+"host": "lacomedie-dijon.com",
+"cat": "cafe"
+},
+{
+"name": "Pharmacie du Val d'Or",
+"url": "https://www.pharmacie-valdor.fr/",
+"host": "pharmacie-valdor.fr",
+"cat": "pharmacy"
+},
+{
+"name": "Pharmacie de Jouvence",
+"url": "https://pharmaciedejouvence.mesoigner.fr/",
+"host": "pharmaciedejouvence.mesoigner.fr",
+"cat": "pharmacy"
+},
+{
+"name": "Pharmacie Thévenot",
+"url": "https://pharmacies.pharm-upp.fr/1808-pharmacie-du-clos-de-pouilly",
+"host": "pharmacies.pharm-upp.fr",
+"cat": "pharmacy"
+},
+{
+"name": "MJC La Maison Maladière",
+"url": "https://www.lamaisonmaladiere.fr",
+"host": "lamaisonmaladiere.fr",
+"cat": "social_centre"
+},
+{
+"name": "Les Berthom",
+"url": "https://www.lesberthom.com/les-bars/les-berthom-a-dijon/",
+"host": "lesberthom.com",
+"cat": "pub"
+},
+{
+"name": "Spar",
+"url": "https://magasins.spar.fr/fr/s/spar-supermarche-dijon-gustave-effel",
+"host": "magasins.spar.fr",
+"cat": "convenience"
+},
+{
+"name": "Refuge des Pirates",
+"url": "http://refugedespirates.fr/",
+"host": "refugedespirates.fr",
+"cat": "restaurant"
+},
+{
+"name": "Du Pain Pour Demain",
+"url": "https://www.dupainpourdemain.com/",
+"host": "dupainpourdemain.com",
+"cat": "bakery"
+},
+{
+"name": "Le piano qui fume",
+"url": "https://www.lepianoquifume.com/",
+"host": "lepianoquifume.com",
+"cat": "restaurant"
+},
+{
+"name": "Paonia Ma",
+"url": "https://www.paoniama.com/",
+"host": "paoniama.com",
+"cat": "massage"
+},
+{
+"name": "Flannery's",
+"url": "https://flannerys.fr/",
+"host": "flannerys.fr",
+"cat": "pub"
+},
+{
+"name": "Le Shanti",
+"url": "http://leshanti.unblog.fr/",
+"host": "leshanti.unblog.fr",
+"cat": "restaurant"
+},
+{
+"name": "L'Âge de Raisin",
+"url": "https://age-de-raisin.fr/",
+"host": "age-de-raisin.fr",
+"cat": "restaurant"
+},
+{
+"name": "L'Epicerie & Cie",
+"url": "https://www.restaurant-lepicerie.fr/",
+"host": "restaurant-lepicerie.fr",
+"cat": "restaurant"
+},
+{
+"name": "Le Cercle",
+"url": "https://www.lecerclerestaurant.com/",
+"host": "lecerclerestaurant.com",
+"cat": "restaurant"
+},
+{
+"name": "Pharmacie du Siècle",
+"url": "https://pharmacie-siecle-dijon.mesoigner.fr/",
+"host": "pharmacie-siecle-dijon.mesoigner.fr",
+"cat": "pharmacy"
+},
+{
+"name": "Mustard Hostel",
+"url": "https://mustardhostel.com/",
+"host": "mustardhostel.com",
+"cat": "hotel"
+},
+{
+"name": "Le Zola",
+"url": "https://le-zola-dijon.eatbu.com/",
+"host": "le-zola-dijon.eatbu.com",
+"cat": "restaurant"
+},
+{
+"name": "La Pizz Zola",
+"url": "https://la-pizz-zola-restaurant-dijon.eatbu.com/",
+"host": "la-pizz-zola-restaurant-dijon.eatbu.com",
+"cat": "restaurant"
+},
+{
+"name": "Grande Pharmacie Dijonnaise",
+"url": "https://dijonnaise.aprium-pharmacie.fr/accueil",
+"host": "dijonnaise.aprium-pharmacie.fr",
+"cat": "pharmacy"
+},
+{
+"name": "Le Déclic",
+"url": "https://www.bourgogne-tourisme.com/restaurants/le-declic",
+"host": "bourgogne-tourisme.com",
+"cat": "pub"
+},
+{
+"name": "Le Gril' Laure",
+"url": "https://www.grillaure.com",
+"host": "grillaure.com",
+"cat": "restaurant"
+},
+{
+"name": "Hostellerie du Chapeau Rouge",
+"url": "https://www.chapeau-rouge.fr/fr/chambres-et-suites-hotel-charme-dijon",
+"host": "chapeau-rouge.fr",
+"cat": "hotel"
+},
+{
+"name": "Aki",
+"url": "https://www.aki2010.com/",
+"host": "aki2010.com",
+"cat": "restaurant"
+},
+{
+"name": "Mitanchey",
+"url": "https://mitanchey.fr/",
+"host": "mitanchey.fr",
+"cat": "butcher"
+},
+{
+"name": "Harley-Davidson Dijon",
+"url": "http://www.harley-davidson-dijon.com",
+"host": "harley-davidson-dijon.com",
+"cat": "motorcycle"
+},
+{
+"name": "Chez Septime",
+"url": "https://www.chezseptime.fr/",
+"host": "chezseptime.fr",
+"cat": "restaurant"
+},
+{
+"name": "France Loisirs",
+"url": "https://www.franceloisirs.com/",
+"host": "franceloisirs.com",
+"cat": "books"
+},
+{
+"name": "Monceau",
+"url": "https://www.monceaufleurs.com/fleuriste/cote-d-or/monceau-fleurs-dijon",
+"host": "monceaufleurs.com",
+"cat": "florist"
+},
+{
+"name": "L'Officine des Naturalistes",
+"url": "https://croixblanchepharma.com/",
+"host": "croixblanchepharma.com",
+"cat": "pharmacy"
+},
+{
+"name": "La vie Saine",
+"url": "https://marceletfils.com/pages/magasin-bio-dijon-marcel-fils",
+"host": "marceletfils.com",
+"cat": "convenience"
+},
+{
+"name": "Durance Senteurs & Cie",
+"url": "https://www.durance.fr/",
+"host": "durance.fr",
+"cat": "perfumery"
+},
+{
+"name": "Le 314",
+"url": "https://www.brochettesetcie.com/dijon/",
+"host": "brochettesetcie.com",
+"cat": "restaurant"
+},
+{
+"name": "DZ'envies",
+"url": "https://dzenvies.com/",
+"host": "dzenvies.com",
+"cat": "restaurant"
+},
+{
+"name": "Le Bistrot des Halles",
+"url": "https://lebistrotdeshalles.fr/fr/",
+"host": "lebistrotdeshalles.fr",
+"cat": "restaurant"
+},
+{
+"name": "Sublime",
+"url": "https://www.sublimerestaurant.net/",
+"host": "sublimerestaurant.net",
+"cat": "restaurant"
+},
+{
+"name": "AutonHome",
+"url": "http://www.autonhome-sante.fr/",
+"host": "autonhome-sante.fr",
+"cat": "medical_supply"
+},
+{
+"name": "Vival",
+"url": "https://magasins.vival.fr/fr/vival-dijon-eiffel",
+"host": "magasins.vival.fr",
+"cat": "convenience"
+},
+{
+"name": "Samara",
+"url": "https://www.espace-samara.com/",
+"host": "espace-samara.com",
+"cat": "hairdresser"
+},
+{
+"name": "Amico",
+"url": "https://www.amico.fr/",
+"host": "amico.fr",
+"cat": "computer"
+},
+{
+"name": "La Rustine",
+"url": "https://larustine.org/",
+"host": "larustine.org",
+"cat": "bicycle"
+},
+{
+"name": "Le Beverly",
+"url": "https://www.pub-beverly.com/",
+"host": "pub-beverly.com",
+"cat": "pub"
+},
+{
+"name": "Au Grès de Lau",
+"url": "https://www.augresdelau.fr/",
+"host": "augresdelau.fr",
+"cat": "pottery"
+},
+{
+"name": "Spica",
+"url": "https://www.restaurantspica.com/",
+"host": "restaurantspica.com",
+"cat": "restaurant"
+},
+{
+"name": "Hôtel Darcy",
+"url": "https://hotel-darcy.fr/",
+"host": "hotel-darcy.fr",
+"cat": "hotel"
+},
+{
+"name": "Le Petit Souk",
+"url": "https://www.lepetitsouk.fr/",
+"host": "lepetitsouk.fr",
+"cat": "interior_decoration"
+},
+{
+"name": "West Africa",
+"url": "https://www.west-africa-dijon.eastbu.com",
+"host": "west-africa-dijon.eastbu.com",
+"cat": "fast_food"
+},
+{
+"name": "Cycles Degueurce",
+"url": "https://www.cycles-degueurce.fr",
+"host": "cycles-degueurce.fr",
+"cat": "bicycle"
+},
+{
+"name": "La Boite à Malices",
+"url": "https://deguisements-en-fete.fr",
+"host": "deguisements-en-fete.fr",
+"cat": "gift"
+},
+{
+"name": "Autovision Guibaudet Dijon",
+"url": "https://www.autovision.fr/centre/210029-autovision-cabm-dijon-dijon/",
+"host": "autovision.fr",
+"cat": "vehicle_inspection"
+},
+{
+"name": "Domino's",
+"url": "https://www.dominos.fr/magasin/dijon-auxonne_21000",
+"host": "dominos.fr",
+"cat": "fast_food"
+},
+{
+"name": "Loc'a",
+"url": "https://www.loca.fr/",
+"host": "loca.fr",
+"cat": "estate_agent"
+},
+{
+"name": "Le monde d’après",
+"url": "https://le-monde-d-apres.com/",
+"host": "le-monde-d-apres.com",
+"cat": "alcohol"
+},
+{
+"name": "Galeries Lafayette",
+"url": "https://www.galerieslafayette.com/m/magasin-dijon",
+"host": "galerieslafayette.com",
+"cat": "department_store"
+},
+{
+"name": "Maille",
+"url": "https://fr.maille.com/blogs/boutiques/dijon-la-maison-maille-french-store",
+"host": "fr.maille.com",
+"cat": "deli"
+},
+{
+"name": "Franck Berthier",
+"url": "https://safral.site-solocal.com",
+"host": "safral.site-solocal.com",
+"cat": "clothes"
+},
+{
+"name": "Pourquoi pas ?",
+"url": "https://www.pourquoipas-dijon.com/",
+"host": "pourquoipas-dijon.com",
+"cat": "restaurant"
+},
+{
+"name": "Rapid'Couture",
+"url": "https://www.rapid-couture.com/atelier/rapidcouture-10-bis-rue-berbisey-dijon/",
+"host": "rapid-couture.com",
+"cat": "tailor"
+},
+{
+"name": "Running conseil",
+"url": "https://www.runningconseildijon.com/",
+"host": "runningconseildijon.com",
+"cat": "outdoor"
+},
+{
+"name": "5àsec",
+"url": "https://www.5asec.fr/en/trouvez-votre-pressing-5asec/bourgogne/dijon/pressing-dijon-bossuet",
+"host": "5asec.fr",
+"cat": "dry_cleaning"
+},
+{
+"name": "Le 19",
+"url": "https://www.maisonphilippelebon.com/fr/restaurant-dijon",
+"host": "maisonphilippelebon.com",
+"cat": "bar"
+},
+{
+"name": "Aux Délices d'Annaba",
+"url": "https://www.lepetitgascon.fr/",
+"host": "lepetitgascon.fr",
+"cat": "restaurant"
+},
+{
+"name": "Chick d'Or",
+"url": "https://pizzaetpasta.fr/",
+"host": "pizzaetpasta.fr",
+"cat": "fast_food"
+},
+{
+"name": "Parapluie",
+"url": "https://www.parapluie-dijon.com/",
+"host": "parapluie-dijon.com",
+"cat": "restaurant"
+},
+{
+"name": "Delko",
+"url": "https://delko.fr/garage/delko/dijon/192",
+"host": "delko.fr",
+"cat": "car_repair"
+},
+{
+"name": "Chris Bike Dijon",
+"url": "https://chrisbike.com/",
+"host": "chrisbike.com",
+"cat": "bicycle"
+},
+{
+"name": "Cabinet Agathe Costes",
+"url": "http://www.cabinetagathecostes.com/",
+"host": "cabinetagathecostes.com",
+"cat": "company"
+},
+{
+"name": "Les Tramways",
+"url": "https://bistrot-des-tramways.business.site/",
+"host": "bistrot-des-tramways.business.site",
+"cat": "restaurant"
+},
+{
+"name": "Ruisseaux Immobilier",
+"url": "https://www.ruisseaux-immobilier.com",
+"host": "ruisseaux-immobilier.com",
+"cat": "estate_agent"
+},
+{
+"name": "Épicerie Locavore des Bourroches",
+"url": "https://epicerie-locavore-des-bourroches.fr/",
+"host": "epicerie-locavore-des-bourroches.fr",
+"cat": "farm"
+},
+{
+"name": "L'Bout d'la Rue",
+"url": "https://restaurant-lboutdlarue.com/",
+"host": "restaurant-lboutdlarue.com",
+"cat": "restaurant"
+},
+{
+"name": "Maison Paroty",
+"url": "https://paroty.fr/",
+"host": "paroty.fr",
+"cat": "bakery"
+},
+{
+"name": "Hôtel Victor Hugo",
+"url": "http://hotelvictorhugo-dijon.com/",
+"host": "hotelvictorhugo-dijon.com",
+"cat": "hotel"
+},
+{
+"name": "Avenue73",
+"url": "https://www.avenue73.com/coiffeur/avenue73-dijon",
+"host": "avenue73.com",
+"cat": "hairdresser"
+},
+{
+"name": "Chez Léon",
+"url": "https://www.restochezleon.fr/",
+"host": "restochezleon.fr",
+"cat": "restaurant"
+},
+{
+"name": "Le Smart",
+"url": "http://www.le-smart.com/",
+"host": "le-smart.com",
+"cat": "nightclub"
+},
+{
+"name": "Mac Callaghan",
+"url": "https://pub-maccallaghan.com/",
+"host": "pub-maccallaghan.com",
+"cat": "pub"
+},
+{
+"name": "La Jeanne Brasserie",
+"url": "https://www.lajeanne-brasserie.fr",
+"host": "lajeanne-brasserie.fr",
+"cat": "restaurant"
+},
+{
+"name": "Gibert-Joseph",
+"url": "https://www.gibert.com/stores/dijon-gibert-joseph-librairie-papeterie",
+"host": "gibert.com",
+"cat": "books"
+},
+{
+"name": "Le Cercle Rhumerie Jamaïque",
+"url": "http://www.lecerclejamaique.com/",
+"host": "lecerclejamaique.com",
+"cat": "nightclub"
+},
+{
+"name": "L'Arôme",
+"url": "https://www.restaurant-aromedijon.com/",
+"host": "restaurant-aromedijon.com",
+"cat": "restaurant"
+},
+{
+"name": "Hermès",
+"url": "https://www.hermes.com/fr/fr/find-store/france/dijon/hermes-dijon-1X8XT893/",
+"host": "hermes.com",
+"cat": "clothes"
+},
+{
+"name": "Le Palazzio",
+"url": "https://le-palazzio-dijon.eatbu.com/?lang=fr",
+"host": "le-palazzio-dijon.eatbu.com",
+"cat": "restaurant"
+},
+{
+"name": "Cercle Laïque Dijonnais",
+"url": "https://www.cerclelaique.org/",
+"host": "cerclelaique.org",
+"cat": "arts_centre"
+},
+{
+"name": "Prêt à Partir",
+"url": "https://www.pretapartir.fr/",
+"host": "pretapartir.fr",
+"cat": "travel_agency"
+},
+{
+"name": "Laboratoire Clemenceau",
+"url": "https://biogroup.fr/recherche-laboratoire/l/dijon/4-rue-andre-malraux/1714286",
+"host": "biogroup.fr",
+"cat": "laboratory"
+},
+{
+"name": "La Dame d'Aquitaine",
+"url": "https://www.ladamedaquitaine.fr/",
+"host": "ladamedaquitaine.fr",
+"cat": "restaurant"
+},
+{
+"name": "Palais Nippon",
+"url": "https://www.palaisnippon.com/",
+"host": "palaisnippon.com",
+"cat": "restaurant"
+},
+{
+"name": "Pizza Passion",
+"url": "https://pizza-passion-dijon.eatbu.com/",
+"host": "pizza-passion-dijon.eatbu.com",
+"cat": "fast_food"
+},
+{
+"name": "Station Nord",
+"url": "https://stationnord.fr/",
+"host": "stationnord.fr",
+"cat": "fitness_centre"
+},
+{
+"name": "Entendre",
+"url": "https://www.entendre-dijon-centre.fr",
+"host": "entendre-dijon-centre.fr",
+"cat": "hearing_aids"
+},
+{
+"name": "Kyriad",
+"url": "https://www.kyriaddijon.com",
+"host": "kyriaddijon.com",
+"cat": "hotel"
+},
+{
+"name": "Caveau de Saulx",
+"url": "https://www.lecaveaudesaulx.fr/",
+"host": "lecaveaudesaulx.fr",
+"cat": "restaurant"
+},
+{
+"name": "Hôtel le Chambellan",
+"url": "https://www.hotel-chambellan.com/",
+"host": "hotel-chambellan.com",
+"cat": "hotel"
+},
+{
+"name": "La Onzième Heure",
+"url": "https://www.la-onzieme-heure.com",
+"host": "la-onzieme-heure.com",
+"cat": "escape_game"
+},
+{
+"name": "Au Sablier",
+"url": "http://www.au-sablier-horlogerie.fr/",
+"host": "au-sablier-horlogerie.fr",
+"cat": "clockmaker"
+},
+{
+"name": "Amplifon",
+"url": "https://www.amplifon.com/fr/nous-trouver/audioprothesiste-dijon/amplifon-dijon-poincare-s654",
+"host": "amplifon.com",
+"cat": "hearing_aids"
+},
+{
+"name": "Krys",
+"url": "https://www.krys.com/opticien/france/cote-d-or/opticien-dijon/dijon-poincare",
+"host": "krys.com",
+"cat": "optician"
+},
+{
+"name": "Auto-École Free Conduite",
+"url": "https://www.freeconduite.fr/",
+"host": "freeconduite.fr",
+"cat": "driving_school"
+},
+{
+"name": "Saisons Gourmandes",
+"url": "https://www.saisonsgourmandes.com/",
+"host": "saisonsgourmandes.com",
+"cat": "deli"
+},
+{
+"name": "Laboratoire Fontaine d'Ouche",
+"url": "https://laboratoires.biogroup.fr/cote-dor/dijon/avenue-des-champs-perdrix",
+"host": "laboratoires.biogroup.fr",
+"cat": "laboratory"
+},
+{
+"name": "Games factory",
+"url": "https://www.gamesfactory.fr",
+"host": "gamesfactory.fr",
+"cat": "bowling_alley"
+},
+{
+"name": "Dojo Epirey",
+"url": "https://judo-club-dijonnais.ffjudo.com/",
+"host": "judo-club-dijonnais.ffjudo.com",
+"cat": "dojo"
+},
+{
+"name": "Alliance Judo Besançon Dijon 21-25",
+"url": "https://www.ajbd2125.fr/",
+"host": "ajbd2125.fr",
+"cat": "dojo"
+},
+{
+"name": "Century 21",
+"url": "https://www.century21-martinot-immobilier-dijon.com/",
+"host": "century21-martinot-immobilier-dijon.com",
+"cat": "estate_agent"
+},
+{
+"name": "Pharmacie Saint-Michel",
+"url": "https://pharmacie-saintmichel.com/",
+"host": "pharmacie-saintmichel.com",
+"cat": "pharmacy"
+},
+{
+"name": "Pharmacie de la Toison d'Or",
+"url": "https://pharmacietoisondor.apothical.fr/",
+"host": "pharmacietoisondor.apothical.fr",
+"cat": "pharmacy"
+},
+{
+"name": "Grande pharmacie Bruant",
+"url": "https://pharmacie-bruant-dijon.pharmabest.com/",
+"host": "pharmacie-bruant-dijon.pharmabest.com",
+"cat": "pharmacy"
+},
+{
+"name": "Cyberspace21",
+"url": "https://www.cyberspace21.fr/",
+"host": "cyberspace21.fr",
+"cat": "internet_cafe"
+},
+{
+"name": "Pharmacie de la Combe à la Serpent",
+"url": "https://www.pharmaciecombeserpent.fr/",
+"host": "pharmaciecombeserpent.fr",
+"cat": "pharmacy"
+},
+{
+"name": "Pharmacie 2000",
+"url": "https://pharmacie-2000-dijon.pharm-upp.fr/",
+"host": "pharmacie-2000-dijon.pharm-upp.fr",
+"cat": "pharmacy"
+},
+{
+"name": "Réservoir Immo",
+"url": "https://www.reservoirimmo.fr",
+"host": "reservoirimmo.fr",
+"cat": "estate_agent"
+},
+{
+"name": "Pharmacie des Congrès",
+"url": "https://www.pharmaciedescongres.fr/",
+"host": "pharmaciedescongres.fr",
+"cat": "pharmacy"
+},
+{
+"name": "Lafayette",
+"url": "https://www.pharmacielafayette.com/dijon",
+"host": "pharmacielafayette.com",
+"cat": "pharmacy"
+},
+{
+"name": "AFPI Bourgogne",
+"url": "http://www.afpibourgogne.com/",
+"host": "afpibourgogne.com",
+"cat": "yes"
+},
+{
+"name": "Défi 2 Conseil",
+"url": "https://www.defi2conseil.com/1/contact_317484.html",
+"host": "defi2conseil.com",
+"cat": "yes"
+},
+{
+"name": "Médef Côte d'Or",
+"url": "https://www.medef21.fr/",
+"host": "medef21.fr",
+"cat": "union"
+},
+{
+"name": "Opcalia",
+"url": "https://www.opcalia.com/",
+"host": "opcalia.com",
+"cat": "yes"
+},
+{
+"name": "Union des Industries et Métiers de la Métallurgie",
+"url": "https://www.uimm21.com/",
+"host": "uimm21.com",
+"cat": "union"
+},
+{
+"name": "Le Ptit bouchon Dijonnais",
+"url": "https://leptitbouchondijonnais.fr/",
+"host": "leptitbouchondijonnais.fr",
+"cat": "restaurant"
+},
+{
+"name": "La Bourgogne",
+"url": "https://www.brasserielabourgogne.com/",
+"host": "brasserielabourgogne.com",
+"cat": "restaurant"
+},
+{
+"name": "Sakura Sushi",
+"url": "https://www.sakurasushidijon.com/",
+"host": "sakurasushidijon.com",
+"cat": "restaurant"
+},
+{
+"name": "Au Fût et à Mesure",
+"url": "https://aufutetamesure.fr/bar/aufut-dijon/",
+"host": "aufutetamesure.fr",
+"cat": "pub"
+},
+{
+"name": "Les Fils à Maman",
+"url": "https://www.lesfilsamaman.com/restaurants/dijon/",
+"host": "lesfilsamaman.com",
+"cat": "restaurant"
+},
+{
+"name": "L‘AbenFant",
+"url": "https://restaurantlabenfant.fr/",
+"host": "restaurantlabenfant.fr",
+"cat": "restaurant"
+},
+{
+"name": "Monique boire et manger",
+"url": "https://www.moniqueboireetmanger.fr/",
+"host": "moniqueboireetmanger.fr",
+"cat": "restaurant"
+},
+{
+"name": "B&B Hôtel",
+"url": "https://www.hotel-bb.com/fr/-/hotelByName.htm?id=4706",
+"host": "hotel-bb.com",
+"cat": "hotel"
+},
+{
+"name": "Sécuritest",
+"url": "https://securitestdijoncentre.securitest.fr/",
+"host": "securitestdijoncentre.securitest.fr",
+"cat": "vehicle_inspection"
+},
+{
+"name": "Mulot et Petitjean",
+"url": "https://www.mulotpetitjean.fr",
+"host": "mulotpetitjean.fr",
+"cat": "confectionery"
+},
+{
+"name": "Pharmacie Clemenceau",
+"url": "https://pharmacie-clemenceau-dijon.mesoigner.fr",
+"host": "pharmacie-clemenceau-dijon.mesoigner.fr",
+"cat": "pharmacy"
+},
+{
+"name": "Le Petit Roi de la Lune",
+"url": "https://www.lepetitroidelalune.fr/",
+"host": "lepetitroidelalune.fr",
+"cat": "restaurant"
+},
+{
+"name": "Orpi",
+"url": "https://www.orpi.com/dmi",
+"host": "orpi.com",
+"cat": "estate_agent"
+},
+{
+"name": "La Halle",
+"url": "https://www.lahalle.com/magasins-cote-d-or-21-dijon-toison-d-or-264.html",
+"host": "lahalle.com",
+"cat": "clothes"
+},
+{
+"name": "Smyths",
+"url": "https://www.smythstoys.com/fr/fr-fr/storefinder/storedetails/dijon",
+"host": "smythstoys.com",
+"cat": "toys"
+},
+{
+"name": "Ciao Pizza",
+"url": "http://www.ciaopizza.fr/",
+"host": "ciaopizza.fr",
+"cat": "fast_food"
+},
+{
+"name": "Sistem Architecture",
+"url": "https://sistem-architecture.fr",
+"host": "sistem-architecture.fr",
+"cat": "architect"
+},
+{
+"name": "Agence Lacaille",
+"url": "https://www.agencelacaille.com",
+"host": "agencelacaille.com",
+"cat": "estate_agent"
+},
+{
+"name": "L'Évidence",
+"url": "https://restaurant-levidence-dijon.com/",
+"host": "restaurant-levidence-dijon.com",
+"cat": "restaurant"
+},
+{
+"name": "Masami",
+"url": "http://www.restaurantmasami.com/site/",
+"host": "restaurantmasami.com",
+"cat": "restaurant"
+},
+{
+"name": "The Barbarian's Pub",
+"url": "http://www.barbarians-pub.com",
+"host": "barbarians-pub.com",
+"cat": "pub"
+},
+{
+"name": "Laforêt",
+"url": "https://www.laforet.com/",
+"host": "laforet.com",
+"cat": "estate_agent"
+},
+{
+"name": "Pietrapolis Immobilier",
+"url": "https://dijon.pietrapolis.fr/",
+"host": "dijon.pietrapolis.fr",
+"cat": "estate_agent"
+},
+{
+"name": "Chez François Sport Montagne",
+"url": "https://chezfrancoissportmontagne.site-solocal.com/",
+"host": "chezfrancoissportmontagne.site-solocal.com",
+"cat": "outdoor"
+},
+{
+"name": "Dépil Tech",
+"url": "https://www.depiltech.com/fr/epilation-definitive/dijon/119",
+"host": "depiltech.com",
+"cat": "beauty"
+},
+{
+"name": "Le Rameau",
+"url": "https://brasserie-lerameau.fr",
+"host": "brasserie-lerameau.fr",
+"cat": "restaurant"
+},
+{
+"name": "New-Hair",
+"url": "https://www.planity.com/new-hair-21000-dijon",
+"host": "planity.com",
+"cat": "hairdresser"
+},
+{
+"name": "Pizz N' Go",
+"url": "https://www.pizzngo.com/",
+"host": "pizzngo.com",
+"cat": "restaurant"
+},
+{
+"name": "Proman",
+"url": "https://www.proman-emploi.fr/agences/dijon",
+"host": "proman-emploi.fr",
+"cat": "employment_agency"
+},
+{
+"name": "Pho Tong Thaï Massage",
+"url": "https://salon-massage-dijon.f",
+"host": "salon-massage-dijon.f",
+"cat": "massage"
+},
+{
+"name": "Supplay",
+"url": "https://www.supplay.fr/",
+"host": "supplay.fr",
+"cat": "employment_agency"
+},
+{
+"name": "Au Duché de Bourgogne",
+"url": "https://www.auduchedebourgogne.com/",
+"host": "auduchedebourgogne.com",
+"cat": "gift"
+},
+{
+"name": "GrandOptical",
+"url": "https://www.grandoptical.com/opticien/dijon/74",
+"host": "grandoptical.com",
+"cat": "optician"
+},
+{
+"name": "Le Pré aux Clercs",
+"url": "https://www.lepreauxclercs.fr/",
+"host": "lepreauxclercs.fr",
+"cat": "restaurant"
+},
+{
+"name": "Sccv 27 Chaumière Talant",
+"url": "http://www.resideco.com",
+"host": "resideco.com",
+"cat": "estate_agent"
+},
+{
+"name": "Appart'hôtel Odalys Les Cordeliers",
+"url": "https://www.odalys-vacances.com/location-campagne/bourgogne-et-ain/dijon/les-cordeliers.html",
+"host": "odalys-vacances.com",
+"cat": "hotel"
+},
+{
+"name": "Le Bouchon du Palais",
+"url": "https://www.bouchondupalais.fr/",
+"host": "bouchondupalais.fr",
+"cat": "restaurant"
+},
+{
+"name": "Sushi Shop",
+"url": "https://www.sushishop.fr/fr/restaurant/dijon-bossuet",
+"host": "sushishop.fr",
+"cat": "fast_food"
+},
+{
+"name": "Tex A Way",
+"url": "https://texaway.com/",
+"host": "texaway.com",
+"cat": "fast_food"
+},
+{
+"name": "Speakeasy",
+"url": "https://www.restaurant-speakeasy.fr/",
+"host": "restaurant-speakeasy.fr",
+"cat": "restaurant"
+},
+{
+"name": "GO Sport",
+"url": "https://www.go-sport.com/stores?lang=default#/stores/1079",
+"host": "go-sport.com",
+"cat": "sports"
+},
+{
+"name": "Ludovic Nicolas",
+"url": "https://www.ludovic-nicolas.fr/",
+"host": "ludovic-nicolas.fr",
+"cat": "hairdresser"
+},
+{
+"name": "Les toits de Lili",
+"url": "https://www.lili-immo.com/",
+"host": "lili-immo.com",
+"cat": "estate_agent"
+},
+{
+"name": "Atoutdanse",
+"url": "https://atoutdanse.com/",
+"host": "atoutdanse.com",
+"cat": "sports_centre"
+},
+{
+"name": "Brasserie des Beaux Arts",
+"url": "https://www.brasserie-beaux-arts.com/",
+"host": "brasserie-beaux-arts.com",
+"cat": "cafe"
+},
+{
+"name": "Epi'Sourire",
+"url": "https://www.episourire.fr/",
+"host": "episourire.fr",
+"cat": "convenience"
+},
+{
+"name": "Centre esthétique Jean Jaurès",
+"url": "https://institutrdv.com/cejj21_web/fr/index.awp",
+"host": "institutrdv.com",
+"cat": "beauty"
+},
+{
+"name": "Urban Moov",
+"url": "https://www.urbanmoov.fr",
+"host": "urbanmoov.fr",
+"cat": "bicycle"
+},
+{
+"name": "Les 2 roues électriques",
+"url": "https://www.les-2-roues-electriques.fr/",
+"host": "les-2-roues-electriques.fr",
+"cat": "bicycle"
+},
+{
+"name": "The Little Italy",
+"url": "https://www.thelittleitaly-shop.com/#dijon",
+"host": "thelittleitaly-shop.com",
+"cat": "restaurant"
+},
+{
+"name": "Épokhé",
+"url": "https://www.epokhe.fr/",
+"host": "epokhe.fr",
+"cat": "furniture"
+},
+{
+"name": "Streets of Cash",
+"url": "https://www.streetsofcash.fr/",
+"host": "streetsofcash.fr",
+"cat": "video_games"
+},
+{
+"name": "Azaé",
+"url": "https://www.azae.com/index-des-agences-par-ville/agence-azae-dijon-21000-89.html/",
+"host": "azae.com",
+"cat": "personal_services"
+},
+{
+"name": "Allianz",
+"url": "https://agence.allianz.fr/dijon-universite-21000-H92190",
+"host": "agence.allianz.fr",
+"cat": "insurance"
+},
+{
+"name": "Luis Kraemer",
+"url": "https://www.luis-kraemer.com",
+"host": "luis-kraemer.com",
+"cat": "hairdresser"
+},
+{
+"name": "Salaün Holidays",
+"url": "https://www.salaun-holidays.com/votre-agence-de-voyages-a-dijon,salaun,holidays-21-1068.html#agence",
+"host": "salaun-holidays.com",
+"cat": "travel_agency"
+},
+{
+"name": "Petit Bateau",
+"url": "https://stores.petit-bateau.com/fr/france/dijon/82-rue-du-bourg",
+"host": "stores.petit-bateau.com",
+"cat": "clothes"
+},
+{
+"name": "Sergent Major",
+"url": "https://www.sergent-major.de/on/demandware.store/Sites-SergentMajor-Site/fr_FR/Stores-Details?storeID=1136",
+"host": "sergent-major.de",
+"cat": "clothes"
+},
+{
+"name": "Nature & Découvertes",
+"url": "https://www.natureetdecouvertes.com/magasin/detailmagasin/136",
+"host": "natureetdecouvertes.com",
+"cat": "outdoor"
+},
+{
+"name": "Momie Dijon",
+"url": "https://www.momie.fr/pa128/nt6/dijon",
+"host": "momie.fr",
+"cat": "books"
+},
+{
+"name": "Le Point d'Eau",
+"url": "https://lepointdeau.business.site/",
+"host": "lepointdeau.business.site",
+"cat": "pub"
+},
+{
+"name": "Appel Médical",
+"url": "https://www.appelmedical.com/agence/1036/agence_appel_medical_dijon",
+"host": "appelmedical.com",
+"cat": "employment_agency"
+},
+{
+"name": "claire's",
+"url": "https://stores.claires.com/fr-d/dijon/701.html",
+"host": "stores.claires.com",
+"cat": "fashion_accessories"
+},
+{
+"name": "L'Antre II Mondes",
+"url": "https://www.antre-2-mondes.fr/",
+"host": "antre-2-mondes.fr",
+"cat": "pub"
+},
+{
+"name": "Groupama",
+"url": "https://agences.groupama.fr/assurance/grand-est/agence-dijon-champagne-idGGE02142",
+"host": "agences.groupama.fr",
+"cat": "insurance"
+},
+{
+"name": "Basic-Fit",
+"url": "https://www.basic-fit.com/fr-fr/clubs/basic-fit-dijon-boulevard-chanoine-kir-4d0232d0541042a5a2d47c1ab134570c.html",
+"host": "basic-fit.com",
+"cat": "fitness_centre"
+},
+{
+"name": "Entendre",
+"url": "https://www.entendre-dijon-drapeau.fr",
+"host": "entendre-dijon-drapeau.fr",
+"cat": "hearing_aids"
+},
+{
+"name": "Dingovino",
+"url": "http://www.dingovino.com/",
+"host": "dingovino.com",
+"cat": "alcohol"
+},
+{
+"name": "Le Phénicien",
+"url": "https://www.restaurant-lephenicien.fr/",
+"host": "restaurant-lephenicien.fr",
+"cat": "restaurant"
+},
+{
+"name": "Home Pizza",
+"url": "http://www.home-pizza-dijon.com",
+"host": "home-pizza-dijon.com",
+"cat": "fast_food"
+},
+{
+"name": "Soyuz",
+"url": "https://balexei.wixsite.com/epicerie-soyuz",
+"host": "balexei.wixsite.com",
+"cat": "convenience"
+},
+{
+"name": "La Petite Laverie",
+"url": "http://www.laveries-impeclinge.fr",
+"host": "laveries-impeclinge.fr",
+"cat": "laundry"
+},
+{
+"name": "LMDE",
+"url": "https://www.lmde.fr",
+"host": "lmde.fr",
+"cat": "insurance"
+},
+{
+"name": "Gan Assurances Dijon Theatre",
+"url": "https://www.agence.gan.fr/461-gan-assurances-dijon-theatre-guillaume-renaud",
+"host": "agence.gan.fr",
+"cat": "insurance"
+},
+{
+"name": "Accès Vision",
+"url": "https://acces-vision.com",
+"host": "acces-vision.com",
+"cat": "doctors"
+},
+{
+"name": "Cécile Amodeo Une Âme Phenix",
+"url": "https://www.uneamephenix.com",
+"host": "uneamephenix.com",
+"cat": "psychic"
+},
+{
+"name": "PFG",
+"url": "https://www.pfg.fr/nos-agences/cote-d-or/dijon/agence-pompes-funebres-pfg-dijon-07904",
+"host": "pfg.fr",
+"cat": "funeral_directors"
+},
+{
+"name": "Akatsuki",
+"url": "https://restaurant-akatsuki.fr/",
+"host": "restaurant-akatsuki.fr",
+"cat": "restaurant"
+},
+{
+"name": "La Fine Fourchette",
+"url": "https://www.boucherie-lafinefourchette.fr/",
+"host": "boucherie-lafinefourchette.fr",
+"cat": "butcher"
+},
+{
+"name": "Origine",
+"url": "https://www.restaurantstephanederbord.fr/",
+"host": "restaurantstephanederbord.fr",
+"cat": "restaurant"
+},
+{
+"name": "Expectra",
+"url": "https://www.expectra.fr/agence/1178/bureau_expectra_dijon_informatique_telecoms",
+"host": "expectra.fr",
+"cat": "employment_agency"
+},
+{
+"name": "Guy Hoquet",
+"url": "https://www.guy-hoquet.com/agence-immobiliere/dijon",
+"host": "guy-hoquet.com",
+"cat": "estate_agent"
+},
+{
+"name": "Ciel Rouge",
+"url": "https://www.ciel-rouge.fr/",
+"host": "ciel-rouge.fr",
+"cat": "books"
+},
+{
+"name": "Sébastien Hénon",
+"url": "http://www.sebastien-henon.com/",
+"host": "sebastien-henon.com",
+"cat": "chocolate"
+},
+{
+"name": "Argovet",
+"url": "http://www.argovet.fr",
+"host": "argovet.fr",
+"cat": "veterinary"
+},
+{
+"name": "CPage",
+"url": "https://www.cpage.fr/",
+"host": "cpage.fr",
+"cat": "computer"
+},
+{
+"name": "La Vie Claire",
+"url": "https://magasins.lavieclaire.com/lavieclaire/fr/store/france/bourgogne-franche-comte/cote-d-or/dijon/dijon/12103",
+"host": "magasins.lavieclaire.com",
+"cat": "convenience"
+},
+{
+"name": "Bureau Vallée",
+"url": "https://magasins.bureau-vallee.fr/fr/france-33/cote-d-or-21/dijon-21231/dijon-BV219",
+"host": "magasins.bureau-vallee.fr",
+"cat": "stationery"
+},
+{
+"name": "Black Market",
+"url": "https://blackmarketdijon.com/",
+"host": "blackmarketdijon.com",
+"cat": "books;music"
+},
+{
+"name": "Grain de Cassis",
+"url": "https://graindecassis.com/",
+"host": "graindecassis.com",
+"cat": "deli"
+},
+{
+"name": "Hôtel Vertigo",
+"url": "https://www.vertigohoteldijon.com/fr/",
+"host": "vertigohoteldijon.com",
+"cat": "hotel"
+},
+{
+"name": "Bibi & Bob",
+"url": "https://bibibob.fr/",
+"host": "bibibob.fr",
+"cat": "milliner"
+},
+{
+"name": "Radio Campus Dijon",
+"url": "https://dijon.radio-campus.org/",
+"host": "dijon.radio-campus.org",
+"cat": "studio"
+},
+{
+"name": "Alfred Burgers & Vins",
+"url": "https://www.alfredburgers.fr/",
+"host": "alfredburgers.fr",
+"cat": "restaurant"
+},
+{
+"name": "ICO Imprimerie",
+"url": "http://www.icoimprimeriedijon.com",
+"host": "icoimprimeriedijon.com",
+"cat": "printing"
+},
+{
+"name": "Edmond Fallot",
+"url": "https://www.fallot.com/boutique/",
+"host": "fallot.com",
+"cat": "deli"
+},
+{
+"name": "Linvosges",
+"url": "https://www.linvosges.com/fr/nos-magasins/dijon/",
+"host": "linvosges.com",
+"cat": "household_linen"
+},
+{
+"name": "Maison Oyat",
+"url": "https://www.maison-oyat.fr/",
+"host": "maison-oyat.fr",
+"cat": "interior_decoration"
+},
+{
+"name": "Nova Câmbios",
+"url": "https://fr.novacambios.com/agences/dijon/",
+"host": "fr.novacambios.com",
+"cat": "bureau_de_change"
+},
+{
+"name": "L'Hémicycle",
+"url": "https://restaurant-hemicycle.fr/",
+"host": "restaurant-hemicycle.fr",
+"cat": "restaurant"
+},
+{
+"name": "Caractère d'Homme",
+"url": "https://www.caracteredhomme.fr/",
+"host": "caracteredhomme.fr",
+"cat": "clothes"
+},
+{
+"name": "Le Goût du Vin",
+"url": "https://www.le-gout-du-vin.fr/",
+"host": "le-gout-du-vin.fr",
+"cat": "wine"
+},
+{
+"name": "Camara",
+"url": "https://www.camara.net/dijon",
+"host": "camara.net",
+"cat": "camera"
+},
+{
+"name": "i-run",
+"url": "https://www.i-run.fr/magasins/dijon/dijon-centre.html#57660",
+"host": "i-run.fr",
+"cat": "sports"
+},
+{
+"name": "Quatorze running",
+"url": "https://quatorzerunning.com/",
+"host": "quatorzerunning.com",
+"cat": "sports"
+},
+{
+"name": "Jocade",
+"url": "https://www.jocade.net",
+"host": "jocade.net",
+"cat": "games"
+},
+{
+"name": "Histoire d'Or",
+"url": "https://www.histoiredor.com/fr_FR/details/magasin/?storeID=266",
+"host": "histoiredor.com",
+"cat": "jewelry"
+},
+{
+"name": "Shifty Board Shop",
+"url": "https://shiftyboardshop.com/",
+"host": "shiftyboardshop.com",
+"cat": "clothes"
+},
+{
+"name": "Temmi Informatique",
+"url": "https://www.temmii.com/",
+"host": "temmii.com",
+"cat": "computer"
+},
+{
+"name": "La Papaye Verte",
+"url": "http://www.la-papaye-verte.fr",
+"host": "la-papaye-verte.fr",
+"cat": "restaurant"
+},
+{
+"name": "La fleur qui pousse à l'intérieur",
+"url": "https://www.placedeslibraires.fr/librairie-5864/dijon/La-Fleur-qui-pousse-a-l-interieur/",
+"host": "placedeslibraires.fr",
+"cat": "books"
+},
+{
+"name": "Acqua e Farina",
+"url": "https://pizzeria-acquaefarina.fr/",
+"host": "pizzeria-acquaefarina.fr",
+"cat": "restaurant"
+},
+{
+"name": "Day by Day",
+"url": "https://daybyday-shop.com/magasin/dijon",
+"host": "daybyday-shop.com",
+"cat": "convenience"
+},
+{
+"name": "Ladice Avocats",
+"url": "http://www.ladiceavocat.fr",
+"host": "ladiceavocat.fr",
+"cat": "lawyer"
+},
+{
+"name": "New School Tacos",
+"url": "https://www.newschooltacos.fr/restaurants/dijon",
+"host": "newschooltacos.fr",
+"cat": "fast_food"
+},
+{
+"name": "Le Coin des Arts - Dalbe",
+"url": "http://dijon.dalbe.fr/",
+"host": "dijon.dalbe.fr",
+"cat": "craft"
+},
+{
+"name": "Popotes",
+"url": "https://popotes.fr/popotes-cantine-respectueuse-ouvre-bientot-ses-portes-a-dijon/",
+"host": "popotes.fr",
+"cat": "restaurant"
+},
+{
+"name": "100Dô",
+"url": "http://restaurant100do.com",
+"host": "restaurant100do.com",
+"cat": "restaurant"
+},
+{
+"name": "Chamas Tacos",
+"url": "https://chamas-tacos.com/dijon-saint-michel/",
+"host": "chamas-tacos.com",
+"cat": "restaurant"
+},
+{
+"name": "Le gout des sens",
+"url": "https://www.legoutdessens.fr/nouvelle-boutique/",
+"host": "legoutdessens.fr",
+"cat": "deli"
+},
+{
+"name": "Selectour",
+"url": "https://www.selectour.com/agence/cote-d-or/dijon/voyages-girardot/53",
+"host": "selectour.com",
+"cat": "travel_agency"
+},
+{
+"name": "Da Adriano",
+"url": "https://www.da-adriano.fr/",
+"host": "da-adriano.fr",
+"cat": "restaurant"
+},
+{
+"name": "Librairie Autrement Dit",
+"url": "https://librairie-autrementdit.fr/",
+"host": "librairie-autrementdit.fr",
+"cat": "books"
+},
+{
+"name": "Tartin'Art",
+"url": "https://www.tartinart.com/",
+"host": "tartinart.com",
+"cat": "bakery"
+},
+{
+"name": "Jean Louis David",
+"url": "https://www.jeanlouisdavid.com/salons/9-rue-musette-21000-dijon",
+"host": "jeanlouisdavid.com",
+"cat": "hairdresser"
+},
+{
+"name": "Citya Gessy Verne Immobilier",
+"url": "https://www.citya.com/agences-immobilieres/dijon-21000/173",
+"host": "citya.com",
+"cat": "estate_agent"
+},
+{
+"name": "Oralia Sicov",
+"url": "https://www.oralia.fr/agence-immobiliere/dijon-21000/oralia-sicov/461351.htm",
+"host": "oralia.fr",
+"cat": "estate_agent"
+},
+{
+"name": "My cycle",
+"url": "https://my-cycle.fr/fr/magasins/dijon/",
+"host": "my-cycle.fr",
+"cat": "bicycle"
+},
+{
+"name": "O'Tacos",
+"url": "https://o-tacos.com/fr/",
+"host": "o-tacos.com",
+"cat": "fast_food"
+},
+{
+"name": "King Marcel",
+"url": "https://restaurant.kingmarcel.fr/10-king-marcel-dijon",
+"host": "restaurant.kingmarcel.fr",
+"cat": "fast_food"
+},
+{
+"name": "Les Couleurs du Temps",
+"url": "https://christellefoviaux.wixsite.com/couleursdutemps",
+"host": "christellefoviaux.wixsite.com",
+"cat": "hairdresser"
+},
+{
+"name": "Maison du Don de Dijon",
+"url": "https://dondesang.efs.sante.fr/bourgogne-franche-comte/maison-du-don-de-dijon",
+"host": "dondesang.efs.sante.fr",
+"cat": "blood_donation"
+},
+{
+"name": "Abyssinia",
+"url": "https://www.abyssinia-ethiopia.fr",
+"host": "abyssinia-ethiopia.fr",
+"cat": "restaurant"
+},
+{
+"name": "Dj’Coiff’",
+"url": "https://www.dj-coiff-dijon.com",
+"host": "dj-coiff-dijon.com",
+"cat": "hairdresser"
+},
+{
+"name": "Carbillet",
+"url": "https://www.chocolat-carbillet.com/",
+"host": "chocolat-carbillet.com",
+"cat": "chocolate"
+},
+{
+"name": "So",
+"url": "https://guide.michelin.com/fr/fr/bourgogne-franche-comte/dijon/restaurant/so",
+"host": "guide.michelin.com",
+"cat": "restaurant"
+},
+{
+"name": "Le neuf bis",
+"url": "http://www.le9bis.fr/",
+"host": "le9bis.fr",
+"cat": "restaurant"
+},
+{
+"name": "Rev'look",
+"url": "http://www.coiffeur-revlook.com/",
+"host": "coiffeur-revlook.com",
+"cat": "hairdresser"
+},
+{
+"name": "Body Minute",
+"url": "https://www.bodyminute.com/instituts/dijon-3648/",
+"host": "bodyminute.com",
+"cat": "beauty"
+},
+{
+"name": "Laboratoire Dijon Mazen Sully",
+"url": "https://www.biomed21.fr/nos-laboratoires/laboratoire-dijon-mazen-sully/",
+"host": "biomed21.fr",
+"cat": "laboratory"
+},
+{
+"name": "Yesss Électrique",
+"url": "https://www.yesss-fr.com/agence/yesss-dijon",
+"host": "yesss-fr.com",
+"cat": "electrical"
+},
+{
+"name": "Randstad",
+"url": "https://www.randstad.fr/",
+"host": "randstad.fr",
+"cat": "employment_agency"
+},
+{
+"name": "Pierre Hubert",
+"url": "https://www.pierre-hubert.fr/",
+"host": "pierre-hubert.fr",
+"cat": "pastry"
+},
+{
+"name": "Le coin caché",
+"url": "https://www.le-coin-cache.fr/",
+"host": "le-coin-cache.fr",
+"cat": "restaurant"
+},
+{
+"name": "Monsieur Moutarde",
+"url": "https://monsieurmoutarde.com/",
+"host": "monsieurmoutarde.com",
+"cat": "bar"
+},
+{
+"name": "Rep'Art auto",
+"url": "https://www.repartauto.fr/",
+"host": "repartauto.fr",
+"cat": "car_repair"
+},
+{
+"name": "Jouvence Autos",
+"url": "https://concessions.peugeot.fr/dijon/",
+"host": "concessions.peugeot.fr",
+"cat": "car_repair"
+},
+{
+"name": "Mad Vintage",
+"url": "https://www.madvintage.fr/",
+"host": "madvintage.fr",
+"cat": "clothes"
+},
+{
+"name": "Atol",
+"url": "https://www.opticiens-atol.com/",
+"host": "opticiens-atol.com",
+"cat": "optician"
+},
+{
+"name": "London Garage",
+"url": "https://www.london-garage.fr",
+"host": "london-garage.fr",
+"cat": "car_repair"
+},
+{
+"name": "Éric Vincenot",
+"url": "https://www.eric-vincenot-chirurgien-dentiste.fr/",
+"host": "eric-vincenot-chirurgien-dentiste.fr",
+"cat": "dentist"
+},
+{
+"name": "Manga-T",
+"url": "https://manga-t.fr/manga-t/dijon/",
+"host": "manga-t.fr",
+"cat": "cafe"
+},
+{
+"name": "Max coiffure",
+"url": "https://www.maxcoiffure.com/",
+"host": "maxcoiffure.com",
+"cat": "hairdresser"
+},
+{
+"name": "Le P'tit Dij",
+"url": "https://brasserieleptitdij.eatbu.com",
+"host": "brasserieleptitdij.eatbu.com",
+"cat": "restaurant"
+},
+{
+"name": "Le Comptoir Irlandais",
+"url": "https://www.comptoir-irlandais.com/fr/magasin/18-le-comptoir-irlandais-de-dijon",
+"host": "comptoir-irlandais.com",
+"cat": "deli"
+},
+{
+"name": "Neyrat Immobilier",
+"url": "https://www.neyrat-immobilier.fr/agence-immobiliere-dijon.php",
+"host": "neyrat-immobilier.fr",
+"cat": "estate_agent"
+},
+{
+"name": "Mona Lisa",
+"url": "https://institutmonalisa.fr/",
+"host": "institutmonalisa.fr",
+"cat": "beauty"
+},
+{
+"name": "Parquets des Ducs",
+"url": "https://www.dijonparquets.fr/",
+"host": "dijonparquets.fr",
+"cat": "flooring"
+},
+{
+"name": "Espace Oliana",
+"url": "http://espace-oliana.fr",
+"host": "espace-oliana.fr",
+"cat": "sports_centre"
+},
+{
+"name": "Mμ Body Arts",
+"url": "https://www.mubodyarts.com/",
+"host": "mubodyarts.com",
+"cat": "tattoo"
+},
+{
+"name": "The Pot Company CBD",
+"url": "https://thepotcompany.fr/",
+"host": "thepotcompany.fr",
+"cat": "cannabis"
+},
+{
+"name": "Monasse",
+"url": "http://www.monasse.fr/",
+"host": "monasse.fr",
+"cat": "fast_food"
+},
+{
+"name": "Comité Régional du Tourisme de Bourgogne-Franche-Comté",
+"url": "https://www.bourgognefranchecomte.com/",
+"host": "bourgognefranchecomte.com",
+"cat": "quango"
+},
+{
+"name": "Cadences",
+"url": "http://www.cadencesmusic.com/",
+"host": "cadencesmusic.com",
+"cat": "musical_instrument"
+},
+{
+"name": "Jonathan Pautet",
+"url": "https://www.jonathanpautet.fr/",
+"host": "jonathanpautet.fr",
+"cat": "chocolate"
+},
+{
+"name": "Cyclable",
+"url": "https://dijon.cyclable.com/",
+"host": "dijon.cyclable.com",
+"cat": "bicycle"
+},
+{
+"name": "Akyos",
+"url": "https://akyos.com/",
+"host": "akyos.com",
+"cat": "it"
+},
+{
+"name": "Alpes Contrôles",
+"url": "https://www.alpes-controles.fr/",
+"host": "alpes-controles.fr",
+"cat": "company"
+},
+{
+"name": "Neos SDI",
+"url": "https://www.neos-sdi.com/",
+"host": "neos-sdi.com",
+"cat": "company"
+},
+{
+"name": "Les Petites Graines",
+"url": "https://www.lespetitesgraines.fr/",
+"host": "lespetitesgraines.fr",
+"cat": "interior_decoration"
+},
+{
+"name": "Fit and Coach",
+"url": "https://fitandcoach.com/accueil",
+"host": "fitandcoach.com",
+"cat": "fitness_centre"
+},
+{
+"name": "Barberousse",
+"url": "https://www.barberousse.com/reseau/dijon",
+"host": "barberousse.com",
+"cat": "bar"
+},
+{
+"name": "RCF Bourgogne",
+"url": "https://rcf.fr",
+"host": "rcf.fr",
+"cat": "studio"
+},
+{
+"name": "Damart",
+"url": "https://magasin.damart.fr/18-damart-dijon",
+"host": "magasin.damart.fr",
+"cat": "clothes"
+},
+{
+"name": "Mistigriff",
+"url": "https://www.mistigriff.fr",
+"host": "mistigriff.fr",
+"cat": "clothes"
+},
+{
+"name": "France Pare-Brise",
+"url": "https://www.franceparebrise.fr/reparation-pare-brise/dijon",
+"host": "franceparebrise.fr",
+"cat": "car_repair"
+},
+{
+"name": "As du vin",
+"url": "https://asduvin.com/",
+"host": "asduvin.com",
+"cat": "wine"
+},
+{
+"name": "My Wok",
+"url": "https://www.my-wok.com/dijon-cap-nord",
+"host": "my-wok.com",
+"cat": "restaurant"
+},
+{
+"name": "Pralus",
+"url": "https://dijon.chocolats-pralus.com/",
+"host": "dijon.chocolats-pralus.com",
+"cat": "pastry"
+},
+{
+"name": "Le Gourmet",
+"url": "http://www.legourmet-traiteurdijon.com/",
+"host": "legourmet-traiteurdijon.com",
+"cat": "caterer"
+},
+{
+"name": "Brioche Dorée",
+"url": "https://www.briochedoree.fr/restaurants/50-dijon-c.cial-la-toison-dor",
+"host": "briochedoree.fr",
+"cat": "bakery"
+},
+{
+"name": "Un singe en hiver",
+"url": "https://www.unsingeenhiver.com/",
+"host": "unsingeenhiver.com",
+"cat": "pub"
+},
+{
+"name": "Cycles Dutrion",
+"url": "https://cycles-dutrion.com/",
+"host": "cycles-dutrion.com",
+"cat": "bicycle"
+},
+{
+"name": "Paulette",
+"url": "https://www.paulette-restaurant.com/",
+"host": "paulette-restaurant.com",
+"cat": "restaurant"
+},
+{
+"name": "Clé Immobilier",
+"url": "https://www.cle-immobilier.fr/",
+"host": "cle-immobilier.fr",
+"cat": "estate_agent"
+},
+{
+"name": "Interaction Interim - Dijon",
+"url": "https://www.interaction-interim.com/agences/dijon-interaction-interim",
+"host": "interaction-interim.com",
+"cat": "employment_agency"
+},
+{
+"name": "Trinisports",
+"url": "https://trinisports.fr",
+"host": "trinisports.fr",
+"cat": "sports"
+},
+{
+"name": "Bagel Corner",
+"url": "https://www.bagelcorner.fr/",
+"host": "bagelcorner.fr",
+"cat": "fast_food"
+},
+{
+"name": "Morgan Services",
+"url": "https://www.groupe-morgan-services.fr/",
+"host": "groupe-morgan-services.fr",
+"cat": "employment_agency"
+},
+{
+"name": "Guillerme",
+"url": "https://guillerme.decostory.fr",
+"host": "guillerme.decostory.fr",
+"cat": "window_blind"
+},
+{
+"name": "Ittshin Izakaya",
+"url": "https://www.ittshinrestaurants.com",
+"host": "ittshinrestaurants.com",
+"cat": "restaurant"
+},
+{
+"name": "Innov Immobilier",
+"url": "https://www.innov-immobilier.fr/",
+"host": "innov-immobilier.fr",
+"cat": "estate_agent"
+},
+{
+"name": "Atelier-expo Véronique Barillot",
+"url": "https://www.veronique-barrillot.com/",
+"host": "veronique-barrillot.com",
+"cat": "art"
+},
+{
+"name": "Napapijri",
+"url": "https://locations.napapijri.com/france/dijon/napap-pjmdf/",
+"host": "locations.napapijri.com",
+"cat": "clothes"
+},
+{
+"name": "Eman et sens",
+"url": "http://www.emanetsens.com/",
+"host": "emanetsens.com",
+"cat": "beauty"
+},
+{
+"name": "Shiva ménage",
+"url": "https://www.shiva.fr/",
+"host": "shiva.fr",
+"cat": "cleaning"
+},
+{
+"name": "Partnaire -Agence d'intérim",
+"url": "https://www.partnaire.fr/nos-agences/a/15-agence-d-interim-cdd-cdi-dijon-partnaire/",
+"host": "partnaire.fr",
+"cat": "employment_agency"
+},
+{
+"name": "Allure Coiffure Dijon Jeannin",
+"url": "http://www.allure-coiffure.fr/salon-coiffure-dijon-rue-jeannin/",
+"host": "allure-coiffure.fr",
+"cat": "hairdresser"
+},
+{
+"name": "Brigitte Gauthier Immobilier",
+"url": "https://www.bgimmo.fr/",
+"host": "bgimmo.fr",
+"cat": "estate_agent"
+},
+{
+"name": "VP Courtage Prêts, Rachats & Assurances",
+"url": "https://vitalpatrimoine.fr/",
+"host": "vitalpatrimoine.fr",
+"cat": "financial_advisor"
+},
+{
+"name": "Saint James",
+"url": "https://www.saint-james.com/fr/",
+"host": "saint-james.com",
+"cat": "clothes"
+},
+{
+"name": "Class'croute",
+"url": "https://www.classcroute.com",
+"host": "classcroute.com",
+"cat": "fast_food"
+},
+{
+"name": "Hôtel des Halles",
+"url": "https://www.hoteldeshalles-dijon.com/",
+"host": "hoteldeshalles-dijon.com",
+"cat": "hotel"
+},
+{
+"name": "Babychou services",
+"url": "https://www.babychou.com/agence/agence-dijon-21/",
+"host": "babychou.com",
+"cat": "childcare"
+},
+{
+"name": "Race and Drivers",
+"url": "https://raceanddrivers.com/",
+"host": "raceanddrivers.com",
+"cat": "clothes"
+},
+{
+"name": "Le Bien Public",
+"url": "https://www.bienpublic.com/",
+"host": "bienpublic.com",
+"cat": "newspaper"
+},
+{
+"name": "Arthur et Nicolas opticiens",
+"url": "https://optique-arthuretnicolas.fr/",
+"host": "optique-arthuretnicolas.fr",
+"cat": "optician"
+},
+{
+"name": "My Roll's Chez Rosie",
+"url": "https://www.myrollsdijon.com",
+"host": "myrollsdijon.com",
+"cat": "restaurant"
+},
+{
+"name": "Mercerie Mimosa",
+"url": "https://www.boutique-arabesques-danse.com/",
+"host": "boutique-arabesques-danse.com",
+"cat": "fabric"
+},
+{
+"name": "Marmots & Merveilles",
+"url": "https://www.chouettes-couches.com/",
+"host": "chouettes-couches.com",
+"cat": "baby_goods"
+},
+{
+"name": "Simone et Maurice",
+"url": "https://simonemaurice.fr/",
+"host": "simonemaurice.fr",
+"cat": "ice_cream"
+},
+{
+"name": "À la Bonne Source",
+"url": "https://alabonnesource.tk",
+"host": "alabonnesource.tk",
+"cat": "books"
+},
+{
+"name": "La Maison des Cariatides",
+"url": "https://www.maisondescariatides.com/",
+"host": "maisondescariatides.com",
+"cat": "restaurant"
+},
+{
+"name": "La Compagnie des Famillles",
+"url": "https://www.lacompagniedesfamilles.com/DIJON",
+"host": "lacompagniedesfamilles.com",
+"cat": "childcare"
+},
+{
+"name": "La Foncière dijonnaise",
+"url": "https://www.fdit21.com/",
+"host": "fdit21.com",
+"cat": "estate_agent"
+},
+{
+"name": "MGEN de la Côte-d'Or",
+"url": "https://proximite.mgen.fr/29-section-mgen-de-la-cote-d-or",
+"host": "proximite.mgen.fr",
+"cat": "insurance"
+},
+{
+"name": "L'Hostellerie - Centre d'art singulier",
+"url": "https://itinerairessinguliers.com/espace-exposition-hostellerie.html#wa-anchor-kcnipdoa7u1680",
+"host": "itinerairessinguliers.com",
+"cat": "arts_centre"
+},
+{
+"name": "Philippe Todesco Joaillerie",
+"url": "https://www.antiquesjewels.com/",
+"host": "antiquesjewels.com",
+"cat": "jeweller"
+},
+{
+"name": "Jiu",
+"url": "https://app.aji-code.com/place/252178",
+"host": "app.aji-code.com",
+"cat": "restaurant"
+},
+{
+"name": "Vicomte A",
+"url": "https://vicomte-a.com/pages/boutique-vicomte-a-dijon",
+"host": "vicomte-a.com",
+"cat": "clothes"
+},
+{
+"name": "Era immobilier",
+"url": "https://www.era-immobilier-dijon-republique.fr/",
+"host": "era-immobilier-dijon-republique.fr",
+"cat": "estate_agent"
+},
+{
+"name": "Compagnie du Sablier",
+"url": "https://compagnie-dusablier.jimdofree.com/",
+"host": "compagnie-dusablier.jimdofree.com",
+"cat": "arts_centre"
+},
+{
+"name": "Vog Coiffure",
+"url": "https://vog.fr/salon/view/2079",
+"host": "vog.fr",
+"cat": "hairdresser"
+},
+{
+"name": "Les Docks de Bourgogne",
+"url": "https://www.lesdocksdebourgogne.fr",
+"host": "lesdocksdebourgogne.fr",
+"cat": "restaurant"
+},
+{
+"name": "La Compagnie des P'tits Loups",
+"url": "https://lacompagniedesptitsloups.fr/",
+"host": "lacompagniedesptitsloups.fr",
+"cat": "childcare"
+},
+{
+"name": "Expert Crédits",
+"url": "https://particuliers.financeconseil.fr/",
+"host": "particuliers.financeconseil.fr",
+"cat": "financial"
+},
+{
+"name": "Les Cornichons",
+"url": "http://www.lavapeur.com/brasserie",
+"host": "lavapeur.com",
+"cat": "restaurant"
+},
+{
+"name": "L'Atelier Intermède",
+"url": "https://salons.atelierintermede.fr/fr/coiffeur/france-33/cote-d-or-21/dijon-21231/intermede-2899",
+"host": "salons.atelierintermede.fr",
+"cat": "hairdresser"
+},
+{
+"name": "Les Bougies de Charroux",
+"url": "https://www.bougies-charroux.com/magasins/11-dijon",
+"host": "bougies-charroux.com",
+"cat": "candles"
+},
+{
+"name": "Filière de Santé Anomalies du Développement avec ou sans Déficience Intellectuelle de causes Rares (AnDDI-Rares)",
+"url": "https://anddi-rares.org/",
+"host": "anddi-rares.org",
+"cat": "yes"
+},
+{
+"name": "L'Atelier de l'Écran Plat",
+"url": "https://www.atelierecranplat.fr/",
+"host": "atelierecranplat.fr",
+"cat": "electronics_repair"
+},
+{
+"name": "Immolys",
+"url": "https://www.immolys.fr",
+"host": "immolys.fr",
+"cat": "estate_agent"
+},
+{
+"name": "CNT CESS 21",
+"url": "https://cnt-f.org/",
+"host": "cnt-f.org",
+"cat": "trade_union"
+},
+{
+"name": "Union Départementale des syndicats Force Ouvrière de Côte d'Or",
+"url": "http://www.udfo21.org/",
+"host": "udfo21.org",
+"cat": "union"
+},
+{
+"name": "Agence Kyracom",
+"url": "https://kyracom.fr",
+"host": "kyracom.fr",
+"cat": "company"
+},
+{
+"name": "Locavor Dijon Alix Providence",
+"url": "https://locavor.fr/32-locavor-dijon-alix-providence",
+"host": "locavor.fr",
+"cat": "marketplace"
+},
+{
+"name": "Les Docks Numériques",
+"url": "https://www.lesdocks.net/",
+"host": "lesdocks.net",
+"cat": "coworking"
+},
+{
+"name": "Stéphane Plaza Immobilier",
+"url": "https://dijonest.stephaneplazaimmobilier.com/",
+"host": "dijonest.stephaneplazaimmobilier.com",
+"cat": "estate_agent"
+},
+{
+"name": "Avril",
+"url": "https://www.avril-beaute.fr/magasins/boutique-cosmetique-maquillage-bio-chalon-dijon-21",
+"host": "avril-beaute.fr",
+"cat": "cosmetics"
+},
+{
+"name": "CarS 21",
+"url": "https://cars21@hotmail.fr",
+"host": "cars21@hotmail.fr",
+"cat": "car"
+},
+{
+"name": "Dentego",
+"url": "https://dentego.fr/nos-centres/bourgogne-franche-comte/dijon/",
+"host": "dentego.fr",
+"cat": "dentist"
+},
+{
+"name": "Optical Center",
+"url": "https://opticien.optical-center.fr/72-opticien-dijon-centre-ville-optical-center",
+"host": "opticien.optical-center.fr",
+"cat": "optician"
+},
+{
+"name": "L'Archipel",
+"url": "https://larchipel.bar/",
+"host": "larchipel.bar",
+"cat": "pub"
+},
+{
+"name": "Temporis Dijon Sud",
+"url": "https://temporis-franchise.fr",
+"host": "temporis-franchise.fr",
+"cat": "employment_agency"
+},
+{
+"name": "LIP",
+"url": "https://www.groupelip.com/agences/interim-dijon",
+"host": "groupelip.com",
+"cat": "employment_agency"
+},
+{
+"name": "La Ruche qui dit oui !",
+"url": "https://laruchequiditoui.fr/fr-FR/assemblies/7828",
+"host": "laruchequiditoui.fr",
+"cat": "marketplace"
+},
+{
+"name": "Propulse",
+"url": "https://www.propulse.fr",
+"host": "propulse.fr",
+"cat": "advertising_agency"
+},
+{
+"name": "Startway",
+"url": "https://www.start-way.com/project/coworking-dijon-centre/",
+"host": "start-way.com",
+"cat": "coworking_space"
+},
+{
+"name": "Espaces Atypiques",
+"url": "https://www.espaces-atypiques.com/bourgogne/",
+"host": "espaces-atypiques.com",
+"cat": "estate_agent"
+},
+{
+"name": "Buet immobilier",
+"url": "https://www.buet-immobilier.com/",
+"host": "buet-immobilier.com",
+"cat": "estate_agent"
+},
+{
+"name": "Biscuits Mistral",
+"url": "https://www.biscuits-mistral.fr/",
+"host": "biscuits-mistral.fr",
+"cat": "confectionery"
+},
+{
+"name": "Les lunettes de Mathilde",
+"url": "https://leslunettesdemathilde.fr/",
+"host": "leslunettesdemathilde.fr",
+"cat": "optician"
+},
+{
+"name": "Vaina",
+"url": "http://www.vaïna.fr",
+"host": "vaïna.fr",
+"cat": "chocolate"
+},
+{
+"name": "Matmut",
+"url": "https://www.matmut.fr/agences/bourgogne-franche-comte/cote-d'or/dijon/12-rue-du-temple",
+"host": "matmut.fr",
+"cat": "insurance"
+},
+{
+"name": "GMF",
+"url": "https://www.gmf.fr/agences-gmf/assurance-dijon-centre",
+"host": "gmf.fr",
+"cat": "insurance"
+},
+{
+"name": "Pokawa",
+"url": "https://restaurants.pokawa.com/poke-bowl-dijon",
+"host": "restaurants.pokawa.com",
+"cat": "fast_food"
+},
+{
+"name": "L'alsacien Dijon",
+"url": "https://www.lalsacien.com/restaurant-alsacien-flammekueche-dijon/",
+"host": "lalsacien.com",
+"cat": "restaurant"
+},
+{
+"name": "Apple Store",
+"url": "https://www.apple.com/fr/retail/latoisondor",
+"host": "apple.com",
+"cat": "electronics"
+},
+{
+"name": "Les Fleurs de Jeanne",
+"url": "https://lesfleursdejeanne.com",
+"host": "lesfleursdejeanne.com",
+"cat": "cannabis"
+},
+{
+"name": "Materiel-velo.com",
+"url": "https://www.materiel-velo.com/a269-magasin-materiel-velo-dijon.html",
+"host": "materiel-velo.com",
+"cat": "bicycle"
+},
+{
+"name": "Ateliers Vortex",
+"url": "https://lesateliersvortex.com",
+"host": "lesateliersvortex.com",
+"cat": "arts_centre"
+},
+{
+"name": "Maji' conduite",
+"url": "https://www.maji-conduite.com",
+"host": "maji-conduite.com",
+"cat": "driving_school"
+},
+{
+"name": "Dij'on Cycles",
+"url": "https://www.dijoncycles.fr",
+"host": "dijoncycles.fr",
+"cat": "bicycle"
+},
+{
+"name": "Ecodrome de Dijon",
+"url": "https://ecodrome-dijon.com/",
+"host": "ecodrome-dijon.com",
+"cat": "sports_centre"
+},
+{
+"name": "La Table des Climats",
+"url": "https://www.latabledesclimats.fr/",
+"host": "latabledesclimats.fr",
+"cat": "restaurant"
+},
+{
+"name": "Catapulpe",
+"url": "http://www.catapulpe.fr/",
+"host": "catapulpe.fr",
+"cat": "it"
+},
+{
+"name": "Millet",
+"url": "https://www.millet.com/",
+"host": "millet.com",
+"cat": "outdoor"
+},
+{
+"name": "Madeleine Café",
+"url": "https://madeleinecafe.fr/",
+"host": "madeleinecafe.fr",
+"cat": "restaurant"
+},
+{
+"name": "Vousfinancer",
+"url": "https://courtier.vousfinancer.com/dijon/vousfinancer-dijon-nord-1311",
+"host": "courtier.vousfinancer.com",
+"cat": "financial"
+},
+{
+"name": "Darjeeling",
+"url": "https://www.darjeeling.fr/storelocator/2101",
+"host": "darjeeling.fr",
+"cat": "clothes"
+},
+{
+"name": "Solusons",
+"url": "https://audioprothesiste.solusons.fr/53-audioprothesiste-solusons-dijon-rue-d-auxonne",
+"host": "audioprothesiste.solusons.fr",
+"cat": "hearing_aids"
+},
+{
+"name": "Fleur de Peau",
+"url": "https://www.institutfleurdepeau.com/",
+"host": "institutfleurdepeau.com",
+"cat": "beauty"
+},
+{
+"name": "Le Trappeur",
+"url": "https://letrappeur-dijon.net",
+"host": "letrappeur-dijon.net",
+"cat": "restaurant"
+},
+{
+"name": "Immobilière du palais",
+"url": "https://immopalais.com/",
+"host": "immopalais.com",
+"cat": "estate_agent"
+},
+{
+"name": "Bricole et Barbotine",
+"url": "https://www.bricoleetbarbotine.fr",
+"host": "bricoleetbarbotine.fr",
+"cat": "pottery"
+},
+{
+"name": "Sushi d'or",
+"url": "https://www.sushidordijon.com/",
+"host": "sushidordijon.com",
+"cat": "restaurant"
+},
+{
+"name": "Eleganzza",
+"url": "https://www.ginagino.fr/",
+"host": "ginagino.fr",
+"cat": "hairdresser"
+},
+{
+"name": "Groupe Victor Hugo",
+"url": "https://www.groupevictorhugo.com/",
+"host": "groupevictorhugo.com",
+"cat": "insurance"
+},
+{
+"name": "Cours Ado",
+"url": "https://cours-ado.com",
+"host": "cours-ado.com",
+"cat": "prep_school"
+},
+{
+"name": "L'Atelier de Paola",
+"url": "https://www.latelier-de-paola.com/",
+"host": "latelier-de-paola.com",
+"cat": "hairdresser"
+},
+{
+"name": "Cdc Habitat",
+"url": "https://www.cdc-habitat.fr/",
+"host": "cdc-habitat.fr",
+"cat": "yes"
+},
+{
+"name": "OphtaValmy",
+"url": "https://ophtavalmy.fr/",
+"host": "ophtavalmy.fr",
+"cat": "yes"
+},
+{
+"name": "Interface",
+"url": "https://www.interface-art.com/",
+"host": "interface-art.com",
+"cat": "arts_centre"
+},
+{
+"name": "Bourgogne Bike",
+"url": "https://www.bourgognebike.com/",
+"host": "bourgognebike.com",
+"cat": "bicycle"
+},
+{
+"name": "L'Écaille",
+"url": "https://villagegastronomique.fr/collections/lecaille",
+"host": "villagegastronomique.fr",
+"cat": "seafood"
+},
+{
+"name": "Rent A Car Dijon Toison d'Or",
+"url": "https://www.rentacar.fr/agences/43-dijon-toison-dor",
+"host": "rentacar.fr",
+"cat": "car_rental"
+},
+{
+"name": "Cheminées Miroy",
+"url": "https://www.cheminees-miroy.com/",
+"host": "cheminees-miroy.com",
+"cat": "fireplace"
+},
+{
+"name": "Gammeo",
+"url": "https://gammeo.com/",
+"host": "gammeo.com",
+"cat": "it"
+},
+{
+"name": "Palais des Thés",
+"url": "https://www.palaisdesthes.com/fr/boutiques/dijon/rue-de-la-liberte-fr/",
+"host": "palaisdesthes.com",
+"cat": "tea"
+},
+{
+"name": "L'Ours Pimpant",
+"url": "https://lourspimpantpub.com/",
+"host": "lourspimpantpub.com",
+"cat": "pub"
+},
+{
+"name": "Lucilla – Le Clan des Mamma",
+"url": "https://www.leclandesmamma.com/lucilla-dijon/",
+"host": "leclandesmamma.com",
+"cat": "restaurant"
+},
+{
+"name": "Les 3 Bures",
+"url": "http://www.les3bures.com/",
+"host": "les3bures.com",
+"cat": "restaurant"
+},
+{
+"name": "L’ Encadreur",
+"url": "https://encadreur.fr/",
+"host": "encadreur.fr",
+"cat": "frame"
+},
+{
+"name": "CoqÔrico",
+"url": "https://coq-o-rico.net/",
+"host": "coq-o-rico.net",
+"cat": "deli"
+},
+{
+"name": "Les Champs du Destin",
+"url": "https://leschampsdudestin.com/",
+"host": "leschampsdudestin.com",
+"cat": "bakery"
+},
+{
+"name": "Saison",
+"url": "https://www.saison-restaurant.fr/",
+"host": "saison-restaurant.fr",
+"cat": "restaurant"
+},
+{
+"name": "L'atelier perché",
+"url": "https://www.atelier-perche-dijon.com/",
+"host": "atelier-perche-dijon.com",
+"cat": "fitness_centre"
+},
+{
+"name": "SCP Poignand - Brunet - Brunetaud",
+"url": "https://poignand-brunet.notaires.fr/",
+"host": "poignand-brunet.notaires.fr",
+"cat": "notary"
+},
+{
+"name": "Seguenot Immobilier",
+"url": "https://www.seguenot-immo.com/",
+"host": "seguenot-immo.com",
+"cat": "estate_agent"
+},
+{
+"name": "Darcy Comédie",
+"url": "https://www.darcycomedie.com/",
+"host": "darcycomedie.com",
+"cat": "cafe"
+},
+{
+"name": "Top Emploi",
+"url": "https://topemploi.net/",
+"host": "topemploi.net",
+"cat": "employment_agency"
+},
+{
+"name": "Chouette Beauté",
+"url": "https://chouettebeaute.fr",
+"host": "chouettebeaute.fr",
+"cat": "beauty"
+},
+{
+"name": "NotaSphere",
+"url": "https://dubosson.notaires.fr",
+"host": "dubosson.notaires.fr",
+"cat": "notary"
+},
+{
+"name": "Clara H",
+"url": "https://www.clarahcoiffure.fr",
+"host": "clarahcoiffure.fr",
+"cat": "hairdresser"
+},
+{
+"name": "Foodies",
+"url": "https://www.foodiestruck.fr/",
+"host": "foodiestruck.fr",
+"cat": "fast_food"
+},
+{
+"name": "Kyriad Prestige Dijon Nord Valmy",
+"url": "https://prestige-dijon-nord.kyriad.com",
+"host": "prestige-dijon-nord.kyriad.com",
+"cat": "hotel"
+},
+{
+"name": "TOMA Intérim Dijon",
+"url": "https://www.toma-interim.com/agences/dijon/",
+"host": "toma-interim.com",
+"cat": "employment_agency"
+},
+{
+"name": "Langues et Compétences",
+"url": "https://langues-et-competences.com/",
+"host": "langues-et-competences.com",
+"cat": "language_school"
+},
+{
+"name": "The Californian",
+"url": "https://thecalifornian.fr/",
+"host": "thecalifornian.fr",
+"cat": "fast_food"
+},
+{
+"name": "Audika",
+"url": "https://www.audika.fr/centres/cote-d-or/audioprothesiste-audika-dijon-darcy",
+"host": "audika.fr",
+"cat": "hearing_aids"
+},
+{
+"name": "Consulat honoraire de Belgique",
+"url": "https://france.diplomatie.belgium.be/fr/ambassade-et-consulats/consulats-honoraires/consulat-honoraire-dijon",
+"host": "france.diplomatie.belgium.be",
+"cat": "diplomatic"
+},
+{
+"name": "Trilogie et saveurs",
+"url": "https://trilogie-saveurs.eatbu.com/",
+"host": "trilogie-saveurs.eatbu.com",
+"cat": "restaurant"
+},
+{
+"name": "Maison des avocats",
+"url": "https://www.barreau-dijon.avocat.fr/services/consultations-gratuites",
+"host": "barreau-dijon.avocat.fr",
+"cat": "lawyer"
+},
+{
+"name": "Primea",
+"url": "https://www.primea.fr/",
+"host": "primea.fr",
+"cat": "builder"
+},
+{
+"name": "Dr Wine",
+"url": "https://www.drwine.fr/le-restaurant/",
+"host": "drwine.fr",
+"cat": "bar"
+},
+{
+"name": "Les Clos Vivants - Maître Caviste",
+"url": "https://www.lesclosvivants.fr/",
+"host": "lesclosvivants.fr",
+"cat": "wine"
+},
+{
+"name": "Côté Sushi",
+"url": "https://cotesushi.com/restaurants/3789-cote-sushi-dijon",
+"host": "cotesushi.com",
+"cat": "restaurant"
+},
+{
+"name": "Maître Marine Laurent",
+"url": "https://www.avocat-laurent-dijon.com/",
+"host": "avocat-laurent-dijon.com",
+"cat": "lawyer"
+},
+{
+"name": "Labo Photos",
+"url": "https://www.labophotos.fr/",
+"host": "labophotos.fr",
+"cat": "copyshop"
+},
+{
+"name": "Générale Des Services",
+"url": "https://www.generaledesservices.com/agences/dijon/",
+"host": "generaledesservices.com",
+"cat": "company"
+},
+{
+"name": "Sineo",
+"url": "https://www.sineo.fr/",
+"host": "sineo.fr",
+"cat": "car_repair"
+},
+{
+"name": "AnthroPi",
+"url": "https://www.anthropi.fr/",
+"host": "anthropi.fr",
+"cat": "company"
+},
+{
+"name": "3 Brasseurs",
+"url": "https://restaurants.3brasseurs.com/fr/3-brasseurs-dijon-toison-d-or",
+"host": "restaurants.3brasseurs.com",
+"cat": "restaurant"
+},
+{
+"name": "La Coursive",
+"url": "https://www.la-coursive.fr/",
+"host": "la-coursive.fr",
+"cat": "hackerspace"
+},
+{
+"name": "Gîte Bons Amis",
+"url": "https://www.dijonloc.fr",
+"host": "dijonloc.fr",
+"cat": "chalet"
+},
+{
+"name": "Square Habitat",
+"url": "https://www.squarehabitat.fr/",
+"host": "squarehabitat.fr",
+"cat": "estate_agent"
+},
+{
+"name": "Carré Blanc",
+"url": "https://boutiques.carreblanc.com/linge-de-maison/Dijon/DJ1",
+"host": "boutiques.carreblanc.com",
+"cat": "clothes"
+},
+{
+"name": "Clos des Saveurs",
+"url": "https://le-clos-des-saveurs.eatbu.com/?lang=fr",
+"host": "le-clos-des-saveurs.eatbu.com",
+"cat": "restaurant"
+},
+{
+"name": "Thedra",
+"url": "https://www.thedra.fr/agences/thedra-dijon",
+"host": "thedra.fr",
+"cat": "employment_agency"
+},
+{
+"name": "Cave",
+"url": "https://cave.restaurant/",
+"host": "cave.restaurant",
+"cat": "restaurant"
+},
+{
+"name": "Genesis RH",
+"url": "https://genesisrh.com/",
+"host": "genesisrh.com",
+"cat": "employment_agency"
+},
+{
+"name": "Atelier du Quai",
+"url": "https://www.atelierduquai.com/atelier-du-quai-dijon/",
+"host": "atelierduquai.com",
+"cat": "clothes"
+},
+{
+"name": "Carrosserie Dargaud",
+"url": "https://www.carrosserie-dargaud.com/",
+"host": "carrosserie-dargaud.com",
+"cat": "car_repair"
+},
+{
+"name": "La Clef D'or",
+"url": "https://serrurerie-laclefdor.fr/",
+"host": "serrurerie-laclefdor.fr",
+"cat": "locksmith"
+},
+{
+"name": "Les Gars Des Eaux",
+"url": "https://www.lesgarsdeseaux.com/",
+"host": "lesgarsdeseaux.com",
+"cat": "builder"
+},
+{
+"name": "Bchef - Dijon Cv Godrans",
+"url": "https://linktr.ee/bchef.dijoncv",
+"host": "linktr.ee",
+"cat": "fast_food"
+},
+{
+"name": "Bersot Immobilier",
+"url": "https://www.bersot.net/",
+"host": "bersot.net",
+"cat": "estate_agent"
+},
+{
+"name": "Clinique des Champs-Elysées",
+"url": "https://www.crpce.com/clinique-esthetique-dijon",
+"host": "crpce.com",
+"cat": "doctors"
+},
+{
+"name": "Impactance",
+"url": "https://impactance.fr",
+"host": "impactance.fr",
+"cat": "consulting"
+},
+{
+"name": "Ô 21",
+"url": "https://o21dijon.com/",
+"host": "o21dijon.com",
+"cat": "fast_food"
+},
+{
+"name": "DEKRA",
+"url": "https://www.dekra-norisko.fr/centres-controle-technique/dijon,21000/dekra,s021d088",
+"host": "dekra-norisko.fr",
+"cat": "vehicle_inspection"
+},
+{
+"name": "Cibo",
+"url": "https://www.cibo.restaurant",
+"host": "cibo.restaurant",
+"cat": "restaurant"
+},
+{
+"name": "Legi Conseils",
+"url": "https://www.groupelegi.com/legi-conseils-avocats/",
+"host": "groupelegi.com",
+"cat": "lawyer"
+},
+{
+"name": "Edl & Diagnostic",
+"url": "https://www.edl-diagnostic.fr/",
+"host": "edl-diagnostic.fr",
+"cat": "estate_agent"
+},
+{
+"name": "Comptoir de la cité",
+"url": "https://www.lecomptoirdelacite.fr/",
+"host": "lecomptoirdelacite.fr",
+"cat": "restaurant"
+},
+{
+"name": "Green experience",
+"url": "https://greenexperience.fr/",
+"host": "greenexperience.fr",
+"cat": "cannabis"
+},
+{
+"name": "Proxiserve",
+"url": "https://agence.proxiserve.fr/26-proxiserve-dijon",
+"host": "agence.proxiserve.fr",
+"cat": "company"
+},
+{
+"name": "STN Câblage",
+"url": "https://www.stn-cablage.fr/",
+"host": "stn-cablage.fr",
+"cat": "company"
+},
+{
+"name": "Asten Santé",
+"url": "https://www.astensante.com/",
+"host": "astensante.com",
+"cat": "company"
+},
+{
+"name": "SARI Sécurité",
+"url": "https://sari.sariequipement.fr/",
+"host": "sari.sariequipement.fr",
+"cat": "company"
+},
+{
+"name": "Ducati",
+"url": "https://www.ducati-dijon.com/",
+"host": "ducati-dijon.com",
+"cat": "motorcycle"
+},
+{
+"name": "Les Ateliers NoMa",
+"url": "https://www.ateliersnoma.com/",
+"host": "ateliersnoma.com",
+"cat": "handicraft"
+},
+{
+"name": "In Extenso",
+"url": "https://www.inextenso.fr/agence/expert-comptable-dijon/",
+"host": "inextenso.fr",
+"cat": "accountant"
+},
+{
+"name": "Les Écologistes",
+"url": "https://bourgogne.lesecologistes.fr/",
+"host": "bourgogne.lesecologistes.fr",
+"cat": "political_party"
+},
+{
+"name": "Accros Loisirs",
+"url": "https://accrosloisirs.com/",
+"host": "accrosloisirs.com",
+"cat": "company"
+},
+{
+"name": "Ortho Médica",
+"url": "https://orthomedica.fr/",
+"host": "orthomedica.fr",
+"cat": "company"
+},
+{
+"name": "Dijon Gestion Moteur",
+"url": "https://dgm-moteur.fr/",
+"host": "dgm-moteur.fr",
+"cat": "car_repair"
+},
+{
+"name": "Office Notarial Dijon Cordeliers",
+"url": "https://office-notarial-dijon-cordeliers.notaires.fr/",
+"host": "office-notarial-dijon-cordeliers.notaires.fr",
+"cat": "notary"
+},
+{
+"name": "Pagot Savoie",
+"url": "https://www.pagot-savoie.fr/",
+"host": "pagot-savoie.fr",
+"cat": "trade"
+},
+{
+"name": "Autosécurité François Carthage",
+"url": "https://centre-controle-technique.autosecurite.com/bourgogne-franche-comte/cote-dor/dijon/3-rue-du-docteur-quignard",
+"host": "centre-controle-technique.autosecurite.com",
+"cat": "vehicle_inspection"
+},
+{
+"name": "Nomad Hôtel",
+"url": "https://www.nomad-hotels.com/hotel/nomad-hotel-dijon",
+"host": "nomad-hotels.com",
+"cat": "hotel"
+},
+{
+"name": "ProactiveRH",
+"url": "https://proactiverh.fr/",
+"host": "proactiverh.fr",
+"cat": "employment_agency"
+},
+{
+"name": "La Médicale",
+"url": "https://www.lamedicale.fr/",
+"host": "lamedicale.fr",
+"cat": "insurance"
+},
+{
+"name": "Agence Des Ducs",
+"url": "https://www.agencedesducs.com/",
+"host": "agencedesducs.com",
+"cat": "estate_agent"
+},
+{
+"name": "EMOHD",
+"url": "https://emohd.fr/",
+"host": "emohd.fr",
+"cat": "music_school"
+},
+{
+"name": "Sonepar",
+"url": "https://www.sonepar.fr/fr-fr/store/dijon-2P1",
+"host": "sonepar.fr",
+"cat": "electrical"
+},
+{
+"name": "Abrisun Fermetures",
+"url": "https://www.abrisun-fermetures.com/",
+"host": "abrisun-fermetures.com",
+"cat": "joiner"
+},
+{
+"name": "Lejay Lagoute",
+"url": "https://www.lejay-cassis.com/",
+"host": "lejay-cassis.com",
+"cat": "distillery"
+},
+{
+"name": "Residhome Dijon Cité des Vignes",
+"url": "https://www.residhome.com/residence-hoteliere-aparthotel-dijon-400.html",
+"host": "residhome.com",
+"cat": "hotel"
+},
+{
+"name": "Howdens",
+"url": "https://www.howdens-cuisines.com/nous-trouver/howdens-cuisines-dijon/",
+"host": "howdens-cuisines.com",
+"cat": "kitchen"
+},
+{
+"name": "EM Ascenceurs",
+"url": "https://em-ascenseurs.com/",
+"host": "em-ascenseurs.com",
+"cat": "company"
+},
+{
+"name": "Droz Électricité",
+"url": "https://drozelec.com",
+"host": "drozelec.com",
+"cat": "electrician"
+},
+{
+"name": "Automatismes du Centre Est",
+"url": "https://www.acefrance.com/",
+"host": "acefrance.com",
+"cat": "company"
+},
+{
+"name": "Inovacier",
+"url": "https://inovacier.site-solocal.com",
+"host": "inovacier.site-solocal.com",
+"cat": "metal_construction"
+},
+{
+"name": "Process Équipement Industriel",
+"url": "https://www.processequipementindustriel.com/",
+"host": "processequipementindustriel.com",
+"cat": "metal_construction"
+},
+{
+"name": "Silfeo",
+"url": "https://silfeo.fr/",
+"host": "silfeo.fr",
+"cat": "hvac"
+},
+{
+"name": "Alkimia",
+"url": "https://www.alkimia-france.fr/",
+"host": "alkimia-france.fr",
+"cat": "metal_construction"
+},
+{
+"name": "Api Dijon",
+"url": "https://www.api-france.com/",
+"host": "api-france.com",
+"cat": "car_parts"
+},
+{
+"name": "Mabéo Industries Dijon",
+"url": "https://www.mabeo-industries.com/document/A-518325--agence-mabeo-industries-dijon",
+"host": "mabeo-industries.com",
+"cat": "company"
+},
+{
+"name": "La vélo vie",
+"url": "https://www.lavelovie.com/",
+"host": "lavelovie.com",
+"cat": "bicycle_rental"
+},
+{
+"name": "Godot & Fils",
+"url": "https://godotetfils.com/dijon/",
+"host": "godotetfils.com",
+"cat": "gold_buyer"
+},
+{
+"name": "Proxi Confort - Ets Lamblot David Meunier",
+"url": "https://www.proxiconfort.fr/magasin/proxi-confort-dijon",
+"host": "proxiconfort.fr",
+"cat": "electronics"
+},
+{
+"name": "L'appart fitness",
+"url": "https://clubs.lappartfitness.com/33-l-appart-fitness-dijon-toison-d-or",
+"host": "clubs.lappartfitness.com",
+"cat": "fitness_centre"
+},
+{
+"name": "Dssi Solutions",
+"url": "https://www.dssi-solutions.com",
+"host": "dssi-solutions.com",
+"cat": "company"
+},
+{
+"name": "DreamAway Dijon - Réalité Virtuelle",
+"url": "https://www.dreamaway.fr/villes/dijon",
+"host": "dreamaway.fr",
+"cat": "escape_game"
+},
+{
+"name": "IM2P",
+"url": "https://www.im2p.fr/centre/cabinet-de-radiologie-saint-benigne/",
+"host": "im2p.fr",
+"cat": "doctors"
+},
+{
+"name": "ProCelec",
+"url": "https://sarlprocelec.fr",
+"host": "sarlprocelec.fr",
+"cat": "electrician"
+},
+{
+"name": "Vernes Solutions",
+"url": "https://www.vernesolutions.fr/",
+"host": "vernesolutions.fr",
+"cat": "computer"
+},
+{
+"name": "Maison Ansri",
+"url": "https://maison-ansri.com/",
+"host": "maison-ansri.com",
+"cat": "clothes"
+},
+{
+"name": "Solerys",
+"url": "https://www.solerys.fr/",
+"host": "solerys.fr",
+"cat": "employment_agency"
+},
+{
+"name": "MJC Montchapet",
+"url": "https://accueilmontchapet.wixsite.com/mjc-cs",
+"host": "accueilmontchapet.wixsite.com",
+"cat": "social_centre"
+},
+{
+"name": "Culimarion",
+"url": "https://www.culinarion.com",
+"host": "culinarion.com",
+"cat": "houseware"
+},
+{
+"name": "Adopt'",
+"url": "https://www.adopt.com/fr/store-locator/adopt-parfums-dijon",
+"host": "adopt.com",
+"cat": "perfumery"
+},
+{
+"name": "Organisation Internationale de la Vigne et du Vin",
+"url": "https://www.oiv.int",
+"host": "oiv.int",
+"cat": "international_organization"
+},
+{
+"name": "Atol Conseils & Développements",
+"url": "https://www.atolcd.com/",
+"host": "atolcd.com",
+"cat": "it"
+},
+{
+"name": "Active Tours",
+"url": "https://active-tours.fr/",
+"host": "active-tours.fr",
+"cat": "travel_agency"
+},
+{
+"name": "221b Baker Street",
+"url": "https://221b-dijon.com/",
+"host": "221b-dijon.com",
+"cat": "escape_game"
+},
+{
+"name": "Neuf Mois & toi",
+"url": "https://neufmoisettoi.shop/",
+"host": "neufmoisettoi.shop",
+"cat": "clothes"
+},
+{
+"name": "Le Magasin Moderne",
+"url": "https://www.lemagasinmoderne.fr/",
+"host": "lemagasinmoderne.fr",
+"cat": "interior_decoration"
+},
+{
+"name": "Groupe Edouard Denis",
+"url": "https://edouarddenis-immobilier.com",
+"host": "edouarddenis-immobilier.com",
+"cat": "property_management"
+},
+{
+"name": "Jotul",
+"url": "https://magasin.jotul.fr/dijon/",
+"host": "magasin.jotul.fr",
+"cat": "fireplace"
+},
+{
+"name": "Gina",
+"url": "https://www.restaurant-gina.com/",
+"host": "restaurant-gina.com",
+"cat": "restaurant"
+},
+{
+"name": "Nestenn",
+"url": "https://nestenn.com/",
+"host": "nestenn.com",
+"cat": "estate_agent"
+},
+{
+"name": "GI Group",
+"url": "https://fr.gigroup.com/agence_gi/gi-group-dijon/",
+"host": "fr.gigroup.com",
+"cat": "employment_agency"
+},
+{
+"name": "Le Petit Encadreur",
+"url": "https://lepetitencadreur.com/",
+"host": "lepetitencadreur.com",
+"cat": "frame"
+},
+{
+"name": "Ms Cake Art",
+"url": "https://www.mscakeart.fr/",
+"host": "mscakeart.fr",
+"cat": "pastry"
+},
+{
+"name": "Clinique Les Rosiers",
+"url": "https://clinique-les-rosiers-dijon.ramsaysante.fr/",
+"host": "clinique-les-rosiers-dijon.ramsaysante.fr",
+"cat": "clinic"
+},
+{
+"name": "Bodysano",
+"url": "https://bodysano.com/info/centres/bodysano-dijon/",
+"host": "bodysano.com",
+"cat": "nutrition_supplements"
+},
+{
+"name": "EuroCave",
+"url": "https://www.eurocave.fr/fr/magasins/france-dijon-eurocave-boutique-officielle-dijon",
+"host": "eurocave.fr",
+"cat": "wine_furnishing"
+},
+{
+"name": "Mac Fix",
+"url": "https://www.macfix.fr/",
+"host": "macfix.fr",
+"cat": "computer"
+},
+{
+"name": "Le Prieuré des Sources",
+"url": "https://le-prieure-des-sources.com/instituts/dijon/",
+"host": "le-prieure-des-sources.com",
+"cat": "beauty"
+},
+{
+"name": "Endrix Cabinet Coureau",
+"url": "https://endrix.com",
+"host": "endrix.com",
+"cat": "accountant"
+},
+{
+"name": "Cave Vauban",
+"url": "https://www.cavevauban.com/",
+"host": "cavevauban.com",
+"cat": "alcohol"
+},
+{
+"name": "Beer & Joy",
+"url": "https://www.beerandjoy.fr/",
+"host": "beerandjoy.fr",
+"cat": "pub"
+},
+{
+"name": "In Teglia",
+"url": "https://commande.integlia.fr",
+"host": "commande.integlia.fr",
+"cat": "fast_food"
+},
+{
+"name": "L'Effet Clochette",
+"url": "https://www.leffetclochette.fr/",
+"host": "leffetclochette.fr",
+"cat": "general"
+},
+{
+"name": "Carac",
+"url": "https://www.carac.fr",
+"host": "carac.fr",
+"cat": "insurance"
+},
+{
+"name": "Turnip",
+"url": "https://www.turnip-dijon.com/",
+"host": "turnip-dijon.com",
+"cat": "restaurant"
+},
+{
+"name": "Bicy Atelier",
+"url": "https://bicy-store.com",
+"host": "bicy-store.com",
+"cat": "bicycle"
+},
+{
+"name": "Magic Form",
+"url": "https://magic-form.fr/clubs/dijon/",
+"host": "magic-form.fr",
+"cat": "fitness_centre"
+},
+{
+"name": "Dépann'Rapide 21",
+"url": "https://depann-rapide21.fr/",
+"host": "depann-rapide21.fr",
+"cat": "plumber"
+},
+{
+"name": "Agence Régionale de Santé Bourgogne-France-Comté",
+"url": "https://www.bourgogne-franche-comte.ars.sante.fr",
+"host": "bourgogne-franche-comte.ars.sante.fr",
+"cat": "company"
+},
+{
+"name": "Armand Thiery",
+"url": "https://www.armandthiery.fr/fr/magasins/cote-d-or-21/dijon-route-de-langres-ccommercial-toison-d-or-619.htm",
+"host": "armandthiery.fr",
+"cat": "clothes"
+},
+{
+"name": "Librairie Les Dryades Rêveuses",
+"url": "https://www.lesdryadesreveuses.com/",
+"host": "lesdryadesreveuses.com",
+"cat": "books"
+},
+{
+"name": "Agence Moutarde",
+"url": "https://www.agence-moutarde.com/",
+"host": "agence-moutarde.com",
+"cat": "advertising_agency"
+},
+{
+"name": "Les Presses du Réel",
+"url": "https://www.lespressesdureel.com/nouveautes.php",
+"host": "lespressesdureel.com",
+"cat": "company"
+},
+{
+"name": "Casa Del Mojito",
+"url": "https://casadelmojito.eatbu.com/?",
+"host": "casadelmojito.eatbu.com",
+"cat": "bar"
+},
+{
+"name": "Librairie Grangier",
+"url": "https://www.librairie-grangier.com",
+"host": "librairie-grangier.com",
+"cat": "books"
+},
+{
+"name": "Pain caramel",
+"url": "https://www.paincaramel.com/",
+"host": "paincaramel.com",
+"cat": "bakery"
+},
+{
+"name": "Promogim - Bourgogne / Franche Comté",
+"url": "https://www.promogim.fr/",
+"host": "promogim.fr",
+"cat": "estate_agent"
+},
+{
+"name": "Ronde en Couleurs",
+"url": "https://www.ronde-en-couleurs.com/dijon/",
+"host": "ronde-en-couleurs.com",
+"cat": "clothes"
+},
+{
+"name": "LaserAddict",
+"url": "https://laseraddict.fr/centre/laseraddict-dijon/",
+"host": "laseraddict.fr",
+"cat": "beauty"
+},
+{
+"name": "Søstrene Grene",
+"url": "https://sostrenegrene.com/fr/magasins/rue-dauphine-dijon-s-4059",
+"host": "sostrenegrene.com",
+"cat": "interior_decoration"
+},
+{
+"name": "Doussot Service Énergie",
+"url": "https://www.doussot.fr/",
+"host": "doussot.fr",
+"cat": "hvac"
+},
+{
+"name": "La Douzième Heure",
+"url": "https://ladouziemeheure.com/",
+"host": "ladouziemeheure.com",
+"cat": "escape_game"
+},
+{
+"name": "Le Crusoé",
+"url": "https://lecrusoe.fr",
+"host": "lecrusoe.fr",
+"cat": "restaurant"
+},
+{
+"name": "QUARRÉ Géomètre Expert",
+"url": "https://www.quarre.fr",
+"host": "quarre.fr",
+"cat": "surveyor"
+},
+{
+"name": "Odivea",
+"url": "https://odivea.fr",
+"host": "odivea.fr",
+"cat": "water_utility"
+},
+{
+"name": "La chocolaterie de Bourgogne",
+"url": "https://www.chocolateriedebourgogne.com/magasins",
+"host": "chocolateriedebourgogne.com",
+"cat": "chocolate"
+},
+{
+"name": "Nomad Motors",
+"url": "https://www.nomadmotors-dijon.com",
+"host": "nomadmotors-dijon.com",
+"cat": "motorcycle"
+},
+{
+"name": "MMA",
+"url": "https://agence.mma.fr/dijon-congres/",
+"host": "agence.mma.fr",
+"cat": "insurance"
+},
+{
+"name": "Patrick Gauchot Courtage",
+"url": "https://courtier-credits.com",
+"host": "courtier-credits.com",
+"cat": "credit_broker"
+},
+{
+"name": "Crossfit Artio",
+"url": "https://www.crossfitartio.com/",
+"host": "crossfitartio.com",
+"cat": "fitness_centre"
+},
+{
+"name": "Centre COS Divio",
+"url": "https://www.fondationcos.org/centre-de-reeducation-fonctionnelle-crf-cos-divio",
+"host": "fondationcos.org",
+"cat": "centre_de_rééducation_fonctionnelle_(crf)"
+},
+{
+"name": "Centre Ophtalmologique Dijon Toison D'Or",
+"url": "https://www.ophtalmo-dijon-toison.fr/",
+"host": "ophtalmo-dijon-toison.fr",
+"cat": "doctors"
+},
+{
+"name": "Almas Propreté",
+"url": "https://www.almas-proprete.fr/?utm_source=gmb",
+"host": "almas-proprete.fr",
+"cat": "cleaning"
+},
+{
+"name": "AIST 21",
+"url": "https://aist21.com/",
+"host": "aist21.com",
+"cat": "doctors"
+},
+{
+"name": "Exco Socodec Dijon",
+"url": "https://exco.fr/cabinets/exco-dijon/",
+"host": "exco.fr",
+"cat": "accountant"
+},
+{
+"name": "Ligne Tertiaire",
+"url": "https://lignetertiaire.fr/",
+"host": "lignetertiaire.fr",
+"cat": "interior_design"
+},
+{
+"name": "Handirect",
+"url": "https://handirect.com/nos-agences/dijon-bourgogne-franche-comte/",
+"host": "handirect.com",
+"cat": "company"
+},
+{
+"name": "Slowianka",
+"url": "https://slowianka-nail.fr/",
+"host": "slowianka-nail.fr",
+"cat": "cosmetics"
+},
+{
+"name": "Francofa Eurodis",
+"url": "https://www.francofa-eurodis.fr/content/361-agence-de-dijon",
+"host": "francofa-eurodis.fr",
+"cat": "trade"
+},
+{
+"name": "Bouchara",
+"url": "https://www.bouchara.com/boutiques/bouchara-dijon",
+"host": "bouchara.com",
+"cat": "interior_decoration"
+},
+{
+"name": "Arcades & Baies",
+"url": "https://magasin-dijon.arcadesetbaies.com",
+"host": "magasin-dijon.arcadesetbaies.com",
+"cat": "carpenter"
+},
+{
+"name": "Aurélien Duvoie",
+"url": "https://www.aurelienduvoie.fr",
+"host": "aurelienduvoie.fr",
+"cat": "chocolate"
+},
+{
+"name": "Mélusine",
+"url": "https://www.creation-melusine.com",
+"host": "creation-melusine.com",
+"cat": "clothes"
+},
+{
+"name": "Café Joyeux",
+"url": "https://www.cafejoyeux.com/fr/",
+"host": "cafejoyeux.com",
+"cat": "cafe"
+},
+{
+"name": "Pâtisphère by Knelle",
+"url": "https://www.patisphere.com/",
+"host": "patisphere.com",
+"cat": "pastry"
+},
+{
+"name": "Le 38",
+"url": "https://www.mlebrunch.com",
+"host": "mlebrunch.com",
+"cat": "restaurant"
+},
+{
+"name": "Mama Shelter",
+"url": "https://fr.mamashelter.com/dijon/",
+"host": "fr.mamashelter.com",
+"cat": "hotel"
+},
+{
+"name": "Kyriad Direct Dijon Nord",
+"url": "https://direct-dijon-nord.kyriad.com",
+"host": "direct-dijon-nord.kyriad.com",
+"cat": "restaurant"
+},
+{
+"name": "Climb Up Dijon",
+"url": "https://dijon.climb-up.fr/",
+"host": "dijon.climb-up.fr",
+"cat": "sports_centre"
+},
+{
+"name": "La Chapelle des Ducs",
+"url": "https://chapelledesducs.fr/",
+"host": "chapelledesducs.fr",
+"cat": "events_venue"
+},
+{
+"name": "Service de Santé Étudiante",
+"url": "https://www.ube.fr/espace-etudiant/service-de-sante-etudiante-sse/",
+"host": "ube.fr",
+"cat": "yes"
+},
+{
+"name": "Golf Bluegreen Quétigny",
+"url": "https://bluegreen.fr/quetigny/",
+"host": "bluegreen.fr",
+"cat": "golf_course"
+},
+{
+"name": "Maison Relais Croix-Rouge",
+"url": "https://www.croix-rouge.fr/",
+"host": "croix-rouge.fr",
+"cat": "social_centre"
+},
+{
+"name": "Pharmacie Poincaré",
+"url": "https://pharmaciepoincare.pharmavie.fr/",
+"host": "pharmaciepoincare.pharmavie.fr",
+"cat": "pharmacy"
+},
+{
+"name": "Le Consortium",
+"url": "https://www.consortiummuseum.com/fr",
+"host": "consortiummuseum.com",
+"cat": "arts_centre"
+},
+{
+"name": "La Minoterie",
+"url": "https://laminoterie-jeunepublic.fr/",
+"host": "laminoterie-jeunepublic.fr",
+"cat": "arts_centre"
+},
+{
+"name": "Mazars",
+"url": "https://www.mazars.fr",
+"host": "mazars.fr",
+"cat": "accountant"
+},
+{
+"name": "AMG Informatique",
+"url": "https://amg-informatique.fr/w2/",
+"host": "amg-informatique.fr",
+"cat": "it"
+},
+{
+"name": "Scanner Louis Neel",
+"url": "https://www.centrelouisneel.fr/",
+"host": "centrelouisneel.fr",
+"cat": "doctors"
+},
+{
+"name": "Botanic",
+"url": "https://www.botanic.com/nos-magasins/botanic-dijon/dij.html",
+"host": "botanic.com",
+"cat": "garden_centre"
+},
+{
+"name": "Concept Car",
+"url": "https://conceptcar-dijon.espacevo.fr",
+"host": "conceptcar-dijon.espacevo.fr",
+"cat": "car"
+},
+{
+"name": "Crématorium",
+"url": "https://www.dijon-metropole.fr/dijon-metropole-a-votre-service/site-funeraire/le-crematorium-de-dijon-metropole/",
+"host": "dijon-metropole.fr",
+"cat": "crematorium"
+},
+{
+"name": "Cycles Lapierre",
+"url": "https://www.lapierrebikes.com",
+"host": "lapierrebikes.com",
+"cat": "company"
+},
+{
+"name": "Contrôle technique de la Source",
+"url": "https://www.controle-technique-de-la-source.fr/",
+"host": "controle-technique-de-la-source.fr",
+"cat": "vehicle_inspection"
+},
+{
+"name": "Maison de la Jeunesse et de la Culture Les Bourroches - Valendons",
+"url": "https://www.mjc-cs-bourroches.fr/",
+"host": "mjc-cs-bourroches.fr",
+"cat": "arts_centre"
+},
+{
+"name": "Clinique vétérinaire Eiffel",
+"url": "https://www.clinique-veterinaire-eiffel.com/",
+"host": "clinique-veterinaire-eiffel.com",
+"cat": "veterinary"
+},
+{
+"name": "Les Comptoirs de la Bio",
+"url": "https://magasins.lescomptoirsdelabio.fr/fr/les-comptoirs-de-la-bio-dijon-105426",
+"host": "magasins.lescomptoirsdelabio.fr",
+"cat": "convenience"
+},
+{
+"name": "Camping du Lac Kir",
+"url": "https://www.camping-du-lac-dijon.com/",
+"host": "camping-du-lac-dijon.com",
+"cat": "camp_site"
+},
+{
+"name": "Ristorante Del Arte",
+"url": "https://www.delarte.fr/restaurant-italien-pizzeria-dijon.html",
+"host": "delarte.fr",
+"cat": "restaurant"
+},
+{
+"name": "ici Bourgogne",
+"url": "https://www.francebleu.fr/bourgogne",
+"host": "francebleu.fr",
+"cat": "studio"
+},
+{
+"name": "Grand Hôtel La Cloche",
+"url": "https://www.hotel-lacloche.fr/",
+"host": "hotel-lacloche.fr",
+"cat": "hotel"
+},
+{
+"name": "L'aparthoteL LhL",
+"url": "https://www.aparthotel-dijon.com/",
+"host": "aparthotel-dijon.com",
+"cat": "hotel"
+},
+{
+"name": "La Bergerie hôtellerie-restauration",
+"url": "https://www.labergerie-dijon.com/",
+"host": "labergerie-dijon.com",
+"cat": "hostel"
+},
+{
+"name": "Espace Autogéré des Tanneries",
+"url": "https://tanneries.org/",
+"host": "tanneries.org",
+"cat": "arts_centre"
+},
+{
+"name": "Safran Electronics & Defense",
+"url": "https://www.safran-group.com/fr/implantations/france/safran-electronics-defense-dijon-2077551",
+"host": "safran-group.com",
+"cat": "company"
+},
+{
+"name": "Relay",
+"url": "https://www.relay.com/stores/relay-gare-de-dijon/",
+"host": "relay.com",
+"cat": "newsagent"
+},
+{
+"name": "Entre Port et Canal",
+"url": "https://www.airbnb.fr/rooms/27330315",
+"host": "airbnb.fr",
+"cat": "apartment"
+},
+{
+"name": "Aire de camping-cars Camping du Lac Kir",
+"url": "https://www.aireparkreservation.com/aires-camping-cars/bourgogne-franche-comte/cote-or/dijon",
+"host": "aireparkreservation.com",
+"cat": "caravan_site"
+},
+{
+"name": "Centre commercial Dauphine",
+"url": "https://www.dauphine-dijon.com/",
+"host": "dauphine-dijon.com",
+"cat": "mall"
+},
+{
+"name": "France 3 Bourgogne",
+"url": "https://france3-regions.francetvinfo.fr/bourgogne-franche-comte/",
+"host": "france3-regions.francetvinfo.fr",
+"cat": "studio"
+},
+{
+"name": "Éthic Étapes Dijon - CRI",
+"url": "https://www.cri-dijon.com/",
+"host": "cri-dijon.com",
+"cat": "hotel"
+}
+]
