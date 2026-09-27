@@ -42,13 +42,27 @@ export function IgStories({ links, handle, tagline }: { links: IgLink[]; handle:
           <p className="mt-2 text-sm text-aluminium">{tagline}</p>
         </motion.div>
 
+        {/* Contact en premier */}
+        <motion.a
+          {...fade(1)}
+          href={wa}
+          target="_blank"
+          rel="noopener noreferrer"
+          {...trackAttrs("whatsapp_click", { location: "ig" })}
+          className="mt-8 flex h-14 items-center justify-center gap-2 text-sm font-bold uppercase tracking-widest text-white"
+          style={{ backgroundColor: "#25D366" }}
+        >
+          Nous écrire sur WhatsApp
+        </motion.a>
+        <p className="mt-2 text-center text-[11px] uppercase tracking-widest text-[#8a8a8a]">Réponse dans la journée</p>
+
         {/* Carte mise en avant */}
         {first && (
           <motion.a
-            {...fade(1)}
+            {...fade(2)}
             href={first.href}
             {...trackAttrs("ig_click", { link: first.id, index: "1" })}
-            className="group relative mt-8 block overflow-hidden border border-[#2a2a2a] bg-[#0f0f0f]"
+            className="group relative mt-6 block overflow-hidden border border-[#2a2a2a] bg-[#0f0f0f]"
           >
             <div className="relative aspect-[4/3]">
               <Image src={first.image} alt="" fill priority sizes="(max-width: 448px) 100vw, 448px" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
@@ -75,7 +89,7 @@ export function IgStories({ links, handle, tagline }: { links: IgLink[]; handle:
           {rest.map((l, k) => (
             <motion.a
               key={l.id}
-              {...fade(k + 2)}
+              {...fade(k + 3)}
               href={l.href}
               {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               {...trackAttrs("ig_click", { link: l.id, index: String(k + 2) })}
@@ -93,19 +107,6 @@ export function IgStories({ links, handle, tagline }: { links: IgLink[]; handle:
             </motion.a>
           ))}
         </div>
-
-        {/* WhatsApp */}
-        <motion.a
-          {...fade(rest.length + 2)}
-          href={wa}
-          target="_blank"
-          rel="noopener noreferrer"
-          {...trackAttrs("whatsapp_click", { location: "ig" })}
-          className="mt-6 flex h-14 items-center justify-center gap-2 text-sm font-bold uppercase tracking-widest text-white"
-          style={{ backgroundColor: "#25D366" }}
-        >
-          Écrire sur WhatsApp
-        </motion.a>
 
         <p className="mt-auto pt-10 text-center text-[11px] uppercase tracking-widest text-[#5e6063]">© Globe Créateur · globecreateur.fr</p>
       </div>
