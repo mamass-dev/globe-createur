@@ -37,6 +37,15 @@ export const IG_LINKS: IgLink[] = [
     pinnedUntil: "2026-10-15",
   },
   {
+    id: "contact",
+    tag: "Parlons-en",
+    hook: "Un projet ? On en parle.",
+    sub: "Rendez-vous de 20 minutes, gratuit et sans engagement.",
+    href: "/devis?utm_source=ig&utm_medium=bio&utm_campaign=contact",
+    image: "/images/team/axel-masson-portrait.webp",
+    cta: "Prendre rendez-vous",
+  },
+  {
     id: "video",
     tag: "Showreel",
     hook: "Ce qu'on filme du ciel.",
@@ -71,15 +80,6 @@ export const IG_LINKS: IgLink[] = [
     href: "/a-propos?utm_source=ig&utm_medium=bio&utm_campaign=equipe",
     image: "/images/team/adrien-lecrivain-portrait.webp",
     cta: "Faire connaissance",
-  },
-  {
-    id: "contact",
-    tag: "Parlons-en",
-    hook: "Un projet ? Une question ?",
-    sub: "WhatsApp, réponse dans la journée. Ou un rendez-vous de 20 minutes, gratuit.",
-    href: "/devis?utm_source=ig&utm_medium=bio&utm_campaign=contact",
-    image: "/images/team/axel-masson-portrait.webp",
-    cta: "Prendre rendez-vous",
   },
 ]
 
