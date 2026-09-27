@@ -1,9 +1,9 @@
 "use client"
 
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import Image from "next/image"
-import { AnimatePresence, motion } from "framer-motion"
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
+import { motion } from "framer-motion"
+import { ArrowRight } from "lucide-react"
 import { Wordmark } from "@/components/ui/wordmark"
 import { CardIntro } from "@/components/carte/card-intro"
 import { WHATSAPP_NUMBER } from "@/components/ui/whatsapp-link"
@@ -11,155 +11,104 @@ import { track, trackAttrs } from "@/lib/analytics"
 import type { IgLink } from "@/lib/data/ig-links"
 
 /**
- * Page de liens Instagram en format story : une carte plein écran par destination, visuel réel,
- * hook en gros, un seul bouton. Swipe horizontal / flèches / clavier, barre de progression en haut,
- * intro « G » au chargement (une fois par session), suivi Rybbit `ig_view` + `ig_click`.
+ * Page de liens Instagram : liste verticale, tout visible d'un coup (pas de swipe à deviner).
+ * Chaque lien est une carte illustrée avec le hook du reel ; la première est mise en avant.
+ * Intro « G » (une fois par session), suivi Rybbit `ig_view` + `ig_click`.
  */
 export function IgStories({ links, handle, tagline }: { links: IgLink[]; handle: string; tagline: string }) {
   const [intro, setIntro] = useState(true)
-  const [i, setI] = useState(0)
-  const [dir, setDir] = useState(1)
-  const touch = useRef<{ x: number; y: number } | null>(null)
-  const n = links.length
-  const cur = links[i]
-
-  const go = useCallback(
-    (d: number) => {
-      setDir(d)
-      setI((v) => Math.min(n - 1, Math.max(0, v + d)))
-    },
-    [n]
-  )
-
-  useEffect(() => {
-    if (intro) return
-    track("ig_view", { link: cur.id, index: i + 1 })
-  }, [i, intro, cur.id])
-
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight") go(1)
-      if (e.key === "ArrowLeft") go(-1)
-    }
-    window.addEventListener("keydown", onKey)
-    return () => window.removeEventListener("keydown", onKey)
-  }, [go])
-
   const onIntroDone = useCallback(() => setIntro(false), [])
+  useEffect(() => {
+    if (!intro) track("ig_view", { link: "page", index: links.length })
+  }, [intro, links.length])
+
   const wa = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Bonjour Axel, je viens d'Instagram et j'aimerais discuter d'un projet.")}`
+  const [first, ...rest] = links
+  const fade = (i: number) => ({ initial: { opacity: 0, y: 18 }, animate: { opacity: intro ? 0 : 1, y: intro ? 18 : 0 }, transition: { delay: 0.06 * i, duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } })
 
   return (
-    <div className="flex min-h-dvh items-center justify-center bg-noir lg:py-8">
-    <div
-      className="relative h-dvh w-full overflow-hidden bg-noir text-ivory select-none lg:h-[min(860px,calc(100dvh-4rem))] lg:w-[420px] lg:border lg:border-[#2a2a2a] lg:shadow-[0_0_120px_rgba(230,58,43,0.15)]"
-      onTouchStart={(e) => (touch.current = { x: e.touches[0].clientX, y: e.touches[0].clientY })}
-      onTouchEnd={(e) => {
-        if (!touch.current) return
-        const dx = e.changedTouches[0].clientX - touch.current.x
-        const dy = e.changedTouches[0].clientY - touch.current.y
-        touch.current = null
-        if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? 1 : -1)
-      }}
-    >
+    <div className="relative min-h-dvh bg-noir text-ivory">
       <CardIntro slug="ig" onDone={onIntroDone} />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-[40vh] bg-[radial-gradient(120%_80%_at_50%_0%,rgba(230,58,43,0.18),transparent_70%)]" />
+      <div aria-hidden="true" className="dot-grid pointer-events-none absolute inset-0 opacity-40" />
 
-      {/* Visuel plein écran */}
-      <AnimatePresence initial={false} custom={dir} mode="popLayout">
-        <motion.div
-          key={cur.id}
-          custom={dir}
-          initial={{ opacity: 0, x: dir * 60, scale: 1.04 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
-          exit={{ opacity: 0, x: -dir * 60, scale: 1.02 }}
-          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute inset-0"
-        >
-          <Image src={cur.image} alt="" fill priority sizes="100vw" className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/90" />
+      <div className="relative mx-auto flex min-h-dvh w-full max-w-md flex-col px-5 pb-10 pt-8" style={{ paddingBottom: "max(2.5rem, env(safe-area-inset-bottom))" }}>
+        {/* En-tête */}
+        <motion.div {...fade(0)} className="flex flex-col items-center text-center">
+          <Wordmark size="md" className="items-center" />
+          <a href={`https://www.instagram.com/${handle.replace("@", "")}/`} target="_blank" rel="noopener noreferrer" className="mt-4 text-[11px] font-bold uppercase tracking-[0.25em] text-signal">
+            {handle}
+          </a>
+          <p className="mt-2 text-sm text-aluminium">{tagline}</p>
         </motion.div>
-      </AnimatePresence>
 
-      {/* Zones tap gauche / droite (mobile) */}
-      {/* Zones de tap sur la moitié haute (le bas est réservé au bouton) : gauche = précédent, droite = suivant */}
-      <button type="button" aria-label="Précédent" onClick={() => go(-1)} className="absolute left-0 top-0 z-30 h-1/2 w-1/3 cursor-pointer" />
-      <button type="button" aria-label="Suivant" onClick={() => go(1)} className="absolute right-0 top-0 z-30 h-1/2 w-2/3 cursor-pointer" />
+        {/* Carte mise en avant */}
+        {first && (
+          <motion.a
+            {...fade(1)}
+            href={first.href}
+            {...trackAttrs("ig_click", { link: first.id, index: "1" })}
+            className="group relative mt-8 block overflow-hidden border border-[#2a2a2a] bg-[#0f0f0f]"
+          >
+            <div className="relative aspect-[4/3]">
+              <Image src={first.image} alt="" fill priority sizes="(max-width: 448px) 100vw, 448px" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-5">
+                <span className="inline-flex items-center gap-2 font-mono-accent text-[11px] font-bold uppercase tracking-[0.25em] text-signal">
+                  <span className="h-[2px] w-6 bg-signal" />
+                  {first.tag}
+                </span>
+                <h1 className="text-impact mt-3 text-3xl leading-[0.95] text-ivory">{first.hook}</h1>
+              </div>
+            </div>
+            <div className="flex items-center justify-between gap-4 p-5">
+              <p className="text-sm text-aluminium">{first.sub}</p>
+              <span className="inline-flex h-11 shrink-0 items-center gap-2 bg-signal px-5 text-xs font-bold uppercase tracking-widest text-white">
+                {first.cta} <ArrowRight className="h-4 w-4" />
+              </span>
+            </div>
+          </motion.a>
+        )}
 
-      <div className="relative z-20 mx-auto flex h-full w-full max-w-md flex-col px-5 pb-6 pt-4" style={{ paddingBottom: "max(1.5rem, env(safe-area-inset-bottom))" }}>
-        {/* Progression */}
-        <div className="relative z-40 flex gap-1.5">
-          {links.map((l, k) => (
-            <button
+        {/* Autres liens : cartes compactes, vignette + hook + flèche */}
+        <div className="mt-4 space-y-3">
+          {rest.map((l, k) => (
+            <motion.a
               key={l.id}
-              type="button"
-              aria-label={`Aller à ${k + 1}`}
-              onClick={() => { setDir(k > i ? 1 : -1); setI(k) }}
-              className="h-1 flex-1 overflow-hidden bg-white/25"
+              {...fade(k + 2)}
+              href={l.href}
+              {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              {...trackAttrs("ig_click", { link: l.id, index: String(k + 2) })}
+              className="group flex items-center gap-4 border border-[#2a2a2a] bg-[#0f0f0f] p-3 pr-4 transition-colors hover:border-signal active:border-signal"
             >
-              <span className={`block h-full bg-ivory transition-[width] duration-500 ${k < i ? "w-full" : k === i ? "w-full" : "w-0"}`} />
-            </button>
+              <div className="relative h-20 w-20 shrink-0 overflow-hidden">
+                <Image src={l.image} alt="" fill sizes="80px" className="object-cover" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <span className="font-mono-accent text-[10px] font-bold uppercase tracking-[0.2em] text-signal">{l.tag}</span>
+                <p className="mt-1 font-display text-base font-bold leading-tight text-ivory">{l.hook}</p>
+                <p className="mt-1 line-clamp-1 text-xs text-aluminium">{l.sub}</p>
+              </div>
+              <ArrowRight className="h-5 w-5 shrink-0 text-aluminium transition-all group-hover:translate-x-1 group-hover:text-signal" />
+            </motion.a>
           ))}
         </div>
 
-        {/* En-tête */}
-        <div className="relative z-40 mt-4 flex items-center justify-between">
-          <Wordmark size="sm" />
-          <a href={`https://www.instagram.com/${handle.replace("@", "")}/`} target="_blank" rel="noopener noreferrer" className="text-[11px] font-bold uppercase tracking-widest text-ivory/80">
-            {handle}
-          </a>
-        </div>
+        {/* WhatsApp */}
+        <motion.a
+          {...fade(rest.length + 2)}
+          href={wa}
+          target="_blank"
+          rel="noopener noreferrer"
+          {...trackAttrs("whatsapp_click", { location: "ig" })}
+          className="mt-6 flex h-14 items-center justify-center gap-2 text-sm font-bold uppercase tracking-widest text-white"
+          style={{ backgroundColor: "#25D366" }}
+        >
+          Écrire sur WhatsApp
+        </motion.a>
 
-        {/* Contenu de la carte */}
-        <div className="mt-auto">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={cur.id}
-              initial={{ opacity: 0, y: 22 }}
-              animate={{ opacity: intro ? 0 : 1, y: intro ? 22 : 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <span className="inline-flex items-center gap-2 font-mono-accent text-[11px] font-bold uppercase tracking-[0.25em] text-signal">
-                <span className="h-[2px] w-6 bg-signal" />
-                {cur.tag} · {i + 1}/{n}
-              </span>
-              <h1 className="text-impact mt-4 text-[2.4rem] leading-[0.95] sm:text-5xl text-ivory">{cur.hook}</h1>
-              <p className="mt-4 max-w-sm text-base leading-relaxed text-ivory/80">{cur.sub}</p>
-              <a
-                href={cur.href}
-                {...(cur.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                {...trackAttrs("ig_click", { link: cur.id, index: String(i + 1) })}
-                className="mt-6 flex h-14 w-full items-center justify-center gap-2 bg-signal text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#d62e20]"
-              >
-                {cur.cta} <ArrowRight className="h-4 w-4" />
-              </a>
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Pied : WhatsApp + navigation */}
-          <div className="mt-4 flex items-center justify-between">
-            <a
-              href={wa}
-              target="_blank"
-              rel="noopener noreferrer"
-              {...trackAttrs("whatsapp_click", { location: "ig" })}
-              className="inline-flex h-10 items-center gap-2 rounded-full px-4 text-xs font-bold text-white"
-              style={{ backgroundColor: "#25D366" }}
-            >
-              WhatsApp
-            </a>
-            <div className="flex items-center gap-2">
-              <button type="button" onClick={() => go(-1)} disabled={i === 0} aria-label="Précédent" className="flex h-10 w-10 items-center justify-center border border-white/25 text-ivory disabled:opacity-30">
-                <ChevronLeft className="h-4 w-4" />
-              </button>
-              <button type="button" onClick={() => go(1)} disabled={i === n - 1} aria-label="Suivant" className="flex h-10 w-10 items-center justify-center border border-white/25 text-ivory disabled:opacity-30">
-                <ChevronRight className="h-4 w-4" />
-              </button>
-            </div>
-          </div>
-          <p className="mt-4 text-center text-[10px] uppercase tracking-[0.25em] text-ivory/50">{tagline}</p>
-        </div>
+        <p className="mt-auto pt-10 text-center text-[11px] uppercase tracking-widest text-[#5e6063]">© Globe Créateur · globecreateur.fr</p>
       </div>
-    </div>
     </div>
   )
 }
