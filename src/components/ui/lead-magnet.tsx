@@ -9,6 +9,7 @@ import { X, ArrowRight, CheckCircle, Gift } from "lucide-react"
 // Pas de pop-up sur les pages où le visiteur est déjà en train de commander ou d'écrire
 const EXCLUDED_PATHS = [
   "/",
+  "/ig",
   "/cl-racing",
   "/devis",
   "/contact",

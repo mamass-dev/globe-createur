@@ -8,6 +8,6 @@ import { usePathname } from "next/navigation"
  */
 export function HideOnCard({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
-  if (pathname?.startsWith("/carte")) return null
+  if (pathname?.startsWith("/carte") || pathname === "/ig") return null
   return <>{children}</>
 }

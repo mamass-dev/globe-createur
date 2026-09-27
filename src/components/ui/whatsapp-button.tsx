@@ -7,7 +7,7 @@ import { trackAttrs } from "@/lib/analytics"
 export function WhatsAppButton() {
   const [visible, setVisible] = useState(true)
   const pathname = usePathname()
-  const homeMobileHidden = pathname === "/" ? "hidden lg:flex" : "flex"
+  const homeMobileHidden = pathname === "/" ? "hidden lg:flex" : pathname === "/ig" || pathname?.startsWith("/carte") ? "hidden" : "flex"
   const [lastScrollY, setLastScrollY] = useState(0)
 
   const handleScroll = useCallback(() => {
