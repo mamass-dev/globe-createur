@@ -49,8 +49,9 @@ export function IgStories({ links, handle, tagline }: { links: IgLink[]; handle:
   const wa = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Bonjour Axel, je viens d'Instagram et j'aimerais discuter d'un projet.")}`
 
   return (
+    <div className="flex min-h-dvh items-center justify-center bg-noir lg:py-8">
     <div
-      className="relative h-dvh w-full overflow-hidden bg-noir text-ivory select-none"
+      className="relative h-dvh w-full overflow-hidden bg-noir text-ivory select-none lg:h-[min(860px,calc(100dvh-4rem))] lg:w-[420px] lg:border lg:border-[#2a2a2a] lg:shadow-[0_0_120px_rgba(230,58,43,0.15)]"
       onTouchStart={(e) => (touch.current = { x: e.touches[0].clientX, y: e.touches[0].clientY })}
       onTouchEnd={(e) => {
         if (!touch.current) return
@@ -79,12 +80,13 @@ export function IgStories({ links, handle, tagline }: { links: IgLink[]; handle:
       </AnimatePresence>
 
       {/* Zones tap gauche / droite (mobile) */}
-      <button type="button" aria-label="Précédent" onClick={() => go(-1)} className="absolute inset-y-0 left-0 z-10 w-1/4 cursor-default" />
-      <button type="button" aria-label="Suivant" onClick={() => go(1)} className="absolute inset-y-0 right-0 z-10 w-1/4 cursor-default" />
+      {/* Zones de tap sur la moitié haute (le bas est réservé au bouton) : gauche = précédent, droite = suivant */}
+      <button type="button" aria-label="Précédent" onClick={() => go(-1)} className="absolute left-0 top-0 z-30 h-1/2 w-1/3 cursor-pointer" />
+      <button type="button" aria-label="Suivant" onClick={() => go(1)} className="absolute right-0 top-0 z-30 h-1/2 w-2/3 cursor-pointer" />
 
       <div className="relative z-20 mx-auto flex h-full w-full max-w-md flex-col px-5 pb-6 pt-4" style={{ paddingBottom: "max(1.5rem, env(safe-area-inset-bottom))" }}>
         {/* Progression */}
-        <div className="flex gap-1.5">
+        <div className="relative z-40 flex gap-1.5">
           {links.map((l, k) => (
             <button
               key={l.id}
@@ -99,7 +101,7 @@ export function IgStories({ links, handle, tagline }: { links: IgLink[]; handle:
         </div>
 
         {/* En-tête */}
-        <div className="mt-4 flex items-center justify-between">
+        <div className="relative z-40 mt-4 flex items-center justify-between">
           <Wordmark size="sm" />
           <a href={`https://www.instagram.com/${handle.replace("@", "")}/`} target="_blank" rel="noopener noreferrer" className="text-[11px] font-bold uppercase tracking-widest text-ivory/80">
             {handle}
@@ -157,6 +159,7 @@ export function IgStories({ links, handle, tagline }: { links: IgLink[]; handle:
           <p className="mt-4 text-center text-[10px] uppercase tracking-[0.25em] text-ivory/50">{tagline}</p>
         </div>
       </div>
+    </div>
     </div>
   )
 }
