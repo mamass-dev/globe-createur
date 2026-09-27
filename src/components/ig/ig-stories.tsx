@@ -61,9 +61,9 @@ export function IgStories({ links, handle, tagline }: { links: IgLink[]; handle:
                 <h1 className="text-impact mt-3 text-3xl leading-[0.95] text-ivory">{first.hook}</h1>
               </div>
             </div>
-            <div className="flex items-center justify-between gap-4 p-5">
+            <div className="p-5">
               <p className="text-sm text-aluminium">{first.sub}</p>
-              <span className="inline-flex h-11 shrink-0 items-center gap-2 bg-signal px-5 text-xs font-bold uppercase tracking-widest text-white">
+              <span className="mt-4 flex h-12 w-full items-center justify-center gap-2 bg-signal text-xs font-bold uppercase tracking-widest text-white">
                 {first.cta} <ArrowRight className="h-4 w-4" />
               </span>
             </div>
