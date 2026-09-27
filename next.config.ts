@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      // Lien bio Instagram lisible → page de liens
+      { source: "/liens", destination: "/ig", permanent: false },
+      { source: "/links", destination: "/ig", permanent: false },
       // .com → .fr (canonical domain)
       {
         source: "/:path*",
