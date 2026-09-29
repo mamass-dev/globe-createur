@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { OffresFixesSection } from "@/components/sections/offres-fixes-section"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { buildMetadata } from "@/lib/metadata"
@@ -192,6 +193,8 @@ export default function AgenceDolePage() {
 
       {/* CONTACT PRIVILÉGIÉ */}
       <ContactCard city="Dole" />
+
+      <OffresFixesSection />
 
       <Stats stats={stats} />
 

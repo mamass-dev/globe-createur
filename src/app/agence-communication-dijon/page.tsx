@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { OffresFixesSection } from "@/components/sections/offres-fixes-section"
 import Link from "next/link"
 import { buildMetadata } from "@/lib/metadata"
 import { Breadcrumb } from "@/components/layout/breadcrumb"
@@ -228,7 +229,19 @@ export default function AgencePage() {
       </Container>
 
       {/* 5. CONTACT PRIVILÉGIÉ */}
+      <Container className="pb-12 max-w-3xl">
+        <p className="text-aluminium leading-relaxed">
+          Où en est votre site par rapport aux autres entreprises de Dijon ? En septembre 2026, on a analysé
+          501 sites de la ville : score moyen 76/100, 43 % des titres sans le mot « Dijon », un site sur cinq sans titre
+          principal. Les chiffres par secteur sont dans notre{" "}
+          <Link href="/blog/barometre-seo-sites-dijon-2026" className="font-bold text-ivory hover:text-signal">baromètre SEO des sites de Dijon</Link>, et l&apos;
+          <Link href="/analyseur-seo" className="font-bold text-ivory hover:text-signal">analyseur gratuit</Link> vous donne votre score en cinq secondes.
+        </p>
+      </Container>
+
       <ContactCard city="Dijon" />
+
+      <OffresFixesSection />
 
       {/* 6. CHIFFRES */}
       <Stats stats={stats} />

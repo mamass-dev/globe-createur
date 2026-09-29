@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { OffresFixesSection } from "@/components/sections/offres-fixes-section"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { buildMetadata } from "@/lib/metadata"
@@ -22,8 +23,8 @@ import { services } from "@/lib/data/services"
 import { temoignages } from "@/lib/data/temoignages"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Agence de communication à Nevers — Web, SEO & contenu pour PME | Globe Créateur",
-  description: "Agence de communication et agence web pour les PME de Nevers et de la Nièvre : création de site internet, SEO local, photo, vidéo, réseaux sociaux. Audit offert et devis gratuit sous 24 h.",
+  title: "Agence web et communication à Nevers : sites, refonte, SEO Nièvre | Globe Créateur",
+  description: "Agence web à Nevers pour les PME de la Nièvre : création et refonte de site internet, référencement local, branding, photo et vidéo. Audit SEO offert, devis sous 24 h, déplacements à Nevers.",
   path: "/agence-communication-nevers",
   keywords: ["agence communication Nevers", "agence web Nevers", "création site internet Nevers", "agence SEO Nevers", "agence de communication Nevers", "agence digitale Nevers", "webmarketing Nevers", "référencement Nevers", "agence Nièvre"],
 })
@@ -160,7 +161,10 @@ export default function AgenceNeversPage() {
               </Link>{" "}
               : audit de l&apos;existant, redirections 301, conservation des
               contenus qui rankent. Votre nouveau site repart avec l&apos;acquis
-              Google de l&apos;ancien, pas de zéro.
+              Google de l&apos;ancien, pas de zéro. Et si vous avez surtout besoin
+              d&apos;une page qui convertit vite, la{" "}
+              <Link href="/services/landing-page-5-jours">landing page en 5 jours</Link>{" "}
+              est à prix fixe.
             </p>
 
             <h2>Branding, logo et identité visuelle à Nevers</h2>
@@ -171,7 +175,31 @@ export default function AgenceNeversPage() {
               print et digitaux, déclinaisons réseaux sociaux. Avec un principe :
               votre image doit être à la hauteur de votre savoir-faire, et
               cohérente partout où vos clients vous croisent — site, fiche
-              Google, réseaux, véhicules, devanture.
+              Google, réseaux, véhicules, devanture. Nos{" "}
+              <Link href="/services/photographe-entreprise-dijon">photographes</Link>{" "}
+              se déplacent à Nevers pour les reportages, portraits et prises de vue drone.
+            </p>
+
+            <h2>Agence SEO dans la Nièvre : être trouvé à Nevers, Cosne, Decize et Clamecy</h2>
+            <p>
+              Le référencement local à Nevers se joue sur un territoire large et peu
+              concurrentiel. Quand un habitant de la Nièvre cherche un artisan, un
+              restaurant ou un cabinet, il tape le métier suivi de sa ville, et Google
+              affiche d&apos;abord le bloc Maps. Y figurer demande trois choses : une fiche
+              Google complète, un site dont chaque page dit clairement quoi et où, et
+              quelques avis récents. La plupart des entreprises nivernaises n&apos;ont
+              que la première, à moitié remplie.
+            </p>
+            <p>
+              Notre travail SEO pour la Nièvre commence par un{" "}
+              <Link href="/services/audit-seo-flash">audit SEO flash</Link> (vidéo
+              commentée et 10 corrections prioritaires sous 48 h, 249 € HT), ou par
+              l&apos;audit complet offert avant un accompagnement. Puis on construit :
+              pages « métier + ville » pour Nevers et les communes où vous intervenez,{" "}
+              <Link href="/services/fiche-google-business-optimisee">fiche Google Business
+              optimisée</Link>, contenus locaux, suivi mensuel des positions et des
+              appels. Les forfaits démarrent à 600 €/mois ; le détail est sur notre page{" "}
+              <Link href="/services/seo-local-dijon">agence SEO</Link>.
             </p>
 
             <h2>Le marché nivernais : une vraie carte à jouer en digital</h2>
@@ -249,6 +277,8 @@ export default function AgenceNeversPage() {
 
       {/* CONTACT PRIVILÉGIÉ */}
       <ContactCard city="Nevers" />
+
+      <OffresFixesSection />
 
       <Stats stats={stats} />
 

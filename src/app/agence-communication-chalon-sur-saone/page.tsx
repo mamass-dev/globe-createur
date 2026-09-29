@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { OffresFixesSection } from "@/components/sections/offres-fixes-section"
 import Link from "next/link"
 import { buildMetadata } from "@/lib/metadata"
 import { Breadcrumb } from "@/components/layout/breadcrumb"
@@ -179,6 +180,8 @@ export default function AgenceChalonsurSaonePage() {
 
       {/* CONTACT PRIVILÉGIÉ */}
       <ContactCard city="Chalon-sur-Saône" />
+
+      <OffresFixesSection />
 
       <Stats stats={stats} />
 

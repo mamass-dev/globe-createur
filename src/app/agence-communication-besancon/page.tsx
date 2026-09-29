@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { OffresFixesSection } from "@/components/sections/offres-fixes-section"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { buildMetadata } from "@/lib/metadata"
@@ -22,8 +23,8 @@ import { services } from "@/lib/data/services"
 import { temoignages } from "@/lib/data/temoignages"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Agence de communication à Besançon - Studio Digital PME | Globe Créateur",
-  description: "Agence de communication à Besançon spécialisée PME. Sites web, SEO local, photo, vidéo et réseaux sociaux pour les entreprises bisontines. Studio basé à 1h30 de Besançon.",
+  title: "Agence web et communication à Besançon, Doubs : sites, SEO, photo | Globe Créateur",
+  description: "Agence web et de communication pour les PME de Besançon et du Doubs : création de site, référencement local et B2B industriel, photo, vidéo, LinkedIn. Audit SEO offert, déplacements à Besançon.",
   path: "/agence-communication-besancon",
 })
 
@@ -190,6 +191,27 @@ export default function AgenceBesanconPage() {
               mauvaise.
             </p>
 
+            <h2>Agence SEO dans le Doubs : deux stratégies selon votre clientèle</h2>
+            <p>
+              Pour un commerce ou un service aux particuliers de Besançon, Pontarlier
+              ou Montbéliard, le référencement se joue dans le bloc Maps : fiche Google
+              complète, pages « métier + ville », avis. On commence par un{" "}
+              <Link href="/services/audit-seo-flash">audit SEO flash</Link> ou par
+              l&apos;optimisation de votre{" "}
+              <Link href="/services/fiche-google-business-optimisee">fiche Google
+              Business</Link>, deux offres à prix fixe qui donnent un résultat en une
+              semaine.
+            </p>
+            <p>
+              Pour un industriel ou un sous-traitant du Doubs, la bataille est
+              nationale et se gagne sur des pages techniques qui démontrent
+              l&apos;expertise, des{" "}
+              <Link href="/services/photographe-entreprise-dijon">photos d&apos;atelier et
+              de parc machines</Link> qui font la différence auprès d&apos;un acheteur, et
+              une présence LinkedIn régulière. Les deux approches sont détaillées sur
+              notre page <Link href="/services/seo-local-dijon">agence SEO</Link>.
+            </p>
+
             <h2>Forfaits communication pour les PME de Besançon</h2>
             <p>
               Un site internet seul ne suffit pas. Nos{" "}
@@ -222,6 +244,8 @@ export default function AgenceBesanconPage() {
 
       {/* CONTACT PRIVILÉGIÉ */}
       <ContactCard city="Besançon" />
+
+      <OffresFixesSection />
 
       <Stats stats={stats} />
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { OffresFixesSection } from "@/components/sections/offres-fixes-section"
 import Link from "next/link"
 import { buildMetadata } from "@/lib/metadata"
 import { Breadcrumb } from "@/components/layout/breadcrumb"
@@ -208,6 +209,8 @@ export default function AgenceAuxerrePage() {
 
       {/* CONTACT PRIVILÉGIÉ */}
       <ContactCard city="Auxerre" />
+
+      <OffresFixesSection />
 
       <Stats stats={stats} />
 

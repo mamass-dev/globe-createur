@@ -30,6 +30,21 @@ export const serviceFaqs: Record<string, FaqItem[]> = {
         "Les premiers résultats apparaissent généralement entre 3 et 6 mois. Le SEO est un investissement à moyen terme, mais les résultats sont durables contrairement à la publicité.",
     },
     {
+      question: "Proposez-vous un audit SEO à Dijon, et à quel prix ?",
+      answer:
+        "Trois niveaux : l'analyse en ligne gratuite (score sur 100 en 5 secondes), l'audit SEO flash à 249 € HT (vidéo commentée + PDF des 10 priorités sous 48 h, sans engagement), et l'audit complet offert avant tout accompagnement mensuel. Vous choisissez selon que vous voulez vérifier, comprendre ou agir.",
+    },
+    {
+      question: "Quelle différence entre une agence SEO à Dijon et un freelance ?",
+      answer:
+        "Un freelance SEO travaille seul sur le référencement. Chez Globe Créateur, le SEO est fait par les mêmes personnes qui construisent le site et produisent les photos et les contenus : quand une page doit être créée ou une image ajoutée, ça se fait dans la semaine, sans coordination entre trois prestataires. Le reporting mensuel montre positions, appels et demandes, pas seulement du trafic.",
+    },
+    {
+      question: "Intervenez-vous en dehors de Dijon, en Côte-d'Or et en Bourgogne ?",
+      answer:
+        "Oui. Le SEO local se fait à distance, avec des déplacements pour les shootings et les réunions de cadrage. Nous accompagnons des entreprises à Beaune, Chalon-sur-Saône, Auxerre, Nevers, Besançon et dans toute la Bourgogne-Franche-Comté, chacune avec des pages et une fiche Google adaptées à sa ville.",
+    },
+    {
       question: "Garantissez-vous la première position sur Google ?",
       answer:
         "Non, et méfiez-vous de ceux qui le font. Google seul décide du classement. On optimise tous les facteurs sous notre contrôle pour maximiser vos chances.",
