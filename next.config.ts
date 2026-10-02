@@ -96,6 +96,12 @@ const nextConfig: NextConfig = {
       { source: "/combien-coute-un-site-vitrine-a-dijon-en-2025", destination: "/blog/combien-coute-site-vitrine-dijon", permanent: true },
       { source: "/combien-coute-un-site-vitrine-a-dijon-en-2025/", destination: "/blog/combien-coute-site-vitrine-dijon", permanent: true },
       // Anciennes pages WordPress (niveau racine)
+      // Anciennes URLs WordPress encore explorées par Google (rapport Pages, oct. 2026)
+      { source: "/index", destination: "/", permanent: true },
+      { source: "/index.html", destination: "/", permanent: true },
+      { source: "/index.php", destination: "/", permanent: true },
+      { source: "/projets/body-cherie-creation-dune-landing-page-optimisee-pour-la-conversion", destination: "/projets/body-cherie", permanent: true },
+      { source: "/projets/body-cherie-creation-dune-landing-page-optimisee-pour-la-conversion/", destination: "/projets/body-cherie", permanent: true },
       { source: "/faqs", destination: "/faq", permanent: true },
       { source: "/faqs/", destination: "/faq", permanent: true },
       { source: "/accueil-2", destination: "/", permanent: true },
