@@ -37,7 +37,7 @@ export const cards: Record<string, BusinessCard> = {
     org: SITE_NAME,
     tagline:
       "Photographe & vidéaste. Je capture l'essence de votre marque, avec un œil créatif et une exigence technique.",
-    photo: "/images/team/adrien-lecrivain.webp",
+    photo: "/images/team/adrien-lecrivain-carte.webp",
     email: "adrien@globecreateur.fr",
     phoneDisplay: "07 81 20 09 65",
     phoneE164: "+33781200965",
