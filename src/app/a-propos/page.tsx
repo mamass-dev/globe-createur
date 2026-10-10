@@ -1,3 +1,4 @@
+import Link from "next/link"
 import type { Metadata } from "next"
 import Image from "next/image"
 import { buildMetadata } from "@/lib/metadata"
@@ -67,7 +68,7 @@ export default function AProposPage() {
                  Le paysage digital &eacute;volue &agrave; une vitesse fulgurante. Pour une PME, rester comp&eacute;titive demande plus qu&apos;un simple site web ; cela demande une vision, une strat&eacute;gie coh&eacute;rente et une ex&eacute;cution technique irr&eacute;prochable.
               </p>
               <p>
-                 Nous avons fond&eacute; Globe Cr&eacute;ateur pour offrir aux entreprises un partenaire digital unique, capable de g&eacute;rer l&apos;int&eacute;gralit&eacute; de leur communication, de la capture visuelle &agrave; l&apos;automatisation de leurs processus de vente.
+                 Nous avons fond&eacute; Globe Cr&eacute;ateur pour offrir aux entreprises un partenaire digital unique, capable de g&eacute;rer l&apos;int&eacute;gralit&eacute; de leur communication, de la capture visuelle &agrave; l&apos;automatisation de leurs processus de vente. Aujourd&apos;hui, Globe Cr&eacute;ateur est une <Link href="/agence-communication-dijon" className="font-bold text-slate-900 dark:text-white hover:underline">agence de communication &agrave; Dijon</Link> &agrave; deux associ&eacute;s, install&eacute;e &agrave; Longvic.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
                  {[

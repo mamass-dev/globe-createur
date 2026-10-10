@@ -45,9 +45,9 @@ const steps = [
 ]
 
 const stats = [
-  { value: 110, suffix: "+", label: "Projets réalisés" },
-  { value: 30, suffix: "+", label: "PME accompagnées" },
-  { value: 97, suffix: "%", label: "Clients satisfaits" },
+  { value: 20, suffix: "+", label: "Entreprises accompagnées" },
+  { value: 24, suffix: " h", label: "Pour recevoir votre devis" },
+  { value: 5, suffix: " sem.", label: "Pour livrer un site vitrine" },
   { value: 1, suffix: "h15", label: "De Dole" },
 ]
 

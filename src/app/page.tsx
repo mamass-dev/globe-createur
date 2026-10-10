@@ -322,7 +322,7 @@ export default function HomePage() {
               <Kicker number="06">L&apos;équipe</Kicker>
               <h2 className="text-impact mt-6 text-4xl lg:text-6xl text-ivory">Vous parlez à ceux qui font le travail.</h2>
               <p className="mt-5 text-lg text-aluminium leading-relaxed">
-                Deux associés, un studio à Longvic aux portes de Dijon. Pas de commercial, pas de sous-traitance : la personne qui vous répond est celle qui conçoit votre site ou tient l&apos;appareil photo.
+                Deux associés, un studio à Longvic aux portes de Dijon, et une <Link href="/agence-communication-dijon" className="font-bold text-ivory hover:text-signal">agence de communication à Dijon</Link> qui reste à taille humaine. Pas de commercial, pas de sous-traitance : la personne qui vous répond est celle qui conçoit votre site ou tient l&apos;appareil photo.
               </p>
               <div className="mt-8">
                 <Button href="/a-propos" variant="outline" size="md">Découvrir l&apos;équipe</Button>

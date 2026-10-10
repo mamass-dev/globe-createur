@@ -27,7 +27,7 @@ export const serviceFaqs: Record<string, FaqItem[]> = {
     {
       question: "Combien de temps avant de voir des résultats en SEO ?",
       answer:
-        "Les premiers résultats apparaissent généralement entre 3 et 6 mois. Le SEO est un investissement à moyen terme, mais les résultats sont durables contrairement à la publicité.",
+        "Les premières remontées locales (fiche Google, requêtes « métier + ville ») arrivent en général dans les 2 premiers mois. Une position stable dans le Pack Local demande 3 à 6 mois. Le SEO est un investissement à moyen terme, mais les résultats sont durables contrairement à la publicité.",
     },
     {
       question: "Proposez-vous un audit SEO à Dijon, et à quel prix ?",

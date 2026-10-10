@@ -22,8 +22,8 @@ import { services } from "@/lib/data/services"
 import { temoignages } from "@/lib/data/temoignages"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Agence de communication & création de site internet à Dijon | Globe Créateur",
-  description: "Agence de communication à Dijon : création de site internet, SEO local, photo, vidéo, design, réseaux sociaux. Studio basé à Longvic, un interlocuteur unique pour toute votre communication.",
+  title: "Agence de communication à Dijon pour PME | Globe Créateur",
+  description: "Agence de communication à Dijon pour les PME : site internet, SEO local, photo, vidéo, réseaux sociaux. Deux associés à Longvic, un seul interlocuteur, devis sous 24 h.",
   path: "/agence-communication-dijon",
 })
 
@@ -44,9 +44,9 @@ const steps = [
 ]
 
 const stats = [
-  { value: 110, suffix: "+", label: "Projets réalisés" },
-  { value: 30, suffix: "+", label: "PME accompagnées" },
-  { value: 97, suffix: "%", label: "Clients satisfaits" },
+  { value: 20, suffix: "+", label: "Entreprises accompagnées" },
+  { value: 24, suffix: " h", label: "Pour recevoir votre devis" },
+  { value: 5, suffix: " sem.", label: "Pour livrer un site vitrine" },
   { value: 1, label: "Interlocuteur unique" },
 ]
 
@@ -80,9 +80,9 @@ export default function AgencePage() {
 
       {/* 2. HERO */}
       <PageHero
-        badge="Agence communication & création de site Dijon"
-        title="Votre agence de communication et de création de site internet à Dijon"
-        subtitle="Web, SEO, photo, vidéo, design, réseaux sociaux - un studio intégré dédié aux PME qui veulent un site qui rapporte et une communication qui suit. Basé à Longvic, on intervient dans toute la Bourgogne."
+        badge="Agence communication Dijon"
+        title="Agence de communication à Dijon"
+        subtitle="Site internet, SEO local, photo, vidéo, réseaux sociaux : un studio intégré pour les PME dijonnaises qui veulent une communication qui ramène des clients. Basés à Longvic, on intervient dans toute la Bourgogne."
         ctaLabel="Recevoir mon devis sous 24 h"
         ctaHref="/devis"
         secondaryLabel="Voir nos réalisations"
