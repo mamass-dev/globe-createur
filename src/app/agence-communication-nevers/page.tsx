@@ -18,19 +18,20 @@ import { Container } from "@/components/ui/container"
 import { AnimateOnScroll } from "@/components/ui/animate"
 import { CityCrosslinks } from "@/components/sections/city-crosslinks"
 import { RelatedBlogPosts } from "@/components/sections/related-blog-posts"
+import { ProjectsCrosslinks } from "@/components/sections/projects-crosslinks"
 import { ContactCard } from "@/components/sections/contact-card"
 import { services } from "@/lib/data/services"
 import { temoignages } from "@/lib/data/temoignages"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Agence web et communication à Nevers : sites, refonte, SEO Nièvre | Globe Créateur",
-  description: "Agence web à Nevers pour les PME de la Nièvre : création et refonte de site internet, référencement local, branding, photo et vidéo. Audit SEO offert, devis sous 24 h, déplacements à Nevers.",
+  title: "Agence web et communication à Nevers, Nièvre : devis 24 h",
+  description: "Création et refonte de site, SEO local, photo et vidéo pour les PME de Nevers et de la Nièvre. Audit offert, devis sous 24 h, on se déplace.",
   path: "/agence-communication-nevers",
   keywords: ["agence communication Nevers", "agence web Nevers", "création site internet Nevers", "agence SEO Nevers", "agence de communication Nevers", "agence digitale Nevers", "webmarketing Nevers", "référencement Nevers", "agence Nièvre"],
 })
 
 const avantages = [
-  { title: "Proximité Bourgogne Ouest", description: "À 2h de Nevers, on intervient dans la Nièvre pour vos projets. Shooting, réunion de lancement ou audit terrain : on se déplace." },
+  { title: "On se déplace dans la Nièvre", description: "Réunion de lancement, shooting, audit terrain : on vient à Nevers et dans tout le département. Le pilotage courant se fait à distance, sans perte de réactivité." },
   { title: "Connaissance du terroir nivernais", description: "Pouilly-Fumé, Magny-Cours, Loire sauvage : on connaît les atouts de votre territoire et on les valorise dans votre communication." },
   { title: "Interlocuteur unique", description: "Site, SEO, photo, vidéo, réseaux : un seul contact qui pilote tout. Pas de coordination entre 4 freelances différents." },
   { title: "Budget maîtrisé", description: "Nos forfaits sont pensés pour les PME nivernaises. Pas de tarif parisien, pas de coût caché. Vous savez ce que vous payez chaque mois." },
@@ -46,16 +47,16 @@ const steps = [
 ]
 
 const stats = [
-  { value: 110, suffix: "+", label: "Projets réalisés" },
-  { value: 30, suffix: "+", label: "PME accompagnées" },
-  { value: 97, suffix: "%", label: "Clients satisfaits" },
-  { value: 2, suffix: "h", label: "De Nevers" },
+  { value: 20, suffix: "+", label: "Entreprises accompagnées" },
+  { value: 24, suffix: " h", label: "Pour recevoir votre devis" },
+  { value: 5, suffix: " sem.", label: "Pour livrer un site vitrine" },
+  { value: 2, suffix: "", label: "Associés, un seul interlocuteur" },
 ]
 
 const faqAgence = [
   { question: "Êtes-vous basés à Nevers ?", answer: "Non, notre studio est à Longvic près de Dijon, à environ 2h de Nevers. On se déplace dans la Nièvre pour les réunions de démarrage, les shootings et les audits. Le pilotage courant (réseaux sociaux, SEO, mises à jour) se fait à distance par visio et email." },
   { question: "Pourquoi choisir une agence dijonnaise plutôt qu'une agence locale ?", answer: "Nevers compte peu d'agences de communication intégrées. Les PME nivernaises font souvent appel à des freelances isolés ou à des agences parisiennes chères. Notre modèle de studio intégré (site + SEO + photo + vidéo + réseaux) offre une solution complète à un tarif compétitif." },
-  { question: "Combien coûte un site internet pour une PME à Nevers ?", answer: "Le tarif dépend de la complexité du projet. Le devis est gratuit, détaillé et sans engagement. Nos forfaits mensuels peuvent inclure la création du site." },
+  { question: "Combien coûte un site internet pour une PME à Nevers ?", answer: "Un site vitrine sur mesure coûte entre 900 et 6 000 € HT selon le nombre de pages, les contenus et les photos. Repères : landing page à prix fixe 990 € HT livrée en 5 jours, site vitrine complet le plus souvent entre 1 500 et 3 000 € HT, ou site offert dans un forfait communication à partir de 890 € HT par mois. Le devis est détaillé, gratuit et envoyé sous 24 h." },
   { question: "Connaissez-vous le marché nivernais ?", answer: "On travaille avec des entreprises de toute la Bourgogne. On connaît les enjeux de la Nièvre : tourisme vert autour de la Loire, événements Magny-Cours, appellations viticoles (Pouilly-Fumé, Coteaux du Giennois), commerce de centre-ville à redynamiser." },
   { question: "Vous gérez les réseaux sociaux ?", answer: "Oui, de A à Z. Stratégie éditoriale, création de contenus (photos, vidéos, visuels), publication, modération et reporting. On adapte les formats et le calendrier à votre activité et à la saisonnalité nivernaise." },
   { question: "Pouvez-vous m'aider à attirer les touristes dans la Nièvre ?", answer: "C'est un de nos axes forts. SEO local, Google Business Profile, site immersif, contenus photo et vidéo qui mettent en valeur votre lieu ou votre activité. On travaille la visibilité sur les requêtes touristiques « Nièvre », « Loire à vélo », « Magny-Cours »." },
@@ -82,8 +83,8 @@ export default function AgenceNeversPage() {
 
       <PageHero
         badge="Agence communication Nevers"
-        title="Votre agence de communication à Nevers"
-        subtitle="Sites web, SEO local, photo, vidéo et réseaux sociaux pour les PME nivernaises. Un studio intégré à 2h de Nevers, ancré en Bourgogne."
+        title="Agence web et communication à Nevers"
+        subtitle="Création et refonte de site, SEO local, photo, vidéo et réseaux sociaux pour les PME de Nevers et de la Nièvre. Un studio intégré, basé en Bourgogne, qui se déplace chez vous."
         ctaLabel="Demander un devis gratuit"
         ctaHref="/devis"
         secondaryLabel="Découvrir nos services"
@@ -149,7 +150,7 @@ export default function AgenceNeversPage() {
               C&apos;est la demande n°1 des entreprises nivernaises qui nous
               contactent : un site vitrine moderne, ou la refonte d&apos;un site
               vieillissant qui ne génère plus rien. On crée des sites sur mesure
-              — pas de template acheté 50 € — pensés dès le départ pour le
+              (pas de template acheté 50 €), pensés dès le départ pour le
               référencement local : structure optimisée pour les recherches
               &quot;Nevers&quot; et &quot;Nièvre&quot;, vitesse de chargement
               irréprochable, version mobile prioritaire.
@@ -174,7 +175,7 @@ export default function AgenceNeversPage() {
               les entreprises nivernaises : logo, charte graphique, supports
               print et digitaux, déclinaisons réseaux sociaux. Avec un principe :
               votre image doit être à la hauteur de votre savoir-faire, et
-              cohérente partout où vos clients vous croisent — site, fiche
+              cohérente partout où vos clients vous croisent : site, fiche
               Google, réseaux, véhicules, devanture. Nos{" "}
               <Link href="/services/photographe-entreprise-dijon">photographes</Link>{" "}
               se déplacent à Nevers pour les reportages, portraits et prises de vue drone.
@@ -242,7 +243,7 @@ export default function AgenceNeversPage() {
               pour le référencement. Là où il faut 12 à 18 mois pour émerger dans
               une métropole, un site bien construit et une fiche Google active
               peuvent prendre les premières positions locales en quelques mois
-              dans la Nièvre. C&apos;est une fenêtre d&apos;opportunité — elle se
+              dans la Nièvre. C&apos;est une fenêtre d&apos;opportunité, elle se
               refermera à mesure que le territoire se digitalise.
             </p>
 
@@ -281,6 +282,11 @@ export default function AgenceNeversPage() {
       <OffresFixesSection />
 
       <Stats stats={stats} />
+
+      <ProjectsCrosslinks
+        title="Réalisations en Bourgogne"
+        subtitle="Des sites, des photos et des vidéos livrés à des entreprises de la région. Le même travail pour les PME de la Nièvre."
+      />
 
       <ServiceGrid
         services={services}
