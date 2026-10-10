@@ -402,6 +402,40 @@ export function SeoAnalyzer() {
 
               {/* CTA */}
               <Card className="p-8 bg-indigo-600 dark:bg-indigo-500 text-white border-0 text-center">
+                {result.score < 60 ? (
+                  <>
+                    <h3 className="text-xl font-extrabold mb-2">
+                      Un score sous 60, c&apos;est rarement une question de réglages.
+                    </h3>
+                    <p className="text-indigo-100 text-sm mb-6">
+                      C&apos;est en général un site à refaire : structure, vitesse, textes. Dans notre forfait communication,
+                      le site est offert selon l&apos;engagement et quelqu&apos;un s&apos;en occupe chaque mois. Pour une seconde
+                      lecture humaine avant de décider, l&apos;audit flash (vidéo commentée + PDF des 10 corrections, 48 h) est à 249 € HT.
+                    </p>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                      <Button
+                        href="/forfait-communication-pme"
+                        track={{ event: "cta_click", props: { cta: "forfait", location: "analyseur-seo-resultat" } }}
+                        className="bg-white text-indigo-600 hover:bg-indigo-50 px-6 py-2.5 rounded-full text-sm font-bold transition-all"
+                      >
+                        Voir le forfait communication
+                      </Button>
+                      <Button
+                        href="/services/audit-seo-flash"
+                        track={{ event: "cta_click", props: { cta: "audit-seo-flash", location: "analyseur-seo-resultat" } }}
+                        className="border border-white/40 text-white hover:bg-white/10 px-6 py-2.5 rounded-full text-sm font-bold transition-all"
+                      >
+                        Audit flash, 249 € HT
+                      </Button>
+                      <WhatsAppLink
+                        location="analyseur-seo-resultat"
+                        message={`Bonjour Axel, je viens d'analyser ${result.url} (score ${result.score}/100) et j'aimerais en discuter.`}
+                        label="Poser une question"
+                      />
+                    </div>
+                  </>
+                ) : (
+                  <>
                 <h3 className="text-xl font-extrabold mb-2">
                   Vous voulez savoir quoi corriger en premier, et pourquoi ?
                 </h3>
@@ -423,6 +457,8 @@ export function SeoAnalyzer() {
                     label="Poser une question"
                   />
                 </div>
+                  </>
+                )}
                 <p className="mt-4 text-xs text-indigo-100/80">
                   Vous recevrez demain par email vos 3 corrections prioritaires. Rien d&apos;autre, promis.
                 </p>

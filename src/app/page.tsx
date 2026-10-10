@@ -265,6 +265,14 @@ export default function HomePage() {
               Tous nos services, dont refonte, automatisation et pilotage communication <LucideIcon name="ArrowRight" className="h-4 w-4" />
             </Link>
           </div>
+          <AnimateOnScroll className="mt-10 border border-[#1c1c1c] p-6 lg:p-8 flex flex-col lg:flex-row lg:items-center gap-6">
+            <p className="flex-1 text-base lg:text-lg text-aluminium leading-relaxed">
+              Les trois leviers existent aussi en <strong className="text-ivory">forfait mensuel</strong> : site offert selon l&apos;engagement, contenus, réseaux sociaux et référencement pilotés chaque mois, un rapport qui compte les demandes de clients. Sans engagement possible, et tout reste à vous.
+            </p>
+            <Button href="/forfait-communication-pme" variant="outline" size="md" track={{ event: "cta_click", props: { cta: "forfait", location: "home-piliers" } }}>
+              Voir le forfait communication
+            </Button>
+          </AnimateOnScroll>
         </Container>
       </section>
 

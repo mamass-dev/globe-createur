@@ -15,7 +15,7 @@ import { temoignages } from "@/lib/data/temoignages"
 import { Check, X } from "lucide-react"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Forfait communication PME - Équipe externalisée à Dijon | Globe Créateur",
+  title: "Forfait communication PME à Dijon : site offert, équipe externalisée",
   description: "Forfaits communication tout-en-un pour PME à Dijon. Web, SEO, photo, vidéo, réseaux sociaux : une équipe complète externalisée. Site internet offert selon engagement. Devis gratuit.",
   path: "/forfait-communication-pme",
 })
@@ -110,6 +110,15 @@ function CellValue({ value }: { value: boolean | string }) {
   return <span className="text-xs text-gray-500">{value}</span>
 }
 
+const GARANTIES = [
+  { title: "Tout est à vous", text: "Nom de domaine, hébergement, accès administrateur et fichiers sources sont au nom de votre entreprise dès le premier jour. Aucun site client n'est hébergé sur un compte personnel de Globe Créateur." },
+  { title: "Vous pouvez partir", text: "Formule sans engagement possible, préavis d'un mois. Pas de reconduction tacite sur 24 ou 48 mois, aucun organisme de financement tiers entre vous et nous." },
+  { title: "Un coffre d'accès remis à la livraison", text: "Identifiants du domaine, de l'hébergement, du site, de la fiche Google et des réseaux, rangés dans un gestionnaire de mots de passe partagé avec vous. Si quelqu'un part, rien n'est perdu." },
+  { title: "Droits cédés par écrit", text: "Photos et vidéos livrées avec une cession de droits qui couvre site, réseaux, print et publicité. Les personnes photographiées signent une autorisation le jour du shooting." },
+  { title: "Des images réelles", text: "Vos lieux, vos équipes, vos produits. Pas de banque d'images ni d'IA générative dans ce qu'on livre : vos clients voient ce qu'ils trouveront en poussant la porte." },
+  { title: "Prévenu avant chaque échéance", text: "Domaine, hébergement, boîtes mail : vous recevez un rappel 60 puis 30 jours avant chaque renouvellement. Un site ne disparaît pas pour une facture oubliée." },
+]
+
 export default function ForfaitPage() {
   return (
     <>
@@ -122,7 +131,7 @@ export default function ForfaitPage() {
       <PageHero
         badge="Forfaits communication"
         title="Votre équipe communication, sans embaucher"
-        subtitle="Web, SEO, photo, vidéo, réseaux sociaux : tout ce dont votre PME a besoin, dans un forfait mensuel clair et sans surprise. Site internet offert selon engagement."
+        subtitle="Site, contenus, photo, vidéo, réseaux sociaux et référencement local, pilotés chaque mois par deux associés. Site internet offert selon l'engagement. Tout reste à vous, et vous pouvez partir."
         ctaLabel="Demander un devis gratuit"
         ctaHref="/devis"
       />
@@ -161,6 +170,27 @@ export default function ForfaitPage() {
           </div>
         </AnimateOnScroll>
       </Container>
+
+      {/* 3b. GARANTIES : réponse au fil rouge « dépendance au prestataire » */}
+      <section className="py-16 lg:py-24 border-y border-[#1c1c1c]">
+        <Container>
+          <AnimateOnScroll className="max-w-3xl mb-12">
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary font-mono-accent mb-3">Ce qui est écrit dans le devis</p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-foreground">Vous n&apos;êtes pas prisonnier de votre prestataire.</h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Sites loués sur 48 mois, nom de domaine retenu, accès jamais transmis, photos dont vous n&apos;avez pas les droits : ce sont les problèmes qu&apos;on retrouve le plus souvent chez les entreprises qui nous appellent. Voici ce qu&apos;on vous garantit, noir sur blanc.
+            </p>
+          </AnimateOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#1c1c1c] border border-[#1c1c1c]">
+            {GARANTIES.map((g) => (
+              <div key={g.title} className="bg-[#0a0a0a] p-6 lg:p-8">
+                <h3 className="text-lg font-bold text-foreground">{g.title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{g.text}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
 
       {/* 4. GRILLE FORFAITS */}
       <section className="bg-[#0f0f0f] py-16 lg:py-24">
