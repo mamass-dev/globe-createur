@@ -196,7 +196,7 @@ export function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-5 xl:gap-8 whitespace-nowrap">
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-8 ml-8 xl:ml-10 whitespace-nowrap">
           {mainNav.map((item) =>
             item.children && item.children.length > 0 ? (
               <DesktopDropdown
@@ -219,7 +219,7 @@ export function Header() {
             )
           )}
 
-          <div className="h-6 w-px bg-[#2a2a2a] mx-2" />
+          <div className="h-6 w-px bg-[#2a2a2a] mx-0 xl:mx-2" />
 
           <Link
             href="/contact"
@@ -231,7 +231,7 @@ export function Header() {
           <Button
             href="/devis"
             track={{ event: "cta_click", props: { cta: "devis", location: "header" } }}
-            className="bg-signal hover:bg-[#d62e20] text-white px-5 py-2.5 rounded-none text-xs font-bold uppercase tracking-widest transition-colors whitespace-nowrap"
+            className="bg-signal hover:bg-[#d62e20] text-white px-4 xl:px-5 py-2.5 rounded-none text-xs font-bold uppercase tracking-widest transition-colors whitespace-nowrap"
           >
             Prendre rendez-vous
           </Button>
