@@ -32,8 +32,11 @@ export async function generateMetadata({
   const page = getServicePage(slug)
   if (!service && !page) return {}
 
-  const title = service?.metaTitle ?? (page?.frontmatter as Record<string, string>).metaTitle ?? ""
-  const description = service?.metaDescription ?? (page?.frontmatter as Record<string, string>).metaDescription ?? ""
+  // Le frontmatter MDX est la source de vérité SEO (title/description travaillés sur GSC),
+  // services.ts ne sert que de repli : avant, c'était l'inverse et les optimisations MDX n'étaient jamais servies.
+  const fm = (page?.frontmatter ?? {}) as Record<string, string>
+  const title = fm.metaTitle ?? service?.metaTitle ?? ""
+  const description = fm.metaDescription ?? service?.metaDescription ?? ""
 
   return buildMetadata({ title, description, path: `/services/${slug}` })
 }
