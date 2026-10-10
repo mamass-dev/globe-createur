@@ -130,8 +130,8 @@ export const services: Service[] = [
   {
     slug: "vectorisation-logo",
     title: "Vectorisation de logo",
-    metaTitle: "Vectoriser un logo : fichier net pour l'impression sous 24 h, dès 69 € HT | Globe Créateur",
-    metaDescription: "Logo flou ou pixelisé à l'impression ? L'imprimeur réclame un fichier vectoriel ? Envoyez votre PNG/JPG (Canva, IA, ancien logo) : un designer le redessine à la main et livre AI, EPS, SVG, PDF sous 24 h.",
+    metaTitle: "Vectoriser un logo pour l'imprimeur : 69 € HT, livré 24 h",
+    metaDescription: "Logo PNG, Canva ou IA refusé par l'imprimeur ? Un designer le redessine à la main : AI, EPS, SVG, PDF sous 24 h. Prix fixe, paiement après vérification.",
     keyword: "vectoriser un logo",
     keywords: ["vectoriser un logo", "vectorisation logo", "logo vectoriel", "convertir logo en vectoriel", "logo pixelisé impression", "logo flou impression", "fichier vectoriel logo imprimeur", "logo IA impression", "logo Canva vectoriel", "transformer png en svg logo", "logo ai eps"],
     icon: "PenTool",

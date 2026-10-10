@@ -1,0 +1,135 @@
+---
+title: "Comment vectoriser un logo : les méthodes gratuites, leurs limites, et quand passer par un designer"
+metaTitle: "Vectoriser un logo : gratuit (Inkscape, Illustrator) ou pro"
+metaDescription: "Les méthodes gratuites pour vectoriser un logo, leurs limites réelles, et quand faire redessiner par un designer (69 € HT, livré sous 24 h)."
+keyword: "vectoriser un logo"
+keywords: ["vectoriser un logo", "vectoriser un logo gratuitement", "convertir png en svg", "logo vectoriel imprimeur", "vectoriser logo inkscape", "logo flou impression"]
+publishedAt: "2026-10-10"
+updatedAt: "2026-10-10"
+author: "Axel Masson"
+category: "web-design"
+readingTime: 9
+image: "/images/blog/comment-vectoriser-un-logo.webp"
+imageAlt: "Le même logo en pixels, flou une fois agrandi, et en vecteurs, net à toutes les tailles"
+relatedServices: ["vectorisation-logo", "creation-contenu-pme"]
+relatedArticles: ["logo-ia-refuse-par-imprimeur", "erreurs-courantes-site-internet-pme", "tendances-web-design-2026"]
+template: "article-blog"
+---
+
+{/* Intention de recherche : quelqu'un tape « vectoriser un logo » ou « vectoriser un logo gratuitement ». Il veut d'abord le faire lui-même, gratuitement, et il a raison d'essayer. L'article donne les vraies méthodes (Inkscape, Illustrator, outils en ligne), dit honnêtement ce qui marche et ce qui ne marche pas, apprend à reconnaître un faux vecteur, et explique à quel moment le redessin manuel devient le bon choix. Zéro chiffre inventé, zéro cas client. Les constats sur les outils automatiques viennent de nos propres vectorisations (on a essayé le tracé automatique sur chaque logo reçu avant de redessiner). */}
+
+Vous avez un logo en PNG ou en JPG. L'imprimeur, le brodeur ou l'enseigniste vous demande « le vectoriel ». Avant de payer qui que ce soit, vous pouvez essayer de le faire vous-même : les outils existent, certains sont gratuits, et sur un logo simple ça fonctionne.
+
+Cet article explique comment faire, avec Inkscape, Illustrator ou un outil en ligne. Il dit aussi ce que ces outils ratent, parce qu'on les utilise nous-mêmes en première passe sur chaque logo qu'on reçoit, et on sait exactement où ils s'arrêtent.
+
+## Vectoriser un logo, ça veut dire quoi
+
+Un PNG ou un JPG est une grille de pixels. Agrandissez-le, les pixels grossissent, le contour devient un escalier flou. C'est le problème de tous les logos faits sur Canva, sur un téléphone ou avec une IA : ils sont nets à la taille où ils ont été créés, et à aucune autre.
+
+Un fichier vectoriel (AI, EPS, SVG, PDF vectoriel) ne stocke pas des pixels mais des formes : des courbes, des points, des couleurs. Il se redimensionne à l'infini sans perdre en qualité. Une carte de visite ou une bâche de 4 mètres, même fichier, même netteté. C'est pour ça que l'imprimeur le réclame.
+
+Vectoriser, c'est donc reconstruire ces formes à partir d'une image en pixels. Deux façons de le faire : laisser un logiciel « tracer » automatiquement les contours, ou redessiner à la main.
+
+## Méthode 1 : Inkscape, gratuit, sur Mac, Windows et Linux
+
+Inkscape est un logiciel de dessin vectoriel libre et gratuit. C'est l'outil que je conseille à quelqu'un qui veut essayer sans rien payer.
+
+1. Ouvrez votre logo (Fichier, Importer). Prenez la version la plus grande et la plus propre que vous avez, sans fond compliqué.
+2. Sélectionnez l'image, puis menu Chemin, Vectoriser un objet matriciel (raccourci Maj + Alt + B).
+3. Pour un logo d'une seule couleur, utilisez le mode Seuil de luminosité. Pour un logo à plusieurs couleurs, le mode Couleurs avec un nombre de passes égal au nombre de couleurs du logo (3 couleurs, 3 passes).
+4. Cliquez sur Mettre à jour pour voir l'aperçu, ajustez le seuil jusqu'à ce que les contours soient fermés, puis Appliquer.
+5. Déplacez le résultat : l'image d'origine est encore dessous. Supprimez-la.
+6. Enregistrez en SVG, et exportez aussi un PDF (Fichier, Enregistrer une copie, PDF) pour l'imprimeur.
+
+Ça marche bien si le logo est une forme simple avec des aplats de couleur et un contour net. Ça marche mal si le logo contient du texte fin, un dégradé, une ombre ou une photo.
+
+## Méthode 2 : Illustrator, si vous l'avez déjà
+
+Même principe, outil payant, résultat un peu plus propre sur les courbes.
+
+1. Placez le logo dans un document (Fichier, Importer).
+2. Sélectionnez-le, ouvrez le panneau Vectorisation de l'image (Fenêtre, Vectorisation de l'image).
+3. Choisissez un préréglage : Logo noir et blanc pour un logo monochrome, 3 couleurs ou 6 couleurs pour un logo coloré. Évitez Photo haute fidélité : ça génère des milliers de formes inutilisables.
+4. Cochez Aperçu, baissez le Bruit si des petits points parasites apparaissent, montez Angles si les pointes s'arrondissent.
+5. Cliquez sur Décomposer (Expand). Vos formes deviennent de vrais tracés modifiables.
+6. Enregistrez en AI, puis Exporter en EPS, SVG et PDF.
+
+Illustrator fait un meilleur travail qu'Inkscape sur les courbes régulières, mais il a les mêmes limites sur le texte et les dégradés.
+
+## Méthode 3 : les outils en ligne
+
+Vectorizer, Vector Magic, Adobe Express et une dizaine d'autres proposent de convertir un PNG en SVG dans le navigateur. Le principe est le même qu'Inkscape, en automatique et sans réglage.
+
+Ce qu'il faut savoir avant de s'en servir :
+
+- La plupart sont gratuits pour l'aperçu et payants pour télécharger le fichier à pleine résolution, ou gratuits avec un export limité. Vérifiez avant d'y passer du temps.
+- Vous envoyez votre logo sur un serveur que vous ne connaissez pas. Pour un logo déjà public, ce n'est pas grave. Pour une création pas encore déposée, réfléchissez.
+- Sur Canva, l'export SVG existe avec l'abonnement Pro, mais seulement pour ce qui a été dessiné dans Canva. Un PNG que vous avez importé ressort du SVG toujours en pixels. C'est le cas le plus fréquent de faux vecteur, j'y reviens plus bas.
+
+## Ce que le tracé automatique rate, à chaque fois
+
+On fait passer chaque logo qu'on reçoit par un tracé automatique avant de décider quoi faire. Voilà ce qu'on constate, logo après logo.
+
+**Le texte.** Les lettres fines, les empattements, les lettres qui se touchent : le tracé les épaissit, les fusionne ou les troue. Sur un logo avec le nom de l'entreprise, c'est précisément la partie qui ressort mal, et c'est la partie qui compte.
+
+**Les dégradés et les ombres.** Un tracé automatique transforme un dégradé en bandes de couleurs. Un logo IA avec un effet 3D ou un reflet devient une mosaïque de formes. Il faut choisir : soit on reconstruit le dégradé proprement dans le logiciel, soit on décide d'une version en aplats.
+
+**Les contours baveux.** Quand la source est petite (un logo de profil Instagram, 300 pixels de large), le tracé suit le flou et produit des bords ondulés. Agrandi sur une enseigne, ça se voit à dix mètres.
+
+**La symétrie.** Un cercle devient un presque-cercle, deux formes censées être identiques ne le sont plus tout à fait. L'œil ne sait pas dire pourquoi, mais il voit que le logo est « un peu faux ».
+
+**Les couleurs.** Un tracé multicolore automatique mélange les teintes et crée des petites zones parasites entre deux couleurs. Notre méthode, quand on redessine, consiste justement à séparer chaque teinte, tracer chaque zone en noir et blanc, puis recomposer : c'est plus long, c'est aussi le seul moyen d'avoir des aplats propres.
+
+Si votre logo est un pictogramme simple en une ou deux couleurs, le tracé automatique bien réglé suffit souvent. Dès qu'il y a du texte, un dégradé ou une source de petite taille, le résultat ressemblera à votre logo sans être votre logo.
+
+## Comment reconnaître un faux vecteur
+
+C'est le piège classique : vous avez un fichier .svg ou .pdf, l'imprimeur le refuse quand même. Parce qu'un SVG ou un PDF peut contenir une image en pixels à l'intérieur. L'enveloppe est vectorielle, le contenu ne l'est pas.
+
+Trois façons de vérifier :
+
+1. **Zoomez.** Ouvrez le fichier dans Inkscape, Illustrator ou même un navigateur, et zoomez à 800 %. Un vrai vecteur reste net, un faux devient flou ou pixelisé.
+2. **Cliquez dessus.** Dans Inkscape ou Illustrator, sélectionnez le logo. Si vous obtenez un seul rectangle avec l'image dedans, c'est une image incrustée. Un vrai vecteur se décompose en formes, en tracés, en lettres.
+3. **Ouvrez le SVG dans un éditeur de texte.** Si vous voyez une balise `<image` suivie de `data:image/png;base64`, c'est un PNG emballé dans un SVG. Un vrai vecteur contient des balises `<path`, `<rect`, `<circle`, avec des coordonnées.
+
+Même vérification pour un PDF : s'il pèse plusieurs mégaoctets pour un simple logo, c'est en général une image.
+
+## Les fichiers que l'imprimeur attend vraiment
+
+« Le vectoriel » recouvre plusieurs formats. Pour ne pas faire d'aller-retour, livrez les quatre :
+
+- **AI** : le format natif d'Illustrator, celui que les professionnels modifient.
+- **EPS** : l'ancien standard universel, encore demandé par beaucoup d'imprimeurs, brodeurs et enseignistes.
+- **PDF vectoriel** : s'ouvre partout, utile pour vérifier et pour envoyer.
+- **SVG** : pour le web et pour les découpeuses (vinyle, laser).
+
+Deux détails qui évitent un refus : les polices doivent être converties en tracés (sinon l'imprimeur n'a pas la police et le texte change de forme), et les couleurs doivent exister en CMJN pour l'impression, avec si possible les références Pantone pour la broderie ou la sérigraphie. Un tracé automatique ne s'occupe ni de l'un ni de l'autre.
+
+## Quand passer par un designer
+
+Vous avez essayé Inkscape, le résultat est bon : gardez-le, vous n'avez pas besoin de nous.
+
+Passez par un redessin manuel dans ces cas :
+
+- le logo contient le nom de l'entreprise ou une signature, et le texte ressort déformé ;
+- la seule source que vous avez est petite, floue ou compressée ;
+- le logo vient d'une IA ou de Canva avec des effets (dégradé, relief, ombre) et vous voulez une version qui s'imprime partout, y compris en une couleur ;
+- l'imprimeur a déjà refusé votre fichier une fois et vous n'avez pas envie d'une deuxième ;
+- vous avez besoin des déclinaisons : noir, blanc, une couleur, fond transparent, format horizontal.
+
+Dans ce cas le travail consiste à redessiner chaque forme à la main par-dessus votre image, retrouver les polices ou retracer les lettres, caler les couleurs, puis vérifier le résultat à 400 dpi avant de livrer. Chez nous c'est 69 € HT pour un logo simple, 149 € HT avec les déclinaisons, livré sous 24 h ouvrées, en AI, EPS, SVG, PDF et PNG. Les détails sont sur la page [vectorisation de logo](/services/vectorisation-logo).
+
+## En résumé
+
+| | Tracé automatique (Inkscape, Illustrator, outils en ligne) | Redessin par un designer |
+|---|---|---|
+| Prix | Gratuit ou quelques euros | 69 à 149 € HT |
+| Délai | Quelques minutes | 24 h ouvrées |
+| Logo simple, 1 ou 2 couleurs, contour net | Bon résultat | Inutile |
+| Logo avec texte | Lettres déformées | Lettres retracées ou police retrouvée |
+| Source petite ou floue | Bords ondulés | Formes reconstruites |
+| Dégradés, relief, IA | Mosaïque de formes | Version aplats propre, dégradé reconstruit si voulu |
+| Polices en tracés, CMJN, Pantone | Non | Oui |
+| Déclinaisons (noir, blanc, horizontal) | À faire soi-même | Incluses dans la formule complète |
+
+Essayez d'abord la méthode gratuite. Si le texte ou les contours ne passent pas, vous saurez pourquoi, et vous saurez quoi demander.

@@ -321,7 +321,7 @@ export default function VectorisationLogoPage() {
                 — Expliqué simplement
               </span>
               <h2 className="text-impact mt-4 text-3xl lg:text-5xl text-ivory">
-                Vectoriser un logo, c&apos;est quoi ?
+                Vectorisation de logo professionnelle : ce qui est inclus
               </h2>
               <div className="mt-6 space-y-5 text-aluminium leading-relaxed">
                 <p>
@@ -480,7 +480,7 @@ export default function VectorisationLogoPage() {
                 — Envoyer mon logo
               </span>
               <h2 className="text-impact mt-4 text-3xl lg:text-5xl text-ivory">
-                Deux minutes maintenant, un logo propre demain
+                Faire vectoriser un logo : deux minutes maintenant, un fichier imprimeur demain
               </h2>
               <p className="mt-6 text-aluminium leading-relaxed">
                 Déposez votre fichier, choisissez un forfait, laissez votre email. On vérifie, on vous
