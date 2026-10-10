@@ -33,7 +33,7 @@ export const mainNav: NavItem[] = [
     ],
   },
   {
-    label: "Outils gratuits",
+    label: "Outils",
     href: "/audit-digital",
     children: [
       { label: "Audit digital", href: "/audit-digital", icon: "Target", description: "Votre score sur 100 en 2 minutes" },
@@ -42,7 +42,7 @@ export const mainNav: NavItem[] = [
       { label: "Signature email", href: "/generateur-signature-email", icon: "Mail", description: "Créez votre signature pro en 2 min" },
     ],
   },
-  { label: "Forfait communication", href: "/forfait-communication-pme" },
+  { label: "Forfaits", href: "/forfait-communication-pme" },
   { label: "Projets", href: "/projets" },
   { label: "Blog", href: "/blog" },
   { label: "Tarifs", href: "/tarifs" },
