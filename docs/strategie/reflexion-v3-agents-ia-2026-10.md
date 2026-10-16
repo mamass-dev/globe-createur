@@ -99,3 +99,28 @@ L'analyseur SEO a prouvé qu'un outil attire plus qu'un article (deuxième page 
 - Garder « Relais » comme nom du premier agent ou nommer toute la gamme.
 - Qui supervise les agents au quotidien, et avec quel outil de file d'exceptions.
 - Accord pour que le site affiche nos propres chiffres d'exploitation en direct.
+
+## 9. Où est la demande (Search Console, 16 mois au 2026-10-14)
+
+Question d'Axel (17/10) : « faut-il revoir l'ensemble du site et le positionner sur les meilleures requêtes ? ». Les chiffres :
+
+| Famille de requêtes | Clics | Impressions | Lecture |
+|---|---|---|---|
+| SEO, audit, analyse (l'analyseur) | 89 | 90 460 | National, gratuit, peu acheteur |
+| Marque (globe créateur…) | 17 | 268 | Normal |
+| Agence communication (villes) | 7 | 8 848 | Demande réelle, positions 10-37 |
+| Site / agence web (villes) | 3 | 11 804 | Demande réelle, Nevers pos 9, Besançon 24, Auxerre 22 |
+| IA, agents, automatisation | 0 | 2 821 | « agence no code dijon » 1 777 impr. pos 15 ; famille « diagnostic IA PME » ≈ 800 impr. (demande nationale portée par le Diag Data IA de Bpifrance), pos 25-75 |
+| Contenu réseaux, rédaction | 1 | 122 | « agence réseaux sociaux nevers » 72 impr. |
+| Contenu photo, vidéo | 0 | 159 | « photographe entreprise dijon » 125 impr. pos 12 ; « agence vidéo dijon » 4 |
+
+Autocomplétion Google : « agent ia dijon », « vidéo entreprise dijon », « création de contenu dijon » ne sont pas suggérés (demande locale quasi nulle). « agent ia entreprise » et « agence ia dijon » existent. « photographe entreprise dijon » et « community manager dijon » existent.
+
+**Conclusion** : les « meilleures requêtes » du site sont celles des services qu'on met au second plan (agence web et communication dans les villes). Les deux piliers choisis n'ont presque pas de demande locale en recherche. Un site « positionné sur les meilleures requêtes » serait donc un site d'agence web pour Nevers, Besançon et Auxerre, l'inverse de la v3.
+
+**Ce qu'on en fait** : séparer positionnement et acquisition.
+- **Le positionnement** (accueil, menu, offres, mobile, démos) se refait entièrement autour des deux piliers. Son acquisition n'est pas le SEO : démos, articles « problème », prospection directe (test client mystère), LinkedIn, recommandation.
+- **Les portes d'entrée SEO existantes restent et s'améliorent**, sorties du menu mais pas du site : pages villes (agence web nevers pos 9 → page 1 à portée), seo-local-dijon (« seo dijon » pos 15), analyseur. Elles renvoient vers les piliers.
+- **Deux requêtes IA valent le coup** : « agence no code dijon » (page 2, la page automatisation devient la page agents + automatisation) et « diagnostic IA PME / TPE » (page 3-6 avec une page existante ; porte d'entrée nationale vers l'audit temps perdu puis l'installation d'agents).
+- **Pour le contenu**, la seule requête locale qui existe est « photographe entreprise dijon » (pos 12 avec la page actuelle) : à faire monter, le reste du pilier se vend par la démonstration (galerie mobile) et le forfait.
+- Limite : la Search Console ne montre que ce sur quoi le site apparaît déjà. Pour chiffrer la demande sur des requêtes où on est absent, il faudrait un outil de volumes (payant, hors budget 30 $/mois) ; l'autocomplétion donne l'existence, pas le volume.
