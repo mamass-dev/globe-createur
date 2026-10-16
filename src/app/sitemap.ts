@@ -8,7 +8,7 @@ export const revalidate = 3600
 // Date fixe de la dernière mise à jour significative du site (rebrand + refonte éditoriale).
 // À incrémenter manuellement lors d'un changement de contenu réel : un lastModified qui
 // bouge à chaque build apprend à Google à ignorer le sitemap.
-const LAST_SITE_UPDATE = "2026-10-10"
+const LAST_SITE_UPDATE = "2026-10-17"
 
 function pickDate(fm: Record<string, unknown>, fallback: string = LAST_SITE_UPDATE): string {
   const updated = fm.updatedAt as string | undefined
@@ -40,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/outils`, lastModified: "2026-07-29", changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/audit-digital`, lastModified: LAST_SITE_UPDATE, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/calculateur-roi`, lastModified: LAST_SITE_UPDATE, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${SITE_URL}/vectoriser-une-image`, lastModified: LAST_SITE_UPDATE, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/analyseur-seo`, lastModified: LAST_SITE_UPDATE, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/generateur-signature-email`, lastModified: LAST_SITE_UPDATE, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/diagnostic`, lastModified: LAST_SITE_UPDATE, changeFrequency: "monthly", priority: 0.8 },
