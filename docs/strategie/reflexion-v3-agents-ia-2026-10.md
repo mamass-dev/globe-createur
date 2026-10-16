@@ -172,3 +172,19 @@ Les requêtes « agence de communication » sont les plus disputées du lot (KD 
 3. Pages photo entreprise, vidéo entreprise, graphiste (Dijon puis villes), création de contenu : le pilier contenu en pages nationales avec ancrage local.
 4. Article facture électronique 2026 pour PME, lié à l'agent Facture : la plus grosse demande du tableau, à prendre sur les variantes KD 15-28.
 5. Diagnostic IA : page existante à faire monter.
+
+## 11. Le plafond local (2026-10-17)
+
+Intuition d'Axel : « le nombre de requêtes est bas ». Vérification sur les 440 requêtes testées :
+
+- 370 requêtes locales (37 services × 10 villes) : **1 880 recherches par mois en tout**, dont 920 pour Dijon. 320 de ces requêtes ont un volume nul.
+- La plus grosse, « agence (de) communication dijon », 530 recherches, difficulté 92. En première position : ≈ 130 visites et ≈ 4 demandes par mois.
+- 70 requêtes nationales : 29 700 recherches par mois (4 010 hors facture électronique). Les requêtes nationales à difficulté < 10 (vectoriser, agence IA, agent IA, création de contenu, vidéo entreprise) totalisent ≈ 19 000 par mois, dix fois toute la Bourgogne.
+
+**Conclusion** : le plafond ne vient pas du positionnement, il vient de la catégorie « agence locale ». Quel que soit le message, une agence qu'on cherche à Dijon se partage 1 000 à 2 000 recherches par mois avec vingt confrères. Le renouvellement doit porter sur le modèle, pas seulement sur le discours :
+
+1. **Des produits nationaux trouvés par la recherche** : outils gratuits qui amènent vers des prestations à prix fixe livrées à distance (vectorisation 69 € en est la preuve : requête nationale, meilleure page du site). Volume, petit ticket, livraison outillée.
+2. **Des agents en abonnement**, vendus par la démonstration et la prospection, installables à distance, avec une demande nationale naissante et sans concurrent organique installé.
+3. **Le contenu sur place** (photo, vidéo) comme couche locale, humaine, différenciante, vendue par le réseau et la recommandation, pas par Google.
+
+Globe Créateur cesse d'être « une agence qu'on cherche à Dijon » pour devenir « un studio dont les produits se trouvent partout et dont les agents tournent chez les clients ». Les pages villes restent en fond de catalogue.
