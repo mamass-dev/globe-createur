@@ -1,0 +1,3098 @@
+{
+ "solitaire gratuit": [
+  1000000,
+  "LOW",
+  48,
+  "photographe entreprise"
+ ],
+ "jeux gratuit": [
+  1000000,
+  "LOW",
+  70,
+  "photographe entreprise"
+ ],
+ "jeu solitaire gratuit": [
+  450000,
+  "LOW",
+  53,
+  "photographe entreprise"
+ ],
+ "sudoku gratuit": [
+  301000,
+  "LOW",
+  21,
+  "photographe entreprise"
+ ],
+ "mahjong gratuit": [
+  246000,
+  "LOW",
+  0,
+  "photographe entreprise"
+ ],
+ "espace agent cgos": [
+  246000,
+  "LOW",
+  0,
+  "agent ia entreprise"
+ ],
+ "agence immobilière": [
+  201000,
+  "LOW",
+  0,
+  "community manager"
+ ],
+ "jeux en ligne gratuit": [
+  201000,
+  "LOW",
+  70,
+  "photographe entreprise"
+ ],
+ "intelligence artificielle": [
+  201000,
+  "LOW",
+  50,
+  "agent ia entreprise"
+ ],
+ "mon entreprise": [
+  201000,
+  "LOW",
+  65,
+  "photographe entreprise"
+ ],
+ "tchat gratuit": [
+  201000,
+  "LOW",
+  58,
+  "photographe entreprise"
+ ],
+ "mots fleches gratuit": [
+  165000,
+  "LOW",
+  26,
+  "photographe entreprise"
+ ],
+ "parking gratuit": [
+  165000,
+  "LOW",
+  5,
+  "photographe entreprise"
+ ],
+ "puzzle gratuit": [
+  165000,
+  "LOW",
+  17,
+  "photographe entreprise"
+ ],
+ "pages blanches particuliers gratuit": [
+  110000,
+  "LOW",
+  35,
+  "photographe entreprise"
+ ],
+ "chaton gratuit": [
+  110000,
+  "LOW",
+  5,
+  "photographe entreprise"
+ ],
+ "vigilance météorologique de météo-france": [
+  110000,
+  "LOW",
+  72,
+  "community manager"
+ ],
+ "entreprise": [
+  110000,
+  "LOW",
+  84,
+  "agent ia entreprise"
+ ],
+ "streaming gratuit": [
+  90500,
+  "LOW",
+  31,
+  "photographe entreprise"
+ ],
+ "solitaire spider gratuit": [
+  90500,
+  "LOW",
+  25,
+  "photographe entreprise"
+ ],
+ "anagramme gratuit": [
+  90500,
+  "LOW",
+  31,
+  "photographe entreprise"
+ ],
+ "tour gratuit coin master": [
+  90500,
+  "LOW",
+  0,
+  "photographe entreprise"
+ ],
+ "annuaire inversé gratuit": [
+  90500,
+  "LOW",
+  35,
+  "photographe entreprise"
+ ],
+ "pmu pronostic gratuit presse": [
+  90500,
+  "LOW",
+  71,
+  "photographe entreprise"
+ ],
+ "anagrammeur gratuit": [
+  90500,
+  "LOW",
+  31,
+  "photographe entreprise"
+ ],
+ "horoscope du jour gratuit": [
+  90500,
+  "LOW",
+  72,
+  "photographe entreprise"
+ ],
+ "jeu de carte solitaire gratuit sans téléchargement": [
+  74000,
+  "LOW",
+  65,
+  "photographe entreprise"
+ ],
+ "agence immobilière à proximité": [
+  74000,
+  "MEDIUM",
+  17,
+  "community manager"
+ ],
+ "lyon 1": [
+  74000,
+  "LOW",
+  38,
+  "agent ia entreprise"
+ ],
+ "maillot equipe de france 2026": [
+  74000,
+  "HIGH",
+  0,
+  "community manager"
+ ],
+ "université lyon 3": [
+  74000,
+  "LOW",
+  27,
+  "agent ia entreprise"
+ ],
+ "la plateforme du batiment": [
+  60500,
+  "LOW",
+  13,
+  "agent ia entreprise"
+ ],
+ "webmail academique lyon": [
+  60500,
+  "LOW",
+  0,
+  "agent ia entreprise"
+ ],
+ "webmail académique lyon": [
+  60500,
+  "LOW",
+  0,
+  "agent ia entreprise"
+ ],
+ "argus gratuit": [
+  60500,
+  "HIGH",
+  51,
+  "photographe entreprise"
+ ],
+ "agence immobilière autour de moi": [
+  60500,
+  "MEDIUM",
+  0,
+  "community manager"
+ ],
+ "liste des paris sportifs": [
+  60500,
+  "LOW",
+  82,
+  "community manager"
+ ],
+ "solitaire gratuit en ligne": [
+  60500,
+  "LOW",
+  53,
+  "photographe entreprise"
+ ],
+ "classement generale tour de france 2025": [
+  49500,
+  "LOW",
+  null,
+  "community manager"
+ ],
+ "horoscope gratuit": [
+  49500,
+  "LOW",
+  89,
+  "photographe entreprise"
+ ],
+ "aquarium lyon": [
+  49500,
+  "MEDIUM",
+  5,
+  "agent ia entreprise"
+ ],
+ "écouter france inter": [
+  49500,
+  "LOW",
+  67,
+  "community manager"
+ ],
+ "edf entreprise": [
+  49500,
+  "MEDIUM",
+  25,
+  "agent ia entreprise"
+ ],
+ "faits divers lyon": [
+  49500,
+  "LOW",
+  6,
+  "agent ia entreprise"
+ ],
+ "puzzle gratuit en ligne": [
+  49500,
+  "LOW",
+  36,
+  "photographe entreprise"
+ ],
+ "actualités lyon": [
+  49500,
+  "LOW",
+  81,
+  "agent ia entreprise"
+ ],
+ "classement tour de france": [
+  49500,
+  "LOW",
+  21,
+  "community manager"
+ ],
+ "composition equipe de france": [
+  49500,
+  "LOW",
+  8,
+  "community manager"
+ ],
+ "exemple lettre de motivation": [
+  40500,
+  "LOW",
+  12,
+  "photographe entreprise"
+ ],
+ "fete des lumieres lyon": [
+  40500,
+  "LOW",
+  6,
+  "agent ia entreprise"
+ ],
+ "antivirus gratuit": [
+  40500,
+  "HIGH",
+  56,
+  "photographe entreprise"
+ ],
+ "moodle lyon 1": [
+  40500,
+  "LOW",
+  23,
+  "agent ia entreprise"
+ ],
+ "agence interim": [
+  40500,
+  "LOW",
+  100,
+  "community manager"
+ ],
+ "horoscope du jour gratuit et complet": [
+  40500,
+  "LOW",
+  64,
+  "photographe entreprise"
+ ],
+ "des gratuit monopoly": [
+  40500,
+  "LOW",
+  2,
+  "photographe entreprise"
+ ],
+ "tarots en ligne gratuit": [
+  40500,
+  "LOW",
+  49,
+  "photographe entreprise"
+ ],
+ "coin master tour gratuit": [
+  40500,
+  "LOW",
+  0,
+  "photographe entreprise"
+ ],
+ "meteociel lyon": [
+  40500,
+  "LOW",
+  9,
+  "agent ia entreprise"
+ ],
+ "bourse de paris": [
+  40500,
+  "LOW",
+  56,
+  "community manager"
+ ],
+ "paris sportif pronostic": [
+  40500,
+  "LOW",
+  83,
+  "community manager"
+ ],
+ "sudoku gratuit en ligne": [
+  40500,
+  "LOW",
+  27,
+  "photographe entreprise"
+ ],
+ "match lyon": [
+  40500,
+  "LOW",
+  15,
+  "agent ia entreprise"
+ ],
+ "actu nantes": [
+  40500,
+  "LOW",
+  22,
+  "agent ia entreprise"
+ ],
+ "horaire priere lyon": [
+  40500,
+  "LOW",
+  0,
+  "agent ia entreprise"
+ ],
+ "mots du jour ouest-france": [
+  40500,
+  "LOW",
+  0,
+  "community manager"
+ ],
+ "météociel lyon": [
+  40500,
+  "LOW",
+  10,
+  "agent ia entreprise"
+ ],
+ "tirage des tarots gratuit": [
+  40500,
+  "LOW",
+  31,
+  "photographe entreprise"
+ ],
+ "lettre de motivation exemple": [
+  33100,
+  "LOW",
+  31,
+  "photographe entreprise"
+ ],
+ "micro entreprise": [
+  33100,
+  "MEDIUM",
+  52,
+  "photographe entreprise"
+ ],
+ "tour de france feminin": [
+  33100,
+  "LOW",
+  22,
+  "community manager"
+ ],
+ "meteo nantes 15 jours": [
+  33100,
+  "LOW",
+  23,
+  "agent ia entreprise"
+ ],
+ "actualisation france travail": [
+  33100,
+  "LOW",
+  0,
+  "community manager"
+ ],
+ "zoo lyon": [
+  33100,
+  "LOW",
+  0,
+  "agent ia entreprise"
+ ],
+ "lyon 3": [
+  33100,
+  "LOW",
+  50,
+  "agent ia entreprise"
+ ],
+ "présidente france": [
+  33100,
+  "LOW",
+  23,
+  "community manager"
+ ],
+ "université lumière lyon 2": [
+  33100,
+  "LOW",
+  25,
+  "agent ia entreprise"
+ ],
+ "météo lyon 15 jours": [
+  33100,
+  "LOW",
+  50,
+  "agent ia entreprise"
+ ],
+ "tcl lyon": [
+  33100,
+  "LOW",
+  6,
+  "agent ia entreprise"
+ ],
+ "1er ministre france": [
+  33100,
+  "LOW",
+  15,
+  "community manager"
+ ],
+ "étapes du jour tour de france": [
+  33100,
+  "LOW",
+  null,
+  "community manager"
+ ],
+ "1ere ministre france": [
+  33100,
+  "LOW",
+  7,
+  "community manager"
+ ],
+ "gratuit": [
+  33100,
+  "LOW",
+  0,
+  "photographe entreprise"
+ ],
+ "le progrès lyon": [
+  33100,
+  "LOW",
+  24,
+  "agent ia entreprise"
+ ],
+ "eau du grand lyon": [
+  27100,
+  "LOW",
+  11,
+  "agent ia entreprise"
+ ],
+ "meilleure compo hdv 8": [
+  27100,
+  "LOW",
+  0,
+  "agent ia entreprise"
+ ],
+ "ligue hauts-de-france": [
+  27100,
+  "LOW",
+  12,
+  "community manager"
+ ],
+ "jeu solitaire en ligne gratuit": [
+  27100,
+  "LOW",
+  57,
+  "photographe entreprise"
+ ],
+ "bourse du travail lyon": [
+  27100,
+  "LOW",
+  29,
+  "agent ia entreprise"
+ ],
+ "meilleur agent": [
+  27100,
+  "LOW",
+  3,
+  "agent ia entreprise"
+ ],
+ "classement lyon": [
+  27100,
+  "LOW",
+  0,
+  "agent ia entreprise"
+ ],
+ "match france norvège": [
+  27100,
+  "LOW",
+  0,
+  "community manager"
+ ],
+ "heure de priere lyon": [
+  27100,
+  "LOW",
+  0,
+  "agent ia entreprise"
+ ],
+ "agence d'interim": [
+  27100,
+  "LOW",
+  100,
+  "community manager"
+ ],
+ "classe lyon": [
+  27100,
+  "LOW",
+  0,
+  "agent ia entreprise"
+ ],
+ "médipôle lyon-villeurbanne": [
+  27100,
+  "LOW",
+  0,
+  "agent ia entreprise"
+ ],
+ "agent immobilier": [
+  27100,
+  "LOW",
+  52,
+  "agent ia entreprise"
+ ],
+ "baccalauréat en france": [
+  27100,
+  "LOW",
+  31,
+  "community manager"
+ ],
+ "livre audio gratuit": [
+  27100,
+  "MEDIUM",
+  21,
+  "photographe entreprise"
+ ],
+ "univ nantes": [
+  27100,
+  "LOW",
+  38,
+  "agent ia entreprise"
+ ],
+ "élection miss france 2026": [
+  27100,
+  "LOW",
+  23,
+  "community manager"
+ ],
+ "le solitaire gratuit": [
+  27100,
+  "LOW",
+  53,
+  "photographe entreprise"
+ ],
+ "match france-norvège": [
+  27100,
+  "LOW",
+  0,
+  "community manager"
+ ],
+ "élection municipales lyon": [
+  27100,
+  "LOW",
+  null,
+  "agent ia entreprise"
+ ],
+ "correcteur orthographique gratuit": [
+  27100,
+  "LOW",
+  61,
+  "photographe entreprise"
+ ],
+ "exemple cv": [
+  27100,
+  "LOW",
+  21,
+  "photographe entreprise"
+ ],
+ "programme tv paris première": [
+  27100,
+  "LOW",
+  0,
+  "community manager"
+ ],
+ "jeux de belote gratuit": [
+  27100,
+  "LOW",
+  14,
+  "photographe entreprise"
+ ],
+ "plateforme du batiment": [
+  27100,
+  "LOW",
+  4,
+  "agent ia entreprise"
+ ],
+ "musée de l'illusion lyon": [
+  27100,
+  "LOW",
+  4,
+  "agent ia entreprise"
+ ],
+ "maillot équipe de france coupe du monde 2026": [
+  22200,
+  "HIGH",
+  0,
+  "community manager"
+ ],
+ "lyon meteo agricole": [
+  22200,
+  "LOW",
+  0,
+  "agent ia entreprise"
+ ],
+ "academie de nantes": [
+  22200,
+  "LOW",
+  10,
+  "agent ia entreprise"
+ ],
+ "traduction allemand français gratuit": [
+  22200,
+  "LOW",
+  30,
+  "photographe entreprise"
+ ],
+ "programme france inter aujourd'hui": [
+  22200,
+  "LOW",
+  73,
+  "community manager"
+ ],
+ "solitaire gratuit télécharger": [
+  22200,
+  "LOW",
+  15,
+  "photographe entreprise"
+ ],
+ "arbitre france-espagne": [
+  22200,
+  "LOW",
+  0,
+  "community manager"
+ ],
+ "cest la famille": [
+  22200,
+  "LOW",
+  0,
+  "agent ia entreprise"
+ ],
+ "solitaire à télécharger gratuit": [
+  22200,
+  "LOW",
+  15,
+  "photographe entreprise"
+ ],
+ "météoblue lyon": [
+  22200,
+  "LOW",
+  0,
+  "agent ia entreprise"
+ ],
+ "tetris gratuit": [
+  22200,
+  "LOW",
+  22,
+  "photographe entreprise"
+ ],
+ "mon lycée": [
+  550000,
+  "LOW",
+  28,
+  "photographe entreprise"
+ ],
+ "doctolib pro": [
+  450000,
+  "LOW",
+  9,
+  "photographe entreprise"
+ ],
+ "mon compte formation": [
+  246000,
+  "LOW",
+  72,
+  "community manager"
+ ],
+ "idée cadeau femme": [
+  110000,
+  "HIGH",
+  0,
+  "photographe entreprise"
+ ],
+ "idée repas": [
+  110000,
+  "LOW",
+  18,
+  "photographe entreprise"
+ ],
+ "idée cadeau homme": [
+  90500,
+  "HIGH",
+  5,
+  "photographe entreprise"
+ ],
+ "compte formation": [
+  74000,
+  "LOW",
+  69,
+  "community manager"
+ ],
+ "pro btp mon compte": [
+  74000,
+  "LOW",
+  12,
+  "photographe entreprise"
+ ],
+ "resultats bac": [
+  74000,
+  "LOW",
+  30,
+  "photographe entreprise"
+ ],
+ "idée cadeau": [
+  60500,
+  "HIGH",
+  52,
+  "photographe entreprise"
+ ],
+ "photographe": [
+  60500,
+  "LOW",
+  53,
+  "photographe entreprise"
+ ],
+ "cv gratuit": [
+  60500,
+  "HIGH",
+  71,
+  "photographe entreprise"
+ ],
+ "simulateur bac": [
+  60500,
+  "LOW",
+  10,
+  "photographe entreprise"
+ ],
+ "professionnel": [
+  40500,
+  "LOW",
+  1,
+  "photographe entreprise"
+ ],
+ "l idée d être avec toi": [
+  40500,
+  "LOW",
+  0,
+  "photographe entreprise"
+ ],
+ "photographe à proximité": [
+  40500,
+  "LOW",
+  0,
+  "photographe entreprise"
+ ],
+ "faire part mariage": [
+  40500,
+  "HIGH",
+  56,
+  "photographe entreprise"
+ ],
+ "idée recette": [
+  40500,
+  "LOW",
+  18,
+  "photographe entreprise"
+ ],
+ "faire conjugaison": [
+  33100,
+  "LOW",
+  12,
+  "photographe entreprise"
+ ],
+ "ent mon lycée": [
+  33100,
+  "LOW",
+  11,
+  "photographe entreprise"
+ ],
+ "parc animalier": [
+  33100,
+  "LOW",
+  64,
+  "photographe entreprise"
+ ],
+ "le coq sportif": [
+  33100,
+  "HIGH",
+  9,
+  "photographe entreprise"
+ ],
+ "musique youtube": [
+  33100,
+  "LOW",
+  24,
+  "photographe entreprise"
+ ],
+ "psn mon lycée": [
+  33100,
+  "LOW",
+  15,
+  "photographe entreprise"
+ ],
+ "faire part naissance": [
+  33100,
+  "HIGH",
+  49,
+  "photographe entreprise"
+ ],
+ "espace numérique de travail lycée": [
+  27100,
+  "LOW",
+  14,
+  "photographe entreprise"
+ ],
+ "dessin facile a faire": [
+  27100,
+  "LOW",
+  5,
+  "photographe entreprise"
+ ],
+ "pro btp vacances": [
+  27100,
+  "LOW",
+  0,
+  "photographe entreprise"
+ ],
+ "parions sportif": [
+  27100,
+  "MEDIUM",
+  null,
+  "photographe entreprise"
+ ],
+ "la vidéo du jour": [
+  27100,
+  "LOW",
+  22,
+  "photographe entreprise"
+ ],
+ "faire part": [
+  27100,
+  "HIGH",
+  84,
+  "photographe entreprise"
+ ],
+ "cyclades résultats bac": [
+  27100,
+  "LOW",
+  47,
+  "photographe entreprise"
+ ],
+ "espace pro": [
+  22200,
+  "LOW",
+  21,
+  "photographe entreprise"
+ ],
+ "modèle lettre de motivation": [
+  22200,
+  "LOW",
+  9,
+  "photographe entreprise"
+ ],
+ "comment le faire": [
+  22200,
+  "LOW",
+  0,
+  "photographe entreprise"
+ ],
+ "compte personnel de formation": [
+  22200,
+  "LOW",
+  5,
+  "community manager"
+ ],
+ "lycée louis le grand": [
+  22200,
+  "LOW",
+  10,
+  "photographe entreprise"
+ ],
+ "tout faire materiaux": [
+  22200,
+  "LOW",
+  21,
+  "photographe entreprise"
+ ],
+ "photographe nu": [
+  22200,
+  "LOW",
+  0,
+  "photographe entreprise"
+ ],
+ "bac acier toiture": [
+  22200,
+  "HIGH",
+  2,
+  "photographe entreprise"
+ ],
+ "jeux casino gratuit": [
+  22200,
+  "LOW",
+  19,
+  "photographe entreprise"
+ ],
+ "formation france travail": [
+  22200,
+  "MEDIUM",
+  55,
+  "community manager"
+ ],
+ "épreuve bac 2026": [
+  22200,
+  "LOW",
+  26,
+  "photographe entreprise"
+ ],
+ "bac acier": [
+  22200,
+  "HIGH",
+  3,
+  "photographe entreprise"
+ ],
+ "mots melanges gratuit": [
+  22200,
+  "LOW",
+  null,
+  "photographe entreprise"
+ ],
+ "jeux vidéo gratuit": [
+  22200,
+  "LOW",
+  45,
+  "photographe entreprise"
+ ],
+ "mahjong solitaire gratuit": [
+  22200,
+  "LOW",
+  31,
+  "photographe entreprise"
+ ],
+ "jeux de solitaire gratuit": [
+  22200,
+  "LOW",
+  53,
+  "photographe entreprise"
+ ],
+ "jeux google gratuit": [
+  22200,
+  "LOW",
+  22,
+  "photographe entreprise"
+ ],
+ "bubble shooter gratuit": [
+  22200,
+  "LOW",
+  24,
+  "photographe entreprise"
+ ],
+ "pmu pronostic gratuit": [
+  22200,
+  "LOW",
+  80,
+  "photographe entreprise"
+ ],
+ "petit bac": [
+  22200,
+  "LOW",
+  0,
+  "photographe entreprise"
+ ],
+ "centre européen de formation": [
+  22200,
+  "MEDIUM",
+  4,
+  "community manager"
+ ],
+ "salaire médian français": [
+  22200,
+  "LOW",
+  15,
+  "photographe entreprise"
+ ],
+ "comment faire": [
+  22200,
+  "LOW",
+  0,
+  "photographe entreprise"
+ ],
+ "formation aide soignante": [
+  22200,
+  "MEDIUM",
+  17,
+  "community manager"
+ ],
+ "lycée albert camus": [
+  18100,
+  "LOW",
+  9,
+  "photographe entreprise"
+ ],
+ "entreprise à proximité": [
+  18100,
+  "LOW",
+  0,
+  "photographe entreprise"
+ ],
+ "lycée chaptal": [
+  18100,
+  "LOW",
+  0,
+  "photographe entreprise"
+ ],
+ "coin master tour gratuit aujourd hui": [
+  18100,
+  "LOW",
+  0,
+  "photographe entreprise"
+ ],
+ "faire l'amour": [
+  18100,
+  "LOW",
+  0,
+  "photographe entreprise"
+ ],
+ "psn mon lycée net": [
+  18100,
+  "LOW",
+  15,
+  "photographe entreprise"
+ ],
+ "mot fleche gratuit": [
+  18100,
+  "LOW",
+  26,
+  "photographe entreprise"
+ ],
+ "coin master tour gratuit aujourd'hui": [
+  18100,
+  "LOW",
+  0,
+  "photographe entreprise"
+ ],
+ "parc animalier des pyrénées": [
+  18100,
+  "LOW",
+  5,
+  "photographe entreprise"
+ ],
+ "code de la route gratuit": [
+  18100,
+  "MEDIUM",
+  65,
+  "photographe entreprise"
+ ],
+ "sudoku difficile gratuit": [
+  18100,
+  "LOW",
+  1,
+  "photographe entreprise"
+ ],
+ "podomètre gratuit": [
+  18100,
+  "MEDIUM",
+  16,
+  "photographe entreprise"
+ ],
+ "resultat municipale gratuit linternaute": [
+  18100,
+  "LOW",
+  39,
+  "photographe entreprise"
+ ],
+ "idée de repas": [
+  18100,
+  "LOW",
+  8,
+  "photographe entreprise"
+ ],
+ "copilote gratuit": [
+  18100,
+  "LOW",
+  39,
+  "photographe entreprise"
+ ],
+ "portail métier": [
+  18100,
+  "LOW",
+  17,
+  "photographe entreprise"
+ ],
+ "impôts particuliers gouv": [
+  301000,
+  "LOW",
+  62,
+  "facture électronique pme"
+ ],
+ "impots particuliers gouv": [
+  301000,
+  "LOW",
+  56,
+  "facture électronique pme"
+ ],
+ "paie fonctionnaire 2026": [
+  74000,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "déclaration impôts 2026": [
+  74000,
+  "LOW",
+  49,
+  "facture électronique pme"
+ ],
+ "calcul tva": [
+  74000,
+  "LOW",
+  18,
+  "facture électronique pme"
+ ],
+ "date limite impots": [
+  74000,
+  "LOW",
+  49,
+  "facture électronique pme"
+ ],
+ "facturation électronique": [
+  74000,
+  "MEDIUM",
+  66,
+  "facture électronique pme"
+ ],
+ "impôts gouv fr particuliers": [
+  40500,
+  "LOW",
+  69,
+  "facture électronique pme"
+ ],
+ "impots gouv fr particuliers": [
+  40500,
+  "LOW",
+  56,
+  "facture électronique pme"
+ ],
+ "abattement fiscal retraités 2026": [
+  40500,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "particuliers impots gouv fr": [
+  40500,
+  "LOW",
+  55,
+  "facture électronique pme"
+ ],
+ "impots gouv espace particuliers": [
+  40500,
+  "LOW",
+  56,
+  "facture électronique pme"
+ ],
+ "salaire fonctionnaire 2026": [
+  33100,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "facture": [
+  33100,
+  "LOW",
+  61,
+  "facture électronique pme"
+ ],
+ "salaires fonctionnaires 2026": [
+  27100,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "facture net": [
+  22200,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "date paie fonctionnaire": [
+  22200,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "tarif colissimo": [
+  22200,
+  "LOW",
+  42,
+  "facture électronique pme"
+ ],
+ "cession pme": [
+  22200,
+  "LOW",
+  35,
+  "facture électronique pme"
+ ],
+ "annuaire facturation électronique": [
+  22200,
+  "LOW",
+  3,
+  "facture électronique pme"
+ ],
+ "date limite declaration impots": [
+  22200,
+  "LOW",
+  58,
+  "facture électronique pme"
+ ],
+ "société générale particuliers espace client": [
+  22200,
+  "LOW",
+  44,
+  "facture électronique pme"
+ ],
+ "revalorisation retraite 2026": [
+  18100,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "facture carrefour": [
+  18100,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "déclaration impôts 2026 : date limite en ligne": [
+  18100,
+  "LOW",
+  49,
+  "facture électronique pme"
+ ],
+ "déclaration d'impôts 2026": [
+  18100,
+  "LOW",
+  49,
+  "facture électronique pme"
+ ],
+ "versement agirc-arrco 2026": [
+  18100,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "date salaire fonctionnaire": [
+  18100,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "barème impôts 2026": [
+  18100,
+  "LOW",
+  40,
+  "facture électronique pme"
+ ],
+ "tva intracommunautaire": [
+  18100,
+  "LOW",
+  13,
+  "facture électronique pme"
+ ],
+ "facture electronique autoentrepreneur": [
+  18100,
+  "HIGH",
+  null,
+  "facture électronique pme"
+ ],
+ "tarif tempo edf": [
+  14800,
+  "LOW",
+  30,
+  "facture électronique pme"
+ ],
+ "facturation électronique auto entrepreneur": [
+  14800,
+  "HIGH",
+  7,
+  "facture électronique pme"
+ ],
+ "facture acquittée": [
+  14800,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "loi de finances 2026": [
+  14800,
+  "LOW",
+  43,
+  "facture électronique pme"
+ ],
+ "facture edf": [
+  12100,
+  "LOW",
+  6,
+  "facture électronique pme"
+ ],
+ "paiement retraite fonctionnaire 2026": [
+  12100,
+  "LOW",
+  21,
+  "facture électronique pme"
+ ],
+ "irp auto mon compte": [
+  12100,
+  "LOW",
+  3,
+  "facture électronique pme"
+ ],
+ "budget 2026 retraite": [
+  12100,
+  "LOW",
+  4,
+  "facture électronique pme"
+ ],
+ "tarif edf": [
+  12100,
+  "MEDIUM",
+  38,
+  "facture électronique pme"
+ ],
+ "henrri facturation": [
+  12100,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "declaration urssaf auto entrepreneur": [
+  12100,
+  "LOW",
+  39,
+  "facture électronique pme"
+ ],
+ "taux csg retraite 2026": [
+  9900,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "edf mon compte facture": [
+  9900,
+  "LOW",
+  26,
+  "facture électronique pme"
+ ],
+ "remboursement impot 2026": [
+  9900,
+  "LOW",
+  12,
+  "facture électronique pme"
+ ],
+ "declaration auto entrepreneur": [
+  9900,
+  "LOW",
+  40,
+  "facture électronique pme"
+ ],
+ "facturation électronique 2026": [
+  9900,
+  "MEDIUM",
+  28,
+  "facture électronique pme"
+ ],
+ "paiement fonction publique 2026": [
+  9900,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "calcul tarif péage": [
+  9900,
+  "LOW",
+  42,
+  "facture électronique pme"
+ ],
+ "plafond auto entrepreneur": [
+  9900,
+  "MEDIUM",
+  53,
+  "facture électronique pme"
+ ],
+ "facturation électronique gratuite": [
+  9900,
+  "HIGH",
+  43,
+  "facture électronique pme"
+ ],
+ "numero tva intracommunautaire": [
+  9900,
+  "LOW",
+  15,
+  "facture électronique pme"
+ ],
+ "pension de réversion 2026": [
+  8100,
+  "LOW",
+  null,
+  "facture électronique pme"
+ ],
+ "impôts 2026 date": [
+  8100,
+  "LOW",
+  49,
+  "facture électronique pme"
+ ],
+ "tiime facture": [
+  8100,
+  "MEDIUM",
+  0,
+  "facture électronique pme"
+ ],
+ "calendrier salaire fonctionnaire": [
+  8100,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "date paiement retraite": [
+  8100,
+  "LOW",
+  6,
+  "facture électronique pme"
+ ],
+ "taux credit auto": [
+  8100,
+  "MEDIUM",
+  13,
+  "facture électronique pme"
+ ],
+ "tarif carte grise": [
+  8100,
+  "LOW",
+  57,
+  "facture électronique pme"
+ ],
+ "versement caf 2026": [
+  8100,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "plateforme agréée facturation électronique": [
+  8100,
+  "HIGH",
+  21,
+  "facture électronique pme"
+ ],
+ "assurance auto allianz": [
+  8100,
+  "MEDIUM",
+  0,
+  "facture électronique pme"
+ ],
+ "edf payer ma facture": [
+  8100,
+  "LOW",
+  1,
+  "facture électronique pme"
+ ],
+ "date fin soldes": [
+  8100,
+  "LOW",
+  13,
+  "facture électronique pme"
+ ],
+ "indy facture electronique": [
+  6600,
+  "MEDIUM",
+  13,
+  "facture électronique pme"
+ ],
+ "déclaration impôt 2026 papier": [
+  6600,
+  "LOW",
+  49,
+  "facture électronique pme"
+ ],
+ "statut auto entrepreneur": [
+  6600,
+  "MEDIUM",
+  38,
+  "facture électronique pme"
+ ],
+ "tiime facturation électronique": [
+  6600,
+  "MEDIUM",
+  14,
+  "facture électronique pme"
+ ],
+ "société générale particuliers compte": [
+  6600,
+  "LOW",
+  62,
+  "facture électronique pme"
+ ],
+ "facture proforma": [
+  6600,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "impot sur le revenu 2026": [
+  6600,
+  "LOW",
+  65,
+  "facture électronique pme"
+ ],
+ "tarif agent edf": [
+  6600,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "date salaire prof": [
+  6600,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "plateforme facture électronique": [
+  6600,
+  "MEDIUM",
+  55,
+  "facture électronique pme"
+ ],
+ "réforme retraites 2026": [
+  6600,
+  "LOW",
+  null,
+  "facture électronique pme"
+ ],
+ "facture électronique obligatoire": [
+  6600,
+  "MEDIUM",
+  49,
+  "facture électronique pme"
+ ],
+ "tarif edf 2026": [
+  6600,
+  "MEDIUM",
+  32,
+  "facture électronique pme"
+ ],
+ "paiement caf 2026": [
+  6600,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "crédit d'impôt 2026": [
+  5400,
+  "LOW",
+  8,
+  "facture électronique pme"
+ ],
+ "credit agricole assurance auto": [
+  5400,
+  "MEDIUM",
+  29,
+  "facture électronique pme"
+ ],
+ "calcul tva 20": [
+  5400,
+  "LOW",
+  22,
+  "facture électronique pme"
+ ],
+ "budget 2026 impôts": [
+  5400,
+  "LOW",
+  16,
+  "facture électronique pme"
+ ],
+ "credit mutuel assurance auto": [
+  5400,
+  "MEDIUM",
+  0,
+  "facture électronique pme"
+ ],
+ "numéro de tva intracommunautaire": [
+  5400,
+  "LOW",
+  21,
+  "facture électronique pme"
+ ],
+ "facturation electronique micro entreprise": [
+  5400,
+  "HIGH",
+  0,
+  "facture électronique pme"
+ ],
+ "autoliquidation tva": [
+  5400,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "irp auto mutuelle": [
+  5400,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "paiement caf calendrier": [
+  5400,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "numero de tva": [
+  5400,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "declaration impots date limite": [
+  5400,
+  "LOW",
+  58,
+  "facture électronique pme"
+ ],
+ "calendrier des paiement caf": [
+  5400,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "modele facture": [
+  5400,
+  "MEDIUM",
+  0,
+  "facture électronique pme"
+ ],
+ "impôt revenu 2026": [
+  5400,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "calendrier paiement caf 2026": [
+  5400,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "bureau vallée 100 remboursé 2026": [
+  5400,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "urssaf auto entrepreneur mon compte": [
+  5400,
+  "LOW",
+  62,
+  "facture électronique pme"
+ ],
+ "tarif horaire smic": [
+  5400,
+  "LOW",
+  16,
+  "facture électronique pme"
+ ],
+ "orange espace client facture": [
+  5400,
+  "LOW",
+  31,
+  "facture électronique pme"
+ ],
+ "calendrier caf paiement": [
+  5400,
+  "LOW",
+  5,
+  "facture électronique pme"
+ ],
+ "calendrier paiement caf": [
+  5400,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "déclaration de cession en ligne gratuit": [
+  5400,
+  "MEDIUM",
+  21,
+  "facture électronique pme"
+ ],
+ "calendrier paiements caf": [
+  5400,
+  "LOW",
+  3,
+  "facture électronique pme"
+ ],
+ "nouveau barème impôt 2026": [
+  5400,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "credit lyonnais particuliers": [
+  4400,
+  "LOW",
+  6,
+  "facture électronique pme"
+ ],
+ "urssaf micro entrepreneur": [
+  4400,
+  "LOW",
+  36,
+  "facture électronique pme"
+ ],
+ "auto-entrepreneur urssaf.fr": [
+  4400,
+  "LOW",
+  63,
+  "facture électronique pme"
+ ],
+ "facture auto entrepreneur": [
+  4400,
+  "HIGH",
+  10,
+  "facture électronique pme"
+ ],
+ "tarif basic fit": [
+  4400,
+  "LOW",
+  8,
+  "facture électronique pme"
+ ],
+ "lcl particuliers espace client": [
+  4400,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "mondial relay tarif": [
+  4400,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "facture en ligne": [
+  4400,
+  "HIGH",
+  61,
+  "facture électronique pme"
+ ],
+ "versement retraite fonctionnaire 2026": [
+  4400,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "impôt 2026 date limite": [
+  4400,
+  "LOW",
+  42,
+  "facture électronique pme"
+ ],
+ "frais reel impot 2026": [
+  4400,
+  "LOW",
+  24,
+  "facture électronique pme"
+ ],
+ "credit agricole credit auto": [
+  4400,
+  "MEDIUM",
+  1,
+  "facture électronique pme"
+ ],
+ "rémunération apprentissage 2026": [
+  4400,
+  "LOW",
+  15,
+  "facture électronique pme"
+ ],
+ "facture lidl": [
+  4400,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "abattement forfaitaire retraités 2026": [
+  4400,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "projet de loi de finances 2026": [
+  4400,
+  "LOW",
+  28,
+  "facture électronique pme"
+ ],
+ "date paie fonction publique": [
+  4400,
+  "LOW",
+  0,
+  "facture électronique pme"
+ ],
+ "pole emploi": [
+  2740000,
+  "LOW",
+  100,
+  "community manager"
+ ],
+ "meteo marseille": [
+  1500000,
+  "LOW",
+  30,
+  "community manager"
+ ],
+ "pec emploi": [
+  823000,
+  "LOW",
+  0,
+  "community manager"
+ ],
+ "emploi territorial": [
+  823000,
+  "LOW",
+  23,
+  "community manager"
+ ],
+ "logement social": [
+  368000,
+  "LOW",
+  37,
+  "community manager"
+ ],
+ "demande de logement social": [
+  301000,
+  "LOW",
+  19,
+  "community manager"
+ ],
+ "fusionner pdf": [
+  201000,
+  "LOW",
+  16,
+  "community manager"
+ ],
+ "offre d'emploi": [
+  110000,
+  "MEDIUM",
+  100,
+  "community manager"
+ ],
+ "match marseille": [
+  74000,
+  "LOW",
+  28,
+  "community manager"
+ ],
+ "offre d'emploi autour de moi": [
+  74000,
+  "MEDIUM",
+  26,
+  "community manager"
+ ],
+ "pole emploi mon compte": [
+  60500,
+  "LOW",
+  67,
+  "community manager"
+ ],
+ "bergere de france": [
+  60500,
+  "MEDIUM",
+  31,
+  "community manager"
+ ],
+ "emploi": [
+  60500,
+  "LOW",
+  100,
+  "community manager"
+ ],
+ "mes evenements emploi": [
+  60500,
+  "LOW",
+  4,
+  "community manager"
+ ],
+ "météociel marseille": [
+  49500,
+  "LOW",
+  8,
+  "community manager"
+ ],
+ "classement marseille": [
+  49500,
+  "LOW",
+  8,
+  "community manager"
+ ],
+ "emploi public": [
+  49500,
+  "LOW",
+  98,
+  "community manager"
+ ],
+ "demande logement social": [
+  49500,
+  "LOW",
+  25,
+  "community manager"
+ ],
+ "marseille fait divers": [
+  49500,
+  "LOW",
+  3,
+  "community manager"
+ ],
+ "pole emploi offre": [
+  49500,
+  "LOW",
+  36,
+  "community manager"
+ ],
+ "meteo marseille 15 jours": [
+  40500,
+  "LOW",
+  32,
+  "community manager"
+ ],
+ "pôle emploi espace personnel": [
+  40500,
+  "LOW",
+  50,
+  "community manager"
+ ],
+ "indeed emploi": [
+  40500,
+  "LOW",
+  100,
+  "community manager"
+ ],
+ "recherche emploi": [
+  33100,
+  "MEDIUM",
+  0,
+  "community manager"
+ ],
+ "actualités marseille": [
+  33100,
+  "LOW",
+  35,
+  "community manager"
+ ],
+ "pole emploi actualisation": [
+  33100,
+  "LOW",
+  22,
+  "community manager"
+ ],
+ "emploi territoriale": [
+  33100,
+  "LOW",
+  38,
+  "community manager"
+ ],
+ "horaire priere marseille": [
+  33100,
+  "LOW",
+  0,
+  "community manager"
+ ],
+ "messagerie ac-aix-marseille": [
+  27100,
+  "LOW",
+  21,
+  "community manager"
+ ],
+ "cap emploi": [
+  27100,
+  "LOW",
+  42,
+  "community manager"
+ ],
+ "attestation d'hébergement pdf": [
+  27100,
+  "LOW",
+  1,
+  "community manager"
+ ],
+ "nouveau logo olympique de marseille": [
+  27100,
+  "LOW",
+  0,
+  "community manager"
+ ],
+ "météo marseille demain": [
+  27100,
+  "LOW",
+  25,
+  "community manager"
+ ],
+ "emploi territorial.fr": [
+  27100,
+  "LOW",
+  31,
+  "community manager"
+ ],
+ "messagerie académie aix-marseille": [
+  27100,
+  "LOW",
+  24,
+  "community manager"
+ ],
+ "offre emploi": [
+  27100,
+  "LOW",
+  100,
+  "community manager"
+ ],
+ "réseaux sociaux": [
+  27100,
+  "LOW",
+  36,
+  "community manager"
+ ],
+ "cisse marseille": [
+  27100,
+  "LOW",
+  4,
+  "community manager"
+ ],
+ "offre fibre": [
+  27100,
+  "HIGH",
+  86,
+  "community manager"
+ ],
+ "académie aix marseille messagerie": [
+  27100,
+  "LOW",
+  17,
+  "community manager"
+ ],
+ "messagerie académie aix marseille": [
+  27100,
+  "LOW",
+  24,
+  "community manager"
+ ],
+ "académie aix-marseille messagerie": [
+  27100,
+  "LOW",
+  17,
+  "community manager"
+ ],
+ "messagerie académique aix-marseille": [
+  27100,
+  "LOW",
+  21,
+  "community manager"
+ ],
+ "place emploi public": [
+  27100,
+  "LOW",
+  98,
+  "community manager"
+ ],
+ "messagerie académique aix marseille": [
+  27100,
+  "LOW",
+  24,
+  "community manager"
+ ],
+ "samsic emploi": [
+  27100,
+  "LOW",
+  80,
+  "community manager"
+ ],
+ "ac-aix-marseille messagerie": [
+  27100,
+  "LOW",
+  16,
+  "community manager"
+ ],
+ "mode d'emploi": [
+  22200,
+  "LOW",
+  0,
+  "community manager"
+ ],
+ "action marseille": [
+  22200,
+  "LOW",
+  0,
+  "community manager"
+ ],
+ "heure de priere marseille": [
+  22200,
+  "LOW",
+  0,
+  "community manager"
+ ],
+ "bourse emploi notaire": [
+  22200,
+  "LOW",
+  9,
+  "community manager"
+ ],
+ "ouest-france faits divers": [
+  22200,
+  "LOW",
+  50,
+  "community manager"
+ ],
+ "emploi autour de moi": [
+  22200,
+  "MEDIUM",
+  93,
+  "community manager"
+ ],
+ "télétravail": [
+  22200,
+  "MEDIUM",
+  66,
+  "community manager"
+ ],
+ "assistante social autour de moi": [
+  22200,
+  "LOW",
+  9,
+  "community manager"
+ ],
+ "angleterre-france rugby féminin": [
+  22200,
+  "LOW",
+  0,
+  "community manager"
+ ],
+ "programme france inter aujourd hui": [
+  22200,
+  "LOW",
+  73,
+  "community manager"
+ ],
+ "élections municipales marseille": [
+  22200,
+  "LOW",
+  2,
+  "community manager"
+ ],
+ "savon de marseille": [
+  22200,
+  "HIGH",
+  46,
+  "community manager"
+ ],
+ "centralesupélec université paris-saclay": [
+  22200,
+  "LOW",
+  10,
+  "community manager"
+ ],
+ "centre médico social": [
+  22200,
+  "LOW",
+  0,
+  "community manager"
+ ],
+ "emploi du temps": [
+  22200,
+  "LOW",
+  9,
+  "community manager"
+ ],
+ "ligue des hauts-de-france": [
+  22200,
+  "LOW",
+  24,
+  "community manager"
+ ],
+ "agence seo": [
+  18100,
+  "MEDIUM",
+  33,
+  "community manager"
+ ],
+ "agence partnaire": [
+  18100,
+  "LOW",
+  17,
+  "community manager"
+ ],
+ "réseaux stan": [
+  18100,
+  "LOW",
+  16,
+  "community manager"
+ ],
+ "ouest-france obsèques 50": [
+  18100,
+  "LOW",
+  10,
+  "community manager"
+ ],
+ "agence immobilière lamy": [
+  18100,
+  "LOW",
+  1,
+  "community manager"
+ ],
+ "maire de marseille": [
+  18100,
+  "LOW",
+  8,
+  "community manager"
+ ],
+ "emploi store": [
+  18100,
+  "LOW",
+  0,
+  "community manager"
+ ],
+ "avis de décès 14 ouest-france": [
+  18100,
+  "LOW",
+  2,
+  "community manager"
+ ],
+ "olympique marseille feminine": [
+  18100,
+  "LOW",
+  2,
+  "community manager"
+ ],
+ "resultat marseille": [
+  18100,
+  "LOW",
+  21,
+  "community manager"
+ ],
+ "tarots de marseille": [
+  18100,
+  "HIGH",
+  11,
+  "community manager"
+ ],
+ "arbitre france-paraguay sanctionné": [
+  18100,
+  "LOW",
+  0,
+  "community manager"
+ ],
+ "emploi fonction publique": [
+  18100,
+  "LOW",
+  100,
+  "community manager"
+ ],
+ "santé publique france": [
+  18100,
+  "LOW",
+  82,
+  "community manager"
+ ],
+ "paroles de marseille": [
+  18100,
+  "LOW",
+  13,
+  "community manager"
+ ],
+ "agence": [
+  18100,
+  "LOW",
+  100,
+  "community manager"
+ ],
+ "formation sst": [
+  18100,
+  "MEDIUM",
+  2,
+  "community manager"
+ ],
+ "job d'été": [
+  14800,
+  "LOW",
+  18,
+  "community manager"
+ ],
+ "resultat olympique marseille": [
+  14800,
+  "LOW",
+  32,
+  "community manager"
+ ],
+ "jeux ouest-france gratuit": [
+  14800,
+  "LOW",
+  6,
+  "community manager"
+ ],
+ "pharmacie marseille": [
+  14800,
+  "LOW",
+  17,
+  "community manager"
+ ],
+ "logo": [
+  60500,
+  "LOW",
+  31,
+  "vectoriser un logo"
+ ],
+ "omm logo": [
+  49500,
+  "MEDIUM",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo om": [
+  49500,
+  "MEDIUM",
+  0,
+  "vectoriser un logo"
+ ],
+ "o m logo": [
+  49500,
+  "MEDIUM",
+  0,
+  "vectoriser un logo"
+ ],
+ "nouveaux logo om": [
+  27100,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo psg": [
+  27100,
+  "HIGH",
+  2,
+  "vectoriser un logo"
+ ],
+ "logo facebook": [
+  18100,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo f b": [
+  18100,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo fb": [
+  18100,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo porsche": [
+  14800,
+  "MEDIUM",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo bmw": [
+  14800,
+  "HIGH",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo ytb": [
+  14800,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo carrefour": [
+  14800,
+  "LOW",
+  7,
+  "vectoriser un logo"
+ ],
+ "logo linkedin": [
+  14800,
+  "LOW",
+  7,
+  "vectoriser un logo"
+ ],
+ "ralph lauren logo": [
+  14800,
+  "HIGH",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo attention": [
+  14800,
+  "HIGH",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo ferrari": [
+  14800,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "lauren ralph logo": [
+  14800,
+  "HIGH",
+  6,
+  "vectoriser un logo"
+ ],
+ "logo apple": [
+  12100,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo of netflix": [
+  12100,
+  "LOW",
+  15,
+  "vectoriser un logo"
+ ],
+ "logo van apple": [
+  12100,
+  "LOW",
+  5,
+  "vectoriser un logo"
+ ],
+ "logo renault": [
+  12100,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo spotify": [
+  12100,
+  "LOW",
+  5,
+  "vectoriser un logo"
+ ],
+ "logo google": [
+  12100,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "insa logo": [
+  12100,
+  "LOW",
+  25,
+  "vectoriser un logo"
+ ],
+ "louis vuitton logo": [
+  9900,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "décathlon logo": [
+  9900,
+  "LOW",
+  16,
+  "vectoriser un logo"
+ ],
+ "leclerc logo": [
+  9900,
+  "LOW",
+  19,
+  "vectoriser un logo"
+ ],
+ "audi logo": [
+  9900,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo décathlon": [
+  9900,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo mcdo": [
+  9900,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "netflix logo": [
+  9900,
+  "LOW",
+  13,
+  "vectoriser un logo"
+ ],
+ "logo leclerc": [
+  9900,
+  "LOW",
+  2,
+  "vectoriser un logo"
+ ],
+ "logo decathlon": [
+  9900,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo with orange": [
+  8100,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo mercedes": [
+  8100,
+  "MEDIUM",
+  0,
+  "vectoriser un logo"
+ ],
+ "toyota logo": [
+  8100,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo s orange": [
+  8100,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "linkedin logo": [
+  8100,
+  "LOW",
+  14,
+  "vectoriser un logo"
+ ],
+ "logo message iphone bleu": [
+  8100,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "dior logo": [
+  8100,
+  "LOW",
+  8,
+  "vectoriser un logo"
+ ],
+ "youtube logo": [
+  8100,
+  "LOW",
+  10,
+  "vectoriser un logo"
+ ],
+ "paris&co logo": [
+  8100,
+  "LOW",
+  4,
+  "vectoriser un logo"
+ ],
+ "logo de google": [
+  8100,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo disney": [
+  8100,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo orange": [
+  8100,
+  "LOW",
+  14,
+  "vectoriser un logo"
+ ],
+ "orange in logo": [
+  8100,
+  "LOW",
+  1,
+  "vectoriser un logo"
+ ],
+ "logo of google": [
+  8100,
+  "LOW",
+  8,
+  "vectoriser un logo"
+ ],
+ "google google logo": [
+  8100,
+  "LOW",
+  2,
+  "vectoriser un logo"
+ ],
+ "logo walt disney": [
+  8100,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "sncf logo": [
+  8100,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "google logo": [
+  8100,
+  "LOW",
+  3,
+  "vectoriser un logo"
+ ],
+ "orange logo": [
+  8100,
+  "LOW",
+  9,
+  "vectoriser un logo"
+ ],
+ "orangewood logo": [
+  8100,
+  "LOW",
+  6,
+  "vectoriser un logo"
+ ],
+ "tik-tok logo": [
+  8100,
+  "LOW",
+  4,
+  "vectoriser un logo"
+ ],
+ "hermes logo": [
+  8100,
+  "LOW",
+  2,
+  "vectoriser un logo"
+ ],
+ "logo sncf": [
+  8100,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "psg logo": [
+  8100,
+  "MEDIUM",
+  4,
+  "vectoriser un logo"
+ ],
+ "logo of orange": [
+  8100,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo snapchat": [
+  8100,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo snap": [
+  8100,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "porsche logo": [
+  6600,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo intermarche": [
+  6600,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "no logo": [
+  6600,
+  "LOW",
+  9,
+  "vectoriser un logo"
+ ],
+ "roblox logo": [
+  6600,
+  "LOW",
+  11,
+  "vectoriser un logo"
+ ],
+ "bmw logo": [
+  6600,
+  "MEDIUM",
+  0,
+  "vectoriser un logo"
+ ],
+ "adidas logo": [
+  6600,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "apple logo": [
+  6600,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo red bull": [
+  6600,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "amazon logo": [
+  6600,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo intermarché": [
+  6600,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "carrefour logo": [
+  6600,
+  "LOW",
+  10,
+  "vectoriser un logo"
+ ],
+ "logo of adidas": [
+  6600,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo barca": [
+  6600,
+  "MEDIUM",
+  2,
+  "vectoriser un logo"
+ ],
+ "no logo bzh": [
+  6600,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "air france logo": [
+  6600,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "carrefour #logo": [
+  6600,
+  "LOW",
+  1,
+  "vectoriser un logo"
+ ],
+ "logo intermarch2": [
+  6600,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo batman": [
+  6600,
+  "HIGH",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo air france": [
+  6600,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo amazon": [
+  6600,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo twitch": [
+  5400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "ikéa logo": [
+  5400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo for lamborghini": [
+  5400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "microsoft company logo": [
+  5400,
+  "LOW",
+  37,
+  "vectoriser un logo"
+ ],
+ "logo yamaha": [
+  5400,
+  "MEDIUM",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo alight motion": [
+  5400,
+  "LOW",
+  1,
+  "vectoriser un logo"
+ ],
+ "logo intelligence artificielle": [
+  5400,
+  "LOW",
+  12,
+  "vectoriser un logo"
+ ],
+ "playstation logo": [
+  5400,
+  "LOW",
+  20,
+  "vectoriser un logo"
+ ],
+ "logo of euro": [
+  5400,
+  "LOW",
+  20,
+  "vectoriser un logo"
+ ],
+ "gucci logo": [
+  5400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo microsoft corporation": [
+  5400,
+  "LOW",
+  29,
+  "vectoriser un logo"
+ ],
+ "logo lamborghini": [
+  5400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo microsoft": [
+  5400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo spotify apple": [
+  5400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "lego logo": [
+  5400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "facebook logo": [
+  5400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "galerie logo samsung": [
+  5400,
+  "LOW",
+  1,
+  "vectoriser un logo"
+ ],
+ "ms logo": [
+  5400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo of lamborghini": [
+  5400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "tel logo": [
+  5400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo alpine": [
+  5400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "fb logo": [
+  5400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo chanel": [
+  5400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "p s logo": [
+  5400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo of microsoft": [
+  5400,
+  "LOW",
+  14,
+  "vectoriser un logo"
+ ],
+ "logo jordan": [
+  5400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "decathlon logo": [
+  5400,
+  "LOW",
+  8,
+  "vectoriser un logo"
+ ],
+ "logo for euro": [
+  5400,
+  "LOW",
+  23,
+  "vectoriser un logo"
+ ],
+ "microsoft logo": [
+  5400,
+  "LOW",
+  16,
+  "vectoriser un logo"
+ ],
+ "aston martin logo": [
+  5400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "ferrari logo": [
+  5400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "sephora logo": [
+  5400,
+  "LOW",
+  9,
+  "vectoriser un logo"
+ ],
+ "starbucks coffee logo": [
+  4400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "starbuck coffee logo": [
+  4400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "logo excel": [
+  4400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "canva logo": [
+  4400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "juventus logo": [
+  4400,
+  "LOW",
+  0,
+  "vectoriser un logo"
+ ],
+ "octobre rose logo": [
+  4400,
+  "LOW",
+  39,
+  "vectoriser un logo"
+ ],
+ "superm logo": [
+  4400,
+  "HIGH",
+  2,
+  "vectoriser un logo"
+ ]
+}

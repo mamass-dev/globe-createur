@@ -124,3 +124,51 @@ Autocomplétion Google : « agent ia dijon », « vidéo entreprise dijon », «
 - **Deux requêtes IA valent le coup** : « agence no code dijon » (page 2, la page automatisation devient la page agents + automatisation) et « diagnostic IA PME / TPE » (page 3-6 avec une page existante ; porte d'entrée nationale vers l'audit temps perdu puis l'installation d'agents).
 - **Pour le contenu**, la seule requête locale qui existe est « photographe entreprise dijon » (pos 12 avec la page actuelle) : à faire monter, le reste du pilier se vend par la démonstration (galerie mobile) et le forfait.
 - Limite : la Search Console ne montre que ce sur quoi le site apparaît déjà. Pour chiffrer la demande sur des requêtes où on est absent, il faudrait un outil de volumes (payant, hors budget 30 $/mois) ; l'autocomplétion donne l'existence, pas le volume.
+
+## 10. Volumes réels (DataForSEO, Google Ads France, 2026-10-17)
+
+Passe de 440 requêtes + suggestions sur 10 expressions + difficulté sur 30 requêtes clés. Coût total : 0,40 $. Données brutes dans `docs/strategie/data/`. Volume = recherches mensuelles France ; KD = difficulté 0-100 (sous 20 : atteignable avec une bonne page, au-dessus de 60 : réservé aux gros sites).
+
+**Ce que ça change par rapport à la section 9** : la Search Console sous-estimait les deux piliers. La demande locale reste faible, mais il existe pour chacun des requêtes **nationales, à volume réel et à difficulté basse**. Le site v3 peut donc bien se construire sur des requêtes, à condition de viser le national sur les piliers et le local sur quelques pages seulement.
+
+### Pilier contenu
+
+| Requête | Volume | KD | Page v3 |
+|---|---|---|---|
+| vectoriser une image / image gratuit | 6 600 + 2 900 | 2-7 | **Outil gratuit de vectorisation** (même logique que l'analyseur SEO), vendu derrière : vectorisation pro 69 € |
+| vectoriser un logo / logo en vectoriel / convertir logo en vectoriel | 1 000 + 320 + 50 | 5 / 0 / ? | Page vectorisation existante, déjà positionnée |
+| création de contenu / agence création de contenu | 1 600 + 140 | 1 / 1 | Page pilier contenu |
+| photographe entreprise | 1 000 | 22 | Page photo entreprise (nationale), déclinaison Dijon (10-20 /mois, KD 12) |
+| vidéo pour entreprise / vidéo présentation entreprise / film d'entreprise / vidéo entreprise | 260 + 210 + 140 + 170 | 0 | Page vidéo entreprise |
+| graphiste dijon / besançon / chalon / dole / nevers | 170 / 110 / 30 / 30 / 30 | 17 | **Page graphiste manquante** (aucune page aujourd'hui alors que c'est la première requête locale du pilier) |
+| community manager dijon / agence réseaux sociaux dijon | 30 / 10 | ? | Dans la page contenu, pas de page dédiée |
+
+### Pilier agents
+
+| Requête | Volume | KD | Page v3 |
+|---|---|---|---|
+| agence ia / agence automatisation ia / agence agent ia | 1 900 + 390 + 90 | 7 / 0 / 4 | **Page « agence IA »** (nationale, mention Dijon et Bourgogne ; « agence ia dijon » 30 /mois) |
+| agent ia c'est quoi / qu'est-ce qu'un agent ia / comment créer un agent ia | 720 + 590 + 720 | 0-14 | Guide « Agent IA : c'est quoi, pour une PME » (porte d'entrée pédagogique) |
+| standard téléphonique ia / agent vocal ia / secrétaire ia | 170 + 260 + 70 | 0 | Page agent Relais / standard (CPC 29 $ sur « standard téléphonique ia » : demande solvable) |
+| agent ia entreprise / agents ia entreprise | 90 + 90 | 4 | Page agents existante, à renforcer |
+| diag data ia / diagnostic ia / diagnostic ia pme | 210 + 140 + 80 | 0 / 4 / ? | Page diagnostic existante (page 3-6 aujourd'hui, atteignable) |
+| facture électronique 2026 / obligatoire / plateforme agréée / micro-entreprise / pme | 12 100 / 6 600 / 8 100 / 5 400 / 390 | 28 / 49 / 21 / 15 / 66 | Article de fond + agent Facture. Concurrence = éditeurs de compta, mais KD 15-28 sur plusieurs variantes |
+| ia pme / ia pour pme / automatisation pme | 50 / 30 / 30 | ? | Ne pas cibler : personne ne cherche ça |
+
+### Requêtes d'agence « classique »
+
+| Requête | Volume | KD |
+|---|---|---|
+| agence de communication dijon / agence communication dijon | 320 / 210 | **92 / 67** |
+| agence de communication besançon | 90 | **94** |
+| agence web nevers | ≈ 850 impr./16 mois GSC | 13 |
+| seo dijon / agence seo dijon | faible | 0 |
+
+Les requêtes « agence de communication » sont les plus disputées du lot (KD 92-94) pour 500 recherches par mois à Dijon. Elles confirment le choix de ne pas construire le site dessus : on garde les pages villes pour ce qu'elles rapportent déjà, sans y investir.
+
+### Carte des pages v3 déduite des volumes
+1. Outil gratuit « vectoriser une image » (≈ 10 000 recherches/mois cumulées, KD < 10) : l'aimant à prospects du pilier contenu, et une vraie innovation produit.
+2. Page « agence IA » nationale + guide « agent IA c'est quoi » + page standard/secrétaire IA : l'entrée du pilier agents.
+3. Pages photo entreprise, vidéo entreprise, graphiste (Dijon puis villes), création de contenu : le pilier contenu en pages nationales avec ancrage local.
+4. Article facture électronique 2026 pour PME, lié à l'agent Facture : la plus grosse demande du tableau, à prendre sur les variantes KD 15-28.
+5. Diagnostic IA : page existante à faire monter.
