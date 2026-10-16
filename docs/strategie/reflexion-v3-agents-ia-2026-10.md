@@ -188,3 +188,15 @@ Intuition d'Axel : « le nombre de requêtes est bas ». Vérification sur les 4
 3. **Le contenu sur place** (photo, vidéo) comme couche locale, humaine, différenciante, vendue par le réseau et la recommandation, pas par Google.
 
 Globe Créateur cesse d'être « une agence qu'on cherche à Dijon » pour devenir « un studio dont les produits se trouvent partout et dont les agents tournent chez les clients ». Les pages villes restent en fond de catalogue.
+
+## 12. L'essence (validé par Axel le 2026-10-17)
+
+Axel valide la vente et la livraison à distance, à l'échelle nationale, **et le déplacement** : « nous pouvons même nous déplacer, c'est ça l'essence de Globe Créateur », le nom vient de globe-trotter.
+
+Le positionnement final tient donc en une idée : **un studio qui va partout**. Les produits se trouvent partout (outils et prestations à prix fixe livrées à distance), les agents tournent chez les clients (installés à distance ou sur place), et pour le contenu l'équipe se déplace, à Dijon comme à Nantes. Le déplacement n'est pas un surcoût caché, c'est la promesse : « on vient voir votre atelier avant de le raconter ».
+
+Conséquences pour la v3 :
+- Les pages piliers sont nationales (photographe entreprise, vidéo entreprise, agence IA, vectorisation) avec une mention explicite « partout en France, on se déplace », et une rubrique « où on est allés » alimentée par les reportages réels (carte des missions).
+- Les pages villes passent en fond de catalogue ; la page Dijon reste la page « maison ».
+- Le discours de marque reprend l'origine du nom : Globe, parce qu'on bouge. À formuler sur l'accueil et la page à propos.
+- Décision de prix à prendre : déplacement inclus jusqu'à quelle distance, forfait au-delà.
