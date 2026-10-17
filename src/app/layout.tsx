@@ -74,6 +74,8 @@ export default function RootLayout({
     <html lang="fr" className={`dark ${monument.variable} ${monumentMono.variable} scroll-smooth`} suppressHydrationWarning>
       <head>
         <link rel="dns-prefetch" href="https://img.youtube.com" />
+        {/* Quartier général (hq.) : masque le chrome du site avant le premier rendu, sans rendre le layout dynamique */}
+        <script dangerouslySetInnerHTML={{ __html: "if(location.hostname.indexOf('hq.')===0)document.documentElement.classList.add('hq')" }} />
       </head>
       {/*
         ╔═══════════════════════════════════════════════╗

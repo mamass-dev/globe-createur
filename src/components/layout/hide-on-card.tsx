@@ -9,5 +9,6 @@ import { usePathname } from "next/navigation"
 export function HideOnCard({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   if (pathname?.startsWith("/carte") || pathname === "/ig" || pathname?.startsWith("/p/") || pathname?.startsWith("/admin")) return null
-  return <>{children}</>
+  // Sur hq.globecreateur.fr le chemin est réécrit côté serveur : le masquage se fait par CSS (html.hq [data-chrome])
+  return <div data-chrome className="contents">{children}</div>
 }

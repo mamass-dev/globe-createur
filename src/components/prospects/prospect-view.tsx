@@ -1,8 +1,8 @@
 "use client"
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
-import Link from "next/link"
 import { track } from "@/lib/analytics"
+import { hq } from "@/lib/prospects/links"
 import { Button } from "@/components/ui/button"
 import { CHAPTERS, STATE_LABELS, totals, type Constat, type Proposition, type Question, type Projet, type Rapport, type ProspectState } from "@/lib/prospects/types"
 import {
@@ -159,14 +159,14 @@ export function ProspectView({ prospect: initial, cases }: { prospect: PublicPro
       {/* Barre haute */}
       <header className="sticky top-0 z-40 border-b border-[#1c1c1c] bg-noir/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 sm:px-6">
-          <Link href="/" className="shrink-0 text-lg font-bold tracking-tight">GLOBE<span className="ml-2 hidden text-[10px] font-bold uppercase tracking-[0.3em] text-aluminium sm:inline">Creative House</span></Link>
+          <a href="https://globecreateur.fr" className="shrink-0 text-lg font-bold tracking-tight">GLOBE<span className="ml-2 hidden text-[10px] font-bold uppercase tracking-[0.3em] text-aluminium sm:inline">Creative House</span></a>
           <span className="truncate text-sm text-aluminium">× <span className="text-ivory">{p.company}</span></span>
           <span className="ml-auto hidden items-center gap-2 text-xs text-aluminium sm:flex">
             <span className="inline-block h-1.5 w-1.5 bg-signal" /> {STATE_LABELS[p.state]}
           </span>
-          <Link href={`/p/${slug}/document`} className="inline-flex h-9 items-center gap-1.5 border border-[#2a2a2a] px-3 text-xs font-bold uppercase tracking-widest text-aluminium hover:text-ivory" title="Version imprimable (PDF)">
+          <a href={hq.document(slug)} className="inline-flex h-9 items-center gap-1.5 border border-[#2a2a2a] px-3 text-xs font-bold uppercase tracking-widest text-aluminium hover:text-ivory" title="Version imprimable (PDF)">
             <FileDown className="h-3.5 w-3.5" aria-hidden="true" /> <span className="hidden sm:inline">PDF</span>
-          </Link>
+          </a>
           <button type="button" onClick={() => setShareOpen(true)} className="inline-flex h-9 items-center gap-1.5 border border-[#2a2a2a] px-3 text-xs font-bold uppercase tracking-widest text-aluminium hover:text-ivory">
             <Share2 className="h-3.5 w-3.5" aria-hidden="true" /> <span className="hidden sm:inline">Partager</span>
           </button>
@@ -203,7 +203,7 @@ export function ProspectView({ prospect: initial, cases }: { prospect: PublicPro
         {p.state === "accepte" && p.acceptance && (
           <div className="mt-6 flex flex-col gap-2 border border-signal/50 bg-signal/10 p-5 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm"><CheckCircle2 className="mr-2 inline h-4 w-4 text-signal" aria-hidden="true" />Proposition acceptée le {dateTimeFr(p.acceptance.acceptedAt)} par {p.acceptance.name}. Nous vous appelons pour caler le démarrage.</p>
-            <Link href={`/p/${slug}/document?v=${p.acceptance.version}`} className="text-sm underline underline-offset-4">Document figé (version {p.acceptance.version})</Link>
+            <a href={hq.document(slug, p.acceptance.version)} className="text-sm underline underline-offset-4">Document figé (version {p.acceptance.version})</a>
           </div>
         )}
         {p.state === "clos" && (
@@ -361,7 +361,7 @@ export function ProspectView({ prospect: initial, cases }: { prospect: PublicPro
             <h2 className="mt-3 text-2xl font-bold sm:text-4xl">Choisis pour vous.</h2>
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {cases.map((c) => (
-                <Link key={c.slug} href={`/projets/${c.slug}`} target="_blank" className="group border border-[#1c1c1c] bg-noir p-5 transition-colors hover:bg-[#141414]">
+                <a key={c.slug} href={`https://globecreateur.fr/projets/${c.slug}`} target="_blank" rel="noreferrer" className="group border border-[#1c1c1c] bg-noir p-5 transition-colors hover:bg-[#141414]">
                   {c.image && (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={c.image} alt="" className="mb-4 aspect-[4/3] w-full object-cover" loading="lazy" onError={(e) => { e.currentTarget.style.display = "none" }} />
@@ -369,7 +369,7 @@ export function ProspectView({ prospect: initial, cases }: { prospect: PublicPro
                   <p className="text-[11px] font-bold uppercase tracking-widest text-aluminium">{c.category}{c.client ? ` · ${c.client}` : ""}</p>
                   <p className="mt-2 font-bold group-hover:text-signal">{c.title}</p>
                   <p className="mt-2 text-sm leading-relaxed text-aluminium">{c.excerpt}</p>
-                </Link>
+                </a>
               ))}
             </div>
           </section>
@@ -480,7 +480,7 @@ export function ProspectView({ prospect: initial, cases }: { prospect: PublicPro
               <div className="mt-3 max-w-2xl">
                 <h2 className="text-2xl font-bold sm:text-4xl">C'est signé.</h2>
                 <p className="mt-4 text-aluminium">Version {p.acceptance.version} acceptée le {dateTimeFr(p.acceptance.acceptedAt)} par {p.acceptance.name}, pour {eur(p.acceptance.totalOnce)}{p.acceptance.totalMonthly ? ` + ${eur(p.acceptance.totalMonthly)} par mois` : ""}. Empreinte : <code className="text-xs">{p.acceptance.hash.slice(0, 16)}…</code></p>
-                <Link href={`/p/${slug}/document?v=${p.acceptance.version}`} className="mt-4 inline-flex items-center gap-2 text-sm underline underline-offset-4"><FileDown className="h-4 w-4" aria-hidden="true" /> Télécharger le document figé</Link>
+                <a href={hq.document(slug, p.acceptance.version)} className="mt-4 inline-flex items-center gap-2 text-sm underline underline-offset-4"><FileDown className="h-4 w-4" aria-hidden="true" /> Télécharger le document figé</a>
               </div>
             ) : (
               <AcceptBlock slug={slug} terms={p.proposition.terms} belowMin={belowMin} sums={sums} hasEstimate={liveProposition.modules.some((m) => m.estimate && m.selected)} defaultName={p.contactName ?? ""} onAccepted={() => setP((prev) => ({ ...prev, state: "accepte" }))} />

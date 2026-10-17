@@ -32,6 +32,7 @@ if (!company) { console.error("Usage : node scripts/constat.mjs \"Entreprise\" h
 const site = siteArg ? (siteArg.startsWith("http") ? siteArg : `https://${siteArg}`) : undefined
 
 const SITE_URL = "https://globecreateur.fr"
+const HQ_URL = process.env.NEXT_PUBLIC_HQ_URL || "https://hq.globecreateur.fr"
 const slugify = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 40)
 const suffix = (n = 6) => { const a = "abcdefghjkmnpqrstuvwxyz23456789"; return Array.from(randomBytes(n), (b) => a[b % a.length]).join("") }
 
@@ -121,7 +122,7 @@ prospect.updatedAt = new Date().toISOString()
 prospect.events.push({ type: "note", at: prospect.updatedAt, meta: { text: "constat préparé par scripts/constat.mjs" } })
 await put(`prospects/${slug}.json`, JSON.stringify(prospect), { access: "private", contentType: "application/json", addRandomSuffix: false, allowOverwrite: true, token })
 
-console.log(`\nDossier : ${SITE_URL}/admin/prospects/${slug}`)
-console.log(`Lien prospect : ${SITE_URL}/p/${slug}`)
+console.log(`\nDossier : ${HQ_URL}/admin/${slug}`)
+console.log(`Lien prospect : ${HQ_URL}/${slug}`)
 console.log("À compléter dans l'admin : les trois points (proposés depuis l'analyseur, à réécrire), le test client mystère, la vidéo d'une minute, le lien de rendez-vous.")
 void list

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import { getProspect } from "@/lib/prospects/store"
 import { totals } from "@/lib/prospects/types"
 import { PrintButton } from "@/components/prospects/print-button"
+import { hq } from "@/lib/prospects/links"
 
 export const dynamic = "force-dynamic"
 export const metadata: Metadata = { title: "Document", robots: { index: false, follow: false } }
@@ -29,7 +30,7 @@ export default async function DocumentPage({ params, searchParams }: { params: P
     <div className="min-h-dvh bg-white text-[#111] print:bg-white">
       <style>{`@page { margin: 18mm; } @media print { .no-print { display: none !important } }`}</style>
       <div className="no-print sticky top-0 flex items-center justify-between gap-3 border-b border-neutral-200 bg-white px-6 py-3 text-sm">
-        <a href={`/p/${slug}`} className="underline underline-offset-4">← Retour à la page</a>
+        <a href={hq.prospect(slug)} className="underline underline-offset-4">← Retour à la page</a>
         <PrintButton />
       </div>
       <article className="mx-auto max-w-3xl px-6 py-10 text-[15px] leading-relaxed [&_h1]:text-[#111]! [&_h2]:text-[#6b6b6b]! [&_p]:text-[#111] [&_li]:text-[#111] [&_td]:text-[#111] [&_th]:text-[#111]">
@@ -114,7 +115,7 @@ export default async function DocumentPage({ params, searchParams }: { params: P
           </section>
         )}
 
-        <footer className="mt-10 text-xs text-neutral-500">Globe Créateur · globecreateur.fr · Ce document est généré depuis la page {`globecreateur.fr/p/${p.slug}`}.</footer>
+        <footer className="mt-10 text-xs text-neutral-500">Globe Créateur · globecreateur.fr · Ce document est généré depuis la page {hq.prospect(p.slug).replace(/^https?:\/\//, "")}.</footer>
       </article>
     </div>
   )

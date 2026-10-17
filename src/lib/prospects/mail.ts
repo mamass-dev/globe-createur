@@ -1,6 +1,7 @@
 import { Resend } from "resend"
 import { escapeHtml } from "@/lib/security"
 import { SITE_URL } from "@/lib/constants"
+import { hq } from "./links"
 import type { Prospect } from "./types"
 
 /*
@@ -23,10 +24,10 @@ function client() {
 }
 
 export function prospectUrl(p: Prospect) {
-  return `${SITE_URL}/p/${p.slug}`
+  return hq.prospect(p.slug)
 }
 export function adminUrl(p: Prospect) {
-  return `${SITE_URL}/admin/prospects/${p.slug}`
+  return hq.dossier(p.slug)
 }
 
 function layout(body: string) {
@@ -105,7 +106,7 @@ export async function sendCode(email: string, name: string, p: Prospect, code: s
 export async function sendAcceptance(p: Prospect) {
   const a = p.acceptance
   if (!a) return
-  const docUrl = `${prospectUrl(p)}/document?v=${a.version}`
+  const docUrl = hq.document(p.slug, a.version)
   const body = `<p>Proposition acceptée le ${new Date(a.acceptedAt).toLocaleString("fr-FR", { timeZone: "Europe/Paris" })} par ${escapeHtml(a.name)} (${escapeHtml(a.email)}).</p>
     <p>Montant : ${a.totalOnce.toLocaleString("fr-FR")} € HT${a.totalMonthly ? ` + ${a.totalMonthly.toLocaleString("fr-FR")} € HT par mois` : ""}.</p>
     <p>Version ${a.version}, empreinte SHA-256 : <code style="font-size:12px;">${a.hash}</code></p>

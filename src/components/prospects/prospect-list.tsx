@@ -1,10 +1,10 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { STATE_LABELS, type ProspectState } from "@/lib/prospects/types"
+import { hq } from "@/lib/prospects/links"
 import { Plus, Loader2, LogOut, Eye, MessageSquare, Bell } from "lucide-react"
 
 type Row = {
@@ -38,7 +38,7 @@ export function ProspectList() {
     setBusy(true)
     const r = await fetch("/api/admin/prospects", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ company, website }) })
     setBusy(false)
-    if (r.ok) { const { slug } = await r.json(); router.push(`/admin/prospects/${slug}`) }
+    if (r.ok) { const { slug } = await r.json(); window.location.href = hq.dossier(slug) }
   }
 
   const states: ProspectState[] = ["constat", "proposition", "accepte", "projet", "rapport", "clos"]
@@ -76,7 +76,7 @@ export function ProspectList() {
               {rows?.length === 0 && <tr><td className="p-4 text-aluminium" colSpan={6}>Aucun dossier. Créez le premier ci-dessus.</td></tr>}
               {rows?.map((r) => (
                 <tr key={r.slug} className="border-t border-[#1c1c1c] hover:bg-[#0f0f0f]">
-                  <td className="p-3"><Link href={`/admin/prospects/${r.slug}`} className="font-bold hover:text-signal">{r.company}</Link><br /><span className="text-xs text-aluminium">{r.contactName || r.slug}</span></td>
+                  <td className="p-3"><a href={hq.dossier(r.slug)} className="font-bold hover:text-signal">{r.company}</a><br /><span className="text-xs text-aluminium">{r.contactName || r.slug}</span></td>
                   <td className="p-3 text-xs">{STATE_LABELS[r.state]}</td>
                   <td className="p-3"><Eye className="mr-1 inline h-3.5 w-3.5 text-aluminium" />{r.opens}</td>
                   <td className="p-3 text-xs">{ago(r.lastActivity)}</td>

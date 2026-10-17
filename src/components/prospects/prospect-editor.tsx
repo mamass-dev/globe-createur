@@ -1,10 +1,10 @@
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
-import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { CATALOG } from "@/lib/prospects/catalog"
+import { hq } from "@/lib/prospects/links"
 import { STATE_LABELS, totals, type Prospect, type ProspectState, type Module } from "@/lib/prospects/types"
 import { Loader2, Save, ExternalLink, Trash2, Upload, Plus, X, Send, Ban, Check } from "lucide-react"
 
@@ -70,7 +70,7 @@ export function ProspectEditor({ slug, cases }: Props) {
 
   if (!p) return <div className="flex min-h-dvh items-center justify-center bg-noir text-aluminium"><Loader2 className="h-5 w-5 animate-spin" /></div>
 
-  const publicUrl = `${typeof window !== "undefined" ? window.location.origin : ""}/p/${p.slug}`
+  const publicUrl = hq.prospect(p.slug)
   const states: ProspectState[] = ["constat", "proposition", "accepte", "projet", "rapport", "clos"]
   const lastOpen = [...p.events].reverse().find((e) => e.type === "open")
 
@@ -78,12 +78,12 @@ export function ProspectEditor({ slug, cases }: Props) {
     <div className="min-h-dvh bg-noir text-ivory">
       <header className="sticky top-0 z-30 border-b border-[#1c1c1c] bg-noir/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-4 py-3 sm:px-6">
-          <Link href="/admin/prospects" className="text-xs text-aluminium hover:text-ivory">← Prospects</Link>
+          <a href={hq.admin()} className="text-xs text-aluminium hover:text-ivory">← Prospects</a>
           <p className="font-bold">{p.company}</p>
           <select value={p.state} onChange={(e) => action({ action: "state", state: e.target.value })} className="border border-[#2a2a2a] bg-noir px-2 py-1 text-xs">
             {states.map((s) => <option key={s} value={s}>{STATE_LABELS[s]}</option>)}
           </select>
-          <a href={`/p/${p.slug}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-xs text-aluminium hover:text-ivory"><ExternalLink className="h-3.5 w-3.5" /> Voir la page</a>
+          <a href={publicUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-xs text-aluminium hover:text-ivory"><ExternalLink className="h-3.5 w-3.5" /> Voir la page</a>
           <button type="button" onClick={() => { navigator.clipboard.writeText(publicUrl); setMsg("Lien copié.") }} className="text-xs text-aluminium hover:text-ivory">Copier le lien</button>
           <span className="ml-auto text-xs text-aluminium">{msg}</span>
           <Button type="button" size="sm" onClick={save} disabled={saving}>{saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />} Enregistrer</Button>
@@ -216,7 +216,7 @@ export function ProspectEditor({ slug, cases }: Props) {
             </div>
           </div>
           <label className={label}>Conditions courtes (affichées avant acceptation)<textarea rows={3} value={p.proposition.terms ?? ""} onChange={(e) => set((d) => { d.proposition.terms = e.target.value })} className={area} /></label>
-          {p.acceptance && <p className="border border-signal/40 bg-signal/10 p-3 text-sm">Acceptée le {when(p.acceptance.acceptedAt)} par {p.acceptance.name} ({p.acceptance.email}), version {p.acceptance.version}, {p.acceptance.totalOnce.toLocaleString("fr-FR")} € HT{p.acceptance.totalMonthly ? ` + ${p.acceptance.totalMonthly}/mois` : ""}. IP {p.acceptance.ip}. <a className="underline" href={`/p/${p.slug}/document?v=${p.acceptance.version}`} target="_blank" rel="noreferrer">Document figé</a></p>}
+          {p.acceptance && <p className="border border-signal/40 bg-signal/10 p-3 text-sm">Acceptée le {when(p.acceptance.acceptedAt)} par {p.acceptance.name} ({p.acceptance.email}), version {p.acceptance.version}, {p.acceptance.totalOnce.toLocaleString("fr-FR")} € HT{p.acceptance.totalMonthly ? ` + ${p.acceptance.totalMonthly}/mois` : ""}. IP {p.acceptance.ip}. <a className="underline" href={hq.document(p.slug, p.acceptance.version)} target="_blank" rel="noreferrer">Document figé</a></p>}
         </Section>
 
         <Section id="questions" title="Questions du prospect">
@@ -291,7 +291,7 @@ export function ProspectEditor({ slug, cases }: Props) {
 
         <div className="flex items-center justify-between border border-[#1c1c1c] p-5">
           <Button type="button" size="md" onClick={save} disabled={saving}>{saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Check className="h-4 w-4" />} Enregistrer le dossier</Button>
-          <button type="button" onClick={async () => { if (confirm(`Supprimer définitivement ${p.company} ?`)) { await fetch(`/api/admin/prospects/${slug}`, { method: "DELETE" }); router.push("/admin/prospects") } }} className="inline-flex items-center gap-1 text-xs text-aluminium hover:text-signal"><Trash2 className="h-3.5 w-3.5" /> Supprimer</button>
+          <button type="button" onClick={async () => { if (confirm(`Supprimer définitivement ${p.company} ?`)) { await fetch(`/api/admin/prospects/${slug}`, { method: "DELETE" }); window.location.href = hq.admin() } }} className="inline-flex items-center gap-1 text-xs text-aluminium hover:text-signal"><Trash2 className="h-3.5 w-3.5" /> Supprimer</button>
         </div>
       </main>
     </div>
