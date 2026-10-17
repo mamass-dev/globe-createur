@@ -58,9 +58,9 @@ const PILIERS = [
 ]
 
 const TOOLS = [
-  { href: "/vectoriser-une-image", icon: "PenTool", tag: "10 secondes", title: "Vectoriser une image", desc: "PNG ou JPG vers SVG, calculé sur votre appareil.", cta: "Vectoriser" },
   { href: "/analyseur-seo", icon: "Search", tag: "5 secondes", title: "Analyseur SEO", desc: "Score sur 100 et 13 critères vérifiés sur votre page.", cta: "Analyser mon site" },
   { href: "/audit-digital", icon: "Target", tag: "2 min · 9 questions", title: "Audit digital", desc: "Votre score global et les actions prioritaires.", cta: "Tester mon score" },
+  { href: "/calculateur-roi", icon: "TrendingUp", tag: "Instantané", title: "Calculateur ROI", desc: "Ce que l'invisibilité sur Google vous coûte chaque mois.", cta: "Calculer" },
   { href: "/generateur-signature-email", icon: "Mail", tag: "5 modèles", title: "Signature email", desc: "Une signature pro compatible Gmail et Outlook.", cta: "Créer ma signature" },
 ]
 

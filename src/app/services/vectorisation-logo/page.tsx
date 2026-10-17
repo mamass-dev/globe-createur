@@ -185,7 +185,7 @@ const faqItems = [
   {
     question: "Pourquoi ne pas utiliser un convertisseur gratuit en ligne ?",
     answer:
-      "Vous pouvez, et on vous en propose un : notre vectoriseur gratuit trace votre image dans le navigateur, sans l'envoyer nulle part. Mais le résultat est rarement imprimable : les outils automatiques tracent les pixels tels quels, halos et défauts compris, produisent des centaines de points inutiles et transforment le texte en formes bancales. Un imprimeur sérieux le refusera ou vous facturera la remise au propre. Ici, un designer redessine chaque forme et recompose la typographie : vous avez un vrai fichier source, exploitable pendant des années.",
+      "Vous pouvez essayer, mais le résultat est rarement imprimable : les outils automatiques tracent les pixels tels quels, halos et défauts compris, produisent des centaines de points inutiles et transforment le texte en formes bancales. Un imprimeur sérieux le refusera ou vous facturera la remise au propre. Ici, un designer redessine chaque forme et recompose la typographie : vous avez un vrai fichier source, exploitable pendant des années.",
   },
   {
     question: "Quels fichiers vais-je recevoir ?",

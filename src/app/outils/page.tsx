@@ -7,24 +7,17 @@ import { CtaSection } from "@/components/sections/cta-section"
 import { FaqSchema } from "@/components/seo/schemas"
 import { Container } from "@/components/ui/container"
 import { AnimateOnScroll } from "@/components/ui/animate"
-import { PenTool, Search, Gauge, Calculator, ClipboardList, Mail, Wrench, ArrowRight, BrainCog } from "lucide-react"
+import { Search, Gauge, Calculator, ClipboardList, Mail, Wrench, ArrowRight, BrainCog } from "lucide-react"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Outils gratuits : vectoriser une image, SEO, ROI, signature email",
+  title: "Outils gratuits — SEO, audit digital, ROI, signature email | Globe Créateur",
   description:
-    "8 outils gratuits, sans inscription : vectorisation d'image en SVG, analyse SEO en ligne, audit digital, diagnostic communication, calculateurs ROI (site et IA), estimateur de projet, générateur de signature email. Sans inscription.",
+    "7 outils gratuits pour piloter votre communication : analyse SEO en ligne, audit digital, diagnostic communication, calculateurs ROI (site et IA), estimateur de projet, générateur de signature email. Sans inscription.",
   path: "/outils",
   keywords: ["outil SEO gratuit", "outils SEO gratuits", "outils communication digitale gratuits", "audit digital gratuit", "analyse SEO gratuite", "générateur signature email gratuit", "calculateur ROI site web"],
 })
 
 const outils = [
-  {
-    icon: PenTool,
-    href: "/vectoriser-une-image",
-    name: "Vectoriser une image",
-    desc: "Déposez un PNG ou un JPG, récupérez un SVG en dix secondes. Le tracé se fait dans votre navigateur, rien n'est envoyé.",
-    tag: "Nouveau",
-  },
   {
     icon: Search,
     href: "/analyseur-seo",
@@ -58,7 +51,7 @@ const outils = [
     href: "/calculateur-roi-ia",
     name: "Calculateur ROI IA",
     desc: "Estimez le gain annuel potentiel de l'IA sur vos tâches répétitives, à partir de vos chiffres. Hypothèses affichées et modifiables.",
-    tag: null,
+    tag: "Nouveau",
   },
   {
     icon: Wrench,
