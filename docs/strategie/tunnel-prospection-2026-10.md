@@ -90,3 +90,19 @@ Un seul tableau, tenu chaque lundi : liens créés → pages ouvertes → rendez
 - Qui tourne les vidéos d'une minute, et à quel rythme (dix par semaine est tenable, pas cinquante).
 - Règle du rappel en cinq minutes : qui est d'astreinte, sur quelles plages horaires.
 - Legalo reste un produit à part (SaaS) ou devient l'outil interne de Globe d'abord.
+
+## 7. Mis en place le 2026-10-17 (commit « feat(prospection) »)
+
+Tout le tunnel de la section 2 est en production sur globecreateur.fr.
+
+**Côté prospect** : `globecreateur.fr/p/<entreprise>-<code>` (lien privé, noindex). Chapitres : constat (accroche, vidéo d'une minute, capture mobile du site, score, trois points, test client mystère, domaine, fiche Google, prise de rendez-vous), proposition (briques cochables par le prospect, total en direct, minimum, estimation à confirmer, démarrage réel, validité, acompte), planning, cas clients choisis, questions (texte libre ou passage surligné → « Commenter ce passage »), acceptation en deux temps (nom + e-mail → code à six chiffres → version figée, SHA-256, horodatage, IP, e-mail aux deux parties), document imprimable en PDF à tout moment (`/document`, `?v=` pour la version acceptée), partage nominatif, état visible des deux côtés (questions posées / répondues), puis après signature : projet (accès, planning, livrables) et rapports mensuels avec code de parrainage. Mention en pied de page : la page mesure l'ouverture et les chapitres lus.
+
+**Côté Globe** : `globecreateur.fr/admin/prospects` (mot de passe `PROSPECTS_ADMIN_PASSWORD`, cookie 30 jours). Tunnel en chiffres par état, création d'un lien, éditeur complet par dossier (fiche, signaux, constat avec envoi de capture et de vidéo mp4, proposition avec catalogue de briques et briques sur mesure, questions à répondre, relances, projet, rapports). Alertes e-mail (axel@globecreateur.fr, modifiable par `PROSPECTS_ALERT_EMAIL`) : première ouverture ou retour après 24 h (« rappel dans 5 min »), chaque question, chaque acceptation, relances du jour à valider.
+
+**Relances** : cron Vercel du lundi au vendredi à 7 h UTC (`/api/p/cron`, `CRON_SECRET`). Propose une relance à J+2, J+7, J+14 puis la clôture à J+21 depuis l'entrée dans l'état, sujet choisi d'après les signaux (silence, prix, planning, question ouverte, cas, clôture), jamais révélé dans le texte. Rien ne part sans clic dans l'admin. Arrêt automatique à l'acceptation ou au classement.
+
+**Préparation d'un constat** : `node scripts/constat.mjs "Entreprise" https://site.fr --contact "…" --email … --phone … --sector … --city …` fait la capture mobile (Playwright), le score (API de l'analyseur), le Whois (RDAP), crée le dossier et affiche les deux liens. Reste à la main : réécrire les trois points, saisir le test client mystère, tourner la vidéo, mettre le lien de rendez-vous, passer l'état à « Proposition en lecture » quand la proposition est prête.
+
+**Stockage** : un JSON par dossier dans le magasin Vercel Blob privé `globe-prospects-prive` (variable `PRIVATE_READ_WRITE_TOKEN`), captures et vidéos dans le même magasin, servies par `/api/p/<slug>/asset/<fichier>`. Les e-mails partent par Resend depuis `noreply@globecreateur.fr`. Sans clé Resend (local), les e-mails sont journalisés au lieu d'être envoyés.
+
+**Pas fait, à décider** : alerte WhatsApp ou Slack (nécessite une intégration serveur ; aujourd'hui e-mail), acompte par lien de paiement à l'acceptation (Stripe), génération automatique de la vidéo (volontairement humaine), lien de parrainage actif côté formulaire de contact (le code est affiché, le formulaire ne le lit pas encore).
