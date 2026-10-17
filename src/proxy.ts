@@ -41,7 +41,9 @@ export function proxy(request: NextRequest) {
     return noindex(NextResponse.rewrite(url))
   }
 
-  // Site principal : les anciennes adresses partent vers hq
+  // Site principal : les anciennes adresses partent vers hq, une fois le DNS du sous-domaine en place
+  // (variable HQ_REDIRECTS=1 sur Vercel ; en attendant, /p/… et /admin/prospects… restent servis ici)
+  if (process.env.HQ_REDIRECTS !== "1") return NextResponse.next()
   if (pathname.startsWith("/p/")) {
     return NextResponse.redirect(`${HQ_URL}${pathname.slice("/p".length)}${search}`, 308)
   }
