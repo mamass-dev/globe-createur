@@ -359,12 +359,12 @@ export function ProspectView({ prospect: initial, cases }: { prospect: PublicPro
           <section id="cas" data-chapter="cas" className="scroll-mt-28 border-t border-[#1c1c1c] py-12 lg:py-20">
             <p className="text-[11px] font-bold uppercase tracking-widest text-signal">Cas clients</p>
             <h2 className="mt-3 text-2xl font-bold sm:text-4xl">Choisis pour vous.</h2>
-            <div className="mt-8 grid gap-px border border-[#1c1c1c] bg-[#1c1c1c] sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {cases.map((c) => (
-                <Link key={c.slug} href={`/projets/${c.slug}`} target="_blank" className="group bg-noir p-5 transition-colors hover:bg-[#141414]">
+                <Link key={c.slug} href={`/projets/${c.slug}`} target="_blank" className="group border border-[#1c1c1c] bg-noir p-5 transition-colors hover:bg-[#141414]">
                   {c.image && (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={c.image} alt="" className="mb-4 aspect-[4/3] w-full object-cover" loading="lazy" />
+                    <img src={c.image} alt="" className="mb-4 aspect-[4/3] w-full object-cover" loading="lazy" onError={(e) => { e.currentTarget.style.display = "none" }} />
                   )}
                   <p className="text-[11px] font-bold uppercase tracking-widest text-aluminium">{c.category}{c.client ? ` · ${c.client}` : ""}</p>
                   <p className="mt-2 font-bold group-hover:text-signal">{c.title}</p>
